@@ -103,9 +103,7 @@ void KFMManager::writeWrapped( char *_str )
     
     if (labelFontMetrics->width(_str) <= maxLabelWidth)
     {
-        QString str_str(_str);
-        //KURL::decodeURL(str_str); // _str is decoded already (Hen)
-	view->write( str_str );
+	view->writeHTMLquoted ( _str );
 	return;
     }
 
@@ -138,7 +136,7 @@ q		pos = sepPos;
 	    
 	    c = *pos;
 	    *pos = '\0';
-	    view->write( part );
+	    view->writeHTMLquoted ( part );
 	    view->write( "<br>" );
 	    *pos = c;
 	    part = pos;
@@ -146,7 +144,7 @@ q		pos = sepPos;
 	}
 	width += charWidth;
     }
-    if (*part) view->write( part );
+    if (*part) view->writeHTMLquoted ( part );
 }            
 
 bool KFMManager::eventFilter( QObject *ob, QEvent *ev )
@@ -516,8 +514,18 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	return;
     
     QString decoded = s->getName();
-    KURL::decodeURL( decoded );
-    
+    decoded.detach();
+    KURL::decodeURL( decoded );   // decoded to pass to writeWrapped()
+
+    QString filename( url );        // filename, Filename, useable to find file on Disk (Hen)
+    filename.detach();
+    KURL::decodeURL ( filename );
+    filename += decoded;         
+
+    QString encodedURL ( url );  
+    encodedURL.detach();            // encodedURL, URL,  encoded for <a href ..> (Hen)
+    encodedURL += s->getName();
+
     if ( view->getGUI()->getViewMode() == KfmGui::ICON_VIEW )
     { 
 	// Delete ".kdelnk" extension ( only in Icon View )
@@ -526,11 +534,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 
 	view->write( "<cell><a href=\"" );
 	
-	QString filename( url );
-	filename.detach();
-	filename += s->getName();
-		
-	view->write( filename.data() );
+	view->write( encodedURL.data() );
 	if ( view->getGUI()->isVisualSchnauzer() )
 	{
 	    view->write( "\">" );
@@ -547,7 +551,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	if ( s->getAccess() && s->getAccess()[0] == 'l' )
 	    view->write("<i>");
 	strcpy( buffer, decoded );
-	writeWrapped( buffer );
+	writeWrapped( buffer );  // writeWrapped htmlQuotes itself
 	if ( s->getAccess() && s->getAccess()[0] == 'l' )
 	    view->write("</i>");
 	view->write( "</center><br></a></cell>" );
@@ -555,17 +559,14 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
     else if ( view->getGUI()->getViewMode() == KfmGui::LONG_VIEW )
     {
 	view->write( "<tr><td><a href=\"" );
-	QString filename( url );
-	filename.detach();
-	filename += s->getName();
-	
-	view->write( filename.data() );
+
+	view->write( encodedURL.data() );
 	view->write( "\"><img border=0 width=16 height=16 src=\"file:" );
 	view->write( KMimeType::getPixmapFileStatic( filename.data(), TRUE ) );
 	view->write( "\"></td><td>" );
 	if ( s->getAccess() && s->getAccess()[0] == 'l' )
 	    view->write("<i>");
-	view->write( decoded );
+	view->writeHTMLquoted ( decoded );
 	if ( s->getAccess() && s->getAccess()[0] == 'l' )
 	    view->write("</i>");
 	view->write( "</td><td><tt>" ); 
@@ -585,15 +586,12 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
     else if ( view->getGUI()->getViewMode() == KfmGui::TEXT_VIEW )
     {
 	view->write( "<tr><td><a href=\"" );
-	QString filename( url );
-	filename.detach();
-	filename += s->getName();
 	
-	view->write( filename.data() );
+	view->write( encodedURL.data() );
 	view->write( "\">" );
 	if ( s->getAccess() && s->getAccess()[0] == 'l' )
 	    view->write("<i>");
-	view->write( decoded );
+	view->writeHTMLquoted ( decoded );
 	if ( s->getAccess() && s->getAccess()[0] == 'l' )
 	    view->write("</i>");
 	view->write( "</td><td><tt>" );

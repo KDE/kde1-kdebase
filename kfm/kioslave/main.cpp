@@ -303,14 +303,18 @@ void KIOSlave::del( const char *_url )
     
     if ( strcmp( su.protocol(), "file" ) == 0 )
     {
+	QString supath( su.path() );  // source path
+	supath.detach();
+	KURL::decodeURL( supath );
+
 	int erg;
 
 	struct stat buff;
-	lstat( su.path(), &buff );
+	lstat( supath, &buff );
 	if ( S_ISDIR( buff.st_mode ) )
-	    erg = rmdir( su.path() );
+	    erg = rmdir( supath );
 	else
-	    erg = unlink( su.path() );
+	    erg = unlink( supath );
 	
 	if ( erg != 0 )
 	{

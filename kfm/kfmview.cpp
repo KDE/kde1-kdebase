@@ -505,9 +505,9 @@ void KfmView::slotPopupDelete()
 	char *s;
 	for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
 	{
-	    // Decode the URL
+	    // Decode the URL -- NOT here (kioslave does this) (Hen)
 	    QString str( s );
-	    KURL::decodeURL( str );
+//	    KURL::decodeURL( str );
 	    list.append( str );
 	}
 
@@ -769,6 +769,47 @@ KfmView* KfmView::getActiveView()
     return (KfmView*)v;
   return this;
 } 
+
+// quote special HTML-characters and write to widget
+// according to RFC 1866,Hypertext Markup Language 2.0,
+// 9.7.1. Numeric and Special Graphic Entity Set
+// -> should go to KHTMLView
+// (Hen - Henner Zeller, zeller@think.de)
+void KfmView::writeHTMLquoted (const char * text)
+{
+	// worst case: just quotes which expand to the
+	// six characters '&quot;'
+	char *out_text = new char [ 6 * strlen (text) + 1 ];
+	char * outpos = out_text;
+
+	for ( /* nope */ ; *text ; text++) {
+		*outpos = '\0';
+		switch (*text) {
+		case '&' : 
+			strcat (out_text, "&amp;"); 
+			outpos += 5;
+			break;
+		case '<':
+			strcat (out_text, "&lt;"); 
+			outpos += 4;
+			break;
+		case '>':
+			strcat (out_text, "&gt;"); 
+			outpos += 4;
+			break;
+		case '"':
+			strcat (out_text, "&quot;"); 
+			outpos += 6;
+			break;
+		default:
+			*outpos = *text;
+			outpos++;
+		}
+	}
+	*outpos = '\0';
+	this->write( out_text );
+	delete [] out_text;
+}
 
 bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mouse, bool _isselected )
 {

@@ -271,8 +271,12 @@ void KFMDirTree::slotPopupEmptyTrashBin()
 	{
 	    if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L )
 	    {
-		QString t = "file:" + d + ep->d_name;
-		trash.append( t.data() );
+		QString trashFile( ep->d_name );
+		trashFile.detach();
+		trashFile.prepend (d);
+		KURL::encodeURL ( trashFile );   // make proper URL (Hen)
+		trashFile.prepend ("file:");
+		trash.append( trashFile.data() );
 	    }
 	}
 	closedir( dp );

@@ -41,6 +41,25 @@ public:
     KfmView* getActiveView();
 	
     /**
+     * @return write HTML-code to the widget (Hen). Quote HTML
+     *   special characters, according to <b>RFC 1866</b>,
+     *   Hypertext Markup Language 2.0,
+     *   <i>9.7.1. Numeric and Special Graphic Entity Set</i>
+     *   <table border=1>
+     *   <tr><td>Character</td><td>Replacement</td></tr>
+     *   <tr><td align=center>&quot;</td><td align=center>&amp;quot;</td></tr>
+     *   <tr><td align=center>&amp;  </td><td align=center>&amp;amp;  </td></tr>
+     *   <tr><td align=center>&lt;   </td><td align=center>&amp;lt;   </td></tr>
+     *   <tr><td align=center>&gt;   </td><td align=center>&amp;gt;   </td></tr>
+     *   </table>
+     *   This is used to write filenames etc. which may have these special
+     *   characters.<p>
+     *   <b>Note:</b> This should move to KHTMLView someday ..<p>
+     *   @param  text is the text to write to the widget
+     */
+    virtual void writeHTMLquoted (const char * text);
+
+    /**
      * Stores the URLs belonging to the currently opened popup menu.
      * The @ref #manager opens the popup menu and tells the window using
      * this function that he opened a popup menu for this URL.

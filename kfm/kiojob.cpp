@@ -205,6 +205,14 @@ void KIOJob::link()
     {
 	KURL su( p );
 	KURL du( p2 );
+
+	QString supath( su.path() );  // source path
+	supath.detach();
+	KURL::decodeURL( supath );
+
+	QString dupath( du.path() );  // destination path
+	dupath.detach();
+	KURL::decodeURL( dupath );
 	
 	// Which directories do we have to notify ?
 	if ( notifyList.find( du.directoryURL( false ) ) == -1 )
@@ -241,7 +249,7 @@ void KIOJob::link()
 	    if ( strcmp( su.protocol(), "file" ) == 0 && !su.hasSubProtocol() )
 	    {
 		// Make a symlink
-		if ( symlink( su.path(), du.path() ) == -1 )
+		if ( symlink( supath, dupath ) == -1 )
 		{
 		    // Does the destination already exist ?
 		    if ( errno == EEXIST )
@@ -250,10 +258,10 @@ void KIOJob::link()
 			if ( overwriteExistingFiles )
 			{
 			    // Try to delete the destination
-			    if ( unlink( du.path() ) != 0 )
+			    if ( unlink( dupath ) != 0 )
 			    {
 				QString tmp;
-				ksprintf(&tmp, i18n( "Could not overwrite\n%s"), du.path() );
+				ksprintf(&tmp, i18n( "Could not overwrite\n%s"), dupath.data() );
 				QMessageBox::warning( 0, i18n( "KFM Error" ), tmp );
 				done();
 				return;
@@ -262,28 +270,28 @@ void KIOJob::link()
 			else
 			{
 			    // Ask the user what to do
-			    KRenameWin *r = new KRenameWin( 0L, su.path(), du.path(), true );
+			    KRenameWin *r = new KRenameWin( 0L, supath, dupath, true );
 			    int button = r->exec();
 			    if ( button == 0 ) // Overwrite 
 			    {
 				// Try to delete the destination
-				if ( unlink( du.path() ) != 0 )
+				if ( unlink( dupath ) != 0 )
 				{
 				    delete r;
 				    QString tmp;
 				    
-				    ksprintf(&tmp, i18n( "Could not overwrite\n%s"), du.path());
+				    ksprintf(&tmp, i18n( "Could not overwrite\n%s"), dupath.data());
 				    QMessageBox::warning( 0, i18n( "KFM Error" ), tmp );
 				    done();
 				    return;
 				}
 				// Try again
-				if ( symlink( su.path(), du.path() ) == -1 )
+				if ( symlink( supath, dupath ) == -1 )
 				{
 				    QString tmp;
 				    ksprintf(&tmp, 
 					     i18n( "Could not make symlink to\n%s"), 
-					     du.path());
+					     dupath.data());
 				    QMessageBox::warning( 0, i18n( "KFM Error" ), tmp );
 				    done();
 				    return;
@@ -302,10 +310,10 @@ void KIOJob::link()
 				// Get the new destinations name
 				du = r->getNewName();
 				// Try again
-				if ( symlink( su.path(), du.path() ) == -1 )
+				if ( symlink( supath, dupath ) == -1 )
 				{
 				    QString tmp;
-				    ksprintf(&tmp, i18n( "Could not make symlink to\n%s" ), du.path());
+				    ksprintf(&tmp, i18n( "Could not make symlink to\n%s" ), dupath.data());
 				    QMessageBox::warning( 0, i18n( "KFM Error" ), tmp );
 				    done();
 				    return;
@@ -324,7 +332,7 @@ void KIOJob::link()
 		    {
 			// Some error occured while we tried to symlink
 			QString tmp;
-			ksprintf(&tmp, i18n( "Could not make symlink to\n%s"), du.path());
+			ksprintf(&tmp, i18n( "Could not make symlink to\n%s"), dupath.data());
 			QMessageBox::warning( 0, i18n( "KFM Error" ), tmp );
 			done();
 			return;
@@ -510,16 +518,25 @@ void KIOJob::copy()
 	if ( su.isLocalFile() && du.isLocalFile() )
 	{
 	    struct stat buff;
-	    stat( su.path(), &buff );
+
+	    QString supath( su.path() );  // source path
+	    supath.detach();
+	    KURL::decodeURL( supath );
+
+	    QString dupath( du.path() );  // destination path
+	    dupath.detach();
+	    KURL::decodeURL( dupath );
+
+	    stat( supath.data(), &buff );
 	    if ( S_ISDIR( buff.st_mode ) )
 	    {
 	        printf("??????? Is directory '%s'\n",p);
-		if ( ::mkdir( du.path(), buff.st_mode ) == -1 )
+		if ( ::mkdir( dupath.data(), buff.st_mode ) == -1 )
                 {    
 		    if ( errno != EEXIST )
 		    {
 			QString tmp;
-			ksprintf(&tmp, i18n( "Could not make directory\n%s"), du.path());
+			ksprintf(&tmp, i18n( "Could not make directory\n%s"), dupath.data());
 			QMessageBox::warning( 0, i18n( "KFM Error" ), tmp.data() );
 			return;
 		    }
@@ -529,7 +546,7 @@ void KIOJob::copy()
 		
 		DIR *dp;
 		struct dirent *ep;
-		dp = opendir( su.path() );
+		dp = opendir( supath );
 		if ( dp == NULL )
 		{
 		    warning(i18n("ERROR: Could not access directory '%s'"), p );
@@ -540,17 +557,23 @@ void KIOJob::copy()
 		{
 		    if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 		    {
+			// append directory-contents do 'todo'-list
+			QString fname = ep->d_name;
+			fname.detach();
+			KURL::encodeURL (fname);
+
 			QString s = p;
 			s.detach();
 			if ( s.length() > 0 && s.data()[ s.length() - 1 ] != '/' )
 			    s += "/";
-			s += ep->d_name;
+			s += fname;
+
 			
 			QString d = p2;
 			d.detach();
 			if ( d.length() > 0 && d.data()[ d.length() - 1 ] != '/' )
 			    d += "/";
-			d += ep->d_name;
+			d += fname;
 			
 			cmSrcURLList.append( s.data() );
 			cmDestURLList.append( d.data() );
@@ -652,14 +675,13 @@ void KIOJob::move()
     {
 	p = itSrc.current();
 	p2 = itDest.current();
-	char* orig = p;
-	char* orig2 = p;
 	KURL su( p );
 	KURL du( p2 );
 
 	QString tmp;
 	// Never copy a file on itself!!
-	if ( strcmp( p, p2 ) == 0 )
+        // on local filesystems: maybe one should check inodes here (hardlinks!) (hen)
+	if ( strcmp( p, p2 ) == 0 ) 
         {
 	  do 
 	  {      
@@ -688,11 +710,15 @@ void KIOJob::move()
 	  while ( strcmp( p, p2 ) == 0 );
 	}
 	
-	QString supath( su.path() );
-	QString dupath( du.path() );
-	KURL::decodeURL( supath );
-	KURL::decodeURL( dupath );
 
+	QString supath( su.path() );  // source path
+	supath.detach();
+	KURL::decodeURL( supath );
+
+	QString dupath( du.path() );  // destination path
+	dupath.detach();
+	KURL::decodeURL( dupath );
+	
 	int i = 1;
 	// Moving on the local hard disk ?
 	if ( su.isLocalFile() && du.isLocalFile() )
@@ -740,6 +766,7 @@ void KIOJob::move()
 		stat( supath, &buff );
 		// We want to move a directory ?
 		// Then we must know each file in the tree ....
+		//** maybe here we should call copy(old,new); del(old) ? (hen) **/
 		if ( S_ISDIR( buff.st_mode ) )
 		{
 		  if ( ::mkdir( dupath, S_IRWXU ) == -1 )
@@ -787,17 +814,21 @@ void KIOJob::move()
 		  {
 		    if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 		    {
+		      QString fname = ep->d_name;
+		      fname.detach();
+		      KURL::encodeURL (fname);
+
 		      QString s = p;
 		      s.detach();
 		      if ( s.right(1) != "/" )
 			s += "/";
-		      s += ep->d_name;
+		      s += fname;
 		      
 		      QString d = p2;
 		      d.detach();
 		      if ( d.right(1) != "/" )
 			d += "/";
-		      d += ep->d_name;
+		      d += fname;
 		      
 		      tmpSrcURLList.append( s.data() );
 		      tmpDestURLList.append( d.data() );
@@ -890,7 +921,6 @@ void KIOJob::move()
 void KIOJob::del( const char *_url )
 {
     action = KIOJob::JOB_DELETE;
-
     tmpDelURLList.clear();
     tmpDelURLList.append( _url );
     
@@ -902,14 +932,12 @@ void KIOJob::del( const char *_url )
     }
     else
       notifyList.append( u.directoryURL() );
-    
     del();
 }
 
 void KIOJob::del( QStrList & _url_list )
 {
     action = KIOJob::JOB_DELETE;
-    
     tmpDelURLList.copy( _url_list );
 
     char *s;
@@ -919,6 +947,7 @@ void KIOJob::del( QStrList & _url_list )
 	if ( KIOServer::isDir( s ) )
 	{
 	    u.cd( ".." );
+
 	    if( notifyList.find( u.url() ) == -1 )
 	      notifyList.append( u.url() );
 	}
@@ -946,10 +975,14 @@ void KIOJob::del()
 	// int i = 1;
 	if ( strcmp( su.protocol(), "file" ) == 0 )
 	{
+	    QString supath( su.path() );  // file to delete
+	    supath.detach();
+	    KURL::decodeURL( supath );
+
 	    struct stat buff;
-	    stat( su.path(), &buff );
+	    stat( supath, &buff );
 	    struct stat lbuff;
-	    lstat( su.path(), &lbuff );
+	    lstat( supath, &lbuff );
 
 	    if ( S_ISLNK( lbuff.st_mode ) )
 	    {
@@ -959,23 +992,27 @@ void KIOJob::del()
 	    {
 		DIR *dp;
 		struct dirent *ep;
-		dp = opendir( su.path() );
+		dp = opendir( supath );
 		if ( dp == NULL )
 		{
 		    warning(i18n("ERROR: Could not access directory '%s'"), p );
 		    return;
 		}
-		    
+
 		while ( ( ep = readdir( dp ) ) != 0L )
 		{
 		    if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 		    {
+		        QString fname = ep->d_name;
+		        fname.detach();
+		        KURL::encodeURL (fname);
+
 			QString s = p;
 			s.detach();
 			if ( s.length() > 0 && s.data()[ s.length() - 1 ] != '/' )
 			    s += "/";
-			s += ep->d_name;
-			    
+			s += fname;
+
 			// debugT("Appending '%s'\n",s.data());
 			tmpDelURLList.append( s.data() );
 		    }
@@ -984,7 +1021,7 @@ void KIOJob::del()
 	    }
 	}
     }
-    
+    // reverse list
     for ( p = tmpDelURLList.last(); p != 0L; p = tmpDelURLList.prev() )
 	mvDelURLList.append( p );
     cmCount = mvDelURLList.count();
