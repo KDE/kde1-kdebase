@@ -1048,9 +1048,19 @@ void KFMManager::stop()
 
 void KFMManager::slotRedirection( const char *_url )
 {
-    url = _url;
-    view->getGUI()->setToolbarURL( _url );
-    // view->getGUI()->slotSetStatusBar( _text );
+    if (KURL(_url).isLocalFile())
+    {
+        // disable any change if redirection on a local file.
+        // This allows to store the "/index.html" in 'url'
+        // without changing the url stored here. David.
+        //debug("Setting job URL to %s",_url);
+        jobURL = _url; // store it to a special QString.
+    } else
+    {
+        url = _url;
+        view->getGUI()->setToolbarURL( _url );
+        // view->getGUI()->slotSetStatusBar( _text );
+    }
 }
 
 void KFMManager::slotInfo( const char *_text )

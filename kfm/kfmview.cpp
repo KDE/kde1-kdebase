@@ -1729,5 +1729,9 @@ QStack<SavedPage> *KfmView::getForwardStack()
     return forwardStack;
 }
 
+const char * KfmView::getJobURL() 
+{
+    return manager->getJobURL(); 
+}
 
 #include "kfmview.moc"

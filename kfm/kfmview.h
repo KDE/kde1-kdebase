@@ -101,7 +101,8 @@ public:
      * Return the currently opened URL.
      */
     const char* getURL();
-
+    
+    const char* getJobURL();
     KfmGui* getGUI() { return gui; }
     HTMLCache* getHTMLCache() { return htmlCache; }
     

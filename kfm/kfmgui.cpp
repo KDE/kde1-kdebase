@@ -891,7 +891,8 @@ void KfmGui::slotViewHTML( )
     bViewHTML = !mview->isItemChecked( mview->idAt(3) );
     mview->setItemChecked( mview->idAt( 3 ), bViewHTML);
     bViewHTMLLocal = bViewHTML; //force local mode too (sven)
-    view->slotUpdateView();
+    view->openURL( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
+    // slotUpdateView isn't enough when switching off "HTML View"
 }
 
 void KfmGui::slotIconView()
@@ -1594,14 +1595,14 @@ void KfmGui::slotViewFrameSource()
 	return;
     
     QString cmd;
-    cmd << "kedit \"" << view->getActiveView()->getURL() << "\"";
+    cmd << "kedit \"" << view->getActiveView()->getJobURL() << "\"";
     KMimeBind::runCmd( cmd );
 }
 
 void KfmGui::slotViewDocumentSource()
 {
     QString cmd;
-    cmd << "kedit \"" << view->getURL() << "\"";
+    cmd << "kedit \"" << view->getJobURL() << "\"";
     KMimeBind::runCmd( cmd );
 }
 

@@ -165,9 +165,15 @@ void KFMJob::openFile(bool _reload)
 
 void KFMJob::slotRedirection( const char *_url )
 {
-    url = _url;
     emit redirection( _url );
-    openFileOrDir(false);
+    if (!KURL(_url).isLocalFile())
+    {
+        // disable any change if redirection on a local file.
+        // This allows to store the "/index.html" in 'url'
+        // without changing the url stored here and in kfmman. David.
+        url = _url;
+        openFileOrDir(false);
+    }
 }
 
 void KFMJob::slotCookie( const char *_url, const char *_cookie_str )

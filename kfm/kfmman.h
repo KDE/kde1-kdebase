@@ -56,7 +56,9 @@ public:
      * to create this page from a list of @ref KIODirectoryEntry).
      */
     bool isHTML() const { return bHTML; }
-    
+
+    const char* getJobURL() { return jobURL.data(); }
+
 public slots:
     /**
      * A item of the popup menu has been selected.
@@ -200,6 +202,12 @@ protected:
      * load at a time.
      */
     QString url;
+
+    /*
+     * The 'real' URL. e.g. after a redirection, or with 'index.html'
+     * appended to it if HTML View is on.
+     */
+    QString jobURL;
 
     /**
      * The URLs belonging to the opened popupMenu.
