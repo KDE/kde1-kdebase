@@ -73,7 +73,7 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
 	   this, SLOT( slotDropEvent( KDNDDropZone *) ) );
 
   applyDesktop( current );
-
+  KWM::sendKWMCommand( "kbgwm_change" );
 }
 
 
@@ -156,7 +156,7 @@ void KBGndManager::commandReceived( QString com )
 	current = KWM::currentDesktop() - 1;
 
       applyDesktop( current );
-
+      KWM::sendKWMCommand( "kbgwm_change" );
     }
 }
 

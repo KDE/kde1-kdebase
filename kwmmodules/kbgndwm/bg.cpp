@@ -70,6 +70,7 @@ void KBackground::setImmediately( const char *_wallpaper, int mode )
 
   hasPm = true;
   apply();
+  KWM::sendKWMCommand( "kbgwm_change" );
 }
 
 
@@ -246,8 +247,8 @@ void KBackground::randomize()
     if ( ( oneDesktopMode && desk == oneDesk ) ||
 	 ( !oneDesktopMode && desk == ( KWM::currentDesktop() - 1 ) ) )
       {
-	warning("oneDesktopMode = %d  desk = %d", oneDesktopMode, desk);
 	apply();
+	KWM::sendKWMCommand( "kbgwm_change" );
       }
   }
 }
@@ -283,8 +284,6 @@ QPixmap *KBackground::loadWallpaper()
 void KBackground::apply()
 {
   applied = false;
-
-  KWM::sendKWMCommand( "kbgwm_change" );
 
   // the background pixmap is cached?
   bgPixmap = QPixmapCache::find( name );
