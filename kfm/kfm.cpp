@@ -179,8 +179,10 @@ void sig_segv_handler( int )
   printf("###################### SEGV ###################\n");
   
   QString kfm = kapp->kde_bindir().data();
-  kfm += "/kfm";
-  execl( kfm.data(), 0L );
+  kfm += "/kfm &";                           // sven: run in background
+  system (kfm.data());                       // sven: tell shell to do it.
+  //execl( kfm.data(), 0L );
+  exit (0);                                  // exit clean.
 }
 
 #include "kfm.moc"
