@@ -72,8 +72,6 @@
 #define KDISKNAV_SHARED_DIR       KApplication::kde_datadir() + "/kdisknav"
 #define KDISKNAV_PERSONAL_DIR        "/.kde/share/apps/kdisknav"
 
-#define OPEN_FOLDER_TIP   "Open this folder (+Shift: Launch a terminal here)"
-
 #define GET_DEFAULT_FILE_ICON(fi)  \
    ((fi).isExecutable() ? DEFAULT_EXECUTABLE_ICON : DEFAULT_FILE_ICON)
 
@@ -480,7 +478,7 @@ int PFileMenu::parseDir(QDir d, bool addOpenFolderEntry)
     this->add( new PMenuItem(prog_com, klocale->translate("Open Folder"),
                            0, "folder_open.xpm", 0,
                            this, SLOT(openFolder()), 0, false, 0,
-                           klocale->translate(OPEN_FOLDER_TIP)) );
+                           i18n("Open this folder (+Shift: Launch a terminal here)")));
     this->add( new PMenuItem(separator) );
   }
 
