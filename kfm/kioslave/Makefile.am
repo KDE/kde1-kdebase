@@ -1,16 +1,16 @@
 
 INCLUDES=       $(all_includes) -I..
-LDADD   =       $(all_libraries) -lkdecore -lqt -lXext -lX11 $(LIBJPEG) $(LIBSOCKET) $(KDE_RPATH)
+LDADD   =       $(all_libraries) -lkdecore -lqt -lXext -lX11 $(LIB_KIMGIO) $(LIBSOCKET) $(KDE_RPATH)
 CXXFLAGS= @NOOPT_CXXFLAGS@
 
 ####### Files
 
 bin_PROGRAMS = kioslave
 
-kioslave_SOURCES = kioslave_ipc.cpp kioslave_ipc2.cpp main.cpp xview.cpp jpeg.cpp \
+kioslave_SOURCES = kioslave_ipc.cpp kioslave_ipc2.cpp main.cpp xview.cpp\
 	ipc.cpp protocol.cpp http.cpp file.cpp ftp.cpp manage.cpp icon.cpp \
 	slave.cpp tar.cpp subprotocol.cpp cgi.cpp gzip.cpp ../debug.cpp ftp_proxy.cpp
-noinst_HEADERS = kioslave_ipc.h main.h ipc.h protocol.h http.h xview.h jpeg.h jpeginc.h \
+noinst_HEADERS = kioslave_ipc.h main.h ipc.h protocol.h http.h xview.h \
 	file.h ftp.h manage.h slave.h tar.h subprotocol.h cgi.h gzip.h icon.h ftp_proxy.h kio_errors.h
 
 BUILT_SOURCES =	kioslave_ipc.moc main.moc http.moc file.moc tar.moc ftp.moc \

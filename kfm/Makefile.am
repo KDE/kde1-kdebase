@@ -1,7 +1,7 @@
 ## Makefile.am of kdebase/kfm
 
 INCLUDES=	$(all_includes)
-LDADD	=	$(all_libraries) -lkhtmlw -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(LIBJPEG) -ljscript -lm $(KDE_RPATH)
+LDADD	=	$(all_libraries) $(LIB_KHTMLW) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
 CONFIGDIR = $(kde_confdir)
 MIMELNKDIR = $(kde_mimedir)
 

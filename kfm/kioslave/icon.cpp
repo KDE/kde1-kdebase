@@ -2,7 +2,9 @@
 #include "kio_errors.h"
 #include "xview.h"
 #include "time.h"
-#include "jpeg.h"
+//#include "jpeg.h"
+#include <kimgio.h>
+#include <qimage.h>
 
 #include <unistd.h>
 #include <stdlib.h>
@@ -41,9 +43,10 @@ int KProtocolICON::Open(KURL * u, int mode)
 
     if ( !registered )
     {
-	registered = TRUE;
-	QImageIO::defineIOHandler( "XV", "^P7 332", 0, read_xv_file, 0L );
-	QImageIO::defineIOHandler("JFIF","^\377\330\377\340..JFIF", 0, read_jpeg_jfif, NULL);                              
+        registered = TRUE;
+	 kimgioRegister();
+	//QImageIO::defineIOHandler( "XV", "^P7 332", 0, read_xv_file, 0L );
+	//QImageIO::defineIOHandler("JFIF","^\377\330\377\340..JFIF", 0, read_jpeg_jfif, NULL);                              
     }
 
     // Path for .xvpics
