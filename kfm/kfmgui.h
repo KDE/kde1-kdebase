@@ -25,6 +25,7 @@ class KfmGui;
 #include "kfmtree.h"
 #include "kURLcompletion.h"
 #include "config-kfm.h"
+#include "finddlg.h"
 
 class KfmGui : public KTopLevelWidget
 {
@@ -183,6 +184,14 @@ public slots:
     */
     void slotSelectAll();
     /**
+    * Menu "Edit->Find in page"
+    */
+    void slotFind();
+    /**
+    * Menu "Edit->Find next"
+    */
+    void slotFindNext();
+    /**
      * Menu "Edit->Copy"
      */
     void slotCopy();
@@ -330,6 +339,11 @@ public slots:
      * Toolbar "Stop"
      */
     void slotStop();
+
+    /**
+     * Called when Find button in find dialog is pressed.
+     */
+    void slotFindNext( const QRegExp &regExp );
     
     /**
      * Called if the panner changes its position.
@@ -501,6 +515,11 @@ protected:
      * The widget that contains the HTML stuff and the ( optional ) scrollbars.
      */
     KfmView *view;
+
+    /**
+     * The Find text dialog
+     */
+    KFindTextDialog *findDialog;
 
     /**
      * The path where the templates are stored.

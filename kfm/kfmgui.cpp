@@ -20,6 +20,7 @@
 
 #include <kconfig.h>
 #include <kapp.h>
+#include <kmsgbox.h>
 
 #include "kfmpaths.h"
 #include "kfmgui.h"
@@ -74,6 +75,7 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
 {
     toolbarButtons = 0L;
     toolbarURL = 0L;
+    findDialog = 0;
     
     // Timer used for animated logo
     animatedLogoTimer = new QTimer( this );
@@ -340,6 +342,11 @@ void KfmGui::initMenu()
 		      SLOT(slotSelect()), CTRL+Key_S );
     edit->insertItem( klocale->translate("Select &all"), this,
                       SLOT(slotSelectAll()), CTRL+Key_A );
+    edit->insertSeparator();
+    edit->insertItem( klocale->translate("&Find in page..."), this, 
+		      SLOT(slotFind()) );
+    edit->insertItem( klocale->translate("Find &next"), this, 
+		      SLOT(slotFindNext()), Key_F3 );
     edit->insertSeparator();
     edit->insertItem( klocale->translate("Mime Types"), this, 
 		      SLOT(slotEditMimeTypes()) );
@@ -931,6 +938,58 @@ void KfmGui::slotSelectAll()
 {
 	QRegExp re( "*", true, true );
 	view->getActiveView()->select( re, true );
+}
+
+void KfmGui::slotFind()
+{
+    // if we haven't already created a find dialog then do it now
+    if ( !findDialog )
+    {
+	findDialog = new KFindTextDialog();
+	connect( findDialog, SIGNAL( find( const QRegExp & ) ),
+		SLOT( slotFindNext( const QRegExp & ) ) );
+    }
+
+    // reset the find iterator
+    view->getActiveView()->findTextBegin();
+
+    findDialog->show();
+}
+
+void KfmGui::slotFindNext()
+{
+    if ( findDialog )
+    {
+	// We have a find dialog, so use the reg exp it maintains.
+	slotFindNext( findDialog->regExp() );
+    }
+    else
+    {
+	// no find has been attempted yet - open the find dialog.
+	slotFind();
+    }
+}
+
+void KfmGui::slotFindNext( const QRegExp &regExp )
+{
+    if ( !view->getActiveView()->findTextNext( regExp ) )
+    {
+	// We've reached the end of the document.
+	// Can either stop searching and close the find dialog,
+	// or start again from the top.
+	if ( KMsgBox::yesNo( this, i18n( "Find Complete" ),
+	    i18n( "Continue search from the top of the page?" ),
+	    KMsgBox::DB_SECOND | KMsgBox::QUESTION ) == 1 )
+	{
+	    view->getActiveView()->findTextBegin();
+	    slotFindNext( regExp );
+	}
+	else
+	{
+	    view->getActiveView()->findTextEnd();
+	    findDialog->hide();
+	}
+    }
 }
 
 void KfmGui::slotBookmarksChanged()

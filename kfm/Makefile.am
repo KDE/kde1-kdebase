@@ -27,7 +27,8 @@ kfm_SOURCES =	\
 	kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp \
 	krenamewin.cpp passworddialog.cpp kURLcompletion.cpp debug.cpp kfm.cpp \
 	kfmpaths.cpp kfmjob.cpp kfmexec.cpp kmimemagic.cpp kfinder.cpp utils.cpp \
-	useragentdlg.cpp kproxydlg.cpp kkfmoptdlg.cpp khttpoptdlg.cpp open-with.cpp
+	useragentdlg.cpp kproxydlg.cpp kkfmoptdlg.cpp khttpoptdlg.cpp \
+	open-with.cpp finddlg.cpp
 
 noinst_HEADERS =  \
 	kfmgui.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h htmlopts.h \
@@ -36,7 +37,7 @@ noinst_HEADERS =  \
 	krenamewin.h passworddialog.h kURLcompletion.h utils.h kfm.h \
 	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h kfinder.h	\
 	useragentdlg.h kproxydlg.h kkfmoptdlg.h khttpoptdlg.h open-with.h \
-	kstrlist.h cgi.h kbookmarkdlg.h fileentry.h
+	kstrlist.h cgi.h kbookmarkdlg.h fileentry.h finddlg.h
 
 BUILT_SOURCES =	\
 	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc htmlopts.moc \
@@ -44,7 +45,8 @@ BUILT_SOURCES =	\
 	kioserver_ipc.moc kfmman.moc kiojob.moc kmsgwin.moc htmlcache.moc \
 	kfmtree.moc krenamewin.moc passworddialog.moc kURLcompletion.moc \
 	kfmjob.moc kfmexec.moc cgi.moc kbind.moc kfinder.moc kfm.moc	\
-	useragentdlg.moc kproxydlg.moc kkfmoptdlg.moc khttpoptdlg.moc open-with.moc
+	useragentdlg.moc kproxydlg.moc kkfmoptdlg.moc khttpoptdlg.moc \
+	open-with.moc finddlg.moc
 
 DISTCLEANFILES = $(BUILT_SOURCES)
 
@@ -168,6 +170,10 @@ kkfmoptdlg.moc: kkfmoptdlg.h
 khttpoptdlg.cpp:khttpoptdlg.moc
 khttpoptdlg.moc:khttpoptdlg.h
 	$(MOC) khttpoptdlg.h -o khttpoptdlg.moc
+     
+finddlg.cpp:finddlg.moc
+finddlg.moc:finddlg.h
+	$(MOC) finddlg.h -o finddlg.moc
      
 SUBDIRS = kfmwarn client kioslave pics Desktop kfmexec config
 
