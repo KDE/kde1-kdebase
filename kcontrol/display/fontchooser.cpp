@@ -210,7 +210,7 @@ void KFontChooser::getFontList( QStrList &list, bool fixed )
 		getFontList( lstSys, "-*-*-*-*-*-*-*-*-*-*-m-*-*-*" );
 		getFontList( lstSys, "-*-*-*-*-*-*-*-*-*-*-c-*-*-*" );
 	} else
-		getFontList( lstSys, "-*-*-*-*-*-*-*-*-*-*-*-*-*-*" );
+		getFontList( lstSys, "-*-*-*-*-*-*-*-*-*-*-p-*-*-*" );
 		
 	if ( !kapp->getKDEFonts( &lstKDE ) ) {
 		list = lstSys;
