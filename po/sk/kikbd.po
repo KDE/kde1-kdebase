@@ -342,7 +342,7 @@ msgid ""
 "used"
 msgstr ""
 "Pou¾íva» iba ¹tandardnú a naposledy aktívnu klávesovú mapu pre prepínanie "
-"pomocou klávesy
+"pomocou klávesy"
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"
