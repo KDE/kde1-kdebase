@@ -601,6 +601,16 @@ bool ExecPropsPage::supports( KURL *_kurl )
     QString t( _kurl->path() );
     KURL::decodeURL( t );
     QFile f( t );
+
+    struct stat buff;
+    stat( t, &buff );
+
+    struct stat lbuff;
+    lstat( t, &lbuff );
+
+    if ( S_ISDIR( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
+	return false;
+
     if ( !f.open( IO_ReadOnly ) )
 	return false;
     
@@ -790,6 +800,15 @@ bool URLPropsPage::supports( KURL *_kurl )
     QString path = _kurl->path();
     KURL::decodeURL( path );
     QFile f( path );
+
+    struct stat buff;
+    stat( path, &buff );
+
+    struct stat lbuff;
+    lstat( path, &lbuff );
+
+    if ( S_ISDIR( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
+	return false;
     if ( !f.open( IO_ReadOnly ) )
 	return false;
     
@@ -1339,6 +1358,15 @@ bool ApplicationPropsPage::supports( KURL *_kurl )
     QString path = _kurl->path();
     KURL::decodeURL( path );
     QFile f( path );
+
+    struct stat buff;
+    stat( path, &buff );
+
+    struct stat lbuff;
+    lstat( path, &lbuff );
+
+    if ( S_ISDIR( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
+	return false;
     if ( !f.open( IO_ReadOnly ) )
 	return false;
     
@@ -1587,6 +1615,15 @@ bool BindingPropsPage::supports( KURL *_kurl )
     QString path = _kurl->path();
     KURL::decodeURL( path );
     QFile f( path );
+
+    struct stat buff;
+    stat( path, &buff );
+
+    struct stat lbuff;
+    lstat( path, &lbuff );
+
+    if ( S_ISDIR( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
+	return false;
     if ( !f.open( IO_ReadOnly ) )
 	return false;
     
@@ -1829,6 +1866,15 @@ bool DevicePropsPage::supports( KURL *_kurl )
     QString path = _kurl->path();
     KURL::decodeURL( path );
     QFile f( path );
+
+    struct stat buff;
+    stat( path, &buff );
+
+    struct stat lbuff;
+    lstat( path, &lbuff );
+
+    if ( S_ISDIR( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
+	return false;
     if ( !f.open( IO_ReadOnly ) )
 	return false;
     
