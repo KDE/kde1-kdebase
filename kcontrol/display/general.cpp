@@ -295,7 +295,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	
 	groupLayout->addLayout( stackLayout );
 
-	QLabel *label = new QLabel( "Sample text", group );
+	QLabel *label = new QLabel( i18n("Sample text"), group );
 	label->adjustSize();
 	label->setFixedHeight( label->height() );
 	label->setMinimumWidth(label->width());
