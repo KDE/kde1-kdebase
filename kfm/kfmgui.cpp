@@ -345,7 +345,7 @@ void KfmGui::initToolBar()
     }
 	    
     addToolBar( toolbar );
-    toolbar->setPos(KToolBar::Top);
+    toolbar->setBarPos(KToolBar::Top);
     toolbar->show();                
     
 }

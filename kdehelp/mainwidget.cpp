@@ -246,7 +246,7 @@ void KHelpMain::createToolbar()
 			    FALSE, "Stop");
 
 
-	tb->setPos( KToolBar::Top );
+	tb->setBarPos( KToolBar::Top );
 	toolbar = tb;
 }
 
@@ -274,17 +274,17 @@ void KHelpMain::readConfig()
 	// now the position for the toolbar
 	o = config->readEntry( "ToolBarPos" );
 	if ( o.isEmpty() )
-		toolBar()->setPos(KToolBar::Top);
+		toolBar()->setBarPos(KToolBar::Top);
 	else if ("Top" == o) 
-		toolBar()->setPos(KToolBar::Top);
+		toolBar()->setBarPos(KToolBar::Top);
 	else if ("Bottom" == o)
-		toolBar()->setPos(KToolBar::Bottom);
+		toolBar()->setBarPos(KToolBar::Bottom);
 	else if ("Left" == o)
-		toolBar()->setPos(KToolBar::Left);
+		toolBar()->setBarPos(KToolBar::Left);
 	else if ("Right" == o)
-		toolBar()->setPos(KToolBar::Right);
+		toolBar()->setBarPos(KToolBar::Right);
 	else
-		toolBar()->setPos(KToolBar::Top);
+		toolBar()->setBarPos(KToolBar::Top);
 
 	o = config->readEntry( "ShowStatusBar" );
 	if ( !o.isEmpty() && o.find( "No", 0, false ) == 0 )
@@ -552,7 +552,7 @@ void KHelpMain::slotOptionsSave()
 
 	config->setGroup( "Appearance" ); 
 	config->writeEntry( "ShowToolBar", showToolBar ? "Yes" : "No" );
-	switch (toolbar->pos())
+	switch (toolbar->barPos())
 	{
 		case KToolBar::Top:
 		  config->writeEntry( "ToolBarPos", "Top");
