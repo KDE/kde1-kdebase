@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KONSOLE\n"
-"POT-Creation-Date: 1998-11-07 01:24+0100\n"
+"POT-Creation-Date: 1998-11-10 01:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,6 +131,6 @@ msgstr "Uusi"
 msgid "Sessions"
 msgstr "Sessiot"
 
-#: main.C:787
+#: main.C:795
 msgid "Welcome to the console"
 msgstr "Tervetuloa konsoliin"

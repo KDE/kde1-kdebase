@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: konsole\n"
-"POT-Creation-Date: 1998-11-07 01:24+0100\n"
+"POT-Creation-Date: 1998-11-10 01:24+0100\n"
 "PO-Revision-Date: 1998-11-07 18:53+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -129,6 +129,6 @@ msgstr "Ny"
 msgid "Sessions"
 msgstr "Sessioner"
 
-#: main.C:787
+#: main.C:795
 msgid "Welcome to the console"
 msgstr "Välkommen till konsolen"

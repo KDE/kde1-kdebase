@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-07 01:24+0100\n"
+"POT-Creation-Date: 1998-11-10 01:24+0100\n"
 "PO-Revision-Date: 1998-06-10 00:50+0200\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN (gb2312)\n"
@@ -133,7 +133,7 @@ msgstr ""
 msgid "Sessions"
 msgstr ""
 
-#: main.C:787
+#: main.C:795
 msgid "Welcome to the console"
 msgstr "ª∂”≠ π”√ console"
 
