@@ -17,7 +17,7 @@ pre-configure:
 		rm -f $(PLIST)
 post-install:
 		${MAKE} PREFIX=${PREFIX} make-plist
-		cp -R ${INSTALL_ROOT}/* /
+		cp -Rp ${INSTALL_ROOT}/* /
 		rm -rf ${INSTALL_ROOT}
 
 # This should finally work somewhat decently now
