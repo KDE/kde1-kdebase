@@ -1120,7 +1120,7 @@ void KRootIcon::initToolTip()
     QString com = typ->getComment( url.data() );
     com.detach();
 
-    if ( !com.isNull() )
+    if ( !com.isEmpty() )
 	QToolTip::add( this, com.data() );
 }
 
