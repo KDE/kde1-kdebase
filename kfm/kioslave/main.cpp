@@ -80,11 +80,8 @@ KIOSlave::KIOSlave( char * _path )
 
     connect( ipc, SIGNAL( copy( const char*, const char*, bool ) ),
 	     this, SLOT( copy( const char*, const char*, bool ) ) );
-    connect( ipc, SIGNAL( get( const char*, const char* ) ),
-	     this, SLOT( get( const char*, const char* ) ) );
-    connect( ipc, SIGNAL( reload( const char* ) ),
-	     this, SLOT( reload( const char* ) ) );
-    connect( ipc, SIGNAL( del( const char* ) ), this, SLOT( del( const char* ) ) );
+    connect( ipc, SIGNAL( get( const char*, const char*, const char *, bool ) ),
+	     this, SLOT( get( const char*, const char*, const char *, bool ) ) );
     connect( ipc, SIGNAL( mkdir( const char* ) ), this, SLOT( mkdir( const char* ) ) );
     connect( ipc, SIGNAL( unmount( const char* ) ), this, SLOT( unmount( const char* ) ) );
     connect( ipc, SIGNAL( mount( bool, const char*, const char*, const char* ) ),
@@ -516,17 +513,12 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
     ipc->done();
 }
 
-void KIOSlave::get( const char *_url, const char *_data )
+void KIOSlave::get( const char *_url, const char *_data, const char *_cookies, bool _reload )
 {  
-  get( _url, false, _data );
+  get( _url, _reload, _data, _cookies );
 }
 
-void KIOSlave::reload( const char *_url )
-{
-  get( _url, true );
-}
-
-void KIOSlave::get( const char *_url, bool _reload, const char *_data )
+void KIOSlave::get( const char *_url, bool _reload, const char *_data, const char *_cookies )
 {
   KURL u( _url );
   if ( u.isMalformed() )
@@ -554,8 +546,11 @@ void KIOSlave::get( const char *_url, bool _reload, const char *_data )
 	     ipc, SLOT( redirection( const char* ) ) );
     connect( src_prot, SIGNAL( info( const char* ) ),
 	     ipc, SLOT( info( const char* ) ) );
+    connect( src_prot, SIGNAL( cookie( const char*, const char* ) ),
+	     ipc, SLOT( cookie( const char*, const char* ) ) );
     int err;
     src_prot->SetData(_data);
+    src_prot->SetCookies(_cookies);
     
     if ( !_reload )
       err = src_prot->Open( &su, KProtocol::READ );

@@ -418,6 +418,12 @@ int KProtocolHTTP::SetData(const char *_data)
     return SUCCESS;
 }
 
+int KProtocolHTTP::SetCookies(const char *_cookies)
+{
+    Cookies = _cookies;
+    return SUCCESS;
+}
+
 int KProtocolHTTP::Open( KURL *_url, int mode )
 {
   return OpenHTTP( _url, mode, false );
@@ -566,6 +572,11 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 	}
 	command += "\r\n";
 
+        if (!Cookies.isEmpty())
+        {   
+            command += Cookies;
+        }
+
         if (!post_data.isEmpty())
         {
             command += "Content-Type: application/x-www-form-urlencoded\r\n"
@@ -609,6 +620,7 @@ int KProtocolHTTP::ProcessHeader()
 {
 	char buffer[1024];
 	QString mType;
+	QString Cookie;
 	int len = 1;
 
 	size = 0xFFFFFFF;
@@ -624,11 +636,17 @@ int KProtocolHTTP::ProcessHeader()
 	    while( len && (buffer[len-1] == '\n' || buffer[len-1] == '\r'))
 		buffer[--len] = 0;
 
-	    if ( strncmp( buffer, "Content-length: ", 16 ) == 0 
-	    ||   strncmp( buffer, "Content-Length: ", 16 ) == 0 )
+	    if ( strncasecmp( buffer, "Set-Cookie", 10 ) == 0 )
+	    {
+	        Cookie += buffer;
+	        Cookie += "\n";
+	        printf("!!!START COOKIE!!!\n%s\n!!!END COOKIE!!!\n", buffer);
+	    } 
+	    else if ( strncasecmp( buffer, "Content-Length: ", 16 ) == 0 )
+	    {
 		size = atol( buffer + 16 );
-	    else if ( strncmp( buffer, "Content-Type: ", 14 ) == 0 
-		 ||   strncmp( buffer, "Content-type: ", 14 ) == 0 )
+            }
+	    else if ( strncasecmp( buffer, "Content-Type: ", 14 ) == 0 )
 	    {
 	    // Jacek: We can't send mimeType signal now,
 	    //    because there may be another Content-Type to come
@@ -649,7 +667,7 @@ int KProtocolHTTP::ProcessHeader()
 		}
 	    }
 	    // In fact we should do redirection only if we got redirection code
-	    else if ( strncmp( buffer, "Location: ", 10 ) == 0 )
+	    else if ( strncasecmp( buffer, "Location: ", 10 ) == 0 )
 	    {
 		Close();
 		KURL u( url );
@@ -660,6 +678,10 @@ int KProtocolHTTP::ProcessHeader()
 	    
 	}
 	emit mimeType( mType );
+	if (!Cookie.isEmpty())
+	{
+	   emit cookie( url.data(), Cookie.data() );
+	}
 	bytesleft = size;
 	return(SUCCESS);
 }

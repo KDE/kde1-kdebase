@@ -127,6 +127,19 @@ void KIOSlaveIPC::mimeType(const char* _type)
 	write_string( sock->socket(), _type );
 }
 
+void KIOSlaveIPC::cookie(const char* _url, const char* _cookie_str)
+{
+	int len = 0;
+	len += len_string( _url );
+	len += len_string( _cookie_str );
+	len += len_string("cookie");
+	write_int( sock->socket(), len );
+	write_string( sock->socket(), "cookie" );
+	write_string( sock->socket(), _url );
+	write_string( sock->socket(), _cookie_str );
+}
+
+
 void KIOSlaveIPC::parse_mount( char *_data, int _len )
 {
 	int pos = 0;
@@ -188,26 +201,24 @@ void KIOSlaveIPC::parse_get( char *_data, int _len )
 	// Parsing string
 	const char* _url;
 	_url = read_string( _data, pos, _len );
+
 	// Parsing string
 	const char* _post_data;
 	_post_data = read_string( _data, pos, _len );
 
+	// Parsing string
+	const char* _cookies;
+	_cookies = read_string( _data, pos, _len );
+
+        // Parsing bool
+        bool _reload;
+        _reload = read_bool( _data, pos, _len );
+
 	// Calling function
-	emit get( _url, _post_data );
+	emit get( _url, _post_data, _cookies, _reload );
 	free( (void*)_url );
 	free( (void*)_post_data );
-}
-
-void KIOSlaveIPC::parse_reload( char *_data, int _len )
-{
-	int pos = 0;
-
-	// Parsing string
-	const char* _url;
-	_url = read_string( _data, pos, _len );
-	// Calling function
-	emit reload( _url );
-	free( (void*)_url );
+	free( (void*)_cookies );
 }
 
 void KIOSlaveIPC::parse_del( char *_data, int _len )

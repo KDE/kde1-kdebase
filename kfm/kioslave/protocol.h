@@ -51,6 +51,8 @@ signals:
 
     void info( const char* );
     
+    void cookie( const char*, const char*);
+    
 private:
 	QString lastErrorMessage;
 	int lastKError;
@@ -72,7 +74,9 @@ public:
 	virtual int ReOpen(KURL *url, int mode);
 
 	/** Set data for POST method **/
-   virtual int SetData(const char *) { return FAIL; }
+    virtual int SetData(const char *) { return FAIL; }
+	/** Set cookies **/
+    virtual int SetCookies(const char *) { return FAIL; }
   	virtual long Read(void *buffer, long nbytes);
 	virtual long Write(void *buffer, long nbytes);
 	virtual int Close();

@@ -102,7 +102,6 @@ void KIOSlaveIPC::parse( char *_data, int _len )
 	if ( strcmp( name, "unmount" ) == 0 ) { parse_unmount( _data, _len ); } else
 	if ( strcmp( name, "copy" ) == 0 ) { parse_copy( _data, _len ); } else
 	if ( strcmp( name, "get" ) == 0 ) { parse_get( _data, _len ); } else
-	if ( strcmp( name, "reload" ) == 0 ) { parse_reload( _data, _len ); } else
 	if ( strcmp( name, "del" ) == 0 ) { parse_del( _data, _len ); } else
 	if ( strcmp( name, "mkdir" ) == 0 ) { parse_mkdir( _data, _len ); } else
 	if ( strcmp( name, "list" ) == 0 ) { parse_list( _data, _len ); } else

@@ -43,6 +43,8 @@ public slots:
 public slots:
 	void redirection(const char* _url);
 public slots:
+	void cookie(const char* _url, const char* _cookie_str);
+public slots:
 	void mimeType(const char* _type);
 signals:
 	void mount(bool _ro, const char* _fstype, const char* _dev, const char* _point);
@@ -57,13 +59,9 @@ signals:
 private:
 	void parse_copy( char *_data, int _len );
 signals:
-	void get(const char* _url, const char* _data);
+	void get(const char* _url, const char* _data, const char* _cookies, bool _reload);
 private:
 	void parse_get( char *_data, int _len );
-signals:
-	void reload(const char* _url);
-private:
-	void parse_reload( char *_data, int _len );
 signals:
 	void del(const char* _url);
 private:
