@@ -87,7 +87,6 @@ kspace_kss_LDADD = $(LDADD) $(GLLIB)
 space.cpp: space.moc
 
 kscience_kss_SOURCES = $(BASE_SRCS) science.cpp
-kscience_kss_LDADD = $(LDADD) $(GLLIB)
 science.cpp: science.moc
 
 klock_SOURCES = klock.cpp kscreensave.cpp
