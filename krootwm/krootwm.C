@@ -168,6 +168,16 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 
     updateNewMenu (); // needs to be here because of templates path. David.
 
+    // David create the popups here, so that buildMenubars can be called
+    // several times
+    rmb = new QPopupMenu;
+    rmb->setMouseTracking(TRUE);
+    rmb->installEventFilter(this);
+    mmb = new QPopupMenu;
+    mmb->setMouseTracking(TRUE);
+    mmb->installEventFilter(this);
+    mmb->setCheckable(TRUE);
+
     buildMenubars();
 }
 
@@ -175,9 +185,9 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 void KRootWm::buildMenubars() {
 
   // --------- Sven's changes for macmode begin
+    debug("buildMenubars");
     if (macMode)
     {
-	debug("buildMenubars");
 	myMenuBarContainer = new QWidget(0, 0, WStyle_Customize|WStyle_NoBorder);
 	myMenuBar = new KMenuBar(myMenuBarContainer);
 
@@ -240,9 +250,10 @@ void KRootWm::buildMenubars() {
 
     }
 
-    rmb = new QPopupMenu;
-    rmb->setMouseTracking(TRUE);
-    rmb->installEventFilter(this);
+    rmb->clear();
+    mmb->clear();
+
+    printf(myMenuBar ? "menuBar\n" : "no menuBar\n");
     if (!myMenuBar)
     {
       // This is because popupmenu cannot be submenu of two
@@ -264,10 +275,6 @@ void KRootWm::buildMenubars() {
     rmb->insertItem(klocale->translate("Logout"), RMB_LOGOUT);
     connect(rmb, SIGNAL(activated(int)), this, SLOT(rmb_menu_activated(int)));
 
-    mmb = new QPopupMenu;
-    mmb->setMouseTracking(TRUE);
-    mmb->installEventFilter(this);
-    mmb->setCheckable(TRUE);
     connect(mmb, SIGNAL(activated(int)), this, SLOT(mmb_menu_activated(int)));
     connect(mmb, SIGNAL(aboutToShow()), this, SLOT(generateWindowlist()));
 
@@ -319,6 +326,9 @@ void KRootWm::kwmCommandReceived(QString com)
 	  delete myMenuBarContainer;
 	  myMenuBarContainer = 0;
 	  macMode = false;
+          updateBookmarkMenu();
+          updateNewMenu ();
+	  buildMenubars(); // will add New and Bookmark menus
       }
   }
 
