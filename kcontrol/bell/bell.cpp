@@ -279,5 +279,11 @@ void KBellConfig::applySettings()
   saveParams();
 }
 
+void KBellConfig::defaultSettings()
+{
+  setBellVolume(50);
+  setBellPitch(800);
+  setBellDuration(100);
+}
 
 #include "bell.moc"

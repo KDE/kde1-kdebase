@@ -32,6 +32,7 @@ public:
 
   void init();
   void apply();
+  void defaultValues();
 
 private:
 
@@ -72,6 +73,13 @@ void KBellApplication::apply()
 {
   if (bell)
     bell->applySettings();
+}
+
+
+void KBellApplication::defaultValues()
+{
+  if (bell)
+    bell->defaultSettings();
 }
 
 

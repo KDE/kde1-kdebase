@@ -50,7 +50,8 @@ public slots:
 
   void loadSettings();
   void applySettings();
-  
+  void defaultSettings();
+    
 private slots:
   void ringBell();
 
