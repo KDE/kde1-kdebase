@@ -266,6 +266,10 @@ void KfmGui::initMenu()
     edit->insertItem( klocale->translate("Find &next"), this, 
 		      SLOT(slotFindNext()), Key_F3 );
     edit->insertSeparator();
+    edit->insertItem( klocale->translate( "Show History" ), this, 
+                      SLOT( slotShowHistory() ) );
+    edit->insertItem( klocale->translate( "Show Cache" ), this, 
+                      SLOT( slotShowCache() ) );
     edit->insertItem( klocale->translate("Mime &Types"), this, 
 		      SLOT(slotEditMimeTypes()) );
     edit->insertItem( klocale->translate("App&lications"), this, 
@@ -345,11 +349,6 @@ void KfmGui::initMenu()
     
     mcache = new QPopupMenu;
     CHECK_PTR( mcache );
-    mcache->setCheckable(true);
-    mcache->insertItem( klocale->translate( "Show History" ),
-			this, SLOT( slotShowHistory() ) );
-    mcache->insertItem( klocale->translate( "Show Cache" ),
-			this, SLOT( slotShowCache() ) );
     mcache->insertItem( klocale->translate( "Clear Cache" ),
 			this, SLOT( slotClearCache() ) );
     mcache->insertSeparator();
@@ -362,10 +361,10 @@ void KfmGui::initMenu()
     mcache->insertItem( klocale->translate( "Never save cache" ),
 			this, SLOT( slotSaveCacheOff() ) );
     
-    mcache->setItemChecked( mcache->idAt( 4 ), HTMLCache::isEnabled() );
-    mcache->setItemChecked( mcache->idAt( 5 ), !HTMLCache::isEnabled() );
-    mcache->setItemChecked( mcache->idAt( 6 ), HTMLCache::isSaveEnabled() );
-    mcache->setItemChecked( mcache->idAt( 7 ), !HTMLCache::isSaveEnabled() );
+    mcache->setItemChecked( mcache->idAt( 2 ), HTMLCache::isEnabled());
+    mcache->setItemChecked( mcache->idAt( 3 ), !HTMLCache::isEnabled());
+    mcache->setItemChecked( mcache->idAt( 4 ), HTMLCache::isSaveEnabled() );
+    mcache->setItemChecked( mcache->idAt( 5 ), !HTMLCache::isSaveEnabled() );
 
     moptions = new QPopupMenu;
     CHECK_PTR( moptions );
@@ -388,6 +387,8 @@ void KfmGui::initMenu()
     else
       moptions->setItemEnabled(moptions->idAt( 6 ), false);
     moptions->insertSeparator();
+
+    moptions->insertItem( klocale->translate("&Cache"), mcache );
     moptions->insertItem( klocale->translate("&Configure File Manager..."),
                           this, SLOT(slotConfigureFileManager()));
     moptions->insertItem( klocale->translate("Configure &Browser..."),
@@ -444,7 +445,6 @@ klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin J
     menu->insertItem( klocale->translate("&View"), mview );
     menu->insertItem( klocale->translate("&Go"), mgo );
     menu->insertItem( klocale->translate("&Bookmarks"), bookmarkMenu );
-    menu->insertItem( klocale->translate("&Cache"), mcache );
     menu->insertItem( klocale->translate("&Options"), moptions );
     menu->insertSeparator();
     menu->insertItem( klocale->translate("&Help"), help );
@@ -684,32 +684,32 @@ void KfmGui::slotClearCache()
 
 void KfmGui::slotCacheOn()
 {
-    mcache->setItemChecked( mcache->idAt( 4 ), true );
-    mcache->setItemChecked( mcache->idAt( 5 ), false );
+    mcache->setItemChecked( mcache->idAt( 2 ), true );
+    mcache->setItemChecked( mcache->idAt( 3 ), false );
 
     HTMLCache::enableCache( true );
 }
 
 void KfmGui::slotCacheOff()
 {
-    mcache->setItemChecked( mcache->idAt( 4 ), false );
-    mcache->setItemChecked( mcache->idAt( 5 ), true );
+    mcache->setItemChecked( mcache->idAt( 2 ), false );
+    mcache->setItemChecked( mcache->idAt( 3 ), true );
 
     HTMLCache::enableCache( false );
 }
 
 void KfmGui::slotSaveCacheOn()
 {
-    mcache->setItemChecked( mcache->idAt( 6 ), true );
-    mcache->setItemChecked( mcache->idAt( 7 ), false );
+    mcache->setItemChecked( mcache->idAt( 4 ), true );
+    mcache->setItemChecked( mcache->idAt( 5 ), false );
 
     HTMLCache::enableSaveCache( true );
 }
 
 void KfmGui::slotSaveCacheOff()
 {
-    mcache->setItemChecked( mcache->idAt( 6 ), false );
-    mcache->setItemChecked( mcache->idAt( 7 ), true );
+    mcache->setItemChecked( mcache->idAt( 4 ), false );
+    mcache->setItemChecked( mcache->idAt( 5 ), true );
 
     HTMLCache::enableSaveCache( false );
 }
