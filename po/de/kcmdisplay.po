@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kdehelp \n"
+"Project-Id-Version: kcmdisplay \n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: 1998-03-30 14:57+01\n"
-"Last-Translator: Oliver Hensel <oliver.hensel@gmx.de>\n"
+"Last-Translator: Carsten Pfeiffer <pfeiffer@kde.org>\n"
 
 #: backgnd.cpp:54
 msgid "Enter new desktop name"
@@ -19,7 +19,7 @@ msgstr "&Umbenennen..."
 
 #: backgnd.cpp:196
 msgid "&Common Background"
-msgstr "Allgemeiner &Hintergrund"
+msgstr "Gemeinsamer &Hintergrund"
 
 #: backgnd.cpp:224 colorscm.cpp:82
 msgid "Colors"
@@ -51,7 +51,7 @@ msgstr "&Auswählen..."
 
 #: backgnd.cpp:368
 msgid "Arrangement:"
-msgstr ""
+msgstr "Anordnung:"
 
 #: backgnd.cpp:375
 msgid "Tiled"
@@ -78,9 +78,8 @@ msgid "Centred Warp"
 msgstr "Zentrierte Verzerrung"
 
 #: backgnd.cpp:381
-#, fuzzy
 msgid "Centred Maxpect"
-msgstr "&Zentriert"
+msgstr "&Zentriert Maximalgröße"
 
 #: backgnd.cpp:382
 msgid "Symmetrical Tiled"
@@ -103,14 +102,12 @@ msgid "Setu&p..."
 msgstr "&Einstellungen..."
 
 #: backgnd.cpp:418
-#, fuzzy
 msgid "&Dock into the panel"
 msgstr "In Panel einbinden"
 
 #: backgnd.cpp:443
-#, fuzzy
 msgid "Cache size (kB):"
-msgstr "Cache-Größe"
+msgstr "Cache-Größe (kB)"
 
 #: backgnd.cpp:1339
 msgid "Desktop names"
@@ -318,8 +315,8 @@ msgid ""
 "system where the color scheme is stored."
 msgstr ""
 "Dieses Farbschema konnte nicht entfernt werden.\n"
-"Vielleicht haben Sie keine Berechtigung, das\n"
-"Dateisystem zu verändern, auf dem das Farbschema gespeichert ist."
+"Vielleicht haben Sie keine Berechtigung, die\n"
+"Datei zu verändern, in dem das Farbschema gespeichert ist."
 
 #: colorscm.cpp:362
 msgid "Naming error"
@@ -337,7 +334,7 @@ msgstr ""
 
 #: savescm.cpp:18
 msgid "Add a color scheme"
-msgstr "Eine Farbpalette hinzufügen"
+msgstr "Ein Farbschema hinzufügen"
 
 #: savescm.cpp:32
 msgid ""
@@ -419,7 +416,7 @@ msgstr "Niedrig"
 
 #: general.cpp:221
 msgid "Style"
-msgstr ""
+msgstr "Stil"
 
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
@@ -427,12 +424,11 @@ msgstr "&Windows 95-Stil"
 
 #: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "&Menüleiste oben am Bildschirm nach MacOS Manier"
 
 #: general.cpp:259
-#, fuzzy
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "Stil auch für Nicht-KDE-Anwendungen verwenden"
+msgstr "&Farben und Fonts auch für Nicht-KDE-Anwendungen verwenden"
 
 #: general.cpp:530
 msgid "General font"
@@ -482,14 +478,13 @@ msgstr "&Farben"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "&Stil"
 
 #: main.cpp:83
-#, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
-"Benutzung: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+"Benutzung: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
