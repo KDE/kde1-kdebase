@@ -1476,7 +1476,7 @@ void  MyApp::timerEvent( QTimerEvent * ){
   keys = new KGlobalAccel();
   #include "kwmbindings.cpp"
   keys->connectItem( "Task manager", this, SLOT( slotTaskManager() ) );
-  keys->connectItem( "Kill window mode", this, SLOT( slotWindowKillMode() ) );
+  keys->connectItem( "Kill window mode", this, SLOT( slotKillWindowMode() ) );
   keys->connectItem( "Execute command", this, SLOT( slotExecuteCommand() ) );
   keys->connectItem( "Pop-up window operations menu", this, SLOT( slotWindowOperations() ) );
   keys->connectItem( "Window raise", this, SLOT( slotWindowRaise() ) );
