@@ -145,7 +145,7 @@ void KFMServer::slotOpenURL( const char* _url )
 	if ( u.isMalformed() )
 	{
 	    QString tmp;
-	    tmp.sprintf( "%s\n%s", klocale->translate( "Malformed URL" ), url );
+	    tmp.sprintf( "%s\n%s", klocale->translate( "Malformed URL" ), url.data() );
 	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ), tmp );
 	    return;
 	}
