@@ -7,10 +7,8 @@
 Authors=Petter Reinholdtsen <pere@td.org.uit.no>,
 
 Comment=Normal layout
-Comment[no]=Normal utlegg
 
 Language=Norwegian
-Language[no]=Norsk
 
 Charset=ISO-8859-1
 Label=No
