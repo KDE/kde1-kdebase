@@ -60,7 +60,7 @@ msgstr "&Nalistova»..."
 
 #: backgnd.cpp:367
 msgid "Arrangement:"
-msgstr ""
+msgstr "Aran¾ovanie:"
 
 #: backgnd.cpp:374
 msgid "Tiled"
@@ -115,9 +115,8 @@ msgid "&Dock into the panel"
 msgstr "&Vsunú» sa do panelu"
 
 #: backgnd.cpp:442
-#, fuzzy
 msgid "Cache size (kB):"
-msgstr "Veµkos» ke¹e"
+msgstr "Veµkos» ke¹e (kB):"
 
 #: backgnd.cpp:1339
 msgid "Desktop names"
@@ -437,7 +436,7 @@ msgstr "&Aplikova» ¹týl pre ne-KDE apl."
 
 #: general.cpp:258
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "&Menubar na vrchole obrazovky v ¹týle MacOS"
 
 #: general.cpp:273
 msgid "Desktop fonts"
