@@ -9,7 +9,7 @@ CC = @CC@
 MOC = @MOC@
 INCFLAGS = -I. @all_includes@ -I..
 CXXFLAGS = @CXXFLAGS@ $(INCFLAGS) -DHAVE_CONFIG_H
-LDFLAGS = @LDFLAGS@ @all_libraries@ -L. -lkdecore -lkdeui -lqt -lXext -lX11
+LDFLAGS = @LDFLAGS@ @all_libraries@ -L. -lkdecore -lkdeui -lqt -lXext -lX11 @LIBCRYPT@
 
 ############# Install ##############
 

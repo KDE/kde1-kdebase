@@ -43,6 +43,7 @@ AC_PATH_KDE
 dnl Checks for libraries. 
 AC_CHECK_LIB(socket, socket, [LIBSOCKET="-lsocket -lnsl"]) dnl for Solaris
 AC_CHECK_LIB(compat, main, [LIBCOMPAT="-lcompat"]) dnl for FreeBSD
+AC_CHECK_LIB(crypt, main, [LIBCRYPT="-lcrypt"]) dnl for BSD
 AC_FIND_GIF
 AC_FIND_JPEG
 
@@ -72,6 +73,7 @@ AC_ARG_PROGRAM
 dnl output files
 AC_SUBST(LIBSOCKET)
 AC_SUBST(LIBCOMPAT)
+AC_SUBST(LIBCRYPT)
 
 ac_output=`find . -name Makefile.in -print | sed -e 's/.in$//;' | sort`
 AC_OUTPUT($ac_output)

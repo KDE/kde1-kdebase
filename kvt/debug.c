@@ -10,7 +10,7 @@
  **************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
-#ifndef FREEBSD
+#ifndef __FREEBSD__
 #include <malloc.h>
 #endif
 
