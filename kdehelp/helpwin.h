@@ -30,12 +30,12 @@
 #include "history.h"
 
 // accelerator IDs
-#define NEW				100
+#define NEW			100
 #define CLOSE			101
 #define QUIT			102
 #define COPY			200
 
-#define KDEHELP_VERSION		"0.5.4"
+#define KDEHELP_VERSION		"0.5.5"
 
 #define STATUSBAR_HEIGHT	20
 #define SCROLLBAR_WIDTH		16
@@ -131,8 +131,6 @@ signals:
 
 	void setTitle(const char *_title);
 
-	void saveSession();
-
 public slots:
 	void	slotOpenFile();
 	void	slotOpenURL();
@@ -187,12 +185,12 @@ private:
 	enum FileType { UnknownFile, HTMLFile, InfoFile, ManFile, CannotOpenFile };
 
 	void	readOptions();
-	int		openFile( const QString & );
+	int	openFile( const QString & );
 	int 	formatInfo( int bodyOnly = FALSE );
-	int		formatMan( int bodyOnly = FALSE );
+	int	formatMan( int bodyOnly = FALSE );
 	int 	openHTML( const char *location );
-	int		openRemote( const char *_url );
-	int		runCGI( const char *_url );
+	int	openRemote( const char *_url );
+	int	runCGI( const char *_url );
 	FileType detectFileType( const QString &filename );
 	void	convertSpecial( const char *buffer, QString &converted );
 	void	enableToolbarButton( int id, bool enable );

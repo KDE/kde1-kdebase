@@ -41,7 +41,7 @@ int Entry::readEntry( const char *filename )
 	QString path = config.readEntry( "DocPath" );
 	if ( path.isNull() )
 		return FALSE;
-	docPath = kapp->kdedir() + "/share/doc/HTML/";
+	docPath = kapp->kdedir() + "/share/doc/HTML/default/";
 	docPath += path;
 	info = config.readEntry( "Info" );
 	if ( info.isNull() )
@@ -176,7 +176,7 @@ int main( int argc, char **argv )
 	processDir( appPath, stream );
 
 	// User applications
-	appPath = home + "/Personal";
+	appPath = home + "/.kde/share/applnk";
 
 	// first read entries in this directories
 	if ( readEntries( appPath, list ) > 0 )

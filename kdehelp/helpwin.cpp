@@ -126,18 +126,18 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	scrollTo = 0;
 	rmbPopup = NULL;
 
-	DOCS_PATH = kapp->kdedir() + "/share/doc/HTML/";
+	DOCS_PATH = kapp->kdedir() + "/share/doc/HTML/default/kdehelp/";
 
 	readOptions();
 	man = new cMan;
 	info = new cInfo;
 
 	accel = new QAccel( this );
-	accel->insertItem( CTRL + Key_C,		COPY );
+	accel->insertItem( CTRL + Key_C,	COPY );
 	accel->insertItem( CTRL + Key_Insert,	COPY );
-	accel->insertItem( CTRL + Key_N,		NEW );
-	accel->insertItem( CTRL + Key_W,		CLOSE );
-	accel->insertItem( CTRL + Key_Q,		QUIT );
+	accel->insertItem( CTRL + Key_N,	NEW );
+	accel->insertItem( CTRL + Key_W,	CLOSE );
+	accel->insertItem( CTRL + Key_Q,	QUIT );
 
 	accel->connectItem( COPY, this, SLOT(slotCopy()) );
 
@@ -215,6 +215,7 @@ KHelpWindow::~KHelpWindow()
 {
 	if (openURLDialog)
 		delete openURLDialog;
+
 	delete man;
 	delete info;
 //	delete dropZone;		// causes SEG FAULT. Why?
@@ -407,8 +408,6 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 			emit setURL( currentURL );
 			emit setLocation( currentURL ); 
 		}
-
-		emit saveSession();
 	}
 
 	setCursor( oldCursor );
@@ -481,7 +480,7 @@ int KHelpWindow::formatInfo( int bodyOnly )
 
 	if ( !bodyOnly )
 	{
-		view->setGranularity( 200 );
+		view->setGranularity( 400 );
 		view->begin();
 		view->write( "<html><head><title>" );
 		view->write( info->GetTitle() );
@@ -640,7 +639,7 @@ int KHelpWindow::formatMan( int bodyOnly )
 
 	if ( !bodyOnly )
 	{
-		view->setGranularity( 500 );
+		view->setGranularity( 600 );
 		view->begin();
 		view->write( "<html><head><title>" );
 		view->write( man->GetTitle() );
@@ -785,7 +784,7 @@ int KHelpWindow::openHTML( const char *location )
 	if ( !file.open(IO_ReadOnly) )
 		return 1;
 
-	view->setGranularity( 500 );
+	view->setGranularity( 600 );
 	view->begin( fullURL );
 
 	do

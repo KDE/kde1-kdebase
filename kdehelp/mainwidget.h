@@ -19,7 +19,6 @@ public:
 
 
 public slots:
-    void slotSaveSession();
     void slotEnableMenuItems();
     void slotNewWindow(const char *url);
     void slotCloneWindow();
@@ -43,8 +42,11 @@ public slots:
     void slotBookmarkChanged(KBookmark *parent);
 
 protected:
-    void closeEvent (QCloseEvent *e);
-    void resizeEvent(QResizeEvent *);
+    virtual void closeEvent (QCloseEvent *e);
+    virtual void resizeEvent(QResizeEvent *);
+
+    virtual void saveProperties( KConfig * );
+    virtual void readProperties( KConfig * );
 
 private:
     void createMenu();

@@ -114,10 +114,6 @@ KHelpMain::KHelpMain(const char *name)
 
 	// put bookmarks into boormark menu
 	helpwin->slotBookmarkChanged();
-
-	connect( helpwin, SIGNAL( saveSession() ), SLOT( slotSaveSession() ) );
-
-	KWM::setUnsavedDataHint( winId(), false );
 }
 
 
@@ -127,21 +123,6 @@ KHelpMain::~KHelpMain()
 	delete location;
 	delete toolbar;
 	delete menu;
-}
-
-
-void KHelpMain::slotSaveSession()
-{
-    QString cmd;
-
-    cmd = kapp->kdedir();
-    cmd += "/bin/kdehelp";
-    cmd += " -session ";
-    cmd += KWM::getProperties( winId() );
-    cmd += " ";
-    cmd += helpwin->getCurrentURL();
-
-    KWM::setWmCommand( winId(), cmd );
 }
 
 
@@ -414,14 +395,26 @@ void KHelpMain::resizeEvent( QResizeEvent * )
 	config->writeEntry( "Geometry", geom );
 
 	updateRects();
-
-	slotSaveSession();
 }
 
+void KHelpMain::saveProperties( KConfig *config )
+{
+    config->writeEntry( "URL", helpwin->getCurrentURL() );
+}
+
+void KHelpMain::readProperties( KConfig *config )
+{
+    QString url;
+
+    url = config->readEntry( "URL" );
+
+    if ( !url.isEmpty() )
+	openURL( url, true );
+}
 
 int KHelpMain::openURL( const char *URL, bool withHistory)
 {
-	return helpwin->openURL(URL, withHistory);
+    return helpwin->openURL(URL, withHistory);
 }
 
 

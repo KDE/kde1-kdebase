@@ -105,7 +105,7 @@ void errorHandler( int type, char *msg )
 int main(int argc, char *argv[])
 {
 	int i;
-	QString url, initDoc, sessionProps;
+	QString url, initDoc;
 	FILE *fp;
 
 	for ( i = 1; i < argc; i++ )
@@ -115,8 +115,6 @@ int main(int argc, char *argv[])
 			// skip caption
 			if ( strcasecmp( argv[i], "-caption" ) == 0 )
 				i++;
-			else if ( strcasecmp( argv[i], "-session" ) == 0 )
-				sessionProps = argv[++i];
 			continue;
 		}
 
@@ -161,7 +159,7 @@ int main(int argc, char *argv[])
 	{
 		KHelpMsg buf;
 		int pid;
-		QString msg = url + " " + sessionProps;
+		QString msg = url;
 		buf.setType( 1L );
 		buf.setMsg( msg );
 		fscanf( fp, "%d %d", &pid, &msgqid );
@@ -206,15 +204,30 @@ int main(int argc, char *argv[])
 
 	KApplication a( argc, argv, "kdehelp" );
 
-	KHelpMain *helpWin = new KHelpMain;
-	
-	if ( !helpWin->openURL( url ) )
-	{
-		if ( !sessionProps.isEmpty() )
-		    KWM::setProperties( helpWin->winId(), sessionProps );
-		helpWin->show();
+	KHelpMain *helpWin;
 
-		a.exec();
+	if ( a.isRestored() )
+	{
+	    int n = 1;
+	    while ( KTopLevelWidget::canBeRestored( n ) )
+	    {
+		helpWin = new KHelpMain;
+		helpWin->restore( n );
+		n++;
+	    }
+
+	    a.exec();
+	}
+	else
+	{
+	    helpWin = new KHelpMain;
+
+	    if ( !helpWin->openURL( url ) )
+	    {
+		    helpWin->show();
+
+		    a.exec();
+	    }
 	}
 
 	delete timer;
