@@ -106,8 +106,7 @@ KiKbdApplication::KiKbdApplication(int n, char**v)
   */
   Window win = findKiKbdWindow();
   if(win)
-    error(translate("KDE International Keyboard already "
-		    "started on this display."));
+    error(i18n("KDE International Keyboard already started on this display."));
 
   /**
      construct main widget
@@ -192,7 +191,6 @@ void KiKbdApplication::atExit()
 }
 void KiKbdApplication::save()
 {
-  cout << "save things" << endl;
   KiKbdConfig kikbdConfig;
   kikbdConfig.loadConfig();
   kikbdConfig.setGroup(confRunTimeGroup);
@@ -310,8 +308,8 @@ void KiKbdApplication::loadConfig()
   button->setMinimumSize(font.maxWidth()*len, 3*font.height()/2);
   mainWidget()->resize(button->minimumSize());
   menu->insertSeparator();
-  menu->insertItem(translate("Setup"));
-  menu->insertItem(translate("Exit"));
+  menu->insertItem(i18n("Setup"));
+  menu->insertItem(i18n("Exit"));
   //processEvents();
 
   /**
@@ -325,10 +323,10 @@ void KiKbdApplication::loadConfig()
     secondKey = KeyTranslate::stringToSym(switchKeys.at(1));
   if(kikbdConfig.oneKeySwitch()) {
     if(!removeModifier(firstKey))
-      warning(translate("Can not remove %s from Modifiers.\n"),
+      warning(i18n("Can not remove %s from Modifiers.\n"),
 	      switchKeys.at(0));
     if(!addModifier(firstKey, 5))
-      warning(translate("Can not add %s to Modifier number 3.\n"),
+      warning(i18n("Can not add %s to Modifier number 3.\n"),
 	      switchKeys.at(0));    
   }
   if((!kikbdConfig.oneKeySwitch()) && kikbdConfig.hasAltKeys()) {
@@ -338,7 +336,7 @@ void KiKbdApplication::loadConfig()
 	 try to remove this key from modifier
       */
       if(!removeModifier(KeyTranslate::stringToSym(altSwitchKeys.at(0))))
-	warning(translate("Can not remove %s from Modifiers.\n"),
+	warning(i18n("Can not remove %s from Modifiers.\n"),
 		altSwitchKeys.at(0));
       /**
 	 try to add this key to mod3
@@ -350,7 +348,7 @@ void KiKbdApplication::loadConfig()
 					  "Mode_switch", 1);
 	  if(!keyMaps.current()->changeKeySym(altSwitchKeys.at(0),
 					      "Mode_switch", 0)) {
-	    warning(translate("Can not set Mode Switch as %s"
+	    warning(i18n("Can not set Mode Switch as %s"
 			      " for keyboard %s.\nAlt symbols disabled"),
 		    altSwitchKeys.at(0), keyMaps.current()->getLabel());
 	    altKey = NoSymbol;
@@ -371,7 +369,7 @@ void KiKbdApplication::loadConfig()
   if(kikbdConfig.getEmuCapsLock()) {
     capsKey = KeyTranslate::stringToSym("Caps_Lock");
     if(!removeModifier(capsKey)) {
-      warning(translate("Can not remove Caps Lock from Modifiers.\n"
+      warning(i18n("Can not remove Caps Lock from Modifiers.\n"
 			"Caps Lock Emulation disabled"));
       capsKey = NoSymbol;
     }
@@ -922,7 +920,7 @@ void KiKbdApplication::error(const char* form, const char* s1, const char *s2)
 {
   QString msg(128);
   msg.sprintf(form, s1, s2);
-  KMsgBox::message(0, translate("kikbd error"), msg, KMsgBox::STOP);
+  KMsgBox::message(0, i18n("kikbd error"), msg, KMsgBox::STOP);
   ::exit(1);
 }
 /**
@@ -933,7 +931,7 @@ void KiKbdApplication::warning(const char* form, const char* s1,
 {
   QString msg(128);
   msg.sprintf(form, s1, s2);
-  KMsgBox::message(0, translate("kikbd warning"), msg);
+  KMsgBox::message(0, i18n("kikbd warning"), msg);
 }
 /**
    when we use global popup menu (by holding switch keys

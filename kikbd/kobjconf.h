@@ -237,13 +237,15 @@ class KObjectConfig: public QObject {
   */
   void noSystemDataFile(const char*);
   /** This signal is emited when version control enabled by setVersion and
-      readed file major version older then expected
+      readed file major version older then expected. Only integer part compared
+      @param fileVersion version of readed configuration
   */
-  void olderVersion();
+  void olderVersion(float fileVersion);
   /** This signal is emited when version control enabled by setVersion and
-      readed file major version newer then expected
+      readed file version newer then expected. Only integer part compared
+      @param fileVersion version of readed configuration
   */
-  void newerVersion();
+  void newerVersion(float fileVersion);
 };
 
 #endif

@@ -61,13 +61,13 @@ KiKbdApplication::KiKbdApplication(int &argc, char **argv)
       */
 	general = new KiKbdGeneralWidget(dialog);
 	general->loadSettings();
-	addPage(general, translate("&General"), "");
+	addPage(general, i18n("&General"), "");
 
       /**
 	 Style
       */
 	style = new KiKbdStyleWidget(dialog);
-	addPage(style, translate("&Style"), "");
+	addPage(style, i18n("&Style"), "");
 	connect(dialog, SIGNAL(selected(const char*)), style, 
 		SLOT(aboutToShow(const char*)));
 
@@ -75,7 +75,7 @@ KiKbdApplication::KiKbdApplication(int &argc, char **argv)
 	 StartUp
       */
 	startup = new KiKbdStartupWidget(dialog);
-	addPage(startup, translate("Start&Up"), "");
+	addPage(startup, i18n("Start&Up"), "");
 
 	dialog->show();
     }
@@ -117,7 +117,7 @@ int main(int argc, char **argv)
 {
   qInstallMsgHandler(msgHandler);
   KiKbdApplication app(argc, argv);
-  app.setTitle(translate("International Keyboard"));
+  app.setTitle(i18n("International Keyboard"));
   
   if (app.runGUI())
     return app.exec();

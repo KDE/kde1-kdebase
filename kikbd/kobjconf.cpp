@@ -106,7 +106,7 @@ void KConfigNumberedKeysObject::readObject(KObjectConfig* config)
     QString num;
     QString key = keybase + num.setNum(i);
     QString entry = config->getConfig()->readEntry(key);
-    if(entry.isNull() || entry == "") break;
+    if(entry.isEmpty()) break;
     keys.append(key);
     list.append(entry);
   }
@@ -137,7 +137,7 @@ void KConfigBoolObject::toggled(bool val){*((bool*)data) = val;}
 QWidget* KConfigBoolObject::createWidget(QWidget* parent,
 					 const char* label) const
 {
-  QCheckBox* box = new QCheckBox(klocale->translate(label), parent);
+  QCheckBox* box = new QCheckBox(i18n(label), parent);
   box->setChecked(*((bool*)data));
   box->setMinimumSize(box->sizeHint());
   connect(box, SIGNAL(toggled(bool)), SLOT(toggled(bool)));
@@ -236,11 +236,11 @@ QWidget* KConfigComboObject::createWidget(QWidget* parent,
     break;
   case ButtonGroup :
     {
-      QButtonGroup* box = new QButtonGroup(klocale->translate(name), parent);
+      QButtonGroup* box = new QButtonGroup(i18n(name), parent);
       int height = 0;
       unsigned i;for(i=0; i<num; i++) {
 	QRadioButton *but = 
-	  new QRadioButton(klocale->translate(labels && labels[i]?labels[i]
+	  new QRadioButton(i18n(labels && labels[i]?labels[i]
 					      :list[i]), box);
 	but->setMinimumSize(but->sizeHint());
 	height = but->height();
@@ -303,7 +303,7 @@ void KConfigFontObject::writeObject(KObjectConfig* config)
 QWidget* KConfigFontObject::createWidget(QWidget* parent, 
 					 const char* label) const
 {
-  QPushButton *button = new QPushButton(klocale->translate(label), parent);
+  QPushButton *button = new QPushButton(i18n(label), parent);
   connect(button, SIGNAL(clicked()), SLOT(activated()));
   return button;
 }
@@ -324,7 +324,7 @@ QStrList KObjectConfig::separate(const char* s, char sep)
   int i, j;for(i=0;j=string.find(sep, i), j != -1; i=j+1)
     list.append(string.mid(i, j-i));
   QString last = string.mid(i, 1000);
-  if(!last.isNull() && last != "") list.append(last);
+  if(!last.isEmpty()) list.append(last);
   return list;
 }
 KObjectConfig::KObjectConfig(KConfigBase* config, bool autoDelete)
@@ -440,8 +440,8 @@ void KObjectConfig::loadConfig()
   if(version >= 0.0) {
     config->setGroup(configGroup);
     double newversion = config->readDoubleNumEntry(configVersion, 0.0);
-    if(int(newversion) > int(version)) emit newerVersion();
-    else if(int(newversion) < int(version)) emit olderVersion();
+    if(int(newversion) > int(version)) emit newerVersion(newversion);
+    else if(int(newversion) < int(version)) emit olderVersion(newversion);
   }
 }
 void KObjectConfig::saveConfig()
@@ -485,7 +485,7 @@ QWidget* KObjectConfig::createWidget(const void* data, QWidget* parent,
   KConfigObject *obj = find(data);
   if(obj) {
     QWidget* widget = obj->createWidget(parent, label);
-    if(tip) QToolTip::add(widget, klocale->translate(tip));
+    if(tip) QToolTip::add(widget, i18n(tip));
     return widget;
   }
   return 0L;

@@ -45,7 +45,7 @@
 // Add translated tooltip to widget
 //
 void addToolTip(QWidget* w, const char* tip) {
-  QToolTip::add(w, translate(tip));
+  QToolTip::add(w, klocale->translate(tip));
 }
 //
 // This function draw presentation of the given keyboard map
@@ -81,11 +81,11 @@ QPixmap mapLine(KiKbdMapConfig* map) {
 //=====================================================
 KiKbdAddDialog::KiKbdAddDialog(QWidget* parent):QDialog(parent, "", TRUE)
 {
-  setCaption(translate("Add Keyboard"));
+  setCaption(i18n("Add Keyboard"));
 
   topLayout = new QVBoxLayout(this, 5);
   // info + combo
-  QGroupBox  *group = new QGroupBox(translate("Available keyboard maps"), 
+  QGroupBox  *group = new QGroupBox(i18n("Available keyboard maps"), 
 				    this);
   topLayout->addWidget(group, 10);
   groupLayout = new QVBoxLayout(group, 20);
@@ -96,8 +96,8 @@ KiKbdAddDialog::KiKbdAddDialog(QWidget* parent):QDialog(parent, "", TRUE)
   maps->setMinimumSize(maps->sizeHint());
   //--- buttons
   QBoxLayout  *buttons = new QHBoxLayout(10);
-  QPushButton *ok      = new QPushButton(translate("OK"), this);
-  QPushButton *cancel  = new QPushButton(translate("Cancel"), this);  
+  QPushButton *ok      = new QPushButton(i18n("OK"), this);
+  QPushButton *cancel  = new QPushButton(i18n("Cancel"), this);  
   topLayout->addLayout(buttons, 2);
   QSize size1 = ok->sizeHint();
   QSize size2 = cancel->sizeHint();
@@ -173,7 +173,7 @@ void KiKbdMapInfoWidget::changeMap(const char* map)
 QWidget* mkButton(QWidget* parent, QBoxLayout* box, const char* slot,
 		      QObject* obj, const char* label, const char* tip)
 {
-  QPushButton* but = new QPushButton(translate(label), parent);
+  QPushButton* but = new QPushButton(i18n(label), parent);
   but->setMinimumSize(but->sizeHint());
   box->addWidget(but);
   addToolTip(but, tip);
@@ -184,7 +184,7 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent)
   :KConfigWidget(parent, "general"), mapsStr(kikbdConfig->getMaps())
 {
   QBoxLayout  *topLayout = new QVBoxLayout(this, 20);
-  QGroupBox   *group = new QGroupBox(translate("Keyboard maps"), this);
+  QGroupBox   *group = new QGroupBox(i18n("Keyboard maps"), this);
   QVBoxLayout *mbox  = new QVBoxLayout(group, 20);
   QAccel      *accel = new QAccel(parent);
   QBoxLayout  *hbox, *vbox;
@@ -195,70 +195,76 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent)
   hbox = new QHBoxLayout();
   mbox->addLayout(hbox, 20);
 
-  addToolTip(mapsList=new QListBox(group), "List of active keyboard maps");
+  addToolTip(mapsList=new QListBox(group), 
+	     gettext("List of active keyboard maps"));
   hbox->addWidget(mapsList, 20);
 
   vbox = new QVBoxLayout(5);
   hbox->addLayout(vbox);
 
   // add
-  wid = mkButton(group, vbox, SLOT(addMap()), this, "&Add",
-		 "Adding new keyboard map");
+  wid = mkButton(group, vbox, SLOT(addMap()), this, gettext("&Add"),
+		 gettext("Adding new keyboard map"));
   accel->connectItem(accel->insertItem(Key_Insert), wid, SLOT(animateClick()));
   // delete
   wid = mkButton(group, vbox, SLOT(deleteMap()), this,
-		 "&Delete", "Remove selected keyboard map");
+		 gettext("&Delete"), gettext("Remove selected keyboard map"));
   connect(this, SIGNAL(activateDelete(bool)), wid, SLOT(setEnabled(bool)));
   accel->connectItem(accel->insertItem(Key_Delete), wid, SLOT(animateClick()));
   // up
   wid = mkButton(group, vbox, SLOT(upMap()), this,
-		 "&Up", "Up selected keyboard map");
+		 gettext("&Up"), gettext("Up selected keyboard map"));
   connect(this, SIGNAL(activateUp(bool)), wid, SLOT(setEnabled(bool)));
   // down
   wid = mkButton(group, vbox, SLOT(downMap()), this,
-		 "Do&wn", "Down selected keyboard map");
+		 gettext("Do&wn"), gettext("Down selected keyboard map"));
   connect(this, SIGNAL(activateDown(bool)), wid, SLOT(setEnabled(bool)));
   // info
   wid = mkButton(group, vbox, SLOT(infoMap()), this,
-		 "&Info", "Display information for selected keyboard map");
+		 gettext("&Info"), 
+		 gettext("Display information for selected keyboard map"));
   connect(this, SIGNAL(infoClick()), wid, SLOT(animateClick())); 
   connect(this, SIGNAL(activateInfo(bool)), wid, SLOT(setEnabled(bool)));
 
   vbox->addStretch(5);
-  mbox->addWidget(wid=kikbdConfig->
-		  createWidget(&kikbdConfig->getHotList(), group,
-			       "Use \"&hotlist\"",
-			       "Use only default and last active keyboard "
-			       "maps to switching from keyboard"));
+  mbox->
+    addWidget(wid=kikbdConfig->
+	      createWidget(&kikbdConfig->getHotList(), group,
+			   gettext("Use \"&hotlist\""),
+			   gettext("Use only default and last active "
+				   "keyboard maps to switching from keyboard")));
   connect(this, SIGNAL(activateHot(bool)), wid, SLOT(setEnabled(bool)));
 
   //--- switches group
-  group = new QGroupBox(translate("Switch and Alt Switch"), this);
+  group = new QGroupBox(i18n("Switch and Alt Switch"), this);
   hbox  = new QHBoxLayout(group, 20);
 
   hbox->addWidget(wid=kikbdConfig->
-		  switchWidget(group, "Key(s) to switch beetwing "
-			       "keyboard maps"));
+		  switchWidget(group,
+			       gettext("Key(s) to switch beetwing "
+				       "keyboard maps")));
   connect(wid, SIGNAL(activated(const char*)),  SLOT(newSwitch(const char*)));
 
   hbox->addWidget(wid=kikbdConfig->
-		  altSwitchWidget(group, "Key to activate Alternate symbols "
-				  "in current keyboard map"));
+		  altSwitchWidget(group, 
+				  gettext("Key to activate Alternate "
+					  "symbols in current keyboard map")));
   connect(this, SIGNAL(activateAltSwitch(bool)), wid, SLOT(setEnabled(bool)));
   group->setMinimumHeight(2*wid->height());
 
   topLayout->addWidget(group);
 
   //--- options group
-  group = new QGroupBox(translate("Options"), this);
+  group = new QGroupBox(i18n("Options"), this);
   hbox  = new QHBoxLayout(group, 20);
 
   hbox->addWidget(kikbdConfig->
 		  createWidget(&kikbdConfig->getKeyboardBeep(), group,
-			       "&Beep", "Beep when ever keyboard "
-			       "mapping changed"));
+			       gettext("&Beep"),
+			       gettext("Beep when ever keyboard "
+				       "mapping changed")));
   wid = mkButton(group, hbox, SLOT(advanced()), this,
-		 "Ad&vanced", "Advanced options");
+		 gettext("Ad&vanced"), gettext("Advanced options"));
   group->setMinimumHeight(2*wid->height());
   topLayout->addWidget(group);
 
@@ -340,7 +346,7 @@ void KiKbdGeneralWidget::changeMap(int dif)
 void KiKbdGeneralWidget::infoMap()
 {
   QDialog dialog(this, "", TRUE);
-  dialog.setCaption(translate("Keyboard map information"));
+  dialog.setCaption(i18n("Keyboard map information"));
 
   QBoxLayout *box;
   QBoxLayout *topLayout = new QVBoxLayout(&dialog, 5);
@@ -354,7 +360,7 @@ void KiKbdGeneralWidget::infoMap()
   box->addStretch(1);
   box->activate();
   // ok button
-  QPushButton *ok = new QPushButton(translate("OK"), &dialog);
+  QPushButton *ok = new QPushButton(i18n("OK"), &dialog);
   ok->setFixedSize(ok->sizeHint());
   ok->setFocus();
   ok->setDefault(TRUE);
@@ -378,8 +384,8 @@ void KiKbdGeneralWidget::addMap()
       mapsToAdd.inSort(list.at(i));
     }
   if(mapsToAdd.count() == 0) {
-    KMsgBox::message(0, translate("Adding Keyboard"),
-		     translate("There is no more keyboard maps"));
+    KMsgBox::message(0, i18n("Adding Keyboard"),
+		     i18n("There is no more keyboard maps"));
     return;
   }
 
@@ -390,7 +396,7 @@ void KiKbdGeneralWidget::addMap()
 void KiKbdGeneralWidget::advanced()
 {
   QDialog dialog(this, "", TRUE);
-  dialog.setCaption(translate("Advanced"));
+  dialog.setCaption(i18n("Advanced"));
 
   QWidget    *wid, *wid2;
   QBoxLayout *topLayout = new QVBoxLayout(&dialog, 5);
@@ -406,43 +412,47 @@ void KiKbdGeneralWidget::advanced()
   // emulate capslock
   hbox->addWidget(kikbdConfig->
 		  createWidget(&kikbdConfig->getEmuCapsLock(), group,
-			       "Emulate &CapsLock", "Emulate XServer "
-			       "CapsLock. Needed for some languages"
-			       "to be correct"));
+			       gettext("Emulate &CapsLock"), 
+			       gettext("Emulate XServer "
+				       "CapsLock. Needed for some languages"
+				       "to be correct")));
   // auto menu
   hbox->addWidget(kikbdConfig->
 		  createWidget(&kikbdConfig->getAutoMenu(), group,
-			       "World &Menu", "Show menu in any window "
-			       "by holding Switch keys"));
+			       gettext("World &Menu"), 
+			       gettext("Show menu in any window "
+				       "by holding Switch keys")));
   // save classes
   hbox = new QHBoxLayout();
   groupLayout->addLayout(hbox);
   hbox->addWidget(wid2=kikbdConfig->
 		  createWidget(&kikbdConfig->getSaveClasses(), group,
-			       "&Save Classes", "Save relations between "
-			       "window classes and keyboard maps on exit"));
+			       gettext("&Save Classes"), 
+			       gettext("Save relations between window "
+				       "classes and keyboard maps on exit")));
   // input
   QButtonGroup* butg = (QButtonGroup*)kikbdConfig->
-    createWidget(&kikbdConfig->getInput(), group, "Input");
+    createWidget(&kikbdConfig->getInput(), group, gettext("Input"));
   hbox = new QHBoxLayout(butg, 15);
   // global
   hbox->addWidget(wid=butg->find(0));
-  addToolTip(wid, "Standard behavior. Keyboard map active for all windows");
+  addToolTip(wid, gettext("Standard behavior. Keyboard map active for "
+			  "all windows"));
   // window
   hbox->addWidget(wid=butg->find(1));
-  addToolTip(wid, "Extended behavior. Each windows remember it's own "
-	     "keyboard map");
+  addToolTip(wid, gettext("Extended behavior. Each windows remember it's own "
+			  "keyboard map"));
   // class
   hbox->addWidget(wid=butg->find(2));
-  addToolTip(wid, "Special behavior. Each windows class remember it's "
-	     "own keyboard map");
+  addToolTip(wid, gettext("Special behavior. Each windows class remember it's "
+			  "own keyboard map"));
 
   groupLayout->addWidget(butg);
   connect(wid, SIGNAL(toggled(bool)), wid2, SLOT(setEnabled(bool)));
   wid2->setEnabled(butg->find(2)->isOn());
 
   //--- Ok button
-  QPushButton *ok = new QPushButton(translate("OK"), &dialog);
+  QPushButton *ok = new QPushButton(i18n("OK"), &dialog);
   ok->setFixedSize(ok->sizeHint());
   ok->setFocus();
   ok->setDefault(TRUE);
@@ -469,7 +479,7 @@ void KiKbdGeneralWidget::advanced()
 void makeColorButton (QVBoxLayout* layout, QWidget* but, QLabel*& label,
 			  const char* text, const char* tip) {
   QHBoxLayout* hbox = new QHBoxLayout();
-  label = new QLabel(translate(text), but->parentWidget());
+  label = new QLabel(i18n(text), but->parentWidget());
 
   layout->addLayout(hbox);
   but->setMinimumSize(100, 30);
@@ -482,7 +492,7 @@ void makeColorButton (QVBoxLayout* layout, QWidget* but, QLabel*& label,
 KiKbdStyleWidget::KiKbdStyleWidget(QWidget* parent):QWidget(parent)
 {
   QBoxLayout *topLayout = new QVBoxLayout(this, 20);
-  QGroupBox *group = new QGroupBox(translate("Button Colors"),
+  QGroupBox *group = new QGroupBox(i18n("Button Colors"),
 				   this);
   QVBoxLayout *vbox = new QVBoxLayout(group, 25);
   QHBoxLayout *hbox;
@@ -492,19 +502,20 @@ KiKbdStyleWidget::KiKbdStyleWidget(QWidget* parent):QWidget(parent)
   topLayout->addWidget(group, 10);
   // foreground button color
   but = kikbdConfig->createWidget(&kikbdConfig->getForColor(), group);
-  makeColorButton(vbox, but, label, "Foreground", "Color of the Text Label");
+  makeColorButton(vbox, but, label, gettext("Foreground"), 
+		  gettext("Color of the Text Label"));
 
   // caps  color
   but = kikbdConfig->createWidget(&kikbdConfig->getCapsColor(), group);
-  makeColorButton(vbox, but, label, "With CapsLock", 
-		  "Background when Emulated CapsLock active");
+  makeColorButton(vbox, but, label, gettext("With CapsLock"), 
+		  gettext("Background when Emulated CapsLock active"));
   connect(this, SIGNAL(enableCaps(bool)), but, SLOT(setEnabled(bool)));
   connect(this, SIGNAL(enableCaps(bool)), label, SLOT(setEnabled(bool)));
 
   //  alternate color
   but = kikbdConfig->createWidget(&kikbdConfig->getAltColor(), group);
-  makeColorButton(vbox, but, label, "With Alternate", 
-		  "Background when Alternate switch is pressed");
+  makeColorButton(vbox, but, label, gettext("With Alternate"), 
+		  gettext("Background when Alternate switch is pressed"));
   connect(this, SIGNAL(enableAlternate(bool)), but, SLOT(setEnabled(bool)));
   connect(this, SIGNAL(enableAlternate(bool)), label, SLOT(setEnabled(bool)));
 
@@ -513,18 +524,20 @@ KiKbdStyleWidget::KiKbdStyleWidget(QWidget* parent):QWidget(parent)
   /**
      font
   */
-  group = new QGroupBox(translate("Button Font"), this);
+  group = new QGroupBox(i18n("Button Font"), this);
   topLayout->addWidget(group, 0);
   vbox = new QVBoxLayout(group, 20);
   hbox = new QHBoxLayout();
   vbox->addLayout(hbox);
 
   QWidget *but2 = kikbdConfig->
-    createWidget(&kikbdConfig->getCustFont(), group, "C&ustomize Font",
-		 "Customize Font for text label or use global settings");
+    createWidget(&kikbdConfig->getCustFont(), group, 
+		 gettext("C&ustomize Font"),
+		 gettext("Customize Font for text label or use global "
+			 "settings"));
   hbox->addWidget(but2, 2);
   but = kikbdConfig->createWidget(&kikbdConfig->getFont(), group,
-				  "C&hange Font");
+				  gettext("C&hange Font"));
   but->setMinimumSize(but->sizeHint());
   hbox->addWidget(but);
   hbox->addStretch(5);
@@ -535,7 +548,7 @@ KiKbdStyleWidget::KiKbdStyleWidget(QWidget* parent):QWidget(parent)
 }
 void KiKbdStyleWidget::aboutToShow(const char* page)
 {
-  if(QString(page) == translate("&Style")) {
+  if(QString(page) == i18n("&Style")) {
     emit enableCaps(kikbdConfig->getEmuCapsLock());
     emit enableAlternate(!kikbdConfig->oneKeySwitch() 
 			 && kikbdConfig->hasAltKeys()
@@ -560,14 +573,17 @@ KiKbdStartupWidget::KiKbdStartupWidget(QWidget* parent):QWidget(parent)
   */
   vbox->
     addWidget(kikbdConfig->
-	      createWidget(&kikbdConfig->getAutoStart(), group, "&Autostart",
-			   "Start up automaticaly"), 0);
+	      createWidget(&kikbdConfig->getAutoStart(), group,
+			   gettext("&Autostart"),
+			   gettext("Start up automaticaly")), 0);
   /**
      Do docking?
   */
   vbox->addWidget(widget=kikbdConfig->
-		  createWidget(&kikbdConfig->getDocking(), group, "&Docked",
-			       "Dock into special area in kpanel"), 0);
+		  createWidget(&kikbdConfig->getDocking(), group, 
+			       gettext("&Docked"),
+			       gettext("Dock into special area in kpanel")),
+		  0);
   connect(widget, SIGNAL(toggled(bool)), SLOT(slotInvert(bool)));
 
   /**
@@ -575,14 +591,14 @@ KiKbdStartupWidget::KiKbdStartupWidget(QWidget* parent):QWidget(parent)
   */
   QBoxLayout *hbox = new QHBoxLayout();
   vbox->addLayout(hbox);
-  hbox->addWidget(widget=new QLabel(translate("Place"), group), 0);
+  hbox->addWidget(widget=new QLabel(i18n("Place"), group), 0);
   widget->setMinimumSize(widget->sizeHint());
   widget->setEnabled(!kikbdConfig->getDocking());
   connect(this, SIGNAL(signalInvert(bool)), widget, SLOT(setEnabled(bool)));
 
   hbox->addWidget(widget=kikbdConfig->
 		  createWidget(&kikbdConfig->getAutoStartPlace(), group,
-			       "Place in selected corner"), 0);
+			       gettext("Place in selected corner")), 0);
   connect(this, SIGNAL(signalInvert(bool)), widget, SLOT(setEnabled(bool)));
   widget->setEnabled(!kikbdConfig->getDocking());
   hbox->addStretch(5);

@@ -35,7 +35,7 @@ class KiKbdMapConfig: public QObject {
   QStrList  authors;  // authors of the layout, must be set. How create this?
   QString   language; // language of layout, must be set (or "unknown")
   QString   comment;  // layout comment, may be unset (will be "No comment")
-  QString   charset;  // layout charset, may be unset (will be "unknown")
+  QString   charset;  // layout charset, may be unset
   bool      hasAltKeys;
   bool      userData, noFile;
   int       numberOfSyms;
@@ -122,15 +122,10 @@ class KiKbdConfig: public KObjectConfig {
   virtual void loadConfig();
  public slots:
   void newUserRc();
-  void olderVersion();
-  void newerVersion();
+  void olderVersion(float);
+  void newerVersion(float);
 };
 
-//====================================================
-// helper functions
-//====================================================
-inline const char* translate(const char* text) {
-  return klocale->translate(text);
-}
+#define gettext(text) text
 
 #endif

@@ -187,8 +187,7 @@ void KeySyms::allocSyms(int min, int max, int codes)
     if(syms) delete syms;
     syms = new KeySym[nsize];
     if(syms == 0) {
-      KiKbdApplication::error(klocale->translate("KeyMap: cannot allocate"
-						 " memory"));
+      KiKbdApplication::error(i18n("KeyMap: cannot allocate memory"));
     }
   }
   minKeyCode = min;
@@ -232,8 +231,7 @@ int KeySyms::findSym(const char* ssym)
       if(KeyTranslate::tolower(syms[i]) 
 	 == KeyTranslate::tolower(sym)) return i;
     }
-  KiKbdApplication::error(klocale->translate("KeyMap: can not find "
-					     "symbol %s"), ssym);  
+  KiKbdApplication::error(i18n("KeyMap: can not find symbol %s"), ssym);  
   return -1;
 }
 int KeySyms::findCode(const char* scode)
@@ -241,11 +239,10 @@ int KeySyms::findCode(const char* scode)
   unsigned int code = 0;
   if(sscanf(scode, "%x", &code) != 1)
     if(sscanf(scode, "%d", &code) != 1)
-      KiKbdApplication::error(klocale->translate("KeyMap: do not undestand "
-						 "keycode %s"), scode);
+      KiKbdApplication::error(i18n("KeyMap: do not undestand keycode %s"),
+			      scode);
   if(code < minKeyCode || code > maxKeyCode) {
-    KiKbdApplication::error(klocale->translate("KeyMap: keycode %s go out "
-					       "of range"), scode);
+    KiKbdApplication::error(i18n("KeyMap: keycode %s go out of range"), scode);
     return -1;
   }
   return (minKeyCode+code)*kcodes;

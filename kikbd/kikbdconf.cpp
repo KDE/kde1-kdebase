@@ -86,31 +86,34 @@ static const char* swConfigAltString[] = {
 static const char* inpConfigString[] = {
   "Global", "Window", "Class"
 };
-
-const char* switchLabels[] = {
-  "(None)",
-  "Right Alt",
-  "Right Control",
-  "Rights (Alt+Shift)" ,
-  "Rights (Ctrl+Alt)"  ,
-  "Rights (Ctrl+Shift)",
-  "Lefts  (Alt+Shift)",
-  "Lefts  (Ctrl+Alt)",
-  "Lefts  (Ctrl+Shift)",
-  "Both Shift's (Shift+Shift)"
+// GUI labels
+static const char* inpLabels[] = {
+  gettext("Global"), gettext("Window"), gettext("Class")
 };
-const char* altSwitchLabels[] = {
-  "(None)",
-  "Right Alt",
-  "Right Control",
-  "Left  Alt",
-  "Left  Control",
+static const char* switchLabels[] = {
+  gettext("(None)"),
+  gettext("Right Alt"),
+  gettext("Right Control"),
+  gettext("Rights (Alt+Shift)") ,
+  gettext("Rights (Ctrl+Alt)")  ,
+  gettext("Rights (Ctrl+Shift)"),
+  gettext("Lefts  (Alt+Shift)"),
+  gettext("Lefts  (Ctrl+Alt)"),
+  gettext("Lefts  (Ctrl+Shift)"),
+  gettext("Both Shift's (Shift+Shift)")
 };
-const char* autoStartPlaceLabels[] = {
-  "Top Left",
-  "Top Right",
-  "Bottom Left",
-  "Bottom Right"
+static const char* altSwitchLabels[] = {
+  gettext("(None)"),
+  gettext("Right Alt"),
+  gettext("Right Control"),
+  gettext("Left  Alt"),
+  gettext("Left  Control"),
+};
+static const char* autoStartPlaceLabels[] = {
+  gettext("Top Left"),
+  gettext("Top Right"),
+  gettext("Bottom Left"),
+  gettext("Bottom Right")
 };
 
 const QColor mapNormalColor = black;
@@ -139,7 +142,7 @@ KiKbdConfig::KiKbdConfig():KObjectConfig(UserFromSystemRc)
 				  /sizeof(*swConfigAltString), altSwitchLabels)
 	<< new KConfigComboObject(confStringInput, input, inpConfigString,
 				  sizeof(inpConfigString)
-				  /sizeof(*inpConfigString), inpConfigString,
+				  /sizeof(*inpConfigString), inpLabels,
 				  KConfigComboObject::ButtonGroup)
 	<< new KConfigColorObject(confStringCapsColor, capsColor)
 	<< new KConfigColorObject(confStringAltColor, altColor)
@@ -153,8 +156,8 @@ KiKbdConfig::KiKbdConfig():KObjectConfig(UserFromSystemRc)
 				  sizeof(autoStartPlaceLabels)
 				  /sizeof(*autoStartPlaceLabels));
   connect(this, SIGNAL(newUserRcFile()), SLOT(newUserRc())); 
-  connect(this, SIGNAL(olderVersion()) , SLOT(olderVersion())); 
-  connect(this, SIGNAL(newerVersion()) , SLOT(newerVersion())); 
+  connect(this, SIGNAL(olderVersion(float)) , SLOT(olderVersion(float))); 
+  connect(this, SIGNAL(newerVersion(float)) , SLOT(newerVersion(float))); 
   maps.setAutoDelete(TRUE);
   allMaps.setAutoDelete(TRUE);
 }
@@ -173,10 +176,10 @@ void KiKbdConfig::loadConfig()
 }
 void ask(const char* msg)
 {
-  KiKbdConfig::message(translate(msg));
+  KiKbdConfig::message(i18n(msg));
   if(QString(kapp->argv()[0]).find("kikbd") != -1) {
     if(KMsgBox::yesNo(0L, "kikbd",
-		      translate("Do you want to start Configuration?"))
+		      i18n("Do you want to start Configuration?"))
        == 1) {
       system("kcmikbd -startkikbd&");
       ::exit(0);
@@ -185,22 +188,22 @@ void ask(const char* msg)
 }
 void KiKbdConfig::newUserRc()
 {
-  ask("Your configuration is empty. Install system default.");
+  ask(gettext("Your configuration is empty. Install system default."));
 }
 int doneCheck = FALSE;
-void KiKbdConfig::olderVersion()
+void KiKbdConfig::olderVersion(float)
 {
   if(!doneCheck) {
-    ask("Configuration file you have has older format when expected.\n"
-	"Some settings may be incorrect.");
+    ask(gettext("Configuration file you have has older format when expected.\n"
+		"Some settings may be incorrect."));
     doneCheck = TRUE;
   }
 }
-void KiKbdConfig::newerVersion()
+void KiKbdConfig::newerVersion(float)
 {
   if(!doneCheck) {
-    ask("Configuration file you have has newer format when expected.\n"
-	"Some settings may be incorrect.");
+    ask(gettext("Configuration file you have has newer format when expected.\n"
+		"Some settings may be incorrect."));
     doneCheck = TRUE;
   }
 }
@@ -247,14 +250,14 @@ void KiKbdConfig::error(const char* form, const char* str,
 {
   QString msg(128);
   msg.sprintf(form, str, str2);
-  if(KMsgBox::yesNo(0, translate("kikbd configuration error"), msg) == 2) 
+  if(KMsgBox::yesNo(0, i18n("kikbd configuration error"), msg) == 2) 
     ::exit(1);
 }
 void KiKbdConfig::message(const char* form, const char* str)
 {
   QString msg(128);
   msg.sprintf(form, str);
-  KMsgBox::message(0L, translate("kikbd configuration message"), msg);
+  KMsgBox::message(0L, i18n("kikbd configuration message"), msg);
 }
 
 //=========================================================
@@ -287,11 +290,11 @@ KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
   else {
     if(comment[comment.length()-1] != '.') comment += ".";
   }
-  if(language.isNull()) language = "unknown";
-  if(charset.isEmpty()) charset  = "unknown";
+  if(language.isNull()) language = gettext("unknown");
+  //if(charset.isEmpty()) charset  = "unknown";
   if(label.isNull() || label == "")
     if(!locale.isNull()) label = locale; else label = name;
-  if(locale.isNull() || locale == "") locale = translate("default");
+  if(locale.isNull() || locale == "") locale = i18n("default");
   /*--- parsing ---*/
   keysyms.setAutoDelete(TRUE);
   keycodes.setAutoDelete(TRUE);
@@ -317,37 +320,35 @@ const QString KiKbdMapConfig::getInfo() const
   QStrList authors(this->authors);
   QString com;
   // authors
-  com = translate(authors.count()<2?"Author":"Authors");
-  com += ":  ";
-  com += authors.count()>0?authors.at(0):translate("Not specified");
-  for(unsigned i = 1; i < authors.count() && i < 4; i++) {
-    com += ",  ";
-    com += authors.at(i);
+  if(!authors.count()) com += i18n("Author:  Not specified");
+  for(unsigned i = 0; i < authors.count() && i < 4; i++) {
+    com += i18n("Author");
+    if(authors.count()>1) com += QString("[") + (char)(i+'1') + "]";
+    com += QString(":  ") + authors.at(i) + "\n";
   }
-  com += "\n\n";
+  com += "\n";
   // description
-  com += translate("Description:  ") + getGoodLabel()
-    + " " + comment;
-  com += "\n\n";
+  com += i18n("Description:  ") + getGoodLabel() + " " 
+    + comment + "\n\n";
   // source
-  com += translate("Source:  ");
-  com += noFile?translate("no file")
-    :(userData?translate("user file")
-    :translate("system file"));
+  com += i18n("Source:  ");
+  com += noFile?i18n("no file")
+    :(userData?i18n("user file")
+    :i18n("system file"));
   com += " \"" + name + ".kimap\"";
   com += "\n";
   // statistic
   QString num;
-  com += translate("Statistic:  ");
+  com += i18n("Statistic:  ");
   num.setNum(keysyms.count());
   com += num + " ";
-  com += translate("symbols");
+  com += i18n("symbols");
   num.setNum(keycodes.count());
   com += ", " + num + " ";
-  com += translate("codes");
+  com += i18n("codes");
   if(hasAltKeys) {
     com += ", ";
-    com += translate("alternative symbols");
+    com += i18n("alternative symbols");
   }
   return com;
 }
@@ -355,9 +356,11 @@ const QString KiKbdMapConfig::getGoodLabel() const
 {
   QString label;
   label += language + " ";
-  label += translate("language");
-  label += ", " + charset + " ";
-  label += translate("charset");
+  label += i18n("language");
+  if(!charset.isEmpty()) {
+    label += ", " + charset + " ";
+    label += i18n("charset");
+  }
   label += ".";
   return label;
 }
