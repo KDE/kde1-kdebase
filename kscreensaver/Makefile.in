@@ -110,7 +110,7 @@ $(KLOCK): $(SRCMETA) $(KLOCK_OBJ)
 
 install: all
 	[ -d $(BINDIR) ] || $(INSTALL_DIR) $(BINDIR)
-	$(INSTALL) $(TARGETS) $(BINDIR)
+	$(INSTALL_STICKY) $(TARGETS) $(BINDIR)
 
 install-shadow:
 	[ -d $(BINDIR) ] || $(INSTALL_DIR) $(BINDIR)
