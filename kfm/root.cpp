@@ -3,6 +3,9 @@
  *
  * Thu Mar  5 22:47:01 MET 1998 Marcin Dalecki:
  *     Impoved drag and drop handling.
+ *
+ * Fri Apr 10 18:03:27 CEST 1998 Stefan Westerfeld <stefan@space.twc.de>:
+ *     Changed drag and drop again, see comments in moveIcons.
  */
 
 #include <stdio.h>
@@ -347,6 +350,20 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
     dx /= gridwidth;
     dy /= gridheight;
     
+  
+      /* 
+       * The following code
+       *
+       * - forces the formation of the icons to be kept, that means if you move
+       *   three icons in a row you still have three in a row after moving
+       *
+       * - forces the order of the icons you move to be kept
+       *
+       * - doesn't allow the user to move icons off the screen
+       *
+       * I hope this makes it more intuitive to use       -- Stefan Westerfeld
+       */
+  
     // first, mark the icons as being moved, so that they do not occupy
     // the space for our move operation, where icons can only be moved
     // to free space (before this, you could never move an icon to the
@@ -360,39 +377,57 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
 	icon->startmove();
     }
   
+    // find a free space where the icons can be put
+    int deltax, deltay, minscore = 10000000, score, mdx=0, mdy=0;
+
+    for ( deltax = -3; deltax <= 3; deltax++)
+    {
+        for ( deltay = -3; deltay <= 3; deltay++ )
+	{
+	    score = deltax*deltax+deltay*deltay;
+ 
+     	    for ( s = _urls.first(); s != 0L; s = _urls.next() )
+	    {
+  		KRootIcon* icon = findIcon( s );
+          	if (icon)
+  		{
+  		    // do not let them drop off the screen
+  
+             	    int ix = icon->gridX() + dx + deltax;
+             	    if ((ix < 0) || (ix >= gx)) score += 1000;
+	   
+           	    int iy = icon->gridY() + dy + deltay;
+           	    if ((iy < 0) || (iy >= gy)) score += 1000;
+
+                    // do not allow them to be put upon other icons
+           	    if ( isPlaceUsed(ix,iy) ) score += 1000;
+		}
+	    }
+	    if (score < minscore)
+	    {
+		minscore = score;
+		mdx = deltax;
+		mdy = deltay;
+	    }
+	}
+    }
+
+    // if there is no free space, better don't even try to move ;)
+    if (minscore >= 1000)
+    {
+	mdx = -dx;
+	mdy = -dy;
+    }
+
+    // now really move them and make them "visible" again for space checking
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
     {
 	KRootIcon* icon = findIcon( s );
         if (icon)
 	{
-           int ix = icon->gridX() + dx;
-           if ( ix < 0 )
-               ix = 0;
-           if ( ix >= gx )
-               ix = gx - 1;
-               
-           int iy = icon->gridY() + dy;
-           if ( iy < 0 )
-               iy = 0;
-           if ( iy >= gy )
-               iy = gy - 1;
-               
-           if ( isPlaceUsed( ix, iy ) && (dx || dy) )
-	   {
-	       QPoint p = findFreePlace( ix, iy );
-               
-               // Take this free place only, when it's really
-               // more adjacent to our desired position.
-               if ( (abs(icon->gridX() - ix) + abs(icon->gridY() - iy)) >
-                    (abs(p.x() - ix) + abs(p.y() - iy)) ) {
-                   ix = p.x(); 
-                   iy = p.y();
-               } else {
-                   ix = icon->gridX();
-                   iy = icon->gridY();
-               }
-               
-	    }
+            int ix = icon->gridX() + dx + mdx;
+            int iy = icon->gridY() + dy + mdy;
+
 	    icon->setGridX( ix );
 	    icon->setGridY( iy );
 	    icon->move( area.x() + gridwidth * ix + ( gridwidth - icon->QWidget::width() ) / 2,
@@ -1546,31 +1581,32 @@ void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
 		if ( pixmap2.isNull() )
 		    warning("KFM: Could not find '%s'\n",tmp.data());
 	    }
+
+	    // Proceed with the dragging operation only if the icon in which
+	    // the drag started was selected too.
+	    bool klicked = false;
+	    QStrList _urls;
+	    root->getSelectedURLs(_urls);
+	    for (char* s = _urls.first(); s; s = _urls.next()) {
+	        if (root->findIcon(s) == this) {
+	            klicked = true;
+	            break;
+	        }
+	    }
+	    if (!klicked)
+	        return;
 	}
-	
+
 	QPoint p = mapToGlobal( _mouse->pos() );
 	QPoint p2 = mapToGlobal( QPoint( press_x, press_y ) );
 	int dx = QWidget::x() - p2.x() + pixmapXOffset;
 	int dy = QWidget::y() - p2.y() + pixmapYOffset;
 
        
-       if ( !pixmap2.isNull() ) {
-           // Multiple URLs slected. 
-           // Proceed with the dragging operation only if the icon in which
-            // the drag started was selected too.
-           bool klicked = false;
-           QStrList _urls;
-           root->getSelectedURLs(_urls);
-           for (char* s = _urls.first(); s; s = _urls.next()) {
-               if (root->findIcon(s) == this) {
-                   klicked = true;
-                   break;
-               }
-           }
-           if (!klicked)
-               return;
-           startDrag( new KDNDIcon( pixmap2, p.x() + dx, p.y() + dy ), data.data(), data.length(), DndURL, dx, dy );
-       } else
+	if ( !pixmap2.isNull() ) {
+	    // Multiple URLs slected. 
+	    startDrag( new KDNDIcon( pixmap2, p.x() + dx, p.y() + dy ), data.data(), data.length(), DndURL, dx, dy );
+	} else
 	    startDrag( new KDNDIcon( *pixmap, p.x() + dx, p.y() + dy ), data.data(), data.length(), DndURL, dx, dy );
     }
 }
