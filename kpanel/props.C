@@ -111,7 +111,8 @@ void kPanel::parseMenus(){
       p_pmenu->setAltSort(foldersFirst);
       p_pmenu->parse(QDir(kde_apps));
       PMenuItem* pmi = new PMenuItem ;
-      QFileInfo fi(personal);
+      //QFileInfo fi(personal);
+      QFileInfo fi(kde_apps);
       pmi->parse(&fi, p_pmenu);
       pmenu->add( new PMenuItem((EntryType) separator) );
       pmenu->add( pmi );
