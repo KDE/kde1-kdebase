@@ -1,0 +1,15 @@
+module KfmIpc;
+
+slots:
+   void refreshDesktop();
+   void refreshDirectory( string _url );
+   void openURL( string _url );
+   void openProperties( string _url );
+   void exec( string _url, string _binding );
+   void copy( string _src, string _dest );
+   void move( string _src, string _dest );
+   void moveClient( string _src, string _dest );
+   void ask( int _x, int _y, string _src, string _dest );
+
+signals:
+   void finished();

@@ -1,0 +1,10 @@
+[KDE Desktop Entry]
+Type=FSDevice
+Dev=/dev/fd0
+MountPoint=/floppy
+ReadOnly=0
+FSType=msdos,minix,default
+Icon=floppy_mount.xpm
+UnmountIcon=floppy_unmount.xpm
+
+

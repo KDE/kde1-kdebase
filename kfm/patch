@@ -1,0 +1,114 @@
+--- kfm-0.5.6/kfmman.cpp        Tue Mar 11 16:36:27 1997
++++ kfm-0.5.6-dev/kfmman.cpp    Thu Mar 13 05:03:14 1997
+@@ -578,6 +578,8 @@
+        // Dont display the file "."
+        if ( strcmp( fn, "." ) != 0 )
+        {
++           if ( fn[0] == '.' && !window->getShowDot() && strcmp( fn, ".." ))
++               continue;
+            if ( strcmp( fn, ".." ) == 0 )
+            {
+                KURL u2( _url );
+@@ -643,7 +645,7 @@
+ 
+                view->write( "<tr><td><a href=\"" );
+                view->write( str );
+-               view->write( "\"><img src=\"" ); 
++               view->write( "\"><img width=16 height=16 src=\"" ); 
+                view->write( KFileType::findType( str )->getPixmapFile( str ) );
+                view->write( "\"></td><td>" );
+                if ( S_ISDIR( buff.st_mode ) )
+diff -u kfm-0.5.6/kfmwin.cpp kfm-0.5.6-dev/kfmwin.cpp
+--- kfm-0.5.6/kfmwin.cpp        Mon Mar 10 00:44:45 1997
++++ kfm-0.5.6-dev/kfmwin.cpp    Thu Mar 13 22:29:40 1997
+@@ -63,11 +63,13 @@
+     
+     popupMenu = 0L;
+     viewMode = ICON_VIEW;
++    showDot = FALSE;
+     
+     bViewHTML = TRUE;
+     actualManager = 0L;
+     stackLock = FALSE;
+ 
++
+     KConfig *config = KApplication::getKApplication()->getConfig();
+     config->setGroup( "Templates" );
+     templatePath = config->readEntry( "Path" );
+@@ -197,9 +199,10 @@
+     edit->insertSeparator();
+     edit->insertItem( "Select", this, SLOT(slotSelect()), CTRL+Key_S );
+ 
+-    QPopupMenu *mview = new QPopupMenu;
++    mview = new QPopupMenu;
+     CHECK_PTR( mview );
+     mview->insertItem( "Toggle HTML View", this, SLOT(slotViewHTML()) );
++    mview->insertItem( "Show Dot Files", this, SLOT(slotShowDot()) );
+     mview->insertItem( "Update", this, SLOT(slotViewUpdate()), ALT+Key_U );
+     mview->insertSeparator();
+     mview->insertItem( "Icon view", this, SLOT(slotIconView()), ALT+Key_I );
+@@ -693,6 +696,23 @@
+     bViewHTML = !bViewHTML;
+     // If KFileManager is active we will do a refresh, since toggeling
+     // the above flag may cause the view to change from/to '.kde.html' view
++    if ( actualManager == manager )
++    {
++       manager->openURL( manager->getURL() );
++       refresh( manager );
++    }
++}
++
++void KFileWindow::slotShowDot()
++{
++   
++    showDot = !showDot;
++    if (showDot)
++        mview->changeItem("Hide Dot Files",mview->idAt(1));
++    else
++        mview->changeItem("Show Dot Files",mview->idAt(1));
++    
++    // If KFileManager is active we will do a refresh.
+     if ( actualManager == manager )
+     {
+        manager->openURL( manager->getURL() );
+diff -u kfm-0.5.6/kfmwin.h kfm-0.5.6-dev/kfmwin.h
+--- kfm-0.5.6/kfmwin.h  Sun Mar  9 18:21:07 1997
++++ kfm-0.5.6-dev/kfmwin.h      Thu Mar 13 22:45:11 1997
+@@ -97,6 +97,10 @@
+       */
+     ViewMode getViewMode() { return viewMode; }
+     
++    /// Are the .dot files visible? 
++   
++    bool getShowDot() { return showDot; }
++
+     /// Return a pointer to the KTarManager
+     /**
+       Used by KFileManager!
+@@ -148,6 +152,8 @@
+     void slotViewUpdate();
+     /// Menu "View->Toggle HTML view"
+     void slotViewHTML();
++    /// Menu "View->Show/Hide Dot Files"
++    void slotShowDot();
+     /// Menu "View->Icon View"
+     void slotIconView();
+     /// Menu "View->Long View"
+@@ -336,6 +342,7 @@
+     KPixmap toolbarPixmaps[18];
+ 
+     QMenuBar *menu;
++    QPopupMenu *mview;
+     QScrollBar *horz;
+     QScrollBar *vert;
+ 
+@@ -399,6 +406,8 @@
+       The default is ICON_VIEW.
+       */
+     ViewMode viewMode;
++
++    bool showDot;
+ 
+     QLabel *statusBar;
+     QLabel *statusBar2;
+

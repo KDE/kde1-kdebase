@@ -1,0 +1,41 @@
+#
+# Makefile for help search.   Good Luck
+#
+
+.SUFFIXES: .cpp
+
+########## Implicit Rules ##########
+
+.cpp.o:
+	$(CXX) $(CXXFLAGS) $(DEFS) -c $<
+
+########## Files ##########
+
+SRCS = search.cpp mansrch.cpp htmlsrch.cpp
+SRCMETA =
+HDRS = mansrch.h htmlsrch.h
+OBJS = search.o mansrch.o htmlsrch.o
+
+TARGET = helpsearch
+
+########## Build Rules ##########
+
+all: $(TARGET)
+
+$(TARGET): $(SRCMETA) $(OBJS)
+	$(CXX) -o $(TARGET) $(OBJS) $(LDFLAGS)
+
+clean:
+	rm -f *~ *.bak *.BAK $(TARGET) $(SRCMETA) $(OBJS) core
+
+depend: $(SRCS)
+	@makedepend $(INCFLAGS) $(SRCS) 2> /dev/null
+
+########## Meta objects ##########
+
+%.moc: %.h
+	$(MOC) $< -o $@
+
+##################################
+# DO NOT DELETE
+

@@ -1,0 +1,9 @@
+[KDE Desktop Entry]
+Type=FSDevice
+Dev=/dev/scd0
+MountPoint=/cd
+ReadOnly=1
+FSType=iso9660,Default
+Icon=cd_mount.xpm
+UnmountIcon=cd_unmount.xpm
+

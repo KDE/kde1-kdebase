@@ -1,0 +1,11 @@
+[KDE Desktop Entry]
+Type=Application
+Exec=xv %f
+Icon=image.xpm
+TerminalOptions=
+Path=
+Terminal=0
+BinaryPattern=XV;xv;
+Comment=Image viewer/processor
+Protocols=file;
+Extensions=Gif;Jpeg;Tiff;Xpm;Xbm;

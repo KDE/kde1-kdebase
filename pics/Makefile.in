@@ -1,0 +1,18 @@
+INSTALL_DATA = @INSTALL@ -m 0644
+INSTALL_DIR = @mkinstalldirs@
+PICS = `find . -type f \( -name "*.xpm" -or -name "*.jpg" \) -print`
+prefix = @prefix@
+libdir = $(prefix)/lib
+
+all:
+	
+clean:
+	
+install:
+	$(INSTALL_DIR) $(libdir)/pics/toolbar
+	$(INSTALL_DIR) $(libdir)/pics/wallpapers
+	@for i in $(PICS); do \
+	 echo "$(INSTALL_DATA) $$i $(libdir)/pics"; \
+	 $(INSTALL_DATA) "$$i" $(libdir)/pics; \
+	done
+

@@ -1,0 +1,11 @@
+[KDE Desktop Entry]
+Type=Application
+Exec=kedit %u
+Icon=txt.xpm
+TerminalOptions=
+Path=
+Terminal=0
+Comment=Simple KDE Text Editor
+BinaryPattern=kview;
+Protocols=file;ftp;http;tar;
+Extensions=Text;

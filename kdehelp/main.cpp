@@ -1,0 +1,248 @@
+//-----------------------------------------------------------------------------
+//
+// KDE Help main
+//
+// (c) Martin R. Jones 1996
+//
+
+#include "help.h"
+#include <signal.h>
+#include <sys/stat.h>
+#include <qmsgbox.h>
+#include <kapp.h>
+#include <drag.h>
+#include "error.h"
+#include "khelp.h"
+
+#ifdef __FreeBSD__
+#include <floatingpoint.h>
+#endif
+
+static void cleanup( int );
+void catchSignals();
+
+static int msgqid = -1;
+static QString pidFile;
+
+//-----------------------------------------------------------------------------
+// timer used to monitor msg queue for request for new window
+
+class Timer : public QObject
+{
+public:
+	Timer()
+	{
+		startTimer( 100 );
+	}
+
+protected:
+	virtual void timerEvent( QTimerEvent * );
+};
+
+void Timer::timerEvent( QTimerEvent * )
+{
+	KHelpMsg buf, retbuf;
+	KHelpWindow *helpWin;
+
+	if ( buf.recv( msgqid, 1L ) != -1 )
+	{
+		printf( "got request: %s\n", buf.getMsg() );
+
+		retbuf.setType( 2L );
+		retbuf.send( msgqid );
+
+		helpWin = new KHelpWindow;
+
+		QString url = buf.getMsg();
+
+		if ( !strchr( url, ':' ) )
+		{
+			url = "file:";
+			url += buf.getMsg();
+		}
+
+		helpWin->openURL( url );
+
+		helpWin->show();
+	}
+}
+
+void errorHandler( int type, char *msg )
+{
+	QApplication::setOverrideCursor( arrowCursor );
+
+	QMessageBox::message( "Error", msg, "Ok" );
+
+	QApplication::restoreOverrideCursor();
+
+	if ( type == ERR_FATAL )
+	{
+		if (msgqid >= 0)
+			msgctl( msgqid, IPC_RMID, 0 );
+		remove( pidFile );
+		exit(1);
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+int main(int argc, char *argv[])
+{
+	int i;
+	QString url, initDoc;
+	FILE *fp;
+
+#if 0
+ #ifdef __FreeBSD__
+	/* ignore floating point exceptions */
+	fpsetmask(0);
+ #endif
+#endif
+
+	for ( i = 1; i < argc; i++ )
+	{
+		if ( argv[i][0] == '-' )
+			continue;
+
+		initDoc = argv[i];
+		break;
+	}
+
+	if ( i == argc )
+	{
+		char *kdedir = getenv( "KDEDIR" );
+		initDoc = "file:";
+		initDoc += kdedir;
+		initDoc += "/doc/HTML/index.html";
+	}
+
+	// create data directory if necessary
+	QString p = getenv( "HOME" );
+	QString rcDir = p + "/.kdehelp";
+	if ( access( rcDir, F_OK ) )
+		mkdir( rcDir, 0740 );
+
+	pidFile = rcDir + "/kdehelp.pid";
+
+	// if there is a pidFile then this is not the first instance of kdehelp
+	if ( ( fp = fopen( pidFile, "r" ) ) != NULL )
+	{
+		printf( "found PID file\n" );
+		KHelpMsg buf;
+		int pid;
+		buf.setType( 1L );
+		buf.setMsg( url );
+		fscanf( fp, "%d %d", &pid, &msgqid );
+		// if this fails I assume that the pid file is left over from bad exit
+		// and continue on
+		//
+		if ( buf.send( msgqid ) != -1)
+		{
+			// if we don't receive a reply within 3secs assume previous
+			// instance of kdehelp died an unnatural death.
+			// How should this stuff be handled properly?
+			//
+			time_t start = time(NULL);
+			while ( time(NULL) - start < 3 )
+			{
+				if (buf.recv( msgqid, 2L, IPC_NOWAIT ) != -1)
+				{
+					fclose( fp );
+					exit(0);
+				}
+			}
+			msgctl( msgqid, IPC_RMID, NULL );
+		}
+		fclose( fp );
+	}
+
+	// This is the first instance so create a pid/msgqid file
+	key_t key = ftok( getenv( "HOME" ), (char)rand() );
+	msgqid = msgget( key, IPC_CREAT | 0600 );
+
+	fp = fopen( pidFile, "w" );
+	fprintf( fp, "%d %d\n", getpid(), msgqid );
+	fclose( fp );
+
+	// so that everything is cleaned up
+	catchSignals();
+
+	Timer *timer = new Timer;
+
+	// error handler for info and man stuff
+	Error.SetHandler( errorHandler );
+
+	KApplication a( argc, argv, "kdehelp" );
+
+	KHelpWindow *helpWin = new KHelpWindow;
+
+	url = initDoc;
+
+	if ( !strchr( url, ':' ) )
+	{
+		url = "file:";
+		url += initDoc;
+	}
+
+	helpWin->openURL( url );
+	helpWin->show();
+
+	a.exec();
+
+	delete timer;
+
+	msgctl( msgqid, IPC_RMID, 0 );
+
+	remove( pidFile );
+}
+
+// make sure the pid file is cleaned up when exiting unexpectedly.
+//
+void catchSignals()
+{
+//	signal(SIGHUP, cleanup);		/* Hangup */
+	signal(SIGINT, cleanup);		/* Interrupt */
+	signal(SIGTERM, cleanup);		/* Terminate */
+//	signal(SIGCHLD, cleanup);
+
+	signal(SIGABRT, cleanup);
+	signal(SIGALRM, cleanup);
+	signal(SIGFPE, cleanup);
+	signal(SIGILL, cleanup);
+	signal(SIGPIPE, cleanup);
+	signal(SIGQUIT, cleanup);
+//	signal(SIGSEGV, cleanup);
+
+#ifdef SIGBUS
+	signal(SIGBUS, cleanup);
+#endif
+#ifdef SIGPOLL
+	signal(SIGPOLL, cleanup);
+#endif
+#ifdef SIGSYS
+	signal(SIGSYS, cleanup);
+#endif
+#ifdef SIGTRAP
+	signal(SIGTRAP, cleanup);
+#endif
+#ifdef SIGVTALRM
+	signal(SIGVTALRM, cleanup);
+#endif
+#ifdef SIGXCPU
+	signal(SIGXCPU, cleanup);
+#endif
+#ifdef SIGXFSZ
+	signal(SIGXFSZ, cleanup);
+#endif
+}
+
+// remove pid file
+static void cleanup( int sig )
+{
+	printf( "cleanup: signal = %d\n", sig );
+	if (msgqid >= 0)
+		msgctl( msgqid, IPC_RMID, 0 );
+	remove( pidFile );
+    exit(0);
+}
+
