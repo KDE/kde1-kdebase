@@ -20,6 +20,7 @@ Comment[cs]=Spravuje va╧e okna
 Comment[es]=Administra tus ventanas
 Comment[no]=Styr dine vinduer
 Comment[pt_BR]=Gerencie suas janelas
+Comment[ru]=Управляет вашими окнами
 Exec=kpager
 Icon=kwm.xpm
 TerminalOptions=

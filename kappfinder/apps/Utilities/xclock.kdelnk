@@ -9,6 +9,7 @@ MimeType=
 Name=X Clock
 Name[fi]=X-kello
 Name[no]=X-klokke
+Name[ru]=XClock
 Exec=xclock
 Icon=kclock.xpm
 TerminalOptions=

@@ -5,6 +5,7 @@ Icon=kdvi.xpm
 Type=Application
 Name=X DVI
 Name[cs]=XDvi
+Name[ru]=XDvi
 Comment=DVI Viewer
 Comment[cs]=Prohlí¾eè DVI souborù
 Comment[de]=DVI Betrachter

@@ -7,6 +7,7 @@ Name[cs]= X Console
 Name[fi]=X-konsoli
 Name[is]=X kerfisskjár
 Name[no]=X-konsoll
+Name[ru]=XConsole
 MiniIcon=mini-sh.xpm
 Protocols=
 MimeType=

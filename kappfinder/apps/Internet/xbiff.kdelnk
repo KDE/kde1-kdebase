@@ -5,6 +5,7 @@ SwallowTitle=X Biff
 SwallowTitle[pl]=X Biff
 SwallowTitle[no]=X Biff
 Name=X Biff
+Name[ru]=XBiff
 Comment=Mail notification
 Comment[cs]=Upozoròuje na novou po¹tu
 Comment[de]=Benachrichtung bei neuer Email

@@ -6,6 +6,7 @@ Name=X Clipboard
 Name[fi]=X-leikepöytä
 Name[is]=X klemmuspjald
 Name[no]=X-utklippstavle
+Name[ru]=XClipboard
 MiniIcon=mini-zoom.xpm
 Protocols=
 MimeType=

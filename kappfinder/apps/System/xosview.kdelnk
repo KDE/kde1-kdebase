@@ -5,6 +5,7 @@ BinaryPattern=
 Name=X osview
 Name[is]=X Kerfisástand
 Name[no]=X-systemovervåker
+Name[ru]=XOsView
 MiniIcon=log.xpm
 Protocols=
 MimeType=
