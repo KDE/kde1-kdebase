@@ -1,8 +1,8 @@
 
-INCLUDES=       $(all_includes) -I..
+INCLUDES= $(all_includes) -I..
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD   =            $(LIB_KIMGIO) $(LIB_KDECORE) 
-CXXFLAGS= @NOOPT_CXXFLAGS@
+LDADD   = $(LIB_KIMGIO) $(LIB_KDECORE) 
+CXXFLAGS= $(NOOPT_CXXFLAGS)
 
 ####### Files
 
