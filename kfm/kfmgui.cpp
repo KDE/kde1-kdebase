@@ -1646,7 +1646,7 @@ void KfmGui::slotConfigureBrowser()
 
 	  }
 
-
+          config->sync(); // write all this to the file
 	}
 
   // restore the group
