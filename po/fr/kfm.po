@@ -605,7 +605,7 @@ msgstr "Lecture seulement"
 
 #: kfmprops.cpp:1787
 msgid "Filesystems ( iso9660,msdos,minix,default )"
-msgstr ""Systèmes de fichiers ( iso9660,msdos,minix,default )
+msgstr "Systèmes de fichiers ( iso9660,msdos,minix,default )"
 
 #: kfmprops.cpp:1795
 msgid "Mounted Icon"
