@@ -42,9 +42,7 @@ extern "C" {
 #include <sys/types.h>
 #include <kapp.h>
 
-extern "C" {
 #include "dm.h"
-}
 
 static inline void
 set_min( QWidget* w)
