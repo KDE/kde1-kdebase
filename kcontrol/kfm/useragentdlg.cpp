@@ -146,7 +146,11 @@ void UserAgentOptions::loadSettings()
         {
           QString key;
           key.sprintf( "Entry%d", i );
-          strlist.append( g_pConfig->readEntry( key, "" ) );
+          QString entry = g_pConfig->readEntry( key, "" );
+          if (entry.left( 12 ) == "*:Konqueror/") // update version number
+            strlist.append( QString("*:"+DEFAULT_USERAGENT_STRING) );
+          else
+            strlist.append( entry );
         }
   // if there was no entry at all, we set at least a default
   if( entries == 0 )
