@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
 "POT-Creation-Date: 1998-05-06 20:58+0200\n"
-"PO-Revision-Date: 1998-03-28 22:18 MET\n"
+"PO-Revision-Date: 1998-05-14 17:58 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -152,35 +152,31 @@ msgstr "Kaòky"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Bouboule"
 
 #: bouboule.cpp:1005
-#, fuzzy
 msgid "Setup KBouboule"
-msgstr "Nastavení plamenù"
+msgstr "Nastavení pro KBouboule"
 
 #: bouboule.cpp:1032
-#, fuzzy
 msgid "Number of points:"
-msgstr "Poèet netopýrù:"
+msgstr "Poèet bodù:"
 
 #: bouboule.cpp:1046
-#, fuzzy
 msgid "Point size:"
-msgstr "Poèet bodù:"
+msgstr "Velikost bodu:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "Frekvence zmìny barev:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "3D mód"
 
 #: bouboule.cpp:1223
-#, fuzzy
 msgid "About Bouboule"
-msgstr "Informace o Kaòce"
+msgstr "Informace o KBouboule"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -190,6 +186,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"Bouboule v0.1 -- shluky kroutících se koulí\n"
+"\n"
+"Copyright (c) 1996 Jeremie PETIT\n"
+"\n"
+"Pøevedeno pro kscreensaver Cedricem Tefftem"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -592,21 +593,19 @@ msgstr "Neúspìsné"
 
 #: science.cpp:60
 msgid "Science"
-msgstr ""
+msgstr "Science"
 
 #: science.cpp:386
-#, fuzzy
 msgid "Setup Science"
-msgstr "Nastavení linií"
+msgstr "Nastavení Science"
 
 #: science.cpp:413
 msgid "Intensity:"
-msgstr ""
+msgstr "Intenzita:"
 
 #: science.cpp:544
-#, fuzzy
 msgid "About Science"
-msgstr "Informace o liniích"
+msgstr "Informace o Science"
 
 #: science.cpp:545
 msgid ""
@@ -615,6 +614,10 @@ msgid ""
 "written by Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
 msgstr ""
+"Science - verze 0.2beta\n"
+"\n"
+"napsal Rene Beutler 1998\n"
+"rbeutler@g26.ethz.ch"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -656,7 +659,7 @@ msgstr "Nastavení KSpace"
 
 #: space.cpp:597
 msgid "Warp Interval:"
-msgstr ""
+msgstr "Interval zrychlování:"
 
 #: space.cpp:685
 msgid "About KSpace"

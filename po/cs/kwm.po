@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwm 0.10.23\n"
 "POT-Creation-Date: 1998-05-06 20:58+0200\n"
-"PO-Revision-Date: 1998-01-20 10:55 MET\n"
+"PO-Revision-Date: 1998-05-14 17:46 MET DST\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -107,7 +107,7 @@ msgstr "Osmá"
 
 #: main.C:566
 msgid "Unnamed Desktop"
-msgstr ""
+msgstr "Nepojmenovaná pracovní plocha"
 
 #: main.C:875
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"

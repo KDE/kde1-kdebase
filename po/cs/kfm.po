@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-05-18 18:03+0200\n"
-"PO-Revision-Date: 1998-04-17 15:16 MET DST\n"
+"PO-Revision-Date: 1998-05-19 15:05 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -103,9 +103,8 @@ msgid "&Long View"
 msgstr "&Podrobný podled"
 
 #: kfmgui.cpp:367
-#, fuzzy
 msgid "&Short View"
-msgstr "Pohled s &Ikonami"
+msgstr "&Jednoduchý pohled"
 
 # kfmgui.cpp:???
 #: kfmgui.cpp:373
@@ -192,7 +191,7 @@ msgstr "&Cache"
 
 #: kfmgui.cpp:502
 msgid "Up"
-msgstr ""
+msgstr "Nahoru"
 
 #: kfmgui.cpp:550
 msgid "Stop"
@@ -579,7 +578,7 @@ msgstr "Vertikální rozteè sítì na plo¹e:"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr ""
+msgstr "Transparentní text pro ikony na plo¹e."
 
 #: bookmark.cpp:259
 msgid "Could not write bookmark"
@@ -718,7 +717,7 @@ msgstr ""
 
 #: kfmprops.cpp:662
 msgid "Swallowing on panel"
-msgstr ""
+msgstr "Pohlcený v panelu"
 
 #: kfmprops.cpp:680 kfmprops.cpp:703
 msgid "Execute"
@@ -734,7 +733,7 @@ msgstr "Pracovní adreáø"
 
 #: kfmprops.cpp:711
 msgid "Window Title"
-msgstr ""
+msgstr "Titulek okna"
 
 #: kfmprops.cpp:715
 msgid "Run in terminal"
@@ -1280,9 +1279,8 @@ msgid "Don't forget to save your settings!"
 msgstr "Nezapomeòte ulo¾it va¹e nastavení!"
 
 #: kproxydlg.cpp:16
-#, fuzzy
 msgid "Use proxy"
-msgstr "U¾ivatel"
+msgstr "Pou¾ívat proxy"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"
@@ -1290,24 +1288,23 @@ msgstr "®ádná proxy pro:"
 
 #: kkfmoptdlg.cpp:19
 msgid "&Proxy"
-msgstr ""
+msgstr "&Proxy"
 
 #: kkfmoptdlg.cpp:21
 msgid "User &Agent"
-msgstr ""
+msgstr "U¾ivatelský &agent"
 
 #: kkfmoptdlg.cpp:24
 msgid "&Fonts"
-msgstr ""
+msgstr "&Fonty"
 
 #: kkfmoptdlg.cpp:27
 msgid "&Colors"
-msgstr ""
+msgstr "&Barvy"
 
 #: kkfmoptdlg.cpp:30
-#, fuzzy
 msgid "&Other"
-msgstr "Ostatní"
+msgstr "&Ostatní"
 
 #: kkfmoptdlg.cpp:50
 msgid "KFM Browser Settings"
@@ -1378,24 +1375,3 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
-
-#~ msgid "Run normally"
-#~ msgstr "Vykonej normálnì"
-
-#~ msgid "Run in Panel (drag onto Panel to execute)"
-#~ msgstr "Vykonej v Panelu (táhni na Panel k vykonání)"
-
-#~ msgid "Title of Application"
-#~ msgstr "Titulek aplikace"
-
-#~ msgid "enter the exact title, as normally shown in the window titlebar"
-#~ msgstr "vlo¾ pøesný titulek, který je normálnì zobrazen v titulku okna"
-
-#~ msgid ""
-#~ "You can run this program either\n"
-#~ "in the Panel or in a Terminal, \n"
-#~ "but not both!"
-#~ msgstr ""
-#~ "Mù¾ete vykonat tento program\n"
-#~ "buï v Panelu nebo v Terminálu \n"
-#~ "ale nikdy v obou zároveò!"
