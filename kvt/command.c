@@ -48,6 +48,12 @@
 #define SVR4
 #endif
 
+/* Solaris defines __SVR4 instead of SVR4 */
+#ifdef __SVR4
+#define SVR4
+#endif
+
+
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
