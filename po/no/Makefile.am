@@ -6,7 +6,7 @@ GMOFILES = krootwm.gmo kwm.gmo kvt.gmo kcontrol.gmo kcminput.gmo \
 	kcminfo.gmo kcmsamba.gmo kcmlocale.gmo kmenuedit.gmo \
 	kdmconfig.gmo kcmkwm.gmo kcmkpanel.gmo klock.gmo \
 	kstart.gmo kcmsample.gmo kcmkeys.gmo kikbd.gmo kpager.gmo \
-	kcmkfm.gmo konsole.gmo
+	kcmkfm.gmo konsole.gmo kbgndwm.gmo
 
 POFILES = $(GMOFILES:.gmo=.po)
 
