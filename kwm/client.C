@@ -1100,8 +1100,11 @@ void Client::iconify(){
 void Client::iconify(bool animation){
   if (isIconified())
     return;
+  if (manager->current() && 
+      this != manager->current()
+      && manager->current()->trans == window)
+    manager->activateClient(this);
   manager->iconifyTransientOf(this);
-
   iconified = True;
 
   if (state == NormalState){

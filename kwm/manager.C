@@ -2001,12 +2001,12 @@ void Manager::unIconifyTransientOf(Client* c){
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
     if (it.current() != c && it.current()->trans == c->window){
-      it.current()->unIconify(False);
       if (it.current()->hidden_for_modules){
 	sendToModules(module_win_add, it.current()->window);
 	it.current()->hidden_for_modules = FALSE;
 	clients_traversing.insert(0,it.current());
       }
+      it.current()->unIconify(False);
     }
   }
 }
