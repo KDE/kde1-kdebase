@@ -38,6 +38,4 @@
 	<LeaveWindow>:	reset()\n\
 	<Btn1Down>:	set()\n\
 	<Btn1Up>:	notify() unset()
-*MenuButton.translations: \
-	<LeaveWindow>:	reset()\n\
-	<BtnDown>:	reset() PopupMenu()
+
