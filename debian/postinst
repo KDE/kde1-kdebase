@@ -12,6 +12,11 @@ fi
 if test -L /var/spool/kdeapplnk; then
   rm -f /var/spool/kdeapplnk
 fi
+if test /usr/share/wallpapers; then
+  echo "wallpapers directory already exists...not creating.";
+else
+  mkdir /usr/share/wallpapers > /dev/null 2>&1
+fi
 
 #DEBHELPER#
 #KDEHELPER#

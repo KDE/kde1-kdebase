@@ -54,6 +54,7 @@ binary-arch: checkroot build
 	cp debian/kdm.init.d debian/tmp/etc/init.d/kdm
 	cp debian/xdm.init.d debian/tmp/etc/init.d/xdm
 	install -d debian/tmp/usr/bin
+	cp debian/kappfinder debian/tmp/usr/bin
 	mv debian/tmp/usr/bin/startkde debian/tmp/usr/bin/kde
 	ln -s kde debian/tmp/usr/bin/startkde
 	install -d debian/tmp/usr/sbin
