@@ -1,3 +1,4 @@
+
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -18,8 +19,8 @@ msgstr ""
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr "kwm: Det ser ut til at det allerede kjører en window manager. kwm er"
-"startet\n"
+msgstr "kwm: det ser ut til at det allerede kjører en window manager. kwm er"
+"ikke startet\n"
 
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
@@ -107,7 +108,7 @@ msgstr "Åtte"
 
 #: main.C:743
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt"
+msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt\n"
 
 #: main.C:986
 msgid "*** No Tasks ***"
