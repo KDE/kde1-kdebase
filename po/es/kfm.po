@@ -385,7 +385,7 @@ msgstr "Imposible ejecutar el programa\n"
 
 #: kbind.cpp:1503
 msgid "Could not find binding"
-msgstr "Imposible encontrar conección\n"
+msgstr "Imposible encontrar conección"
 
 #: kbind.cpp:1513
 msgid ""
