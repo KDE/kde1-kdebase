@@ -3,7 +3,7 @@
 Name=Refresh Desktop
 Name[ca]=Actualitza l'escriptori
 Name[cs]=Obnovit pracovní plochu
-Name[da]=Genopfrisk Arbejdsplads
+Name[da]=Genopfrisk arbejdsområde
 Name[de]=Arbeitsfläche auffrischen
 Name[eo]=Refreþigu labortabulon
 Name[es]=Refrescar escritorio
@@ -29,7 +29,7 @@ Protocols=
 Comment=Update desktop icons
 Comment[ca]=Actualitza les icones de l'escriptori
 Comment[cs]=Vykreslí znovu v¹echny elementy pracovní plochy
-Comment[da]=Opdater ikonerne på arbejdspladsen
+Comment[da]=Opdatér ikonerne på arbejdsområdet
 Comment[de]=Aktualisiert alle Elemente der Arbeitsfläche
 Comment[es]=Actualiza los iconos del escritorio
 Comment[fi]=Päivitä työpöydän ikonit

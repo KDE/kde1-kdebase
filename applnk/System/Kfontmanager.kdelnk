@@ -3,7 +3,7 @@
 Name=Fontmanager
 Name[ca]=Gestor de fonts
 Name[cs]=Správce znakových sad
-Name[da]=Skriftmanager
+Name[da]=Skrifttype-manager
 Name[de]=Schriftenmanager
 Name[eo]=Tiparadministrilo
 Name[es]=Administrador de Fuentes
@@ -30,7 +30,7 @@ DocPath=kfontmanager/index.html
 Comment=KDE's Fontmanager.
 Comment[ca]=Gestor de fonts KDE.
 Comment[cs]=Umo¾òuje výbìr znakových sad pou¾ívaných KDE
-Comment[da]=KDE's skriftmanager
+Comment[da]=KDE's skrifttypemanager
 Comment[de]=Verwaltet die Schriften für KDE
 Comment[eo]=Administrilo por la KDE-tiparoj
 Comment[es]=Administra las fuentes de KDE.
