@@ -5,8 +5,9 @@
 <!-- Title information -->
 
 <title>KDE Control Center - KWM
-<author>Matthias Hoelzer, Pat Dowler; revised and updated by Duncan H.
-<date>v1.2, 3. February 1999
+<author>Matthias Hoelzer, Pat Dowler; revised and updated by Duncan.
+
+<date>v1.3, 22 August 1999
 
 <!-- Table of contents -->
 <toc>
@@ -65,29 +66,29 @@ from the list box.   These determine where a new window will
 be placed on the desktop when it is first opened.   
 
 <itemize>
-<item> The "smart" placement policy allows a minimal
-cluttering of the desktop. It's also acting independently on each desk.
-Try it. You'll be amazed how fast the brain will learn to anticipate
-the position of the new window to be created. You'll become able
-to place the mouse pointer in that region before the window appears :-)
+<item> The "<bf>smart</bf>" placement policy implements an
+automatic scheme designed to produce minimal
+cluttering of the desktop. It acts independently on each desk.
+(<it>Recommended</it>).
 
-<item> The "random" placement policy places newly-created windows
+<item> The "<bf>random</bf>" placement policy places newly-created windows
 at a random place on the desktop.
 
 
-<item> The "cascade" placement acts somewhat similar to the 
+<item> The "<bf>cascade</bf>" placement acts somewhat similar to the 
 "random" placement, but it is more consistent in the choice of the 
 window position and keeps track of available "cascaded" positions for
 each desktop separately. 
  
-<item> The "manual" placement creates a window that moves with the mouse
+<item> The "<bf>manual</bf>" placement creates a window 
+that moves with the mouse
 pointer until placed down by clicking a mouse button.
 
-<item> The "interactive" placement policy is a cross between the
+<item> The "<bf>interactive</bf>" placement policy is a cross between the
 "smart" and the "manual" policies: in this case the window placement
 is automatic if the windows can be placed without overlapping
 each other "too much", otherwise the placement policy becomes
-manual.  The "allowed overlap" is set in the box that opens
+manual.  The "<bf>allowed overlap</bf>" is set in the box that opens
 when this selection is made.
 
 </itemize>
@@ -151,10 +152,15 @@ titlebar will raise it to the front.
 
 <p>
 This dialog configures the placement of up to five buttons in the titlebars,
-with the listed functions (Minimize. Maximize,
-Sticky, Close, and Menu) and symbols. Each button can be placed
-on the left, on the right, or not at all.
+with the listed button functions (<bf>Minimize</bf>, <bf> Maximize</bf>,
+<bf>Sticky</bf>, <bf>Close</bf>, and <bf>Menu</bf>) and 
+corresponding button symbols. 
+Each button can be placed
+on the <bf>left</bf>, on the <bf>right</bf>, or switched <bf>off</bf>
+(not placed in the tiitlebar).
 
+The ``<bf>Sticky</bf>'' button allows a window to ``stick'', or remain in its
+place, if the user switches to another desktop.
 
 <p>
 The placement of buttons on each side of the titlebar follows a simple
@@ -167,7 +173,8 @@ Since a maximum of three (3) buttons are allowed on each side of the
 titlebar, trying to place a fourth button on either side will cause the
 innermost one to be switched off.
 
-
+The titlebar image shown on this screen previews how the buttons
+will be placed if the chosen placement is applied.
 
 
 <sect>Configuring the titlebar appearance and action
@@ -178,12 +185,12 @@ of the titlebar and partially choose how it acts..
 
 <p>
 The <bf>Title Alignment</bf> selection sets the position of the window
-title in the titlebar (left-justified, centered, or right-justified)
-
-
+title in the titlebar. The choices are <bf>left</bf>, <bf>middle</bf>,
+or <bf>right</bf> (left-justified, centered, or right-justified)
 
 <p>
-There are four  options for the titlebar <bf>Appearance</bf>:
+There is a choice between
+four  options for the titlebar <bf>Appearance</bf>:
 
 <itemize>
 <item> <bf>Shaded Vertically</bf>: fills the bar with a color gradient from 
@@ -194,26 +201,43 @@ side
 <item> <bf>Pixmap</bf>: allows you to select pixmaps which are 
 tiled to fill the
 titlebar; in this case click on the <bf>Active pixmap</bf> and
-<bf>inactive pixmap</bf> buttons to select pixmaps for the active
-and inactive titlebars.  You may also choose not to
+<bf>Inactive pixmap</bf> buttons to select different pixmaps for the 
+titlebars of active
+and inactive windows.  You may also choose not to
 extend the pixmap tiling under the text on the titlebar.
 </itemize>
 
-
+If the ``<bf>Active title has shaded frame</bf>'' box is checked,
+the titlebar of the active window has a shadowed,
+slightly  three-dimensional
+look.
 
 <p>
 The <bf>Mouse action</bf>  section lets you choose what happens when you 
 doubleclick
-on the titlebar of a window with the left mouse button. The most convenient
-actions to choose are (Un)Maximize and (Un)Shade. The default is set
-to (Un)Shade. (Un)Shade is the name of a feature which allows to reduce 
-a window to the size of its titlebar (and restore it).
+on the titlebar of a window with the left mouse button. 
+Possible choices are:
+<itemize>
+<item>
+<bf>(Un)Maximize</bf> : double-click to maximize the window, double-click
+again to unmaximize.
+<item>
+<bf>(Un)Shade</bf>: double-click to hide all parts of the window
+except the titlebar, double-click again to restore it (somewhat
+like the action of roller-blind window shades).  This
+is the default behavior. 
+<item>
+<bf>Iconify</bf>: Window is shrunk to an entry on the Taskbar.
+<item><bf>(Un)Sticky</bf>: double-click to change between ``sticky''
+and ``not sticky'' window attribute.
+<item><bf>Close</bf>: Window is closed.
+</itemize>
  
 <p>
 If the  window title is too long to be completely
-displayed on the window titlebar, the
+displayed on the window titlebar, 
 the "<bf>Title animation</bf>" option allows the text to slide
-back and forth, so all the title can be read.
+back and forth, so all of the title can be read.
 The slider bar controls the period of this motion; setting the period
 to 0 switches off this feature.
 
