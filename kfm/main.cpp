@@ -57,7 +57,7 @@ int main( int argc, char ** argv )
     closedir( dp );
 
     c = getenv( "HOME" );
-    c += "/.kde/config/.kfmrc";
+    c += "/.kde/config/kfmrc";
     FILE *f2 = fopen( c.data(), "rb" );
     if ( f2 == 0L )
     {
