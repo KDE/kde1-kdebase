@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "PO-Revision-Date: 1998-03-21 13:22+0100\n"
 "Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -38,7 +38,8 @@ msgstr "Endringer er ikke lagret !"
 msgid ""
 "\n"
 "Do you want to save your changes ?"
-msgstr "\n"
+msgstr ""
+"\n"
 "Ønsker du å lagre dine endringer ?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
@@ -53,7 +54,8 @@ msgstr "Last inn menyer på nytt"
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
-msgstr "Ny innlasting av menyene vil forkaste alle endringer.\n"
+msgstr ""
+"Ny innlasting av menyene vil forkaste alle endringer.\n"
 "Er du sikker på at du ønsker å laste inn på nytt?"
 
 #: button.cpp:209 main.cpp:77 main.cpp:90
@@ -64,7 +66,8 @@ msgstr "KMenuedit"
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
-msgstr "Mappen for din personlige meny eksisterer ikke.\n"
+msgstr ""
+"Mappen for din personlige meny eksisterer ikke.\n"
 " Ønsker du å lage den nå ?"
 
 #: main.cpp:91
@@ -101,7 +104,8 @@ msgstr "Feil filnavn"
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
-msgstr "En kdelnk-fil med dette navn eksisterer allerede. \n"
+msgstr ""
+"En kdelnk-fil med dette navn eksisterer allerede. \n"
 "Vennligst velg et annet filnavn."
 
 #: confmenu.cpp:301
@@ -116,7 +120,8 @@ msgstr "ingen kommando"
 msgid ""
 "Sorry ! You have to save your changes\n"
 "before you can drop this item on another window."
-msgstr "Beklager ! Du må lagre dine endringer\n"
+msgstr ""
+"Beklager ! Du må lagre dine endringer\n"
 "før du kan slippe denne på et annet vindu."
 
 #: DesktopPathDialogData.cpp:37

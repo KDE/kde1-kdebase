@@ -1,4 +1,3 @@
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -7,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-02 00:16+0100\n"
+"POT-Creation-Date: 1998-03-19 22:18+0100\n"
 "PO-Revision-Date: 1998-03-22 17:21:32+0100\n"
 "Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -15,23 +14,28 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:57
+#: main.cpp:59
 msgid "&Windows"
 msgstr "&Vinduer"
 
-#: main.cpp:60
+#: main.cpp:62
 msgid "&Buttons"
 msgstr "&Knapper"
 
-#: main.cpp:63
+#: main.cpp:65
 msgid "&Titlebar"
 msgstr "&Tittellinje"
 
-#: main.cpp:69
-msgid "usage: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+#: main.cpp:68
+msgid "&Desktop"
+msgstr ""
+
+#: main.cpp:74
+#, fuzzy
+msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 msgstr "bruk: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 
-#: main.cpp:98
+#: main.cpp:105
 msgid "Window manager style"
 msgstr "Vindus manager stil"
 
@@ -54,17 +58,20 @@ msgstr "Meny"
 #: titlebar.cpp:463
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "Venstre side av tittellinja er full... kopler ut 'maksimerings' knappen\n"
+msgstr ""
+"Venstre side av tittellinja er full... kopler ut 'maksimerings' knappen\n"
 
 #: titlebar.cpp:496
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "Høyre side av tittellinja er full... kopler ut 'maksimerings' knappen\n"
+msgstr ""
+"Høyre side av tittellinja er full... kopler ut 'maksimerings' knappen\n"
 
 #: titlebar.cpp:536
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "Venstre side av tittellinja er full... kopler ut 'minimerings' knappen\n"
+msgstr ""
+"Venstre side av tittellinja er full... kopler ut 'minimerings' knappen\n"
 
 #: titlebar.cpp:569
 msgid ""
@@ -91,7 +98,7 @@ msgstr "Pixmap"
 msgid "Title Animation"
 msgstr "Tittel animasjon"
 
-#: titlebar.cpp:943
+#: desktop.cpp:93 titlebar.cpp:943
 msgid "ms"
 msgstr "ms"
 
@@ -103,100 +110,163 @@ msgstr "&Aktivt pixmap"
 msgid "&Inactive pixmap"
 msgstr "&Inaktivt pixmap"
 
-#: titlebar.cpp:981
+#: titlebar.cpp:982
 msgid "Mouse action"
 msgstr "Mus funksjon"
 
-#: titlebar.cpp:983
+#: titlebar.cpp:984
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
-msgstr "VenstreMusKnapp dobbelklikk\n"
+msgstr ""
+"VenstreMusKnapp dobbelklikk\n"
 "    på tittellinje gjør følgende:"
 
-#: titlebar.cpp:987
+#: titlebar.cpp:988
 msgid "(Un)Maximize"
 msgstr "(Ikke)maksimer"
 
-#: titlebar.cpp:988
+#: titlebar.cpp:989
 msgid "Move"
 msgstr "Flytt"
 
-#: titlebar.cpp:989
+#: titlebar.cpp:990
 msgid "(Un)Shade"
 msgstr "(Ikke)skygge"
 
-#: titlebar.cpp:990
+#: titlebar.cpp:991
 msgid "Iconify"
 msgstr "Lag til ikon"
 
-#: titlebar.cpp:991
+#: titlebar.cpp:992
 msgid "(Un)Sticky"
 msgstr "(Un)Sticky"
 
-#: titlebar.cpp:992
+#: titlebar.cpp:993
 msgid "Resize"
 msgstr "Ny størrelse"
 
-#: titlebar.cpp:993
+#: titlebar.cpp:994
 msgid "Restore"
 msgstr "Gjenopprett"
 
-#: titlebar.cpp:994
+#: titlebar.cpp:995
 msgid "Operations Menu"
 msgstr "Operasjons meny"
 
-#: windows.cpp:77
+#: windows.cpp:74
 msgid "Window movement"
 msgstr "Vindubevegelse"
 
-#: windows.cpp:78
+#: windows.cpp:75
 msgid "Transparent"
 msgstr "Gjennomsiktig"
 
-#: windows.cpp:79
+#: windows.cpp:76
 msgid "Opaque"
 msgstr "Opaque"
 
-#: windows.cpp:82
+#: windows.cpp:79
 msgid "Resize Animation"
 msgstr "Ny størrelse for animasjon"
 
-#: windows.cpp:87
+#: windows.cpp:84
 msgid "Placement policy"
 msgstr "Plasserings politikk"
 
-#: windows.cpp:98
+#: windows.cpp:86
+msgid "Smart"
+msgstr ""
+
+#: windows.cpp:88
+msgid "Cascade"
+msgstr ""
+
+#: windows.cpp:90
+msgid "Interactive"
+msgstr ""
+
+#: windows.cpp:92
+msgid "Random"
+msgstr ""
+
+#: windows.cpp:94
+#, fuzzy
+msgid "Manual"
+msgstr "Meny"
+
+#: windows.cpp:101
+msgid "Allowed Overlap:"
+msgstr ""
+
+#: windows.cpp:108
 msgid "Maximize Style"
 msgstr "Maksimer stil"
 
-#: windows.cpp:99
+#: windows.cpp:109
 msgid "Maximize fully"
 msgstr "Maksimer fullt"
 
-#: windows.cpp:100
+#: windows.cpp:110
 msgid "Maximize vertically"
 msgstr "Maksimer vertikalt"
 
-#: windows.cpp:103
+#: windows.cpp:113
 msgid "Focus Policy"
 msgstr "Fokus politikk"
 
-#: windows.cpp:104
+#: windows.cpp:114
 msgid "Click to focus"
 msgstr "Klikk for fokus"
 
-#: windows.cpp:105
+#: windows.cpp:115
 msgid "Focus follows mouse"
 msgstr "Fokus følger mus"
 
-#: windows.cpp:110
+#: windows.cpp:120
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
-msgstr "Auto reis forsinkelse\n"
+msgstr ""
+"Auto reis forsinkelse\n"
 "(<100 kopler fra)"
 
-#: windows.cpp:113
+#: windows.cpp:123
 msgid "miliseconds"
 msgstr "millisekunder"
+
+#: desktop.cpp:79
+msgid "Active desktop borders"
+msgstr ""
+
+#: desktop.cpp:81
+msgid "Enable active desktop borders"
+msgstr ""
+
+#: desktop.cpp:83
+msgid "Move pointer towards center after switch"
+msgstr ""
+
+#: desktop.cpp:89
+msgid "Dekstop switch delay:"
+msgstr ""
+
+#: desktop.cpp:102
+msgid "Magic Borders"
+msgstr ""
+
+#: desktop.cpp:104
+msgid "Edge Resistance:"
+msgstr ""
+
+#: desktop.cpp:118
+msgid ""
+"Border Snap Zone:\n"
+"       (pixels)"
+msgstr ""
+
+#: desktop.cpp:132
+msgid ""
+"Window Snap Zone:\n"
+"       (pixels)"
+msgstr ""

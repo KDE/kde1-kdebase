@@ -1,4 +1,3 @@
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -7,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-19 22:19+0100\n"
 "PO-Revision-Date: 1998-03-21 13:48+0100\n"
 "Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -55,5 +54,6 @@ msgstr "Benytter språk oppsett"
 msgid ""
 "Changed language settings apply only to newly started applications.\n"
 "To change the language of all programs, you will have to logout first."
-msgstr "Endret språkoppsett gjelder bare for nystartede applikasjoner.\n"
+msgstr ""
+"Endret språkoppsett gjelder bare for nystartede applikasjoner.\n"
 "For å endre språket til alle programmer, må du først logge deg ut."
