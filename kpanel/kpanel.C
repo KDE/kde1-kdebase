@@ -192,7 +192,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     autoHideSpeed = 4;
     if (config->hasKey("AutoHideSpeed"))
-      autoHideTaskbar = config->readNumEntry("AutoHideSpeed");
+      autoHideSpeed = config->readNumEntry("AutoHideSpeed");
     else
       config->writeEntry("AutoHideSpeed", 4);
 
