@@ -291,41 +291,41 @@ void KfmGui::initToolBar()
     path = KMimeType::getIconPath() + QString("/toolbar/");
     
     pixmap.load(path + "back.xpm");
-    toolbar->insertItem(pixmap, 0, SIGNAL( clicked() ), view, SLOT( slotBack() ), FALSE, "Back");
+    toolbar->insertButton(pixmap, 0, SIGNAL( clicked() ), view, SLOT( slotBack() ), FALSE, "Back");
     
     pixmap.load(path + "forward.xpm");
-    toolbar->insertItem(pixmap, 1, SIGNAL( clicked() ), view, SLOT( slotForward() ), FALSE, "Forward");
+    toolbar->insertButton(pixmap, 1, SIGNAL( clicked() ), view, SLOT( slotForward() ), FALSE, "Forward");
     
     pixmap.load(path + "home.xpm");
-    toolbar->insertItem(pixmap, 2, SIGNAL( clicked() ), this, SLOT( slotHome() ), TRUE, "Home");
+    toolbar->insertButton(pixmap, 2, SIGNAL( clicked() ), this, SLOT( slotHome() ), TRUE, "Home");
     
     toolbar->insertSeparator();
     
     pixmap.load(path + "reload.xpm");
-    toolbar->insertItem(pixmap, 3, SIGNAL( clicked() ), view, SLOT( slotReload() ), TRUE, "Reload");
+    toolbar->insertButton(pixmap, 3, SIGNAL( clicked() ), view, SLOT( slotReload() ), TRUE, "Reload");
 
     toolbar->insertSeparator();
     
     pixmap.load(path + "editcopy.xpm");
-    toolbar->insertItem(pixmap, 4, SIGNAL( clicked() ), this, SLOT( slotCopy() ), TRUE, "Copy");
+    toolbar->insertButton(pixmap, 4, SIGNAL( clicked() ), this, SLOT( slotCopy() ), TRUE, "Copy");
     
     pixmap.load(path + "editpaste.xpm");
-    toolbar->insertItem(pixmap, 5, SIGNAL( clicked() ), this, SLOT( slotPaste() ), TRUE, "Paste");
+    toolbar->insertButton(pixmap, 5, SIGNAL( clicked() ), this, SLOT( slotPaste() ), TRUE, "Paste");
     
     toolbar->insertSeparator();
     
     pixmap.load(path + "help.xpm");
-    toolbar->insertItem(pixmap, 6, SIGNAL( clicked() ), this, SLOT( slotHelp() ), TRUE, "Help");
+    toolbar->insertButton(pixmap, 6, SIGNAL( clicked() ), this, SLOT( slotHelp() ), TRUE, "Help");
     
     toolbar->insertSeparator();
     
     pixmap.load(path + "exit.xpm");
-    toolbar->insertItem(pixmap, 7, SIGNAL( clicked() ), this, SLOT( slotStop() ), FALSE, "Stop");
+    toolbar->insertButton(pixmap, 7, SIGNAL( clicked() ), this, SLOT( slotStop() ), FALSE, "Stop");
 
     path = KMimeType::getIconPath();
     pixmap.load( path + "/kde1.gif" );
     
-    toolbar->insertItem(pixmap, 8, SIGNAL( clicked() ), this, SLOT( slotNewWindow() ), FALSE );
+    toolbar->insertButton(pixmap, 8, SIGNAL( clicked() ), this, SLOT( slotNewWindow() ), FALSE );
     toolbar->setItemEnabled( 8, TRUE );
     
     // Load animated logo
@@ -825,7 +825,7 @@ void KfmGui::slotAnimatedLogoTimeout()
     animatedLogoCounter++;
     if ( animatedLogoCounter == animatedLogo.count() )
 	animatedLogoCounter = 0;
-    toolbar->setItemPixmap( 8, *( animatedLogo.at( animatedLogoCounter ) ) );
+    toolbar->setButtonPixmap( 8, *( animatedLogo.at( animatedLogoCounter ) ) );
 }
 
 void KfmGui::slotAddWaitingWidget( KHTMLView *_w )
@@ -847,7 +847,7 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
     if ( waitingWidgetList.count() == 0 )
     {
 	animatedLogoTimer->stop();
-	toolbar->setItemPixmap( 8, *( animatedLogo.at( 0 ) ) );
+	toolbar->setButtonPixmap( 8, *( animatedLogo.at( 0 ) ) );
 	toolbar->setItemEnabled( 7, FALSE );
 	slotSetStatusBar( "Document: Done" );
     }
