@@ -299,7 +299,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     trans = None;
     decoration = 1;
     wants_focus = true;
-    
+    do_close = FALSE;
     
     // standard window manager protocols
     Pdeletewindow = FALSE;
@@ -637,7 +637,7 @@ void Client::mouseReleaseEvent( QMouseEvent* ev){
 
 void Client::mouseDoubleClickEvent( QMouseEvent* ev){
   if (ev->button() != LeftButton)
-    return; 
+    return;
   if (ev->pos().x() >= title_rect.x() && ev->pos().x() <= title_rect.x()+title_rect.width() &&
       ev->pos().y() >= title_rect.y() && ev->pos().y() <= title_rect.y()+title_rect.height()){
     handleOperation(options.titlebar_doubleclick_command);
@@ -1131,6 +1131,7 @@ myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
     }
     buttonMenu = button;
     connect( button, SIGNAL(pressed()), SLOT(menuPressed()));
+    connect( button, SIGNAL(released()), SLOT(menuReleased()));
     break;
   default:
     fprintf(stderr,"Bad Button Function %d\n", buttonFunction);
@@ -1680,10 +1681,10 @@ void Client::menuPressed(){
     manager->raiseClient(this);
     manager->activateClient(this);
   }
-  
   if (clicktime && clicktime->msecsTo(QTime::currentTime())<700){
     // some kind of doubleclick => close
-    closeClicked();
+    //closeClicked();
+    do_close = TRUE;
   }
   else {
     ignore_release_on_this = buttonMenu;
@@ -1694,7 +1695,13 @@ void Client::menuPressed(){
     clicktime = new QTime(QTime::currentTime());
   else
     *clicktime = QTime::currentTime();
-};
+}
+
+
+void Client::menuReleased(){
+  if (do_close) closeClicked();
+  do_close = FALSE;
+}
 
 
 void Client::  handleOperation(int i){

@@ -214,6 +214,7 @@ public:
    void closeClicked();
    void stickyToggled(bool);
    void menuPressed();
+   void menuReleased();
 
 signals:
   void clientClosed( int );
@@ -256,6 +257,7 @@ private:
   bool animation_is_active;
 
   bool is_active;
+  bool do_close;
   
   bool autoraised_stopped;
 
