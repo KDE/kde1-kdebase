@@ -224,7 +224,7 @@ private:
 	 * respect to the other processes in the process list. It does not
 	 * have to be a leaf process in the overall list of processes.
 	 */
-	bool isLeafProcess(int pid) const;
+	bool isLeafProcess(int pid);
 
 	/*
 	 * This function is used to recursively construct the tree by removing

@@ -46,7 +46,7 @@ ProcListPage::ProcListPage(QWidget* parent = 0, const char* name = 0)
 	pList = new ProcessList(this, "pList");    
 	CHECK_PTR(pList);
 
-	treeViewCB = new QCheckBox("Show Tree", this, "TreeViewCB");
+	treeViewCB = new QCheckBox(i18n("Show Tree"), this, "TreeViewCB");
 	CHECK_PTR(treeViewCB);
 	treeViewCB->setMinimumSize(treeViewCB->sizeHint());
 

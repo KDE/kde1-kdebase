@@ -157,6 +157,9 @@ used on systems that are shared by many people. Longer running jobs
 (batch jobs) should be "reniced" to preserve a short response time for
 interactive processes.
 
+This menu is only enabled when a process has been selected. It's also
+available as Right-Mouse-Button-Popup menu when clicking on a process.
+
 <sect1>The Process List Page<p>
 
 The Process List Page gives you a list of processes on your

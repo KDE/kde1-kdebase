@@ -519,7 +519,7 @@ ProcessList::deleteLeaves(void)
 }
 
 bool
-ProcessList::isLeafProcess(int pid) const
+ProcessList::isLeafProcess(int pid)
 {
 	
 	for (unsigned int i = 0; i < pl.count(); i++)

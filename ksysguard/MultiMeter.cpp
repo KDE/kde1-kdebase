@@ -21,6 +21,7 @@
 
 // $Id$
 
+#include <stdlib.h>
 #include <math.h>
 
 #include <qcolor.h>

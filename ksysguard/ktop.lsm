@@ -1,7 +1,7 @@
 Begin3
 Title: 		KTop - The KDE Task Manager
-Version: 	1.0.0
-Entered-date:   Mar xx 1999
+Version: 	1.0.0p1
+Entered-date:   Mar 12 1999
 Entered-by: 	cs@kde.org (Chris Schlaeger)
 Description: 	The KDE Task Manager
 Keywords: 	KDE, Qt, gui, X11, top, ps, pstree, load, cpu, process, SMP
@@ -13,7 +13,7 @@ Author5:	cs@kde.org (Chris Schlaeger)
 Maintained-by: 	cs@kde.org (Chris Schlaeger)
 Primary-site: 	ftp://ftp.kde.org/pub/kde/stable/apps/utils
 Original-site: 	http://www.ert.rwth-aachen.de/~schlaege/ktop
-Platform: 	Linux 2.x or FreeBSD, needs Qt 1.4x and the KDE 1.x libs
+Platform: 	Linux 2.x or FreeBSD, needs Qt 1.42 and the KDE 1.1 libs
 Copying-policy: GPL 
 End
 
