@@ -1,10 +1,10 @@
 // -*- C++ -*-
 
 //
-//  ktaskbar
+//  kmenuedit
 //
 //  Copyright (C) 1997 Christoph Neerfeld
-//  email:  Christoph.Neerfeld@mail.bonn.netsurf.de
+//  email:  Christoph.Neerfeld@bonn.netsurf.de
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -44,6 +44,22 @@ extern "C" {
 
 extern KIconLoader *global_pix_loader;
 
+static bool isKdelnkFile(const char* name){
+  QFile file(name);
+  if (file.open(IO_ReadOnly)){
+    char s[19];
+    int r = file.readLine(s, 18);
+    if(r > -1){
+      s[r] = '\0';
+      file.close();
+      return (QString(s).left(17) == "# KDE Config File");
+    }
+    file.close();
+  }
+  return FALSE;
+}
+
+
 PMenuItem::PMenuItem() 
   : url_name(command_name), dev_name(command_name), mount_point(term_opt), fs_type(exec_path),
     dev_read_only(use_term), umount_pixmap_name(pattern)
@@ -69,7 +85,7 @@ PMenuItem::PMenuItem( EntryType e, QString t=0, QString c=0, QString n=0, PMenu 
   pixmap_name = n;
   if( !pixmap_name.isEmpty() )
     {
-      pixmap = global_pix_loader->loadIcon( pixmap_name );
+      pixmap = global_pix_loader->loadApplicationMiniIcon( pixmap_name, 14, 14 );
     }
   else
     {
@@ -225,7 +241,7 @@ short PMenuItem::parse( QString &s, PMenu *menu = NULL)
 //debug ( "unix = '%s'", (const char *) command_name);
   if( !pixmap_name.isEmpty() )
     {
-      pixmap = global_pix_loader->loadIcon(pixmap_name);
+      pixmap = global_pix_loader->loadApplicationMiniIcon(pixmap_name, 14, 14);
     }
   return 0;
 }
@@ -311,11 +327,11 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
   if( pixmap_name.isEmpty() )
     {
       pixmap_name = "mini-ball.xpm";
-      pixmap = global_pix_loader->loadIcon("mini-ball.xpm");
+      pixmap = global_pix_loader->loadMiniIcon("mini-ball.xpm", 14, 14);
     }
   else
     {
-      pixmap = global_pix_loader->loadIcon(pixmap_name);
+      pixmap = global_pix_loader->loadApplicationMiniIcon(pixmap_name, 14, 14);
     }
   if( big_pixmap_name.isEmpty() )
     {
@@ -573,11 +589,9 @@ short PMenu::parse( QDir d )
   if( !dir_info.isWritable() )
     read_only = TRUE;
   file += "/.directory";
-  QFile config(file);
-  if( config.open(IO_ReadOnly) ) 
+  QFileInfo dir_fi(file);
+  if( dir_fi.isReadable() )
     {
-	  config.close(); // kalle
-	  // kalle      QTextStream st( (QIODevice *) &config);
       KConfig kconfig(file);
       kconfig.setGroup("KDE Desktop Entry");
       QString order = kconfig.readEntry("SortOrder");
@@ -594,9 +608,7 @@ short PMenu::parse( QDir d )
 	  sort_order.append(temp);
 	  i = j+1;
 	}
-      config.close();
     }
-
   const QFileInfoList *list = d.entryInfoList();
   QFileInfoListIterator it( *list );
   QFileInfo *fi;
@@ -623,7 +635,8 @@ short PMenu::parse( QDir d )
 	}
       else
 	{
-	  if( !fi->extension().contains("kdelnk") )
+	  //if( !fi->extension().contains("kdelnk") )
+	  if( !isKdelnkFile(fi->absFilePath()))
 	    { ++it; continue; }
 	  new_item = new PMenuItem;
 	  new_item->read_only = read_only;

@@ -426,19 +426,19 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
 void EntryDialog::pixnameChanged()
 {
   QString new_name = i_pixmap->text();
-  b_pixmap->setPixmap( global_pix_loader->loadIcon(new_name) );
+  b_pixmap->setPixmap( global_pix_loader->loadApplicationIcon(new_name, 70, 70 ));
 }
 
 void EntryDialog::bigPixnameChanged()
 {
   QString new_name = i_big_pixmap->text();
-  b_big_pixmap->setPixmap( global_pix_loader->loadIcon(new_name) );
+  b_big_pixmap->setPixmap( global_pix_loader->loadApplicationIcon(new_name, 70, 70 ));
 }
 
 void EntryDialog::umountPixnameChanged()
 {
   QString new_name = i_mount_pix->text();
-  b_mount_pix->setPixmap( global_pix_loader->loadIcon(new_name) );
+  b_mount_pix->setPixmap( global_pix_loader->loadApplicationIcon(new_name, 70, 70) );
 }
 
 void EntryDialog::pixButPressed()

@@ -46,20 +46,6 @@ int main( int argc, char **argv )
 
   QString temp1, temp2;
   KConfig *config = a.getConfig();
-  /*
-  config->setGroup("KDE Setup");
-  if( !config->hasKey("IconPath") )
-     {
-       temp1 = KApplication::kdedir();
-       temp1 += "/lib/pics:";
-       temp1 += KApplication::kdedir();
-       temp1 += "/lib/pics/toolbar";
-       IconPathDialog *icon_dialog = new IconPathDialog( temp1 );
-       icon_dialog->exec();
-       temp1 = icon_dialog->text();
-       config->writeEntry("IconPath", temp1);
-     }
-     */
   config->setGroup("KDE Desktop Entries");
   if( !config->hasKey("Path") || !config->hasKey("PersonalPath") )
     {
@@ -107,7 +93,7 @@ int main( int argc, char **argv )
 	}
     }
   global_pix_loader = KApplication::getKApplication()->getIconLoader();
-  global_pix_loader->insertDirectory(0, KApplication::kdedir()+"/share/icons" );
+  //global_pix_loader->insertDirectory(0, KApplication::kdedir()+"/share/icons" );
   global_pix_sel = new KIconLoaderDialog;
   KMenuEdit edit;
   a.setMainWidget( (QWidget *) &edit );

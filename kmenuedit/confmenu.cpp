@@ -170,7 +170,7 @@ void MenuButton::change_item()
   dialog->b_pixmap->setPixmap( pmenu_item->getPixmap() );
   QString temp_name = pmenu_item->getBigPixmapName();
   if( !temp_name.isEmpty() )
-    dialog->b_big_pixmap->setPixmap( global_pix_loader->loadIcon(temp_name) );
+    dialog->b_big_pixmap->setPixmap( global_pix_loader->loadApplicationIcon(temp_name, 70, 70) );
   dialog->i_big_pixmap->setText(temp_name);
 
   if( type == unix_com )
@@ -216,7 +216,7 @@ void MenuButton::change_item()
       dialog->i_fstype->setText(pmenu_item->getFSType());
       QString temp_name = pmenu_item->getUMPixmapName();
       if( !temp_name.isEmpty() )
-	dialog->b_mount_pix->setPixmap( global_pix_loader->loadIcon(temp_name) );
+	dialog->b_mount_pix->setPixmap( global_pix_loader->loadApplicationIcon(temp_name, 70, 70));
       dialog->i_mount_pix->setText(temp_name);
       dialog->cb_read_only->setChecked(pmenu_item->isDevReadOnly());
     }
@@ -279,7 +279,8 @@ void MenuButton::change_accept()
       pmenu_item->setPixmapName(dialog->i_pixmap->text());
       pmenu_item->setBigPixmapName(dialog->i_big_pixmap->text());
       pmenu_item->setComment(dialog->i_comment->text());
-      pmenu_item->setPixmap( global_pix_loader->loadIcon( dialog->i_pixmap->text()) );
+      pmenu_item->setPixmap( global_pix_loader->loadApplicationIcon( dialog->i_pixmap->text(),
+								     70, 70 ) );
       setPixmap( pmenu_item->getPixmap() );
       switch( (int) new_type ) {
       case (int) unix_com:
