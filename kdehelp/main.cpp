@@ -12,10 +12,13 @@
 #include <kapp.h>
 #include <drag.h>
 #include <klocale.h>
+#include <kwm.h>
 #include <time.h>
 #include "error.h"
 #include "khelp.h"
 #include "mainwidget.h"
+
+#include <X11/Xatom.h>
 
 #ifdef __FreeBSD__
 #include <floatingpoint.h>
@@ -44,31 +47,38 @@ protected:
 
 void Timer::timerEvent( QTimerEvent * )
 {
-	KHelpMsg buf, retbuf;
-	KHelpMain *helpWin;
+    KHelpMsg buf, retbuf;
+    KHelpMain *helpWin;
 
-	if ( buf.recv( msgqid, 1L ) != -1 )
+    if ( buf.recv( msgqid, 1L ) != -1 )
+    {
+	printf( "got request: %s\n", buf.getMsg() );
+
+	retbuf.setType( 2L );
+	retbuf.send( msgqid );
+
+	helpWin = new KHelpMain;
+
+	QString tmp = buf.getMsg();
+
+	QString url = strtok( tmp.data(), " " );
+	QString props = strtok( NULL, " " );
+
+	if ( !strchr( url, ':' ) )
 	{
-		printf( "got request: %s\n", buf.getMsg() );
-
-		retbuf.setType( 2L );
-		retbuf.send( msgqid );
-
-		helpWin = new KHelpMain;
-
-		QString url = buf.getMsg();
-
-		if ( !strchr( url, ':' ) )
-		{
-			url = "file:";
-			url += buf.getMsg();
-		}
-
-		if ( helpWin->openURL( url ) )
-			delete helpWin;
-		else
-			helpWin->show();
+	    url = "file:";
+	    url += buf.getMsg();
 	}
+
+	if ( helpWin->openURL( url ) )
+		delete helpWin;
+	else
+	{
+	    if ( !props.isEmpty() )
+		KWM::setProperties( helpWin->winId(), props );
+	    helpWin->show();
+	}
+    }
 }
 
 void errorHandler( int type, char *msg )
@@ -95,15 +105,8 @@ void errorHandler( int type, char *msg )
 int main(int argc, char *argv[])
 {
 	int i;
-	QString url, initDoc;
+	QString url, initDoc, sessionProps;
 	FILE *fp;
-
-#if 0
- #ifdef __FreeBSD__
-	/* ignore floating point exceptions */
-	fpsetmask(0);
- #endif
-#endif
 
 	for ( i = 1; i < argc; i++ )
 	{
@@ -112,14 +115,15 @@ int main(int argc, char *argv[])
 			// skip caption
 			if ( strcasecmp( argv[i], "-caption" ) == 0 )
 				i++;
+			else if ( strcasecmp( argv[i], "-session" ) == 0 )
+				sessionProps = argv[++i];
 			continue;
 		}
 
 		initDoc = argv[i];
-		break;
 	}
 
-	if ( i == argc )
+	if ( initDoc.isEmpty() )
 	{
 		initDoc = "file:";
 		initDoc += kapp->kdedir();
@@ -155,11 +159,11 @@ int main(int argc, char *argv[])
 	// if there is a pidFile then this is not the first instance of kdehelp
 	if ( ( fp = fopen( pidFile, "r" ) ) != NULL )
 	{
-		printf( "found PID file\n" );
 		KHelpMsg buf;
 		int pid;
+		QString msg = url + " " + sessionProps;
 		buf.setType( 1L );
-		buf.setMsg( url );
+		buf.setMsg( msg );
 		fscanf( fp, "%d %d", &pid, &msgqid );
 		// if this fails I assume that the pid file is left over from bad exit
 		// and continue on
@@ -206,6 +210,8 @@ int main(int argc, char *argv[])
 	
 	if ( !helpWin->openURL( url ) )
 	{
+		if ( !sessionProps.isEmpty() )
+		    KWM::setProperties( helpWin->winId(), sessionProps );
 		helpWin->show();
 
 		a.exec();

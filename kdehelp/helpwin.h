@@ -35,7 +35,7 @@
 #define QUIT			102
 #define COPY			200
 
-#define KDEHELP_VERSION		"0.5.3"
+#define KDEHELP_VERSION		"0.5.4"
 
 #define STATUSBAR_HEIGHT	20
 #define SCROLLBAR_WIDTH		16
@@ -57,27 +57,6 @@ signals:
 
 public slots:
 	void openPressed();
-
-private:
-	QLineEdit *lineEdit;
-};
-
-//-----------------------------------------------------------------------------
-
-class KLocationBar : public QFrame
-{
-	Q_OBJECT
-public:
-	KLocationBar( QWidget *parent = NULL, const char *name = NULL );
-
-	void setLocation( const char *l )
-		{	lineEdit->setText( l ); }
-
-signals:
-	void openURL( const char *URL, int );
-
-protected slots:
-	void slotReturnPressed();
 
 private:
 	QLineEdit *lineEdit;
@@ -132,11 +111,11 @@ public:
 	KHelpWindow(QWidget *parent=NULL, const char *name=NULL);
 	virtual ~KHelpWindow();
 
-	int 	openURL( const char *URL, bool withHistory = true );
-	void    setLocationBar(bool enabled);
+	int openURL( const char *URL, bool withHistory = true );
 
-	bool    canCurrentlyDo(AllowedActions action);
+	bool canCurrentlyDo(AllowedActions action);
 	const char *getCurrentURL();
+
 
 signals:
 	void enableMenuItems();
@@ -144,10 +123,15 @@ signals:
 
 	void setURL( const char *url);
 	// the name of the url being displayed has changed to "url"
-	     
+	
+	void setLocation( const char *url);
+	// This signal gets emitted when the URL in the LocationBar should be changed
+     
 	void bookmarkChanged(KBookmark *);
 
 	void setTitle(const char *_title);
+
+	void saveSession();
 
 public slots:
 	void	slotOpenFile();
@@ -222,7 +206,6 @@ private:
 	QScrollBar *vert;
 	QScrollBar *horz;
 	QLabel *statusBar;
-	KLocationBar *locationBar;
 	QPopupMenu *rmbPopup;
 	QAccel *accel;
 	KHelpView *view;
@@ -230,7 +213,6 @@ private:
 	KOpenURLDialog *openURLDialog;
 
 	KFM *remotePage;
-//	QList<KFM> remoteImage;
 	QString remoteFile;
 	QString localFile;
 

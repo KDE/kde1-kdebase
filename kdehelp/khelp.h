@@ -45,7 +45,7 @@ public:
 	
 private:
 	int  mcommand;
-	char msg[256];
+	char msg[1024];
 };
 
 

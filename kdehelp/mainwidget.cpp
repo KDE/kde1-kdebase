@@ -12,6 +12,10 @@
 #include "mainwidget.moc"
 
 #include <klocale.h>
+#include <kwm.h>
+
+// CC: #defines for IDs on the Location Toolbar
+#define QLINEDIT_ITEM 1
 
 QList<KHelpMain> KHelpMain::helpWindowList;
 KHelpOptionsDialog *KHelpMain::optionsDialog = NULL;
@@ -29,11 +33,13 @@ KHelpMain::KHelpMain(const char *name)
 
 
 	createMenu();
+	createLocationbar();
 	createToolbar();
 	createStatusbar();
 	setMenu(menu);
 	setStatusBar(statusbar);
 	addToolBar(toolbar);
+	addToolBar(location);
 	setView(helpwin);
 
 	readConfig();
@@ -79,6 +85,8 @@ KHelpMain::KHelpMain(const char *name)
 			this, SLOT ( slotNewWindow(const char *) ) );
 	connect (helpwin, SIGNAL ( setURL(const char *) ),
 			this, SLOT ( slotSetStatusText(const char *) ) );
+	connect (helpwin, SIGNAL ( setLocation(const char *) ),
+		        this, SLOT ( slotSetLocation(const char *) ) );  
 	connect (helpwin, SIGNAL ( bookmarkChanged(KBookmark *) ),
 			this, SLOT ( slotBookmarkChanged(KBookmark *) ) );
 
@@ -89,7 +97,10 @@ KHelpMain::KHelpMain(const char *name)
 	optionsMenu->setItemChecked( optionsMenu->idAt( 3 ), showLocationBar);
 	optionsMenu->setItemChecked( optionsMenu->idAt( 4 ), showStatusBar );
 
-	helpwin->setLocationBar(showLocationBar);
+	if (showLocationBar)
+	  location->enable(KToolBar::Show);
+	else
+	  location->enable(KToolBar::Hide);
 
 	// restore geometry settings
 	KConfig *config = KApplication::getKApplication()->getConfig();
@@ -104,14 +115,34 @@ KHelpMain::KHelpMain(const char *name)
 
 	// put bookmarks into boormark menu
 	helpwin->slotBookmarkChanged();
+
+	connect( helpwin, SIGNAL( saveSession() ), SLOT( slotSaveSession() ) );
+
+	KWM::setUnsavedDataHint( winId(), false );
 }
 
 
 KHelpMain::~KHelpMain()
 {
 	helpWindowList.removeRef( this );
+	delete location;
 	delete toolbar;
 	delete menu;
+}
+
+
+void KHelpMain::slotSaveSession()
+{
+    QString cmd;
+
+    cmd = kapp->kdedir();
+    cmd += "/bin/kdehelp";
+    cmd += " -session ";
+    cmd += KWM::getProperties( winId() );
+    cmd += " ";
+    cmd += helpwin->getCurrentURL();
+
+    KWM::setWmCommand( winId(), cmd );
 }
 
 
@@ -249,6 +280,20 @@ void KHelpMain::createToolbar()
 }
 
 
+void KHelpMain::createLocationbar()
+{
+  KToolBar *tb = new KToolBar(this);
+
+  tb->insertLined("", QLINEDIT_ITEM, SIGNAL( returnPressed() ), this, SLOT( slotLocationEntered() ) );
+  tb->setFullWidth(TRUE);
+  tb->setItemAutoSized( QLINEDIT_ITEM, TRUE);
+  tb->enable(KToolBar::Show);
+
+  location = tb;
+}
+
+
+
 void KHelpMain::createStatusbar()
 {
 	KStatusBar *sbar = new KStatusBar(this);
@@ -270,21 +315,23 @@ void KHelpMain::readConfig()
 		showToolBar = true;
 
 	// now the position for the toolbar
-/*
+
 	o = config->readEntry( "ToolBarPos" );
 	if ( o.isEmpty() )
-		toolBar()->setBarPos(KToolBar::Top);
+		toolbar->setBarPos(KToolBar::Top);
 	else if ("Top" == o) 
-		toolBar()->setBarPos(KToolBar::Top);
+		toolbar->setBarPos(KToolBar::Top);
 	else if ("Bottom" == o)
-		toolBar()->setBarPos(KToolBar::Bottom);
+		toolbar->setBarPos(KToolBar::Bottom);
 	else if ("Left" == o)
-		toolBar()->setBarPos(KToolBar::Left);
+		toolbar->setBarPos(KToolBar::Left);
 	else if ("Right" == o)
-		toolBar()->setBarPos(KToolBar::Right);
+		toolbar->setBarPos(KToolBar::Right);
+	else if ("Floating" == o)
+		toolbar->setBarPos(KToolBar::Floating);
 	else
-		toolBar()->setBarPos(KToolBar::Top);
-*/
+		toolbar->setBarPos(KToolBar::Top);
+
 	o = config->readEntry( "ShowStatusBar" );
 	if ( !o.isEmpty() && o.find( "No", 0, false ) == 0 )
 		showStatusBar = false;
@@ -296,6 +343,22 @@ void KHelpMain::readConfig()
 		showLocationBar = false;
 	else
 		showLocationBar = true;
+
+	o = config->readEntry( "LocationBarPos" );
+	if ( o.isEmpty() )
+		location->setBarPos(KToolBar::Top);
+	else if ("Top" == o) 
+		location->setBarPos(KToolBar::Top);
+	else if ("Bottom" == o)
+		location->setBarPos(KToolBar::Bottom);
+	else if ("Left" == o)
+		location->setBarPos(KToolBar::Left);
+	else if ("Right" == o)
+		location->setBarPos(KToolBar::Right);
+	else if ("Floating" == o)
+		location->setBarPos(KToolBar::Floating);
+	else
+		location->setBarPos(KToolBar::Top);
 }
 
 
@@ -352,6 +415,8 @@ void KHelpMain::resizeEvent( QResizeEvent * )
 	config->writeEntry( "Geometry", geom );
 
 	updateRects();
+
+	slotSaveSession();
 }
 
 
@@ -364,11 +429,7 @@ int KHelpMain::openURL( const char *URL, bool withHistory)
 void KHelpMain::closeEvent (QCloseEvent *)
 {
     KHelpMain *win;
-    /*    
-    delete toolbar; CC: !!! are this destructors called automatically ?
-    delete statusbar;
-    delete helpwin;
-    */
+
     delete this;
     if ( helpWindowList.isEmpty() )
     {
@@ -529,7 +590,8 @@ void KHelpMain::slotOptionsLocation()
 { 
 	showLocationBar = !showLocationBar;
 	optionsMenu->setItemChecked( optionsMenu->idAt( 3 ), showLocationBar); 
-	helpwin->setLocationBar(showLocationBar);
+	location->enable(KToolBar::Toggle);
+	updateRects();
 }
 
 
@@ -579,10 +641,36 @@ void KHelpMain::slotOptionsSave()
 		case KToolBar::Right:
 		  config->writeEntry( "ToolBarPos", "Right");
 		  break;
+	        case KToolBar::Floating:
+		  config->writeEntry( "ToolBarPos", "Floating");
+		  break;
 		default:
 		  warning("KHelpMain::slotOptionsSave: illegal default in case reached\n");
 		  break;
 	}
+
+	switch (location->barPos())
+	{
+		case KToolBar::Top:
+		  config->writeEntry( "LocationBarPos", "Top");
+		  break;
+		case KToolBar::Bottom:
+		  config->writeEntry( "LocationBarPos", "Bottom");
+		  break;
+		case KToolBar::Left:
+		  config->writeEntry( "LocationBarPos", "Left");
+		  break;
+		case KToolBar::Right:
+		  config->writeEntry( "LocationBarPos", "Right");
+		  break;
+	        case KToolBar::Floating:
+		  config->writeEntry( "LocationBarPos", "Floating");
+		  break;
+		default:
+		  warning("KHelpMain::slotOptionsSave: illegal default in case reached\n");
+		  break;
+	}
+
 	config->writeEntry( "ShowStatusBar", showStatusBar ? "Yes" : "No" );  
 	config->writeEntry( "ShowLocationBar", showLocationBar ? "Yes" : "No" );
 }
@@ -598,3 +686,16 @@ void KHelpMain::slotSetTitle( const char * _title )
 	setCaption( appCaption );
 }
 
+
+
+void KHelpMain::slotSetLocation(const char *url)
+{
+  location->setLinedText(QLINEDIT_ITEM, url);
+}
+
+
+
+void KHelpMain::slotLocationEntered()
+{
+  helpwin->openURL(location->getLinedText(QLINEDIT_ITEM), LeftButton);
+}

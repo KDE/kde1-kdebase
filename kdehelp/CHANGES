@@ -1,6 +1,12 @@
 KDE Help System CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Version 0.5.4
+-------------
+
+Session management.
+Apply patch from Christian Czezatke to make the location bar a KToolBar.
+
 Version 0.5.3
 -------------
 

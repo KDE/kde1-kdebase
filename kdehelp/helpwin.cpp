@@ -81,27 +81,6 @@ void KOpenURLDialog::openPressed()
 
 //-----------------------------------------------------------------------------
 
-KLocationBar::KLocationBar( QWidget *parent, const char *name )
-	: QFrame( parent, name )
-{
-	QBoxLayout *gm = new QBoxLayout( this, QBoxLayout::LeftToRight, 4 );
-
-	QLabel *label = new QLabel( klocale->translate(" Location:"), this );
-	label->setMaximumSize( label->sizeHint() );
-	gm->addWidget( label );
-
-	lineEdit = new QLineEdit( this );
-	connect( lineEdit, SIGNAL( returnPressed() ), SLOT( slotReturnPressed() ) );
-	gm->addWidget( lineEdit );
-}
-
-void KLocationBar::slotReturnPressed()
-{
-	emit openURL( lineEdit->text(), LeftButton );
-}
-
-//-----------------------------------------------------------------------------
-
 KHistory *KHelpView::urlHistory = 0;
 
 KHelpView::KHelpView( QWidget *parent, const char *name )
@@ -161,12 +140,6 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	accel->insertItem( CTRL + Key_Q,		QUIT );
 
 	accel->connectItem( COPY, this, SLOT(slotCopy()) );
-
-	locationBar = new KLocationBar( this );
-	locationBar->setFrameStyle( QFrame::Panel | QFrame::Raised );
-
-	connect( locationBar, SIGNAL(openURL( const char *, int )),
-						SLOT(slotURLSelected( const char *, int )) );
 
 	QBitmap cb( hand_width, hand_height, hand_bits, TRUE );
 	QBitmap cm( hand_width, hand_height, hand_mask_bits, TRUE );
@@ -234,7 +207,6 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 
 	QString histFile = p + "/.kde/kdehelp/history";
 
-	setLocationBar(TRUE); // CC: LocationBar is on by default
 	layout();
 }
 
@@ -268,7 +240,6 @@ void KHelpWindow::readOptions()
 	linkColor = config->readColorEntry( "LinkColor", &blue );
 	vLinkColor = config->readColorEntry( "VLinkColor", &darkMagenta );
 }
-
 
 
 // Open a URL.  Initiate remote transfer if necessary
@@ -333,7 +304,7 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 		}
 		emit enableMenuItems();
 		emit setURL( currentURL );
-		locationBar->setLocation( currentURL );
+		emit setLocation( currentURL );
 		return 0;
 	}
 
@@ -434,8 +405,10 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 			view->parse();
 			horz->setValue( 0 );
 			emit setURL( currentURL );
-			locationBar->setLocation( currentURL );
+			emit setLocation( currentURL ); 
 		}
+
+		emit saveSession();
 	}
 
 	setCursor( oldCursor );
@@ -1056,12 +1029,6 @@ void KHelpWindow::layout()
 	int top = 0;
 	int bottom = height();
 
-	if ( locationBar->isVisible() )
-	{
-		locationBar->setGeometry( 0, top, width(), 32 );
-		top += 32;
-	}
-
 	bottom -= SCROLLBAR_WIDTH;
 	horz->setGeometry( 0, bottom,
 					width() - SCROLLBAR_WIDTH, SCROLLBAR_WIDTH );
@@ -1276,19 +1243,6 @@ void KHelpWindow::slotStopProcessing()
 }
 
 
-void KHelpWindow::setLocationBar(bool enabled)
-{
-	if ( !enabled )
-	{
-		locationBar->hide();
-	}
-	else
-	{
-		locationBar->show();
-	}
-	layout();
-}
-
 
 void KHelpWindow::slotSetTitle( const char *_title )
 {
@@ -1411,7 +1365,7 @@ void KHelpWindow::slotRemoteDone()
 	KURL u( localFile.data() );
 	openFile( u.path() );
 	emit setURL( currentURL );
-	locationBar->setLocation( currentURL );
+	emit setLocation( currentURL );
 
 	delete remotePage;
 	remotePage = NULL;
@@ -1426,7 +1380,7 @@ void KHelpWindow::slotCGIDone()
 	if ( !openFile( u.path() ) )
 		view->parse();
 	emit setURL( currentURL );
-	locationBar->setLocation( currentURL );
+	emit setLocation( currentURL ); 
 
 	delete CGIServer;
 	CGIServer = NULL;
