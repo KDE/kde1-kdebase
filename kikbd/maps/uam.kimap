@@ -8,7 +8,7 @@ Comment[de]=Microsoft-Layout. Englische Zeichen als Alternativ-Belegung.
 Comment[ru]=òÁÓËÌÁÄËÏÊ Microsoft. ğÏÚ×ÏÌÑÅÔ ÎÁÂÉÒÁÔØ ÌÁÔÉÎÓËÉÅ ÓÉÍ×ÏÌÙ ÉÓĞÏÌØÚÕÑ áÌÔÅÒÎÁÔÉ×ÎÙÊ ĞÅÒÅËÌÀŞÁÔÅÌØ.
 Comment[fi]=Microsoft järjestys. Sisältää englantilaiset kirjaimet vaihtoehtoisina symboleina.
 Comment[pl]=U³o¿enie Microsoftu. Znaki alfabetu ³aciñskiego jako symbole alternatywne.
-Comment[sv]=Microsofts teckenuppsättning. Har engelska bockstäver som alternativa symboler.
+Comment[sv]=Microsofts teckenuppsättning. Har engelska bokstäver som alternativa symboler.
 Comment[sk]=Microsoft rozlo¾enie. Má anglické znaky ako alternatívne symboly
 
 Language=Ukrainian
@@ -17,7 +17,7 @@ Language[no]=Ukrainsk
 Language[ru]=õËÒÁÉÎÓËÉÊ
 Language[fi]=Ukraina
 Language[pl]=Ukraiñski
-Language[sv]=Ukrainska
+Language[sv]=Ukrainskt
 Language[sk]=Ukrajinskı
 
 Charset=koi8-u

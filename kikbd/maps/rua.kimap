@@ -10,7 +10,7 @@ Comment=Has latin characters as alternate symbols.
 Comment[de]=Lateinische Zeichen als Alternativ-Belegung.
 Comment[ru]=óÏÄÅÒÖÉÔ ÌÁÔÉÎÓËÉÅ ÓÉÍ×ÏÌÙ × ËÁŞÅÓÔ×Å ÁÌÔÅÒÎÁÔÉ×ÎÙÈ.
 Comment[fi]=Latinalaiset kirjaimet vaihtoehtoisina symboleina.
-Comment[sv]=Har latinska bockstäver som alternativa symboler.
+Comment[sv]=Har latinska bokstäver som alternativa symboler.
 Comment[sk]=Má latin znaky ako alternatívne symboly
 
 Language=Russian
@@ -19,7 +19,7 @@ Language[no]=Russisk
 Language[ru]=òÕÓÓËÉÊ
 Language[fi]=Venäjä
 Language[pl]=Rosyjski
-Language[sv]=Ryska
+Language[sv]=Ryskt
 Language[sk]=Ruskı
 
 Charset=cp866
