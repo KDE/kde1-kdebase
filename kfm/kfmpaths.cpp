@@ -39,30 +39,30 @@ void KFMPaths::initPaths()
   // Desktop Path
   *desktopPath = QDir::homeDirPath() + "/Desktop/";
   *desktopPath = config->readEntry( "Desktop", *desktopPath);
+  *desktopPath = QDir::cleanDirPath( *desktopPath );
   if ( desktopPath->right(1) != "/")
     *desktopPath += "/";
-  *desktopPath = QDir::cleanDirPath( *desktopPath );
   
   // Templates Path
   *templatePath = *desktopPath + "Templates/";
   *templatePath = config->readEntry( "Templates" , *templatePath);
+  *templatePath = QDir::cleanDirPath( *templatePath );
   if ( templatePath->right(1) != "/")
     *templatePath += "/";
-  *templatePath = QDir::cleanDirPath( *templatePath );
 
   // Autostart Path
   *autostartPath = *desktopPath + "Autostart/";
   *autostartPath = config->readEntry( "Autostart" , *autostartPath);
+  *autostartPath = QDir::cleanDirPath( *autostartPath );
   if ( autostartPath->right(1) != "/")
     *autostartPath += "/";
-  *autostartPath = QDir::cleanDirPath( *autostartPath );
 
   // Trash Path
   *trashPath = *desktopPath + "Trash/";
   *trashPath = config->readEntry( "Trash" , *trashPath);
+  *trashPath = QDir::cleanDirPath( *trashPath );
   if ( trashPath->right(1) != "/")
     *trashPath += "/";
-  *trashPath = QDir::cleanDirPath( *trashPath );
   
   cachePath->sprintf(_PATH_TMP"/kfm-cache-%i", (int)getuid() );
 
