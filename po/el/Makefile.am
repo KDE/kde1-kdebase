@@ -1,9 +1,9 @@
 
 # This has to be set. The rest should be reusable
-GMFILES = kdisplay.gmo
+GMFILES = kdisplay.gmo kfm.gmo
 POFILES = $(GMFILES:.gmo=.po)
 
-LANG = de
+LANG = el
 
 localedir = $(kde_locale)
 
