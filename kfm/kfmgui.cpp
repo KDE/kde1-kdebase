@@ -770,11 +770,13 @@ void KfmGui::slotURLEntered()
 
 void KfmGui::setToolbarURL( const char *_url )
 {
-    QString url(_url);
+    KURL u(_url);
+    u.setPassword(""); // hide password
+    QString url(u.url().copy());
     KURL::decodeURL(url);
     toolbarURL->setLinedText( TOOLBAR_URL_ID, url.data() );
     //  update tree view Sep 5 rjakob
-    if (url.left(5)=="file:")
+    if (u.isLocalFile())
       if (bTreeView && pkfm->isTreeViewFollowMode())
          treeView->slotshowDirectory(url.data()+5);
 
