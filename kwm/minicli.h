@@ -3,12 +3,18 @@
 //
 // Torben added command completion
 // 09.11.97
+//
+// Dawit added short URL support
+// 02.26.99
 
 #include <qlined.h>
 #include <qlabel.h>
 #include <kURLcompletion.h>
 
-void execute(const char* cmd);
+void execute ( const char* );
+bool isExecutable ( const char* );
+bool isLocalResource ( const char* );
+bool isValidShortURL ( const char * );
 
 class Minicli : public QFrame{
   Q_OBJECT

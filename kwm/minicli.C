@@ -3,6 +3,7 @@
 
 #include <qmsgbox.h>
 #include <qframe.h>
+#include <qdir.h>
 #include <qwindefs.h>
 #include <stdlib.h>
 #include <kapp.h>
@@ -27,24 +28,82 @@ extern bool do_not_draw;
 QList <char> *history = 0;
 QListIterator <char> *it;
 
+/*
+   Function determines whether what the user entered in the minicli
+   box is executable or not. This code is eniterly based on the C
+   version of the 'which' command in csh/bash. (Dawit A.)
+*/
+bool isExecutable ( const char *name )
+{
+	QString test;
+    char *path = getenv( "PATH" );
+	char *pc = path;
+	bool found = false;
+
+	while ( *pc != '\0' && found == false )
+	{
+		int len = 0;
+		while ( *pc != ':' && *pc != '\0' )
+		{
+			len++;
+			pc++;
+		}
+		char save = *pc;
+		*pc = '\0';
+        test.resize ( strlen (path) ); // OVERLY CAUTIOUS BUFFER OVER-FLOW PROTECTION !!
+		test.sprintf( "%s/%s", pc-len, name);
+		*pc = save;
+		if (*pc) { pc++; }
+		found = ( access(test.data(), 01) == 0 );  /* is it executable ? */
+	}
+    return found;
+}
+
+// Check for the existance of a local file/directory. (Dawit A.)
+bool isLocalResource ( const char * cmd )
+{
+    struct stat buff;
+    return ( stat( cmd, &buff ) == 0 && ( S_ISREG( buff.st_mode ) || S_ISDIR( buff.st_mode ) ) ) ? true :false;
+}
+
+bool isValidShortURL ( const char * cmd )
+{
+    // NOTE : By design, this check disqualifies some valid
+    // URL's that contain queries and *nix command characters.
+    // This is an intentional trade off to best much the URL
+    // with a local resource first.  This also allows minicli
+    // to behave consistently with the way it does now. (Dawit A.)
+    char lastchr = *( cmd + strlen (cmd) - 1 );
+    //debug ( "%s : %c", "The last charater of the URL is", lastchr );
+    if ( strchr ( cmd, ' ' ) != 0L || strchr ( cmd, ';' ) != 0L )
+       return false;
+    if ( *cmd  == '/'  ||  lastchr == '&' )
+        return  false;
+    if ( strchr ( cmd, '<' ) != 0L ||  strchr ( cmd, '>' ) != 0L )
+       return false;
+    if ( strstr ( cmd, "||" ) != 0L || strstr ( cmd, "&&" ) != 0L )
+       return false;
+    return true;
+}
+
 void execute( const char* cmd){
   QString tmp;
 
   // Torben
   // WWW Adress ?
-  if ( strncmp( cmd, "www.", 4 ) == 0 ) {
-      tmp = "kfmclient openURL http://";
+  if ( strnicmp( cmd, "www.", 4 ) == 0 ) {
+      tmp = "kfmclient exec http://";
       tmp += cmd;
       cmd = tmp.data();
   }
   // FTP Adress ?
-  else if ( strncmp( cmd, "ftp.", 4 ) == 0 ) {
-      tmp = "kfmclient openURL ftp://";
+  else if ( strnicmp( cmd, "ftp.", 4 ) == 0 ) {
+      tmp = "kfmclient exec ftp://";
       tmp += cmd;
       cmd = tmp.data();
   }
   // Looks like a KDEHelp thing ?
-  else if ( strstr( cmd, "man:" ) != 0L || cmd[0] == '#' )
+  else if ( strstr( cmd, "man:" ) != 0L || strstr( cmd, "MAN:" ) != 0L || cmd[0] == '#' )
   {
       tmp = "kdehelp \"";
       if ( cmd[0] == '#' )
@@ -58,37 +117,55 @@ void execute( const char* cmd){
       cmd = tmp.data();
   }
   // Looks like an URL ?
-  else if ( strstr( cmd, "://" ) != 0L )
+  else if ( strstr( cmd, "://" ) != 0L ||
+            strnicmp ( cmd, "news:", 5) == 0 ||
+            strnicmp ( cmd, "mailto:", 7) == 0 )
   {
-      tmp = "kfmclient openURL ";
+      tmp = "kfmclient exec ";
       tmp += cmd;
       cmd = tmp.data();
   }
   // Usual file or directory
   else
   {
-      struct stat buff;
       const char *p = cmd;
-      if ( strncmp( p, "file:", 5 ) == 0 )
+      QString tst;
+
+      if ( strnicmp( p, "file:", 5 ) == 0 )
 	  p = p + 5;
-      // An absolute path ?
-      if ( ( *p == '/') &&
-      // Just a document ?
-          stat( p, &buff ) == 0 &&
-           ( S_ISREG( buff.st_mode ) || S_ISDIR( buff.st_mode ) ) )
+      // Replace '~' with the user's home directory.
+      if ( *p == '~' )
       {
-	  // Tell KFM to open the document
-	  tmp = "kfmclient openURL ";
-	  tmp += cmd;
-	  cmd = tmp.data();
+        p = tst.append( p ).replace( 0, 1, QDir::homeDirPath() ).data();
+        cmd = p;
+      }
+      bool isLocal = isLocalResource ( cmd );   // Am I locally available ?
+      bool isExec = isExecutable ( cmd );       // Am I locally executable ?
+      // Is this a non-executable local resource ?
+      if ( !isExec && isLocal )
+      {
+    	// Tell KFM to open the document
+        tmp += cmd;
+        // Quote the URL in case there is a space in it ; so
+        // one can for example type : ~/Desktop/CD ROM.kdelnk
+        // to mount the CD ROM device. ( Dawit A. )
+        tmp.prepend ( "kfmclient exec \"" );
+        tmp.append ( "\"");
+        cmd = tmp.data();
+      }
+      // if URL is not a local resource and does not contain any *nix shell
+      // command characters, append "http://" as the default protocol. (Dawit A.)
+      else if ( !isExec && isValidShortURL ( cmd ) )
+      {
+        tmp = cmd;
+        tmp.prepend ("kfmclient exec http://");
+        cmd = tmp.data();
       }
   }
-
   KShellProcess proc;
   proc << cmd;
   proc.start(KShellProcess::DontCare);
 }
-
 
 Minicli::Minicli( QWidget *parent, const char *name, WFlags f)
   : QFrame(parent, name, f){
