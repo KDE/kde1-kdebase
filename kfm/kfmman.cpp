@@ -292,6 +292,8 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 	    // Add old URL to history stacks
 	    view->setUpURL( newUrlWithoutRef.url() ); // ?? (David)
 	    view->pushURLToHistory();
+	    // Leave HTML flag as is
+	    // bHTML = bHTML;
 	    if ((nextXOffset != 0) || (nextYOffset != 0))
 	    {
 	    	return (view->gotoXY(nextXOffset, nextYOffset));    	     
@@ -328,6 +330,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 
 	    // Add old URL to history stacks
 	    view->pushURLToHistory();
+	    bHTML = true;
 
 	    url = _url;
             setUpURL();

@@ -1312,7 +1312,7 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
     if ( _url == 0L && _mouse->button() == LeftButton )
     {
         // Do not do it on native HTML pages (Dawit A.)
-        if ( !manager->isHTML() ) return false;
+        if ( manager->isHTML() ) return false;
 	select( 0L, false );
 	rectStart = true;            // Say it is start of drag
 	rectX1 = _mouse->pos().x();   // get start position
