@@ -1228,7 +1228,7 @@ msgstr "&Proxy"
 
 #: kkfmoptdlg.cpp:22
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: kkfmoptdlg.cpp:25
 msgid "User &Agent"
@@ -1248,15 +1248,15 @@ msgstr "KFM Browser Einstellugnen"
 
 #: khttpoptdlg.cpp:13
 msgid "Accept languages:"
-msgstr ""
+msgstr "Akzeptiere Sprachen:"
 
 #: khttpoptdlg.cpp:18
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Akzeptiere Zeichensätze:"
 
 #: khttpoptdlg.cpp:23
 msgid "Assume HTML"
-msgstr ""
+msgstr "Nehme HTML an"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1324,35 +1324,3 @@ msgstr ""
 "Syntax Fehler:\n"
 "kfmexec Kommando [URLs ...]\n"
 
-#~ msgid "&New Window"
-#~ msgstr "Neues &Fenster"
-
-#~ msgid "Stop"
-#~ msgstr "Stop"
-
-#~ msgid "KFM Error"
-#~ msgstr "KFM-Fehler"
-
-#~ msgid "Move"
-#~ msgstr "Verschieben"
-
-#~ msgid "Properties"
-#~ msgstr "Eigenschaften"
-
-#~ msgid "Font Size"
-#~ msgstr "Schriftgröße"
-
-#~ msgid "Small"
-#~ msgstr "Klein"
-
-#~ msgid "Medium"
-#~ msgstr "Mittel"
-
-#~ msgid "Large"
-#~ msgstr "Groß"
-
-#~ msgid "Continue"
-#~ msgstr "Weiter"
-
-#~ msgid "&Fonts"
-#~ msgstr "&Schriften"

@@ -384,7 +384,7 @@ msgstr "Auswahl-Text"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
-msgstr ""
+msgstr "&Schriftart"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
