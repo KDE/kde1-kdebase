@@ -1644,6 +1644,8 @@ msgid ""
 "Source file doesn't exist anymore ! \n"
 "Use \"Rescan Bindings\" in View menu to update the menu"
 msgstr ""
+"Kildefil eksisterer ikke mer!\n"
+"Bruk \"Les tilordninger på nytt\" i Vis-menyen for å oppdatere menyen"
 
 #: popup.cpp:113 popup.cpp:120
 msgid "New "

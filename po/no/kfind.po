@@ -116,7 +116,7 @@ msgstr "&Se i:"
 
 #: kftabdlg.cpp:77
 msgid "&Browse ..."
-msgstr "&Browse"
+msgstr "&Bla gjennom ..."
 
 #: kftabdlg.cpp:83
 msgid "Include &subfolders"
@@ -124,7 +124,7 @@ msgstr "Inkluder &undermapper"
 
 #: kftabdlg.cpp:117
 msgid " Name& Location "
-msgstr "Oppgi plassering"
+msgstr "Navn og plassering"
 
 #: kftabdlg.cpp:129
 msgid "and"
