@@ -549,7 +549,7 @@ void Manager::clientMessage(XEvent*  ev){
 	t->reconfigure();
     }
     else if (com == "restart"){
-	cleanup();
+	myapp->cleanup();
 	XSync(qt_xdisplay(), false);
 	execlp("kwm", "kwm", "-nosession", NULL);
 	exit(1);
@@ -1669,7 +1669,7 @@ void Manager::snapIt(Client *c) {
     }
     if ((abs(ymax-ry) < snap)  && (abs(ymax-ry) < deltaY)) {
       deltaY = abs(ymax-ry);
-      ny = ymax - c->geometry.height();
+      ny = ymax -  (c->isShaded()? TITLEBAR_HEIGHT + 2*BORDER:c->geometry.height());
     }
   }
 
@@ -2329,13 +2329,13 @@ void Manager::raiseClient(Client* c){
     new_stack[i]=Client::gimmickWindow();
     i++;
   }
-  
+
   // top windows (such as the panel) are always taken into account
   for (Window* w = top_windows.last(); w; w = top_windows.prev() ) {
       new_stack[i] = *w;
       i++;
   }
-  
+
   for (c=tmp.last();c;c=tmp.prev()){
     new_stack[i] = c->winId();
     i++;
@@ -3877,7 +3877,7 @@ void Manager::addTopWindow(Window w)
 		 );
   }
 }
- 
+
 // removes a top window
 void Manager::removeTopWindow(Window w)
 {
@@ -4028,7 +4028,7 @@ void Manager::launchOtherWindowManager(const char* other){
   for (mw=modules.first(); mw; mw=modules.next()){
     XKillClient(qt_xdisplay(), *mw);
   }
-  cleanup();
+  myapp->cleanup();
   XSync(qt_xdisplay(), false);
   execlp(other, NULL);
 }
