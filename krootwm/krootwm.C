@@ -156,7 +156,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 
     // Find the templates path
     QString configpath = KApplication::localkdedir() + "/share/config/kfmrc";
-    KSimpleConfig config( configpath );
+    KSimpleConfig config( configpath, true ); /* read only ! */
     config.setGroup( "Paths" );
 
     connect(kwmmapp, SIGNAL(commandReceived(QString)),
