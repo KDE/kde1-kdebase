@@ -38,19 +38,17 @@ msgid "User &Agent"
 msgstr "&Agente de usuário"
 
 #: main.cpp:76
-#, fuzzy
 msgid "Coo&kies"
-msgstr "Desligar Cookies"
+msgstr "Coo&kies"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
 msgstr "Ícones do &Ambiente"
 
 #: main.cpp:89
-#, fuzzy, c-format
 msgid ""
-"usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
-msgstr "uso:   %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+       "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+msgstr "uso:   %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -173,9 +171,8 @@ msgid "Known bindings:"
 msgstr "Dependências conhecidas:"
 
 #: kcookiesdlg.cpp:49
-#, fuzzy
 msgid "&Enable Cookies"
-msgstr "Desligar Cookies"
+msgstr "&Desligar Cookies"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
@@ -203,7 +200,7 @@ msgstr "Mudar a política de aceitação do domínio"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr ""
+msgstr "Você precisa digitar um domínio primeiro !"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
@@ -227,4 +224,4 @@ msgstr "Cor de fundo do ícone:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr ""
+msgstr "Mostrar arquivos &escondidos no Ambiente"

@@ -134,7 +134,7 @@ msgstr "Sessões"
 msgid ""
 "Font `%s' not found.\n"
 "Check README.linux.console for help."
-msgstr ""
+msgstr "Fonte '%s' não encontrada.\nVerifique o README.linux.console para obter ajuda."
 
 #: main.C:607
 #, c-format
@@ -165,13 +165,13 @@ msgstr ""
 #: main.C:732
 #, c-format
 msgid "`%s' terminated abnormally."
-msgstr ""
+msgstr "'%s' terminou anormalmente !"
 
 #: main.C:735
 msgid ""
 "\n"
 "Return code = "
-msgstr ""
+msgstr "\nCódigo de retorno = "
 
 #: main.C:928
 msgid "Welcome to the console"

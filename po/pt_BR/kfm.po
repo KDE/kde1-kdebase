@@ -652,13 +652,12 @@ msgid "Last Modified"
 msgstr "Última Modificação"
 
 #: kfmprops.cpp:379
-#, fuzzy, c-format
 msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Não foi possível apagar o diretório\n"
-"%s"
+"Não foi possível renomear o arquivo ou diretório\n"
+"%s\n"
 
 #: kfmprops.cpp:429
 msgid "Access permissions"
@@ -1375,12 +1374,11 @@ msgstr "Todos os &cookies"
 
 #: kcookiewin.cpp:161
 msgid "&Accept"
-msgstr ""
+msgstr "&Aceitar"
 
 #: kcookiewin.cpp:166
-#, fuzzy
 msgid "&Reject"
-msgstr "&Selecionar"
+msgstr "&Rejeitar"
 
 #: popup.cpp:69
 #, c-format
