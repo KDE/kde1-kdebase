@@ -121,7 +121,7 @@ msgstr "Understrek lenker"
 
 #: options.cpp:246
 msgid "Always use my colors"
-msgstr ""
+msgstr "Bruk alltid mine farger"
 
 #: options.cpp:334
 msgid "KDE Help Options"

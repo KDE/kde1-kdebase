@@ -492,14 +492,13 @@ msgstr "Mimetypekonfigurasjonsfilen"
 
 # kbind.cpp:303
 #: kbind.cpp:304
-#, fuzzy
 msgid "does not contain a MimeType=... entry"
-msgstr "inneholder ikke noe MimeType=... innslag"
+msgstr "inneholder ikke noe MimeType=...-innslag"
 
 # kbind.cpp:377
 #: kbind.cpp:392
 msgid "No mime types installed!"
-msgstr "ingen mimetyper installert!"
+msgstr "Ingen mimetyper installert!"
 
 # kbind.cpp:425 kbind.cpp:1188
 #: kbind.cpp:440 kbind.cpp:1208
