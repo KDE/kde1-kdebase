@@ -14,6 +14,7 @@ Comment[fi]=Terminaaliemulaattori (kvt)
 Comment[fr]=Emulation de terminal (kvt)
 Comment[it]=Emulazione Terminale (kvt)
 Comment[pt]=Emulador de Terminal (kvt)
+Comment[hr]=Emulator Terminala (kvt)
 Terminal=0
 Name=Terminal
 Name[pl]=Terminal
@@ -24,3 +25,5 @@ Name[fi]=P‰‰teikkuna
 Name[fr]=Terminal
 Name[it]=Terminale
 Name[pt]=Terminal
+Name[hr]=Terminal
+

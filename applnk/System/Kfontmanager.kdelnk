@@ -13,6 +13,7 @@ Name[it]=Caratteri
 Name[fr]=Gestionnaire de polices
 Name[pt]=Gestor de fontes
 Name[hu]=Fontkezelo
+Name[hr]=Upravitelj pisama
 Exec=kfontmanager -caption "%c" %i %m
 DocPath=kfontmanager/index.html
 Comment=KDE's Fontmanager.
@@ -28,5 +29,6 @@ Comment[it]=Centro Controllo Caratteri del KDE
 Comment[fr]=Gestionnaire des polices utilisées dans KDE
 Comment[hu]=KDE Font beállító
 Comment[pt]=Gestor de fontes utilizadas no KDE
+Comment[hr]=KDE upravitelj pisama
 
 Type=Application

@@ -11,6 +11,7 @@ Name[fi]=Tiedostonhallinta (pääkäyttäjätila)
 Name[fr]=Gestionnaire de fichiers (mode super-utilisateur)
 Name[pt]=Gestor de ficheiros ( Modo Super-Utilizador )
 Name[hu]=File szervezo (Superuser módban)
+Name[hr]=Upravitelj datoteka ( Samo za korjenskog korisnika )
 Type=Application
 Exec=kfmsu -caption "%c" %i %m
 DocPath=kfm/index.html
@@ -24,6 +25,6 @@ Comment[sv]=Filhanteraren för KDE
 Comment[fi]=KDE Tiedostohallinta
 Comment[fr]=Gestionnaire de fichiers KDE
 Comment[hu]=A KDE file-szervezõ
+Comment[hr]=KDE Upravitelj Datoteka
 Comment[pt]=Gestor de ficheiros KDE
 Icon=kfm.xpm
-

@@ -10,6 +10,7 @@ Name[fi]=Valikkoeditori
 Name[fr]=Editeur de menus
 Name[it]=Editor Menu
 Name[pt]=Editor de Menu
+Name[hr]=Ureðivaè izbornika
 Type=Application
 Exec=kmenuedit -caption "%c" %i %m
 Icon=kmenuedit.xpm
@@ -26,3 +27,5 @@ Comment[sv]=Programför att ändra menyerna i panelen och i aktivitetsraden
 Comment[fi]=Ohjelma jolla voidaan muokata kpaneelin valikkoja
 Comment[fr]=Programme pour changer les menus du panneau et de la barre de tâches
 Comment[pt]=Programa para mudar os menus do kpanel e da ktastbar
+Comment[hr]=Program za mjenjanje izbornika kpanela i ktaskbara
+

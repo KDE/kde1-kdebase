@@ -9,6 +9,7 @@ Name[it]=Pannello
 Name[hu]=Panel
 Name[pt]=Painel
 Name[sk]=Panel
+Name[hr]=Ploèa
 Comment=You can configure here, how the panel should look like
 SwallowTitle=Panel Options
 Icon=panel_settings.xpm
