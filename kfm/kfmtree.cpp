@@ -118,7 +118,6 @@ void KFMDirTree::slotshowDirectory(const char *_url )
 	  QString nodeURL( selectedSubTree->getURL() );
 	  if( nodeURL.right(1) == "/" )
 	    nodeURL.truncate(nodeURL.length() - 1);
-	  debug("node URL %s",nodeURL.data());
 	  if( nodeURL == basePath )
 	    break;
 	}

@@ -1346,9 +1346,11 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
 	break;
       case KIO_ERROR_UnknownHost:
 	ksprintf(&msg, i18n("Unknown host in\n%s"), url.data());
+	okToContinue = FALSE;
 	break;
       case KIO_ERROR_CouldNotConnect:
 	ksprintf(&msg, i18n("Could not connect to\n%s"), url.data());
+	okToContinue = FALSE;
 	break;
       case KIO_ERROR_NotImplemented:
 	ksprintf(&msg, i18n("The requested action\n%s\nis not implemented yet."), url.data());
@@ -1374,6 +1376,7 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
 	  ksprintf(&tmp, "%s@%s", u.user(), u.host());
 	  passwordDict->remove( tmp.data() );
 	}
+	okToContinue = FALSE;
 	break;
       }
       case KIO_ERROR_TarError:
@@ -1677,8 +1680,15 @@ void KIOJob::slaveIsReady()
 		QString buffer;
 		buffer.sprintf( i18n("File %i/%i"), cmCount - cmSrcURLList.count() + 1, cmCount );
 		line1->setText( buffer );
-		line2->setText( cmSrcURLList.first() );
-		ksprintf(&buffer, i18n("to %s"), cmDestURLList.first());
+
+		QString curFile;
+		curFile = cmSrcURLList.first();
+		KURL::decodeURL( curFile );
+		line2->setText( curFile );
+
+		curFile = cmDestURLList.first();
+		KURL::decodeURL( curFile );
+		ksprintf(&buffer, i18n("to %s"), curFile.data() );
 		line3->setText( buffer );
 	    }
 
@@ -1732,8 +1742,15 @@ void KIOJob::slaveIsReady()
 		buffer.sprintf( i18n("File %i/%i"), 
 			 cmCount - cmSrcURLList.count() + 1, cmCount );	    
 		line1->setText( buffer );
-		line2->setText( cmSrcURLList.first() );
-		ksprintf(&buffer, i18n("to %s"), cmDestURLList.first());
+
+		QString curFile;
+		curFile = cmSrcURLList.first();
+		KURL::decodeURL( curFile );
+		line2->setText( curFile );
+
+		curFile = cmDestURLList.first();
+		KURL::decodeURL( curFile );
+		ksprintf(&buffer, i18n("to %s"), curFile.data());
 		line3->setText( buffer );
 	    }
 	    	    
@@ -1770,10 +1787,15 @@ void KIOJob::slaveIsReady()
 
 	    if ( dlg != 0L )
 	    {
-		char buffer[ 1024 ];
-		sprintf( buffer, i18n("File %i/%i"), cmCount - mvDelURLList.count() + 1, cmCount );	    
+		QString buffer;
+		buffer.sprintf( i18n("File %i/%i"), cmCount - mvDelURLList.count() + 1, cmCount );	    
 		line1->setText( buffer );
-		line2->setText( mvDelURLList.first() );
+
+		QString curFile;
+		curFile = mvDelURLList.first();
+		KURL::decodeURL( curFile );
+		line2->setText( curFile );
+
 		if ( cmCount != (int)mvDelURLList.count() )
 		     progressBar->setValue( cmCount * 100 / ( cmCount - mvDelURLList.count() ) );
 	    }

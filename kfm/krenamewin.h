@@ -7,6 +7,7 @@
 #include <qlabel.h>
 #include <qlined.h>
 #include <qstring.h>
+#include <kurl.h>
 
 
 

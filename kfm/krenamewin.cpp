@@ -14,6 +14,10 @@ KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, boo
     
     src = _src;
     dest = _dest;
+    QString srcDecoded(_src);
+    KURL::decodeURL(srcDecoded);
+    QString destDecoded(_dest);
+    KURL::decodeURL(destDecoded);
 
     b0 = b1 = b2 = b3 = b4 = 0L;
     
@@ -51,20 +55,20 @@ KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, boo
 
       QLabel *lb = new QLabel( klocale->translate("You try to overwrite"), this );
       lb->setGeometry( 10, 10, 350, 20 );
-      lb = new QLabel( src.data(), this );
+      lb = new QLabel( srcDecoded.data(), this );
       lb->setGeometry( 10, 40, 350, 20 );
       lb = new QLabel( "with itself. Do you want to rename it to", this );
       lb->setGeometry( 10, 70, 350, 20 );
     }
     else
     {	
-      QLabel *lb = new QLabel( dest.data(), this );
+      QLabel *lb = new QLabel( destDecoded.data(), this );
       lb->setGeometry( 10, 10, 350, 20 );
       lb = new QLabel( klocale->translate("already exists. Overwrite with"), this );
       lb->setGeometry( 10, 40, 350, 20 );
       
       QString str;
-      str << src << " ?";
+      str << srcDecoded << " ?";
       lb = new QLabel( str.data(), this );
       lb->setGeometry( 10, 70, 350, 20 );
       
@@ -73,7 +77,7 @@ KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, boo
     }
     
     lineEdit = new QLineEdit( this );
-    lineEdit->setText( dest.data() );
+    lineEdit->setText( destDecoded.data() );
     lineEdit->setGeometry( 10, 130, 300, 30 );
     
     b3->setDefault( true );
@@ -135,5 +139,4 @@ void KRenameWin::b4Pressed()
     else
 	emit result( this, 4, src.data(), dest.data() );
 }
-
 
