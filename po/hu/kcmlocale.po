@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Balazs Nagy <julian7@kva.hu>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmlocale VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: 1998-02-26 19:06+MET\n"
+"Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
+"Language-Team: LANGUAGE <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:51
+msgid "&Locale"
+msgstr ""
+
+#: main.cpp:57
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "használat: kcmlocale [-init | nyelv]\n"
+
+#: main.cpp:79
+msgid "Locale settings"
+msgstr "Helyi beállítások"
+
+#: locale.cpp:40
+msgid "Language"
+msgstr "Nyelv"
+
+#: locale.cpp:45
+msgid "First"
+msgstr "Elsõ"
+
+#: locale.cpp:52
+msgid "Second"
+msgstr "Második"
+
+#: locale.cpp:59
+msgid "Third"
+msgstr "Harmadik"
+
+#: locale.cpp:94
+msgid "without name!"
+msgstr "név nélkül!"
+
+#: locale.cpp:160
+msgid "Applying language settings"
+msgstr "A nyelvi beállítások használata"
+
+#: locale.cpp:161
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr ""
+"A megváltoztatott nyelvi beállítások csak újonnan indított alkalmazások\n"
+"esetén érvényesek.  Az összes program nyelvének beállításához újra kell\n"
+"indítani az ablakkezelõt."

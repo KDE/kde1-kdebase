@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 1997 Free Software Foundation, Inc.
-# Balazs Nagy <julian7@kva.hu>, 1997.
+# Balazs Nagy <julian7@kva.hu>, 1997, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kdehelp 0.5.2\n"
+"Project-Id-Version: kdehelp 0.5.4\n"
 "POT-Creation-Date: 1998-02-25 16:11+0100\n"
-"PO-Revision-Date: 1997-09-21 19:39+MET\n"
+"PO-Revision-Date: 1998-02-26 19:39+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=Latin2\n"
-"Content-Transfer-Encoding: iso-8859-2\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: helpwin.cpp:57
 msgid "KDE Help: Open URL"
@@ -27,7 +27,7 @@ msgstr "Nem lehet megnyitni: "
 
 #: helpwin.cpp:454 helpwin.cpp:463
 msgid "Oops!"
-msgstr ""
+msgstr "Hiba!"
 
 #: helpwin.cpp:462
 msgid "Unknown format: "
@@ -260,11 +260,8 @@ msgid "&Save Options"
 msgstr "&Beállítások mentése"
 
 #: mainwidget.cpp:182
-#, fuzzy
 msgid "KDE Help System\n"
-msgstr ""
-"KDE Segítség rendszer\n"
-"Verzió "
+msgstr "KDE Segítség rendszer\n"
 
 #: mainwidget.cpp:183
 msgid "Version "
@@ -299,19 +296,19 @@ msgstr "Következõ dokumentum"
 
 #: mainwidget.cpp:232
 msgid "Previous Node"
-msgstr "Elõzõ node"
+msgstr "Elõzõ pont"
 
 #: mainwidget.cpp:237
 msgid "Next Node"
-msgstr "Következõ node"
+msgstr "Következõ pont"
 
 #: mainwidget.cpp:242
 msgid "Up one Node"
-msgstr "Fel egy node-t"
+msgstr "Fel egy pontot"
 
 #: mainwidget.cpp:247
 msgid "Top Node"
-msgstr "Felsõ node"
+msgstr "Felsõ pont"
 
 #: mainwidget.cpp:254
 msgid "Help Contents"
@@ -319,15 +316,15 @@ msgstr "Tartalom"
 
 #: mainwidget.cpp:259
 msgid "Reload current document"
-msgstr ""
+msgstr "Aktuális dokumentum újraolvasása"
 
 #: mainwidget.cpp:264
 msgid "Stop"
-msgstr ""
+msgstr "Állj"
 
 #: mainwidget.cpp:288
 msgid "In the Constructor!"
-msgstr ""
+msgstr "A konstruktorban!"
 
 #: mainwidget.cpp:582
 msgid ""
@@ -335,7 +332,7 @@ msgid ""
 "Version "
 msgstr ""
 "KDE Segítség rendszer\n"
-"Verzió "
+"Verzió: "
 
 #: mainwidget.cpp:584
 msgid "About KDE Help"
@@ -344,54 +341,3 @@ msgstr "A KDE Segítség névjegye"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Hozzáadás a kedvencekhez"
-
-#~ msgid "&Contents"
-#~ msgstr "&Tartalom"
-
-#~ msgid "New"
-#~ msgstr "Új"
-
-#~ msgid "Back"
-#~ msgstr "Vissza"
-
-#~ msgid "Forward"
-#~ msgstr "Elõre"
-
-#~ msgid "&Print..."
-#~ msgstr "&Nyomtatás..."
-
-#~ msgid "&Close"
-#~ msgstr "&Bezár"
-
-#~ msgid "&Quit"
-#~ msgstr "Kilé&p"
-
-#~ msgid "&Copy"
-#~ msgstr "&Másol"
-
-#~ msgid "&Edit"
-#~ msgstr "&Szerkesztés"
-
-#~ msgid "&Options"
-#~ msgstr "&Beállítások"
-
-#~ msgid "&Help"
-#~ msgstr "&Segítség"
-
-#~ msgid "Cancel"
-#~ msgstr "Mégsem"
-
-#~ msgid " Location:"
-#~ msgstr " Hely:"
-
-#~ msgid "KDE Help"
-#~ msgstr "KDE Segítség"
-
-#~ msgid "Waiting for kmail to be finished..."
-#~ msgstr "Várakozás a kmail befejezõdésére..."
-
-#~ msgid "&Using KDE Help"
-#~ msgstr "A KDE Segítség &használata"
-
-#~ msgid "&About"
-#~ msgstr "&Névjegy"

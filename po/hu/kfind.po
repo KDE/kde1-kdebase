@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# John Zero <johnzero@telnet.hu>, 1997
+# Balazs Nagy <julian7@kva.hu>, 1998
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
-"Last-Translator: John Zero <johnzero@telnet.hu>\n"
+"Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
@@ -16,14 +16,14 @@ msgstr ""
 
 #: kfdird.cpp:46
 msgid "Directories:"
-msgstr "Könyvtárak"
+msgstr "Könyvtárak:"
 
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
-msgstr "Nem tudom megnyitni vagy olvasni a könyvtárt"
+msgstr "Nem lehet megnyitni vagy olvasni a könyvtárat."
 
 #: kfindtop.cpp:118
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
@@ -34,65 +34,57 @@ msgid ""
 msgstr ""
 "KFind %s\n"
 "Felület a find segédeszközhöz\n"
-"Miroslaf Flídr <flidr@kky.zcu.cz>"
+"Miroslaf Flídr <flidr@kky.zcu.cz>\n"
+"Külön köszönet Stephan Kulow-nak\n"
+"<coolo@kde.org>"
 
 #: kfindtop.cpp:136
-#, fuzzy
 msgid "&Open"
-msgstr "&Beállítások"
+msgstr "&Megnyitás"
 
 #: kfindtop.cpp:138
-#, fuzzy
 msgid "&Add to archive"
-msgstr "Hozzáad az archívumhoz"
+msgstr "&Hozzáad az archívumhoz"
 
 #: kfindtop.cpp:143
-#, fuzzy
 msgid "&Properties"
-msgstr "Tulajdonságok"
+msgstr "&Tulajdonságok"
 
 #: kfindtop.cpp:146
-#, fuzzy
 msgid "Open Containing &Folder"
-msgstr "Nyisd a tartalmazó könyvtárat"
+msgstr "Tartalmazó &könyvtár megnyitása"
 
 #: kfindtop.cpp:149
-#, fuzzy
 msgid "&Save Search"
-msgstr "Mentsd el a keresést"
+msgstr "Keresés &mentése"
 
 #: kfindtop.cpp:161
-#, fuzzy
 msgid "&Cut"
-msgstr "Kivág"
+msgstr "&Kivág"
 
 #: kfindtop.cpp:166
-#, fuzzy
 msgid "&Select All"
-msgstr "Mindent kiválaszt"
+msgstr "&Mindent kijelöl"
 
 #: kfindtop.cpp:168
-#, fuzzy
 msgid "&Invert Selection"
-msgstr "Kiválasztás ellenkezõjére"
+msgstr "Kiválasztás m&egfordítása"
 
 #: kfindtop.cpp:179
-#, fuzzy
 msgid "&Preferences ..."
-msgstr "Beállítások..."
+msgstr "&Beállítások..."
 
 #: kfindtop.cpp:183
-#, fuzzy
 msgid "Kfind &help"
-msgstr "Kfind segítség"
+msgstr "Kfind &segítség"
 
 #: kfindtop.cpp:186
 msgid "About &Qt"
-msgstr ""
+msgstr "A &Qt névjegye"
 
 #: kfindtop.cpp:206
 msgid "Start Search"
-msgstr "Keress"
+msgstr "Keresés indítása"
 
 #: kfindtop.cpp:211
 msgid "New Search"
@@ -100,7 +92,7 @@ msgstr "Új keresés"
 
 #: kfindtop.cpp:216
 msgid "Stop Search"
-msgstr "Állj le"
+msgstr "Állj"
 
 #: kfindtop.cpp:229
 msgid "Add to archive"
@@ -112,11 +104,11 @@ msgstr "Tulajdonságok"
 
 #: kfindtop.cpp:244
 msgid "Open Containing Folder"
-msgstr "Nyisd a tartalmazó könyvtárat"
+msgstr "Tartalmazó könyvtár megnyitása"
 
 #: kfindtop.cpp:249
 msgid "Save Search Results"
-msgstr "Mentsd az eredményeket"
+msgstr "Keresés &mentése"
 
 #: kftabdlg.cpp:48
 msgid "&Named:"
@@ -124,11 +116,11 @@ msgstr "&Neve:"
 
 #: kftabdlg.cpp:51
 msgid "&Look in:"
-msgstr "&Hol keress:"
+msgstr "Keresés &helye:"
 
 #: kftabdlg.cpp:54
 msgid "&Browse ..."
-msgstr "&Tallóz ..."
+msgstr "&Tallóz..."
 
 #: kftabdlg.cpp:66
 msgid "Include &subfolders"
@@ -137,7 +129,7 @@ msgstr "&Alkönyvtárakkal együtt"
 #: kftabdlg.cpp:96
 #, fuzzy
 msgid " Name& Location "
-msgstr " Név&hely "
+msgstr " Név &hely "
 
 #: kftabdlg.cpp:108
 msgid "and"
@@ -157,7 +149,7 @@ msgstr "&Minden file"
 
 #: kftabdlg.cpp:117
 msgid "Find all files created or &modified:"
-msgstr "Keress minden új vagy &módosított file-t:"
+msgstr "Újabb, vagy módosított file-ok keresése:"
 
 #: kftabdlg.cpp:118
 msgid "&between"
@@ -241,11 +233,11 @@ msgstr "Tallóz"
 
 #: kfoptions.cpp:96
 msgid "Plain Text"
-msgstr "Sima szöveg"
+msgstr "Egyszerû szöveg"
 
 #: kfoptions.cpp:125
 msgid "Saving"
-msgstr "Mentem"
+msgstr "Mentés"
 
 #: kfoptions.cpp:132
 msgid "Create Archive:"
@@ -253,7 +245,7 @@ msgstr "Archív létrehozása:"
 
 #: kfoptions.cpp:134
 msgid "Add to Archive:"
-msgstr "Archívum bõvítése:"
+msgstr "Archív bõvítése:"
 
 #: kfoptions.cpp:138
 msgid "Patterns:"
@@ -270,11 +262,11 @@ msgstr "Arhiválók"
 #: kfwin.cpp:78 kfwin.cpp:105
 #, c-format
 msgid "%d file(s) found"
-msgstr "%d file-t találtam"
+msgstr "%d file található"
 
 #: kfwin.cpp:143
 msgid "It wasn't possible to save results!"
-msgstr "Nem tudtam elmenteni az eredményeket!"
+msgstr "Nem lehet elmenteni az eredményeket!"
 
 #: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
 msgid "KFind Results File"
@@ -282,7 +274,7 @@ msgstr "KFind eredményfile"
 
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
-msgstr "Az eredményeket file-ba elmentettem:\n"
+msgstr "Az eredményeket tartalmazó file:\n"
 
 #: kfwin.cpp:195
 #, c-format
@@ -290,19 +282,19 @@ msgid ""
 "Do you really want to delete file:\n"
 "%s"
 msgstr ""
-"Biztos, hogy törölni akarod a\n"
+"Biztos, hogy törölni kívánja a(z)\n"
 "%s file-t?"
 
 #: kfwin.cpp:197
 msgid "Delete File"
-msgstr "Törlöld a file-t"
+msgstr "File törlése"
 
 #: kfwin.cpp:210
 msgid ""
 "You have no permission\n"
 " to delete this file"
 msgstr ""
-"Nincs jogod ezt a\n"
+"Nincs joga ezt a\n"
 "file-t törölni"
 
 #: kfwin.cpp:216
@@ -318,7 +310,7 @@ msgid ""
 "You have no permission\n"
 " to delete this directory"
 msgstr ""
-"Nincs jogod ennek a\n"
+"Nincs joga ennek a\n"
 "könyvtárnak a törléséhez"
 
 #: kfwin.cpp:239
@@ -339,64 +331,8 @@ msgstr ""
 
 #: kfwin.cpp:336
 msgid "Couldn't recognize archive type!"
-msgstr "Nem ismerem fel az arhív típusát!"
+msgstr "Nem ismerhetõ fel az arhív típusa!"
 
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Hiba a gyerek process kreálása közben!"
-
-#~ msgid "(none)"
-#~ msgstr "(semmi)"
-
-#, fuzzy
-#~ msgid "&Delete"
-#~ msgstr "Töröl"
-
-#, fuzzy
-#~ msgid "&Undo"
-#~ msgstr "Visszacsinál"
-
-#~ msgid "Delete"
-#~ msgstr "Töröl"
-
-#~ msgid "Remove"
-#~ msgstr "Töröl"
-
-#~ msgid "Sorry"
-#~ msgstr "Sajnálom"
-
-#, fuzzy
-#~ msgid "&Quit"
-#~ msgstr "&Szerkeszt"
-
-#, fuzzy
-#~ msgid "&Copy"
-#~ msgstr "Beilleszt"
-
-#~ msgid "&Edit"
-#~ msgstr "&Szerkeszt"
-
-#~ msgid "&File"
-#~ msgstr "&File"
-
-#~ msgid "&Help"
-#~ msgstr "&Segítség"
-
-#~ msgid "&Options"
-#~ msgstr "&Beállítások"
-
-#, fuzzy
-#~ msgid "Help"
-#~ msgstr "&Segítség"
-
-#~ msgid "Type Description:"
-#~ msgstr "Típus leírása:"
-
-#~ msgid "Icon:"
-#~ msgstr "Ikon:"
-
-#~ msgid "Default Application:"
-#~ msgstr "Alapértelmezett program:"
-
-#~ msgid "Filetypes"
-#~ msgstr "File típusok"

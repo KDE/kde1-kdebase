@@ -1,21 +1,23 @@
+# John Zero <johnzero@telnet.hu>, 1997
+# Balazs Nagy <julian7@kva.hu>, 1998
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kdisplay VERSION\n"
 "POT-Creation-Date: 1998-02-25 16:11+0100\n"
-"PO-Revision-Date: 1997-11-13 12:20+0100\n"
-"Last-Translator: John Zero <johnzero@telnet.hu>\n"
+"PO-Revision-Date: 1998-02-26 19:20+0100\n"
+"Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: backgnd.cpp:196 backgnd.cpp:231
 msgid "Desktop"
-msgstr ""
+msgstr "Asztal"
 
 #: backgnd.cpp:241
 msgid "Rename..."
-msgstr ""
+msgstr "Átnevez"
 
 #: backgnd.cpp:247
 msgid "Color"
@@ -23,7 +25,7 @@ msgstr "Szín"
 
 #: backgnd.cpp:265
 msgid "Flat"
-msgstr "Sima"
+msgstr "Síma"
 
 #: backgnd.cpp:269
 msgid "Gradient"
@@ -60,7 +62,7 @@ msgstr "KDE alap"
 
 #: backgnd.cpp:811
 msgid "Desktop Title"
-msgstr ""
+msgstr "Asztal neve"
 
 #: colorscm.cpp:142 colorscm.cpp:143
 msgid "Inactive window"
@@ -144,7 +146,7 @@ msgstr "Kompozíció mentése"
 
 #: colorscm.cpp:374 colorscm.cpp:382
 msgid "You have chosen a name used by a supplied color scheme"
-msgstr "Ilyen nevû kompozíció már van"
+msgstr "Már létezik színkompozíció ilyen névvel"
 
 #: colorscm.cpp:467
 msgid "KDE Default"
@@ -159,12 +161,12 @@ msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
 msgstr ""
-"Nem találtam színkompozíciókat\n"
-"Fel akarod rakni az alapértelmezetteket most ?"
+"A színkompozíciók nem találhatóak.\n"
+"Fel kívánja telepíteni az alapértelmezetteket?"
 
 #: kwmcom.cpp:78 kwmcom.cpp:105
 msgid "kwmcom: communication with kwm failed\n"
-msgstr "kwmcom: nem tudok kommunikálni a kwm-el!\n"
+msgstr "kwmcom: nem lehet kapcsolatba lépni a kwm-mel\n"
 
 #: savescm.cpp:26
 msgid "Name"
@@ -172,11 +174,11 @@ msgstr "Név"
 
 #: scrnsave.cpp:47
 msgid "Ignore"
-msgstr ""
+msgstr "Kihagy"
 
 #: scrnsave.cpp:49
 msgid "Lock"
-msgstr ""
+msgstr "Zárol"
 
 #: scrnsave.cpp:107 scrnsave.cpp:163
 msgid "Screen Saver"
@@ -257,7 +259,7 @@ msgstr "KDE alap"
 
 #: general.cpp:176
 msgid "any"
-msgstr ""
+msgstr "bármelyik"
 
 #: main.cpp:61
 #, fuzzy
@@ -265,14 +267,12 @@ msgid "&Background"
 msgstr "Háttér"
 
 #: main.cpp:64
-#, fuzzy
 msgid "&Colors"
-msgstr "Szín"
+msgstr "&Színek"
 
 #: main.cpp:67
-#, fuzzy
 msgid "&Screensaver"
-msgstr "Képernyõvédõ"
+msgstr "&Képernyõvédõ"
 
 #: main.cpp:70
 msgid "&Style"
@@ -281,34 +281,8 @@ msgstr ""
 #: main.cpp:76
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr ""
+"használat: kcmdisplay [-init | {háttér,képernyõkímélõ,színek,stílus}]\n"
 
 #: main.cpp:112
-#, fuzzy
 msgid "Display settings"
-msgstr "Kijelzõ beállítása"
-
-#~ msgid "Browse..."
-#~ msgstr "Tallózás..."
-
-#~ msgid "Italic"
-#~ msgstr "Dõlt"
-
-#~ msgid "Remove"
-#~ msgstr "Töröl"
-
-#~ msgid "KDE Display Configuration"
-#~ msgstr "KDE kijelzõ beállítások"
-
-#~ msgid ""
-#~ "Usage: %s -init|-setup\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Használat: %s -init|-setup\n"
-#~ "\n"
-
-#~ msgid "  -init               apply current settings to the display\n"
-#~ msgstr ""
-#~ "  -init               a jelenlegi beállításokat alkalmazza a kijelzõre\n"
-
-#~ msgid "  -setup              setup the display\n"
-#~ msgstr "  -setup              a kijelzõ beállítása\n"
+msgstr "Beállítások megjelenítése"

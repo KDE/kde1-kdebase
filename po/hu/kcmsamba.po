@@ -1,6 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # John Zero <johnzero@telnet.hu>, 1998.
+# Balazs Nagy <julian7@kva.hu>, 1998.
 #
 #, fuzzy
 msgid ""
@@ -16,8 +17,8 @@ msgstr ""
 
 #: main.cpp:57
 msgid "usage: kcmsamba [-init | status]\n"
-msgstr ""
+msgstr "használat: kcmsamba [-init | status]\n"
 
 #: main.cpp:68
 msgid "Samba"
-msgstr "Samba"
+msgstr ""

@@ -10,8 +10,8 @@ msgstr ""
 "Last-Translator: Nagy Balazs <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=Latin2\n"
-"Content-Transfer-Encoding: iso-8859-2\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: kpanel.C:211
 msgid "Move"
@@ -23,7 +23,7 @@ msgstr "Tulajdonságok"
 
 #: kpanel.C:246
 msgid "Go!"
-msgstr ""
+msgstr "Mehet!"
 
 #: kpanel.C:248 tools.C:816
 msgid "Where do you want to go tomorrow?"
@@ -44,36 +44,35 @@ msgstr "Képernyõzár"
 
 #: kpanel.C:377
 msgid "Hide the panel"
-msgstr ""
+msgstr "Panel rejtése"
 
 #: kpanel.C:387
 msgid "Show the panel"
-msgstr ""
+msgstr "Panel megjelenítése"
 
 #: kpanel.C:1078 tools.C:632
-#, fuzzy
 msgid "No comment available"
 msgstr "Nincs róla info"
 
 #: kpanel.C:1087 tools.C:825
 msgid "Windowlist"
-msgstr ""
+msgstr "Ablaklista"
 
 #: props.C:200
 msgid "Add application"
-msgstr "Program hozzáadása"
+msgstr "Alkalmazás hozzáadása"
 
 #: props.C:202
 msgid "Add an application or a submenu onto the panel"
-msgstr ""
+msgstr "Alkalmazás vagy almenü hozzáadása a panelhez"
 
 #: props.C:203
 msgid "Add windowlist"
-msgstr ""
+msgstr "Ablaklista hozzáadása"
 
 #: props.C:205
 msgid "Add a windowlist menu onto the panel"
-msgstr ""
+msgstr "Ablaklista hozzáadása a panelhez"
 
 #: props.C:206
 msgid "Configure"
@@ -88,9 +87,8 @@ msgid "Restart"
 msgstr "Újraindítás"
 
 #: props.C:211
-#, fuzzy
 msgid "Restart panel"
-msgstr "Újraindítás"
+msgstr "Panel újraindítása"
 
 #: props.C:212 props.C:467
 msgid "Panel"
@@ -106,7 +104,7 @@ msgstr "Hely"
 
 #: props.C:411
 msgid "Taskbar"
-msgstr "Táskabár"
+msgstr "Futó programok"
 
 #: props.C:412
 msgid "Hidden"
@@ -135,32 +133,31 @@ msgstr "Menü tippek"
 
 #: props.C:518
 msgid "Others"
-msgstr ""
+msgstr "Egyebek"
 
 #: props.C:520
-#, fuzzy
 msgid "Personal First"
-msgstr "Személyes menü"
+msgstr "Személyes menü elöl"
 
 #: props.C:523
 msgid "Auto Hide Panel"
-msgstr ""
+msgstr "Panel automatikus elrejtése"
 
 #: props.C:526
 msgid "Auto Hide Taskbar"
-msgstr ""
+msgstr "Futó programok automatikus elrejtése"
 
 #: props.C:544
 msgid "Clock"
-msgstr ""
+msgstr "Óra"
 
 #: props.C:546
 msgid "24h"
-msgstr ""
+msgstr "24 órás"
 
 #: props.C:550
 msgid "12h AM/PM"
-msgstr ""
+msgstr "12 órás"
 
 #: props.C:611
 msgid "Visible"
@@ -171,34 +168,9 @@ msgid "Width"
 msgstr "Szélesség"
 
 #: props.C:623
-#, fuzzy
 msgid "Desktops"
-msgstr "Asztal"
+msgstr "Asztalok"
 
 #: props.C:629
 msgid "KPanel Configuration"
 msgstr "KPanel beállítások"
-
-#~ msgid "Remove"
-#~ msgstr "Töröl"
-
-#~ msgid "System"
-#~ msgstr "Rendszer"
-
-#~ msgid "Add special"
-#~ msgstr "Speciális elem hozzáadása"
-
-#~ msgid "Destroy"
-#~ msgstr "Megszüntet"
-
-#~ msgid "(Un) Sticky"
-#~ msgstr "Ragadás be/ki"
-
-#~ msgid "(Un) Iconify"
-#~ msgstr "Ikonizálás be/ki"
-
-#~ msgid "(Un) Maximize"
-#~ msgstr "Teljes képernyõ be/ki"
-
-#~ msgid "On this desktop"
-#~ msgstr "Ezen az asztalon"

@@ -1,6 +1,7 @@
+# John Zero <johnzero@telnet.hu>, 1997
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: klock VERSION\n"
 "POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
@@ -16,7 +17,7 @@ msgstr "Logo"
 #: banner.cpp:78
 #, fuzzy
 msgid "Setup kbanner"
-msgstr "Beállítások"
+msgstr "A KBanner beállításai"
 
 #: banner.cpp:116 blankscrn.cpp:65
 msgid "Color:"
@@ -54,11 +55,11 @@ msgstr "Denevérek"
 
 #: bat.cpp:532
 msgid "Setup KBat"
-msgstr ""
+msgstr "A KBat beállítása"
 
 #: bat.cpp:548
 msgid "Number of bats:"
-msgstr ""
+msgstr "Denevérek száma:"
 
 #: bat.cpp:636
 #, fuzzy
@@ -84,11 +85,11 @@ msgstr "Beállítások"
 
 #: blob.cpp:53
 msgid "Random Linear"
-msgstr ""
+msgstr "Véletlen vonalak"
 
 #: blob.cpp:54
 msgid "Horizonal Sine"
-msgstr ""
+msgstr "Vízszintes szinusz"
 
 #: blob.cpp:55
 msgid "Circular Bounce"
@@ -96,19 +97,19 @@ msgstr ""
 
 #: blob.cpp:56
 msgid "Polar Coordinates"
-msgstr ""
+msgstr "Polár koordináták"
 
 #: blob.cpp:57
 msgid "Random"
-msgstr ""
+msgstr "Véletlen"
 
 #: blob.cpp:73
 msgid "Sorry. This screensaver needs a color display"
-msgstr ""
+msgstr "Elnézést.  Ez a képernyõvédõ színes megjelenítést igényel."
 
 #: blob.cpp:452
 msgid "Setup Blob Saver"
-msgstr ""
+msgstr "Poligon képernyõvédõ"
 
 #: blob.cpp:455
 msgid "Frame Show sec."
@@ -116,10 +117,9 @@ msgstr ""
 
 #: blob.cpp:463
 msgid "Algorithm"
-msgstr ""
+msgstr "Algoritmus"
 
 #: blob.cpp:543
-#, fuzzy
 msgid "About Blob"
 msgstr "A Poligon-ról"
 
@@ -141,18 +141,17 @@ msgstr "Lángok"
 
 #: flame.cpp:390
 msgid "Setup KFlame"
-msgstr ""
+msgstr "A KFlame beállításai"
 
 #: flame.cpp:406
 msgid "Max Levels:"
-msgstr ""
+msgstr "Max. szintek:"
 
 #: flame.cpp:416
 msgid "Num Points:"
-msgstr ""
+msgstr "Pontok száma:"
 
 #: flame.cpp:521
-#, fuzzy
 msgid "About Flame"
 msgstr "A Logo-ról"
 
@@ -170,18 +169,16 @@ msgid "Forest"
 msgstr "Erdõ"
 
 #: forest.cpp:272
-#, fuzzy
 msgid "Setup KForest"
-msgstr "Erdõ"
+msgstr "A KForest beállítása"
 
 #: forest.cpp:288
 msgid "Num of Trees:"
-msgstr ""
+msgstr "Fák száma"
 
 #: forest.cpp:375
-#, fuzzy
 msgid "About Forest"
-msgstr "Erdõ"
+msgstr "A KForest névjegye"
 
 #: forest.cpp:376
 msgid ""
@@ -198,11 +195,11 @@ msgstr "Ugrás"
 
 #: hop.cpp:306
 msgid "Setup KHop"
-msgstr ""
+msgstr "A KHop névjegye"
 
 #: hop.cpp:322
 msgid "Samecolor Pixels:"
-msgstr ""
+msgstr "Egyszínû pixelek"
 
 #: hop.cpp:332 lissie.cpp:346
 msgid "Cycles:"
@@ -211,7 +208,7 @@ msgstr ""
 #: hop.cpp:437
 #, fuzzy
 msgid "About Hop"
-msgstr "A programról"
+msgstr "A KHop névjegye"
 
 #: hop.cpp:438
 msgid ""
@@ -229,12 +226,12 @@ msgstr "Lézer"
 #: laser.cpp:387
 #, fuzzy
 msgid "Setup KLaser"
-msgstr "Beállítások"
+msgstr "A KLaser beállításai"
 
 #: laser.cpp:462
 #, fuzzy
 msgid "About Laser"
-msgstr "A Logo-ról"
+msgstr "A KLaser névjegye"
 
 #: laser.cpp:463
 msgid ""
@@ -250,9 +247,8 @@ msgid "Lines"
 msgstr "Vonalak"
 
 #: lines.cpp:128
-#, fuzzy
 msgid "Setup klines"
-msgstr "Beállítások"
+msgstr "A KLines beállításai"
 
 #: lines.cpp:130 polygon.cpp:81
 msgid "Length:"
@@ -260,20 +256,19 @@ msgstr "Hossz:"
 
 #: lines.cpp:150
 msgid "Beginning:"
-msgstr ""
+msgstr "Eleje:"
 
 #: lines.cpp:159
 msgid "Middle:"
-msgstr ""
+msgstr "Közepe:"
 
 #: lines.cpp:168
 msgid "End:"
-msgstr ""
+msgstr "Vége:"
 
 #: lines.cpp:259
-#, fuzzy
 msgid "About Lines"
-msgstr "A Logo-ról"
+msgstr "A KLines névjegye"
 
 #: lines.cpp:260
 msgid ""
@@ -285,21 +280,19 @@ msgstr ""
 
 #: lissie.cpp:234
 msgid "Lissie"
-msgstr "Lassie"
+msgstr "Lissie"
 
 #: lissie.cpp:320
-#, fuzzy
 msgid "Setup KLissie"
-msgstr "Lassie"
+msgstr "A KLissie beállításai"
 
 #: lissie.cpp:336
 msgid "Num of Lissies:"
-msgstr ""
+msgstr "A Lissie-k száma"
 
 #: lissie.cpp:451
-#, fuzzy
 msgid "About Lissie"
-msgstr "Lassie"
+msgstr "A KLissie névjegye"
 
 #: lissie.cpp:452
 msgid ""
@@ -313,34 +306,33 @@ msgstr ""
 #: main.cpp:279
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr ""
+msgstr "A(z) %s paraméter nem értelmezhetõ ezen a platformon!"
 
 #: main.cpp:306
-#, fuzzy
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator.\n"
 "\n"
 "Tell him, that you need suid for the screensavers!"
 msgstr ""
-"A rendszered shadow password-öket\n"
-"használd, lépj kapcsolatba a rendszergazdával."
+"Az Ön rendszere rejtett jelszavakat használ.\n"
+"Lépjen kapcsolatba a rendszergazdával, hogy adjon\n"
+"SUID-ot a képernyõvédõknek."
 
 #: main.cpp:311
 msgid "Shadow Passwords"
-msgstr "Shadow password-ök"
+msgstr "Rejtett jelszavak"
 
 #: main.cpp:469
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 msgstr ""
-"Használat: %s -install|-setup|-test|-desc|-preview wid\n"
+"Használat: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
 #: main.cpp:472
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -359,22 +351,22 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
-"  -corners xxxx     Megadja a teendõt, ha az egér kurzor a képernyõ          "
-"          sarkába ér:\n"
-"                     x = i  semmi akció (ignorálja)\n"
-"                     x = s  képernyõ mentés\n"
-"                     x = l  képernyõ zárás\n"
-"                    sorrend: bal fenti, jobb fenti, bal alsó, jobb alsó\n"
-"  -delay num        Mennyi idõ múlva induljon el a képernyõvédõ\n"
+"  -corners xxxx     Feladatot rendel az egérkurzor képernyõsarokba\n"
+"                    mozgatásakor:\n"
+"                     x = i  semmi sem történik\n"
+"                     x = s  képernyõkímélõ\n"
+"                     x = l  képernyõkímélõ és terminál zárolás\n"
+"                    sorrend: bal felsõ, jobb felsõ, bal alsó, jobb alsó\n"
+"  -delay num        A képernyõvédõ indítási késleltetése\n"
 "                     (az alapértelmezés 10 perc)\n"
-"  -desc             Kiiratja a képernyõvédõ leírását az stdout-ra\n"
-"  -install          A képernyõvédõt beinstallálja\n"
-"  -lock             Kérjen jelszót a képmentés megszakításakor\n"
+"  -desc             Kiírja a képernyõkímélõ leírását\n"
+"  -install          Felinstallálja a képernyõvédõt\n"
+"  -lock             Zárolja a billentyûzetet\n"
 "  -nice num         A megadott nice (prioritás) értékkel fusson\n"
 "\n"
 "  -preview wid      A megadott wid (ablak ID) ablakban fusson\n"
 "  -setup            Képernyõvédõ beállítása\n"
-"  -test             A képernyõvédõ azonnali beindítása\n"
+"  -test             A képernyõvédõ azonnali indítása\n"
 
 #: morph3d.cpp:839
 msgid "GL can not render with root visual\n"
@@ -552,18 +544,3 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-
-#~ msgid "Italic"
-#~ msgstr "Dõlt"
-
-#~ msgid "Font"
-#~ msgstr "Font"
-
-#~ msgid "Size:"
-#~ msgstr "Méret:"
-
-#~ msgid "Bold"
-#~ msgstr "Félkövér"
-
-#~ msgid "Cancel"
-#~ msgstr "Mégsem"

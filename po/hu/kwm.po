@@ -1,9 +1,11 @@
+# John Zero <johnzero@telnet.hu>, 1997
+# Balazs Nagy <julian7@kva.hu>, 1998
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-02-25 16:11+0100\n"
-"PO-Revision-Date: 1997-11-13 12:20+0100\n"
-"Last-Translator: John Zero <johnzero@telnet.hu>\n"
+"PO-Revision-Date: 1998-02-26 20:46+MET\n"
+"Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
@@ -14,12 +16,12 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: erõsen úgy néz ki, hogy már fut egy másik window manager.\n"
-"Igy nem tud elindulni a kwm\n"
+"kwm: valószínûleg már fut egy másik ablakmenedzser,\n"
+"Így a kwm nem indítható.\n"
 
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: hiba inicializálás közben; megszakítom a futást\n"
+msgstr "kwm: hiba inicializálás közben; a futtatás megszakadt\n"
 
 #: main.C:370
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -27,55 +29,48 @@ msgstr ""
 
 #: main.C:377
 msgid "Usage: "
-msgstr ""
+msgstr "Használat: "
 
 #: main.C:388
-#, fuzzy
 msgid "&Maximize"
-msgstr "(Ne) ma&ximalizál"
+msgstr "Ma&ximalizál"
 
 #: main.C:389
-#, fuzzy
 msgid "&Restore"
-msgstr "Mé&retez"
+msgstr "&Visszaállít"
 
 #: main.C:390
 msgid "&Iconify"
 msgstr "&Ikonizál"
 
 #: main.C:391
-#, fuzzy
 msgid "&DeIconify"
-msgstr "&Ikonizál"
+msgstr "&Nem Ikonizál"
 
 #: main.C:392
-#, fuzzy
 msgid "&Sticky"
-msgstr "(Ne) &Ragaszt"
+msgstr "&Rajzszög be"
 
 #: main.C:393
 #, fuzzy
 msgid "&UnSticky"
-msgstr "(Ne) &Ragaszt"
+msgstr "&Rajzszög ki"
 
 #: main.C:394
-#, fuzzy
 msgid "Mo&ve"
 msgstr "&Mozgat"
 
 #: main.C:395
-#, fuzzy
 msgid "Resi&ze"
 msgstr "Mé&retez"
 
 #: main.C:397
-#, fuzzy
 msgid "&To desktop"
-msgstr "&Asztalra átrak"
+msgstr "&Másik asztalra"
 
 #: main.C:399
 msgid "&Onto current desktop"
-msgstr ""
+msgstr "A &jelenlegi asztalra"
 
 #: main.C:449
 msgid "One"
@@ -115,76 +110,50 @@ msgstr ""
 
 #: main.C:1011
 msgid "*** No Tasks ***"
-msgstr ""
+msgstr "*** Nincsenek programok ***"
 
 #: minicli.C:115
 msgid "Command:"
 msgstr "Parancs:"
 
 #: logout.C:36 taskmgr.C:107
-#, fuzzy
 msgid "Logout"
-msgstr "Ki&lépés"
+msgstr "Kilépés"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr ""
+msgstr "Kilépés a rendszerbõl"
 
 #: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
+"Az alábbi alkalmazások mentetlen adatot tartalmaznak,\n"
+"amik a következõ belépésre elvesznek."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
+"Az alábbi alkalmazásokat nem lehet visszaállítani, csak újraindítani\n"
+"a következõ bejelentkezéskor.  Ellenõrizze, hogy nem tartalmaznak-e\n"
+"fontos elmentetlen adatot."
 
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
+"Az alábbi alkalmazások nem X11-érzékenyek, így nem lehet visszaállítani\n"
+"a következõ bejelentkezéskor.  Ellenõrizze, hogy nem tartalmaznak-e\n"
+"fontos elmentetlen adatot."
 
 #: taskmgr.C:106
 msgid "Switch to"
-msgstr ""
+msgstr "Váltás"
 
 #: taskmgr.C:120
 msgid "Current session"
 msgstr ""
-
-#~ msgid "&Close"
-#~ msgstr "&Bezár"
-
-#~ msgid "usage: kwm [-version] [-exec prog] \n"
-#~ msgstr "használat: kwm [-version] [-exec prog] \n"
-
-#~ msgid "Desktop"
-#~ msgstr "Asztal"
-
-#~ msgid "kwm: exiting on signal\n"
-#~ msgstr "kwm: kilépek egy signal miatt\n"
-
-#~ msgid "&Help on desktop"
-#~ msgstr "&Segítség az asztalról"
-
-#~ msgid "&Execute command"
-#~ msgstr "&Parancs futtatása"
-
-#~ msgid "&Display properties"
-#~ msgstr "&Kijelzõ beállításai"
-
-#~ msgid "&Refresh desktop"
-#~ msgstr "&Asztal frissítése"
-
-#~ msgid "&Arrange icons"
-#~ msgstr "&Ikonok rendezése"
-
-#~ msgid "&Lock screen"
-#~ msgstr "Képernyõ &zárolása"
-
-#~ msgid "&Destroy"
-#~ msgstr "&Megsemmisít"

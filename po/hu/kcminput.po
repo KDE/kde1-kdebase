@@ -57,12 +57,3 @@ msgstr "Billentyû ismétlés"
 #: keyboard.cpp:75
 msgid "Key click volume"
 msgstr "Leütés hangja"
-
-#~ msgid "On"
-#~ msgstr "Be"
-
-#~ msgid "Off"
-#~ msgstr "Ki"
-
-#~ msgid "%"
-#~ msgstr "%"
