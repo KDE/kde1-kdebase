@@ -1,23 +1,31 @@
 all: 
 	@echo "This Makefile is only for the CVS repository"
-	@echo "I will delete it before making the distribution"
+	@echo "This will be deleted before making the distribution"
 	@echo ""
 	@if test ! -d admin; then \
 		echo "Please recheckout this module!" ;\
-		echo "for cvs: use checkout once and after that update again" ;\
-		echo "for cvsup: checkout kde-common from cvsup and" ;\
-		echo "   link kde-common/admin to ./admin" ;\
+		echo "for cvs users:   use checkout once and after that update again" ;\
+		echo "for cvsup users: checkout kde-common from cvsup and" ;\
+		echo "                 link kde-common/admin to ./admin" ;\
 		exit 1 ;\
 	fi
 
-	cat admin/acinclude.m4.in kdminclude.m4 admin/libtool.m4.in > acinclude.m4
-	aclocal
-	autoheader
-	automake
-	perl admin/automoc
-	autoconf
-	touch stamp-h.in
-
+	@echo "*** Concatenating configure tests into acinclude.m4"
+	@cat admin/acinclude.m4.in kdminclude.m4 admin/libtool.m4.in > acinclude.m4
+	@echo "*** Retreiving configure tests needed by configure.in"
+	@aclocal
+	@echo "*** Scanning for include statements"
+	@autoheader
+	@echo "*** Building Makefile templates (step one)"
+	@automake
+	@echo "*** Scanning for moc files"
+	@perl admin/automoc
+	@echo "*** Building Makefile templates (step two)"
+	@autoconf
+	@touch stamp-h.in
+	@echo "*** Finished"
+	@echo "    Don't forget to run ./configure"
+	@echo "    If you haven't done so in a while, run ./configure --help"
 dist:
 	@cat admin/acinclude.m4.in kdminclude.m4 admin/libtool.m4.in > acinclude.m4; \
 	aclocal; \
