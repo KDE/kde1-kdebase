@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
 "POT-Creation-Date: 1998-12-10 01:15+0100\n"
-"PO-Revision-Date: 1998-11-03 13:37+01:00\n"
+"PO-Revision-Date: 1998-12-13 15:21 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "Nápovìda pracovní plochy"
 
 #: krootwm.C:258
 msgid "About KDE..."
-msgstr ""
+msgstr "Informace o KDE ..."
 
 #: krootwm.C:273 krootwm.C:300 krootwm.C:719 krootwm.C:727
 msgid "New"
@@ -72,11 +72,11 @@ msgstr "Zálo¾ky"
 
 #: krootwm.C:302
 msgid "Desk"
-msgstr ""
+msgstr "Plocha"
 
 #: krootwm.C:303
 msgid "Windows"
-msgstr ""
+msgstr "Okna"
 
 #: krootwm.C:339
 msgid "Edit Bookmarks"

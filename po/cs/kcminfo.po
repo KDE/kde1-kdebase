@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
 "POT-Creation-Date: 1998-12-12 15:11+0100\n"
-"PO-Revision-Date: 1998-10-24 17:54 CEST\n"
+"PO-Revision-Date: 1998-12-14 10:02+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,52 +16,52 @@ msgstr ""
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr ""
+msgstr "obrazovka #%d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr ""
+msgstr "  rozmìry                   : %dx%d pixelù (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr ""
+msgstr "  rozli¹ení                 : %dx%d bodù na palec\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr ""
+msgstr "  hloubka (%d)              :"
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr ""
+msgstr "jméno zobrazovaèe           : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr ""
+msgstr "èíslo verze                 : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr ""
+msgstr "poskytovatel                : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr ""
+msgstr "poskytovatelovo èíslo verze : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr ""
+msgstr "implicitní èíslo obrazovky  : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr ""
+msgstr "poèet obrazovek             : %i"
 
 #: info.cpp:179
 msgid ""
@@ -69,67 +69,67 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
+"Není dostupná ¾ádná informace\n"
+" nebo\n"
+"tento systém není je¹tì podporován :-("
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr ""
+msgstr "%s, neznámá rychlost"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr ""
+msgstr "%s bì¾ící na %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr ""
+msgstr "Není mo¾né otevøít fstab!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
-#, fuzzy
 msgid "Device"
-msgstr "&Zaøízení"
+msgstr "Zaøízení"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr ""
+msgstr "Pøípojné místo"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr ""
+msgstr "Typ filesystému"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr ""
+msgstr "Vlastnosti pøipojení"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr ""
+msgstr "neznámý typ CPU"
 
 #: info_hpux.cpp:62
-#, fuzzy
 msgid "unavailable"
-msgstr "Není pøístupná"
+msgstr "nedostupné"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr ""
+msgstr "Poèet aktivních procesorù= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr ""
+msgstr "Hodnota"
 
 #: info_linux.cpp:114
-#, fuzzy
 msgid "DMA-Channel"
-msgstr "DMA-&kanály"
+msgstr "DMA-kanál"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr ""
+msgstr "pou¾íván"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr ""
+msgstr "I/O rozsah"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -225,6 +225,5 @@ msgstr "Není pøístupná"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#, fuzzy
 msgid "Not Available"
 msgstr "Není pøístupná"

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-12-14 01:17+0100\n"
-"PO-Revision-Date: 1998-11-03 13:41+01:00\n"
+"POT-Creation-Date: 1998-12-02 13:03+0100\n"
+"PO-Revision-Date: 1998-12-13 19:16 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,14 +14,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: attraction.cpp:716
-#, fuzzy
 msgid "Attraction"
-msgstr "Kontrakce"
+msgstr "Pøita¾livost"
 
 #: attraction.cpp:803
-#, fuzzy
 msgid "Setup KAttraction"
-msgstr "Nastavení KBatu"
+msgstr "Nastavení KAttraction"
 
 #: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
@@ -33,7 +31,7 @@ msgstr "Mód:"
 
 #: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
-msgstr ""
+msgstr "Míèe"
 
 #: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
@@ -45,19 +43,22 @@ msgstr "Polygony"
 
 #: attraction.cpp:837 slidescreen.cpp:501
 msgid "Tails"
-msgstr ""
+msgstr "Doznívání"
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
-msgstr ""
+msgstr "Záøit"
+
+#: attraction.cpp:869 attraction.cpp:956 slidescreen.cpp:534
+#: slidescreen.cpp:563
+msgid "Ok"
+msgstr "Ok"
 
 #: attraction.cpp:951
-#, fuzzy
 msgid "About Attraction"
-msgstr "Kontrakce"
+msgstr "Informace o Attraction"
 
 #: attraction.cpp:952
-#, fuzzy
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -67,11 +68,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Skála verze 3.3\n"
+"Attraction verze 1.0\n"
 "\n"
-"Copyright (c) 1992 by Jamie Zawinski\n"
+"Copyright (c) 1992 by Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Pøevedeno pro kscreensaver Martinem Jonesem"
+"Pro kscreensaver pøevedl:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> Øíjen 1998"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -265,9 +268,8 @@ msgstr ""
 "Pøevedeno pro kscreensaver Cedricem Tefftem"
 
 #: bsod.cpp:1192
-#, fuzzy
 msgid "Black Screen of Death"
-msgstr "Prázdná obrazovka"
+msgstr "Èerná obrazovka smrti"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -459,12 +461,12 @@ msgstr ""
 "\n"
 "Pøevedeno pro kscreensaver Emanuelem Pirkerem"
 
-#: main.cpp:384
+#: main.cpp:353
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Parametr %s není podporován na této platformì!"
 
-#: main.cpp:422
+#: main.cpp:382
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -478,11 +480,11 @@ msgstr ""
 "Prosím kontaktujte svého systémového správce.\n"
 "Øeknìte mu, ¾e potøebujete SUID pro ¹etøièe obrazovky!"
 
-#: main.cpp:427
+#: main.cpp:387
 msgid "Shadow Passwords"
 msgstr "Stínové heslo"
 
-#: main.cpp:472
+#: main.cpp:432
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -494,7 +496,7 @@ msgstr ""
 "pou¾ijte místo toho klock.\n"
 "\n"
 
-#: main.cpp:580
+#: main.cpp:540
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -503,7 +505,7 @@ msgstr ""
 "Pou¾ití: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "         [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
-#: main.cpp:583
+#: main.cpp:543
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -690,11 +692,11 @@ msgstr ""
 "\n"
 "Pøevedeno pro kscreensaver Martinem Jonesem"
 
-#: saver.cpp:60 saver.cpp:191
+#: saver.cpp:60 saver.cpp:180
 msgid "Enter Password"
 msgstr "Napi¹ heslo"
 
-#: saver.cpp:121
+#: saver.cpp:118
 msgid "Failed"
 msgstr "Neúspìsné"
 
@@ -771,22 +773,18 @@ msgid "About Science"
 msgstr "Informace o Science"
 
 #: slidescreen.cpp:419
-#, fuzzy
 msgid "SlideScreen"
-msgstr "Prázdná obrazovka"
+msgstr "SlideScreen"
 
 #: slidescreen.cpp:465
-#, fuzzy
 msgid "Setup KSlideScreen"
-msgstr "Nastavení Science"
+msgstr "Nastavení ¹etøièe SlideScreen"
 
 #: slidescreen.cpp:558
-#, fuzzy
 msgid "About SlideScreen"
-msgstr "Informace o Science"
+msgstr "Informace o ¹etøièi SlideScreen"
 
 #: slidescreen.cpp:559
-#, fuzzy
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -796,11 +794,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Skála verze 3.3\n"
+"SlideScreen verze 1.1\n"
 "\n"
-"Copyright (c) 1992 by Jamie Zawinski\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Pøevedeno pro kscreensaver Martinem Jonesem"
+"Pro kscreensaver pøevedl:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: slip.cpp:293
 msgid "Slip"

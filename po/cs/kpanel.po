@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1998-12-12 01:17+0100\n"
-"PO-Revision-Date: 1998-11-09 08:39+01:00\n"
+"POT-Creation-Date: 1998-12-09 01:12+0100\n"
+"PO-Revision-Date: 1998-12-13 15:24 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,11 +33,11 @@ msgstr "Kam si pøejete jít zítra?"
 msgid "No info available"
 msgstr "Informace není k dispozici"
 
-#: kpanel.C:430 props.C:193 props.C:194
+#: kpanel.C:430 props.C:176 props.C:177
 msgid "Logout"
 msgstr "Odhlásit"
 
-#: kpanel.C:438 props.C:192
+#: kpanel.C:438 props.C:175
 msgid "Lock screen"
 msgstr "Zablokovat obrazovku"
 
@@ -57,67 +57,67 @@ msgstr "Komentáø není k dispozici"
 msgid "Windowlist"
 msgstr "Seznam oken"
 
-#: props.C:162
+#: props.C:145
 msgid "Add application"
 msgstr "Pøidat aplikaci"
 
-#: props.C:164
+#: props.C:147
 msgid "Add an application or a submenu onto the panel"
 msgstr "Pøidat aplikaci nebo menu na panel"
 
-#: props.C:165
+#: props.C:148
 msgid "Add windowlist"
 msgstr "Pøidat seznam oken"
 
-#: props.C:167
+#: props.C:150
 msgid "Add a windowlist menu onto the panel"
 msgstr "Pøidat seznam oken na panel"
 
-#: events.C:782 props.C:168
+#: events.C:782 props.C:151
 msgid "Configure"
 msgstr "Konfiguruj"
 
-#: props.C:170
+#: props.C:153
 msgid "Configure panel"
 msgstr "Konfiguruj panel"
 
-#: props.C:171
+#: props.C:154
 msgid "Edit Menus"
 msgstr "Upravit menu"
 
-#: props.C:173
+#: props.C:156
 msgid "Add or remove applications in the menu structure "
 msgstr "Pøidání nebo ubrání aplikací ve struktuøe menu"
 
-#: events.C:784 props.C:174
+#: events.C:784 props.C:157
 msgid "Restart"
 msgstr "Spustit znova"
 
-#: props.C:176
+#: props.C:159
 msgid "Restart panel"
 msgstr "Spustit panel znova"
 
-#: props.C:179
+#: props.C:162
 msgid "Disk Navigator"
 msgstr "Diskový navigátor"
 
-#: props.C:182
+#: props.C:165
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Rychlé procházení souborovým systémem"
 
-#: props.C:188
+#: props.C:171
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:190
+#: props.C:173
 msgid "Lock Screen"
 msgstr "Blokovat obrazovku"
 
-#: props.C:419
+#: props.C:402
 msgid "The menu editor is not installed."
 msgstr "Editor menu není nainstalován."
 
-#: events.C:838 props.C:420
+#: events.C:830 props.C:403
 msgid "Oops!"
 msgstr "Ouha!"
 
@@ -129,7 +129,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: events.C:837
+#: events.C:829
 msgid "Cannot put this as button onto the panel!"
 msgstr "Toto není mo¾né dát na panel jako tlaèítko!"
 
@@ -155,19 +155,19 @@ msgstr "(neèitelné)"
 
 #: pfilemenu.C:742
 msgid "Shared:"
-msgstr ""
+msgstr "Sdílené:"
 
 #: pfilemenu.C:744
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Polo¾ky sdílené v¹emi u¾ivateli"
 
 #: pfilemenu.C:763
 msgid "Personal:"
-msgstr ""
+msgstr "Osobní:"
 
 #: pfilemenu.C:765
 msgid "Personal entries"
-msgstr ""
+msgstr "Osobní polo¾ky"
 
 #: pfilemenu.C:783
 msgid "Recent:"
@@ -175,19 +175,12 @@ msgstr "Nedávné:"
 
 #: pfilemenu.C:785
 msgid "Recent entries"
-msgstr ""
+msgstr "Nedávné polo¾ky"
 
 #: pfilemenu.C:831
 msgid "Options..."
 msgstr "Mo¾nosti..."
 
 #: pfilemenu.C:833
-#, fuzzy
 msgid "Customize Disk Navigator"
-msgstr "Diskový navigátor"
-
-#~ msgid "Global:"
-#~ msgstr "Globální:"
-
-#~ msgid "Local:"
-#~ msgstr "Lokální:"
+msgstr "Nastavení diskového navigátoru"

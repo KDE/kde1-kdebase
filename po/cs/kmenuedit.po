@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 0.2.3\n"
 "POT-Creation-Date: 1998-11-24 01:15+0100\n"
-"PO-Revision-Date: 1998-11-03 13:39+01:00\n"
+"PO-Revision-Date: 1998-12-13 15:29 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -87,11 +87,11 @@ msgstr "! CHRÁNÌNÉ tlaèítko !"
 
 #: confmenu.cpp:116
 msgid "Select item for moving"
-msgstr ""
+msgstr "Vybrat polo¾ku k pøesunutí"
 
 #: confmenu.cpp:117
 msgid "Select menu for moving"
-msgstr ""
+msgstr "Vybrat menu k pøesunutí"
 
 #: confmenu.cpp:119
 msgid "New"

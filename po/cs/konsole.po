@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kvt 0.18.1\n"
+"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"PO-Revision-Date: 1998-12-13 20:25 CET\n"
+"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Language-Team: Czech <cs@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.C:260
+msgid "&Normal"
+msgstr "&Normální"
+
+#: main.C:263
+msgid "&Small"
+msgstr "Malý"
+
+#: main.C:264
+msgid "&Medium"
+msgstr "Støední"
+
+#: main.C:265
+msgid "&Large"
+msgstr "Velký"
+
+#: main.C:266
+msgid "&Huge"
+msgstr "Obrovský"
+
+#: main.C:268
+msgid "&Linux"
+msgstr "&Linux"
+
+#: main.C:269
+msgid "Linux (small)"
+msgstr "&Linux (malý)"
+
+#: main.C:272
+msgid "&More ..."
+msgstr "&Více ..."
+
+#: main.C:278
+msgid "&Hide"
+msgstr "&Schovat"
+
+#: main.C:279
+msgid "&Left"
+msgstr "Na&levo"
+
+#: main.C:280
+msgid "&Right"
+msgstr "Nap&ravo"
+
+#: main.C:286
+msgid "40x15 (&small)"
+msgstr "40x15 (&malý)"
+
+#: main.C:287
+msgid "80x24 (&vt100)"
+msgstr "80x24 (&vt100)"
+
+#: main.C:288
+msgid "80x25 (&ibmpc)"
+msgstr "80x25 (&ibmpc)"
+
+#: main.C:289
+msgid "80x40 (&xterm)"
+msgstr "80x40 (&xterm)"
+
+#: main.C:290
+msgid "80x52 (ibmv&ga)"
+msgstr "80x52 (ibm&vga)"
+
+#: main.C:299
+msgid "&Menubar"
+msgstr "&Menu"
+
+#: main.C:301
+msgid "&Frame"
+msgstr "&Rám"
+
+#: main.C:303
+msgid "Scroll&bar"
+msgstr "Rolovací &li¹ta"
+
+#: main.C:305
+msgid "BS sends &DEL"
+msgstr "BS posílá &DEL"
+
+#: main.C:308
+msgid "&Font"
+msgstr "&Fontu"
+
+#: main.C:309
+msgid "&Size"
+msgstr "Veliko&st"
+
+#: main.C:310
+msgid "&Schema"
+msgstr "&Schéma"
+
+#: main.C:312
+msgid "&Save options"
+msgstr "&Ulo¾it nastavení"
+
+#: main.C:316
+msgid "&About ..."
+msgstr "&Informace ..."
+
+#: main.C:317
+msgid "&User's Manual ..."
+msgstr "&U¾ivatelský manuál ..."
+
+#: main.C:318
+msgid "&Technical Reference ..."
+msgstr "&Technický manuál ..."
+
+#: main.C:322
+msgid "cd"
+msgstr "cd"
+
+#: main.C:334
+msgid "New"
+msgstr "Nový"
+
+#: main.C:335
+msgid "Sessions"
+msgstr "Sezení"
+
+#: main.C:532
+#, c-format
+msgid "(%d columns x %d lines)"
+msgstr "(%d sloupcù x %d øádkù)"
+
+#: main.C:562
+#, c-format
+msgid "About %s"
+msgstr "Informace o programu %s"
+
+#: main.C:564
+#, c-format
+msgid ""
+"%s version %s - an X terminal\n"
+"\n"
+"Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"This program is free software under the\n"
+"terms of the Artistic License and comes\n"
+"WITHOUT ANY WARRANTY.\n"
+"See `LICENSE.readme´ for details."
+msgstr ""
+"%s verze %s - X terminál\n"
+"\n"
+"<Copyright (c) 1998 vlastní Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"Tento program je volný software podle podmínek\n"
+"Artistic licence a je dodáván bez JÁKÉKOLI ZÁRUKY. \n"
+"Pro detaily nahlédnìte do souboru LICENSE.readme."
+
+#: main.C:880
+msgid "Welcome to the console"
+msgstr "Vítejte v konzoli"

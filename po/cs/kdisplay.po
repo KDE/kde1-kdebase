@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1998-12-08 01:17+0100\n"
-"PO-Revision-Date: 1998-11-17 10:29+01:00\n"
+"PO-Revision-Date: 1998-12-13 19:45 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "&Listovat..."
 
 #: backgnd.cpp:366
 msgid "Arrangement:"
-msgstr ""
+msgstr "Uspoøádání:"
 
 #: backgnd.cpp:373
 msgid "Tiled"
@@ -115,9 +115,8 @@ msgid "&Dock into the panel"
 msgstr "&Dokovat v panelu"
 
 #: backgnd.cpp:441
-#, fuzzy
 msgid "Cache size (kB):"
-msgstr "Velikost cache"
+msgstr "Velikost cache (kB):"
 
 #: backgnd.cpp:1338
 msgid "Desktop names"
@@ -438,7 +437,7 @@ msgstr "&Aplikovat styl na aplikace mimo KDE"
 
 #: general.cpp:258
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "&Menu na vrchu pracovní plochy ve stylu MacOSu"
 
 #: general.cpp:273
 msgid "Desktop fonts"
@@ -545,6 +544,3 @@ msgstr "Implicitní"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "libovolné"
-
-#~ msgid "kb"
-#~ msgstr "kb"

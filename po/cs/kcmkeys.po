@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys\n"
 "POT-Creation-Date: 1998-11-16 01:20+0100\n"
-"PO-Revision-Date: 1998-11-03 14:03+01:00\n"
+"PO-Revision-Date: 1998-12-13 20:14 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -125,96 +125,96 @@ msgstr ""
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
-msgstr ""
+msgstr "Správce úloh"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr ""
+msgstr "Re¾im zavírání oken"
 
 #: ../../kwm/kwmbindings.cpp:3
 msgid "Execute command"
-msgstr ""
+msgstr "Vykonání pøíkazu"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr ""
+msgstr "Menu operací s oknem"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
-msgstr ""
+msgstr "Systémové pop-up menu"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"
-msgstr ""
+msgstr "Pøesunutí okna do popøedí"
 
 #: ../../kwm/kwmbindings.cpp:8
 msgid "Window lower"
-msgstr ""
+msgstr "Pøesunutí okna do pozadí"
 
 #: ../../kwm/kwmbindings.cpp:9
 msgid "Window close"
-msgstr ""
+msgstr "Zavøení okna"
 
 #: ../../kwm/kwmbindings.cpp:10
 msgid "Window iconify"
-msgstr ""
+msgstr "Ikonifikace okna"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
-msgstr ""
+msgstr "Zmìna velikosti okna"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"
-msgstr ""
+msgstr "Pøesun okna"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr ""
+msgstr "Pøepnutí pøilepení okna"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr ""
+msgstr "Pøepnutí na plochu 1"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr ""
+msgstr "Pøepnutí na plochu 2"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr ""
+msgstr "Pøepnutí na plochu 3"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr ""
+msgstr "Pøepnutí na plochu 4"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr ""
+msgstr "Pøepnutí na plochu 5"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr ""
+msgstr "Pøepnutí na plochu 6"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr ""
+msgstr "Pøepnutí na plochu 7"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr ""
+msgstr "Pøepnutí na plochu 8"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr ""
+msgstr "Pøepnutí o jednu plochu vpravo"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr ""
+msgstr "Pøepnutí o jednu plochu vlevo"
 
 #: ../../kwm/kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr ""
+msgstr "Pøepnutí o jednu plochu nahoru"
 
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr ""
+msgstr "Pøepnutí o jednu plochu dolù"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-12-14 01:17+0100\n"
-"PO-Revision-Date: 1998-11-12 08:36+01:00\n"
+"PO-Revision-Date: 1998-12-14 09:41+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -34,14 +34,12 @@ msgid "Find &next"
 msgstr "N&alézt následující"
 
 #: kfmgui.cpp:239
-#, fuzzy
 msgid "Mime &Types"
-msgstr "Mime typy"
+msgstr "Mime &typy"
 
 #: kfmgui.cpp:241
-#, fuzzy
 msgid "App&lications"
-msgstr "Aplikace"
+msgstr "Ap&likace"
 
 #: kfmgui.cpp:247
 msgid "Global Mime Types"
@@ -52,7 +50,6 @@ msgid "Global Applications"
 msgstr "Globální aplikace"
 
 #: kfmgui.cpp:256
-#, fuzzy
 msgid "Show Hi&dden Files"
 msgstr "&Ukázat skryté soubory"
 
@@ -62,7 +59,7 @@ msgstr "Ukázat &strom"
 
 #: kfmgui.cpp:260
 msgid "Sho&w Thumbnails"
-msgstr ""
+msgstr "Ukazovat mi&niatury"
 
 #: kfmgui.cpp:262
 msgid "&HTML View"
@@ -93,7 +90,6 @@ msgid "&Reload Document"
 msgstr "&Obnov dokument"
 
 #: kfmgui.cpp:281
-#, fuzzy
 msgid "Rescan &Bindings"
 msgstr "Znovu naèíst &vazby"
 
@@ -107,12 +103,11 @@ msgstr "Zobraz zdroj doku&mentu"
 
 #: kfmgui.cpp:294
 msgid "Auto"
-msgstr ""
+msgstr "Automatické"
 
 #: kfmgui.cpp:302
-#, fuzzy
 msgid "Document Encodin&g"
-msgstr "Dokument: Hotov"
+msgstr "&Kódování dokumentu"
 
 #: kfmgui.cpp:317
 msgid "Show History"
@@ -163,22 +158,18 @@ msgid "Sa&ve Settings"
 msgstr "&Ulo¾it nastavení"
 
 #: kfmgui.cpp:352
-#, fuzzy
 msgid "Save Settings for this &URL"
-msgstr "&Ulo¾it nastavení"
+msgstr "Ulo¾it nastavení tohoto U&RL"
 
 #: kfmgui.cpp:359
-#, fuzzy
 msgid "&Configure File Manager..."
-msgstr "Konfigurovat prohlí¾eè ..."
+msgstr "K&onfigurovat správce souborù ..."
 
 #: kfmgui.cpp:361
-#, fuzzy
 msgid "Configure &Browser..."
-msgstr "Konfigurovat prohlí¾eè ..."
+msgstr "&Konfigurovat prohlí¾eè ..."
 
 #: kfmgui.cpp:397
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -201,12 +192,12 @@ msgstr ""
 "Správce proxy od Larse Hosse\n"
 "Lars.Hoss@munich.netsurf.de\n"
 "\n"
-"Hlá¹ení chyb a opravy zasílejte Davidu Faremu\n"
-"faure@kde.org"
+"V souèasné dobì program udr¾uje: \n"
+"David Farem faure@kde.org"
 
 #: kfmgui.cpp:410
 msgid "&Go"
-msgstr ""
+msgstr "Pøe&jít"
 
 #: kfmgui.cpp:411
 msgid "&Bookmarks"
@@ -284,9 +275,8 @@ msgid "&New"
 msgstr "&Nový "
 
 #: kfmgui.cpp:984
-#, fuzzy
 msgid "New &Window"
-msgstr "Nový pohled"
+msgstr "Nové &okno"
 
 #: kfmgui.cpp:987
 msgid "&Run..."
@@ -305,23 +295,20 @@ msgid "&Find"
 msgstr "&Hledej"
 
 #: kfmgui.cpp:1019
-#, fuzzy
 msgid "&Up"
-msgstr "Nahoru"
+msgstr "&Nahoru"
 
 #: kfmgui.cpp:1021
 msgid "&Back"
-msgstr ""
+msgstr "&Zpìt"
 
 #: kfmgui.cpp:1023
-#, fuzzy
 msgid "&Forward"
-msgstr "Vpøed"
+msgstr "&Vpøed"
 
 #: kfmgui.cpp:1025
-#, fuzzy
 msgid "&Home"
-msgstr "Domù"
+msgstr "&Domù"
 
 #: kfmgui.cpp:1082 kfmgui.cpp:1254 kfmjob.cpp:37 kfmman.cpp:235
 #: kfmtree.cpp:405 kfmview.cpp:438 kfmview.cpp:507 kfmview.cpp:715
@@ -396,6 +383,10 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Není mo¾né ulo¾it vlastnosti proto¾e tento adresáø \n"
+"není buï zapisovatelný nebo se nevyskytuje v zálo¾kách.\n"
+"\n"
+"Pøidejte nejprve toto místo do zálo¾ek, nebo vytvo¾te odkaz na plo¹e."
 
 #: kfmview.cpp:629
 msgid ""
@@ -404,6 +395,10 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Není mo¾né ulo¾it vlastnosti proto¾e toto URL \n"
+"není ani v zálo¾kách ani na pracovní plo¹e.\n"
+"\n"
+"Pøidejte nejprve toto místo do zálo¾ek, nebo vytvo¾te odkaz na plo¹e."
 
 #: kfmtree.cpp:374 kfmview.cpp:668 root.cpp:1281
 msgid "Could not access Trash Bin"
@@ -597,14 +592,12 @@ msgid "Add to Bookmarks"
 msgstr "Pøidej k zálo¾kám"
 
 #: main.cpp:237
-#, fuzzy
 msgid "Save settings for this URL"
-msgstr "&Ulo¾it nastavení"
+msgstr "Ulo¾it nastavení tohoto URL"
 
 #: main.cpp:238
-#, fuzzy
 msgid "Show Menubar"
-msgstr "Zobrazovat &menu"
+msgstr "Zobrazovat menu"
 
 #: htmlopts.cpp:69
 msgid "Small"
@@ -628,11 +621,11 @@ msgstr "Fixovaný font"
 
 #: htmlopts.cpp:153
 msgid "Default Charset"
-msgstr ""
+msgstr "Implicitní znaková sada"
 
 #: htmlopts.cpp:161
 msgid "Use language charset"
-msgstr ""
+msgstr "Pou¾ívat znakovou sadu jazyka"
 
 #: htmlopts.cpp:353
 msgid "Background Color:"
@@ -668,26 +661,23 @@ msgstr "Vertikální rozteè sítì na plo¹e:"
 
 #: htmlopts.cpp:593
 msgid "&Allow per-URL settings"
-msgstr ""
+msgstr "&Povolit nastavování jednotlivých URL"
 
 #: htmlopts.cpp:602
 msgid "Tree &view follows navigation"
-msgstr ""
+msgstr "&Stromový náhled sleduje procházení"
 
 #: htmlopts.cpp:610
-#, fuzzy
 msgid "&Transparent Text for Root Icons."
-msgstr "Transparentní text pro ikony na plo¹e."
+msgstr "&Transparentní text pro ikony na plo¹e."
 
 #: htmlopts.cpp:623
-#, fuzzy
 msgid "Icon foreground color:"
-msgstr "Barva pozadí:"
+msgstr "Barva popøedí ikon:"
 
 #: htmlopts.cpp:635
-#, fuzzy
 msgid "Icon background color:"
-msgstr "Barva pozadí:"
+msgstr "Barva pozadí ikon:"
 
 #: kfmdlg.cpp:113
 msgid "&Browser"
@@ -698,9 +688,8 @@ msgid "Could not write bookmark"
 msgstr "Nemohu zapsat zálo¾ky"
 
 #: kfmprops.cpp:238
-#, fuzzy
 msgid "File Name"
-msgstr "Plné jméno"
+msgstr "Jméno souboru"
 
 #: kfmprops.cpp:253
 msgid "Full Name"
@@ -1324,12 +1313,16 @@ msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
 msgstr ""
+" není adresáøem ! Bezpeènostní výstraha !\n"
+"Prosím proveïte kontrolu.\n"
 
 #: htmlcache.cpp:368
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"
 msgstr ""
+" není adresáøem ! Bezpeènostní výstraha !\n"
+"Proveïte kontrolu pøed snazaním cache..\n"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
@@ -1413,32 +1406,31 @@ msgstr "Zohlednit &velikost znakù"
 
 #: kcookiewin.cpp:58
 msgid "Cookie Alert!"
-msgstr ""
+msgstr "Cookie výstraha!"
 
 #: kcookiewin.cpp:76
 msgid "You received a cookie from host:"
-msgstr ""
+msgstr "Pøijali jste cookie od hostitele:"
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr ""
+msgstr "Chcete toto cookie akceptovat nebo odmítnout?"
 
 #: kcookiewin.cpp:120
-#, fuzzy
 msgid "Apply to "
-msgstr "Aplikuj globálnì"
+msgstr "Aplikovat na "
 
 #: kcookiewin.cpp:125
 msgid "&This cookie only"
-msgstr ""
+msgstr "Pouze &toto cookie"
 
 #: kcookiewin.cpp:133
 msgid "All cookies from this &domain"
-msgstr ""
+msgstr "V¹echna cookie z této &domény"
 
 #: kcookiewin.cpp:140
 msgid "All &cookies"
-msgstr ""
+msgstr "V3echna &cookie"
 
 #: popup.cpp:69
 #, c-format
@@ -1450,6 +1442,8 @@ msgid ""
 "Source file doesn't exist anymore ! \n"
 "Use \"Rescan Bindings\" in View menu to update the menu"
 msgstr ""
+"Zdrojový soubor ji¾ neexistuje ! \n"
+"Pou¾ijte funkci \"Znovu naèíst vazby\" v menu Pohled k aktualizaci menu"
 
 #: popup.cpp:113 popup.cpp:120
 msgid "New "
@@ -1520,58 +1514,3 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
-
-#~ msgid "On server:"
-#~ msgstr "Na serveru:"
-
-#~ msgid "login as:"
-#~ msgstr "pøihlásit jako:"
-
-#~ msgid "Known bindings:"
-#~ msgstr "Známé vazby:"
-
-#~ msgid "Don't forget to save your settings!"
-#~ msgstr "Nezapomeòte ulo¾it va¹e nastavení!"
-
-#~ msgid "Use proxy"
-#~ msgstr "Pou¾ívat proxy"
-
-#~ msgid "No Proxy for:"
-#~ msgstr "®ádná proxy pro:"
-
-#~ msgid "&Proxy"
-#~ msgstr "&Proxy"
-
-#~ msgid "&HTTP"
-#~ msgstr "&HTTP"
-
-#~ msgid "User &Agent"
-#~ msgstr "U¾ivatelský &agent"
-
-#~ msgid "&Colors"
-#~ msgstr "&Barvy"
-
-#~ msgid "&Other"
-#~ msgstr "&Ostatní"
-
-#, fuzzy
-#~ msgid "KFM Preferences Settings"
-#~ msgstr "Nastavení KFM prohlí¾eèe"
-
-#~ msgid "Accept languages:"
-#~ msgstr "Akceptovat jazyky:"
-
-#~ msgid "Accept character sets:"
-#~ msgstr "Akceptovat znakové sady:"
-
-#~ msgid "Assume HTML"
-#~ msgstr "Pøedpokládat HTML"
-
-#~ msgid "ERROR: You dropped some URL over itself"
-#~ msgstr "CHYBA: Upustil jste nìkteré URL nad sebou samým"
-
-#~ msgid "&Visual Schnauzer"
-#~ msgstr "V&isual Schnauzer"
-
-#~ msgid "Name"
-#~ msgstr "Jméno"

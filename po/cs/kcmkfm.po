@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
 "POT-Creation-Date: 1998-12-12 14:27+0100\n"
-"PO-Revision-Date: 1998-10-24 20:18 CEST\n"
+"PO-Revision-Date: 1998-12-14 09:42+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,28 +23,28 @@ msgstr "&Barva"
 
 #: main.cpp:62
 msgid "&Other"
-msgstr ""
+msgstr "&Ostatní"
 
 #: main.cpp:65
 msgid "&Proxy"
-msgstr ""
+msgstr "&Proxy"
 
 #: main.cpp:67
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: main.cpp:70
 msgid "User &Agent"
-msgstr ""
+msgstr "U¾ivatelský &agent"
 
 #: main.cpp:74
 msgid "&Desktop Icons"
-msgstr ""
+msgstr "&Ikony pracovní plochy"
 
 #: main.cpp:83
-#, fuzzy, c-format
+#, c-format
 msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
-msgstr "Pou¾ití: kcmkfm [-init | {font,color}]\n"
+msgstr "Pou¾ití: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
 
 #: main.cpp:166
 msgid "KFM Configuration"
@@ -52,132 +52,132 @@ msgstr "Nastavení KFM"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr ""
+msgstr "Malé"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr ""
+msgstr "Støední"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr ""
+msgstr "Velké"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
-msgstr ""
+msgstr "Standardní font"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr ""
+msgstr "Fixovaný font"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr ""
+msgstr "Implicitní znaková sada"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr ""
+msgstr "Pou¾ívat znakovou sadu jazyka"
 
 #: htmlopts.cpp:329
 msgid "Background Color:"
-msgstr ""
+msgstr "Barva pozadí:"
 
 #: htmlopts.cpp:341
 msgid "Normal Text Color:"
-msgstr ""
+msgstr "Barva normálního textu:"
 
 #: htmlopts.cpp:353
 msgid "URL Link Color:"
-msgstr ""
+msgstr "Barva URL odkazu:"
 
 #: htmlopts.cpp:365
 msgid "Followed Link Color:"
-msgstr ""
+msgstr "Barva pou¾itého odkazu:"
 
 #: htmlopts.cpp:377
 msgid "Change cursor over link."
-msgstr ""
+msgstr "Zmìnit kurzor nad odkazem."
 
 #: htmlopts.cpp:383
 msgid "Underline links"
-msgstr ""
+msgstr "Podtrhávat odkazy"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr ""
+msgstr "Povolit nastavování &jednotlivých URL"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr ""
+msgstr "&Stromový náhled sleduje procházení"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "Nezapomeòte ulo¾it svá nastavení!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr ""
+msgstr "Pou¾ívat proxy"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
-msgstr ""
+msgstr "HTTP proxy:"
 
 #: kproxydlg.cpp:82 kproxydlg.cpp:113
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: kproxydlg.cpp:98
 msgid "FTP Proxy:"
-msgstr ""
+msgstr "FTP proxy:"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
-msgstr ""
+msgstr "®ádné proxy pro:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr ""
+msgstr "Akceptovat jazyky:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Akceptovat znakové sady:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr ""
+msgstr "Pøedpokládat HTML"
 
 #: useragentdlg.cpp:43
 msgid "On server:"
-msgstr ""
+msgstr "Na serveru:"
 
 #: useragentdlg.cpp:65
 msgid "login as:"
-msgstr ""
+msgstr "Pøihlásit jako:"
 
 #: useragentdlg.cpp:85
 msgid "&Add"
-msgstr ""
+msgstr "Pøid&at"
 
 #: useragentdlg.cpp:105
 msgid "Known bindings:"
-msgstr ""
+msgstr "Známé vazby:"
 
 #: rootopts.cpp:70
 msgid "Horizontal Root Grid Spacing:"
-msgstr ""
+msgstr "Horizontální rozteè møí¾ky:"
 
 #: rootopts.cpp:81
 msgid "Vertical Root Grid Spacing:"
-msgstr ""
+msgstr "Vertikální rozteè møí¾ky:"
 
 #: rootopts.cpp:92
 msgid "&Transparent Text for Root Icons."
-msgstr ""
+msgstr "&Transparentní text pod ikonami na plo¹e."
 
 #: rootopts.cpp:103
 msgid "Icon foreground color:"
-msgstr ""
+msgstr "Barva popøedí ikon:"
 
 #: rootopts.cpp:115
 msgid "Icon background color:"
-msgstr ""
+msgstr "Barva pozadí ikon:"

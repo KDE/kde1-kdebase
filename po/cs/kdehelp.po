@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.6\n"
 "POT-Creation-Date: 1998-11-29 01:12+0100\n"
-"PO-Revision-Date: 1998-10-24 17:31 CEST\n"
+"PO-Revision-Date: 1998-12-13 19:45 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -117,7 +117,7 @@ msgstr "Barva pou¾itého odkazu:"
 
 #: options.cpp:238
 msgid "Underline links"
-msgstr ""
+msgstr "Podtrhávat odkazy"
 
 #: options.cpp:317
 msgid "KDE Help Options"

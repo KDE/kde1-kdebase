@@ -5,7 +5,8 @@ GMOFILES = kfind.gmo kdehelp.gmo kdisplay.gmo kvt.gmo kwm.gmo \
         krootwm.gmo kcmbell.gmo kcminfo.gmo kcminput.gmo kcmkwm.gmo \
 	kdmconfig.gmo kcmkpanel.gmo kcmsamba.gmo kcmsample.gmo \
 	kmenuedit.gmo kcontrol.gmo kcmlocale.gmo kcmsyssound.gmo \
-	kstart.gmo kikbd.gmo kpager.gmo kcmkfm.gmo kcmkeys.gmo kfm.gmo
+	kstart.gmo kikbd.gmo kpager.gmo kcmkfm.gmo kcmkeys.gmo kfm.gmo \
+	konsole.gmo
 POFILES = $(GMOFILES:.gmo=.po)
 
 LANG = cs
