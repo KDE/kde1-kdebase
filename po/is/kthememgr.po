@@ -174,7 +174,7 @@ msgstr "Bjó til þema."
 
 #: installer.cpp:335
 msgid "The "
-msgstr ""
+msgstr " "
 
 #: installer.cpp:349
 #, c-format
