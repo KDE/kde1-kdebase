@@ -384,9 +384,13 @@ void KfmGui::initMenu()
 			  this, SLOT(slotShowLocationBar()) );
     moptions->insertSeparator();
     moptions->insertItem( klocale->translate("Sa&ve Settings"),
-			  this, SLOT(slotSaveSettings()) );
-	moptions->insertItem( klocale->translate("Configure Browser..."),
-						  this, SLOT(slotConfigureBrowser()));
+                          this, SLOT(slotSaveSettings()) );
+    moptions->insertItem( klocale->getAlias(ID_STRING_SAVE_URL_PROPS),
+                          view, SLOT(slotSaveLocalProperties()));
+    moptions->insertSeparator();
+
+    moptions->insertItem( klocale->translate("Configure Browser..."),
+                          this, SLOT(slotConfigureBrowser()));
 
     moptions->setItemChecked( moptions->idAt( 0 ), showMenubar );
     moptions->setItemChecked( moptions->idAt( 1 ), showStatusbar );
