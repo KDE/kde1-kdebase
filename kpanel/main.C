@@ -52,7 +52,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
     if( (kc == XK_F1)  && (km == Mod1Mask) ){
       the_panel->showSystem();
       XAllowEvents(qt_xdisplay(), AsyncKeyboard, CurrentTime);
-      return TRUE;
+      return true;
     }
   }
   return KWMModuleApplication::x11EventFilter(ev);
@@ -97,7 +97,7 @@ int main( int argc, char ** argv ){
   int v;
 
   for (v=0; v<o_argc; v++) o_argv[v] = argv[v];
-  o_argv[v] = NULL;
+  o_argv[v] = 0;
 
   MyApp myapp( argc, argv, "kpanel" );
   bool use_kwm = true;

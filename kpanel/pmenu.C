@@ -77,27 +77,25 @@ bool isKdelnkFile(const char* filename){
     file.close();
 
     if(r == -1)
-      return FALSE;
+      return false;
     
     // terminate string
     s[r] = '\0';
 
-    return ( QString(s).find("[KDE Desktop Entry]", 0, FALSE) != -1 );
+    return ( QString(s).find("[KDE Desktop Entry]", 0, false) != -1 );
   }
 
-  return FALSE;
+  return false;
 }
 
 PMenuItem::PMenuItem()
 {
   initMetaObject();
   entry_type = empty; 
-  sub_menu = NULL;
-  cmenu = NULL;
-  recv = NULL;
-  memb = NULL;
-  //Stephan: pixmap is not a pointer
-  // pixmap = NULL;
+  sub_menu = 0;
+  cmenu = 0;
+  recv = 0;
+  memb = 0;
   id = global_id++;
 }
 
@@ -116,7 +114,7 @@ PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n,
     }
   else
     {
-	// pixmap = NULL;
+	// pixmap = 0;
 	pixmap = QPixmap();
     }
   sub_menu = menu;
@@ -149,16 +147,16 @@ PMenuItem::PMenuItem( PMenuItem &item )
     }
   else
     {
-      sub_menu = NULL;
-      cmenu    = NULL;
+      sub_menu = 0;
+      cmenu    = 0;
     }
   recv         = item.cmenu;
   memb         = item.memb;
   if( entry_type == prog_com )
     {
       entry_type = unix_com;
-      recv = NULL;
-      memb = NULL;
+      recv = 0;
+      memb = 0;
     }
   id = global_id++;
 }
@@ -184,7 +182,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
     text_name = fi->fileName().left(pos);
   else
     text_name = fi->fileName();
-  if( menu != NULL )
+  if( menu != 0 )
     {
       QString file = fi->absFilePath();
       dir_path = fi->dirPath();
@@ -213,7 +211,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
       big_pixmap_name = kconfig.readEntry("Icon");
       comment         = kconfig.readEntry("Comment");
       text_name = kconfig.readEntry("Name", text_name);
-      dir_path        = fi->dirPath(TRUE);
+      dir_path        = fi->dirPath(true);
     }
   QPixmap tmppix;
   pixmap = tmppix;
@@ -296,23 +294,23 @@ QString PMenuItem::getSaveName()
 PMenu::PMenu()
 {
   initMetaObject();
-  list.setAutoDelete(TRUE);
-  cmenu = NULL;
-  altSort = FALSE;
+  list.setAutoDelete(true);
+  cmenu = 0;
+  altSort = false;
 }
 
 PMenu::PMenu( PMenu &menu )
 {
   initMetaObject();
-  cmenu = NULL;
-  list.setAutoDelete(TRUE);
+  cmenu = 0;
+  list.setAutoDelete(true);
   PMenuItem *item, *new_item;
   for( item = menu.list.first(); item != 0; item = menu.list.next() )
     {
       new_item = new PMenuItem( *item );
       list.append(new_item);
     }
-  altSort = FALSE;
+  altSort = false;
 }
 
 PMenu::~PMenu()
@@ -346,7 +344,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	    connect( item->cmenu, SIGNAL(highlighted(int)), this, SLOT(highlighted(int)) );
 	    item->cmenu->insertSeparator();
 	    // create submenu
-	    item->sub_menu->createMenu( item->cmenu, panel, TRUE );
+	    item->sub_menu->createMenu( item->cmenu, panel, true );
 	    menu->insertItem(item->pixmap, item->text_name, item->cmenu, item->getId());
 	    connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		     SLOT(showToolTip(QString)) );
@@ -397,7 +395,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
       case add_but:
 	item->cmenu->setFont(menu->font());
 	// create submenu
-	item->sub_menu->createMenu( item->cmenu, panel, TRUE );
+	item->sub_menu->createMenu( item->cmenu, panel, true );
 	menu->insertItem(item->pixmap, item->text_name, item->cmenu, item->getId());
 	item->cmenu->installEventFilter((QObject *) panel);
 	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
@@ -435,11 +433,11 @@ short PMenu::parse( QDir d )
   QDir new_dir;
   QStrList sort_order;
   QList<PMenuItem> item_list;
-  item_list.setAutoDelete(FALSE);
+  item_list.setAutoDelete(false);
   int pos;
-  sort_order.setAutoDelete(TRUE);
+  sort_order.setAutoDelete(true);
 
-  if (altSort == TRUE)
+  if (altSort == true)
     d.setSorting(QDir::DirsFirst | QDir::Name);
 
   QString file = d.path();
@@ -485,7 +483,7 @@ short PMenu::parse( QDir d )
 	    {
 	      delete new_menu;
 	      delete new_item;
-	      new_item = NULL;
+	      new_item = 0;
 	      ++it;
 	      continue;
 	    }
@@ -497,7 +495,7 @@ short PMenu::parse( QDir d )
 	  new_item = new PMenuItem;
 	  if( new_item->parse(fi) < 0 ){
 	    delete new_item;
-	    new_item = NULL;
+	    new_item = 0;
 	  }
 	  else {
 	    if (fi->fileName() == "KMenuEdit.kdelnk")
@@ -510,7 +508,7 @@ short PMenu::parse( QDir d )
 
         PMenuItem *tmp = item_list.first();
  
-        if ( altSort == TRUE && int(new_item->getType() ) > submenu)
+        if ( altSort == true && int(new_item->getType() ) > submenu)
           for (;
             tmp && int(tmp->getType()) <= submenu;
             tmp = item_list.next());
@@ -531,7 +529,7 @@ short PMenu::parse( QDir d )
   PMenuItem *item;
   for( item_name = sort_order.first(); !item_name.isEmpty(); item_name = sort_order.next() )
     {
-      for( item = item_list.first(); item != NULL; item = item_list.next() )
+      for( item = item_list.first(); item != 0; item = item_list.next() )
 	{
 	  if( item->real_name == item_name )
 	    {
@@ -543,7 +541,7 @@ short PMenu::parse( QDir d )
     }
   if( item_list.count() != 0 )
     {
-      for( item = item_list.first(); item != NULL; item = item_list.next() )
+      for( item = item_list.first(); item != 0; item = item_list.next() )
 	{ add(item); }
     }
   item_list.clear();
@@ -616,7 +614,7 @@ PMenuItem * PMenu::searchItem(QString name)
   PMenuItem *found_item = 0L;
   PMenuItem *item;
   QString path;
-  static PMenu* hack = NULL;
+  static PMenu* hack = 0;
   if (!hack)
     hack = this;
   //debug("searchName = %s", (const char *) name );
@@ -660,7 +658,7 @@ PMenuItem * PMenu::searchItem(QString name)
     }  
 
   if (hack == this)
-    hack = NULL;
+    hack = 0;
 
   PMenuItem *pmi = 0;
 
@@ -685,7 +683,7 @@ PMenuItem * PMenu::searchItem(QString name)
 void PMenu::highlighted( int id )
 {
   PMenuItem *item;
-  for( item = list.first(); item != NULL && item->getId() != id; 
+  for( item = list.first(); item != 0 && item->getId() != id; 
        item = list.next() );
   if (item && item->getId() == id)
     item->highlighted();

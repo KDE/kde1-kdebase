@@ -207,6 +207,7 @@ public:
   void showPanel ();
   void miniButtons (int); // sven  
   void desktop_change(int);
+
   void standalonePanelButtonClicked();
   
   void configurePanel();
@@ -304,8 +305,7 @@ private:
   QPoint moving_button_offset;
 
   QWidget *wait_cursor_button;
-  QLineEdit *edit_button; // Stephan
-  QPushButton *hidden_button; // Stephan
+  QLineEdit *edit_button; // used for the editable desktop buttons
 
   QPoint position_of_new_item;
 

@@ -112,7 +112,7 @@ void kPanel::reposition(int l){
     */
   bool changed;
   do {
-    changed = FALSE;
+    changed = false;
     for (i = 0; i < (nbuttons - 1); i++) {
 
       if ( (orientation == vertical && entries[i].button->y() > entries[i+1].button->y()) ||
@@ -120,7 +120,7 @@ void kPanel::reposition(int l){
 	tmp = entries[i];
 	entries[i] = entries[i+1];
 	entries[i+1] = tmp;
-	changed = TRUE;
+	changed = true;
       }
     }
   } while (changed); 

@@ -21,11 +21,11 @@ myFrame::myFrame(bool _autoHide, QWidget *parent, const char* name, WFlags f):QF
   autoHide = _autoHide;
   autoHidden = false;
   if (autoHide)
-    hideTimer->start(6000, TRUE);
+    hideTimer->start(6000, true);
 }
 
 void myFrame::enterEvent(QEvent *){
-  hideTimer->start(4000, TRUE);
+  hideTimer->start(4000, true);
   if (!autoHidden)
     return;
   raise();
@@ -46,12 +46,12 @@ void myFrame::hideTimerDone(){
 		   GrabModeAsync, GrabModeAsync, None, 
 		   None , CurrentTime) == GrabSuccess){ 
     XUngrabPointer(qt_xdisplay(), CurrentTime);
-    XSync(qt_xdisplay(), FALSE);
+    XSync(qt_xdisplay(), false);
   }
   else
     do_hide = false;
   if (!do_hide || geometry().contains(QCursor::pos()))
-    hideTimer->start(4000, TRUE);
+    hideTimer->start(4000, true);
   else {
     autoHidden = true;
     emit hideMe();
@@ -77,7 +77,7 @@ void kPanel::kwmInit(){
   
 
 void kPanel::windowAdd(Window w){
-  static QPixmap* defaultpm = NULL;
+  static QPixmap* defaultpm = 0;
 
   { 
     // ignore transient windows
@@ -282,14 +282,14 @@ myTaskButton* kPanel::taskButtonFromWindow(Window w){
     if (b->win == w)
       return b;
   }
-  return NULL;
+  return 0;
 }
 
 
 void kPanel::kwmDesktopChange(int nd){
   int i;
 
-  if ( edit_button != NULL)
+  if ( edit_button != 0)
     restore_editbutton( False );
   
   currentDesktop = nd;
@@ -377,14 +377,14 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 //       info_label->hide();
 //     tipTimer->stop();
 
-    if ( edit_button != NULL && ((QKeyEvent*)ev)->key() == Key_Escape ) {
+    if ( edit_button != 0 && ((QKeyEvent*)ev)->key() == Key_Escape ) {
       restore_editbutton( false );
-      return TRUE;
+      return true;
     };
-    if ( edit_button != NULL && (((QKeyEvent*)ev)->key() == Key_Return || 
+    if ( edit_button != 0 && (((QKeyEvent*)ev)->key() == Key_Return || 
 				 ((QKeyEvent*)ev)->key() == Key_Enter)  ) {
       restore_editbutton( true );
-      return TRUE;
+      return true;
     };
     break;
     
@@ -413,8 +413,8 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
       if (mev->button() == RightButton && ob != popup_item
 	  && ob != windowlist
 	  && ob != taskbarPopup){
-	info_label_is_sleeping = FALSE;
-	tipTimer->start(0, TRUE);
+	info_label_is_sleeping = false;
+	tipTimer->start(0, true);
       }
       else {
 	tipTimer->stop();
@@ -436,7 +436,7 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 	moving_button_offset = moving_button->mapFromGlobal(moving_button_offset);
 	// minipanel cannot be edited!
 	if (moving_button->parentWidget() == miniPanel)
-	  moving_button = NULL;
+	  moving_button = 0;
       }
       
       
@@ -464,17 +464,17 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 	moving_button_offset = tmp->mapFromGlobal(moving_button_offset);
 	// minipanel cannot be edited!
 	if (tmp->parentWidget() == miniPanel)
-	  tmp = NULL;
+	  tmp = 0;
 	if (tmp){
-	  popup_item->setItemEnabled(0, TRUE);
-	  popup_item->setItemEnabled(1, FALSE);
-	  popup_item->setItemEnabled(3, FALSE);
+	  popup_item->setItemEnabled(0, true);
+	  popup_item->setItemEnabled(1, false);
+	  popup_item->setItemEnabled(3, false);
 	  if (show_popup(popup_item, tmp) == 0){
 	    moving_button = tmp;
 	    moving_button->raise();
 	    moving_button->setCursor(sizeAllCursor);
 	    // the next line _IS_ necessary! 
-	    XGrabPointer( qt_xdisplay(), moving_button->winId(), FALSE,
+	    XGrabPointer( qt_xdisplay(), moving_button->winId(), false,
 			  ButtonPressMask | ButtonReleaseMask |
 			  PointerMotionMask | EnterWindowMask | LeaveWindowMask,
 			  GrabModeAsync, GrabModeAsync,
@@ -499,7 +499,7 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 	&& ob != popup_item && ob != windowlist
 	&& ob != taskbarPopup
 	&& mev->button() == RightButton)
-      return TRUE;
+      return true;
 
     if (moving_button){
       if (moving_button != control_group
@@ -529,12 +529,12 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 	}
       }
       if (moving_button != panel_button_frame_standalone){
-	moving_button = NULL;
+	moving_button = 0;
 	reposition();
 	writeOutConfiguration();
       }
       else {
-	moving_button = NULL;
+	moving_button = 0;
       }
     }
   }
@@ -556,7 +556,7 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
     if (ob->isWidgetType() && ((QWidget*)ob)->isPopup()){
       if ((mev->state() & RightButton) == RightButton  && ob != popup_item
 	  && ob != windowlist){
-	info_label_is_sleeping = FALSE;
+	info_label_is_sleeping = false;
       }
     }
 
@@ -592,7 +592,7 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
     // this never occurs ?!
     break;
   };
-  return FALSE;
+  return false;
 }
 
 
@@ -603,7 +603,7 @@ void kPanel::resizeEvent( QResizeEvent * ){
 }
 
 void kPanel::enterEvent( QEvent * ){
-  hideTimer->start(4000, TRUE);
+  hideTimer->start(4000, true);
 
   if (
       (orientation == horizontal && position == top_left &&
@@ -657,7 +657,7 @@ void kPanel::hideTimerDone(){
 		   GrabModeAsync, GrabModeAsync, None, 
 		   None , CurrentTime) == GrabSuccess){ 
     XUngrabPointer(qt_xdisplay(), CurrentTime);
-    XSync(qt_xdisplay(), FALSE);
+    XSync(qt_xdisplay(), false);
   }
   else
     do_hide = false;
@@ -670,7 +670,7 @@ void kPanel::hideTimerDone(){
   }
   do_hide = do_hide && !geometry().contains(QCursor::pos());
   if (!do_hide){
-    hideTimer->start(4000, TRUE);
+    hideTimer->start(4000, true);
   }
   else {
     if (orientation == horizontal){

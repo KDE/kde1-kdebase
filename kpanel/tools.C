@@ -21,7 +21,7 @@
 
 myPopupMenu::myPopupMenu( QWidget *parent, const char *name )
   : QPopupMenu( parent, name ){
-    setMouseTracking(TRUE);
+    setMouseTracking(true);
 }
 
 int myPopupMenu::height(){
@@ -48,7 +48,7 @@ int myPopupMenu::width(){
 
 myPushButton::myPushButton(QWidget *parent, const char* name)
   : QPushButton( parent, name ){
-    setMouseTracking(TRUE);
+    setMouseTracking(true);
     setFocusPolicy(NoFocus);
     flat = True;
     never_flat = False;
@@ -60,10 +60,10 @@ myPushButton::myPushButton(QWidget *parent, const char* name)
 
 myPushButton::~myPushButton () {
   if (most_recent_pressed == this)
-    most_recent_pressed = NULL;
+    most_recent_pressed = 0;
 }
 
-myPushButton* myPushButton::most_recent_pressed = NULL;
+myPushButton* myPushButton::most_recent_pressed = 0;
 
 void myPushButton::enterEvent( QEvent * ){
   if (!flat)
@@ -85,25 +85,25 @@ void myPushButton::leaveEvent( QEvent * ){
 void myPushButton::paint(QPainter *painter){
   draw_down = (isDown() || (isOn()) && (never_flat || !flat));
   if (flat_means_down && !never_flat && flat)
-    draw_down = TRUE;
+    draw_down = true;
 	
   drawButtonLabel(painter);
   
   if (draw_down ) {
     if ( style() == WindowsStyle )
       qDrawWinButton( painter, 0, 0, width(), 
-		      height(), colorGroup(), TRUE );
+		      height(), colorGroup(), true );
     else        
 	  qDrawShadePanel( painter, 0, 0, width(), 
-	  	       height(), colorGroup(), TRUE, 2, 0L );
+	  	       height(), colorGroup(), true, 2, 0L );
   }
   else if (!flat || never_flat) {
     if ( style() == WindowsStyle )
       qDrawWinButton( painter, 0, 0, width(), height(),
-		      colorGroup(), FALSE );
+		      colorGroup(), false );
     else {
       qDrawShadePanel( painter, 0, 0, width(), height(), 
-		       colorGroup(), FALSE, 2, 0L );
+		       colorGroup(), false, 2, 0L );
 //       painter->setPen(black);
 //       painter->drawRect(0,0,width(),height()); 
     }
@@ -132,10 +132,10 @@ void myPushButton::mousePressEvent( QMouseEvent *e){
   if ( hit ){
     most_recent_pressed = this;
     last_button = e->button();
-    setDown( TRUE );
+    setDown( true );
     if (style() == WindowsStyle && swallowed_window != None)
       XMoveWindow(qt_xdisplay(), swallowed_window, 4, 4);
-    repaint( FALSE );
+    repaint( false );
     emit pressed();
   }
 }
@@ -149,11 +149,11 @@ void myPushButton::mouseReleaseEvent( QMouseEvent *e){
   bool hit = hitButton( e->pos() );
   if (style() == WindowsStyle && swallowed_window != None)
     XMoveWindow(qt_xdisplay(), swallowed_window, 3, 3);
-  setDown( FALSE );
+  setDown( false );
   if ( hit ){
     if ( isToggleButton() )
       setOn( !isOn() );
-    repaint( FALSE );
+    repaint( false );
     if ( isToggleButton() )
       emit toggled( isOn() );
     emit released();
@@ -180,15 +180,15 @@ void myPushButton::mouseMoveEvent( QMouseEvent *e ){
   bool hit = hitButton( e->pos() );
   if ( hit ) {
     if ( !isDown() ) {
-      setDown(TRUE);
+      setDown(true);
       if (style() == WindowsStyle && swallowed_window != None)
 	XMoveWindow(qt_xdisplay(), swallowed_window, 4, 4);
-      repaint(FALSE);
+      repaint(false);
       emit pressed();
     }
   } else {
     if ( isDown() ) {
-      setDown(FALSE);
+      setDown(false);
       if (style() == WindowsStyle && swallowed_window != None)
 	XMoveWindow(qt_xdisplay(), swallowed_window, 3, 3);
       repaint();
@@ -197,7 +197,7 @@ void myPushButton::mouseMoveEvent( QMouseEvent *e ){
   }
 }
 
-myTaskButton* myTaskButton::active = NULL;
+myTaskButton* myTaskButton::active = 0;
 
 myTaskButton::myTaskButton(QWidget *parent, const char* name)
   :myPushButton(parent, name){
@@ -209,7 +209,7 @@ myTaskButton::myTaskButton(QWidget *parent, const char* name)
 
 myTaskButton::~myTaskButton () {
   if (active == this)
-    active = NULL;
+    active = 0;
 }
 
 void myTaskButton::setActive(bool value){
@@ -217,14 +217,14 @@ void myTaskButton::setActive(bool value){
     myTaskButton* tmp = active;
     active = this;
     if (tmp && tmp != this)
-      tmp->setActive(FALSE);
-    never_flat = FALSE;
-    flat = !(rect().contains(mapFromGlobal(QCursor::pos()), TRUE));
+      tmp->setActive(false);
+    never_flat = false;
+    flat = !(rect().contains(mapFromGlobal(QCursor::pos()), true));
     repaint();
   }
   else {
-    never_flat = TRUE;
-    flat = !(rect().contains(mapFromGlobal(QCursor::pos()), TRUE));
+    never_flat = true;
+    flat = !(rect().contains(mapFromGlobal(QCursor::pos()), true));
     repaint();
   }
 }
@@ -305,7 +305,7 @@ void kPanel::generateWindowlist(QPopupMenu* p){
     for (d=1; d<=nd; d++){
       p->insertItem(QString("&")+KWM::getDesktopName(d), 1000+d);
       if (!active_window && d == cd)
-	p->setItemChecked(1000+d, TRUE);
+	p->setItemChecked(1000+d, true);
       for (i=0; i<nw;i++){
 	if (
 	    (KWM::desktop(callbacklist[i]) == d
@@ -317,7 +317,7 @@ void kPanel::generateWindowlist(QPopupMenu* p){
 	  p->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
 			QString("   ")+KWM::titleWithState(callbacklist[i]),i);
 	  if (callbacklist[i] == active_window)
-	    p->setItemChecked(i, TRUE);
+	    p->setItemChecked(i, true);
 	}
       }
       if (d < nd)
@@ -336,7 +336,7 @@ void kPanel::generateWindowlist(QPopupMenu* p){
 	p->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
 		      KWM::titleWithState(callbacklist[i]),i);
 	if (callbacklist[i] == active_window)
-	  p->setItemChecked(i, TRUE);
+	  p->setItemChecked(i, true);
       }
     }
   }
@@ -472,29 +472,29 @@ QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
   
   if (orientation == horizontal){
     if (position == top_left){
-      qDrawArrow( &p, DownArrow, WindowsStyle, FALSE,
+      qDrawArrow( &p, DownArrow, WindowsStyle, false,
 		  box_width-6, box_height-5, 0, 0, colgrp);
-      qDrawArrow( &p2, DownArrow, WindowsStyle, FALSE,
+      qDrawArrow( &p2, DownArrow, WindowsStyle, false,
  		  box_width-6, box_height-5, 0, 0, colgrp2);
     }
     else{
-      qDrawArrow( &p, UpArrow, WindowsStyle, FALSE,
+      qDrawArrow( &p, UpArrow, WindowsStyle, false,
 		  box_width-6, 4, 0, 0, colgrp);
-      qDrawArrow( &p2, UpArrow, WindowsStyle, FALSE,
+      qDrawArrow( &p2, UpArrow, WindowsStyle, false,
 		  box_width-6, 4, 0, 0, colgrp2);
     }
   }
   else{ // position == vertical
     if (position == top_left){
-      qDrawArrow( &p, RightArrow, WindowsStyle, FALSE,
+      qDrawArrow( &p, RightArrow, WindowsStyle, false,
 		  box_width-5, box_height-6, 0, 0, colgrp);
-      qDrawArrow( &p2, RightArrow, WindowsStyle, FALSE,
+      qDrawArrow( &p2, RightArrow, WindowsStyle, false,
  		  box_width-5, box_height-6, 0, 0, colgrp2);
     }
     else{
-      qDrawArrow( &p, LeftArrow, WindowsStyle, FALSE,
+      qDrawArrow( &p, LeftArrow, WindowsStyle, false,
 		  5, box_height-6, 0, 0, colgrp);
-      qDrawArrow( &p2, LeftArrow, WindowsStyle, FALSE,
+      qDrawArrow( &p2, LeftArrow, WindowsStyle, false,
 		  5, box_height-6, 0, 0, colgrp2);
     }
   }
@@ -515,11 +515,11 @@ void kPanel::arrow_on_pixmap(QPixmap* pm, ArrowType rt){
   QPainter paint2;
   paint.begin(pm);
   paint2.begin(pm->mask());
-  qDrawArrow( &paint, rt, WindowsStyle, FALSE,
+  qDrawArrow( &paint, rt, WindowsStyle, false,
 	      pm->width()/2, pm->height()/2,
 	      0, 0,
 	      colgrp);
-  qDrawArrow( &paint2, rt, WindowsStyle, FALSE,
+  qDrawArrow( &paint2, rt, WindowsStyle, false,
 	      pm->width()/2, pm->height()/2,
 	      0, 0,
 	      colgrp2);
@@ -561,7 +561,7 @@ void kPanel::set_label_date(){
   char buf2[256];
   time_t curtime;
 
-  curtime=time(NULL);
+  curtime=time(0);
   loctime=localtime(&curtime);
   
   if (!clockAmPm)
@@ -583,7 +583,7 @@ void kPanel::set_label_date(){
 }
 
 void kPanel::add_windowlist(){
-  addButtonInternal(NULL, -1, -1, "windowlist");
+  addButtonInternal(0, -1, -1, "windowlist");
   writeOutConfiguration();
 }
 
@@ -629,7 +629,7 @@ void kPanel::showToolTip(QString s){
    }
 
 
-   tipSleepTimer->start(4000, TRUE);
+   tipSleepTimer->start(4000, true);
    if (s != ""){
        int t = 1000;
        t = menu_tool_tips;
@@ -640,7 +640,7 @@ void kPanel::showToolTip(QString s){
        info_label->adjustSize();
        info_label->move(QCursor::pos().x()+6, QCursor::pos().y()+16);
        if (t>=0){
- 	tipTimer->start(t, TRUE);
+ 	tipTimer->start(t, true);
        }
    }
    else{
@@ -675,7 +675,7 @@ void kPanel::delete_button(QWidget* button){
       entries[i] = entries[i+1];
     delete button;
     if (kde_button == button)
-      kde_button = NULL;
+      kde_button = 0;
   }
 }
 
@@ -757,7 +757,7 @@ void kPanel::tipTimerDone(){
   else 
     info_label->hide();
   info_label_is_sleeping = False;
-  tipSleepTimer->start(4000, TRUE);
+  tipSleepTimer->start(4000, true);
 }
 
 void kPanel::tipSleepTimerDone(){
@@ -782,12 +782,12 @@ void kPanel::showMiniPanel ()
   
   miniPanelFrame = new QFrame(0, 0, 
 			      WStyle_Customize|WStyle_NoBorder|WStyle_Tool);
-  miniPanelFrame->setMouseTracking( TRUE );
+  miniPanelFrame->setMouseTracking( true );
   miniPanelFrame->installEventFilter (this);
   
   miniPanel = new QButtonGroup(miniPanelFrame);
   miniPanel->setFrameStyle(QFrame::Panel| QFrame::Raised);
-  miniPanel->setMouseTracking( TRUE );
+  miniPanel->setMouseTracking( true );
   miniPanel->installEventFilter (this);
   connect( miniPanel, SIGNAL( pressed( int )), this, SLOT( miniButtons(int)) );
   
@@ -797,7 +797,7 @@ void kPanel::showMiniPanel ()
   miniSystem->setPixmap(kapp->getIconLoader()
 			->loadMiniIcon("go.xpm", mh,mh)); 
 
-  miniSystem->setMouseTracking( TRUE );
+  miniSystem->setMouseTracking( true );
   miniSystem->installEventFilter (this);
   
   miniDesk = new myPushButton(miniPanel);
@@ -805,7 +805,7 @@ void kPanel::showMiniPanel ()
   miniDesk->setFocusPolicy(NoFocus);
   miniDesk->setPixmap(kapp->getIconLoader()
 		      ->loadMiniIcon("window_list.xpm", mh, mh));
-  miniDesk->setMouseTracking( TRUE );
+  miniDesk->setMouseTracking( true );
   miniDesk->installEventFilter (this);
   
   miniPanel->setGeometry (0, 0, 2*mh, mh);
