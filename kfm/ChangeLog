@@ -1,3 +1,27 @@
+Tue Jun  9 16:30:00 1998  Jacek Konieczny  <jajcus@zeus.polsl.gliwice.pl>
+
+	* htmlcache.cpp, htmlcache.h, kfmgui.cpp, kfmgui.h
+	  Added "Cache/Always save cache" and "Cache/Never save cache" options
+	  and saving cache settings.
+
+	* kioslave/manage.cpp
+	  Fixed bug which caused KProtocolProxy beeing used even when
+	  proxy was disabled. This made HTTP connection established instead
+	  of FTP.
+
+ 	* kioslave/ftp_proxy.cpp, kioslave/ftp_proxy.h
+	  Reopen support for proxy'ed FTP protocol
+ 
+ 	* kioslave/http.cpp, kioslave/http.h
+	  Reopen support for HTTP protocol
+ 
+	* ipcc/kio.ipc, kfmjob.cpp, kfmjob.h, kiojob.cpp, kiojob.h,
+	  kioslave/main.cpp, kioslave/main.h, kioslave/protocol.cpp,
+	  kioslave/protocol.h
+	  Reload call added to kioslave, and reopen to kprotocol.
+	  Theese are called when reload button is hit to get not
+	  cached version of file
+
 Wed May  6 19:40:40 1998  Torben Weis  <weis@localhost>
 
 	* kiojob.cpp (KIOJob): Hopefully I killed all kioslaves yet :-)

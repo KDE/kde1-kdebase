@@ -193,6 +193,18 @@ void KIOSlaveIPC::parse_get( char *_data, int _len )
 	free( (void*)_url );
 }
 
+void KIOSlaveIPC::parse_reload( char *_data, int _len )
+{
+	int pos = 0;
+
+	// Parsing string
+	const char* _url;
+	_url = read_string( _data, pos, _len );
+	// Calling function
+	emit reload( _url );
+	free( (void*)_url );
+}
+
 void KIOSlaveIPC::parse_del( char *_data, int _len )
 {
 	int pos = 0;

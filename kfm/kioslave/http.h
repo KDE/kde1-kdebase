@@ -50,12 +50,14 @@ protected:
     
     int init_sockaddr(struct sockaddr_in *server_name, const char *hostname,int port);
     int ProcessHeader();
+    virtual int OpenHTTP(KURL *url, int mode,bool reload);
     
 public:
     KProtocolHTTP();
     ~KProtocolHTTP();
     
     virtual int Open(KURL *url, int mode);
+    virtual int ReOpen(KURL *url, int mode);
     virtual int Close();
     virtual long Read(void *buffer, long len);
     virtual long Size();

@@ -61,6 +61,10 @@ signals:
 private:
 	void parse_get( char *_data, int _len );
 signals:
+	void reload(const char* _url);
+private:
+	void parse_reload( char *_data, int _len );
+signals:
 	void del(const char* _url);
 private:
 	void parse_del( char *_data, int _len );

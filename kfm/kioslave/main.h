@@ -33,6 +33,12 @@ public slots:
      * This is faster then doing a copy the local file system all the time.
      */
     void get( const char *_url );
+    /**
+     * Retrieves '_url' and sends the content of this URL via the 'data' signal.
+     * This is faster then doing a copy the local file system all the time.
+     * Data is retrieved directly from the source not allowing any caching
+     */
+    void reload( const char *_url );
     /// Delete a file
     /**
      If the _url ends with "/", then we assume that it is directory
@@ -60,6 +66,8 @@ public slots:
     
 protected:
     void ProcessError(KProtocol *, const char *);
+    
+    void get( const char *_url, bool _reload=false );
 
     /// Test an error log file
     /**

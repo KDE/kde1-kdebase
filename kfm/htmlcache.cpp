@@ -17,6 +17,7 @@ QDict<QString> *HTMLCache::urlDict;
 QList<HTMLCache> *HTMLCache::instanceList;
 int HTMLCache::fileId = 0;
 bool HTMLCache::bCacheEnabled = true;
+bool HTMLCache::bSaveCacheEnabled = true;
 
 HTMLCacheJob::HTMLCacheJob( const char *_url, const char *_dest ) : KIOJob()
 {
@@ -234,6 +235,7 @@ void HTMLCache::stop()
 
 void HTMLCache::save()
 {
+    if (! bSaveCacheEnabled) return;
     QString p( getenv( "HOME" ) );
     p += "/.kde/share/apps/kfm/cache/index.html";
     FILE *f = fopen( p, "w" );
@@ -345,13 +347,17 @@ void HTMLCache::enableCache( bool _enable )
     bCacheEnabled = _enable;
 }
 
+bool HTMLCache::isEnabled(){
+    return bCacheEnabled;
+}
+
+void HTMLCache::enableSaveCache( bool _enable )
+{
+    bSaveCacheEnabled = _enable;
+}
+
+bool HTMLCache::isSaveEnabled(){
+    return bSaveCacheEnabled;
+}
 #include "htmlcache.moc"
-
-
-
-
-
-
-
-
 

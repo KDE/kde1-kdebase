@@ -176,6 +176,13 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     else
 	showStatusbar = false;
 
+    config->setGroup( "Cache" );
+    bool on;
+    on=config->readBoolEntry( "CacheEnabled", true );
+    HTMLCache::enableCache(on);
+    on=config->readBoolEntry( "SaveCacheEnabled", true );
+    HTMLCache::enableSaveCache(on);
+  
     initGUI();
 
     windowList->setAutoDelete( false );
@@ -401,8 +408,15 @@ void KfmGui::initMenu()
 			this, SLOT( slotCacheOn() ) );
     mcache->insertItem( klocale->translate( "Never look in cache" ),
 			this, SLOT( slotCacheOff() ) );
+    mcache->insertItem( klocale->translate( "Always save cache" ),
+			this, SLOT( slotSaveCacheOn() ) );
+    mcache->insertItem( klocale->translate( "Never save cache" ),
+			this, SLOT( slotSaveCacheOff() ) );
     
-    mcache->setItemChecked( mcache->idAt( 4 ), true );
+    mcache->setItemChecked( mcache->idAt( 4 ), HTMLCache::isEnabled() );
+    mcache->setItemChecked( mcache->idAt( 5 ), !HTMLCache::isEnabled() );
+    mcache->setItemChecked( mcache->idAt( 6 ), HTMLCache::isSaveEnabled() );
+    mcache->setItemChecked( mcache->idAt( 7 ), !HTMLCache::isSaveEnabled() );
 
     moptions = new QPopupMenu;
     CHECK_PTR( moptions );
@@ -681,6 +695,22 @@ void KfmGui::slotCacheOff()
     mcache->setItemChecked( mcache->idAt( 5 ), true );
 
     HTMLCache::enableCache( false );
+}
+
+void KfmGui::slotSaveCacheOn()
+{
+    mcache->setItemChecked( mcache->idAt( 6 ), true );
+    mcache->setItemChecked( mcache->idAt( 7 ), false );
+
+    HTMLCache::enableSaveCache( true );
+}
+
+void KfmGui::slotSaveCacheOff()
+{
+    mcache->setItemChecked( mcache->idAt( 6 ), false );
+    mcache->setItemChecked( mcache->idAt( 7 ), true );
+
+    HTMLCache::enableSaveCache( false );
 }
 
 void KfmGui::slotURLEntered()
@@ -1434,6 +1464,10 @@ void KfmGui::slotSaveSettings()
       config->writeEntry( "Menubar", "bottom" );
   else if ( menu->menuBarPos() == KMenuBar::Floating )
       config->writeEntry( "Menubar", "floating" );
+  
+  config->setGroup( "Cache" );
+  config->writeEntry( "CacheEnabled", HTMLCache::isEnabled() );
+  config->writeEntry( "SaveCacheEnabled", HTMLCache::isSaveEnabled() );
 
   config->sync();
 }

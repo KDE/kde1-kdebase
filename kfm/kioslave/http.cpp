@@ -285,8 +285,15 @@ int revmatch(const char *host, const char *nplist)
     return 0;
 }
 
+int KProtocolHTTP::Open(KURL *_url, int mode){
+  return OpenHTTP(_url,mode,false);
+}
 
-int KProtocolHTTP::Open(KURL *_url, int mode)
+int KProtocolHTTP::ReOpen(KURL *_url, int mode){
+  return OpenHTTP(_url,mode,true);
+}
+
+int KProtocolHTTP::OpenHTTP(KURL *_url, int mode,bool _reload)
 {
     url = _url->url().data();
   
@@ -388,7 +395,12 @@ int KProtocolHTTP::Open(KURL *_url, int mode)
 	command += _url->path();
 	command += " HTTP/1.0\r\n"; /* start header */
 	command += "User-Agent: Konqueror/1.0\r\n"; /* User agent */
-
+	
+	if ( _reload ){ /* No caching for reload */
+	  command += "Pragma: no-cache\r\n"; /* for HTTP/1.0 caches */
+	  command += "Cache-control: no-cache\r\n"; /* for HTTP/>=1.1 caches */
+        }
+	
 	command += "Host: "; /* support for virtual hosts */
 	command += _url->host();
 	if ( _url->port() != 0 )

@@ -10,6 +10,7 @@ class KProtocolProxyFTP :public KProtocolHTTP
     Q_OBJECT
  protected:
     int secondtry;
+    virtual int OpenProxy(KURL *url, int mode, bool reload);
 
  public:
     KProtocolProxyFTP();
@@ -18,6 +19,7 @@ class KProtocolProxyFTP :public KProtocolHTTP
     
     virtual int OpenDir(KURL *url);    
     virtual int Open(KURL *url, int mode);
+    virtual int ReOpen(KURL *url, int mode);
     virtual int ProcessHeader();
     virtual bool isHTML(){
 	    if ( strcmp(url.right(1),"/") == 0 )
@@ -28,10 +30,6 @@ class KProtocolProxyFTP :public KProtocolHTTP
 	
     // EmitData liest die Antwort vom Proxy
     virtual void EmitData( KIOSlaveIPC* );
-
-
-
-
 };
 
 #endif

@@ -64,7 +64,7 @@ signals:
     void redirection( const char *_url );
     
 protected:
-    void openFile();
+    void openFile(bool _reload);
     void testMimeType( const char *_data, int _len );
     
     KIOJob *job;

@@ -208,6 +208,16 @@ void KIOSlaveIPC::get(const char* _url)
 	write_string( data_sock->socket(), _url );
 }
 
+void KIOSlaveIPC::reload(const char* _url)
+{
+	int len = 0;
+	len += len_string( _url );
+	len += len_string("reload");
+	write_int( data_sock->socket(), len );
+	write_string( data_sock->socket(), "reload" );
+	write_string( data_sock->socket(), _url );
+}
+
 void KIOSlaveIPC::del(const char* _url)
 {
 	int len = 0;

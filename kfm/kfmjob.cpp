@@ -96,12 +96,12 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 	job->list( url, _reload, _bHTML );
     }
     else
-	openFile();
+	openFile(_reload);
     
     return true;
 }
 
-void KFMJob::openFile()
+void KFMJob::openFile(bool _reload)
 {
     isDir = FALSE;
     
@@ -123,7 +123,7 @@ void KFMJob::openFile()
 	url = url.left( url.length() - 1 );
     
     bFileLoad = TRUE;
-    job->get( url );
+    job->get( url,_reload );
 }
 
 void KFMJob::slotRedirection( const char *_url )
@@ -170,7 +170,7 @@ void KFMJob::slotError( int _kioerror, const char *_text, int _errno )
 	    job->setAutoDelete( TRUE );
 	    job = 0L;
 	    // Try to open as file
-	    openFile();
+	    openFile(false);
 	    return;
 	}
     }

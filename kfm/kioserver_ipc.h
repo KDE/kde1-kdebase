@@ -74,6 +74,8 @@ public slots:
 public slots:
 	void get(const char* _url);
 public slots:
+	void reload(const char* _url);
+public slots:
 	void del(const char* _url);
 public slots:
 	void mkdir(const char* _url);

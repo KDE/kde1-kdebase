@@ -59,8 +59,9 @@ KProtocol *CreateProtocol(const char *url)
 {
     QString noPrxFor;
     QString prxStr;
+    QString usePrxStr;
     bool do_proxy;
-    
+
     KURL u( url );
     if ( u.isMalformed() )
 	return NULL;
@@ -69,27 +70,15 @@ KProtocol *CreateProtocol(const char *url)
     KSimpleConfig prxcnf(KApplication::localconfigdir() + "/kfmrc", true );
     prxcnf.setGroup("Browser Settings/Proxy");
     noPrxFor = prxcnf.readEntry("NoProxyFor");
+    usePrxStr = prxcnf.readEntry("UseProxy");
     prxStr = prxcnf.readEntry("FTP-Proxy");
-    if( ! prxStr.isEmpty() ) { // Do we need proxy?
+    if( usePrxStr=="Yes" && ! prxStr.isEmpty() ) { // Do we need proxy?
         do_proxy = true;
     }
 
-//    bool do_proxy = false;
-//    QString ftp_proxy = getenv("ftp_proxy");
-//    if ( ftp_proxy.isEmpty() )
-//	ftp_proxy = getenv("FTP_PROXY");
-//    if ( !ftp_proxy.isEmpty() )
-//	do_proxy = true;
-    
     QString lasturl( u.nestedURL() );
 
-//    char *no_proxy = getenv("no_proxy");
-//    if ( no_proxy != 0L && do_proxy )
-//    {
-//	do_proxy = !revmatch( u.host(), no_proxy );
-//    }
-
-    if( ! noPrxFor.isEmpty() ) {
+    if( do_proxy && ! noPrxFor.isEmpty() ) {
         do_proxy = !revmatch( u.host(), noPrxFor.data() );
     }
 

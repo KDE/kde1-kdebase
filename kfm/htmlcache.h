@@ -126,6 +126,12 @@ public:
      * Enables or disbales the cache.
      */
     static void enableCache( bool _enable );
+    static void enableSaveCache( bool _enable );
+    /**
+     * Check enable status
+     */
+    static bool isEnabled();
+    static bool isSaveEnabled();
     
     /*
      * hack to get static classes up and running even with C++-Compilers/
@@ -197,6 +203,7 @@ protected:
      * @see #enableCache
      */
     static bool bCacheEnabled;
+    static bool bSaveCacheEnabled;
     
     /**
      * List of all instances

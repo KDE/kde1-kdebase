@@ -73,6 +73,8 @@ KIOSlave::KIOSlave( char * _path )
 	     this, SLOT( copy( const char*, const char*, bool ) ) );
     connect( ipc, SIGNAL( get( const char* ) ),
 	     this, SLOT( get( const char* ) ) );
+    connect( ipc, SIGNAL( reload( const char* ) ),
+	     this, SLOT( reload( const char* ) ) );
     connect( ipc, SIGNAL( del( const char* ) ), this, SLOT( del( const char* ) ) );
     connect( ipc, SIGNAL( mkdir( const char* ) ), this, SLOT( mkdir( const char* ) ) );
     connect( ipc, SIGNAL( unmount( const char* ) ), this, SLOT( unmount( const char* ) ) );
@@ -505,7 +507,17 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
     ipc->done();
 }
 
-void KIOSlave::get( const char *_url )
+void KIOSlave::get( const char *_url ){
+  
+  get(_url,false);
+}
+
+void KIOSlave::reload( const char *_url ){
+
+  get(_url,true);
+}
+
+void KIOSlave::get( const char *_url, bool _reload )
 {
     KURL u( _url );
     if ( u.isMalformed() )
@@ -533,8 +545,13 @@ void KIOSlave::get( const char *_url )
 			 ipc, SLOT( redirection( const char* ) ) );
 		connect( src_prot, SIGNAL( info( const char* ) ),
 			 ipc, SLOT( info( const char* ) ) );
-
-		if(src_prot->Open(&su, KProtocol::READ) != KProtocol::SUCCESS)
+                int err;
+		if (!_reload)
+		    err=src_prot->Open(&su, KProtocol::READ);
+		else    
+		    err=src_prot->ReOpen(&su, KProtocol::READ);
+		
+		if( err != KProtocol::SUCCESS)
 		{
 		    ProcessError( src_prot, _url );
 		    return;

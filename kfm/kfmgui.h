@@ -313,6 +313,15 @@ public slots:
      * Cache "View->Never look in cache"
      */
     void slotCacheOff();
+ 
+    /**
+     * Cache "View->Always save cache"
+     */
+    void slotSaveCacheOn();
+    /**
+     * Cache "View->Never save cache"
+     */
+    void slotSaveCacheOff();
     
     /**
      * Menu "Bookmarks->Edit Bookmarks"

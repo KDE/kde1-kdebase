@@ -44,7 +44,7 @@ public:
     
     void copy( QStrList & _src_url_list, const char *_dest_dir_url );    
     void copy( const char *_src_url, const char *_dest_url );
-    void get( const char *_url );
+    void get( const char *_url, bool _reload=false );
     void move( QStrList & _src_url_list, const char *_dest_dir_url );    
     void move( const char *_src_url, const char *_dest_url );
     void link( QStrList & _src_url_list, const char *_dest_dir_url );    
@@ -459,6 +459,8 @@ protected:
      * @see #fatalError
      */
     bool bProcessError;
+
+    bool reload;
 };
 
 #include "kioserver.h"

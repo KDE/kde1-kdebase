@@ -45,6 +45,7 @@ KIOJob::KIOJob( int _id )
     globalNotify = true;
     id = _id;
     overwriteExistingFiles = false;
+    reload = false;
     
     jobList->setAutoDelete( false );
     jobList->append( this );
@@ -384,10 +385,12 @@ void KIOJob::link()
     done();
 }
 
-void KIOJob::get( const char *_url )
+void KIOJob::get( const char *_url, bool _reload )
 {
     action = KIOJob::JOB_GET;
 
+    reload=_reload;
+  
     cmSrcURLList.clear();
     cmSrcURLList.append( _url );
 
@@ -1610,8 +1613,13 @@ void KIOJob::slaveIsReady()
 
 	    lastSource = cmSrcURLList.first();
 
-	    QString src = completeURL( cmSrcURLList.first() ).data();	    
-	    slave->get( src.data() );
+	    QString src = completeURL( cmSrcURLList.first() ).data();	   
+	    if (!reload){
+	      slave->get( src.data() );
+	    }
+	    else{
+	      slave->reload( src.data() );
+	    }  
 	    cmSrcURLList.removeRef( cmSrcURLList.first() );
 	}
 	break;

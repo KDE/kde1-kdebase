@@ -67,6 +67,9 @@ public:
 
 	/** functions for files/objects **/
 	virtual int Open(KURL *url, int mode);
+	
+	/** Opening for reload (no cache) **/
+	virtual int ReOpen(KURL *url, int mode);
 	virtual long Read(void *buffer, long nbytes);
 	virtual long Write(void *buffer, long nbytes);
 	virtual int Close();
