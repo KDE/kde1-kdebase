@@ -30,6 +30,7 @@ Protocols=
 MimeType=
 Comment=Shows the positions of the windows
 Comment[ja]=它奴件玉它匏譆及刓憎
+Comment[pl]=Pokazuje po這瞠nia okien
 Exec=kwmpager
 Icon=kwm.xpm
 TerminalOptions=
