@@ -6,10 +6,12 @@ Name=Web browser
 Name[fr]=Navigateur Web
 Name[no]=Nettlos
 Name[pt_BR]=Navegador Web
+Name[sv]=Webläsaren
 Comment=You can configure here the web browser
 Comment[fr]=Vous pouvez configurer ici le navigateur Web
 Comment[no]=Her kan du konfigurere nettlosen
 Comment[pt_BR]=Você pode configurar aqui o navegador Web
+Comment[sv]=Här kan du anpassa webläsaren
 # This needs a new icon !
 Icon=kfm.xpm
 Exec=kcmkfm proxy http useragent
