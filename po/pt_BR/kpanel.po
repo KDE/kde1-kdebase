@@ -151,7 +151,7 @@ msgstr "Abrir Pasta"
 
 #: pfilemenu.C:481
 msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr ""
+msgstr "Abrir essa pasta (+Shift: Abrir um terminal aqui)"
 
 #: pfilemenu.C:489
 msgid "(Too Many Files)"
