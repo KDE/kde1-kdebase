@@ -27,6 +27,7 @@
 #include <stdio.h>
 
 //#define DESKTOPDEBUG
+//#define DESKTOPDEBUG2
 //#define ALLOWSELFPICTURE
 
 Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
@@ -795,9 +796,13 @@ void Desktop::readBackgroundSettings(void)
                    KApplication::localconfigdir() + s);
     
     config.setGroup( "Common" );
+    bool randomMode=config.readBoolEntry("RandomMode", false);
     bool useDir = config.readBoolEntry( "UseDir", false);
     int randomid=config.readNumEntry("Item");    
     QString wallpaper;
+#ifdef DESKTOPDEBUG2
+    printf("[%d]randomMode %d ; useDir %d ; Item %d\n",id,(int)randomMode,(int)useDir,randomid);
+#endif
     
     char group[50];
     sprintf(group,"Desktop%d",randomid);
@@ -869,8 +874,12 @@ void Desktop::readBackgroundSettings(void)
     if ( useWallpaper )
     {
         
-        if (useDir)
+        if ((randomMode)&&(useDir))
         {
+#ifdef DESKTOPDEBUG2
+    printf("[%d] a\n",id);
+#endif
+    	    config.setGroup( "Common" );
             QString tmpd = config.readEntry( "Directory", KApplication::kde_wallpaperdir());
             QDir d( tmpd, "*", QDir::Name, QDir::Readable | QDir::Files );
             
@@ -881,11 +890,17 @@ void Desktop::readBackgroundSettings(void)
             wpMode = Tiled;
             useWallpaper = true;
             wallpaper = d.absPath() + "/" + list->at( randomid ); 	
+#ifdef DESKTOPDEBUG2
+    printf("[%d] a\n",id);
+#endif
             loadWallpaper(wallpaper);
             return;
         };
         
         wallpaper = config.readEntry( "Wallpaper", "" );
+#ifdef DESKTOPDEBUG
+    printf("[%d] w (%s)\n",id,wallpaper.data());
+#endif
         loadWallpaper(wallpaper);
 #ifdef DESKTOPDEBUG
         printf("[%d]Use wallpaper\n",id);

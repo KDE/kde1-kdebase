@@ -30,7 +30,6 @@
 
 //#define KPAGERCLIENTDEBUG
 
-
 KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const char *name)
     :QWidget(parent,name)
 {
