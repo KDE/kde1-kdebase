@@ -1912,7 +1912,7 @@ void Manager::manage(Window w, bool mapped){
 	(c->buttons[0] != c->buttonMenu ||
 	 c->getDecoration()!=KWM::normalDecoration))
       c->buttons[0]->hide();
-    if (c->buttons[3] && 
+    if (c->buttons[3] &&
 	(options.buttons[3] != CLOSE ||
 	 c->getDecoration()!=KWM::normalDecoration)) {
 	c->buttons[3]->hide();
@@ -1942,15 +1942,9 @@ void Manager::manage(Window w, bool mapped){
   }
 
 
-  if (c->size.flags & PPosition) {
-  }
-  if (c->size.flags & PSize) {
-  }
-
-
   bool didPlacement = FALSE;
   if (mapped || c->trans != None
-      ||c->size.flags & PPosition
+      || (c->size.flags & PPosition && (c->geometry.x() != 0 || c->geometry.y() != 0 ) )
       ||c->size.flags & USPosition
       || pseudo_session_management
       ){
@@ -2096,7 +2090,7 @@ void Manager::manage(Window w, bool mapped){
   if (!initting)
     XUngrabServer(qt_xdisplay());
 
-  if(options.Placement == MANUAL_PLACEMENT && didPlacement 
+  if(options.Placement == MANUAL_PLACEMENT && didPlacement
      && c->isOnDesktop(manager->currentDesktop())
      && (c->trans == None)) {
     // ensure that the window is completely visible
