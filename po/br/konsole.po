@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: konsole-1.1\n"
-"POT-Creation-Date: 1999-02-09 01:13+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1999-02-01 17:21+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -14,123 +14,123 @@ msgstr ""
 "Content-Type: text/plain; charset=iso8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.C:303
+#: main.C:284
 msgid "&Normal"
 msgstr "&Boas"
 
-#: main.C:306
+#: main.C:287
 msgid "&Small"
 msgstr "&Korr"
 
-#: main.C:307
+#: main.C:288
 msgid "&Medium"
 msgstr "K&renn"
 
-#: main.C:308
+#: main.C:289
 msgid "&Large"
 msgstr "&Bras"
 
-#: main.C:309
+#: main.C:290
 msgid "&Huge"
 msgstr "R&amz"
 
-#: main.C:311
+#: main.C:292
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:312
+#: main.C:293
 msgid "Linux (small)"
 msgstr "Linux (bihan)"
 
-#: main.C:315
+#: main.C:296
 msgid "&More ..."
 msgstr "&Muioc'h..."
 
-#: main.C:321
+#: main.C:302
 msgid "&Hide"
 msgstr "&Kuzhat"
 
-#: main.C:322
+#: main.C:303
 msgid "&Left"
 msgstr "A-&gleiz"
 
-#: main.C:323
+#: main.C:304
 msgid "&Right"
 msgstr "A-&zehou"
 
-#: main.C:329
+#: main.C:310
 msgid "40x15 (&small)"
 msgstr "40x15 (&bihan)"
 
-#: main.C:330
+#: main.C:311
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:331
+#: main.C:312
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:332
+#: main.C:313
 msgid "80x40 (&xterm)"
 msgstr "80x40 (&xterm)"
 
-#: main.C:333
+#: main.C:314
 msgid "80x52 (ibmv&ga)"
 msgstr "80x52 (ibmv&ga)"
 
-#: main.C:342
+#: main.C:323
 msgid "&Menubar"
 msgstr "&Barenn al lañser"
 
-#: main.C:344
+#: main.C:325
 msgid "&Frame"
 msgstr "&Stern"
 
-#: main.C:346
+#: main.C:327
 msgid "Scroll&bar"
 msgstr "Barrenn &dibunañ"
 
-#: main.C:348
+#: main.C:329
 msgid "BS sends &DEL"
 msgstr "War-gil a gas &DEL"
 
-#: main.C:351
+#: main.C:332
 msgid "&Font"
 msgstr "&Nodrezh"
 
-#: main.C:352
+#: main.C:333
 msgid "&Size"
 msgstr "&Ment"
 
-#: main.C:353
+#: main.C:334
 msgid "&Schema"
 msgstr "&Steuñv"
 
-#: main.C:355
+#: main.C:336
 msgid "&Save options"
 msgstr "&Enrollañ an dibaboù"
 
-#: main.C:359
+#: main.C:340
 msgid "&About ..."
 msgstr "&Diwar-benn ..."
 
-#: main.C:360
+#: main.C:341
 msgid "&User's Manual ..."
 msgstr "&Dornlevr implij ..."
 
-#: main.C:361
+#: main.C:342
 msgid "&Technical Reference ..."
 msgstr "&Dave kalvezel ..."
 
-#: main.C:365
+#: main.C:346
 msgid "cd"
 msgstr "kemmañ renkell"
 
-#: main.C:378
+#: main.C:359
 msgid "Sessions"
 msgstr "Dalc'hoù"
 
-#: main.C:517
+#: main.C:502
 #, c-format
 msgid ""
 "Font `%s' not found.\n"
@@ -139,12 +139,12 @@ msgstr ""
 "Nodrezh `%s' digavus.\n"
 "Gwiriit README.linux.console evit skoazell."
 
-#: main.C:621
+#: main.C:607
 #, c-format
 msgid "About %s"
 msgstr "Diwar-benn %s"
 
-#: main.C:623
+#: main.C:609
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -165,12 +165,12 @@ msgstr ""
 "HEP AN DISTERAÑ KRETADUR.\n"
 "Gwelit `LICENSE.readme´ evit munudoù."
 
-#: main.C:749
+#: main.C:732
 #, c-format
 msgid "`%s' terminated abnormally."
 msgstr "`%s' echu direizh."
 
-#: main.C:752
+#: main.C:735
 msgid ""
 "\n"
 "Return code = "
@@ -178,6 +178,6 @@ msgstr ""
 "\n"
 "Kod distro = "
 
-#: main.C:936
+#: main.C:928
 msgid "Welcome to the console"
 msgstr "Degemer mat war al letrin"

@@ -1,4 +1,5 @@
 # KTranslator Generated File
+
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -7,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol-1.1\n"
-"POT-Creation-Date: 1999-01-27 01:14+0100\n"
+"POT-Creation-Date: 1999-01-16 01:17+0100\n"
 "PO-Revision-Date: 1999-02-05 16:20+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -45,34 +46,30 @@ msgstr ""
 "Trugarez da :\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
-#: mainwidget.cpp:44
-#, fuzzy
-msgid "KDE Version: "
-msgstr "Doare :"
+#: mainwidget.cpp:45
+msgid "System:"
+msgstr "Reizhiad :"
 
-#: mainwidget.cpp:52
+#: mainwidget.cpp:48
 msgid "User: "
 msgstr "Arveriad :"
 
-#: mainwidget.cpp:58
+#: mainwidget.cpp:54
 msgid "Hostname: "
 msgstr "Anv an ostiz :"
 
-#: mainwidget.cpp:66
+#: mainwidget.cpp:62
 msgid "System: "
 msgstr "Reizhiad :"
 
-#: mainwidget.cpp:73
+#: mainwidget.cpp:69
 msgid "Release: "
 msgstr "Rummad :"
 
-#: mainwidget.cpp:81
+#: mainwidget.cpp:77
 msgid "Version: "
 msgstr "Doare :"
 
-#: mainwidget.cpp:88
+#: mainwidget.cpp:84
 msgid "Machine: "
 msgstr "Benveg :"
-
-#~ msgid "System:"
-#~ msgstr "Reizhiad :"

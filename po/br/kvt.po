@@ -206,7 +206,6 @@ msgid ""
 msgstr ""
 "-e <command> <arv> ...    sevbeniñ urzhiad gant arv - a rank bezañ an\n"
 "                          arventenn diwezhañ\n"
-
 #: main.C:1439
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <name>           resisaat an diskouez (titourer)\n"
@@ -225,7 +224,7 @@ msgstr "-vt_bg <colour>           liv drekleur\n"
 
 #: main.C:1443
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr "-vt_fg <colour>           liv rakleur\n"
+msgstr "-vt_fg <colour>           liv rakleur"
 
 #: main.C:1444
 msgid "-vt_font <fontname>       normal font\n"
@@ -241,7 +240,7 @@ msgstr "-vt_size <ment>           tiny, small, normal, large, huge\n"
 
 #: main.C:1447
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux                    keflunia kvt da varmouzañ letrin linux\n"
+msgstr "-linux                    keflunia kvt da varmouzañ letrin linux"
 
 #: main.C:1448
 msgid "-no_menubar               hide the menubar\n"
@@ -319,4 +318,5 @@ msgid ""
 "-grk4\t\tgreek kbd = IBM 437\n"
 msgstr ""
 "-grk9\t\tstokellaoueg gresian = ELOT 928 (dre ziouer)\n"
-"-grk4\t\tstokellaoueg gresian = IBM 437\n"
+"-grk4\t\tstokellaoueg gresian = IBM 437"
+

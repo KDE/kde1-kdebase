@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm-1.1\n"
-"POT-Creation-Date: 1999-01-30 01:12+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1999-02-01 09:30+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -14,115 +14,115 @@ msgstr ""
 "Content-Type: text/plain; charset=iso8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: krootwm.C:234 krootwm.C:281
+#: krootwm.C:223 krootwm.C:270
 msgid "Execute command"
 msgstr "Seveniñ un urzhiad"
 
-#: krootwm.C:236 krootwm.C:305
+#: krootwm.C:225 krootwm.C:294
 msgid "Lock screen"
 msgstr "Prennañ ar skramm"
 
-#: krootwm.C:237 krootwm.C:306
+#: krootwm.C:226 krootwm.C:295
 msgid "Logout"
 msgstr "Kuitaat"
 
-#: krootwm.C:245 krootwm.C:283
+#: krootwm.C:234 krootwm.C:272
 msgid "Refresh desktop"
 msgstr "Adtresañ ar burev"
 
-#: krootwm.C:246 krootwm.C:285
+#: krootwm.C:235 krootwm.C:274
 msgid "Unclutter windows"
 msgstr "Dispartiañ ar prenester"
 
-#: krootwm.C:247 krootwm.C:286
+#: krootwm.C:236 krootwm.C:275
 msgid "Cascade windows"
 msgstr "Renkañ mod diri"
 
-#: krootwm.C:248 krootwm.C:287
+#: krootwm.C:237 krootwm.C:276
 msgid "Arrange icons"
 msgstr "Kempenn an arlunioù"
 
-#: krootwm.C:249 krootwm.C:282
+#: krootwm.C:238 krootwm.C:271
 msgid "Display properties"
 msgstr "Perzhioù an diskouez"
 
-#: krootwm.C:257 krootwm.C:280
+#: krootwm.C:246 krootwm.C:269
 msgid "Help on desktop"
 msgstr "Skoazell war ar gorretaol"
 
-#: krootwm.C:258
+#: krootwm.C:247
 msgid "About KDE..."
 msgstr "Diwar-benn KDE..."
 
-#: krootwm.C:276 krootwm.C:315 krootwm.C:823 krootwm.C:831
+#: krootwm.C:265 krootwm.C:304 krootwm.C:812 krootwm.C:820
 msgid "New"
 msgstr "Nevez"
 
-#: krootwm.C:277 krootwm.C:316
+#: krootwm.C:266 krootwm.C:305
 msgid "Bookmarks"
 msgstr "Sinedoù"
 
-#: krootwm.C:291
+#: krootwm.C:280
 msgid "Arrange Window Maker icons"
 msgstr "Kempenn arlunioù ar Graer Prenestr"
 
-#: krootwm.C:292
+#: krootwm.C:281
 msgid "Show all"
 msgstr "Diskouez an holl"
 
-#: krootwm.C:293
+#: krootwm.C:282
 msgid "Hide other"
 msgstr "Kuzhat ar re all"
 
-#: krootwm.C:295
+#: krootwm.C:284
 msgid "Show info panel"
 msgstr "Diskouez ar banell titouriñ"
 
-#: krootwm.C:296
+#: krootwm.C:285
 msgid "Show legal panel"
 msgstr "Diskouez ar banell lezennel"
 
-#: krootwm.C:297
+#: krootwm.C:286
 msgid "Restart"
 msgstr "Adloc'hañ"
 
-#: krootwm.C:299
+#: krootwm.C:288
 msgid "Exit"
 msgstr "Er-maez"
 
-#: krootwm.C:300
+#: krootwm.C:289
 msgid "Window Maker"
 msgstr "Graer prenestr"
 
-#: krootwm.C:317
+#: krootwm.C:306
 msgid "Desk"
 msgstr "Taol"
 
-#: krootwm.C:318
+#: krootwm.C:307
 msgid "Windows"
 msgstr "Prenestr"
 
-#: krootwm.C:381
+#: krootwm.C:370
 msgid "Edit Bookmarks"
 msgstr "Aozan Sinedoù"
 
-#: krootwm.C:395 krootwm.C:833
+#: krootwm.C:384 krootwm.C:822
 msgid "Folder"
 msgstr "Renkell"
 
-#: krootwm.C:399
+#: krootwm.C:388
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "FAZI : Ar patrom-se n'eus ket anezhañ '%s'"
 
-#: krootwm.C:854
+#: krootwm.C:843
 msgid "Could not create folder"
 msgstr "Ne m'eus ket gallet krouiñ ar renkell"
 
-#: krootwm.C:922
+#: krootwm.C:911
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Gwirioù eilañ C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:926
+#: krootwm.C:915
 msgid "Usage:"
 msgstr "Arveriadur :"

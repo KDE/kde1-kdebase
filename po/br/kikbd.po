@@ -1,4 +1,5 @@
 # KTranslator Generated File
+
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -413,8 +414,7 @@ msgstr "&Kendarvanañ Krouilh Pennlizh"
 
 #: widgets.cpp:467
 msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
-msgstr ""
-"Kendarvanañ Krouilh Pennlizh ar servijer X. Ret evit ma vo reizh yezhoù zo"
+msgstr "Kendarvanañ Krouilh Pennlizh ar servijer X. Ret evit ma vo reizh yezhoù zo"
 
 #: widgets.cpp:473
 msgid "&World Menu"
@@ -422,8 +422,7 @@ msgstr "&Lañser bedel"
 
 #: widgets.cpp:474
 msgid "Show menu in any window by holding Switch keys"
-msgstr ""
-"Diskouez al lañser e n'eus forzh pe brenestr dre waskañ ar stokelloù gwintañ"
+msgstr "Diskouez al lañser e n'eus forzh pe brenestr dre waskañ ar stokelloù gwintañ"
 
 #: widgets.cpp:481
 msgid "&Save Classes"
@@ -431,9 +430,7 @@ msgstr "&Enrollañ renkadoù"
 
 #: widgets.cpp:482
 msgid "Save relations between window classes and keyboard maps on exit"
-msgstr ""
-"Enrollañ darempredoù etre renkadoù prenestr ha tres stokellaoueg en ur "
-"guitaat"
+msgstr "Enrollañ darempredoù etre renkadoù prenestr ha tres stokellaoueg en ur guitaat"
 
 #: widgets.cpp:488
 msgid "Define X codes"
@@ -453,8 +450,7 @@ msgstr "Emzalc'h astennet. Pep prenestr a zalc'h e tres stokellaoueg"
 
 #: widgets.cpp:503
 msgid "Special behavior. Each windows class remember it's own keyboard map"
-msgstr ""
-"Emzalc'h dibar. Pep renkad prenestr a zalc'h e tres stokellaoueg dezhañ"
+msgstr "Emzalc'h dibar. Pep renkad prenestr a zalc'h e tres stokellaoueg dezhañ"
 
 #: widgets.cpp:551
 msgid "Button Colors"
@@ -494,8 +490,7 @@ msgstr "&Neuziañ an nodrezh"
 
 #: widgets.cpp:592
 msgid "Customize Font for text label or use global settings"
-msgstr ""
-"Neuziañ nodrezh testenn ar skridennad pe implij ar c'hefluniadur hollek"
+msgstr "Neuziañ nodrezh testenn ar skridennad pe implij ar c'hefluniadur hollek"
 
 #: widgets.cpp:596
 msgid "C&hange Font"

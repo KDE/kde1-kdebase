@@ -1,3 +1,25 @@
+# KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: klock-1.1\n"
@@ -485,6 +507,7 @@ msgstr ""
 "\n"
 "na arverit ket mar plij -test a-stroll gant -lock.\n"
 "arverit kentoc'h klock.\n"
+""
 
 #: main.cpp:580
 #, c-format
@@ -493,7 +516,7 @@ msgid ""
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Arveriadur : %s -install|-setup|-test|-desc|-preview led|-inroot\n"
-"       [-corners xxxx] [-delay niv] [-lock] [-allow-root] [-nice niv]\n"
+"       [-corners xxxx] [-delay niv] [-lock] [-allow-root] [-nice niv]"
 
 #: main.cpp:583
 msgid ""
@@ -519,8 +542,7 @@ msgstr ""
 "                     x = i  hini ebet (na ober van)\n"
 "                     x = s  damantiñ ar skramm\n"
 "                     x = l  prennañ ar skramm\n"
-"                    urzh : gorre-kleiz, gorre-dehou, traoñ-kleiz, "
-"traoñ-dehou\n"
+"                    urzh : gorre-kleiz, gorre-dehou, traoñ-kleiz, traoñ-dehou\n"
 "  -delay niv       gedvezh araok loc''hañ an damanter\n"
 "                      skramm  (dre ziouer 10mun)\n"
 "  -desc             moulañ deskrivadur an damanter skramm war stdout\n"
@@ -532,7 +554,7 @@ msgstr ""
 "  -preview wid      seveniñ er prenestr XWindow resisaet\n"
 "  -inroot           seveniñ er prenestr gwrizienn\n"
 "  -setup            kefluniañ an damanter skramm\n"
-"  -test              loc'h an damanter skramm diouzhtu\n"
+"  -test              loc'h an damanter skramm diouzhtu"
 
 #: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"

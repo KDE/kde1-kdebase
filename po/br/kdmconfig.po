@@ -1,4 +1,15 @@
 # KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig-1.1\n"
@@ -30,8 +41,7 @@ msgstr "&Dalc'hoù"
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
-"arveriadur : kdmconfig [-init | "
-"{appearance,font,background,sessions,users}]\n"
+"arveriadur : kdmconfig [-init | {appearance,font,background,sessions,users}]"
 
 #: main.cpp:142
 msgid "KDM Configuration"
@@ -124,7 +134,7 @@ msgid ""
 "Please use files with these extensions\n"
 msgstr ""
 "\n"
-"Arverit mar plij restroù gant an astennadur-mañ\n"
+"Arverit mar plij restroù gant an astennadur-mañ"
 
 #: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"
@@ -264,14 +274,12 @@ msgstr ""
 
 #: kdm-users.cpp:97
 msgid "Show users"
-msgstr ""
-"Diskouez an\n"
+msgstr "Diskouez an\n"
 "arveriaded"
 
 #: kdm-users.cpp:103
 msgid "Sort users"
-msgstr ""
-"Rummañ an\n"
+msgstr "Rummañ an\n"
 "arveriaded"
 
 #: kdm-users.cpp:182 kdm-users.cpp:251

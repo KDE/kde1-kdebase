@@ -1,4 +1,35 @@
 # KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm-1.1\n"
@@ -34,8 +65,7 @@ msgstr "A&raokaet"
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"arveriadur : kcmkwm [-init | "
-"{options,buttons,titlebar,borders,mouse,advanced}]\n"
+"arveriadur : kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -69,25 +99,25 @@ msgstr "A-zehoù"
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Leun eo tu kleiz ar varrenn-ditl... o tizoberiañ an nozelenn 'uhelañ'\n"
+"Leun eo tu kleiz ar varrenn-ditl... o tizoberiañ an nozelenn 'uhelañ'"
 
 #: titlebar.cpp:504
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Leun eo tu dehou ar varrenn-ditl... o tizoberiañ an nozelenn 'uhelañ'\n"
+"Leun eo tu dehou ar varrenn-ditl... o tizoberiañ an nozelenn 'uhelañ'"
 
 #: titlebar.cpp:544
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Leun ro tu kleiz ar varrenn-ditl... o tizoberiañ an nozelenn 'izelaat'\n"
+"Leun ro tu kleiz ar varrenn-ditl... o tizoberiañ an nozelenn 'izelaat'"
 
 #: titlebar.cpp:577
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Leun eo tu dehou ar varrenn-ditl... o tizoberiañ an nozelenn 'izelaat'\n"
+"Leun eo tu dehou ar varrenn-ditl... o tizoberiañ an nozelenn 'izelaat'"
 
 #: titlebar.cpp:930
 msgid "Title Alignment"
@@ -275,8 +305,7 @@ msgid "Enable active desktop borders"
 msgstr "Laka bordoù ar gorretaol oberiant"
 
 #: desktop.cpp:81
-#, fuzzy
-msgid "Move pointer towards center after switch"
+msgid "Move pointer towards center after gwintañ"
 msgstr "Dilec'hiañ ar reti davet ar c'hreizh goude kemmañ"
 
 #: desktop.cpp:87

@@ -68,7 +68,7 @@ msgid ""
 "is not set\n"
 msgstr ""
 "Ar varienn endro HOME\n"
-"n'eo ket termenet\n"
+"n'eo ket termenet"
 
 #: kfontmanager.cpp:292
 msgid ""
@@ -98,7 +98,7 @@ msgstr ""
 "kfontmanager Doare 0.1\n"
 "Gwirioù eilañ 1997\n"
 "Bernd Johannes Wuebben\n"
-"wuebben@math.cornell.edu\n"
+"wuebben@math.cornell.edu"
 
 #: kfontexplorer.cpp:126
 msgid "Select Font"

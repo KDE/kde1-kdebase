@@ -1,8 +1,10 @@
 # KTranslator Generated File
+
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -11,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp-1.1\n"
-"POT-Creation-Date: 1999-02-02 01:17+0100\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: 1999-02-05 11:38+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -27,7 +29,7 @@ msgstr "Skoazell KDE : digeriñ un URL"
 msgid "Open URL"
 msgstr "Digeriñ un URL"
 
-#: helpwin.cpp:459 info.cpp:290
+#: helpwin.cpp:459 info.cpp:288
 msgid "Cannot open: "
 msgstr "N'hallan ket digeriñ :"
 
@@ -63,16 +65,16 @@ msgstr "Ouzhpennañ ur sined"
 msgid "Open in new Window"
 msgstr "Digeriñ en ur prenestr nevez"
 
-#: info.cpp:97 info.cpp:617
+#: info.cpp:97 info.cpp:615
 msgid "Error in info file"
 msgstr "Fazi er restr 'info'"
 
-#: info.cpp:1260
+#: info.cpp:1258
 #, c-format
 msgid "Node not found: %s"
 msgstr "Ar flosk %s n'eo ket kavet"
 
-#: info.cpp:1405
+#: info.cpp:1403
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "N'hallan ket digeriñ ar restr 'info' : %s"

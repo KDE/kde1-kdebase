@@ -51,8 +51,7 @@ msgstr "A&rlunioù ar gorretaol"
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
-"arveriadur : %s [-init | "
-"{font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+"arveriadur : %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
