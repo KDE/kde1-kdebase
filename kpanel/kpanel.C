@@ -9,11 +9,15 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <math.h>
 #include <kfm.h>
 #include <qbitmap.h>
 #include <ksimpleconfig.h>
 
 #define DEFAULT_BOX_WIDTH 45
+
+/* 1 is the initial speed, hide_show_animation is the top speed. */
+#define PANEL_SPEED(x, c) (int)((1.0-2.0*fabs((x)-(c)/2.0)/c)*hide_show_animation+1.0) 
 
 extern void execute(const char*);
 
@@ -202,7 +206,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     panelCurrentlyHidden = panelHidden[currentDesktop];
     miniPanelHidden = True;
 
-    hide_show_animation = config->readNumEntry("HideShowAnimation", 10);
+    /* Let's read the top speed here: */
+    hide_show_animation = config->readNumEntry("HideShowAnimation", 50);
 
     nbuttons = 0;
     moving_button = 0;
@@ -1189,13 +1194,13 @@ void kPanel::hidePanel(){
     QRect geom = geometry();
     in_animation = true;
     if (orientation == vertical) {
-	for (int i = 0; i<geom.height();i+=hide_show_animation){
+      for (int i = 0; i<geom.height(); i+=PANEL_SPEED(i,geom.height())){
 	    move(geom.x(), geom.y()-i);
 	    qApp->syncX();
 	    qApp->processEvents();
 	}
     } else {
-	for (int i = 0; i<geom.width();i+=hide_show_animation){
+      for (int i = 0; i<geom.width(); i+=PANEL_SPEED(i,geom.width())){
 	    move(geom.x()-i, geom.y());
 	    qApp->syncX();
 	    qApp->processEvents();
@@ -1241,13 +1246,13 @@ void kPanel::showPanel(){
     move(-10000, -10000);
     QFrame::show();
     if (orientation == vertical) {
-	for (int i = geom.height(); i>0;i-=hide_show_animation){
+      for (int i = geom.height(); i>0;i-=PANEL_SPEED(i,geom.height())){
 	    move(geom.x(), geom.y()-i);
 	    qApp->syncX();
 	    qApp->processEvents();
 	}
     } else {
-	for (int i = geom.width(); i>0;i-=hide_show_animation){
+      for (int i = geom.width(); i>0;i-=PANEL_SPEED(i,geom.width())){
 	    move(geom.x()-i, geom.y());
 	    qApp->syncX();
 	    qApp->processEvents();
