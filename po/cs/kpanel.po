@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-09-05 12:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kpanel.C:172
+msgid "Personal menu"
+msgstr "Osobní menu"
+
+#: kpanel.C:180
+msgid "Add application"
+msgstr "Pøidat aplikaci"
+
+#: kpanel.C:182
+msgid "Add special"
+msgstr "Pøidat speciální"
+
+#: kpanel.C:183
+msgid "Configure"
+msgstr "Konfiguruj"
+
+#: kpanel.C:185
+msgid "Configure panel"
+msgstr "Konfiguruj panel"
+
+#: kpanel.C:186
+msgid "Restart"
+msgstr "Spustit znova"
+
+#: kpanel.C:188
+msgid "Panel"
+msgstr "Panel"
+
+#: kpanel.C:190
+msgid "Lock Screen"
+msgstr "Blokovat obrazovku"
+
+#: kpanel.C:192
+msgid "Logout"
+msgstr "Odhlásit"
+
+#: kpanel.C:201
+msgid "Move"
+msgstr "Pøesuò"
+
+#: kpanel.C:202
+msgid "Remove"
+msgstr "Odstraò"
+
+#: kpanel.C:204
+msgid "Properties"
+msgstr "Vlastnosti"
+
+#: kpanel.C:239
+msgid "System"
+msgstr "Systém"
+
+#: kpanel.C:316
+msgid "Desktop"
+msgstr "Pracovní plocha"
+
+#: kpanel.C:348
+msgid "No info available"
+msgstr "Informace není k dispozici"
+
+#: kpanel.C:435 kpanel.C:451
+msgid "Destroy"
+msgstr "Zniè"
+
+#: kpanel.C:438 kpanel.C:448
+msgid "(Un) Sticky"
+msgstr "Pøipevnìní (zapnout/vypnout)"
+
+#: kpanel.C:439 kpanel.C:447
+msgid "(Un) Iconify"
+msgstr "Ikonifikovat/Obnovit"
+
+#: kpanel.C:440 kpanel.C:446
+msgid "(Un) Maximize"
+msgstr "Maximalizovat/Obnovit"
+
+#: kpanel.C:441 kpanel.C:445
+msgid "On this desktop"
+msgstr "Na tuto pracovní plochu"
+
+#: props.C:263
+msgid "Location"
+msgstr "Umístìní"
+
+#: props.C:283
+msgid "Taskbar"
+msgstr "Taskbar"
+
+#: props.C:284
+msgid "Hidden"
+msgstr "Skrytý"
+
+#: props.C:296
+msgid "Top/Left"
+msgstr "Nahoøe/Vlevo"
+
+#: props.C:307
+msgid "Tiny Style"
+msgstr "Drobný"
+
+#: props.C:308
+msgid "Small Style"
+msgstr "Malý"
+
+#: props.C:309
+msgid "Large Style"
+msgstr "Velký"
+
+#: props.C:321
+msgid "Menu Tooltips"
+msgstr "Nápovìdy v menu"
+
+#: props.C:397
+msgid "Visible"
+msgstr "Viditelný"
+
+#: props.C:404
+msgid "Width"
+msgstr "©íøka"
+
+#: props.C:415
+msgid "KPanel Configuration"
+msgstr "Konfigurace KPanelu"
+

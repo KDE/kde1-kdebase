@@ -1,0 +1,87 @@
+#: hexfile.cpp:85
+#, c-format
+msgid "Error opening %s"
+msgstr "Chyba pøi otevírání %s"
+
+#: hexwidget.cpp:23 hexwidget.cpp:60
+msgid "New Window"
+msgstr "Nové okno"
+
+#: hexwidget.cpp:33
+msgid "Toggle Toolbar"
+msgstr "Nástojovou li¹tu zapnout/vypnout"
+
+#: hexwidget.cpp:46
+msgid "&File"
+msgstr "&Soubor"
+
+#: hexwidget.cpp:47
+msgid "&View"
+msgstr "&Pohled"
+
+#: hexwidget.cpp:49
+msgid "&Help"
+msgstr "&Nápovìda"
+
+#: hexwidget.cpp:66
+msgid "Save the file"
+msgstr "Ulo¾ soubor"
+
+#: hexwidget.cpp:70 hexwidget.cpp:73 hexwidget.cpp:76 hexwidget.cpp:80
+msgid "Not implemented"
+msgstr "Není implementováno"
+
+#: hexwidget.cpp:84 hexwidget.cpp:171
+msgid "About Hex Editor"
+msgstr "Informace o Hex Editoru"
+
+#: hexwidget.cpp:114
+msgid ""
+"The current file has been modified.\n"
+"\n"
+"Do you want to save it ?"
+msgstr ""
+"Souèasný soubor byl modifikován..\n"
+"\n"
+"Pøejete si ho ulo¾it?"
+
+#: hexwidget.cpp:137
+msgid "File changed"
+msgstr "Soubor zmìnìn"
+
+#: hexwidget.cpp:138
+msgid "Discard your changes?"
+msgstr "Zru¹it va¹e zmìny?"
+
+#: hexwidget.cpp:170
+msgid ""
+"Hex Editor 0.4 \n"
+"\n"
+"by Stephan Kulow  (coolo@itm.mu-luebeck.de)"
+msgstr ""
+"Hex Editor 0.4 \n"
+"\n"
+"od Stephana Kulowa  (coolo@itm.mu-luebeck.de)"
+
+#: hexwidget.cpp:202
+msgid "Ok"
+msgstr "Ok"
+
+#: hexwidget.cpp:217
+msgid ""
+"KHexdit is already waiting\n"
+"for an internet job to finish\n"
+"\n"
+"Wait until this one is finished\n"
+"or stop the running one."
+msgstr ""
+"KHexdit ji¾ èeká\n"
+"na ukonèení práce s internetem\n"
+"\n"
+"Èekej dokud tato èinnost nebude\n"
+"ukonèena nebo ji zastav."
+
+#: hexwidget.cpp:227
+msgid "Could not start KFM"
+msgstr "Nemohu spustit KFM"
+
