@@ -21,6 +21,7 @@
 #include <dither.h>
 #include <ksimpleconfig.h>
 
+#include "kpixmap.h"
 #include "bg.h"
 #include "bg.moc"
 
@@ -237,9 +238,9 @@ QPixmap *KBackground::loadWallpaper()
     else
 	filename = wallpaper;
 
-    QPixmap *wpPixmap = new QPixmap;
+    KPixmap *wpPixmap = new KPixmap;
 
-    if ( wpPixmap->load( filename ) == FALSE )
+    if ( wpPixmap->load( filename, 0, KPixmap::LowColor ) == FALSE )
     {
 	delete wpPixmap;
 	wpPixmap = 0;
@@ -265,7 +266,7 @@ void KBackground::apply()
 
     QPixmap *wpPixmap = loadWallpaper();
     
-    uint w, h;
+    uint w=0, h=0;
 
     if (wpPixmap) {
 	w = QApplication::desktop()->width();
@@ -287,17 +288,17 @@ void KBackground::apply()
 		if ( QColor::numBitPlanes() > 8 )
 		    numColors = 16;
 		
-		GPixmap pmDesktop;
+		KPixmap pmDesktop;
 		
 		if ( orMode == Portrait ) {
 
-		    pmDesktop.resize( 15, QApplication::desktop()->height() );
-		    pmDesktop.gradientFill( color2, color1, true, numColors );
+		    pmDesktop.resize( 20, QApplication::desktop()->height() );
+		    pmDesktop.gradientFill( color2, color1, true );
 
 		} else {
 
 		    pmDesktop.resize( QApplication::desktop()->width(), 20 );
-		    pmDesktop.gradientFill( color2, color1, false, numColors );
+		    pmDesktop.gradientFill( color2, color1, false );
 		    
 		}
 
