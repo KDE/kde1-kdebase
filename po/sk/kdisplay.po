@@ -289,7 +289,7 @@ msgstr "Nastavenie"
 
 #: scrnsave.cpp:248
 msgid "&Wait for"
-msgstr "Èakaj na"
+msgstr "Èakaj"
 
 #: scrnsave.cpp:258
 msgid "min."
