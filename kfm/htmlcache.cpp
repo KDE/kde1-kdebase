@@ -353,10 +353,7 @@ void HTMLCache::load()
 	  found = true;
 
       if ( !found )
-      {
-	printf("Deleting %s because it is not listed\n", name.data() );
 	unlink( name.data() );
-      }
     }
   }
 }
@@ -368,19 +365,11 @@ void HTMLCache::clear()
     QDictIterator<QString> it( *urlDict );
     for ( ; it.current(); ++it )
 	if ( unlink( it.current()->data() ) == 0 )
-	{
-	    printf("Unlinked '%s' with key '%s'\n",it.current()->data(),it.currentKey() );
 	    todie.append( it.currentKey() );
-	}
-	else
-	    printf("ERROR: Unlinked '%s' with key '%s'\n",it.current()->data(),it.currentKey() );
 
     const char *s;
     for ( s = todie.first(); s != 0L; s = todie.next() )
-    {
-	printf("Removing '%s' from dict\n", s );
 	urlDict->remove( s );
-    }
     
     save();
 }

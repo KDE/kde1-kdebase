@@ -1327,7 +1327,7 @@ void KfmGui::slotAnimatedLogoTimeout()
 
 void KfmGui::slotAddWaitingWidget( KHTMLView *_w )
 {
-    debug( "Adding waiting: %ld, %d", (unsigned long)_w, waitingWidgetList.count() );
+  // debug( "Adding waiting: %ld, %d", (unsigned long)_w, waitingWidgetList.count() );
     if ( waitingWidgetList.findRef( _w ) != -1 )
 	return;
     waitingWidgetList.append( _w );

@@ -98,13 +98,13 @@ int KProtocolICON::Open(KURL * u, int mode)
 	pixmap.load( u->path() );
 	if ( !pixmap.isNull() && !xv.isEmpty() && access( xv, W_OK|R_OK|X_OK ) >= 0 )
 	{
-	  printf("LOADED image %s\n", u->path() );
+	  // printf("LOADED image %s\n", u->path() );
 	  write_xv_file( xvfile, pixmap );
 	  is_avail = TRUE;
 	}
 	else if ( !pixmap.isNull() )
 	{
-	  printf("LOADED 2 image %s\n", u->path() );
+	  // printf("LOADED 2 image %s\n", u->path() );
 	  bDeleteFile = TRUE;
 	  xvfile.sprintf( "%s/share/apps/kfm/tmp/%s.%i.%i", kapp->localkdedir().data(), u->filename(), (int)time( 0L ), (int)getpid() );
 	  is_avail = TRUE;

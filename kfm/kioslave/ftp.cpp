@@ -516,7 +516,7 @@ int KProtocolFTP::OpenDir( KURL *url )
     // Did we get a redirect ?
     if ( path != url->path() || haspath != url->hasPath() )
     {
-	printf("Emit Redirection in kioslave\n");
+      // printf("Emit Redirection in kioslave\n");
 	// Remove password
 	KURL u( *url );
 	u.setPassword("");
@@ -538,7 +538,7 @@ KProtocolDirEntry *KProtocolFTP::ReadDir()
     static KProtocolDirEntry de;
     
     while(fgets(buffer,1024,dirfile) != 0) {
-      printf(">%s",buffer);
+      // printf(">%s",buffer);
       
 	char *p_access, *p_junk, *p_owner, *p_group;
 	char *p_size, *p_date_1, *p_date_2, *p_date_3, *p_name;
@@ -610,10 +610,10 @@ int KProtocolFTP::Connect(KURL *url)
     // ( for example ftp://weis@localhost )
     // So we can expect redirection to the home directory of user weis
     // if ( strcmp( url->path(), "/" ) == 0 && url->user() != 0L && url->user()[0] != 0 && !url->hasPath() )
-    printf("PATH=%s\n",url->path());
+    // printf("PATH=%s\n",url->path());
     if ( !url->hasPath() )
     {
-	printf("NO PATH\n");
+      // printf("NO PATH\n");
 	int ret = ftpLogin( user, passwd, &redirect );
 	// We could login and got a redirect ?
 	if ( ret && !redirect.isEmpty() )
@@ -621,9 +621,9 @@ int KProtocolFTP::Connect(KURL *url)
 	    if ( redirect.right(1) != "/" )
 		redirect += "/";
 	    
-	    printf("REDIRECTION '%s'\n",redirect.data());
+	    // printf("REDIRECTION '%s'\n",redirect.data());
 	    url->cd( redirect.data() );
-	    printf("Now URL is '%s'\n",url->url().data());
+	    // printf("Now URL is '%s'\n",url->url().data());
 	}
 	if ( ret == 1 )
 	    return (SUCCESS);

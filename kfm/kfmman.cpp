@@ -751,10 +751,7 @@ void KFMManager::slotData( const char *_text, int _len)
     {
        len = strlen(char_p);
        if (len > _len)
-       {
           len = _len;
-          printf("KFMManager::slotData(char *data, int _len): strlen(data) > _len\n");
-       }
        _len -= len;
        pageBuffer += char_p;
        if (!bBufferPage)

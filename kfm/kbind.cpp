@@ -1364,7 +1364,7 @@ void KMimeBind::runCmd( const char *_exec, QStrList &_args )
 
 void KMimeBind::runCmd( const char *_cmd )
 {
-    printf("CMD='%s'\n",_cmd );
+  // printf("CMD='%s'\n",_cmd );
     
     char *cmd = new char[ strlen( _cmd ) + 1 ];
     strcpy( cmd, _cmd );
@@ -1425,9 +1425,9 @@ void KMimeBind::runCmd( const char *_cmd )
 	return;
     }
     
-    printf("Running '%s'\n",argv[0] );
+    /* printf("Running '%s'\n",argv[0] );
     for ( int j = 0; j < i; j++ )
-	printf("ARG: '%s'\n",argv[j]);
+	printf("ARG: '%s'\n",argv[j]); */
     
     int pid;
     if ( ( pid = fork() ) == 0 )
@@ -1742,7 +1742,6 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     QString termOptions = config->readEntry( "TerminalOptions" );
     QString icon = config->readEntry( "Icon", "" );
     QString miniicon = config->readEntry( "MiniIcon", "" );
-    printf("icon=%s\n",icon.data());
     
     // At least the executable is needed!
     if ( exec.isEmpty() )

@@ -563,25 +563,20 @@ void KfmView::slotPopupCopy()
 	clipboard->append( s );
 
     // DEBUG
-    for( s = clipboard->first(); s != 0L; s = clipboard->next() )
-      printf("CLIPBOARD: %s\n",s);
-
-
+    /* for( s = clipboard->first(); s != 0L; s = clipboard->next() )
+      printf("CLIPBOARD: %s\n",s); */
 }
 
 void KfmView::slotPopupPaste()
 {
-
-
-
     if ( popupFiles.count() != 1 )
     {
-	QMessageBox::warning( 0, klocale->translate("KFM Error"), 
-			      klocale->translate("Can not paste into multiple directories") );
-	if(KRootWidget::pKRootWidget)
-	  KRootWidget::pKRootWidget->unselectAllIcons();
-
-	return;
+      QMessageBox::warning( 0, klocale->translate("KFM Error"), 
+			    klocale->translate("Can not paste into multiple directories") );
+      if(KRootWidget::pKRootWidget)
+	KRootWidget::pKRootWidget->unselectAllIcons();
+      
+      return;
     }
     
     // Check wether we drop a directory on itself or one of its children
@@ -589,11 +584,11 @@ void KfmView::slotPopupPaste()
     char *s;
     for ( s = clipboard->first(); s != 0L; s = clipboard->next() )
     {
-	int j;
-	if ( ( j = testNestedURLs( s, manager->getURL() ) ) )
-	    if ( j == -1 || ( j > nested && nested != -1 ) )
-		nested = j;
-	}
+      int j;
+      if ( ( j = testNestedURLs( s, manager->getURL() ) ) )
+	if ( j == -1 || ( j > nested && nested != -1 ) )
+	  nested = j;
+    }
     
     if ( nested == -1 )
     {

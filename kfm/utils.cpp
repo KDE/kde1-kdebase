@@ -56,7 +56,7 @@ void openWithOldApplication( const char *_cmd, QStrList& _urlList )
 	while ( ( pos = cmd.find( "%f" )) != -1 )
 	    cmd.replace( pos, 2, tmp );
 	
-	printf("Executuing '%s'\n",cmd.data());
+	// printf("Executuing '%s'\n",cmd.data());
 
 	KMimeBind::runCmd( cmd.data() );
     }
@@ -70,13 +70,13 @@ QString displayName()
 	d[i] = '_';
     if ( d.find( '.' ) == -1 )
 	d += ".0";
-    printf("NAME of DISPLAY = '%s'\n",d.data());
+    // printf("NAME of DISPLAY = '%s'\n",d.data());
     return d;
 }
 
 int testNestedURLs( const char *_src, const char *_dest )
 {
-  printf("int testNestedURLs( _src=%s, _dest=%s )\n",_src,_dest);
+  // printf("int testNestedURLs( _src=%s, _dest=%s )\n",_src,_dest);
   
     // The quick check
     if ( strcmp( _src, _dest ) == 0 )
@@ -120,18 +120,18 @@ int testNestedURLs( const char *_src, const char *_dest )
     // both files
     if ( i == 0 )
     {
-      printf("BOTH files\n");
+      // printf("BOTH files\n");
       return ( strcmp( canonical1, canonical2 ) == 0L ? 2 : 0 );
     }
     
     // One directory and one file ?
     if ( i == 1 )
     {
-      printf("One File\n");
+      // printf("One File\n");
       return 0;
     }
     
-    printf("Two directories\n");
+    // printf("Two directories\n");
     
     // Both directories
     if ( canonical1.right(1) != "/" )

@@ -132,7 +132,6 @@ void KFMJob::openFile(bool _reload)
 void KFMJob::slotRedirection( const char *_url )
 {
     url = _url;
-    printf("Got redirection '%s'\n",_url);
     emit redirection( _url );
 }
 
@@ -224,7 +223,6 @@ void KFMJob::testMimeType( const char *_text, int _len )
     bCheckedMimeType = TRUE;
     
     KMimeMagicResult *result = KMimeType::findBufferType( _text, _len );
-    printf("RETURN '%s' '%i'\n",result->getContent().data(),result->getAccuracy() );
     
     if ( strcmp( "text/html", result->getContent() ) == 0 ) 
     {

@@ -26,7 +26,7 @@ KIOSlave *slave = 0L;
 
 int main(int argc, char **argv)
 {
-    printf("A new kioslave has been started\n");
+  // printf("A new kioslave has been started\n");
     
     if ( argc != 2 )
     {
@@ -52,8 +52,8 @@ void KIOSlave::ProcessError(KProtocol *prot, const char *srcurl)
 
     prot->GetLastError(KError, message, SysError);
 
-    fprintf( stderr, "KIOSlave-ERROR (%s): %s; %s\n",srcurl,message.data(),
-	     strerror(SysError));
+    // fprintf( stderr, "KIOSlave-ERROR (%s): %s; %s\n",srcurl,message.data(),
+    // strerror(SysError));
     ipc->fatalError(KError, srcurl, SysError);
 }
 
@@ -63,7 +63,7 @@ KIOSlave::KIOSlave( char * _path )
     
     if ( !ipc->isConnected() )
     {
-	fprintf( stderr, "Could not connect to KIO om path %s\n", _path );
+//	fprintf( stderr, "Could not connect to KIO om path %s\n", _path );
 	exit(1);
     }
 
@@ -108,7 +108,7 @@ void KIOSlave::mkdir( const char *_url )
     KURL u( _url );
     if ( u.isMalformed() )
     {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
+      // fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
 	return;
     }
@@ -116,7 +116,7 @@ void KIOSlave::mkdir( const char *_url )
     KURL su( u.nestedURL() );
     if ( su.isMalformed() )
     {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
+      // fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
 	return;
     }
@@ -133,7 +133,7 @@ void KIOSlave::mkdir( const char *_url )
     }
     else
     {
-	fprintf( stderr,"ERROR: Not implemented\n");
+      // fprintf( stderr,"ERROR: Not implemented\n");
 	QString err = "Mkdir ";
 	err += _url;
 	ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
@@ -148,7 +148,7 @@ void KIOSlave::list( const char *_url, bool _bHTML )
     KURL u( _url );
     if ( u.isMalformed() )
     {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
+      // fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
 	return;
     }
@@ -160,7 +160,7 @@ void KIOSlave::list( const char *_url, bool _bHTML )
 	su = _url;
     if ( su.isMalformed() )
     {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
+      // fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
 	return;
     }
@@ -183,7 +183,7 @@ void KIOSlave::list( const char *_url, bool _bHTML )
 	    QString msg;
 	    int syserror;
 	    prot->GetLastError( kerror, msg, syserror );
-	    fprintf( stderr, "ERROR: Could not enter '%s'\n",_url );
+	    // fprintf( stderr, "ERROR: Could not enter '%s'\n",_url );
 	    ipc->fatalError( kerror, _url, syserror );
             delete prot;
 	    return;
@@ -228,7 +228,7 @@ void KIOSlave::list( const char *_url, bool _bHTML )
     }
     else
     {
-	fprintf( stderr, "ERROR: Not implemented\n");
+      // fprintf( stderr, "ERROR: Not implemented\n");
 	QString err = "List ";
 	err += _url;
 	ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
@@ -294,7 +294,7 @@ void KIOSlave::del( const char *_url )
     KURL u( _url );
     if ( u.isMalformed() )
     {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
+      // fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
 	return;
     }
@@ -319,7 +319,7 @@ void KIOSlave::del( const char *_url )
 	
 	if ( erg != 0 )
 	{
-	    fprintf( stderr, "ERROR: Could not delete '%s'\n",_url );
+	  // fprintf( stderr, "ERROR: Could not delete '%s'\n",_url );
 	    ipc->fatalError( KIO_ERROR_CouldNotDelete, _url, errno );
 	    return;
 	}
@@ -384,7 +384,7 @@ void KIOSlave::del( const char *_url )
 
 	if ( !erg )
 	{
-	    fprintf( stderr, "ERROR: Could not delete '%s'\n",_url );
+	  // fprintf( stderr, "ERROR: Could not delete '%s'\n",_url );
 	    ipc->fatalError( KIO_ERROR_CouldNotDelete, _url, errno );
 	    return;
 	}
@@ -392,7 +392,7 @@ void KIOSlave::del( const char *_url )
 #endif
     else
     {
-		fprintf( stderr, "ERROR: Not implemented\n");
+      // fprintf( stderr, "ERROR: Not implemented\n");
 		QString err = "Delete ";
 		err += _url;
 		ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
@@ -408,7 +408,7 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
     KURL u( _src_url );
     if ( u.isMalformed() )
     {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_src_url );
+      // fprintf( stderr, "ERROR: Malformed URL '%s'\n",_src_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _src_url, 0 );
 	return;
     }
@@ -416,7 +416,7 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
     KURL su( u.nestedURL() );
     if ( su.isMalformed() )
     {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_src_url );
+      // fprintf( stderr, "ERROR: Malformed URL '%s'\n",_src_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _src_url, 0 );
 	return;
     }
@@ -424,14 +424,14 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
     KURL u2( _dest_url );
     if ( u2.isMalformed() )
     {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_dest_url );
+      // fprintf( stderr, "ERROR: Malformed URL '%s'\n",_dest_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _dest_url, 0 );
 	return;
     }
     KURL du( u2.nestedURL() );
     if ( du.isMalformed() )
     {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_dest_url );
+      // fprintf( stderr, "ERROR: Malformed URL '%s'\n",_dest_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _dest_url, 0 );
 	return;
     }
@@ -465,7 +465,7 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 		{
 			if ( ( l = src_prot->Read( buffer, 4096 ) ) < 0 )
 			{
-			    fprintf( stderr, "read error (%ld)\n", l );
+			  // fprintf( stderr, "read error (%ld)\n", l );
 			    ProcessError(src_prot, _src_url);
 			    return;
 			}
@@ -495,7 +495,7 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
     }
     else
     {
-		fprintf( stderr, "ERROR: Not implemented\n");
+      // fprintf( stderr, "ERROR: Not implemented\n");
 		QString err = "Copy ";
 		err += _src_url;
 		err += " to ";
@@ -522,7 +522,7 @@ void KIOSlave::get( const char *_url, bool _reload, const char *_data )
   KURL u( _url );
   if ( u.isMalformed() )
   {
-    fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
+    // fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
     ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
     return;
   }
@@ -530,7 +530,7 @@ void KIOSlave::get( const char *_url, bool _reload, const char *_data )
   KURL su( u.nestedURL() );
   if ( su.isMalformed() )
   {
-    fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
+    // fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
     ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
 	return;
   }
@@ -567,7 +567,7 @@ void KIOSlave::get( const char *_url, bool _reload, const char *_data )
     {
       if ( ( l = src_prot->Read( buffer, 1024 ) ) < 0)
       {
-	fprintf( stderr, "read error (%ld)\n",l);
+	// fprintf( stderr, "read error (%ld)\n",l);
 	ProcessError(src_prot, _url);
 	return;
       }
@@ -589,7 +589,7 @@ void KIOSlave::get( const char *_url, bool _reload, const char *_data )
   }
   else
   {
-    fprintf( stderr, "ERROR: Not implemented\n");
+    // fprintf( stderr, "ERROR: Not implemented\n");
     QString err = "GET ";
     err += _url;
     ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
@@ -673,7 +673,7 @@ void sig_handler2( int )
 
 void sig_handler(int _sig)
 {
-    fprintf( stderr, "KIOSLAVE GOT TERM\n");
+  // fprintf( stderr, "KIOSLAVE GOT TERM\n");
     if ( _sig == SIGTERM )
 	if ( slave != 0L )
 	    slave->terminate();

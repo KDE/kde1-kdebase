@@ -166,7 +166,7 @@ bool Kfm::saveHTMLHistory( const char *_filename )
 
 void Kfm::slotInstallSegfaultHandler()
 {
-  printf("+++++++++++++++++++++ INSTALLING SIGSEGV handler +++++++++++++++++\n");
+  // printf("+++++++++++++++++++++ INSTALLING SIGSEGV handler +++++++++++++++++\n");
   
   signal( SIGSEGV, sig_segv_handler );
 }
@@ -184,8 +184,8 @@ void sig_segv_handler( int )
   
   QString kfm = kapp->kde_bindir().data();
   kfm += "/kfm &";                           // sven: run in background
-  system (kfm.data());                       // sven: tell shell to do it.
-  //execl( kfm.data(), 0L );
+  system ( kfm.data() );                     // sven: tell shell to do it.
+
   exit (0);                                  // exit clean.
 }
 

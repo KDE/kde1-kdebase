@@ -55,7 +55,7 @@ KIOJob::~KIOJob()
 {
   if ( slave != 0L )
   {
-    printf("################# WARNING: KIOJOB destructor has still kioslave ################\n");
+    // printf("################# WARNING: KIOJOB destructor has still kioslave ################\n");
     disconnect( server, 0, this, 0 );
     disconnect( slave, 0, this, 0 );
     server->freeSlave( slave );
@@ -424,7 +424,7 @@ void KIOJob::copy( QStrList & _src_url_list, const char *_dest_dir_url )
 	    d += "/";
 	d += enc;
 
-	printf("############# COPY '%s' to '%s'\n", tmp.data(), d.data());
+	// printf("############# COPY '%s' to '%s'\n", tmp.data(), d.data());
     
 	tmpDestURLList.append( d.data() );
 	tmpSrcURLList.append( tmp.data() );
@@ -452,7 +452,7 @@ void KIOJob::copy( const char *_src_url, const char *_dest_url )
       tmp.truncate( tmp.length() - 1 );
     tmpDestURLList.append( tmp );
 
-    printf("############# COPY '%s' to '%s'\n", _src_url, _dest_url);
+    // printf("############# COPY '%s' to '%s'\n", _src_url, _dest_url);
     
     copy();
 }
@@ -489,7 +489,7 @@ void KIOJob::copy()
 	    {
 	      // Get the new destinations name
 	      tmp = r->getNewName();
-	      printf("Got '%s'\n",tmp.data());
+	      // printf("Got '%s'\n",tmp.data());
 	      if ( tmp.right(1) == "/" )
 		tmp.truncate( tmp.length() - 1 );
 	      KURL du( tmp.data() );
@@ -503,7 +503,7 @@ void KIOJob::copy()
 	      done();
 	      return;
 	    }
-	    printf("Now '%s' '%s'\n",p,p2);
+	    // printf("Now '%s' '%s'\n",p,p2);
 	  }
 	  while ( strcmp( p, p2 ) == 0 );
 	}
@@ -542,7 +542,7 @@ void KIOJob::copy()
 	    stat( supath.data(), &buff );
 	    if ( S_ISDIR( buff.st_mode ) )
 	    {
-	        printf("??????? Is directory '%s'\n",p);
+	      // printf("??????? Is directory '%s'\n",p);
 		if ( ::mkdir( dupath.data(), buff.st_mode ) == -1 )
                 {    
 		    if ( errno != EEXIST )
@@ -553,8 +553,8 @@ void KIOJob::copy()
 			return;
 		    }
 		}
-		else
-		  printf("?? Making of directory ok\n");
+		/* else
+		  printf("?? Making of directory ok\n"); */
 		
 		DIR *dp;
 		struct dirent *ep;
@@ -589,7 +589,7 @@ void KIOJob::copy()
 			
 			cmSrcURLList.append( s.data() );
 			cmDestURLList.append( d.data() );
-			printf("Adding '%s' -> '%s'\n", s.data(), d.data() );
+			// printf("Adding '%s' -> '%s'\n", s.data(), d.data() );
 		    }
 		}
 		
@@ -705,7 +705,7 @@ void KIOJob::move()
 	    {
 	      // Get the new destinations name
 	      tmp = r->getNewName();
-	      printf("Got '%s'\n",tmp.data());
+	      // printf("Got '%s'\n",tmp.data());
 	      if ( tmp.right(1) == "/" )
 		tmp.truncate( tmp.length() - 1 );
 	      du = tmp.data();
@@ -719,7 +719,7 @@ void KIOJob::move()
 	      done();
 	      return;
 	    }
-	    printf("Now '%s' '%s'\n",p,p2);
+	    // printf("Now '%s' '%s'\n",p,p2);
 	  }
 	  while ( strcmp( p, p2 ) == 0 );
 	}
@@ -1175,7 +1175,7 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
     kioError = _kioerror;
     
     // TODO: Remove before final release
-    printf("################################# fatalError called '%s'\n",_error);
+    // printf("################################# fatalError called '%s'\n",_error);
     
     // We have to delete the password!!! ( if there is one )
     QString url( _error );
@@ -1837,8 +1837,8 @@ void KIOJob::slotDirEntry( const char *_url, const char *_name, bool _isDir, int
 
 	emit newDirEntry( id, &e );
     }
-    else
-	printf("Does not fit '%s' '%s'\n",lstURL.data(),_url);
+    /* else
+	printf("Does not fit '%s' '%s'\n",lstURL.data(),_url); */
 }
 
 
@@ -1860,7 +1860,7 @@ void KIOJob::slotData( IPCMemory _mem )
 
 void KIOJob::slotRedirection( const char *_url )
 {
-    printf("KIOJOB::redirection\n");
+  // printf("KIOJOB::redirection\n");
     if ( action == JOB_LIST )
     {
 	KURL u( _url );
@@ -1886,10 +1886,10 @@ void KIOJob::cancel()
 {
     server->removeJob( this );
 
-    printf("**********A\n");
+    // printf("**********A\n");
     if ( slave )
     {
-	printf("Killing slave\n");
+      // printf("Killing slave\n");
 	KIOSlaveIPC *s = slave;
 	slave = 0L;
 	pid_t p = (pid_t)s->pid;    
@@ -1906,13 +1906,13 @@ void KIOJob::cancel()
 
 void KIOJob::done()
 {
-    printf("Done\n");
+  // printf("Done\n");
 
     server->removeJob( this );
     
     if ( slave != 0L )
     {
-	printf("Handing slave back\n");
+      // printf("Handing slave back\n");
 	disconnect( server, 0, this, 0 );
 	disconnect( slave, 0, this, 0 );
 	server->freeSlave( slave );

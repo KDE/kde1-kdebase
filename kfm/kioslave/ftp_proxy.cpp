@@ -40,7 +40,7 @@ KProtocolProxyFTP::KProtocolProxyFTP () {
     if ( tmp == "Yes" ) { // Do we need proxy?
         proxyStr = prxcnf.readEntry( "FTP-Proxy" );
         proxyURL = proxyStr.data();
-        printf( "Using ftp proxy %s on port %d\n", proxyURL.host(), proxyURL.port() );
+        // printf( "Using ftp proxy %s on port %d\n", proxyURL.host(), proxyURL.port() );
         port = proxyURL.port();
 	if ( port == 0 )
 	    port = 80;
@@ -127,17 +127,17 @@ int KProtocolProxyFTP::OpenProxy(KURL *_url, int mode, bool _reload)
 //	    }
        	    if ( ! noProxyForStr.isEmpty() ) 
 	    {
-                printf( "host: %s\n", _url->host() );
-		printf( "nplist: %s\n", noProxyForStr.data() );
+	      // printf( "host: %s\n", _url->host() );
+	      // printf( "nplist: %s\n", noProxyForStr.data() );
 	        do_proxy = !revmatch( _url->host(), noProxyForStr.data() );    
 	    }
 	}
 
 	if(do_proxy)
 	{
-                printf("FTP::Open: connecting to proxy %s:%d\n",
-		       inet_ntoa(proxy_name.sin_addr),
-		       ntohs(proxy_name.sin_port));
+	  // printf("FTP::Open: connecting to proxy %s:%d\n",
+	  // inet_ntoa(proxy_name.sin_addr),
+	  // ntohs(proxy_name.sin_port));
 		if(::connect(sock,(struct sockaddr*)(&proxy_name),sizeof(proxy_name)))
 		{
 	    	Error(KIO_ERROR_CouldNotConnect,"Could not connect to proxy",errno);
@@ -157,9 +157,9 @@ int KProtocolProxyFTP::OpenProxy(KURL *_url, int mode, bool _reload)
 			return(FAIL);
 		}
 
-                printf("ProxyFTP::Open: connecting to %s:%d\n",
-		       inet_ntoa(server_name.sin_addr),
-		       ntohs(server_name.sin_port));
+                // printf("ProxyFTP::Open: connecting to %s:%d\n",
+		// inet_ntoa(server_name.sin_addr),
+		// ntohs(server_name.sin_port));
 		if(::connect(sock,(struct sockaddr*)(&server_name),sizeof(server_name)))
 		{
 	    	Error(KIO_ERROR_CouldNotConnect, "Could not connect host", errno);

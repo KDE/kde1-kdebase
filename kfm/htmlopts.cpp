@@ -369,19 +369,22 @@ void KMiscOptions::readOptions()
 void KMiscOptions::getMiscOpts(struct rootoptions& rootopts)
 {
   if(gridwidth != (hspin->getValue()  + DEFAULT_GRID_MIN) || 
-     gridheight != (vspin->getValue() + DEFAULT_GRID_MIN) ) {
-    printf( "Grid changed!\n" );
+     gridheight != (vspin->getValue() + DEFAULT_GRID_MIN) )
+  {
     changed = true;
   }
-  if(transparent != iconstylebox->isChecked()) {
+  if(transparent != iconstylebox->isChecked())
+  {
     changed = true;
   }
 
   rootopts.gridwidth = hspin->getValue()+DEFAULT_GRID_MIN;
   rootopts.gridheight = vspin->getValue()+DEFAULT_GRID_MIN;
 
-  if(iconstylebox->isChecked()) rootopts.iconstyle = 1;
-  else							rootopts.iconstyle = 0;
+  if (iconstylebox->isChecked())
+    rootopts.iconstyle = 1;
+  else
+    rootopts.iconstyle = 0;
 
   rootopts.changed = changed;
 }

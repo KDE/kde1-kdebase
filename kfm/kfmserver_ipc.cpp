@@ -17,7 +17,7 @@ KfmIpcServer::KfmIpcServer()
     serv_sock = new KServerSocket( idir.data() );
     if ( serv_sock->socket() < 0 )
     {
-	printf("ERROR: Could not establish server socket\n");
+	fprintf( stderr, "ERROR: Could not establish server socket\n");
 	exit(1);
     }
     connect( serv_sock, SIGNAL( accepted(KSocket*) ), 
@@ -71,7 +71,7 @@ void KfmIpc::readEvent( KSocket * )
         {
 	  if ( errno == EINTR )
 	    goto next;
-	  warning("ERROR: KIOSlaveIPC::readEvent\n");
+	  fprintf( stderr, "ERROR: KIOSlaveIPC::readEvent\n");
 	  delete this;
 	  return;
         }
@@ -84,7 +84,7 @@ void KfmIpc::readEvent( KSocket * )
 	    cBody = 0;
 	    if ( bodyLen <= 0 )
 	    {
-		printf("ERROR: Invalid header\n");
+		fprintf( stderr, "ERROR: Invalid header\n");
 		delete this;
 		return;
 	    }
@@ -94,7 +94,7 @@ void KfmIpc::readEvent( KSocket * )
 	}
 	else if ( cHeader + n == 10 )
 	{
-	    printf("ERROR: Too long header\n");
+	    fprintf( stderr, "ERROR: Too long header\n");
 	    delete this;
 	    return;
 	}
@@ -102,7 +102,7 @@ void KfmIpc::readEvent( KSocket * )
 	{
 	    if ( !isdigit( headerBuffer[ cHeader ] ) )
 	    {
-		printf("ERROR: Header must be an int\n");
+		fprintf( stderr, "ERROR: Header must be an int\n");
 		delete this;
 		return;
 	    }
@@ -118,7 +118,7 @@ next2:
     {
       if ( errno == EINTR )
 	goto next2;
-      warning("ERROR: KIOSlaveIPC::readEvent\n");
+      fprintf( stderr, "ERROR: KIOSlaveIPC::readEvent\n");
       delete this;
       return;
     }

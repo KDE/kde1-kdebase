@@ -792,10 +792,8 @@ QString KIOServer::canonicalURL( const char *_url )
 
 void KIOServer::slotTimer()
 {
-  printf("============================== void KIOServer::slotTimer() ==============\n");
-  
-  if ( KIOJob::jobList->count() > 0 )
-    printf("====================== ATTENTION: KIOJob memory lack %i ===============\n", KIOJob::jobList->count());
+  /*  if ( KIOJob::jobList->count() > 0 )
+    printf("====================== ATTENTION: KIOJob memory lack %i ===============\n", KIOJob::jobList->count()); */
     
   QList<KIOSlaveIPC> list = freeSlaves;
  
@@ -806,12 +804,13 @@ void KIOServer::slotTimer()
   {
     if ( t - p->m_time > 10 )
     {
-      printf("!!!!!!!!!!!!!!!!!!!!!!!!! KIOSLAVE TIMEOUT !!!!!!!!!!!!!!!!!!\n");
       pid_t pid = (pid_t)p->pid;    
       freeSlaves.removeRef( p );
       delete p;
-      if (pid<=0) printf("kioslave pid is =0, I don't want to hurt myself\n");
-      else{
+      if ( pid <= 0 )
+	printf("kioslave pid is =0, I don't want to hurt myself\n");
+      else
+      {
         kill( pid, SIGTERM );
         int status;
         waitpid( pid, &status, 0 );
