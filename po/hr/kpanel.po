@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,142 +21,78 @@ msgstr "Premjesti"
 msgid "Properties"
 msgstr "Postavke"
 
-#: kpanel.C:253
+#: kpanel.C:252
 msgid "Go!"
-msgstr ""
+msgstr "Idi!"
 
-#: kpanel.C:256 tools.C:795
+#: kpanel.C:254 tools.C:797
 msgid "Where do you want to go tomorrow?"
-msgstr ""
+msgstr "Gdje ¾elite iæi sutra?"
 
-#: kpanel.C:329
+#: kpanel.C:327
 msgid "No info available"
-msgstr "Nema raspoloživih informacija"
+msgstr "Nema raspolo¾ivih informacija"
 
-#: kpanel.C:368 props.C:156 props.C:157
+#: kpanel.C:366 props.C:151 props.C:152
 msgid "Logout"
 msgstr "Odjava"
 
-#: kpanel.C:376 props.C:155
+#: kpanel.C:374 props.C:150
 msgid "Lock screen"
 msgstr "Zakljuèaj ekran"
 
-#: kpanel.C:385
+#: kpanel.C:383
 msgid "Hide the panel"
 msgstr "Sakrij Ploèu"
 
-#: kpanel.C:395
+#: kpanel.C:393
 msgid "Show the panel"
-msgstr "Prikaži ploèu"
+msgstr "Prika¾i ploèu"
 
-#: kpanel.C:1093 tools.C:611
+#: kpanel.C:1092 tools.C:613
 msgid "No comment available"
-msgstr "Nema raspoloživih komentara"
+msgstr "Nema raspolo¾ivih komentara"
 
-#: kpanel.C:1102 tools.C:804
+#: kpanel.C:1101 tools.C:806
 msgid "Windowlist"
 msgstr "Lista prozora"
 
-#: props.C:136
+#: props.C:134
 msgid "Add application"
 msgstr "Dodaj aplikaciju"
 
-#: props.C:138
+#: props.C:136
 msgid "Add an application or a submenu onto the panel"
 msgstr "Dodaj aplikaciju ili podizbornik na ploèu"
 
-#: props.C:139
+#: props.C:137
 msgid "Add windowlist"
 msgstr "Dodaj listu prozora"
 
-#: props.C:141
+#: props.C:139
 msgid "Add a windowlist menu onto the panel"
 msgstr "Dodaj izbornik liste prozora na ploèu"
 
-#: events.C:705 props.C:142
+#: events.C:705 props.C:140
 msgid "Configure"
 msgstr "Promijeni postavu"
 
-#: props.C:144
+#: props.C:142
 msgid "Configure panel"
 msgstr "Promijeni postavu ploèe"
 
-#: props.C:145
-msgid "Edit Menus"
-msgstr ""
-
-#: props.C:147
-msgid "Add or remove applications in the menu structure "
-msgstr ""
-
-#: events.C:707 props.C:148
+#: events.C:707 props.C:143
 msgid "Restart"
 msgstr "Pokreni ponovo"
 
-#: props.C:150
+#: props.C:145
 msgid "Restart panel"
 msgstr "Pokreni ponovo ploèu"
 
-#: props.C:151
+#: props.C:146
 msgid "Panel"
-msgstr "ploèa"
+msgstr "Ploèa"
 
-#: props.C:153
+#: props.C:148
 msgid "Lock Screen"
 msgstr "Zakljuèaj Ekran"
-
-#: props.C:307
-msgid "The menu editor is not installed."
-msgstr ""
-
-#: events.C:743 props.C:308
-msgid "Oops!"
-msgstr ""
-
-#: events.C:742
-msgid "Cannot put this as button onto the panel!"
-msgstr ""
-
-#~ msgid "Location"
-#~ msgstr "Mjesto"
-
-#~ msgid "Taskbar"
-#~ msgstr "Traka sa zadaæama"
-
-#~ msgid "Hidden"
-#~ msgstr "Sakriven"
-
-#~ msgid "Top/Left"
-#~ msgstr "Gore/Lijevo"
-
-#~ msgid "Tiny Style"
-#~ msgstr "Sièušni Stil"
-
-#, fuzzy
-#~ msgid "Normal Style"
-#~ msgstr "Mali Stil"
-
-#~ msgid "Large Style"
-#~ msgstr "Veliki Stil"
-
-#, fuzzy
-#~ msgid "Auto Hide Panel"
-#~ msgstr "Sakrij Ploèu"
-
-#~ msgid "Visible"
-#~ msgstr "Vidljiv"
-
-#~ msgid "Width"
-#~ msgstr "širina"
-
-#~ msgid "Desktops"
-#~ msgstr "Radne površine"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "Postava K Ploèe"
-
-#~ msgid "Remove"
-#~ msgstr "Ukloni"
-
-#~ msgid "System"
-#~ msgstr "Sistem"

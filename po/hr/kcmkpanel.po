@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-03-19 22:18+0100\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -82,18 +82,16 @@ msgid "&Visible"
 msgstr "&Vidljivo"
 
 #: desktops.cpp:82
-#, fuzzy
 msgid "&Width"
-msgstr "©irina"
+msgstr "©&irina"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
 msgstr "Savjet u izborniku"
 
 #: options.cpp:39
-#, fuzzy
 msgid "Show &Menu Tooltips"
-msgstr "Savjet u izborniku"
+msgstr "Savjet u &izborniku"
 
 #: options.cpp:44
 msgid "De&lay:"
@@ -108,19 +106,16 @@ msgid "Others"
 msgstr "Drugi"
 
 #: options.cpp:69
-#, fuzzy
 msgid "Personal &First"
-msgstr "Osobne Prvo"
+msgstr "Osobne &Prvo"
 
 #: options.cpp:71
-#, fuzzy
 msgid "Auto &Hide Panel"
-msgstr "Automatski Sakrij Ploèu"
+msgstr "&Automatski Sakrij Ploèu"
 
 #: options.cpp:73
-#, fuzzy
 msgid "Auto Hide &Taskbar"
-msgstr "Auto. Sakrij Traku Sa Zadacima"
+msgstr "Auto. Sakrij Traku Sa &Zadacima"
 
 #: options.cpp:81
 msgid "Clock"

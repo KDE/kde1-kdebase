@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -70,7 +70,7 @@ msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
 msgstr ""
-"Ne mogu kreirati:\n"
+"Ne mogu naèiniti:\n"
 " ~/.kde/share/config/kdefonts\n"
 
 #: kfontmanager.cpp:294
@@ -81,7 +81,7 @@ msgid ""
 msgstr ""
 "~/.kde/share/config/kdefonts postoji\n"
 "ali ne mogu pisati u njega\n"
-"Ne mogu pospremiti KDE listu pisama."
+"Ne mogu pospremiti KDEovu listu pisama."
 
 #: kfontlist.cpp:62
 msgid ""

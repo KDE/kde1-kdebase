@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
@@ -17,43 +17,7 @@ msgstr "Direktoriji:"
 msgid "Cannot open or read directory."
 msgstr "Ne mogu otvoriti ili èitati direktorij."
 
-#: kfindtop.cpp:115
-msgid "&Open"
-msgstr "&Otvori"
-
-#: kfindtop.cpp:117
-msgid "&Add to archive"
-msgstr "&Dodaj u arhivu"
-
-#: kfindtop.cpp:122
-msgid "&Properties"
-msgstr "&Svojstva"
-
-#: kfindtop.cpp:125
-msgid "Open Containing &Folder"
-msgstr "Otvori sadr¾ani &direktorij"
-
-#: kfindtop.cpp:128
-msgid "&Save Search"
-msgstr "Sni&mi pretra¾ivanje"
-
-#: kfindtop.cpp:140
-msgid "&Cut"
-msgstr "&Izre¾i"
-
-#: kfindtop.cpp:145
-msgid "&Select All"
-msgstr "&Oznaèi sve"
-
-#: kfindtop.cpp:147
-msgid "&Invert Selection"
-msgstr "&Inverzija oznaèenog"
-
-#: kfindtop.cpp:158
-msgid "&Preferences ..."
-msgstr "Po&de¹avanja"
-
-#: kfindtop.cpp:163
+#: kfindtop.cpp:118
 #, c-format
 msgid ""
 "KFind %s\n"
@@ -70,179 +34,223 @@ msgstr ""
 "Posebna zahvala Stephanu Kulowu\n"
 "<ycoolo@kde.org>"
 
+#: kfindtop.cpp:136
+msgid "&Open"
+msgstr "&Otvori"
+
+#: kfindtop.cpp:138
+msgid "&Add to archive"
+msgstr "&Dodaj u arhivu"
+
+#: kfindtop.cpp:143
+msgid "&Properties"
+msgstr "&Svojstva"
+
+#: kfindtop.cpp:146
+msgid "Open Containing &Folder"
+msgstr "Otvori sadr¾ani &direktorij"
+
+#: kfindtop.cpp:149
+msgid "&Save Search"
+msgstr "Sni&mi pretra¾ivanje"
+
+#: kfindtop.cpp:161
+msgid "&Cut"
+msgstr "&Izre¾i"
+
+#: kfindtop.cpp:166
+msgid "&Select All"
+msgstr "&Oznaèi sve"
+
+#: kfindtop.cpp:168
+msgid "&Invert Selection"
+msgstr "&Inverzija oznaèenog"
+
+#: kfindtop.cpp:179
+msgid "&Preferences ..."
+msgstr "Po&de¹avanja"
+
 #: kfindtop.cpp:183
+msgid "Kfind &help"
+msgstr "Kfind &pomoæ"
+
+#: kfindtop.cpp:186
+msgid "About &Qt"
+msgstr "O &Qtu"
+
+#: kfindtop.cpp:206
 msgid "Start Search"
 msgstr "Pokreni pretragu"
 
-#: kfindtop.cpp:188
+#: kfindtop.cpp:211
 msgid "New Search"
 msgstr "Novo pretra¾ivanje"
 
-#: kfindtop.cpp:193
+#: kfindtop.cpp:216
 msgid "Stop Search"
 msgstr "Zaustavi pretragu"
 
-#: kfindtop.cpp:206
+#: kfindtop.cpp:229
 msgid "Add to archive"
 msgstr "Dodaj u arhivu"
 
-#: kfindtop.cpp:216
+#: kfindtop.cpp:239
 msgid "Properties"
 msgstr "Svojstva"
 
-#: kfindtop.cpp:221
+#: kfindtop.cpp:244
 msgid "Open Containing Folder"
 msgstr "Otvori sadr¾ani direktorij"
 
-#: kfindtop.cpp:226
+#: kfindtop.cpp:249
 msgid "Save Search Results"
 msgstr "Spremi rezultate pretrage"
 
-#: kftabdlg.cpp:47
+#: kftabdlg.cpp:48
 msgid "&Named:"
 msgstr "Im&e:"
 
-#: kftabdlg.cpp:50
+#: kftabdlg.cpp:51
 msgid "&Look in:"
 msgstr "Pot&ra¾i u:"
 
-#: kftabdlg.cpp:53
+#: kftabdlg.cpp:54
 msgid "&Browse ..."
 msgstr "Po&tra¾i..."
 
-#: kftabdlg.cpp:65
+#: kftabdlg.cpp:66
 msgid "Include &subfolders"
 msgstr "Ukljuèi &poddirektorije"
 
-#: kftabdlg.cpp:95
+#: kftabdlg.cpp:96
 msgid " Name& Location "
 msgstr " Ime i mjesto "
 
-#: kftabdlg.cpp:107
+#: kftabdlg.cpp:108
 msgid "and"
 msgstr "i"
 
-#: kftabdlg.cpp:108
+#: kftabdlg.cpp:109
 msgid "month(s)"
 msgstr "mjeseca"
 
-#: kftabdlg.cpp:109
+#: kftabdlg.cpp:110
 msgid "day(s)"
 msgstr "dana"
 
-#: kftabdlg.cpp:115
+#: kftabdlg.cpp:116
 msgid "&All files"
 msgstr "&Sve datoteke"
 
-#: kftabdlg.cpp:116
+#: kftabdlg.cpp:117
 msgid "Find all files created or &modified:"
 msgstr "Naði sve datoteke naèinjene ili &mijenjane:"
 
-#: kftabdlg.cpp:117
+#: kftabdlg.cpp:118
 msgid "&between"
 msgstr "izmeð&u"
 
-#: kftabdlg.cpp:118
+#: kftabdlg.cpp:119
 msgid "during the previou&s "
 msgstr "tijekom prethodno&g"
 
-#: kftabdlg.cpp:119
+#: kftabdlg.cpp:120
 msgid "&during the previous "
 msgstr "prili&kom prethodnog "
 
-#: kftabdlg.cpp:167
+#: kftabdlg.cpp:168
 msgid " Date Modified "
 msgstr " Datum promjene "
 
-#: kftabdlg.cpp:173
+#: kftabdlg.cpp:174
 msgid "Of &type:"
 msgstr "&Tipa:"
 
-#: kftabdlg.cpp:175
+#: kftabdlg.cpp:176
 msgid "&Containing Text:"
 msgstr "&Tra¾eni tekst:"
 
-#: kftabdlg.cpp:178
+#: kftabdlg.cpp:179
 msgid "&Size is:"
 msgstr "Ve&lièina je:"
 
-#: kftabdlg.cpp:201
+#: kftabdlg.cpp:202
 msgid "All Files and Folders"
 msgstr "Sve datoteke i direktorije"
 
-#: kftabdlg.cpp:209
+#: kftabdlg.cpp:210
 msgid "At Least"
 msgstr "Barem"
 
-#: kftabdlg.cpp:210
+#: kftabdlg.cpp:211
 msgid "At Most"
 msgstr "Najvi¹e"
 
-#: kftabdlg.cpp:217
+#: kftabdlg.cpp:218
 msgid " Advanced "
 msgstr " Napredno "
 
-#: kftabdlg.cpp:389
+#: kftabdlg.cpp:390
 msgid "The date is not valid!!"
 msgstr "Datum nije ispravan!!"
 
-#: kftabdlg.cpp:401
+#: kftabdlg.cpp:402
 msgid "The month(s) value isn't valid!!"
 msgstr "Mjesec nije ispravan!!"
 
-#: kftabdlg.cpp:412
+#: kftabdlg.cpp:413
 msgid "The day(s) value isn't valid!!"
 msgstr "Dan nije ispravan!!"
 
-#: kftabdlg.cpp:429
+#: kftabdlg.cpp:430
 msgid "The value in size isn't valid number!!"
 msgstr "Vrijednost velièine nije ispravna!!"
 
-#: kfoptions.cpp:51
+#: kfoptions.cpp:54
 msgid "Preferences"
 msgstr "Pode¹avanja"
 
-#: kfoptions.cpp:73
+#: kfoptions.cpp:76
 msgid "File format:"
 msgstr "Format datoteke:"
 
-#: kfoptions.cpp:75
+#: kfoptions.cpp:78
 msgid "Save results to file:"
 msgstr "Spremi rezultate u datoteku:"
 
-#: kfoptions.cpp:78
+#: kfoptions.cpp:81
 msgid "Save results to file ~/.kfind-results.html"
 msgstr "Spremi rezultate u datoteku ~/.kfind-results.html"
 
-#: kfoptions.cpp:80
+#: kfoptions.cpp:83
 msgid "Browse"
 msgstr "Potra¾i"
 
-#: kfoptions.cpp:93
+#: kfoptions.cpp:96
 msgid "Plain Text"
 msgstr "Èisti tekst"
 
-#: kfoptions.cpp:122
+#: kfoptions.cpp:125
 msgid "Saving"
 msgstr "Snimam"
 
-#: kfoptions.cpp:129
+#: kfoptions.cpp:132
 msgid "Create Archive:"
 msgstr "Naèini arhivu:"
 
-#: kfoptions.cpp:131
+#: kfoptions.cpp:134
 msgid "Add to Archive:"
 msgstr "Dodaj u arhivu:"
 
-#: kfoptions.cpp:135
+#: kfoptions.cpp:138
 msgid "Patterns:"
 msgstr "Uzorci:"
 
-#: kfoptions.cpp:138
+#: kfoptions.cpp:141
 msgid "Add New"
 msgstr "Dodaj novi"
 
-#: kfoptions.cpp:179
+#: kfoptions.cpp:182
 msgid "Archivers"
 msgstr "Arhiveri"
 
@@ -319,13 +327,6 @@ msgstr "Ne prepoznajem vrstu arhive!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Gre¹ka prilikom kreiranja nasljednog procesa!"
-
-#~ msgid "Kfind &help"
-#~ msgstr "Kfind &pomoæ"
-
-#, fuzzy
-#~ msgid "About &Qt"
-#~ msgstr "&O programu"
 
 #~ msgid "&Copy"
 #~ msgstr "&Kopiraj"

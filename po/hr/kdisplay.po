@@ -2,262 +2,249 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 1997-11-08 23:50+0100\n"
+"PO-Revision-Date: 1998-03-15 20:00-0500\n"
+"Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
+"Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Transfer-Encoding: iso-8859-2\n"
 
-#: backgnd.cpp:57
+
+#: backgnd.cpp:59
 msgid "Enter new desktop name"
-msgstr ""
+msgstr "Unesi ime radne povr¹ine"
 
-#: backgnd.cpp:113 backgnd.cpp:148
+#: backgnd.cpp:112 backgnd.cpp:147
 msgid "Desktop"
-msgstr ""
+msgstr "Radna povr¹ina"
 
-#: backgnd.cpp:165
+#: backgnd.cpp:162
 msgid "&Rename ..."
-msgstr ""
+msgstr "&Preimenuj ..."
 
-#: backgnd.cpp:191 colorscm.cpp:93
-#, fuzzy
+#: backgnd.cpp:182 colorscm.cpp:90
 msgid "Colors"
-msgstr "Boja"
+msgstr "Boje"
 
-#: backgnd.cpp:218
-#, fuzzy
+#: backgnd.cpp:205
 msgid "&One Color"
-msgstr "Boja"
+msgstr "&Jedna Boja"
+
+#: backgnd.cpp:217
+msgid "&Two Color"
+msgstr "&Dvije Boje"
 
 #: backgnd.cpp:235
-#, fuzzy
-msgid "&Two Color"
-msgstr "Boja"
+msgid "Blen&d"
+msgstr "&Mje¹aj"
 
-#: backgnd.cpp:254
-#, fuzzy
+#: backgnd.cpp:241
+msgid "&Pattern"
+msgstr "&Uzorak"
+
+#: backgnd.cpp:249
 msgid "Set&up ..."
-msgstr "Podesi..."
+msgstr "&Podesi..."
 
-#: backgnd.cpp:263
+#: backgnd.cpp:259
 msgid "Wallpaper"
 msgstr "Pozadinska slika"
 
-#: backgnd.cpp:273
-#, fuzzy
+#: backgnd.cpp:269
 msgid "Ti&led"
-msgstr "Poploèano"
+msgstr "Pop&loèano"
+
+#: backgnd.cpp:275
+msgid "&Centred"
+msgstr "&Centrirano"
 
 #: backgnd.cpp:281
-#, fuzzy
-msgid "&Centred"
-msgstr "Centrirana"
-
-#: backgnd.cpp:289
-#, fuzzy
 msgid "&Scaled"
-msgstr "Razvuèena"
+msgstr "&Razvuèeno"
 
-#: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
-#, fuzzy
-msgid "No wallpaper"
-msgstr "Pozadinska slika"
-
-#: backgnd.cpp:333
-#, fuzzy
+#: backgnd.cpp:317
 msgid "&Browse..."
-msgstr "Potra¾i..."
+msgstr "Po&tra¾i..."
 
-#: backgnd.cpp:530
-#, fuzzy
+#: backgnd.cpp:484
 msgid "Default"
-msgstr "KDE Podrazumjevano"
+msgstr "Podrazumjevano"
 
-#: backgnd.cpp:861
+#: backgnd.cpp:810
 msgid "Desktop names"
-msgstr ""
+msgstr "Imena radnih povr¹ina"
 
-#: backgnd.cpp:907
-#, fuzzy
-msgid "Two color backgrounds"
-msgstr "Boja izabranog"
+#: backgnd.cpp:847
+msgid "Two color background setup"
+msgstr "Postava pozadine sa dvije boje"
 
-#: backgnd.cpp:944
-msgid "Blend colors from &top to bottom"
-msgstr ""
+#: backgnd.cpp:893
+msgid "Pattern name"
+msgstr "Ime uzorka"
 
-#: backgnd.cpp:950
-msgid "Blend colors from &right to left"
-msgstr ""
-
-#: backgnd.cpp:956
-msgid "Use &pattern"
-msgstr ""
-
-#: backgnd.cpp:983
+#: backgnd.cpp:900
 msgid "Preview"
-msgstr ""
+msgstr "Pregled"
 
-#: backgnd.cpp:994
-msgid "Pattern &name"
-msgstr ""
+#: backgnd.cpp:922
+msgid "&Blend colors from right to left"
+msgstr "&Mje¹aj boje s desna na lijevo"
 
-#: backgnd.cpp:1033
+#: backgnd.cpp:953
 msgid "Current"
-msgstr ""
+msgstr "Tekuæi"
 
-#: backgnd.cpp:1093
-#, fuzzy
+#: backgnd.cpp:984
 msgid "Filled"
-msgstr "Poploèano"
+msgstr "Popunjeno"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:987
 msgid "Fish net"
-msgstr ""
+msgstr "Ribarska mre¾a"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:990
 msgid "Triangles"
-msgstr ""
+msgstr "Trokuti"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:993
 msgid "Flowers"
-msgstr ""
+msgstr "Cvijeæe"
 
-#: backgnd.cpp:1105
+#: backgnd.cpp:996
 msgid "Rattan"
-msgstr ""
+msgstr "Rattan"
 
-#: backgnd.cpp:1108
+#: backgnd.cpp:999
 msgid "Cobbled Pavement"
-msgstr ""
+msgstr "Ploènik"
 
-#: colorscm.cpp:119
+#: colorscm.cpp:120
 msgid "Color Scheme"
 msgstr "Raspored boja"
 
-#: colorscm.cpp:130
-#, fuzzy
+#: colorscm.cpp:131
 msgid "Current scheme"
-msgstr "Raspored boja"
+msgstr "Tekuæi raspored boja"
 
-#: colorscm.cpp:132
-#, fuzzy
+#: colorscm.cpp:133
 msgid "KDE default"
-msgstr "KDE Podrazumjevano"
+msgstr "KDE uobièajeno"
 
-#: colorscm.cpp:145
+#: colorscm.cpp:146
 msgid "&Add ..."
-msgstr ""
+msgstr "&Dodaj ..."
 
-#: colorscm.cpp:153
-#, fuzzy
+#: colorscm.cpp:152
 msgid "&Remove"
-msgstr "Obri¹i"
+msgstr "&Obri¹i"
 
-#: colorscm.cpp:162
+#: colorscm.cpp:159
 msgid "&Save changes"
-msgstr ""
+msgstr "&Spremi promjene"
 
-#: colorscm.cpp:176
+#: colorscm.cpp:170
 msgid "Widget color"
 msgstr "Boja widgeta"
 
-#: colorscm.cpp:183
+#: colorscm.cpp:177
 msgid "Inactive title bar"
 msgstr "Naslov neaktivnog prozora"
 
-#: colorscm.cpp:184
+#: colorscm.cpp:178
 msgid "Inactive title text"
 msgstr "Tekst neaktivnog prozora"
 
-#: colorscm.cpp:185
-#, fuzzy
+#: colorscm.cpp:179
 msgid "Inactive title blend"
-msgstr "Naslov neaktivnog prozora"
+msgstr "Smjesa boja neaktivnog prozora"
 
-#: colorscm.cpp:186
+#: colorscm.cpp:180
 msgid "Active title bar"
 msgstr "Naslov aktivnog prozora"
 
-#: colorscm.cpp:187
+#: colorscm.cpp:181
 msgid "Active title text"
 msgstr "Tekst aktivnog prozora"
 
-#: colorscm.cpp:188
-#, fuzzy
+#: colorscm.cpp:182
 msgid "Active title blend"
-msgstr "Naslov aktivnog prozora"
+msgstr "Smjesa boja aktivnog prozora"
 
-#: colorscm.cpp:189
+#: colorscm.cpp:183
 msgid "Background"
 msgstr "Pozadina"
 
-#: colorscm.cpp:190
+#: colorscm.cpp:184
 msgid "Text"
 msgstr "Tekst"
 
-#: colorscm.cpp:191
+#: colorscm.cpp:185
 msgid "Select background"
-msgstr "Boja izabranog"
+msgstr "Boja izabrane pozadine"
 
-#: colorscm.cpp:192
+#: colorscm.cpp:186
 msgid "Select text"
-msgstr "Boja oznacenog teksta"
+msgstr "Boja oznaèenog teksta"
 
-#: colorscm.cpp:193
+#: colorscm.cpp:187
 msgid "Window background"
 msgstr "Boja pozadine prozora"
 
-#: colorscm.cpp:194 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+#: colorscm.cpp:188 widgetcanvas.cpp:164 widgetcanvas.cpp:165
 msgid "Window text"
 msgstr "Tekst u prozoru"
 
-#: colorscm.cpp:222
+#: colorscm.cpp:208
 msgid "Contrast"
 msgstr "Kontrast"
 
-#: colorscm.cpp:238
-#, fuzzy
+#: colorscm.cpp:221
 msgid "&Low"
-msgstr "Nizak"
+msgstr "&Nizak"
 
-#: colorscm.cpp:246
+#: colorscm.cpp:229
 msgid "High"
 msgstr "Visok"
 
-#: colorscm.cpp:318
+#: colorscm.cpp:295
 msgid "Error removing"
-msgstr ""
+msgstr "Gre¹ka prilikom uklanjanja"
 
-#: colorscm.cpp:319
+#: colorscm.cpp:296
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
+"Nisam mogao ukloniti ovaj raspored boja.\n"
+"Mo¾da nema¹ privilegije da mijenja¹ datoteèni\n"
+"sustav na kojem je raspored boja spremljen."
 
-#: colorscm.cpp:376
+#: colorscm.cpp:355
 msgid "Naming error"
-msgstr ""
+msgstr "Gre¹ka prilikom imenovanja"
 
-#: colorscm.cpp:377
+#: colorscm.cpp:356
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
+"Molim izaberite jedinstveno ime za novi raspored\n"
+"boja. Ime koje ste unijeli veæ postoji na popisu\n"
+"rasporeda boja."
+
+#: kwmcom.cpp:78 kwmcom.cpp:105
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "kwmcom: ne mogu komunicirati s kwm\n"
 
 #: savescm.cpp:18
-#, fuzzy
 msgid "Add a color scheme"
-msgstr "Raspored boja"
+msgstr "Dodaj raspored boja"
 
 #: savescm.cpp:32
 msgid ""
@@ -267,252 +254,141 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
+"&Unesite ime novog rasporeda boja\n"
+"koji æe biti spremljen na va¹u osobnu listu.\n"
+"\n"
+"Boje koje se trenutno koriste za pregled biti\n"
+"æe iskopirane u novi raspored boja."
+
 
 #: scrnsave.cpp:48
 msgid "Ignore"
 msgstr "Ignoriraj"
 
-#: scrnsave.cpp:49
-msgid "Save Screen"
-msgstr ""
-
 #: scrnsave.cpp:50
-msgid "Lock Screen"
-msgstr ""
+msgid "Lock"
+msgstr "Zakljuèaj"
 
-#: scrnsave.cpp:110 scrnsave.cpp:179
+#: scrnsave.cpp:108 scrnsave.cpp:177
 msgid "Screen Saver"
 msgstr "Za¹tita zaslona"
 
-#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
-#, fuzzy
-msgid "No screensaver"
-msgstr "Za¹tita zaslona"
-
-#: scrnsave.cpp:207
-#, fuzzy
+#: scrnsave.cpp:203
 msgid "&Setup ..."
-msgstr "Podesi..."
+msgstr "&Podesi..."
 
-#: scrnsave.cpp:215
-#, fuzzy
+#: scrnsave.cpp:209
 msgid "&Test"
-msgstr "Isku¹aj"
+msgstr "&Isku¹aj"
 
-#: scrnsave.cpp:228
+#: scrnsave.cpp:219
 msgid "Settings"
-msgstr "Odrednice"
+msgstr "Postava"
 
-#: scrnsave.cpp:248
+#: scrnsave.cpp:237
 msgid "&Wait for"
-msgstr ""
+msgstr "Èe&kaj za"
 
-#: scrnsave.cpp:258
-#, fuzzy
+#: scrnsave.cpp:246
 msgid "min."
-msgstr "min"
+msgstr "min."
 
-#: scrnsave.cpp:264
-#, fuzzy
+#: scrnsave.cpp:252
 msgid "&Require password"
-msgstr "Tra¾i lozinku"
+msgstr "&Zahtjevaj lozinku"
 
-#: scrnsave.cpp:272
-#, fuzzy
+#: scrnsave.cpp:259
 msgid "Priority"
 msgstr "Prioritet:"
 
-#: scrnsave.cpp:285
-#, fuzzy
+#: scrnsave.cpp:272
 msgid "&High"
-msgstr "Visok"
+msgstr "&Visok"
 
-#: scrnsave.cpp:294
+#: scrnsave.cpp:281
 msgid "Low"
 msgstr "Nizak"
 
-#: general.cpp:147
-#, fuzzy
-msgid "Fonts etc."
-msgstr "Fontovi"
+#: general.cpp:84
+msgid "&Bold"
+msgstr "&Masno"
 
-#: general.cpp:153
+#: general.cpp:91
+msgid "&Italic"
+msgstr "&Kurziv"
+
+#: general.cpp:225
+msgid "default"
+msgstr "podrazumjevano"
+
+#: general.cpp:228
+msgid "any"
+msgstr "bilo koji"
+
+#: general.cpp:320
+msgid "General"
+msgstr "Opæenito"
+
+#: general.cpp:327
 msgid "&Draw widgets in the style of Windows 95"
-msgstr ""
+msgstr "&Crtaj widgete u Windows 95 stilu"
 
-#: general.cpp:167
+#: general.cpp:351
 msgid "Desktop fonts"
-msgstr ""
+msgstr "Pisma radne povr¹ine"
 
-#: general.cpp:179
+#: general.cpp:374
 msgid "General font"
-msgstr "Opæeniti font"
+msgstr "Opæenito pismo"
 
-#: general.cpp:184
+#: general.cpp:375
 msgid "Fixed font"
-msgstr ""
+msgstr "Jednoliko pismo"
 
-#: general.cpp:189
-#, fuzzy
+#: general.cpp:376
 msgid "Window title font"
-msgstr "Tekst u prozoru"
+msgstr "Pismo imena prozora"
 
-#: general.cpp:194
-#, fuzzy
+#: general.cpp:377
 msgid "Panel button font"
-msgstr "Opæeniti font"
+msgstr "Pismo gumbi na ploèi"
 
-#: general.cpp:199
+#: general.cpp:378
 msgid "Panel clock font"
-msgstr ""
+msgstr "Pismo sata na ploèi"
 
 #: main.cpp:61
-#, fuzzy
 msgid "&Fonts etc."
-msgstr "Fontovi"
+msgstr "P&isma itd."
 
 #: main.cpp:64
-#, fuzzy
 msgid "&Background"
-msgstr "Pozadina"
+msgstr "&Pozadina"
 
 #: main.cpp:67
-#, fuzzy
 msgid "&Screensaver"
-msgstr "Za¹tita zaslona"
+msgstr "&Za¹tita zaslona"
 
 #: main.cpp:71
-#, fuzzy
 msgid "&Colors"
-msgstr "Boja"
+msgstr "&Boja"
 
-#: main.cpp:77
+#: main.cpp:78
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
-msgstr ""
+msgstr "uporaba: kcmdisplay [-init | {pozadina,za¹tita zaslona,boje,stil}]\n"
 
-#: main.cpp:117
-#, fuzzy
+#: main.cpp:118
 msgid "Display settings"
 msgstr "Pode¹avanje prikaza"
 
-#: widgetcanvas.cpp:104 widgetcanvas.cpp:105
+#: widgetcanvas.cpp:108 widgetcanvas.cpp:109
 msgid "Inactive window"
 msgstr "Neaktivan prozor"
 
-#: widgetcanvas.cpp:132 widgetcanvas.cpp:133
+#: widgetcanvas.cpp:128 widgetcanvas.cpp:129
 msgid "Active window"
 msgstr "Aktivan prozor"
 
-#: widgetcanvas.cpp:189 widgetcanvas.cpp:190
-#, fuzzy
+#: widgetcanvas.cpp:177 widgetcanvas.cpp:178
 msgid "Selected text"
-msgstr "Boja oznacenog teksta"
-
-#: fontchooser.cpp:89
-msgid "&Bold"
-msgstr ""
-
-#: fontchooser.cpp:96
-#, fuzzy
-msgid "&Italic"
-msgstr "Kurziv"
-
-#: fontchooser.cpp:262
-#, fuzzy
-msgid "default"
-msgstr "KDE Podrazumjevano"
-
-#: fontchooser.cpp:265
-msgid "any"
-msgstr ""
-
-#~ msgid "kwmcom: communication with kwm failed\n"
-#~ msgstr "kwmcom: ne mogu komunicirati s kwm\n"
-
-#~ msgid "Lock"
-#~ msgstr "Zakljuèaj"
-
-#~ msgid "General"
-#~ msgstr "Opæenito"
-
-#, fuzzy
-#~ msgid "&New scheme ..."
-#~ msgstr "Spremi raspored"
-
-#, fuzzy
-#~ msgid "&Remove scheme"
-#~ msgstr "Spremi raspored"
-
-#~ msgid "You have chosen a name used by a supplied color scheme"
-#~ msgstr "Birali ste ime koje se veæ koristi"
-
-#~ msgid "Display Setup"
-#~ msgstr "Pode¹avanje prikaza"
-
-#~ msgid ""
-#~ "No desktop color schemes were found.\n"
-#~ "Do you want to install the default color schemes now ?"
-#~ msgstr ""
-#~ "Nisam na¹ao rasporede boja.\n"
-#~ "®elite li sad instalirati podrazumjevane rasporede?"
-
-#~ msgid "Disabled"
-#~ msgstr "Onemoguæen"
-
-#~ msgid "Selected"
-#~ msgstr "Izabran"
-
-#~ msgid "Name"
-#~ msgstr "Ime"
-
-#~ msgid "Wait:"
-#~ msgstr "Èekaj:"
-
-#~ msgid "Widget style"
-#~ msgstr "Stil widgeta"
-
-#~ msgid "Motif"
-#~ msgstr "Motif"
-
-#~ msgid "Windows 95"
-#~ msgstr "Windows 95"
-
-#~ msgid "Sample"
-#~ msgstr "Primjer"
-
-#~ msgid "Small"
-#~ msgstr "Mali"
-
-#~ msgid "Medium"
-#~ msgstr "Srednji"
-
-#~ msgid "Large"
-#~ msgstr "Veliki"
-
-#~ msgid "KDE Display Configuration"
-#~ msgstr "KDE pode¹avanje prikaza"
-
-#~ msgid ""
-#~ "Usage: %s -init|-setup\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Uporaba: %s -init|-setup\n"
-#~ "\n"
-
-#~ msgid "  -init               apply current settings to the display\n"
-#~ msgstr " -init               pridru¾i trenutne odrednice prikazu\n"
-
-#~ msgid "  -setup              setup the display\n"
-#~ msgstr "  -setup              podesi prikaz\n"
-
-#~ msgid "Flat"
-#~ msgstr "Jednakomjerno"
-
-#~ msgid "Gradient"
-#~ msgstr "S prijelazom"
-
-#~ msgid "Portrait"
-#~ msgstr "Uspravno"
-
-#~ msgid "Landscape"
-#~ msgstr "Polo¾eno"
+msgstr "Boja oznaèenog teksta"

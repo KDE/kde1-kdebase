@@ -234,7 +234,7 @@ msgid ""
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
 "-T <testo>		   testo nella barra titolo\n"
-"			   (Obsolet. Usa -caption al suo posto)"
+"			   (Obsolet. Usa -caption al suo posto)\n"
 
 #: main.C:1169
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
@@ -246,7 +246,7 @@ msgstr "-C			 Cattura i messagi di sistema della console\n"
 
 #: main.C:1171
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr "-n <testo>		 nome in icona o finestra icona"
+msgstr "-n <testo>		 nome in icona o finestra icona\n"
 
 #: main.C:1172
 msgid ""
@@ -289,3 +289,4 @@ msgid ""
 msgstr ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
+
