@@ -106,12 +106,14 @@ kVt* kvt = 0;
 OptionDialog *m_optiondialog = 0;
 QString kvt_charclass;
 
+QFont kvt_basefnt;
 QFont kvt_fnt1;
 QFont kvt_fnt2;
 QFont kvt_fnt3;
 QFont kvt_fnt4;
 QFont kvt_fnt5;
 QFont kvt_fnt6;
+int qt_font_hack = 1;		/* use workaround for Qt font bug */
 
 // the scrollbar hack
 static int length = 0;
@@ -197,6 +199,32 @@ char* kvt_get_selection(){
   return (char*) QApplication::clipboard()->text();
 }
 
+int kvt_get_font_handle(QFont *fnt)
+{
+	if (qt_font_hack && strcmp(fnt->family(), "fixed") == 0
+	    && (fnt->charSet() == QFont::ISO_8859_1
+		|| fnt->charSet() == QFont::ISO_8859_2)) {
+		// change font name
+		char buf[256];
+		int chset = (fnt->charSet() == QFont::ISO_8859_1)?1:2;
+		sprintf(buf, "-*-fixed-%s-r-semicondensed-*-%d-*-*-*-*-*-"
+			"iso8859-%d",
+			(fnt->weight() >= QFont::Bold)?"bold":"medium",
+			fnt->pointSize(), chset);
+		fnt->setFamily(buf);
+		fnt->setRawMode(true);
+		if (!fnt->exactMatch()) {
+			sprintf(buf, "-*-fixed-%s-r-normal-*-%d-*-*-*-*-*-"
+				"iso8859-%d",
+				(fnt->weight() >= QFont::Bold)?"bold":"medium",
+				fnt->pointSize(), chset);
+			fnt->setFamily(buf);
+			fnt->setRawMode(true);
+		}
+	}
+	return fnt->handle();
+}
+
 void kvt_reinit_fonts(const QFont &base)
 {
   int ptsz[6];
@@ -207,6 +235,7 @@ void kvt_reinit_fonts(const QFont &base)
   ptsz[4] = kvt_fnt5.pointSize();
   ptsz[5] = kvt_fnt6.pointSize();
 
+  kvt_basefnt = base;
   kvt_fnt1 = base;
   kvt_fnt2 = base;
   kvt_fnt3 = base;
@@ -221,12 +250,12 @@ void kvt_reinit_fonts(const QFont &base)
   kvt_fnt6.setPointSize(ptsz[5]);
 
   // take font handles (they are actually fids)
-  reg_font_handles[0] = kvt_fnt1.handle();
-  reg_font_handles[1] = kvt_fnt2.handle();
-  reg_font_handles[2] = kvt_fnt3.handle();
-  reg_font_handles[3] = kvt_fnt4.handle();
-  reg_font_handles[4] = kvt_fnt5.handle();
-  reg_font_handles[5] = kvt_fnt6.handle();
+  reg_font_handles[0] = kvt_get_font_handle(&kvt_fnt1);
+  reg_font_handles[1] = kvt_get_font_handle(&kvt_fnt2);
+  reg_font_handles[2] = kvt_get_font_handle(&kvt_fnt3);
+  reg_font_handles[3] = kvt_get_font_handle(&kvt_fnt4);
+  reg_font_handles[4] = kvt_get_font_handle(&kvt_fnt5);
+  reg_font_handles[5] = kvt_get_font_handle(&kvt_fnt6);
 }
 
 class MyApp:public KApplication {
@@ -338,7 +367,7 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
   keyset = new QComboBox(this);
   keyset->setMinimumSize(keyset->sizeHint());
   keyset->setFixedHeight(keyset->sizeHint().height());
-  connect( keyset, SIGNAL(highlighted(int)), SLOT(update_bs(int)) );
+  connect( keyset, SIGNAL(activated(int)), SLOT(update_bs(int)) );
   
   QPushButton *ok, *cancel;
 
@@ -662,7 +691,7 @@ void kVt::saveYourself(){
   }
   if (kvtarguments.count() > 0)
     config->writeEntry("kvtarguments", kvtarguments);
-  config->writeEntry("defaultFont", kvt_fnt1);
+  config->writeEntry("defaultFont", kvt_basefnt);
   config->writeEntry("fontSize2", kvt_fnt2.pointSize());
   config->writeEntry("fontSize3", kvt_fnt3.pointSize());
   config->writeEntry("fontSize4", kvt_fnt4.pointSize());
@@ -710,7 +739,7 @@ void kVt::saveOptions(KConfig* kvtconfig){
   else
     kvtconfig->writeEntry("kmenubar", "top");
 
-  kvtconfig->writeEntry("defaultFont", kvt_fnt1);
+  kvtconfig->writeEntry("defaultFont", kvt_basefnt);
   kvtconfig->writeEntry("fontSize2", kvt_fnt2.pointSize());
   kvtconfig->writeEntry("fontSize3", kvt_fnt3.pointSize());
   kvtconfig->writeEntry("fontSize4", kvt_fnt4.pointSize());
@@ -852,7 +881,7 @@ void kVt::options_menu_activated( int item){
   case 8:
     // font options
     {
-	QFont fnt = kvt_fnt1;
+	QFont fnt = kvt_basefnt;
 	KFontDialog::getFont(fnt);
 	kvt_reinit_fonts(fnt);
 	LoadNewFont();
@@ -1164,6 +1193,13 @@ int main(int argc, char **argv)
       argv[i][2]='\0';
     }
   }
+
+  // find out if we need to turn off font hack
+  for (i = 0; i < argc; ++i) {
+	if (QString("-no_font_hack") == argv[i]) {
+		qt_font_hack = 0;
+	}
+  }
   
   // first make an argument copy for a new kvt
   QStrList orgarg;
@@ -1295,6 +1331,7 @@ int main(int argc, char **argv)
     fprintf(stderr, i18n("-vt_bg <colour>           background color\n"));
     fprintf(stderr, i18n("-vt_fg <colour>           foreground color\n"));
     fprintf(stderr, i18n("-vt_font <fontname>       normal font\n"));
+    fprintf(stderr, i18n("-no_font_hack             turn off Qt font bug workaround\n"));
     fprintf(stderr, i18n("-vt_size <size>           tiny, small, normal, large, huge\n"));
     fprintf(stderr, i18n("-linux                    set up kvt to mimic linux-console\n"));
     fprintf(stderr, i18n("-no_menubar               hide the menubar\n"));

@@ -33,5 +33,6 @@ void change_icon_name(char *);
 void error(char *,...);
 void set_geom_string(char *string);
 extern void NewFont(int);
+void adjust_cursor(int);
 
 #endif /* XSETUP_H */

@@ -186,8 +186,11 @@ int font_num = DEFAULT_FONT;
 
 /* cursor global, since it is needed several times below. (Matthias). */ 
 Cursor cursor = 0;
+Cursor mcursor = 0;	/* mouse accept cursor */
+int cursor_mouse = 0;	/* use mouse cursor */
 
-
+#define NORMAL_CURSOR	XC_xterm
+#define MOUSE_CURSOR	XC_left_ptr
 
 
 
@@ -297,6 +300,8 @@ int init_display(int argc,char **argv)
       if(MyWinInfo.saved_lines < 0 ) {
 	MyWinInfo.saved_lines = 0;
       }
+    } else if (strcmp(argv[i],"-no_font_hack")==0) {
+	/* turn off font hack - done in main */
     } else {
       return(0);
     }
@@ -361,6 +366,17 @@ int init_display(int argc,char **argv)
   return(1);
 }
 
+void adjust_cursor(int mode)
+{
+	if (mode) {
+		cursor_mouse = 1;
+		XDefineCursor(display,vt_win,mcursor);
+	} else {
+		cursor_mouse = 0;
+		XDefineCursor(display,vt_win,cursor);
+	}
+}
+
 /*  Extract the resource fields that are needed to open the window.
  */
 
@@ -415,9 +431,17 @@ void extract_colors( char *fg_string, char *bg_string){
     /* I have to create a new cursor here. Otherwise the
        recolering will need a window-leave/window-enter to
        become visible ... (Matthias) */
-    cursor = XCreateFontCursor(display,XC_xterm);
+    cursor = XCreateFontCursor(display,NORMAL_CURSOR);
     XRecolorCursor(display,cursor,&foreground_color,&background_color);
-    XDefineCursor(display,vt_win,cursor);
+    if (!cursor_mouse) XDefineCursor(display,vt_win,cursor);
+  }
+  if (mcursor){
+    /* I have to create a new cursor here. Otherwise the
+       recolering will need a window-leave/window-enter to
+       become visible ... (Matthias) */
+    mcursor = XCreateFontCursor(display,MOUSE_CURSOR);
+    XRecolorCursor(display,mcursor,&foreground_color,&background_color);
+    if (cursor_mouse) XDefineCursor(display,vt_win,mcursor);
   }
 
   /* change the GCs to the new colors. (Matthias) */
@@ -560,9 +584,12 @@ static void create_xwindow(int argc,char **argv)
    vt_win = XCreateSimpleWindow(display,main_win,0,0, 
  			       sizehints.width, 
  			       sizehints.height,0,foreground,background); 
-  cursor = XCreateFontCursor(display,XC_xterm);
+  cursor = XCreateFontCursor(display,NORMAL_CURSOR);
+  mcursor = XCreateFontCursor(display,MOUSE_CURSOR);
   XRecolorCursor(display,cursor,&foreground_color,&background_color);
-  XDefineCursor(display,vt_win,cursor);
+  XRecolorCursor(display,mcursor,&foreground_color,&background_color);
+  if (cursor_mouse) XDefineCursor(display,vt_win,mcursor);
+  else XDefineCursor(display,vt_win,cursor);
   XSelectInput(display,vt_win,VT_EVENTS);
   
   XMapWindow(display,vt_win);

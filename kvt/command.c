@@ -1806,6 +1806,8 @@ void process_terminal_mode(int c,int private,int nargs,int *arg)
 	  break;
 	case 1000:		/* X11 mouse reporting */
 	  mouse_rep = mode;
+	  /* adjust mouse cursor to use */
+	  adjust_cursor(mode);
 	  break;
 	}
     }
