@@ -549,10 +549,16 @@ int KProtocolFTP::OpenConnection( const char *command, const char *path, char mo
     buf.sprintf("type %c",mode);
     if ( !ftpSendCmd( buf, '2' ) ) return Error(KIO_ERROR_CouldNotConnect,
 				"Could not set ftp to correct mode for transmission");
-#ifdef DONT_TRY_PASV // never defined - define if you don't want to try PASV first
+
+#ifndef DONT_TRY_PASV // never defined - define if you don't want to try PASV first
+  if (!strcmp(command,"stor")) // no passive mode for uploading
+  {
+#endif
     if ( !ftpPort() ) return Error(KIO_ERROR_CouldNotConnect,
 				"Could not setup ftp data port", errno);
-#else
+#ifndef DONT_TRY_PASV
+  }
+  else
     if ( !ftpPasv() ) return Error(KIO_ERROR_CouldNotConnect,
 				"Could not setup ftp data port", errno);
 #endif
