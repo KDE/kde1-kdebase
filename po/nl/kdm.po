@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kdmshutdown.cpp:153
+msgid "Shutdown or restart?"
+msgstr "Afsluiten of herstarten?"
+
+#: kdmshutdown.cpp:169
+msgid "Shutdown"
+msgstr "Afsluiten"
+
+#: kdmshutdown.cpp:183
+msgid "Shutdown and restart"
+msgstr "Afsluiten en herstarten"
+
+#: kdmshutdown.cpp:192
+msgid "Exit kdm"
+msgstr "KDM afsluiten"
+
+#: kgreeter.cpp:137
+msgid "Login:"
+msgstr ""
+
+#: kgreeter.cpp:142
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+#: kgreeter.cpp:176
+msgid "Login failed!"
+msgstr "Inloggen niet gelukt"
+
+#: kgreeter.cpp:182
+msgid "Session Type:"
+msgstr "Sessietype:"
+
+#: kgreeter.cpp:198
+msgid "Go!"
+msgstr "Starten"
+
+#: kgreeter.cpp:214
+msgid "Shutdown..."
+msgstr "Afsluiten..."

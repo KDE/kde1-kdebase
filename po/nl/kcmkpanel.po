@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:62
+msgid "&Panel"
+msgstr "&Paneel"
+
+#: main.cpp:68
+msgid "&Desktops"
+msgstr "&Burobladen"
+
+#: main.cpp:97
+msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "gebruik: kcmkpanel [-init | {panel,options,desktops}]\n"
+
+#: main.cpp:127
+msgid "KPanel Configuration"
+msgstr "KPanel Instellingen"
+
+#: panel.cpp:59
+msgid "Location"
+msgstr "Plaats"
+
+#: panel.cpp:60
+msgid "&Top"
+msgstr "&Bovenaan"
+
+#: panel.cpp:61
+msgid "&Left"
+msgstr "&Links"
+
+#: panel.cpp:62
+msgid "&Bottom"
+msgstr "B&eneden"
+
+#: panel.cpp:74
+msgid "Taskbar"
+msgstr "Taakbalk"
+
+#: panel.cpp:75
+msgid "&Hidden"
+msgstr "&Verborgen"
+
+#: panel.cpp:77
+msgid "T&op"
+msgstr "B&ovenaan"
+
+#: panel.cpp:79
+msgid "Botto&m"
+msgstr "Bene&den"
+
+#: panel.cpp:81
+msgid "Top/Le&ft"
+msgstr "L&inksboven"
+
+#: panel.cpp:96
+msgid "T&iny"
+msgstr "&Klein"
+
+#: panel.cpp:98
+msgid "&Normal"
+msgstr "&Normaal"
+
+#: panel.cpp:100
+msgid "L&arge"
+msgstr "&Groot"
+
+#: desktops.cpp:73
+msgid "&Visible"
+msgstr "&Zichtbaar"
+
+#: desktops.cpp:82
+msgid "&Width"
+msgstr "&Breedte"
+
+#: options.cpp:38
+msgid "Menu Tooltips"
+msgstr "Menu tips"
+
+#: options.cpp:39
+msgid "Show &Menu Tooltips"
+msgstr "&Laat tips zien"
+
+#: options.cpp:44
+msgid "De&lay:"
+msgstr "&Vertraging"
+
+#: options.cpp:56
+msgid "ms"
+msgstr ""
+
+#: options.cpp:68
+msgid "Others"
+msgstr "Overige"
+
+#: options.cpp:69
+msgid "Personal &First"
+msgstr "&Eigen menus eerst"
+
+#: options.cpp:71
+msgid "Auto &Hide Panel"
+msgstr "&Paneel automatisch verbergen"
+
+#: options.cpp:73
+msgid "Auto Hide &Taskbar"
+msgstr "&Taakbalk automatisch verbergen"
+
+#: options.cpp:81
+msgid "Clock"
+msgstr "Klok"
+
+#: options.cpp:83
+msgid "&24h"
+msgstr "&24uur"
+
+#: options.cpp:85
+msgid "&12h AM/PM"
+msgstr "&12uur (AM/PM)"

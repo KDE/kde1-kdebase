@@ -1,0 +1,265 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kmenuedit.cpp:62
+msgid "&Reload"
+msgstr "&Opnieuw inlezen menus"
+
+#: kmenuedit.cpp:68
+msgid "Change &Menuname"
+msgstr "&Veranderen menunaam"
+
+#: kmenuedit.cpp:69
+msgid "Reload &Filetypes"
+msgstr "Opnieuw inlezen &bestandtypen"
+
+#: kmenuedit.cpp:76
+msgid "by"
+msgstr "door"
+
+#: kmenuedit.cpp:175 kmenuedit.cpp:200
+msgid "Changes not saved !"
+msgstr "Wijzigingen niet opgeslagen !"
+
+#: kmenuedit.cpp:176 kmenuedit.cpp:201
+msgid ""
+"\n"
+"Do you want to save your changes ?"
+msgstr ""
+"\n"
+"Wilt u uw wijzigingen opslaan ?"
+
+#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+msgid "EMPTY"
+msgstr "LEEG"
+
+#: kmenuedit.cpp:335
+msgid "Reload Menus"
+msgstr "Menus opnieuw inlezen"
+
+#: kmenuedit.cpp:336
+msgid ""
+"Reloading the menus will discard all changes.\n"
+"Are you sure you want to reload ?"
+msgstr ""
+"Als u de menus opnieuw inleest verliest u alle\n"
+"wijzigingen die u heeft gemaakt\n"
+"Weet u zeker dat u opnieuw wil inlezen ?"
+
+#: button.cpp:209 main.cpp:77 main.cpp:90
+msgid "KMenuedit"
+msgstr ""
+
+#: main.cpp:78
+msgid ""
+"The directory for your personal menu does not exist.\n"
+" Do you want to create it now ?"
+msgstr ""
+"De map voor uw eigen menus bestaat nog niet.\n"
+"Wilt u deze laten aanmaken ?"
+
+#: main.cpp:91
+msgid ""
+"Unable to create directory for personal menu.\n"
+" Select Ok to exit KMenuedit."
+msgstr ""
+"De map voor uw eigen menus kon niet worden aangemaakt.\n"
+"KMenuedit kan nu niet gebruikt worden."
+
+#: confmenu.cpp:90 entrydialog.cpp:52
+msgid "Separator"
+msgstr "Scheiding"
+
+#: confmenu.cpp:102 confmenu.cpp:317
+msgid "Open/ Close"
+msgstr "Openen/ Sluiten"
+
+#: confmenu.cpp:110
+msgid "! PROTECTED Button !"
+msgstr "! BESCHERMDE knop !"
+
+#: confmenu.cpp:171 confmenu.cpp:300
+msgid "Warning !"
+msgstr "Waarschuwing !"
+
+#: confmenu.cpp:172
+msgid "If you delete this button you will lose all of its submenus"
+msgstr "Als u deze regel wist verliest u ook al zijn submenus"
+
+#: confmenu.cpp:281
+msgid "Wrong filename"
+msgstr "Dubbele bestandsnaam"
+
+#: confmenu.cpp:282
+msgid ""
+"A kdelnk-file with this name does already exist. \n"
+"Please choose another filename."
+msgstr ""
+"Er bestaat al een kdelnk-bestand met deze naam.\n"
+"U moet een andere naam kiezen."
+
+#: confmenu.cpp:301
+msgid "Changing the type of this button will delete all of its submenus"
+msgstr "Als u het type van deze regel verandert verliest u al zijn submenus"
+
+#: confmenu.cpp:322 confmenu.cpp:911
+msgid "no command"
+msgstr "geen commando"
+
+#: button.cpp:210
+msgid ""
+"Sorry ! You have to save your changes\n"
+"before you can drop this item on another window."
+msgstr ""
+"Helaas ! U moet eerst uw wijzigingen opslaan\n"
+"voor u deze regel op een ander venster kan plaatsen."
+
+#: DesktopPathDialogData.cpp:37
+msgid "Path for KDE Desktop Entries is not set."
+msgstr "Het pad voor de menus is niet ingesteld."
+
+#: DesktopPathDialogData.cpp:49
+msgid "Ik stel de volgende instellingen voor:"
+msgstr ""
+
+#: DesktopPathDialogData.cpp:55
+msgid "Pad systeemmenu:"
+msgstr ""
+
+#: DesktopPathDialogData.cpp:68
+msgid "Pad eigen menu:"
+msgstr ""
+
+#: entrydialog.cpp:53
+msgid "Submenu"
+msgstr ""
+
+#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:536
+#: entrydialog.cpp:541
+msgid "Application"
+msgstr "Toepassing"
+
+#: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
+msgid "Swallow"
+msgstr "Opnemen"
+
+#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
+msgid "Link"
+msgstr ""
+
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+msgid "Device"
+msgstr "Apparaat"
+
+#: entrydialog.cpp:63
+msgid "Type:"
+msgstr ""
+
+#: entrydialog.cpp:69
+msgid "File Name:"
+msgstr "Bestandsnaam:"
+
+#: entrydialog.cpp:82
+msgid "Name:"
+msgstr "Naam:"
+
+#: entrydialog.cpp:95
+msgid "Mini Icon:"
+msgstr "Kleine pictogram:"
+
+#: entrydialog.cpp:127
+msgid "Icon:"
+msgstr "Pictogram:"
+
+#: entrydialog.cpp:133
+msgid "Comment:"
+msgstr "Commentaar:"
+
+#: entrydialog.cpp:165 entrydialog.cpp:535
+msgid "Execute"
+msgstr "Uitvoeren"
+
+#: entrydialog.cpp:186
+msgid "Execute:"
+msgstr "Uitvoeren:"
+
+#: entrydialog.cpp:192
+msgid "Working Directory:"
+msgstr "Werkmap:"
+
+#: entrydialog.cpp:205
+msgid "Run in terminal"
+msgstr "In een terminalvenster starten"
+
+#: entrydialog.cpp:211
+msgid "Terminal Options:"
+msgstr "Terminal opties:"
+
+#: entrydialog.cpp:292
+msgid "Binary Pattern:"
+msgstr "Bestandsnamen toepassing"
+
+#: entrydialog.cpp:300
+msgid "Application to swallow:"
+msgstr "Toepassing om op te nemen"
+
+#: entrydialog.cpp:306
+msgid "Title of application:"
+msgstr "Titel van de toepassing"
+
+#: entrydialog.cpp:312
+msgid "Application to execute on button press:"
+msgstr "Toepassing om uit te voeren bij kiezen pictogram"
+
+#: entrydialog.cpp:342
+msgid "URL:"
+msgstr ""
+
+#: entrydialog.cpp:391
+msgid "Read Only"
+msgstr "Alleen-lezen"
+
+#: entrydialog.cpp:397
+msgid "Device:"
+msgstr "Apparaat:"
+
+#: entrydialog.cpp:403
+msgid "Mount Point:"
+msgstr "Aansluitpunt:"
+
+#: entrydialog.cpp:409
+msgid "FS Type:"
+msgstr "Bestandssysteem type:"
+
+#: entrydialog.cpp:415
+msgid "Unmount Icon:"
+msgstr "Pictogram niet aangesloten:"
+
+#: MenuNameDialog.cpp:21
+msgid "Change Menunames"
+msgstr "Veranderen menunamen"
+
+#: MenuNameDialogData.cpp:31
+msgid "Change the name of the menus as displayed in kpanel"
+msgstr "Verander de namen van de menus in het paneel"
+
+#: MenuNameDialogData.cpp:36
+msgid "Personal:"
+msgstr "Persoonlijk:"
+
+#: MenuNameDialogData.cpp:41
+msgid "Default:"
+msgstr "Standaard:"
