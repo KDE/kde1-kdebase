@@ -169,6 +169,7 @@ AC_OUTPUT(Makefile \
 	kcontrol/Makefile \
 	kcontrol/bell/Makefile \
 	kcontrol/display/Makefile \
+	kcontrol/display/kcs/Makefile \
 	kcontrol/info/Makefile \
 	kcontrol/input/Makefile \
 	kcontrol/kcontrol/Makefile \
