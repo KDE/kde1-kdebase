@@ -1049,7 +1049,20 @@ void KfmView::slotURLSelected( const char *_url, int _button, const char *_targe
     
     if ( _target != 0L && _target[0] != 0 && _button == LeftButton )
     {
-	KHTMLView *v = findView( _target );
+	KHTMLView *v;
+	KHTMLView *top = findView( "_top" );
+	for ( v = viewList->first(); v != 0; v = viewList->next() )
+	{
+	    if ( v->getFrameName() )
+	    {
+		if ( strcmp( v->getFrameName(), _target ) == 0 ) 
+		    if( top != v->findView( "_top" ) )
+			continue;
+		    else
+			break;
+	    }
+	}
+
 	if ( v )
 	{
 	    v->openURL( _url );
