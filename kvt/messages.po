@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Date: 1997-08-23 17:18:58+0200\n"
+"Date: 1997-08-24 14:12:35+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
 "Content-Type: text/plain; charset=\n"
 "Xgettext-Options: --keyword=translate\n"
