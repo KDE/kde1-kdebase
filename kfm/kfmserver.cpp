@@ -30,10 +30,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-#if (!defined(HAVE_RAND) && !defined(HAVE_RANDOM))
-#error "Your system doesn't appear to have rand(), nor random(). \
-Please edit kfmserver.cpp or report the problem, using http://bugs.kde.org"
-#endif
 QString* KFMClient::password = 0L;
 
 KFMServer::KFMServer() : KfmIpcServer()
@@ -96,23 +92,11 @@ KFMServer::KFMServer() : KfmIpcServer()
 	    closedir( dp );
 	}
 
-#ifdef HAVE_RANDOM
 	srandom( (unsigned int) seed );
-#else
-	srand( (unsigned int) seed );
-#endif
 	for ( i = 0 ; i < num ; i ++ )
-#ifdef HAVE_RANDOM
 	    (void) random( );
-#else
-	    (void) rand( );
-#endif
 
-#ifdef HAVE_RANDOM
 	pass.sprintf( "%ld", random() );
-#else
-	pass.sprintf( "%ld", rand() );
-#endif
 	fwrite( pass.data(), 1, pass.length(), f );
 	fclose( f );
 	chmod(fn.data(), S_IRUSR | S_IWUSR); // make it 0600
