@@ -1,0 +1,50 @@
+# KDE Config File
+
+# Icelandic keyboard layout, based mostly on the XKB layout by 
+# Hrafnkell Eiríksson <hkelle@hi.is>.  This map fulfills the minimum 
+# requirements and all recommendations of the standard ÍST 125:1995.
+#
+# Unspecified key combinations are used to give access to common Scandinavian
+# and European characters.
+
+[International Keyboard]
+Authors=Bjarni R. Einarsson <bre@netverjar.is>
+
+Language=Icelandic
+Language[is]=Íslenskt
+
+Label=is
+Locale=is
+Charset=latin
+
+[KeyboardMap]
+keysym0=2,2,quotedbl,at
+keysym1=3,3,numbersign,sterling
+keysym2=6,6,ampersand,threequarters
+keysym3=7,7,slash,braceleft
+keysym4=8,8,parenleft,bracketleft
+keysym5=9,9,parenright,bracketright
+keysym6=0,0,equal,braceright
+keysym7=apostrophe,dead_acute,dead_grave,dead_circumflex,asciicircum
+keysym8=minus,odiaeresis,Odiaeresis,backslash,questiondown
+keysym9=slash,thorn,Thorn
+keysym10=bracketleft,eth,Eth
+keysym11=bracketright,apostrophe,question,asciitilde,dead_tilde
+keysym12=equal,minus,underscore,bar,copyright
+keysym13=q,q,Q,at
+keysym15=semicolon,ae,Ae,asciicircum
+keysym17=comma,comma,semicolon,less,greater
+keysym18=period,period,colon,periodcentered,division
+keysym19=backslash,plus,asterisk,quoteleft
+keysym20=a,a,A,aring,Aring
+keysym21=e,e,E,ediaeresis,Ediaeresis
+keysym22=y,y,Y,ydiaeresis,Ydiaeresis
+keysym23=u,u,U,udiaeresis,Udiaeresis
+keysym24=i,i,I,idiaeresis,Idiaeresis
+keysym25=c,c,C,ccedilla,Ccedilla
+keysym26=o,o,O,oslash,Ooblique
+keysym27=grave,dead_abovering,dead_diaeresis,bar,notsign
+keysym28=s,s,S,ssharp,Ssharp
+keysym29=b,b,B,ssharp,Ssharp
+keysym30=m,m,M,mu,Mu
+keysym31=n,n,N,ntilde,Ntilde
