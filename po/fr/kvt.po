@@ -1,16 +1,16 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=\n"
 "Date: 1997-08-26 14:27:08+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
+"Content-Type: text/plain; charset=\n"
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
 
 #: main.C:220
 msgid "Add characters to word class"
 msgstr "Ajouter Caractère à la classe mot"
-
 #
+
 #: main.C:224
 msgid "choose type of color-mode"
 msgstr "Choisir type de couleur"
@@ -67,6 +67,7 @@ msgstr "&Large"
 msgid "&Huge"
 msgstr "&Géant"
 
+
 #: main.C:388
 msgid "&black/white"
 msgstr "&noir/blanc"
@@ -82,8 +83,8 @@ msgstr "&vert/noir"
 #: main.C:391
 msgid "black/light&yellow"
 msgstr "noir/&jaune clair"
-
 #
+
 #: main.C:392
 msgid "Linu&x Console"
 msgstr "Console Linu&x"
@@ -94,16 +95,17 @@ msgstr "Cacher Barre de &Menu"
 
 #: main.C:401 main.C:460 main.C:586
 msgid "Show &Menubar"
-msgstr "Afficher Barre de &Menu"
+msgstr "Afficher Barre de &Menu""
 
 #: main.C:402 main.C:604
 msgid "Secure &keyboard"
 msgstr "Bloquer &Clavier"
-
 #
+
 #: main.C:404
 msgid "Scroll&bar"
-msgstr "&Barre de défilement"
+#msgstr "Scroll&bar"
+msgstr  "&Barre de défilement"
 
 #: main.C:405
 msgid "&Font size"
@@ -151,7 +153,7 @@ msgstr "Libérer le &Clavier"
 
 #: main.C:739
 msgid "Hint"
-msgstr "Conseil"
+msgstr  "Conseil"
 
 #: main.C:740
 msgid ""
@@ -218,10 +220,10 @@ msgstr ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
 "Emulation de Terminal pour le KDE Desktop Environment\n"
-"basé sur rxvt-2.08 de Robert Nation\n"
+"basé sur rxvt-2.08 de Robert Nation"
+"\n"
 "Les arguments reconnus sont:\n"
-"-e <commande> <arg> ...\texécute commande avec arguments - doit être le "
-"dernier argument\n"
+"-e <commande> <arg> ...\texécute commande avec arguments - doit être le dernier argument\n"
 "-display <nom>\tspécifie l'écran (serveur)\n"
 "-vt_geometry <spec>\tgéometrie initiale de la fenètre\n"
 "-print-pipe <nom>\tspecifie la redirection pour imprimante vt100\n"
@@ -242,10 +244,8 @@ msgstr ""
 "-ls-\t\t\tdfait initier kvt en shell non-login (standard)\n"
 "-meta\t\t\tutilise Meta avec le préfixe ESCAPE, 8THBIT set ou ignore\n"
 "-sl <number>\t\tnombre de lignes à sauvegarder dans la mémoire tampon\n"
-"-pageup <keysym>\tutiliser la séquence alt-keysym pour remonter dans le "
-"tampon\n"
-"-pagedown <keysym>\tutiliser la séquence alt-keysym pour avancer dans le "
-"tampon\n"
+"-pageup <keysym>\tutiliser la séquence alt-keysym pour remonter dans le tampon\n"
+"-pagedown <keysym>\tutiliser la séquence alt-keysym pour avancer dans le tampon\n"
 
 #: main.C:954
 msgid ""

@@ -13,8 +13,7 @@ msgstr ""
 
 #: main.cpp:131
 msgid "  -init               apply current settings to the display\n"
-msgstr ""
-"  -init               applique les modifications courantes a l'affichage\n"
+msgstr "  -init               applique les modifications courantes a l'affichage\n"
 
 #: main.cpp:132
 msgid "  -setup              setup the display\n"
@@ -186,7 +185,8 @@ msgstr "Sauvegarder modèle"
 
 #: colorscm.cpp:372 colorscm.cpp:380
 msgid "You have chosen a name used by a supplied color scheme"
-msgstr "Vous avez choisis un modèle de couleur fourni par le système"
+msgstr ""
+"Vous avez choisis un modèle de couleur fourni par le système"
 
 #: colorscm.cpp:463
 msgid "KDE Default"

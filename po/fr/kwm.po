@@ -1,128 +1,108 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
-msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-10-09 22:06-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
-
-#: main.C:64
+#: main.C:63
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: un autre gestionnaire de fenêtres semble être en fonction. kwm n'as pas "
-"été lancé\n"
+"kwm: un autre gestionnaire de fenêtres semble être en fonction. "
+"kwm n'as pas été lancé\n"
 
-#: main.C:78
+#: main.C:77
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: érreur pendant l'initialisation; commande annulée\n"
+msgstr "kwm: érreur pendant l'initialisation; commande annulée"
 
-#: main.C:363
+#: main.C:352
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Touts droits réservés (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:367
+#: main.C:356
 msgid "Usage: "
 msgstr "Utilisation:"
 
-#: main.C:378
+#: main.C:367
 msgid "Maximize"
 msgstr "Maximer"
 
-#: main.C:379
+#: main.C:368
 msgid "Restore"
 msgstr "Restaurer"
 
-#: main.C:380
+#: main.C:369
 msgid "Iconify"
 msgstr "Iconifier"
 
-#: main.C:381
+#: main.C:370
 msgid "DeIconify"
 msgstr "DeIconifier"
 
-#: main.C:382
+#: main.C:371
 msgid "Sticky"
 msgstr "Clouer"
 
-#: main.C:383
+#: main.C:372
 msgid "UnSticky"
 msgstr "DéClour"
 
-#: main.C:384
+#: main.C:373
 msgid "Move"
 msgstr "Déplacer"
 
-#: main.C:385
+#: main.C:374
 msgid "Resize"
 msgstr "Dimensionner"
 
-#: main.C:387
+#: main.C:376
 msgid "To desktop"
 msgstr "Sur Bureau"
 
-#: main.C:389
+#: main.C:378
 msgid "Onto current desktop"
 msgstr "Sur cu bureau "
 
-#: main.C:437
+#: main.C:416
 msgid "One"
 msgstr "Un"
 
-#: main.C:440
+#: main.C:419
 msgid "Two"
 msgstr "Deux"
 
-#: main.C:443
+#: main.C:422
 msgid "Three"
 msgstr "Trois"
 
-#: main.C:446
+#: main.C:425
 msgid "Four"
 msgstr "Quatres"
 
-#: main.C:449
+#: main.C:428
 msgid "Five"
 msgstr "Cinq"
 
-#: main.C:452
+#: main.C:431
 msgid "Six"
 msgstr "Six"
 
-#: main.C:455
+#: main.C:434
 msgid "Seven"
 msgstr "Sept"
 
-#: main.C:458
+#: main.C:437
 msgid "Eight"
 msgstr "Huit"
 
-#: main.C:841
+#: main.C:878
 msgid "*** No Tasks ***"
 msgstr "*** Pas d'application ***"
 
-#: minicli.C:66
-msgid "Command:"
-msgstr "Commande:"
-
-#: logout.C:35 task.C:36
+#: logout.C:34 task.C:35
 msgid "Logout"
 msgstr "Quitter"
 
-#: logout.C:45
+#: logout.C:44
 msgid "Session prepared for logout"
 msgstr "Session préparée pour quitter"
 
-#: logout.C:51
+#: logout.C:49
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
@@ -130,7 +110,7 @@ msgstr ""
 "Les applications suivantes détiennes des fichier non sauveguardés\n"
 "qui vont êtres perdus dans votre prochaine session."
 
-#: logout.C:62
+#: logout.C:58
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
@@ -139,7 +119,7 @@ msgstr ""
 "prochaine session de travail, mais relancé. Veuillez vous assurer qu'elles\n"
 "ne détiennent pas des fichiers importants non sauveguardés."
 
-#: logout.C:73
+#: logout.C:67
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
@@ -148,80 +128,108 @@ msgstr ""
 "être restaurées dans votre prochaine session de travail. Veuillez vous\n"
 "assurer qu'elles ne contiennes pas des fichiers importants non sauveguardés."
 
-#: task.C:35
+
+#: task.C:34
 msgid "Switch to"
 msgstr "Changer à"
 
-#: task.C:49
+#: task.C:48
 msgid "Current session"
 msgstr "Session actuelle"
 
-#~ msgid ""
-#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     No warranty. Please see the README's\n"
-#~ msgstr ""
-#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     basée sur version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     basée sur version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Parties derivées de 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     Sans garanties. Veuillez lire les fichiers README\n"
+#: kwm.C:73
+msgid ""
+"kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+"     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+"     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+"     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
+"     No warranty. Please see the README's\n"
+msgstr ""
+"kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+"     basée sur version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+"     basée sur version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+"     Parties derivées de 9wm 1.1 Copyright (c) 1994 David Hogan\n"
+"     Sans garanties. Veuillez lire les fichiers README\n"
 
-#~ msgid "patch level %d"
-#~ msgstr "Sous-version %d"
 
-#~ msgid "usage: kwm [-version] [-exec prog] \n"
-#~ msgstr "utilisation: kwm [-version] [-exec programme] \n"
+#: kwm.C:79
+#, c-format
+msgid "patch level %d"
+msgstr "Sous-version %d"
 
-#~ msgid "Desktop"
-#~ msgstr "Bureau"
+#: kwm.C:154
+msgid "usage: kwm [-version] [-exec prog] \n"
+msgstr "utilisation: kwm [-version] [-exec programme] \n""
 
-#~ msgid "kwm: exiting on signal\n"
-#~ msgstr "kwm: sortie au signal\n"
+#: kwm.C:566
+msgid "Desktop"
+msgstr "Bureau"
 
-#~ msgid "&Help on desktop"
-#~ msgstr "&Aide sur le Bureau"
+#: kwm.C:731
+msgid "kwm: exiting on signal\n"
+msgstr "kwm: sortie au signal\n"
 
-#~ msgid "&Execute command"
-#~ msgstr "&Executer commande"
+#: main.C:371
+msgid "&Help on desktop"
+msgstr "&Aide sur le Bureau"
 
-#~ msgid "&Display properties"
-#~ msgstr "Propriétés d'&affichage"
+#: main.C:372
+msgid "&Execute command"
+msgstr "&Executer commande"
 
-#~ msgid "&Refresh desktop"
-#~ msgstr "&Rafraichir le bureau"
+#: main.C:373
+msgid "&Display properties"
+msgstr "Propriétés d'&affichage"
 
-#~ msgid "&Arrange icons"
-#~ msgstr "&Disposer les icônes"
+#: main.C:374
+msgid "&Refresh desktop"
+msgstr "&Rafraichir le bureau"
 
-#~ msgid "&Lock screen"
-#~ msgstr "&Vérouiller l'écran"
+#: main.C:375
+msgid "&Arrange icons"
+msgstr "&Disposer les icônes"
 
-#~ msgid "Lo&gout"
-#~ msgstr "&Quitter"
+#: main.C:377
+msgid "&Lock screen"
+msgstr "&Vérouiller l'écran"
 
-#~ msgid "(Un) Ma&ximize"
-#~ msgstr "(Dé) Ma&ximiser"
+#: main.C:378
+msgid "Lo&gout"
+msgstr "&Quitter"
 
-#~ msgid "&Iconify"
-#~ msgstr "&Iconifier"
+#: main.C:1141
+msgid "(Un) Ma&ximize"
+msgstr "(Dé) Ma&ximiser"
 
-#~ msgid "&Move"
-#~ msgstr "&Déplacer"
+#: main.C:1142
+msgid "&Iconify"
+msgstr "&Iconifier"
 
-#~ msgid "&Resize"
-#~ msgstr "&Dimensionner"
+#: main.C:1143
+msgid "&Move"
+msgstr "&Déplacer"
 
-#~ msgid "(Un) &Sticky"
-#~ msgstr "(Dé) &Clouer"
+#: main.C:1144
+msgid "&Resize"
+msgstr "&Dimensionner"
 
-#~ msgid "&To Desktop"
-#~ msgstr "&Sur Bureau"
+#: main.C:1145
+msgid "(Un) &Sticky"
+msgstr "(Dé) &Clouer"
 
-#~ msgid "&Close"
-#~ msgstr "&Fermer"
+#: main.C:1146
+msgid "&To Desktop"
+msgstr "&Sur Bureau"
 
-#~ msgid "&Destroy"
-#~ msgstr "&Détruire"
+#: main.C:1148
+msgid "&Close"
+msgstr "&Fermer"
+
+#: main.C:1149
+msgid "&Destroy"
+msgstr "&Détruire"
+
+#: minicli.C:65
+msgid "Command:"
+msgstr "Commande:"
+

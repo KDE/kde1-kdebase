@@ -1,172 +1,123 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
-msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-10-09 21:47-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
-
 #: kpanel.C:172
-msgid "Move"
-msgstr "Déplacer"
+msgid "Personal menu"
+msgstr "Menu personel"
 
-#: kpanel.C:173
-msgid "Remove"
-msgstr "Enlever"
-
-#: kpanel.C:175
-msgid "Properties"
-msgstr "Propriétés"
-
-#: kpanel.C:205 kpanel.C:207 tools.C:678
-msgid "System"
-msgstr "Systéme"
-
-#: kpanel.C:270
-msgid "No info available"
-msgstr "Information inéxistante"
-
-#: kpanel.C:306 kpanel.C:664 kpanel.C:665
-msgid "Logout"
-msgstr "Quitter"
-
-#: kpanel.C:315 kpanel.C:663
-#, fuzzy
-msgid "Lock screen"
-msgstr "Vérouiller écran"
-
-#: kpanel.C:326
-msgid "Hide the panel"
-msgstr ""
-
-#: kpanel.C:342
-msgid "Show the panel"
-msgstr ""
-
-#: kpanel.C:647
+#: kpanel.C:180
 msgid "Add application"
 msgstr "Ajouter application"
 
-#: kpanel.C:649
-msgid "Add an application or a submenu onto the panel"
-msgstr ""
+#: kpanel.C:182
+msgid "Add special"
+msgstr "Ajouter spécial"
 
-#: kpanel.C:650
-msgid "Add windowlist"
-msgstr ""
-
-#: kpanel.C:652
-msgid "Add a windowlist menu onto the panel"
-msgstr ""
-
-#: kpanel.C:653
+#: kpanel.C:183
 msgid "Configure"
 msgstr "Configurer"
 
-#: kpanel.C:655
+#: kpanel.C:185
 msgid "Configure panel"
 msgstr "Configurer panel"
 
-#: kpanel.C:656
+#: kpanel.C:186
 msgid "Restart"
 msgstr "Relancer"
 
-#: kpanel.C:658
-#, fuzzy
-msgid "Restart panel"
-msgstr "Relancer"
-
-#: kpanel.C:659 props.C:297
+#: kpanel.C:188
 msgid "Panel"
 msgstr "Panel"
 
-#: kpanel.C:661
+#: kpanel.C:190
 msgid "Lock Screen"
 msgstr "Vérouiller écran"
 
-#: kpanel.C:1012 tools.C:503
-#, fuzzy
-msgid "No comment available"
+#: kpanel.C:192
+msgid "Logout"
+msgstr "Quitter"
+
+#: kpanel.C:201
+msgid "Move"
+msgstr "Déplacer"
+
+#: kpanel.C:202
+msgid "Remove"
+msgstr "Enlever"
+
+#: kpanel.C:204
+msgid "Properties"
+msgstr "Propriétés"
+
+#: kpanel.C:239
+msgid "System"
+msgstr "Systéme"
+
+#: kpanel.C:316
+msgid "Desktop"
+msgstr "Bureau"
+
+#: kpanel.C:348
+msgid "No info available"
 msgstr "Information inéxistante"
 
-#: kpanel.C:1021 tools.C:690
-msgid "Windowlist"
-msgstr ""
+#: kpanel.C:435 kpanel.C:451
+msgid "Destroy"
+msgstr "Détruire"
 
-#: props.C:239
+#: kpanel.C:438 kpanel.C:448
+msgid "(Un) Sticky"
+msgstr "(Dé) Clouer"
+
+#: kpanel.C:439 kpanel.C:447
+msgid "(Un) Iconify"
+msgstr "(Dé) Iconifier"
+
+#: kpanel.C:440 kpanel.C:446
+msgid "(Un) Maximize"
+msgstr "(Dé) Maximiser"
+
+#: kpanel.C:441 kpanel.C:445
+msgid "On this desktop"
+msgstr "Sur ce bureau"
+
+#: props.C:263
 msgid "Location"
 msgstr "Localité"
 
-#: props.C:254
+#: props.C:283
 msgid "Taskbar"
 msgstr "Barre d'applications"
 
-#: props.C:255
+#: props.C:284
 msgid "Hidden"
 msgstr "Caché"
 
-#: props.C:267
+#: props.C:296
 msgid "Top/Left"
 msgstr "Haut/Gauche"
 
-#: props.C:278
+#: props.C:307
 msgid "Tiny Style"
 msgstr "Style minuscule"
 
-#: props.C:279
+#: props.C:308
 msgid "Small Style"
 msgstr "Style petit"
 
-#: props.C:280
+#: props.C:309
 msgid "Large Style"
 msgstr "Style Large"
 
-#: props.C:292
+#: props.C:321
 msgid "Menu Tooltips"
 msgstr "Tooltip menus"
 
-#: props.C:348
+#: props.C:397
 msgid "Visible"
 msgstr "Visible"
 
-#: props.C:355
+#: props.C:404
 msgid "Width"
 msgstr "Largeur"
 
-#: props.C:360
-#, fuzzy
-msgid "Desktops"
-msgstr "Bureau"
-
-#: props.C:366
+#: props.C:415
 msgid "KPanel Configuration"
 msgstr "Configuration KPanel"
-
-#~ msgid "Personal menu"
-#~ msgstr "Menu personel"
-
-#~ msgid "Add special"
-#~ msgstr "Ajouter spécial"
-
-#~ msgid "Destroy"
-#~ msgstr "Détruire"
-
-#~ msgid "(Un) Sticky"
-#~ msgstr "(Dé) Clouer"
-
-#~ msgid "(Un) Iconify"
-#~ msgstr "(Dé) Iconifier"
-
-#~ msgid "(Un) Maximize"
-#~ msgstr "(Dé) Maximiser"
-
-#~ msgid "On this desktop"
-#~ msgstr "Sur ce bureau"
