@@ -77,7 +77,7 @@ void Entry::writeHTML( QTextStream &stream )
 
 int readEntries( const char *dirName, QList<Entry> &list )
 {
-	QDir fileDir( dirName, "*.kdelnk", 0, QDir::Files | QDir::Readable );
+	QDir fileDir( dirName, "*.kdelnk", 0, QDir::Files | QDir::Hidden | QDir::Readable );
 
 	if ( !fileDir.exists() )
 		return 0;
