@@ -1,7 +1,6 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Logi Ragnarsson <logir@imf.au.dk>, 1998
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1998-10-01 12:21+0200\n"
@@ -122,7 +121,7 @@ msgstr ""
 #: main.C:1353
 # FIXME
 msgid "*** No Tasks ***"
-msgstr "*** Engar keyrslur ***"
+msgstr "*** Engin verkefni ***"
 
 #: minicli.C:119
 msgid "Command:"

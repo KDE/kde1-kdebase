@@ -1,7 +1,6 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Logi Ragnarsson <logir@hi.is>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1998-10-01 12:22+0200\n"
@@ -51,7 +50,7 @@ msgstr "&Hægri"
 
 #: panel.cpp:75
 msgid "Taskbar"
-msgstr "Keyrsluslá"
+msgstr "Verkefnaslá"
 
 #: panel.cpp:76
 msgid "&Hidden"
@@ -123,7 +122,7 @@ msgstr "&Fela spjald sjálfvirkt"
 
 #: options.cpp:73
 msgid "Auto Hide &Taskbar"
-msgstr "Fela &Keyrsluslá sjálfvirkt"
+msgstr "Fela &Verkefnaslá sjálfvirkt"
 
 #: options.cpp:81
 msgid "Clock"

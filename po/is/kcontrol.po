@@ -1,7 +1,6 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Logi Ragnarsson <logir@hi.is>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1998-10-01 12:21+0200\n"

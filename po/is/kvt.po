@@ -1,7 +1,6 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Logi Ragnarsson <logir@imf.au.dk>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1998-10-01 12:21+0200\n"
@@ -231,7 +230,7 @@ msgstr "-vt_size <stærð>          leturstærð: tiny, small, normal, large, huge\n
 
 #: main.C:1408
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux                    lata kvt herma eftir Linux textaham\n"
+msgstr "-linux                    láta kvt herma eftir Linux textaham\n"
 
 #: main.C:1409
 msgid "-no_menubar               hide the menubar\n"
@@ -275,7 +274,7 @@ msgid ""
 "(default)\n"
 msgstr ""
 "-ls                       opna innskráningarskel í kvt\n"
-"-ls                       opna venjulega skel í kvt (sjálfgefið)\n"
+"-ls-                      opna venjulega skel í kvt (sjálfgefið)\n"
 
 #: main.C:1420
 msgid ""
@@ -297,7 +296,7 @@ msgid ""
 "buffer\n"
 msgstr ""
 "-pageup <lyklatákn>       nota alt-lyklatákn til að renna aftur í biðminni\n"
-"-pageup <lyklatákn>       nota alt-lyklatákn til að renna fram í biðminni\n"
+"-pagedown <lyklatákn>     nota alt-lyklatákn til að renna fram í biðminni\n"
 
 #: main.C:1426
 msgid ""
