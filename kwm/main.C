@@ -650,108 +650,37 @@ void MyApp::writeConfiguration(){
 
 
 void MyApp::saveSession(){
-  int n = 1;
-  QString b;
   KConfig* config = getKApplication()->getConfig();
   config->setGroup( "Session" );
 
   QStrList* sl = NULL;
-  QString s;
 
   sl = manager->getSessionCommands();
-  for (s = sl->first(); 
-       !s.isEmpty(); s = sl->next()){
-    b.setNum(n);
-    b.insert(0, "task");
-    config->writeEntry(qstrdup(b.data()), qstrdup(s.data()));
-    n++;
-  }
-  b.setNum(n);
-  b.insert(0, "task");
-  config->writeEntry(qstrdup(b.data()), "*end*");
+  config->writeEntry("tasks", *sl);
   delete sl;
-
-  n = 1;
   sl = manager->getProxyHints();
-  for (s = sl->first(); 
-       !s.isEmpty(); s = sl->next()){
-    b.setNum(n);
-    b.insert(0, "proxyhint");
-    config->writeEntry(qstrdup(b.data()), qstrdup(s.data()));
-    n++;
-  }
-  b.setNum(n);
-  b.insert(0, "proxyhint");
-  config->writeEntry(qstrdup(b.data()), "*end*");
+  config->writeEntry("proxyhints", *sl);
   delete sl;
-
-  n = 1;
   sl = manager->getProxyProps();
-  for (s = sl->first(); 
-       !s.isEmpty(); s = sl->next()){
-    b.setNum(n);
-    b.insert(0, "proxyprop");
-    config->writeEntry(qstrdup(b.data()), qstrdup(s.data()));
-    n++;
-  }
-  b.setNum(n);
-  b.insert(0, "proxyprop");
-  config->writeEntry(qstrdup(b.data()), "*end*");
-  delete sl;
-
-
+  config->writeEntry("proxyprops", *sl);
   config->sync();
 }
 
 void MyApp::restoreSession(){
   KConfig* config = getKApplication()->getConfig();
   config->setGroup( "Session" );
-  int n = 1;
-  QString b;
   QString command;
-  bool abort = False;
-  do {
-    b.setNum(n);
-    b.insert(0, "task");
-    command = config->readEntry(b);
-    if (!command.isEmpty() && command != "*end*"){
-      execute(command.data());
-    } else {
-      abort = True;
-    }
-    n++;
-  } while (!abort);
-
+  
+  QStrList* com = new QStrList;
   QStrList* ph = new QStrList;
   QStrList* pp = new QStrList;
-  QString s;
-  n = 1;
-  abort = False;
-  do {
-    b.setNum(n);
-    b.insert(0, "proxyhint");
-    s = config->readEntry(b);
-    if (!s.isEmpty() && s != "*end*"){
-      ph->append(s);
-    } else {
-      abort = True;
-    }
-    n++;
-  } while (!abort);
 
-  abort = False;
-  n = 1;
-  do {
-    b.setNum(n);
-    b.insert(0, "proxyprop");
-    s = config->readEntry(b);
-    if (!s.isEmpty() && s != "*end*"){
-      pp->append(s);
-    } else {
-      abort = True;
-    }
-    n++;
-  } while (!abort);
+  config->readListEntry("tasks", *com);
+  for (command = com->first(); !command.isNull(); command = com->next())
+    execute(command.data());
+  delete com;
+  config->readListEntry("proxyhints", *ph);
+  config->readListEntry("proxyprops", *pp);
   manager->setProxyData(ph, pp);
 }
 

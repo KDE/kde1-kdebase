@@ -51,175 +51,56 @@ extern MyApp* myapp;
 extern QPushButton* ignore_release_on_this;
 
 
-bool do_not_draw;
+bool do_not_draw = FALSE;
 myPushButton::myPushButton(QWidget *parent, const char* name)
   : QPushButton( parent, name ){
-    setMouseTracking(TRUE);
     setFocusPolicy(NoFocus);
-    autoDefButton = defButton = lastDown = lastDef  = FALSE;
-     lastFlat = True;
-     flat = True;
+    flat = True;
 }
 
 void myPushButton::enterEvent( QEvent * ){
   flat = False;
   if (!do_not_draw)
-    update();
+    repaint(FALSE);
 }
 
 void myPushButton::leaveEvent( QEvent * ){
   flat = True;
   if (!do_not_draw)
-    update();
+    repaint();
 }
 
-const int extraMotifWidth = 10;
-const int extraMotifHeight = 10;
-void myPushButton::drawButton( QPainter *paint){
-  register QPainter *p = paint;
-  GUIStyle	gs = style();
-  gs = MotifStyle;
-  QColorGroup g  = colorGroup();
-  bool	updated = isDown() != (bool)lastDown || lastDef != defButton || lastFlat != flat;
-  QColor	fillcol = g.background();
-  int		x1, y1, x2, y2;
-
-  //flat = False;
+void myPushButton::paint(QPainter *painter){
+  if ( isDown() || (isOn() && !flat)) {
+    if ( style() == WindowsStyle )
+      qDrawWinButton( painter, 0, 0, width(), 
+		      height(), colorGroup(), TRUE );
+    else
+      qDrawShadePanel( painter, 0, 0, width(), 
+		       height(), colorGroup(), TRUE, 2, 0L );
+  }
+  else if (!flat ) {
+    if ( style() == WindowsStyle )
+      qDrawWinButton( painter, 0, 0, width(), height(),
+		      colorGroup(), FALSE );
+    else {
+      qDrawShadePanel( painter, 0, 0, width(), height(), 
+		       colorGroup(), FALSE, 2, 0L );
+      painter->setPen(black);
+      painter->drawRect(0,0,width(),height()); 
+    }
+  }
   
-  rect().coords( &x1, &y1, &x2, &y2 );	// get coordinates
-  
-#define SAVE_PUSHBUTTON_PIXMAPS
-#if defined(SAVE_PUSHBUTTON_PIXMAPS)
-  QString pmkey;				// pixmap key
-  int w, h;
-  w = x2 + 1;
-  h = y2 + 1;
-  pmkey.sprintf( "$qt_push_%d_%d_%d_%d_%d_%d_%d_%d", gs,
-		 palette().serialNumber(), isDown(), defButton, w, h,
-		 isToggleButton() && isOn(), flat);
-  QPixmap *pm = QPixmapCache::find( pmkey );
-  QPainter pmpaint;
-  if ( pm ) {					// pixmap exists
-    QPixmap pm_direct = *pm;
-    pmpaint.begin( &pm_direct );
-    pmpaint.drawPixmap( 0, 0, *pm );
-    if ( text() )
-      pmpaint.setFont( font() );
-    drawButtonLabel( &pmpaint );
-    pmpaint.end();
-    p->drawPixmap( 0, 0, pm_direct );
-    lastDown = isDown();
-    lastDef = defButton;
-    lastFlat = flat;
-    if ( hasFocus() ) {
-      if ( style() == WindowsStyle ) {
-	p->drawWinFocusRect( x1+3, y1+3, x2-x1-5, y2-y1-5 );
-      } else {
-	p->setPen( black );
-	p->drawRect( x1+3, y1+3, x2-x1-5, y2-y1-5 );
-      }
+  if ( pixmap() ) {
+    int dx = ( width() - pixmap()->width() ) / 2;
+    int dy = ( height() - pixmap()->height() ) / 2;
+    if ( isDown() && style() == WindowsStyle ) {
+      dx++;
+      dy++;
     }
-    return;
+    painter->drawPixmap( dx, dy, *pixmap() );
   }
-  bool use_pm = TRUE;
-  if ( use_pm ) {
-    pm = new QPixmap( w, h );		// create new pixmap
-    CHECK_PTR( pm );
-    pmpaint.begin( pm );
-    p = &pmpaint;				// draw in pixmap
-    p->setBackgroundColor( fillcol );
-    p->eraseRect( 0, 0, w, h );
-  }
-#endif
-
-  p->setPen( g.foreground() );
-  p->setBrush( QBrush(fillcol,NoBrush) );
-
-  if ( gs == WindowsStyle ) {		// Windows push button
-    if ( isDown() ) {
-      if ( defButton ) {
-	p->setPen( black );
-	p->drawRect( x1, y1, x2-x1+1, y2-y1+1 );
-	p->setPen( g.dark() );
-	p->drawRect( x1+1, y1+1, x2-x1-1, y2-y1-1 );
-      }
-      else
-	qDrawWinButton( p, x1, y1, w, h, g, TRUE );
-    } else {
-      if (!flat || (False && isToggleButton() && isOn() )){
-        if ( defButton ) {
-	  p->setPen( black );
-	  p->drawRect( x1, y1, w, h );
-	  x1++; y1++;
-	  x2--; y2--;
-        }
-        if ( isToggleButton() && isOn() ) {
-	  qDrawWinButton( p, x1, y1, x2-x1+1, y2-y1+1, g, TRUE );
-	  if ( updated ) {
-	    p->setPen( NoPen );
-	    p->setBrush( g.mid() );
-	    p->drawRect( x1+1, y1+1, x2-x1-2, y2-y1-2 );
-	    updated = FALSE;
-	  }
-        } else {
-	  qDrawWinButton( p, x1, y1, x2-x1+1, y2-y1+1, g, FALSE );
-        }
-      }
-    }
-    if ( updated )
-      p->fillRect( x1+1, y1+1, x2-x1-1, y2-y1-1, g.background() );
-  }
-  else if ( gs == MotifStyle ) {		// Motif push button
-    if ( defButton ) {			// default Motif button
-      qDrawShadePanel( p, x1, y1, x2-x1+1, y2-y1+1, g, TRUE );
-      x1 += extraMotifWidth/2;
-      y1 += extraMotifHeight/2;
-      x2 -= extraMotifWidth/2;
-      y2 -= extraMotifHeight/2;
-    }
-    QBrush fill( fillcol );
-    if ( isDown() ) {
-      qDrawShadePanel( p, x1, y1, x2-x1+1, y2-y1+1, g, TRUE, 2,
-		       updated ? &fill : 0 );
-    } else if (!flat || (False && isToggleButton() && isOn() )){
-      if ( isToggleButton() && isOn() ) {
-       qDrawShadePanel( p, x1, y1, x2-x1+1, y2-y1+1, g, TRUE, 2, 0 );
-       if ( updated ) {
-	 p->setPen( NoPen );
-	 p->setBrush( g.mid() );
-	 p->drawRect( x1+2, y1+2, x2-x1-3, y2-y1-3 );
-       }
-      } else {
-	// hier war eine 2 ganz hinten!!
-	qDrawShadePanel( p, x1, y1, x2-x1+1, y2-y1+1, g, FALSE, 1,
-			 updated ? &fill : 0 );
-      }
-    }
-  }
-  if ( p->brush().style() != NoBrush )
-    p->setBrush( NoBrush );
-
-#if defined(SAVE_PUSHBUTTON_PIXMAPS)
-  if ( use_pm ) {
-    pmpaint.end();
-    p = paint;				// draw in default device
-    p->drawPixmap( 0, 0, *pm );
-    QPixmapCache::insert( pmkey, pm );	// save for later use
-  }
-#endif
-  
-  drawButtonLabel( p );
-
-  if ( gs == MotifStyle && hasFocus() ) {
-    p->setPen( black );
-    p->drawRect( x1+3, y1+3, x2-x1-5, y2-y1-5 );
-  }
-  lastDown = isDown();
-  lastDef = defButton;
-  lastFlat = flat;
-
 }
-
 
 void myPushButton::mousePressEvent( QMouseEvent *e){
   
@@ -250,13 +131,34 @@ void myPushButton::mouseReleaseEvent( QMouseEvent *e){
     emit clicked(); 
   }
   else {
-    repaint( FALSE );
+    repaint();
     emit released();
   }
 }
 
+void myPushButton::mouseMoveEvent( QMouseEvent *e ){
 
-
+  if ( !(e->state() & LeftButton) &&
+       !(e->state() & MidButton) &&
+       !(e->state() & RightButton))
+    return;
+  
+  bool hit = hitButton( e->pos() );
+  if ( hit ) {
+    if ( !isDown() ) {
+      setDown(TRUE);
+      repaint(FALSE);
+      emit pressed();
+    }
+  } else {
+    if ( isDown() ) {
+      setDown(FALSE);
+      repaint();
+      emit released();
+    }
+  }
+}
+  
 static QPixmap *shaded_pm_active = NULL;
 static QPixmap *shaded_pm_inactive = NULL;
 static QColor shaded_pm_active_color;

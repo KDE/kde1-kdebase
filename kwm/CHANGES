@@ -12,6 +12,12 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 7:
+       - improved KConfig handling (uses strlists :-)
+       - small bugfix with module registration (introduced with some cleanups
+         in the previous patchlevel...)
+       - cleaner pushButton class (behaves slightly different now)
+
   patchlevel 6:
        - small fix to execute(...);
        - maximizeButton has different semantics for LMB, MMB and RMB

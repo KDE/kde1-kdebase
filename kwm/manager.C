@@ -118,6 +118,10 @@ Manager::Manager(): QObject(){
 
 void Manager::createNotify(XCreateWindowEvent *e){
   if (e->parent== qt_xrootwin()){ 
+
+    // This sync is ABSOLUTELY necessary for a proper module registration
+    XSync(qt_xdisplay(), FALSE);
+
     if (KWM::isKWMModule(e->window))
       addModule(e->window);
     if (!getClient(e->window)){

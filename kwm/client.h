@@ -41,21 +41,17 @@ class myPushButton: public QPushButton
 public:
   myPushButton ( QWidget *parent=0, const char* name=0 );
   ~myPushButton () {}
-  void drawButton( QPainter * );
   bool flat;
   int last_button;
 protected:
-    void enterEvent( QEvent * );
-    void leaveEvent( QEvent * );
-    void mousePressEvent( QMouseEvent *e);
-    void mouseReleaseEvent( QMouseEvent *e);
-private:
-    uint	autoDefButton	: 1;
-    uint	defButton	: 1;
-    uint	lastDown	: 1;
-    uint	lastDef		: 1;
-    bool lastFlat;
-
+  void enterEvent( QEvent * );
+  void leaveEvent( QEvent * );
+  void mousePressEvent( QMouseEvent *e);
+  void mouseReleaseEvent( QMouseEvent *e);
+  void mouseMoveEvent( QMouseEvent *e);
+  void paint( QPainter *_painter );
+  void drawButton( QPainter *p ){paint(p);}
+  void drawButtonLabel( QPainter *p ){paint(p);}
 };
 
 
