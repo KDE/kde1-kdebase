@@ -52,7 +52,13 @@
 #include <fcntl.h>
 #include <syslog.h>
 #include <memory.h>
+
+#ifndef __FreeBSD__
 #include <malloc.h>
+#else
+#include <stdlib.h>
+#endif
+
 #include <errno.h>
 #include <time.h>
 
