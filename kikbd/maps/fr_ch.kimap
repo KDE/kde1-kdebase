@@ -4,9 +4,11 @@
 Authors=Cyrill Schneider <cyrill.schneider@bluewin.ch>
 Comment=French Keyboard (Switzerland)
 Comment[da]=Fransk tastatur (Svejts)
+Comment[fr]=Clavier français (Suisse)
 Comment[pt_BR]=Teclado Francês (Suíça)
 Language=French (Switzerland)
 Language[da]=Fransk (Svejts)
+Language[fr]=Français (Suisse)
 Language[pt_BR]=Francês (Suíça)
 
 Label=CH

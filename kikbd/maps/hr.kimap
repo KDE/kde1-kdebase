@@ -5,10 +5,12 @@ Authors=Vedran Vyroubal <vedran.vyroubal@fer.hr>,
 
 Comment=Croatian keyboard layout
 Comment[da]=Kroatisk tastaturudlægning
+Comment[fr]=Disposition de clavier croate
 Comment[pt_BR]=Disposição de teclado croata
 
 Language=Croatian
 Language[da]=Kroatisk
+Language[fr]=Croate
 Language[pt_BR]=Croata
 
 Label=Hr 
