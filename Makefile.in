@@ -10,7 +10,7 @@ INSTALL = @INSTALL@
 
 top_builddir = .
 
-SUBDIRS =  kacli kfm kdehelp kdisplay kfontmanager kedit kfind kghostview kmines kpanel kpat ktetris kvt kview kwm klogout kwmclient kpaint kcalc khexdit @KSCREEN@ pics 
+SUBDIRS =  kacli kfm kdehelp kdisplay kfontmanager kedit kfind kghostview kmines kpanel kpat ktetris kvt kview kwm klogout kwmclient kpaint kcalc khexdit kjots @KSCREEN@ pics 
 
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 CONFIG_HEADER_IN = config.h.in
