@@ -125,7 +125,7 @@ AC_OUTPUT(Makefile \
 	applnk/Settings/Input_Devices/Makefile \
 	applnk/Settings/Makefile \
 	applnk/Settings/Network/Makefile \
-	applnk/Settings/Panel/Makefile \
+	applnk/Settings/Applications/Makefile \
 	applnk/Settings/Sound/Makefile \
 	applnk/Settings/Windows/Makefile \
 	applnk/System/Makefile \
@@ -174,7 +174,6 @@ AC_OUTPUT(Makefile \
 	kcontrol/kcontrol/pics/Makefile \
 	kcontrol/kcontrol/pics/mini/Makefile \
 	kcontrol/kdm/Makefile \
-	kcontrol/kdm/applnk/Makefile \
 	kcontrol/kdm/doc/Makefile \
 	kcontrol/kdm/pics/Makefile \
 	kcontrol/kpanel/Makefile \
