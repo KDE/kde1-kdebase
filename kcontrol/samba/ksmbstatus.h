@@ -1,23 +1,33 @@
 #ifndef main_included
 #define main_included
  
-#include "ktablistbox.h"
+#include <ktablistbox.h>
+#include <kpopmenu.h>
+#include <qtimer.h>
 #include <kcontrol.h>
 
 class NetMon : public KConfigWidget
 {
 Q_OBJECT
 public:
-   NetMon::NetMon(QWidget *parent = 0, const char * name=NULL);
+   NetMon::NetMon(QWidget *parent, const char * name=NULL);
 
    void applySettings() {};
-   void loadSettings() {};
-   
+   void loadSettings() {};    
+
 private:
-   KOldTabListBox *list;
+   KTabListBox *list;
+   QLabel *version;
+   QTimer *timer;
+   KPopupMenu *menu;
+   int killrow;
+   
 private slots:
    void update();
    void help();
+   void Kill();
+   void Killmenu(int Index, int column);
+   
 protected:
                      
 };

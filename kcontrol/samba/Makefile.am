@@ -3,16 +3,12 @@ LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_
 
 bin_PROGRAMS = kcmsamba
 
-kcmsamba_SOURCES = main.cpp ksmbstatus.cpp ktablistbox.cpp
-BUILT_SOURCED = ksmbstatus.moc ktablistbox.moc
+kcmsamba_SOURCES = main.cpp ksmbstatus.cpp
+BUILT_SOURCED = ksmbstatus.moc
 
 ksmbstatus.cpp: ksmbstatus.moc 
 ksmbstatus.moc: ksmbstatus.h
 	$(MOC) ksmbstatus.h -o ksmbstatus.moc
-
-ktablistbox.cpp: ktablistbox.moc
-ktablistbox.moc: ktablistbox.h
-	$(MOC) ktablistbox.h -o ktablistbox.moc
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
