@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmlocale\n"
 "POT-Creation-Date: 1998-05-13 12:05+0200\n"
-"PO-Revision-Date: 1998-06-08 23:35+0100\n"
+"PO-Revision-Date: 1998-12-05 12:49+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -57,3 +57,8 @@ msgstr ""
 "Els canvis als valors d'idioma només s'apliquen a les aplicacions engegades "
 "de nou.\n"
 "Per canviar l'idioma de tots els programes, primer haureu de sortir."
+
+
+
+
+

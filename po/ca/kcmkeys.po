@@ -1,0 +1,220 @@
+# KCMKEYS CATALAN TRANSLATION
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Sebastià Pla <sastia@redestb.es>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkeys\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"PO-Revision-Date: 1998-12-05 16:06+0100\n"
+"Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
+"Language-Team: CATALAN <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:64
+msgid "&Standard shortcuts"
+msgstr "Dreceres &estàndard"
+
+#: main.cpp:69
+msgid "&Global shortcuts"
+msgstr "Dreceres &globals"
+
+#: main.cpp:76
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
+msgstr "us: kcmkeys [-init | {standard,global}]\n"
+
+#: main.cpp:118
+msgid "Key binding settings"
+msgstr "Valors dels lligams de tecla"
+
+#: standard.cpp:53
+msgid "New"
+msgstr "Nou"
+
+#: standard.cpp:57
+msgid "Next"
+msgstr "Següent"
+
+#: standard.cpp:58
+msgid "Prior"
+msgstr "Previ"
+
+#: standard.cpp:63
+msgid "Find"
+msgstr "Busca"
+
+#: standard.cpp:66
+msgid "Home"
+msgstr "Llar"
+
+#: standard.cpp:67
+msgid "End"
+msgstr "Fi"
+
+#: global.cpp:81 standard.cpp:83
+msgid "Current scheme"
+msgstr "Esquema actual"
+
+#: global.cpp:83 standard.cpp:84
+msgid "KDE default"
+msgstr "KDE per omissió"
+
+#: standard.cpp:85
+msgid "KDE lite"
+msgstr "KDE lleuger"
+
+#: global.cpp:90 standard.cpp:90
+msgid "&Key scheme"
+msgstr "Esquema de &tecla"
+
+#: global.cpp:101
+msgid "&Add ..."
+msgstr "&Afegeix ..."
+
+#: global.cpp:123
+msgid "&Save changes"
+msgstr "&Desa canvis"
+
+#: global.cpp:182
+msgid "Error removing scheme"
+msgstr "Error en eliminar l'esquema"
+
+#: global.cpp:183
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+"Aquest esquema no s'ha pogut eliminar.\n"
+"Potser no teniu permissos per alterar el fitxer\n"
+"de sistema on es guarda l'esquema de tecla."
+
+#: global.cpp:314
+msgid "Naming conflict"
+msgstr "Conflicte de noms"
+
+#: global.cpp:315
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+"Si us plau, escolliu un nom únic pel nou esquema\n"
+"de tecla. El que heu entrat ja hi és a la llista\n"
+"d'esquemes de tecla."
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "Afegeix un esquema de tecla"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"&Entreu un nom pel nou esquema de tecla\n"
+"que s'afegirà a la vostra llista personal.\n"
+"\n"
+"Per començar, és copiaran a l'esquema\n"
+"les tecles en ús a la vista prèvia."
+
+#: ../../kwm/kwmbindings.cpp:1
+msgid "Task manager"
+msgstr "Gestor de tasques"
+
+#: ../../kwm/kwmbindings.cpp:2
+msgid "Kill window mode"
+msgstr "Mode mata finestra"
+
+#: ../../kwm/kwmbindings.cpp:3
+msgid "Execute command"
+msgstr "Executa comanda"
+
+#: ../../kwm/kwmbindings.cpp:4
+msgid "Window operations menu"
+msgstr "Menú d'operacions de finestra"
+
+#: ../../kwm/kwmbindings.cpp:5
+msgid "Pop-up system menu"
+msgstr "Menú sistema"
+
+#: ../../kwm/kwmbindings.cpp:7
+msgid "Window raise"
+msgstr "Eleva finestra"
+
+#: ../../kwm/kwmbindings.cpp:8
+msgid "Window lower"
+msgstr "Abaixa finestra"
+
+#: ../../kwm/kwmbindings.cpp:9
+msgid "Window close"
+msgstr "Tanca finestra"
+
+#: ../../kwm/kwmbindings.cpp:10
+msgid "Window iconify"
+msgstr "Iconitza finestra"
+
+#: ../../kwm/kwmbindings.cpp:11
+msgid "Window resize"
+msgstr "Redimensiona finestra"
+
+#: ../../kwm/kwmbindings.cpp:12
+msgid "Window move"
+msgstr "Mou finestra"
+
+#: ../../kwm/kwmbindings.cpp:13
+msgid "Window toggle sticky"
+msgstr "Intercanvia apegalós"
+
+#: ../../kwm/kwmbindings.cpp:15
+msgid "Switch to desktop 1"
+msgstr "Canvia a l'escriptori 1"
+
+#: ../../kwm/kwmbindings.cpp:16
+msgid "Switch to desktop 2"
+msgstr "Canvia a l'escriptori 2"
+
+#: ../../kwm/kwmbindings.cpp:17
+msgid "Switch to desktop 3"
+msgstr "Canvia a l'escriptori 3"
+
+#: ../../kwm/kwmbindings.cpp:18
+msgid "Switch to desktop 4"
+msgstr "Canvia a l'escriptori 4"
+
+#: ../../kwm/kwmbindings.cpp:19
+msgid "Switch to desktop 5"
+msgstr "Canvia a l'escriptori 5"
+
+#: ../../kwm/kwmbindings.cpp:20
+msgid "Switch to desktop 6"
+msgstr "Canvia a l'escriptori 6"
+
+#: ../../kwm/kwmbindings.cpp:21
+msgid "Switch to desktop 7"
+msgstr "Canvia a l'escriptori 7"
+
+#: ../../kwm/kwmbindings.cpp:22
+msgid "Switch to desktop 8"
+msgstr "Canvia a l'escriptori 8"
+
+#: ../../kwm/kwmbindings.cpp:24
+msgid "Switch one desktop to the right"
+msgstr "Canvia a l'escriptori de la dreta"
+
+#: ../../kwm/kwmbindings.cpp:25
+msgid "Switch one desktop to the left"
+msgstr "Canvia a l'escriptori de l'esquerra"
+
+#: ../../kwm/kwmbindings.cpp:26
+msgid "Switch one desktop up"
+msgstr "Canvia a l'escriptori de dalt"
+
+#: ../../kwm/kwmbindings.cpp:27
+msgid "Switch one desktop down"
+msgstr "Canvia a l'escriptori de baix"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-05-21 00:17+0100\n"
+"PO-Revision-Date: 1998-12-01 23:55+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,39 +23,39 @@ msgstr "&Processador"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr ""
+msgstr "&Interrupcions"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr ""
+msgstr "C&anals DMA"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr ""
+msgstr "Ports &ES"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr ""
+msgstr "&Bus PCI"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr ""
+msgstr "S&o"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr ""
+msgstr "&Dispositius"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr ""
+msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr ""
+msgstr "Pa&rticions"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr ""
+msgstr "Servidor &X"
 
 #: main.cpp:120
 msgid ""
@@ -63,6 +63,9 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
+"us: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
@@ -101,13 +104,3 @@ msgstr "%10ld bytes = %8.2f MB"
 #: memory.cpp:105
 msgid "Not available"
 msgstr "No disponible"
-
-#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
-#~ msgstr "us: kcminfo [-init | {processor,memory}]\n"
-
-#~ msgid "This system is not yet supported :-("
-#~ msgstr "Aquest sistema encara no està suportat :-("
-
-#, fuzzy
-#~ msgid "Not Available"
-#~ msgstr "No disponible"

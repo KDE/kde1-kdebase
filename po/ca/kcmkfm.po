@@ -1,0 +1,30 @@
+# KCMKFM CATALAN TRANSLATION
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Sebastià Pla <sastia@redestb.es>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkfm\n"
+"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"PO-Revision-Date: 1998-12-05 16:41+0100\n"
+"Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
+"Language-Team: CATALAN <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:34
+msgid "&Font"
+msgstr "&Font"
+
+#: main.cpp:36
+msgid "&Color"
+msgstr "&Color"
+
+#: main.cpp:63
+msgid "usage: kcmkfm [-init | {font,color}]\n"
+msgstr "us: kcmkfm [-init | {font,color}]\n"
+
+#: main.cpp:104
+msgid "KFM Configuration"
+msgstr "Configuració KFM"

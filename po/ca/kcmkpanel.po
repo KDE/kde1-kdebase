@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-11-21 01:13+0100\n"
-"PO-Revision-Date: 1998-06-09 00:10+0100\n"
+"PO-Revision-Date: 1998-12-02 00:10+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,12 +23,11 @@ msgstr "&Escriptoris"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr ""
+msgstr "&Navegador de disc"
 
 #: main.cpp:79
-#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "us: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "us: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 #: main.cpp:112
 msgid "KPanel Configuration"
@@ -52,7 +51,7 @@ msgstr "&Baix"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr ""
+msgstr "D&reta"
 
 #: panel.cpp:75
 msgid "Taskbar"
@@ -76,7 +75,7 @@ msgstr "Dalt/Es&querra"
 
 #: panel.cpp:95
 msgid "Style"
-msgstr ""
+msgstr "Estil"
 
 #: panel.cpp:97
 msgid "T&iny"
@@ -104,7 +103,7 @@ msgstr "Indicacions de menú"
 
 #: options.cpp:39
 msgid "Show &Menu Tooltips"
-msgstr "Mostrar &Indicacions de menú"
+msgstr "Mostra &Indicacions de menú"
 
 #: options.cpp:44
 msgid "De&lay:"
@@ -112,49 +111,47 @@ msgstr "&Retard"
 
 #: options.cpp:50 options.cpp:68 options.cpp:86
 msgid "Small"
-msgstr ""
+msgstr "Petit"
 
 #: options.cpp:51 options.cpp:69 options.cpp:87
-#, fuzzy
 msgid "Large"
-msgstr "&Gran"
+msgstr "Gran"
 
 #: options.cpp:62
 msgid "Visuals"
-msgstr ""
+msgstr "Visuals"
 
 #: options.cpp:64
 msgid "Auto &Hide Panel"
-msgstr "Auto &Ocultar Panell"
+msgstr "Auto &Oculta Panell"
 
 #: options.cpp:67 options.cpp:85
-#, fuzzy
 msgid "Delay:"
-msgstr "&Retard"
+msgstr "Retard"
 
 #: options.cpp:74 options.cpp:93
 msgid "Speed:"
-msgstr ""
+msgstr "Velocitat:"
 
 #: options.cpp:75 options.cpp:94 options.cpp:103
 msgid "Slow"
-msgstr ""
+msgstr "Lenta"
 
 #: options.cpp:76 options.cpp:95 options.cpp:104
 msgid "Fast"
-msgstr ""
+msgstr "Ràpida"
 
 #: options.cpp:82
 msgid "Auto Hide &Taskbar"
-msgstr "Auto Ocultar &Barra de tasques"
+msgstr "Auto Oculta &Barra de tasques"
 
 #: options.cpp:100
 msgid "Animate Show/Hide"
-msgstr ""
+msgstr "Animació Mostra/Oculta"
 
 #: options.cpp:102
 msgid "Speed"
-msgstr ""
+msgstr "Velocitat"
 
 #: options.cpp:117
 msgid "Others"
@@ -162,83 +159,68 @@ msgstr "Altres"
 
 #: options.cpp:118
 msgid "Personal &First"
-msgstr "Personal &Primer"
+msgstr "Primer &Personal"
 
 #: options.cpp:120
-#, fuzzy
 msgid "F&olders First"
-msgstr "Personal &Primer"
+msgstr "Primer C&arpetes"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
-msgstr ""
+msgstr "&Rellotge mostra l'hora en format AM/PM"
 
 #: disknav.cpp:38
 msgid "History"
-msgstr ""
+msgstr "Història"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr ""
+msgstr "Edita entrades: (arrossega una carpeta i crea un enllaç)"
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
-msgstr ""
+msgstr "Edita &Personal..."
 
 #: disknav.cpp:74
 msgid "Edit &Shared..."
-msgstr ""
+msgstr "Edita &Compartit..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr ""
+msgstr "Màxim carpetes recents:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "Màxim fitxers recents:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Màxim fitxers a una sola carpeta:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr ""
+msgstr "Mostra fitxers ocults"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Ignora la caixa en ordenar"
 
 #: disknav.cpp:173
-#, fuzzy
 msgid "Show Shared section"
-msgstr "Posició"
+msgstr "Mostra la secció compartida"
 
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Personal section"
-msgstr "Posició"
+msgstr "Mostra la secció personal"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "Mostra la secció recent"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr ""
+msgstr "Mostra la entrada d'opció"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr ""
-
-#~ msgid "ms"
-#~ msgstr "ms"
-
-#~ msgid "Clock"
-#~ msgstr "Rellotge"
-
-#~ msgid "&24h"
-#~ msgstr "&24h"
-
-#~ msgid "&12h AM/PM"
-#~ msgstr "&12h AM/PM"
+msgstr "Aplicació de terminal:"
