@@ -1,5 +1,5 @@
 SUBDIRS = Editors Internet Toys WordProcessing Development Graphic System \
-          Utilities
+          Utilities Office
 
 data_DATA = .directory
 

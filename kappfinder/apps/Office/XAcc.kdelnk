@@ -1,0 +1,17 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=xacc
+MiniIcon=
+Protocols=
+MimeType=
+Comment=XAcc
+Exec=xacc
+Icon=xacc.xpm
+TerminalOptions=
+Path=
+DocPath=
+Type=Application
+Terminal=0
+Info=Quicken Clone

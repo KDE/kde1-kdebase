@@ -1,0 +1,17 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=Plan
+MiniIcon=
+Protocols=
+MimeType=
+Comment=Calendar Manager
+Exec=plan
+Icon=plan.xpm
+TerminalOptions=
+Path=
+DocPath=
+Type=Application
+Terminal=0
+Info=Calendar Manager

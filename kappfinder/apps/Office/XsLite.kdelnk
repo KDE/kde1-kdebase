@@ -1,0 +1,17 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=XsLite
+MiniIcon=
+Protocols=
+MimeType=
+Comment=XsLite
+Exec=xslite
+Icon=XsLite.xpm
+TerminalOptions=
+Path=
+DocPath=
+Type=Application
+Terminal=0
+Info=Spread Sheet

@@ -1,0 +1,17 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=Lyx
+MiniIcon=
+Protocols=
+MimeType=
+Comment=Lyx
+Exec=lyx
+Icon=Lyx.xpm
+TerminalOptions=
+Path=
+DocPath=
+Type=Application
+Terminal=0
+Info=LaTeX Word Processor
