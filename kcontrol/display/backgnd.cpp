@@ -183,16 +183,17 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   groupLayout->addSpacing( 15 );
   groupLayout->addWidget( deskListBox, 5 );
 	
-  renameButton = new QPushButton( i18n( "&Rename ..." ), group );
-  renameButton->adjustSize();
-  renameButton->setFixedHeight( renameButton->height() );
-  renameButton->setMinimumWidth( renameButton->width() );
-  renameButton->setEnabled( !oneDesktopMode );
-  if ( !KWM::isKWMInitialized() )
-    renameButton->setEnabled( false );
-  connect( renameButton, SIGNAL( clicked() ), SLOT( slotRenameDesk() ) );
+// suppress rename button (kcmpanel provides this, duncan@kde.org 19990822
+//  renameButton = new QPushButton( i18n( "&Rename ..." ), group );
+//  renameButton->adjustSize();
+//  renameButton->setFixedHeight( renameButton->height() );
+//  renameButton->setMinimumWidth( renameButton->width() );
+//  renameButton->setEnabled( !oneDesktopMode );
+//  if ( !KWM::isKWMInitialized() )
+//    renameButton->setEnabled( false );
+//  connect( renameButton, SIGNAL( clicked() ), SLOT( slotRenameDesk() ) );
 	
-  groupLayout->addWidget( renameButton, 5 );
+//  groupLayout->addWidget( renameButton, 5 );
 
   oneDesktopButton = new QCheckBox( i18n("&Common Background"), group );
   oneDesktopButton->adjustSize();
@@ -1307,7 +1308,7 @@ void KBackground::slotToggleOneDesktop()
     rnddlg->done( QDialog::Accepted );
   
   oneDesktopButton->setChecked( oneDesktopMode );
-  renameButton->setEnabled( !oneDesktopMode );
+//  renameButton->setEnabled( !oneDesktopMode );
   deskListBox->setEnabled( !oneDesktopMode );
 
   changed = true;
