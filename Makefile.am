@@ -3,7 +3,7 @@
 
 SUBDIRS = kfm mimetypes kdehelp kfontmanager kfind kvt \
 	kwm kpanel kwmcom kwmmodules krootwm kdm kscreensaver \
-	kmenuedit kaudio kcontrolcenter \
+	kmenuedit kaudio kcontrolcenter kcontrol \
 	pics applnk doc po 
 
 # AUTOMAKE_OPTIONS = no-dependencies
