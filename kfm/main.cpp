@@ -44,7 +44,7 @@
 #endif
 
 void autostart();
-void testDir( const char* );
+void testDir( const char*, bool );
 void testDir2( const char* );
 void testDir3( const char* );
 
@@ -75,7 +75,7 @@ void testDir2( const char *_name )
 	closedir( dp );
 }
 
-void testDir( const char *_name )
+void testDir( const char *_name, bool showMsg = FALSE )
 {
   DIR *dp;
   dp = opendir( _name );
@@ -85,8 +85,9 @@ void testDir( const char *_name )
     if ( m.right(1) == "/" )
       m.truncate( m.length() - 1 );
     
-    QMessageBox::information( 0, klocale->translate("KFM Information"), 
-			  klocale->translate("Creating directory:\n") + m );
+    if (showMsg)
+        QMessageBox::information( 0, klocale->translate("KFM Information"), 
+                                  klocale->translate("Creating directory:\n") + m );
     ::mkdir( m, S_IRWXU );
   }
   else
@@ -198,7 +199,7 @@ int main( int argc, char ** argv )
     signal(SIGCHLD,sig_handler);
     
     // Test for directories
-    testDir( KFMPaths::DesktopPath() );
+    testDir( KFMPaths::DesktopPath(), TRUE );
     testDir( KFMPaths::TrashPath() );
     copyDirectoryFile("directory.trash", KFMPaths::TrashPath());
     testDir( KFMPaths::TemplatesPath() );
@@ -211,8 +212,10 @@ int main( int argc, char ** argv )
 
     if ( !bTemplates )
     {
-	QMessageBox::information( 0, klocale->translate("KFM Information"),
-			      klocale->translate("Installing Templates") );
+	/* Not very useful dialog box. Commented out. David.
+           QMessageBox::information( 0, klocale->translate("KFM Information"),
+           klocale->translate("Installing Templates") );
+        */
 	QString cmd;
 	cmd.sprintf("cp %s/kfm/Desktop/Templates/* %s", 
 		    kapp->kde_datadir().data(), KFMPaths::TemplatesPath().data() );
