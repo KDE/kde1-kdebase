@@ -349,7 +349,7 @@ int KProtocolFTP::ftpPasv(void)
 	       struct sockaddr sa;
 	       struct sockaddr_in in;
     } sin;
-    struct linger lng = { 0, 0 };
+    struct linger lng = { 1, 120 };
 
     pasv=1;
     if (sDatal != -1)
@@ -400,6 +400,8 @@ int KProtocolFTP::ftpPasv(void)
 	       return 0;
     }
 
+    if (setsockopt(sDatal, SOL_SOCKET, SO_KEEPALIVE, (char *) &on, (int) sizeof(on)) < 0)
+	       perror("Keepalive not allowed.");
     if (setsockopt(sDatal, SOL_SOCKET,SO_LINGER, (char *) &lng,(int) sizeof (lng)) < 0)
 	       perror("Linger mode was not allowed.");
     return 1;
@@ -460,14 +462,14 @@ int KProtocolFTP::ftpMkdir( const char *path )
     FD_ZERO(&mask);
     FD_SET(sDatal,&mask);
 
+    if (pasv == 1)
+    {
+	    return sDatal;
+    }
     if (select( sDatal + 1, &mask,NULL,NULL, 0L) == 0)
     {
 		close(sDatal);
 		return -2;
-    }
-    if (pasv == 1)
-    {
-	    return sDatal;
     }
 
     l = sizeof(addr);
@@ -549,16 +551,10 @@ int KProtocolFTP::OpenConnection( const char *command, const char *path, char mo
     buf.sprintf("type %c",mode);
     if ( !ftpSendCmd( buf, '2' ) ) return Error(KIO_ERROR_CouldNotConnect,
 				"Could not set ftp to correct mode for transmission");
-
-#ifndef DONT_TRY_PASV // never defined - define if you don't want to try PASV first
-  if (!strcmp(command,"stor")) // no passive mode for uploading
-  {
-#endif
+#ifdef DONT_TRY_PASV // never defined - define if you don't want to try PASV first
     if ( !ftpPort() ) return Error(KIO_ERROR_CouldNotConnect,
 				"Could not setup ftp data port", errno);
-#ifndef DONT_TRY_PASV
-  }
-  else
+#else
     if ( !ftpPasv() ) return Error(KIO_ERROR_CouldNotConnect,
 				"Could not setup ftp data port", errno);
 #endif
