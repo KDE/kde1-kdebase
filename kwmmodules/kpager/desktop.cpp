@@ -25,7 +25,7 @@
 #include <qpainter.h>
 #include <stdio.h>
 
-//#define DESKTOPDEBUG
+#define DESKTOPDEBUG
 
 Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
     : QWidget(parent,_name) , QDropSite(this)
@@ -108,6 +108,7 @@ void Desktop::addWindow(Window w,int pos)
     wp->id=w;
     wp->name=KWM::title(w);
     wp->active=(KWM::activeWindow()==w)? true: false;
+    wp->iconified=KWM::isIconified(w);
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
     /* set mini geom */
@@ -161,11 +162,15 @@ void Desktop::changeWindow(Window w)
     QPixmap *tmpbigPixmap=0L;
     if (wpback->bigPixmap!=0L) tmpbigPixmap=new QPixmap(*wpback->bigPixmap);
     uint wid=getIndexOfWindow(w);
+    if (wpback->bigPixmap!=0L) {delete wpback->bigPixmap;wpback->bigPixmap=NULL;};
+    if (wpback->pixmap!=0L) {delete wpback->pixmap;wpback->pixmap=NULL;};
+    if (wpback->icon!=0L) {delete wpback->icon;wpback->icon=NULL;};
     window_list->remove(wid);
     WindowProperties *wp=new WindowProperties;
     wp->id=w;
     wp->name=KWM::title(w);
     wp->active=(KWM::activeWindow()==w)? true: false;
+    wp->iconified=KWM::isIconified(w);
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
     /* set mini geom */
@@ -183,11 +188,16 @@ void Desktop::raiseWindow(Window w)
     printf("[%d]Raise window %ld\n",id,w);
 #endif
     uint wid=getIndexOfWindow(w);
+    WindowProperties *wpback=getWindowProperties(w);
+    if (wpback->bigPixmap!=0L) {delete wpback->bigPixmap;wpback->bigPixmap=NULL;};
+    if (wpback->pixmap!=0L) {delete wpback->pixmap;wpback->pixmap=NULL;};
+    if (wpback->icon!=0L) {delete wpback->icon;wpback->icon=NULL;};
     window_list->remove(wid);
     WindowProperties *wp=new WindowProperties;
     wp->id=w;
     wp->name=KWM::title(w);
     wp->active=(KWM::activeWindow()==w)? true: false;
+    wp->iconified=KWM::isIconified(w);
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
     /* set mini geom */
@@ -208,11 +218,15 @@ void Desktop::lowerWindow(Window w)
     WindowProperties *wpback=getWindowProperties(w);
     QPixmap *tmpbigPixmap=0L;
     if (wpback->bigPixmap!=0L) tmpbigPixmap=new QPixmap(*wpback->bigPixmap);
+    if (wpback->bigPixmap!=0L) {delete wpback->bigPixmap;wpback->bigPixmap=NULL;};
+    if (wpback->pixmap!=0L) {delete wpback->pixmap;wpback->pixmap=NULL;};
+    if (wpback->icon!=0L) {delete wpback->icon;wpback->icon=NULL;};
     window_list->remove(wid);
     WindowProperties *wp=new WindowProperties;
     wp->id=w;
     wp->name=KWM::title(w);
     wp->active=(KWM::activeWindow()==w)? true: false;
+    wp->iconified=KWM::isIconified(w);
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
     /* set mini geom */
@@ -305,7 +319,8 @@ void Desktop::paintWindow(QPainter *painter,WindowProperties *wp, QRect &tmp)
     QWMatrix matrix;
     QRect tmp2;
     double rx,ry;
-    
+
+    if (wp->iconified) return;
     if ((wp->active)&&(desktopActived)) painter->fillRect(tmp,QColor(255,255,0));
     else painter->fillRect(tmp,QColor(200,200,200));
     
@@ -350,7 +365,7 @@ void Desktop::paintEvent(QPaintEvent *)
 {
     tmpScreen->resize(width(),height());
     QPainter *painter=new QPainter(tmpScreen);
-    QRect tmp,tmp2;
+    QRect tmp;
     int x=0;
     int y=getHeaderHeight();
     painter->fillRect(0,0,width(),y,QColor(192,192,192));
@@ -374,8 +389,6 @@ void Desktop::paintEvent(QPaintEvent *)
 
     double ratiox=(double)width()/(double)screen_width;
     double ratioy=(double)(height()-y)/(double)screen_height;
-    double rx,ry;
-    QWMatrix matrix;
 
     while (wp!=NULL)
     {

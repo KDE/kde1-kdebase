@@ -35,6 +35,7 @@ struct WindowProperties
     Window id;
     QString name;
     bool active;
+    bool iconified;
     QRect geometry;
     QRect minigeometry;
     QRect framegeometry;
