@@ -1,0 +1,134 @@
+# Перевод kpager.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com<>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kpager\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
+"PO-Revision-Date: 1998-11-07 00:00+0600\n"
+"Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.C:201
+msgid "&Normal"
+msgstr "Нормальный"
+
+#: main.C:204
+msgid "&Small"
+msgstr "Маленький"
+
+#: main.C:205
+msgid "&Medium"
+msgstr "Средний"
+
+#: main.C:206
+msgid "&Large"
+msgstr "Большой"
+
+#: main.C:207
+msgid "&Huge"
+msgstr "Огромный"
+
+#: main.C:209
+msgid "&Linux"
+msgstr "Linux"
+
+#: main.C:210
+msgid "Linux (small)"
+msgstr "Linux (маленький)"
+
+#: main.C:213
+msgid "&More ..."
+msgstr "Еще..."
+
+#: main.C:219
+msgid "&Hide"
+msgstr "Скрыть"
+
+#: main.C:220
+msgid "&Left"
+msgstr "Слева"
+
+#: main.C:221
+msgid "&Right"
+msgstr "Справа"
+
+#: main.C:227
+msgid "40x15 (&small)"
+msgstr "40x15 (маленький)"
+
+#: main.C:228
+msgid "80x24 (&vt100)"
+msgstr "80x24 (vt100)"
+
+#: main.C:229
+msgid "80x25 (&ibmpc)"
+msgstr "80x25 (ibmpc)"
+
+#: main.C:230
+msgid "80x40 (&xterm)"
+msgstr "80x40 (xterm)"
+
+#: main.C:231
+msgid "80x52 (ibmv&ga)"
+msgstr "80x52 (ibmvga)"
+
+#: main.C:240
+msgid "&Menubar"
+msgstr "Меню"
+
+#: main.C:242
+msgid "&Frame"
+msgstr "Рамка"
+
+#: main.C:244
+msgid "Scroll&bar"
+msgstr "Полоса скроллирования"
+
+#: main.C:246
+msgid "BS sends &DEL"
+msgstr "Забой посылает DEL"
+
+#: main.C:249
+msgid "&Font"
+msgstr "Шрифт"
+
+#: main.C:250
+msgid "&Size"
+msgstr "Размер"
+
+#: main.C:251
+msgid "&Schema"
+msgstr "Схема"
+
+#: main.C:253
+msgid "&Save options"
+msgstr "Записать настройки"
+
+#: main.C:257
+msgid "&About ..."
+msgstr "О программе..."
+
+#: main.C:258
+msgid "&User's Manual ..."
+msgstr "Руководство пользователя..."
+
+#: main.C:259
+msgid "&Technical Reference ..."
+msgstr "Техническое руководство..."
+
+#: main.C:270
+msgid "New"
+msgstr "Новый"
+
+#: main.C:271
+msgid "Sessions"
+msgstr "Сессии"
+
+#: main.C:787
+msgid "Welcome to the console"
+msgstr "Добро пожаловать в консоль"

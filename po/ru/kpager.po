@@ -1,0 +1,68 @@
+# Перевод kpager.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com<>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kpager\n"
+"POT-Creation-Date: 1998-09-30 07:19:56+0000\n"
+"PO-Revision-Date: 1998-11-07 00:00+0600\n"
+"Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kpager.cpp:77 kpager.cpp:156
+msgid "Hide &Global Desktop"
+msgstr "Скрыть глобальный рабочий стол"
+
+#: kpager.cpp:79 kpager.cpp:149
+msgid "Show &Global Desktop"
+msgstr "Показать глобальный рабочий стол"
+
+#: kpager.cpp:81
+msgid "Hide &Menubar"
+msgstr "Скрыть меню"
+
+#: kpager.cpp:85
+msgid "Plain"
+msgstr "Нормально"
+
+#: kpager.cpp:88
+msgid "Icon"
+msgstr "Пиктограма"
+
+#: kpager.cpp:91
+msgid "Pixmap"
+msgstr "Изображение"
+
+#: kpager.cpp:95
+msgid "Draw Mode"
+msgstr "Режим рисования"
+
+#: kpager.cpp:99
+msgid ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
+"This is free software, and you are welcome to redistribute it\n"
+"under certain conditions\n"
+msgstr ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Малага (Испания)\n"
+"\n"
+"Домашняя страничка KPager'а : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager идет АБСОЛЮТНО БЕЗ ГАРАНТИИ; более подробно в файле COPYING\n"
+"Это свободное программное обеспечение, и приветствуется его распространение\n"
+"с указанными условиями\n"

@@ -1,0 +1,123 @@
+# Перевод kcmkeys.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com<>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkeys\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"PO-Revision-Date: 1998-11-07 00:00+0600\n"
+"Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:64
+msgid "&Standard shortcuts"
+msgstr "Стандартные комбинации"
+
+#: main.cpp:69
+msgid "&Global shortcuts"
+msgstr "Глобальные комбинации"
+
+#: main.cpp:76
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
+msgstr "использование: kcmkeys [-init | {standard,global}]\n"
+
+#: main.cpp:118
+msgid "Key binding settings"
+msgstr "Настройка назначений клавиш"
+
+#: standard.cpp:53
+msgid "New"
+msgstr "Новое"
+
+#: standard.cpp:57
+msgid "Next"
+msgstr "Следующее"
+
+#: standard.cpp:58
+msgid "Prior"
+msgstr "Предыдущее"
+
+#: standard.cpp:63
+msgid "Find"
+msgstr "Найти"
+
+#: standard.cpp:66
+msgid "Home"
+msgstr "Домашняя директория"
+
+#: standard.cpp:67
+msgid "End"
+msgstr "Конец"
+
+#: global.cpp:81 standard.cpp:83
+msgid "Current scheme"
+msgstr "Текущая схема"
+
+#: global.cpp:83 standard.cpp:84
+msgid "KDE default"
+msgstr "Умолчания KDE"
+
+#: standard.cpp:85
+msgid "KDE lite"
+msgstr "Облегченная KDE"
+
+#: global.cpp:90 standard.cpp:90
+msgid "&Key scheme"
+msgstr "Схема клавиш"
+
+#: global.cpp:101
+msgid "&Add ..."
+msgstr "Добавить..."
+
+#: global.cpp:123
+msgid "&Save changes"
+msgstr "Записать изменения"
+
+#: global.cpp:182
+msgid "Error removing scheme"
+msgstr "Ошибка удаления схемы"
+
+#: global.cpp:183
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+"Ошибка удаления схемы.\n"
+"Возможно вы не имеете права изменять файловую систему, \n"
+"где хранится схема клавиш"
+
+#: global.cpp:314
+msgid "Naming conflict"
+msgstr "Конфликт имен"
+
+#: global.cpp:315
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+"Выберите уникальное имя для новой схемы клавиш.\n"
+"Та, которую вы набрали уже существует в списке схем."
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "Добавить схему клавиш"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"Введите имя для новой схемы клавиш,\n"
+"которая будет добавлена в ваш персональный список\n"
+"\n"
+"Клавиши, используемые в препросмотре будут\n"
+"скопированы в эту схему."
