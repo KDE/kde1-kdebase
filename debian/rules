@@ -68,8 +68,8 @@ binary-arch: checkroot build
 	chmod +x debian/tmp/etc/init.d/kdm debian/tmp/usr/bin/switchdm \
 	debian/tmp/etc/init.d/xdm
 	dh_undocumented `cat debian/man-pages`
-	dh_movefiles
 	perl -w debian/kderules
+	dh_movefiles
 	dh_installdocs
 	dh_installmenu
 	dh_installchangelogs
