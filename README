@@ -2,7 +2,7 @@ IMPORTANT: most applications need KDEDIR as the directory, where KDE is
 installed. Please set this in your login file.
 
 If configure claims about missing Qt, have a look at http://www.troll.no
-to get a copy of qt-1.2. 
+to get a copy of qt-1.3 or higher. 
 
 You can use --enable-debug, if you want to have debug code in your
 KDE apps and libs. I recommend to do this, since this is alpha soft-
