@@ -18,14 +18,13 @@ msgid "Cannot open or read directory."
 msgstr "Ne mogu otvoriti ili èitati direktorij."
 
 #: kfindtop.cpp:115
-#, fuzzy
 msgid "&Start search"
-msgstr "Pokreni pretragu"
+msgstr "&Pokreni pretragu"
 
 #: kfindtop.cpp:117
 #, fuzzy
 msgid "S&top search"
-msgstr "Zaustavi pretragu"
+msgstr "&Zaustavi pretragu"
 
 #: kfindtop.cpp:122
 msgid "&Open"

@@ -67,25 +67,26 @@ msgstr "Desna strana naslovne trake je puna... onemoguæujem 'Poveæaj' gumb\n"
 #: titlebar.cpp:536
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "Lijeva strana naslovne trake je puna... onemoguæujem 'Smanji' gumb\n"
+msgstr ""
+"Lijeva strana naslovne trake je puna... onemoguæujem 'Smanji' gumb\n"
 
 #: titlebar.cpp:569
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "Desna strana naslovne trake je puna... onemoguæujem 'Smanji' gumb\n"
+msgstr ""
+"Desna strana naslovne trake je puna... onemoguæujem 'Smanji' gumb\n"
 
 #: titlebar.cpp:926
 msgid "Titlebar appearance"
 msgstr "Izgled naslovne trake"
 
 #: titlebar.cpp:928
-#, fuzzy
 msgid "Shaded Vertically"
-msgstr "Poveæaj uspravno"
+msgstr "Zasjeni uspravno"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
-msgstr ""
+msgstr "Zasjeni vodoravno"
 
 #: titlebar.cpp:934
 msgid "Plain"
@@ -168,14 +169,12 @@ msgid "Opaque"
 msgstr "Neproziran"
 
 #: windows.cpp:79
-#, fuzzy
 msgid "Window resize"
-msgstr "&Prozori"
+msgstr "Promijeni velièinu prozora"
 
 #: windows.cpp:80
-#, fuzzy
 msgid "With animation"
-msgstr "Naslovna animacija"
+msgstr "Sa animacijom"
 
 #: windows.cpp:85
 msgid "Placement policy"
@@ -230,14 +229,12 @@ msgid "Focus follows mouse"
 msgstr "Fokus slijedi mi¹a"
 
 #: windows.cpp:120
-#, fuzzy
 msgid "Classic focus follows mouse"
-msgstr "Fokus slijedi mi¹a"
+msgstr "Klasièni fokus slijedi mi¹a"
 
 #: windows.cpp:122
-#, fuzzy
 msgid "Classic sloppy focus"
-msgstr "Klikni za fokusiranje"
+msgstr "Klasièni neuredni fokus"
 
 #: windows.cpp:131
 msgid ""
@@ -286,9 +283,3 @@ msgid ""
 msgstr ""
 "Window Snap Zone:\n"
 "       (pikseli)"
-
-#~ msgid "Shaded"
-#~ msgstr "Zasjenjeno"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Promijeniti velièinu animacije"
