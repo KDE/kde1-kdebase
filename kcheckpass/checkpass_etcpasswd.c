@@ -38,26 +38,26 @@ int authenticate(const char *login, const char *passwd)
   char *crpt_passwd;
   int result;
 
-  // Get the password entry for the user we want
+  /* Get the password entry for the user we want */
   pw = getpwnam(login);
 
-  // getpwnam should return a NULL pointer on error
+  /* getpwnam should return a NULL pointer on error */
   if (pw == 0)
     return 0;
 
-  // Encrypt the password the user entered
+  /* Encrypt the password the user entered */
   crpt_passwd = crypt(passwd, pw->pw_passwd);
 
-  // Are they the same?
+  /* Are they the same? */
   result = strcmp(pw->pw_passwd, crpt_passwd);
 
-  // Close the password file (or database)
+  /* Close the password file (or database) */
   endpwent();
 
   if (result == 0)
-    return 1; // success
+    return 1; /* success */
   else
-    return 0; // Oops something went wrong, perhaps no user was found?
+    return 0; /* Oops something went wrong, perhaps no user was found? */
 }
 
 #endif

@@ -10,8 +10,8 @@ INSTALL_PROGRAM = $(INSTALL) $(SETUIDFLAGS)
 
 bin_PROGRAMS = kcheckpass
 
-kcheckpass_SOURCES = kcheckpass.cpp \
-	checkpass_etcpasswd.cpp checkpass_pam.cpp checkpass_shadow.cpp
+kcheckpass_SOURCES = kcheckpass.c \
+	checkpass_etcpasswd.c checkpass_pam.c checkpass_shadow.c
 
 noinst_HEADERS = kcheckpass.h
 

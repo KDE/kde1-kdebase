@@ -55,10 +55,9 @@
 
 #ifndef __FreeBSD__
 #include <malloc.h>
-#else
-#include <stdlib.h>
 #endif
 
+#include <stdlib.h>
 #include <errno.h>
 #include <time.h>
 
@@ -217,18 +216,18 @@ main(int argc, char **argv)
   memset(passbuffer, 0, sizeof(passbuffer));
 
   if ( status == 0 ) {
-    // failure
+    /* failure */
     time_t	now = time(NULL);
     message("authentication failure for user %s [uid %d]\n",
 	    login, uid);
 
     do {
-      sleep (1); // <<< Security: Don't undermine the shadow system
+      sleep (1); /* <<< Security: Don't undermine the shadow system */
     } while (time(NULL) < now + 1);
     exit(1);
   }
   if ( status == 2 ) {
-    // Cannot read password database (e.g. not SUID on shadow systems)
+    /* Cannot read password database (e.g. not SUID on shadow systems) */
     exit(2);
   }
   exit(0);

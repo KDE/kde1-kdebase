@@ -66,7 +66,7 @@
 #include <prot.h>
 #endif
 
-// Default back to HAVE_ETCPASSWD
+/* Default back to HAVE_ETCPASSWD */
 #if !defined(HAVE_PAM) && !defined(HAVE_SHADOW)
 #define HAVE_ETCPASSWD
 #endif
