@@ -43,6 +43,7 @@ Name[fi]=KDM-asetukset
 Name[cs]=Nastavení KDM
 SwallowTitle=KDM all
 SwallowTitle[de]=KDM alles
+SwallowTitle[no]=KDM alt
 SwallowTitle[eo]=Konfigura¼o de KDM
 SwallowTitle[pl]=Wszystkie ustawienia KDM
 SwallowTitle[fi]=KDM kaikki
