@@ -24,9 +24,11 @@ Language[ru]=÷ÅÎÇÅÒÓËÉÊ
 Language[sk]=Maïarskı
 Language[sl]=mad¾arsko
 Language[sv]=Ungerskt
+Language[hu]=Magyar
 
 Label=Hu
 Locale=hu
+Charset=ISO-8859-2
 
 [KeyboardMap]
 keysym0=grave,0,section
