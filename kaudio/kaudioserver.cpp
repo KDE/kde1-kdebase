@@ -25,7 +25,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <signal.h>
-#include <X11/Xlib.h>
 #include <config.h>
 extern "C" {
 #include <mediatool.h>
@@ -39,36 +38,9 @@ MdCh_STAT	*StatChunk;
 MediaCon	m;
 
 
-// Dummy funciton to connect to X server. Do not ask why this function
-// has to be in here 8-/
-void XDisConn(char command)
-{
-  static Display *dpy=NULL;
-  switch (command) {
-  case 0:
-    if ( dpy )
-      // disconnect from X server (if connected)
-      XCloseDisplay(dpy);
-    break;
-  case 1:
-    // connect to X server
-    dpy = XOpenDisplay(NULL);
-    if (!dpy)
-      fprintf(stderr, "Display is NULL. Audio System will not be shut down on X11 exit!!!\n" );
-    break;
-  case 2:
-    if (dpy)
-      XFlush( dpy );
-    break;
-  }
-}
-
-
-
 
 void MYexit(int retcode)
 {
-  XDisConn(0);    // Unconnect from X-Server
   exit (retcode);
 }
 
@@ -139,8 +111,6 @@ int main ( int, char** )
   char PidRead[100];
 
 
-  XDisConn(1);    // Connect to X-Server
-
   // Create full path of ~/.kaudioserver, then delete the communication id
   // file
   tmpadr= getenv("HOME");
@@ -198,10 +168,7 @@ int main ( int, char** )
      */
     signal(SIGCHLD,mysigchild);
     while(1) {
-      // emit "XSync()". If X server has gone down, this will terminate
-      // kaudioserver.
-      XDisConn(2);
-      sleep(1);
+      sleep(100);
     }
   }
 

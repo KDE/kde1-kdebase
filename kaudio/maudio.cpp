@@ -5,7 +5,6 @@
 #include <string.h>
 #include <fcntl.h>
 #include <kmisc.h>
-#include <X11/Xlib.h>
 
 extern "C" {
 #include <mediatool.h>
@@ -45,35 +44,9 @@ void ma_init(char argc, char **argv);
 void ma_atexit(void);
 
 
-// Dummy funciton to connect to X server. Do not ask why this function
-// has to be in here 8-/
-void XDisConn(char command)
-{
-  static Display *dpy=NULL;
-  switch (command) {
-  case 0:
-    if ( dpy )
-      // disconnect from X server (if connected)
-      XCloseDisplay(dpy);
-    break;
-  case 1:
-    // connect to X server
-    dpy = XOpenDisplay(NULL);
-    if (!dpy)
-    if (!dpy)
-      fprintf(stderr, "Display is NULL. Audio System will not be shut down on X11 exit!!!\n" );
-    break;
-  case 2:
-   if (dpy)
-      XFlush( dpy );
-    break;
-  }
-}
-
 
 void MYexit(int retcode)
 {
-  XDisConn(0);    // Unconnect from X-Server
   exit (retcode);
 }
 
@@ -81,7 +54,6 @@ int bugflags=255;
 
 int main(char argc, char **argv)
 {
-  XDisConn(1);
   char	filename[LEN_FNAME+1];
   int	bytes_read, ret, ret2;
 
@@ -99,10 +71,6 @@ int main(char argc, char **argv)
 
   while(1)
     {
-      // emit "XFlush()". If X server has gone down, this will terminate
-      // kaudioserver.
-      XDisConn(2);
-      
       StatChunk->pos_max	= ASample->duration();
       StatChunk->pos_current	= ASample->playpos();
 
@@ -330,7 +298,6 @@ int main(char argc, char **argv)
 exit_pos:
   ADev->reset();
   ADev->release();
-  XDisConn(0);    // Unconnect from X-Server
   return(0);
 }
 
