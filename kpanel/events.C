@@ -22,9 +22,14 @@ void kPanel::kwmInit(){
 void kPanel::windowAdd(Window w){
   static QPixmap* defaultpm = NULL;
   myTaskButton* b = new myTaskButton(taskbar);
-  taskbar->insert(b); // should be unnecessary....
   b->win = w;
   taskbar_buttons.append(b);
+
+  // calculate a *unique* id.
+  int id = 1;
+  while (taskbar->find(id))
+    id++;
+  taskbar->insert(b, id);
   
   if (!defaultpm){
     defaultpm = new QPixmap;
