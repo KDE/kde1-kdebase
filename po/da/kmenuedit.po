@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kmenuedit\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-03-21 13:22+0100\n"
 "Last-Translator: Erik Kjær Pedersen\n"
 "Language-Team: da <LL@li.org>\n"
@@ -13,23 +13,23 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kmenuedit.cpp:69
+#: kmenuedit.cpp:68
 msgid "Change &Menuname"
 msgstr "Skift &menunavn"
 
-#: kmenuedit.cpp:70
+#: kmenuedit.cpp:69
 msgid "Reload &Filetypes"
 msgstr "Genindlæs &filtyper"
 
-#: kmenuedit.cpp:77
+#: kmenuedit.cpp:76
 msgid "by"
 msgstr "ved"
 
-#: kmenuedit.cpp:179 kmenuedit.cpp:204
+#: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
 msgstr "Ændringer ikke gemt!"
 
-#: kmenuedit.cpp:180 kmenuedit.cpp:205
+#: kmenuedit.cpp:176 kmenuedit.cpp:201
 msgid ""
 "\n"
 "Do you want to save your changes ?"
@@ -37,15 +37,15 @@ msgstr ""
 "\n"
 "Vil du gemme dine ændringer?"
 
-#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
+#: confmenu.cpp:337 confmenu.cpp:929 kmenuedit.cpp:260
 msgid "EMPTY"
 msgstr "TOM"
 
-#: kmenuedit.cpp:343
+#: kmenuedit.cpp:339
 msgid "Reload Menus"
 msgstr "Genindlæs menuer"
 
-#: kmenuedit.cpp:344
+#: kmenuedit.cpp:340
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -73,11 +73,11 @@ msgstr ""
 "Kan ikke oprette folder til din personlige menu.\n"
 "Vælg Ok for at afslutte Menu Editoren."
 
-#: confmenu.cpp:91 entrydialog.cpp:60
+#: confmenu.cpp:91 entrydialog.cpp:52
 msgid "Separator"
-msgstr "Adskilling"
+msgstr "Adskiller"
 
-#: confmenu.cpp:103 confmenu.cpp:335
+#: confmenu.cpp:103 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "Åben/Luk"
 
@@ -93,7 +93,7 @@ msgstr "Vælg menu der skal flyttes"
 msgid "New"
 msgstr "Ny"
 
-#: confmenu.cpp:177 confmenu.cpp:318
+#: confmenu.cpp:177 confmenu.cpp:316
 msgid "Warning !"
 msgstr "Advarsel!"
 
@@ -113,11 +113,11 @@ msgstr ""
 "En kdelnk fil med dette navn eksisterer allerede.\n"
 "Vælg venlist et andet navn."
 
-#: confmenu.cpp:319
+#: confmenu.cpp:317
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Hvis du ændrer typen på denne knap vil du miste alle dens undermenuer"
 
-#: confmenu.cpp:340 confmenu.cpp:940
+#: confmenu.cpp:338 confmenu.cpp:930
 msgid "no command"
 msgstr "ingen kommando"
 
@@ -145,108 +145,108 @@ msgstr "Sti:"
 msgid "PersonalPath:"
 msgstr "Personlig Sti:"
 
-#: entrydialog.cpp:61
+#: entrydialog.cpp:53
 msgid "Submenu"
 msgstr "Undermenu"
 
-#: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
-#: entrydialog.cpp:544
+#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:536
+#: entrydialog.cpp:541
 msgid "Application"
 msgstr "Anvendelse"
 
-#: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
+#: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
 msgid "Swallow"
 msgstr "Slug"
 
-#: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
+#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
 msgstr "Link"
 
-#: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "Enhed"
 
-#: entrydialog.cpp:72
+#: entrydialog.cpp:63
 msgid "Type:"
 msgstr "Type:"
 
-#: entrydialog.cpp:79
+#: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Filnavn:"
 
-#: entrydialog.cpp:94
+#: entrydialog.cpp:82
 msgid "Name:"
 msgstr "Navn:"
 
-#: entrydialog.cpp:109
-msgid "Icon:"
-msgstr "Ikon:"
-
-#: entrydialog.cpp:141
+#: entrydialog.cpp:95
 msgid "Mini Icon:"
 msgstr "Mini ikon:"
 
-#: entrydialog.cpp:149
+#: entrydialog.cpp:127
+msgid "Icon:"
+msgstr "Ikon:"
+
+#: entrydialog.cpp:133
 msgid "Comment:"
 msgstr "Kommentar:"
 
-#: entrydialog.cpp:196 entrydialog.cpp:538
+#: entrydialog.cpp:165 entrydialog.cpp:535
 msgid "Execute"
 msgstr "Kør"
 
-#: entrydialog.cpp:222
+#: entrydialog.cpp:186
 msgid "Execute:"
 msgstr "Kør:"
 
-#: entrydialog.cpp:228
+#: entrydialog.cpp:192
 msgid "Working Directory:"
 msgstr "Arbejdsfolder:"
 
-#: entrydialog.cpp:241
+#: entrydialog.cpp:205
 msgid "Run in terminal"
 msgstr "Kør i terminal"
 
-#: entrydialog.cpp:245
+#: entrydialog.cpp:211
 msgid "Terminal Options:"
 msgstr "Terminal indstillinger:"
 
-#: entrydialog.cpp:310
+#: entrydialog.cpp:292
 msgid "Binary Pattern:"
 msgstr "Filnavne:"
 
-#: entrydialog.cpp:325
+#: entrydialog.cpp:300
 msgid "Application to swallow:"
 msgstr "Applikation til swallow:"
 
-#: entrydialog.cpp:331
+#: entrydialog.cpp:306
 msgid "Title of application:"
 msgstr "Anvendelsens navn"
 
-#: entrydialog.cpp:337
+#: entrydialog.cpp:312
 msgid "Application to execute on button press:"
 msgstr "Anvendelse der udføres ved tryk på knap"
 
-#: entrydialog.cpp:367
+#: entrydialog.cpp:342
 msgid "URL:"
 msgstr "URL:"
 
-#: entrydialog.cpp:415
+#: entrydialog.cpp:391
 msgid "Read Only"
 msgstr "Kun læsbar"
 
-#: entrydialog.cpp:420
+#: entrydialog.cpp:397
 msgid "Device:"
 msgstr "Enhed:"
 
-#: entrydialog.cpp:425
+#: entrydialog.cpp:403
 msgid "Mount Point:"
 msgstr "Mount punkt:"
 
-#: entrydialog.cpp:430
+#: entrydialog.cpp:409
 msgid "FS Type:"
 msgstr "FS Type"
 
-#: entrydialog.cpp:435
+#: entrydialog.cpp:415
 msgid "Unmount Icon:"
 msgstr "Afmonteringsikon:"
 

@@ -13,6 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+
 #: main.cpp:48
 msgid "&Status"
 msgstr "&Status"
@@ -31,7 +32,7 @@ msgstr "Fejl ved start af smbstatus"
 
 #: ksmbstatus.cpp:116
 msgid "Error ! smbstatus not found or non working !"
-msgstr "Fejl! smbstatus ikke fundeteller ude af kraft"
+msgstr "Fejl! smbstatus ikke fundet eller ude af kraft"
 
 #: ksmbstatus.cpp:158
 msgid "Service"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/krootwm\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1999-01-12 21:10+0100\n"
 "Last-Translator: Erik Kjær Pedersen\n"
 "Language-Team: da <LL@li.org>\n"
@@ -13,117 +13,84 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: krootwm.C:223 krootwm.C:270
+
+#: krootwm.C:221 krootwm.C:268
 msgid "Execute command"
 msgstr "Kør..."
 
-#: krootwm.C:225 krootwm.C:294
+#: krootwm.C:223 krootwm.C:276
 msgid "Lock screen"
 msgstr "Lås skærm"
 
-#: krootwm.C:226 krootwm.C:295
+#: krootwm.C:224 krootwm.C:277
 msgid "Logout"
 msgstr "Log ud"
 
-#: krootwm.C:234 krootwm.C:272
+#: krootwm.C:232 krootwm.C:270
 msgid "Refresh desktop"
-msgstr "Opfrisk Arbejdsplads"
+msgstr "Genopfrisk Arbejdsplads"
 
-#: krootwm.C:235 krootwm.C:274
+#: krootwm.C:233 krootwm.C:272
 msgid "Unclutter windows"
 msgstr "Ryd op i vinduer"
 
-#: krootwm.C:236 krootwm.C:275
+#: krootwm.C:234 krootwm.C:273
 msgid "Cascade windows"
 msgstr "Overlæg vinduer"
 
-#: krootwm.C:237 krootwm.C:276
+#: krootwm.C:235 krootwm.C:274
 msgid "Arrange icons"
 msgstr "Arranger ikoner"
 
-#: krootwm.C:238 krootwm.C:271
+#: krootwm.C:236 krootwm.C:269
 msgid "Display properties"
 msgstr "Skærm indstillinger"
 
-#: krootwm.C:246 krootwm.C:269
+#: krootwm.C:244 krootwm.C:267
 msgid "Help on desktop"
 msgstr "Hjælp om Arbejdsplads"
 
-#: krootwm.C:247
+#: krootwm.C:245
 msgid "About KDE..."
 msgstr "Om KDE"
 
-#: krootwm.C:265 krootwm.C:304 krootwm.C:812 krootwm.C:820
+#: krootwm.C:263 krootwm.C:286 krootwm.C:761 krootwm.C:769
 msgid "New"
 msgstr "Ny"
 
-#: krootwm.C:266 krootwm.C:305
+#: krootwm.C:264 krootwm.C:287
 msgid "Bookmarks"
 msgstr "Bogmærker"
 
-#: krootwm.C:280
-#, fuzzy
-msgid "Arrange Window Maker icons"
-msgstr "Arranger ikoner"
-
-#: krootwm.C:281
-msgid "Show all"
-msgstr ""
-
-#: krootwm.C:282
-msgid "Hide other"
-msgstr ""
-
-#: krootwm.C:284
-msgid "Show info panel"
-msgstr ""
-
-#: krootwm.C:285
-msgid "Show legal panel"
-msgstr ""
-
-#: krootwm.C:286
-msgid "Restart"
-msgstr ""
-
 #: krootwm.C:288
-msgid "Exit"
-msgstr ""
-
-#: krootwm.C:289
-#, fuzzy
-msgid "Window Maker"
-msgstr "Vinduer"
-
-#: krootwm.C:306
 msgid "Desk"
 msgstr "Plads"
 
-#: krootwm.C:307
+#: krootwm.C:289
 msgid "Windows"
 msgstr "Vinduer"
 
-#: krootwm.C:370
+#: krootwm.C:344
 msgid "Edit Bookmarks"
 msgstr "Redigér bogmærker"
 
-#: krootwm.C:384 krootwm.C:822
+#: krootwm.C:358 krootwm.C:771
 msgid "Folder"
 msgstr "Folder"
 
-#: krootwm.C:388
+#: krootwm.C:362
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "FEJL: Skabelon eksisterer ikke ´%s´"
 
-#: krootwm.C:843
+#: krootwm.C:792
 msgid "Could not create folder"
 msgstr "Kunne ikke oprette folder"
 
-#: krootwm.C:911
+#: krootwm.C:860
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:915
+#: krootwm.C:864
 msgid "Usage:"
 msgstr "Brug:"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kwm\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1999-01-12 17:28+0200\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -25,107 +25,107 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: fejl ved initialiseringen; afbryder\n"
 
-#: main.C:527
+#: main.C:485
 msgid "Preparing session ... "
 msgstr "Lukker sessionen ... "
 
-#: main.C:551
+#: main.C:509
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:558
+#: main.C:516
 msgid "Usage: "
 msgstr "Brug: "
 
-#: main.C:569
+#: main.C:527
 msgid "&Maximize"
 msgstr "&Maksimer"
 
-#: main.C:570
+#: main.C:528
 msgid "&Restore"
 msgstr "&Gendan"
 
-#: main.C:571
+#: main.C:529
 msgid "&Iconify"
 msgstr "&Minimer"
 
-#: main.C:572
+#: main.C:530
 msgid "&DeIconify"
 msgstr "&Gendan"
 
-#: main.C:573
+#: main.C:531
 msgid "&Sticky"
 msgstr "&Klæbrig"
 
-#: main.C:574
+#: main.C:532
 msgid "&UnSticky"
 msgstr "&Uklæbrig"
 
-#: main.C:575
+#: main.C:533
 msgid "Mo&ve"
 msgstr "&Flyt"
 
-#: main.C:576
+#: main.C:534
 msgid "Resi&ze"
 msgstr "&Ændr størrelse"
 
-#: main.C:578
+#: main.C:536
 msgid "&To desktop"
 msgstr "&Til Arbejdsplads"
 
-#: main.C:580
+#: main.C:538
 msgid "&Onto current desktop"
 msgstr "Til &nuværende arbejdsplads"
 
-#: main.C:620
+#: main.C:578
 msgid "One"
 msgstr "En"
 
-#: main.C:623
+#: main.C:581
 msgid "Two"
 msgstr "To"
 
-#: main.C:626
+#: main.C:584
 msgid "Three"
 msgstr "Tre"
 
-#: main.C:629
+#: main.C:587
 msgid "Four"
 msgstr "Fire"
 
-#: main.C:632
+#: main.C:590
 msgid "Five"
 msgstr "Fem"
 
-#: main.C:635
+#: main.C:593
 msgid "Six"
 msgstr "Seks"
 
-#: main.C:638
+#: main.C:596
 msgid "Seven"
 msgstr "Syv"
 
-#: main.C:641
+#: main.C:599
 msgid "Eight"
 msgstr "Otte"
 
-#: main.C:655
+#: main.C:613
 msgid "Unnamed Desktop"
 msgstr "Unavngiven Arbejdsplads"
 
-#: main.C:1082
+#: main.C:1040
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Nogle pixmaps er ubrugelige: ShapeMode ikke iværksat\n"
 
-#: main.C:1199
+#: main.C:1152
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Nogle pixmaps er ubrugelige: GimmickMode ikke iværksat\n"
 
-#: main.C:1524
+#: main.C:1477
 msgid "*** No Tasks ***"
 msgstr "*** Ingenting ***"
 
-#: minicli.C:124
+#: minicli.C:122
 msgid "Command:"
 msgstr "Kommando:"
 
@@ -146,7 +146,7 @@ msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"De følgende applikationer indeholder ugemte data\n"
+"De følgende applikationer indeholder ikke gemte data\n"
 "som ikke findes i den næste session."
 
 #: logout.C:63

@@ -13,6 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+
 #: main.cpp:53
 msgid "&Sound"
 msgstr "&Lyd"
@@ -95,7 +96,7 @@ msgstr "Maksimer vindue"
 
 #: syssound.cpp:166
 msgid "Window UnMaximize"
-msgstr "Gendan vindue"
+msgstr "Tidligere vindue"
 
 #: syssound.cpp:167
 msgid "Window Sticky"
@@ -175,22 +176,6 @@ msgid ""
 "%s\n"
 "does not seem to be a WAV--file."
 msgstr ""
-"Desværre ser\n"
+"Ser desværre\n"
 "%s\n"
 "ikke ud til at være en WAV-fil!"
-
-#: syssound.cpp:471
-msgid "Improper File Extension"
-msgstr ""
-
-#: syssound.cpp:482
-#, c-format
-msgid ""
-"The file\n"
-"%s\n"
-"is already in the list"
-msgstr ""
-
-#: syssound.cpp:486
-msgid "File Already in List"
-msgstr ""

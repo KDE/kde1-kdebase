@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdmconfig\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1999-01-12 18:19+0100\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -43,8 +43,7 @@ msgstr "KDM opsætning"
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
-msgstr ""
-"Desværre, du har ikke læse/skrive\n"
+msgstr "Desværre, du har ikke læse/skrive\n"
 " adgang til KDM opsætningsfilen"
 
 #: main.cpp:154
@@ -142,7 +141,7 @@ msgstr ""
 
 #: kdm-font.cpp:48
 msgid "Select fonts"
-msgstr "Vælg skriftsnit"
+msgstr "Vælg skrift"
 
 #: kdm-font.cpp:50
 msgid "Example"
@@ -150,7 +149,7 @@ msgstr "Eksempel:"
 
 #: kdm-font.cpp:52
 msgid "Change font..."
-msgstr "Skift skriftsnit"
+msgstr "Skift skrift"
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -162,21 +161,6 @@ msgstr "Fejl"
 
 #: kdm-font.cpp:59
 msgid "Standard"
-msgstr "Standard"
-
-#: kdm-font.cpp:157
-#, fuzzy
-msgid "Greeting font"
-msgstr "Velkomst"
-
-#: kdm-font.cpp:161
-#, fuzzy
-msgid "Fail font"
-msgstr "Fejl"
-
-#: kdm-font.cpp:165
-#, fuzzy
-msgid "Standard font"
 msgstr "Standard"
 
 #: kdm-bgnd.cpp:70

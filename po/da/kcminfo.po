@@ -68,7 +68,7 @@ msgid ""
 "No Information available\n"
 " or\n"
 "this system is not yet supported :-("
-msgstr ""
+msgstr"" 
 "Ingen tilgængelig information\n"
 "eller\n"
 "Dette system er desværre ikke understøttet endnu :-("
@@ -85,7 +85,7 @@ msgstr "%s kører ved %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr "Åhh, kunne ikke åbne fstab"
+msgstr "Øvv, kunne ikke åbne fstab"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
@@ -129,7 +129,7 @@ msgstr "brugt af"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr "I/O-område"
+msgstr "ind/ud-område"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -149,7 +149,7 @@ msgstr "DMA-K&analer"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr "&IO-porte"
+msgstr "&ind/ud-porte"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
@@ -227,3 +227,4 @@ msgstr "Ikke tilgængeligt"
 #: memory_sgi.cpp:30
 msgid "Not Available"
 msgstr "Ikke tilgængeligt"
+

@@ -13,6 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+
 #: main.cpp:52
 msgid "&Locale"
 msgstr "&Lokalisering"
@@ -47,7 +48,7 @@ msgstr "uden navn!"
 
 #: locale.cpp:181
 msgid "Applying language settings"
-msgstr "Uinfører de nye sprogindstillinger"
+msgstr "Indfører de nye sprogindstillinger"
 
 #: locale.cpp:182
 msgid ""
@@ -55,4 +56,4 @@ msgid ""
 "To change the language of all programs, you will have to logout first."
 msgstr ""
 "De nye sprog indstillinger gælder kun for nyligt startede programmer.\n"
-"For at ændre sprog for alle programmer må du logge ud først."
+"For at ændre sprog for alle programmer må du først logge ud."

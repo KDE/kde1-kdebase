@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfind\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1998-12-12 15:11+0100\n"
 "PO-Revision-Date: 1999-01-03 23:10-0500\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -152,7 +152,7 @@ msgstr "&mellem"
 
 #: kftabdlg.cpp:150
 msgid "during the previou&s "
-msgstr "blandt de &tidliger"
+msgstr "blandt de &tidligere"
 
 #: kftabdlg.cpp:151
 msgid "&during the previous "
@@ -168,15 +168,11 @@ msgstr "Af &type:"
 
 #: kftabdlg.cpp:208
 msgid "&Containing Text:"
-msgstr "&Indeholdene tekst:"
+msgstr "&Indeholdende tekst:"
 
 #: kftabdlg.cpp:213
 msgid "&Size is:"
-msgstr "Størrelse er:"
-
-#: kftabdlg.cpp:217
-msgid "KB"
-msgstr ""
+msgstr "&Størrelse er:"
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"
@@ -359,3 +355,4 @@ msgstr "Kunne ikke genkende arkivtype!"
 #: kfwin.cpp:497
 msgid "Error while creating child process!"
 msgstr "Fejl ved oprettelse af underproces!"
+

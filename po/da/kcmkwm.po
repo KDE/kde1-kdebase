@@ -4,10 +4,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version:  KDE BASE/kcmkwmPOT-Creation-Date: 1998-12-19 01:20+01 "
-"00\n"
-"POT-Creation-Date: 1998-12-19 01:20+0100\n"
-"PO-Revision-Date: 1999-01-12 13:23\n"
+"Project-Id-Version:  KDE BASE/kcmkwm"
+"POT-Creation-Date: 1998-12-19 01:20+01 00\n"
+"PO-Revision-Date: 1999-01-12 13:23\n" 
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da<LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -187,8 +186,7 @@ msgstr "&Vinduer"
 
 #: windows.cpp:82
 msgid "Vertical maximization only by default"
-msgstr ""
-"Der er kun lodret maximering i\n"
+msgstr "Der er kun lodret maximering i\n"
 "i standardopsætning"
 
 #: windows.cpp:87
@@ -197,8 +195,7 @@ msgstr "Vis indholdet når vinduer flyttes "
 
 #: windows.cpp:92
 msgid "Display content in resizing windows"
-msgstr ""
-"Vis indholdet når vinduer ændrer\n"
+msgstr "Vis indholdet når vinduer ændrer\n"
 " størrelse"
 
 #: windows.cpp:98
@@ -417,7 +414,7 @@ msgstr "Tastatur og mus"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr "Ctrl-Tab skifter mellem arvejdspladser"
+msgstr "Ctrl-Tab skifter mellem arbejdspladser"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
@@ -461,7 +458,7 @@ msgstr "aldrig få fokus"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr "start med nål i"
+msgstr "start klæbrig"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"

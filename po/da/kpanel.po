@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kpanel\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1998-12-25 01:11+0100\n"
 "PO-Revision-Date: 1999-01-12 12:35+0100\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -13,127 +13,127 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kpanel.C:292
+#: kpanel.C:284
 msgid "&Move"
 msgstr "&Flyt"
 
-#: kpanel.C:295
+#: kpanel.C:287
 msgid "&Properties"
 msgstr "&Indstillinger"
 
-#: kpanel.C:338
+#: kpanel.C:330
 msgid "Go!"
 msgstr "Gå!"
 
-#: kpanel.C:341 tools.C:901
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "Hvor vil du gerne hen imorgen"
 
-#: kpanel.C:416
+#: kpanel.C:408
 msgid "No info available"
 msgstr "Ingen tilgængelig information"
 
-#: kpanel.C:455 props.C:207 props.C:208
+#: kpanel.C:447 props.C:206 props.C:207
 msgid "Logout"
 msgstr "Log ud"
 
-#: kpanel.C:463 props.C:206
+#: kpanel.C:455 props.C:205
 msgid "Lock screen"
 msgstr "Lås skærm"
 
-#: kpanel.C:472 kpanel.C:481
+#: kpanel.C:464 kpanel.C:473
 msgid "Hide the panel"
 msgstr "Gem Panel"
 
-#: kpanel.C:491 kpanel.C:503
+#: kpanel.C:483 kpanel.C:495
 msgid "Show the panel"
 msgstr "Vis Panel"
 
-#: kpanel.C:1108
+#: kpanel.C:1100
 msgid "Iconify other &windows"
 msgstr "Minimer andre &vinduer"
 
-#: kpanel.C:1245
+#: kpanel.C:1237
 msgid "No comment available"
 msgstr "Ingen tilgængelig kommentar"
 
-#: kpanel.C:1254 tools.C:910
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Vindues oversigt"
 
-#: kpanel.C:1262 props.C:197
+#: kpanel.C:1254 props.C:196
 msgid "Quickly navigate through the filesystem"
 msgstr "Naviger hurtigt gennem systemet"
 
-#: props.C:167
+#: props.C:166
 msgid "Add Application"
 msgstr "Tilføj anvendelse"
 
-#: props.C:169
+#: props.C:168
 msgid "Add an application or a submenu onto the panel"
 msgstr "Tilføj anvendelse eller undermenu til panelet"
 
-#: props.C:175
+#: props.C:174
 msgid "Add Disk Navigator"
 msgstr "Tilføj Disk Navigator"
 
-#: props.C:177
+#: props.C:176
 msgid "Add a Disk Navigator menu onto the panel"
 msgstr "Tilføj vindues oversigt på panelet"
 
-#: props.C:180
+#: props.C:179
 msgid "Add Windowlist"
 msgstr "Tilføj vindues oversigt"
 
-#: props.C:182
+#: props.C:181
 msgid "Add a windowlist menu onto the panel"
 msgstr "Tilføj vindues oversigt på panelet"
 
-#: events.C:832 props.C:183
+#: events.C:800 props.C:182
 msgid "Configure"
-msgstr "Konfigurer"
+msgstr "Indstil"
+
+#: props.C:184
+msgid "Configure panel"
+msgstr "Indstil panel"
 
 #: props.C:185
-msgid "Configure panel"
-msgstr "Konfigurer panel"
-
-#: props.C:186
 msgid "Edit Menus"
-msgstr "Redigér menuer"
+msgstr "Rediger menuer"
 
-#: props.C:188
+#: props.C:187
 msgid "Add or remove applications in the menu structure "
 msgstr "Tilføj eller fjern anvendelser fra menustrukturen"
 
-#: events.C:834 props.C:189
+#: events.C:802 props.C:188
 msgid "Restart"
 msgstr "Genstart"
 
-#: props.C:191
+#: props.C:190
 msgid "Restart panel"
 msgstr "Genstart panel"
 
-#: props.C:194
+#: props.C:193
 msgid "Disk Navigator"
 msgstr "Disk Navigator"
 
-#: props.C:202
+#: props.C:201
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:204
+#: props.C:203
 msgid "Lock Screen"
 msgstr "Lås skærm"
 
-#: props.C:451
+#: props.C:450
 msgid "The menu editor is not installed."
 msgstr "Menu editoren er ikke installéret"
 
-#: events.C:888 props.C:452
+#: events.C:856 props.C:451
 msgid "Oops!"
 msgstr "Ups!"
 
-#: tools.C:648
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
@@ -141,11 +141,11 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:919
+#: tools.C:908
 msgid "KDiskNavigator"
 msgstr "Disk Navigator"
 
-#: events.C:887
+#: events.C:855
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kan ikke placere dette som en trykknap på panelet!"
 
@@ -156,10 +156,6 @@ msgstr "(tom folder)"
 #: pfilemenu.C:480
 msgid "Open Folder"
 msgstr "Åben folder"
-
-#: pfilemenu.C:483
-msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr ""
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kvt\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1998-11-12 01:17+0100\n"
 "PO-Revision-Date: 1998-02-27 10:21+0100\n"
 "Last-Translator: Erik Kjær Pedersen\n"
 "Language-Team: da <LL@li.org>\n"
@@ -111,7 +111,7 @@ msgstr "Rulle&bjælke"
 
 #: main.C:669
 msgid "&Font size"
-msgstr "S&kriftsnit størrelse"
+msgstr "S&krift størrelse"
 
 #: main.C:670
 msgid "&Color"
@@ -127,7 +127,7 @@ msgstr "Terminal"
 
 #: main.C:673
 msgid "Font..."
-msgstr "Skriftsnit..."
+msgstr "Skrift..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
@@ -180,7 +180,7 @@ msgstr ""
 "De nye farveindstillinger vil blive\n"
 "vist når tastaturet bliver frigivet"
 
-#: main.C:1433
+#: main.C:1435
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -194,62 +194,62 @@ msgstr ""
 "baseret på Robert Nation's rxvt-2.08\n"
 "\n"
 
-#: main.C:1437
+#: main.C:1439
 msgid "Permitted arguments are:\n"
 msgstr "Tilladte argumenter er:\n"
 
-#: main.C:1438
+#: main.C:1440
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <command> <arg> ...    udfør kommando med ars - skal være sidste\n"
 " argument\n"
 
-#: main.C:1439
+#: main.C:1441
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <name>           specificer hvilket display (server)\n"
 
-#: main.C:1440
+#: main.C:1442
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <spec>        vt vinduesgeometri til at begynde med\n"
 
-#: main.C:1441
+#: main.C:1443
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr "-print-pipe <name>        specificer  pipe for vt100 printeren\n"
 
-#: main.C:1442
+#: main.C:1444
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <colour>           baggrundsfarve\n"
 
-#: main.C:1443
+#: main.C:1445
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <colour>           forgrundsfarve\n"
 
-#: main.C:1444
-msgid "-vt_font <fontname>       normal font\n"
-msgstr "-vt_font <fontname>       normal skriftsnit\n"
-
-#: main.C:1445
-msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr "-no_font_hack             slå Qt's trick mod skriftsnit bug fra\n"
-
 #: main.C:1446
+msgid "-vt_font <fontname>       normal font\n"
+msgstr "-vt_font <fontname>       normalskrift\n"
+
+#: main.C:1447
+msgid "-no_font_hack             turn off Qt font bug workaround\n"
+msgstr "-no_font_hack             slå Qt's trick mod skrift problem fra\n"
+
+#: main.C:1448
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <size>           tiny, small, normal, large, huge\n"
 
-#: main.C:1447
+#: main.C:1449
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr "-linux                    sæt  kvt til at efterligne linux-konsol\n"
 
-#: main.C:1448
+#: main.C:1450
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar               skjul menubjælken\n"
 
-#: main.C:1449
+#: main.C:1451
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar             skjul rullebjælken\n"
 
-#: main.C:1450
+#: main.C:1452
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -257,19 +257,20 @@ msgstr ""
 "-T <tekst>                 tekst i winduets titelbjælke \n"
 "                          (Forældet. Brug -caption i stedetfor)\n"
 
-#: main.C:1452
+
+#: main.C:1454
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <TERM>                Terminal type. Standard er xterm.\n"
 
-#: main.C:1453
+#: main.C:1455
 msgid "-C                        Capture system console message\n"
 msgstr "-C                        Indfang system konsol budskab\n"
 
-#: main.C:1454
+#: main.C:1456
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <text>                 navn i ikon eller ikon vindue\n"
 
-#: main.C:1455
+#: main.C:1457
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -277,7 +278,8 @@ msgstr ""
 "-7                        kør i 7 bit modus\n"
 "-8                        kør in 8 bit modus\n"
 
-#: main.C:1457
+
+#: main.C:1459
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
@@ -287,7 +289,8 @@ msgstr ""
 "-ls-                      begynd kvt's shell som en  ikke-log ind shell "
 "(standard)\n"
 
-#: main.C:1459
+
+#: main.C:1461
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
@@ -295,24 +298,24 @@ msgstr ""
 "-meta <arg>               behandl Meta med ESCAPE prefix, 8THBIT sat, eller "
 "ignorer\n"
 
-#: main.C:1460
+#: main.C:1462
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr "-sl <antal>                 gem antal linier i rul-tilbage bufferen\n"
 
-#: main.C:1461
+#: main.C:1463
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <keysym>          brug hurtigtasten alt-tastesymbol til at rulleop "
-"gennem bufferen\n"
-"-pagedown <keysym>        brug hurtigtasten alt-tastesymbol til at rulle  "
+"-pageup <keysym>          brug genvejen alt-tastesymbol til at rulle"
+"op gennem bufferen\n"
+"-pagedown <keysym>        brug genevejen alt-tastesymbol til at rulle  "
 "ned gennem bufferen\n"
 "buffer\n"
 
-#: main.C:1465
+#: main.C:1467
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

@@ -11,7 +11,7 @@ msgstr ""
 "Language-Team: da<LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit\n"  
 
 #: main.cpp:58
 msgid "KDE Font Manager"
@@ -31,7 +31,7 @@ msgstr "Rå X11 skrift liste"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "Tilgængelige X11 skrift"
+msgstr "Tilgængelige X11 skrifter"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
@@ -41,8 +41,7 @@ msgstr "Skrifter tilgængelige for KDE"
 msgid ""
 "The Quick Brown Fox Jumps Over The Lazy Dog\n"
 "AaBbCc123"
-msgstr ""
-"The Quick Brown Fox jumps Over The Lazy Dog\n"
+msgstr "The Quick Brown Fox jumps Over The Lazy Dog\n"
 "AaBbCc123ÆæØøÅå"
 
 #: kfontlist.cpp:62 kfontmanager.cpp:112

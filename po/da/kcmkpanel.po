@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDEBASE/kcmkfm\n"
-"POT-Creation-Date: 1998-12-20 03:02+0600\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1999-01-03 23:59-0500\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr "brug: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 #: main.cpp:112
 msgid "KPanel Configuration"
-msgstr "KPanel konfigurering"
+msgstr "KPanel indstilling"
 
 #: panel.cpp:59
 msgid "Location"
@@ -107,7 +107,7 @@ msgstr "Vis &menu tricks"
 
 #: options.cpp:84
 msgid "De&lay:"
-msgstr "Pause:"
+msgstr "Pa&use:"
 
 #: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
@@ -175,15 +175,15 @@ msgstr "Historie"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr "Editer indgange: (skab et link ved at trække en folder)"
+msgstr "Rediger indgange: (skab et link ved at trække en folder)"
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
-msgstr "Editer &personlige..."
+msgstr "Rediger &personlige..."
 
 #: disknav.cpp:74
 msgid "Edit &Shared..."
-msgstr "Editer &delte..."
+msgstr "Rediger &delte..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -203,7 +203,7 @@ msgstr "Vis .filer"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr "Sorte uanset store små bogstaver"
+msgstr "Sorter uanset store/små bogstaver"
 
 #: disknav.cpp:173
 msgid "Show Shared section"
@@ -224,3 +224,4 @@ msgstr "Vis indstillingsindgang"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Terminal applikation"
+

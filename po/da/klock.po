@@ -5,13 +5,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/klock\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 99-o1-12 18:21+0100\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
+
 
 #: attraction.cpp:716
 msgid "Attraction"
@@ -257,7 +258,7 @@ msgid ""
 msgstr ""
 "Bouboule v0.1 -- en blob af kugler der tvister tundt\n"
 "og ændrer størrelse\n"
-"\n"
+ "\n"
 "Copyright (c) 1996 ved Jeremie PETIT\n"
 "\n"
 " Overført til skærmskåner af Cedric Tefft"
@@ -462,13 +463,12 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Indstillingen %s er ikke støttet på denne platform!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
 "Your system uses shadow passwords.\n"
-"Please contact your system administrator.\n"
-"Tell him that you need suid for the kcheckpass program!"
+"Please contact your system administrator,\n"
+"tell him, that you need suid for the kcheckpass!"
 msgstr ""
 "Advarsel: Du vil ikke være i stabd til at låse skærmen!\n"
 "\n"
@@ -492,7 +492,7 @@ msgstr ""
 "\n"
 
 #: main.cpp:580
-#, c-format
+#,  c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
@@ -520,11 +520,11 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
-"  -corners xxxx     Placering afmarkør i hjørnet gør følgende:\n"
-"                     x = i  intet (ignorer)\n"
+"  -corners xxxx     Placering afmarkør i hjørnet gør følgende:\n" 
+"                     x = i  intet (ignorer)\n" 
 "                     x =s  gem skærmen\n"
-"                     x = l  lås skærmen\n"
-"              rækkefølge: top-venstre, top-højre, bund-venstre,bund-højre\n"
+ "                     x = l  lås skærmen\n"
+"              rækkefølge: top-venstre, top-højre, bund-venstre,bund-højre\n" 
 "  -delay num      Tiden det tager før skærmskåneren begynder\n"
 "                     starter  (standard 10min)\n"
 "  -desc             Tryk skærmskånerens beskrivelse til standard output\n"
@@ -704,7 +704,7 @@ msgstr "Kugle"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr "Eksponetiel"
+msgstr "Eksponentiel"
 
 #: science.cpp:74
 msgid "Contraction"
