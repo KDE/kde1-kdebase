@@ -9,6 +9,7 @@ Name[fi]=Asetukset
 Name[it]=Impostazioni
 Name[fr]=Configuration
 Name[sv]=Inställningar
+Name[hu]=Beállítások
 MiniIcon=kcontrol.xpm
 SortOrder=Desktop,Input_Devices,KWM,Network,Information,Sound
 Icon=kcontrol.xpm
