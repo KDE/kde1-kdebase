@@ -65,7 +65,9 @@ void SessionExit(void*,void*,void*);
 #ifdef HAVE_SETUSERCONTEXT
 #include <login_cap.h>		/* BSDI-like login classes */
 #include <pwd.h>
+static login_cap_t *lc = NULL;
 #endif
+static struct passwd *pwd = NULL;
 
 #ifdef TEST_KDM
 
@@ -391,6 +393,66 @@ KGreeter::load_wm()
      sessionargBox->setCurrentItem(wm);
 }
 
+/* This stuff should doesn't really belong to the kgreeter, but verify.c is
+ * just C, not C++.
+ *
+ * A restrict_host() should be added.
+ */
+bool
+KGreeter::restrict()
+{
+     bool rval = false;
+
+     pwd = getpwnam(greet->name);
+     endpwent();
+     if (!pwd) return false;
+
+#ifdef HAVE_SETUSERCONTEXT
+     lc = login_getpwclass(pwd);
+#elif USE_SHADOW
+     swd= getspnam(greet->name);
+     endspent();
+     if (!swd) return false;
+#endif
+
+     if (restrict_nologin() ||
+	 restrict_nohome() ||
+	 restrict_expired() ||
+	 restrict_time())
+       rval = true;
+
+#ifdef HAVE_SETUSERCONTEXT
+     login_close(lc);
+     lc = NULL;
+#endif
+
+     return rval;
+}
+
+#ifdef HAVE_SETUSERCONTEXT
+bool
+KGreeter::restrict_time()
+{
+     // don't deny root to log in
+     if (!pwd->pw_uid) return false;
+
+     if(!auth_timeok(lc, time(NULL))) {
+         QMessageBox::critical(NULL, NULL,
+			       i18n("Logins not available right now."),
+			       i18n("&OK"));
+         return true;
+     }
+
+     return false;
+}
+#else
+bool
+KGreeter::restrict_time()
+{
+     return false;
+}
+#endif
+
 #ifdef USE_PAM
 bool
 KGreeter::restrict_nologin()
@@ -402,27 +464,19 @@ KGreeter::restrict_nologin()
 bool
 KGreeter::restrict_nologin()
 {
-     struct passwd *pwd;
-     char * file;
-
-     pwd = getpwnam(greet->name);
-     endpwent();
-
      // don't deny root to log in
      if (pwd && !pwd->pw_uid) return false;
 
 #ifdef HAVE_SETUSERCONTEXT
-     login_cap_t * lc;
-
-     lc = login_getpwclass(pwd);
-     file = login_getcapstr(lc, "nologin", "", NULL);
-     if (login_getcapbool(lc, "ignorenologin", 0)) file = NULL;
+     char *file = login_getcapstr(lc, "nologin", "", NULL);
+     if (login_getcapbool(lc, "ignorenologin", 0)) return false;
 #else
 #ifndef _PATH_NOLOGIN
 #define _PATH_NOLOGIN "/etc/nologin"
 #endif
-     file = _PATH_NOLOGIN;
+     char *file = _PATH_NOLOGIN;
 #endif
+     if (!file) return false;
      QFile f(file);
      QString s;  
      if ( f.open(IO_ReadOnly) ) {
@@ -430,16 +484,10 @@ KGreeter::restrict_nologin()
        while ( !t.eof() )
          s += t.readLine() + "\n";  
        f.close();
-       QMessageBox::critical(NULL, i18n("No login"),s, i18n("&OK"));
-#ifdef HAVE_SETUSERCONTEXT
-       login_close(lc);
-#endif
+       QMessageBox::critical(NULL, NULL, s, i18n("&OK"));
        return true;
-     };
+     }
 
-#ifdef HAVE_SETUSERCONTEXT
-     login_close(lc);
-#endif
      return false;
 }
 #endif /* !USE_PAM */
@@ -448,26 +496,20 @@ KGreeter::restrict_nologin()
 bool
 KGreeter::restrict_expired(){
 #define DEFAULT_WARN  (2L * 7L * 86400L)  /* Two weeks */
-     struct passwd *pwd = getpwnam(greet->name);
-     endpwent();
-     if (!pwd) return false;
-
      // don't deny root to log in
      if (!pwd->pw_uid) return false;
 
 #ifdef HAVE_SETUSERCONTEXT
-     login_cap_t * lc = login_getpwclass(pwd);
      bool quietlog = login_getcapbool(lc, "hushlogin", 0);
      time_t warntime = login_getcaptime(lc, "warnexpire",
 				 DEFAULT_WARN, DEFAULT_WARN);
-     login_close(lc);
 #else
      bool quietlog = false;
      warntime = DEFAULT_WARN;
 #endif
      if (pwd->pw_expire)
 	  if (pwd->pw_expire <= time(NULL)) {
-	       QMessageBox::critical(NULL, i18n("Expired"), 
+	       QMessageBox::critical(NULL, NULL,
 				     i18n("Sorry -- your account has expired."), 
 				     i18n("&OK"));
 	       return true;
@@ -475,23 +517,17 @@ KGreeter::restrict_expired(){
 	       QString str;
 	       str.sprintf(i18n("Warning: your account expires on %s"), 
 			   ctime(&pwd->pw_expire));  // use locales
-	       QMessageBox::critical(NULL, i18n("Expired"), str, i18n("&OK"));
+	       QMessageBox::critical(NULL, NULL,
+				     str,
+				     i18n("&OK"));
 	  }
 
      return false;
 }
-#else /* !BSD */
-#ifdef USESHADOW
+#elif USESHADOW
 bool
 KGreeter::restrict_expired(){
 #define DEFAULT_WARN  (2L * 7L * 86400L)  /* Two weeks */
-     struct passwd *pwd= getpwnam(greet->name);
-     struct spwd *swd= getspnam(greet->name);
-     endpwent();
-     endspent();
-
-     if (!pwd || !swd) return false;
-
      // don't deny root to log in
      if (!pwd->pw_uid) return false;
 
@@ -500,7 +536,7 @@ KGreeter::restrict_expired(){
      
      if (swd->sp_expire != -1)
 	 if (expiresec <= time(NULL)) {
-	     QMessageBox::critical(NULL, i18n("Expired"),
+	     QMessageBox::critical(NULL, NULL,
 				   i18n("Sorry -- your account has expired."),
 				   i18n("&OK"));
 	     return true;
@@ -508,7 +544,9 @@ KGreeter::restrict_expired(){
              QString str;
 	     str.sprintf(i18n("Warning: your account expires on %s"),
 			 ctime(&expiresec));  // use locales
-	     QMessageBox::critical(NULL, i18n("Expired"), str, i18n("&OK"));
+	     QMessageBox::critical(NULL, NULL,
+				   str,
+				   i18n("&OK"));
 	 }
 
      return false;
@@ -520,35 +558,23 @@ KGreeter::restrict_expired()
      return false;
 }
 #endif
-#endif
 
 #ifdef HAVE_SETUSERCONTEXT
 bool
 KGreeter::restrict_nohome(){
-     struct passwd *pwd;
-     
-     pwd = getpwnam(greet->name);
-     if (!pwd) return false;
-     endpwent();
-
      // don't deny root to log in
      if (!pwd->pw_uid) return false;
 
-     login_cap_t * lc;
-
-     lc = login_getpwclass(pwd);
-     (void)seteuid(pwd->pw_uid);
+     seteuid(pwd->pw_uid);
      if (!*pwd->pw_dir || chdir(pwd->pw_dir) < 0) {
 	  if (login_getcapbool(lc, "requirehome", 0)) {
-	       QMessageBox::critical(NULL, i18n("No home"), 
+	       QMessageBox::critical(NULL, NULL, 
 				     i18n("Home directory not available"), 
 				     i18n("&OK"));
-	       login_close(lc);
 	       return true;
 	  }
      }
-     (void)seteuid(0);
-     login_close(lc);
+     seteuid(0);
 
      return false;
 }
@@ -578,8 +604,9 @@ KGreeter::go_button_clicked()
      verify->argv = parseArgs( verify->argv, 
 			       sessionargBox->text( 
 				    sessionargBox->currentItem()));
-     if (restrict_nologin() || restrict_expired() || restrict_nohome())
+     if (restrict())
        SessionExit (d, OBEYSESS_DISPLAY, FALSE);
+
      save_wm();
      //qApp->desktop()->setCursor( waitCursor);
      qApp->setOverrideCursor( waitCursor);
