@@ -18,6 +18,7 @@ In 0.13:
 patchlevel 9:
         - fixed initial focus handling (non decorated windows where sometimes broken)
         - fixed occasional crashbugs when internal window close (such as minicli)
+        - fixes for stays-on-top
 
 patchlevel 8:
         - delayed internal event handling fix (kwm sometimes lost the 

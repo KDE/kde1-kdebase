@@ -1840,7 +1840,7 @@ bool MyApp::buttonPressEventFilter( XEvent * ev)
 	    }
 	}
  	// unfreeze the passive grab which is active currently
-	if (no_replay || mod1)
+	if (no_replay )
 	    XAllowEvents(qt_xdisplay(), SyncPointer, CurrentTime);
 	else
 	    XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
