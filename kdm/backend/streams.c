@@ -1,6 +1,6 @@
 /* $XConsortium: streams.c,v 1.5 94/06/03 16:34:41 mor Exp $ */
 /* $XFree86: xc/programs/xdm/streams.c,v 3.1 1994/06/09 10:56:15 dawes Exp $ */
-/* $Id */
+/* $Id$ */
 /*
 
 Copyright (c) 1988  X Consortium
