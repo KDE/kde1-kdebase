@@ -13,6 +13,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <signal.h>
+#include <pwd.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <kprocess.h>
@@ -67,7 +68,6 @@ bool isValidShortURL ( const char * cmd )
     // with a local resource first.  This also allows minicli
     // to behave consistently with the way it does now. (Dawit A.)
     char lastchr = *( cmd + strlen (cmd) - 1 );
-    //debug ( "%s : %c", "The last charater of the URL is", lastchr );
     if ( strchr ( cmd, ' ' ) != 0L || strchr ( cmd, ';' ) != 0L )
        return false;
     if ( *cmd  == '/'  ||  lastchr == '&' )
@@ -85,7 +85,8 @@ bool isValidShortURL ( const char * cmd )
     return true;
 }
 
-void execute( const char* cmd){
+void execute ( const char* cmd)
+{
   QString tmp;
   // Quoted all URLs (ONLY URLs) so that none of their parts
   // can be mis-interpreted as special characters by a shell.
@@ -124,18 +125,18 @@ void execute( const char* cmd){
       tmp = "kdehelp \"";
       if ( cmd[0] == '#' )
       {
-	tmp += "man:";
-	tmp += cmd + 1;
+        tmp += "man:";
+        tmp += cmd + 1;
       }
       else
-	tmp += cmd;
+        tmp += cmd;
       cmd = tmp.append("\"").data();
   }
   // Looks like a valid URL ?
   else if ( strstr( cmd, "://" ) != 0L ||
             strnicmp ( cmd, "news:", 5) == 0 ||
             strnicmp ( cmd, "mailto:", 7) == 0 ||
-	     strnicmp( cmd, "file:", 5 ) == 0 )
+	        strnicmp( cmd, "file:", 5 ) == 0 )
   {
       tmp = "kfmclient exec \"";
       tmp += cmd;
@@ -145,42 +146,51 @@ void execute( const char* cmd){
   else
   {
       struct stat buff;
-      const char *p = cmd;
-      bool isLocalDir = false;
-      bool isLocalFile = false;
-      bool isLocalExec = false;
-      QString tst;
+      bool isLocalDir = false;  // Check if "cmd" is a local directory
+      bool isLocalFile = false; // Check if "cmd" is a local file
+      bool isLocalExec = false; // Check if "cmd" is locally executable
+      QString uri ( cmd );
 
-      // Replace '~' with the user's home directory.
-      if ( *p == '~' )
-        p = tst.append( p ).replace( 0, 1, QDir::homeDirPath() ).data();
-
-      // Determine if URL is a local file or directory
-      if ( stat( p , &buff ) == 0 )
+      // HOME directory ?
+      if ( uri[0] == '~' )
+      {
+         int length = uri.length();
+         if ( length == 1 )
+            uri.replace ( 0, 1, QDir::homeDirPath().data() );
+         else if ( length > 1 )
+         {
+           int index = uri.find ( "/" );
+           struct passwd *dir = ((index == -1) ? getpwnam(uri.mid(1,length).data()) : getpwnam(uri.mid(1,index-1).data()));
+           if ( !dir ) return; // Unknown user
+           (index == -1) ? uri.replace (0, length,  dir->pw_dir) : uri.replace (0, index, dir->pw_dir);
+         }
+         cmd = uri.data();
+      }
+      // Determine if "cmd" is an absolute path to a local resource
+      if ( stat( cmd , &buff ) == 0 )
       {
         isLocalFile = S_ISREG( buff.st_mode );
         isLocalDir = S_ISDIR( buff.st_mode );
       }
-      // If cmd is not a file or a directory, check to see
-      // if it is executable under the user's current PATH.
+      // If "cmd" is not the absolute path to a file or a directory,
+      // see if it is executable under the user's $PATH variable.
       if ( !isLocalDir && !isLocalFile )
-        isLocalExec = isExecutable ( p );
+        isLocalExec = isExecutable ( cmd );
 
-      cmd = p;
-      // Open with kfmclient if cmd is a non-executable resource.
+      // Open with kfmclient if "cmd" is a non-executable local resource.
       if ( isLocalDir || ( isLocalFile && !isLocalExec ) )
       {
+        tmp = "kfmclient exec \"file:";
         tmp += cmd;
-        tmp.prepend ( "kfmclient exec \"" );
         cmd = tmp.append ( "\"").data();
       }
       // If cmd is NOT a local resource, executable or otherwise,
-      // then append "http://" to it as a default protocol.
+      // then append "http://" as the default protocol.
       // FIXME: Make this option configurable !! (Dawit A.)
       else if ( !isLocalExec && isValidShortURL ( cmd ) )
       {
-        tmp = cmd;
-        tmp.prepend ("kfmclient exec \"http://");
+        tmp = "kfmclient exec \"http://";
+        tmp += cmd;
         cmd = tmp.append("\"").data();
       }
   }
