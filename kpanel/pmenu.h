@@ -79,7 +79,6 @@ public:
   bool      isReadOnly() { return read_only; }
   void      setReadOnly( bool b ) { read_only = b; }
   QString   getSaveName();
-  QPixmap   getBigIcon();
   QString   bigIconName(){ return big_pixmap_name;};
   QString   text() { return text_name; }
   QString   fullPathName(){return dir_path + "/" + real_name;}

@@ -469,14 +469,15 @@ QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
   return pm2;
 }
 
-QPixmap kPanel::load_pixmap(const char* name){
+QPixmap kPanel::load_pixmap(const char* name, bool is_folder){
   QPixmap pm;
   pm.resize(0,0);
   if (!name || name[0]=='\0')
-    name = "exec.xpm";
+    name = is_folder?"folder.xpm":"exec.xpm";
   pm =  KApplication::getKApplication()->getIconLoader()->loadApplicationIcon(name);
   if (pm.isNull())
-    pm = KApplication::getKApplication()->getIconLoader()->loadApplicationIcon("exec.xpm");
+    pm = KApplication::getKApplication()->getIconLoader()
+      ->loadApplicationIcon(is_folder?"folder.xpm":"exec.xpm");
 
   if (pm_scale_factor != 1){
     QWMatrix m;

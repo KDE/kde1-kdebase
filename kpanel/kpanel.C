@@ -971,7 +971,7 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
        entries[nbuttons-1].pmi = pmi;
        // end workaround
        
-       entries[nbuttons-1].button->setPixmap(create_arrow_pixmap( load_pixmap(pmi->bigIconName())));
+       entries[nbuttons-1].button->setPixmap(create_arrow_pixmap( load_pixmap(pmi->bigIconName(), True)));
      }
      else{
        entries[nbuttons-1].button->setPixmap(load_pixmap(pmi->bigIconName()));

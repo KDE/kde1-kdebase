@@ -320,7 +320,7 @@ private:
   QPopupMenu* windowlist;
   void generateWindowlist(QPopupMenu*);
   
-  QPixmap load_pixmap(const char* name);
+  QPixmap load_pixmap(const char* name, bool is_folder = false);
 
   
   void write_out_configuration();

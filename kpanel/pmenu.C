@@ -284,13 +284,6 @@ QString PMenuItem::getSaveName()
   return temp;
 }
 
-QPixmap PMenuItem::getBigIcon()
-{
-  QFileInfo fi( fullPathName());
-  parse(&fi);
-  return KApplication::getKApplication()->getIconLoader()->loadApplicationIcon(big_pixmap_name);
-}
-
 
 //--------------------------------------------------------------------------------------
 
