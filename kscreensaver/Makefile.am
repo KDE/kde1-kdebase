@@ -10,8 +10,12 @@ CLEANFILES = $(BUILTSOURCES)
 # for shadow passwords override the value
 INSTALL = @INSTALL@ $(SETUIDFLAGS)
 
-# automake doesn't accept \ within bin_PROGRAMS, don't ask me, why
-bin_PROGRAMS = kpolygon.kss kswarm.kss klissie.kss kbanner.kss klines.kss kblankscrn.kss krock.kss kflame.kss klaser.kss kpyro.kss khop.kss kbat.kss kslip.kss kforest.kss klock
+bin_PROGRAMS = kpolygon.kss kswarm.kss klissie.kss kbanner.kss \
+	klines.kss kblankscrn.kss krock.kss kflame.kss klaser.kss \
+	kpyro.kss khop.kss $(XPM_SAVERS) $(GL_SAVERS) kslip.kss \
+	kforest.kss klock
+
+EXTRA_PROGRAMS = kbat.kss kmorph3d.kss
 
 BASE_SRCS = main.cpp xautolock.cpp saver.cpp passwd.cpp xlock.cpp
 main.cpp: main.moc
@@ -58,6 +62,9 @@ flame.cpp: flame.moc
 
 kforest_kss_SOURCES = $(BASE_SRCS) forest.cpp
 forest.cpp: forest.moc
+
+kmorph3d_kss_SOURCES = $(BASE_SRCS) morph3d.cpp
+morph3d.cpp: morph3d.moc
 
 klock_SOURCES = klock.cpp kscreensave.cpp
 
