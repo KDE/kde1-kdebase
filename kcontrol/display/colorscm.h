@@ -101,7 +101,8 @@ protected slots:
 
 protected:
 	void writeSettings();
-	
+	void writeNamedColor(KConfigBase *config, const char *key, const char *name);
+
 protected:
 
 	QSlider *sb;

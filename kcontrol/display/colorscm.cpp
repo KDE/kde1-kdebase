@@ -247,9 +247,9 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	kde_display = x11Display();
 	KDEChangePalette = XInternAtom( kde_display, "KDEChangePalette", False);
 	screen = DefaultScreen(kde_display);
-    root = RootWindow(kde_display, screen);
-    
-    setName( klocale->translate("Color Scheme") );
+	root = RootWindow(kde_display, screen);
+	
+	setName( klocale->translate("Color Scheme") );
 	
 	sampleWidgets = new WidgetCanvas( this );
 
@@ -418,44 +418,20 @@ void KColorScheme::slotSave()
 
 void KColorScheme::writeScheme()
 {
-	QString str;
-	
 	KConfig *config = kapp->getConfig();
 	config->setGroup( schemeFile.data() );
 
-	str.sprintf("#%02x%02x%02x", sampleWidgets->backgroundColor.red(), sampleWidgets->backgroundColor.green(), sampleWidgets->backgroundColor.blue());
-	config->writeEntry("BackgroundColor", str);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->selectColor.red(), sampleWidgets->selectColor.green(), sampleWidgets->selectColor.blue());
-	config->writeEntry("SelectColor", str);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->textColor.red(),
-					sampleWidgets->textColor.green(), sampleWidgets->textColor.blue());
-	config->writeEntry("TextColor", str);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->activeTextColor.red(), sampleWidgets->activeTextColor.green(), sampleWidgets->activeTextColor.blue());
-	config->writeEntry("ActiveTitleTextColor", str);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->inactiveTitleColor.red(), sampleWidgets->inactiveTitleColor.green(), sampleWidgets->inactiveTitleColor.blue());
-	config->writeEntry("InactiveTitleBarColor", str);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->activeTitleColor.red(), sampleWidgets->activeTitleColor.green(), sampleWidgets->activeTitleColor.blue());
-	config->writeEntry("ActiveTitleBarColor", str);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->inactiveTextColor.red(), sampleWidgets->inactiveTextColor.green(), sampleWidgets->inactiveTextColor.blue());
-	config->writeEntry("InactiveTitleTextColor",str);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->windowTextColor.red(), sampleWidgets->windowTextColor.green(), sampleWidgets->windowTextColor.blue());
-	config->writeEntry("WindowTextColor", str);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->windowColor.red(), sampleWidgets->windowColor.green(), sampleWidgets->windowColor.blue());
-	config->writeEntry("WindowColor", str);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->selectTextColor.red(), sampleWidgets->selectTextColor.green(), sampleWidgets->selectTextColor.blue());
-	config->writeEntry("SelectTextColor", str);
-	
-	str.sprintf("%d", sampleWidgets->contrast);
-	config->writeEntry("Contrast", str);
+	config->writeEntry("BackgroundColor", sampleWidgets->backgroundColor);
+	config->writeEntry("SelectColor", sampleWidgets->selectColor);
+	config->writeEntry("TextColor", sampleWidgets->textColor);
+	config->writeEntry("ActiveTitleTextColor", sampleWidgets->activeTextColor);
+	config->writeEntry("InactiveTitleBarColor", sampleWidgets->inactiveTitleColor);
+	config->writeEntry("ActiveTitleBarColor", sampleWidgets->activeTitleColor);
+	config->writeEntry("InactiveTitleTextColor", sampleWidgets->inactiveTextColor);
+	config->writeEntry("WindowTextColor", sampleWidgets->windowTextColor);
+	config->writeEntry("WindowColor", sampleWidgets->windowColor);
+	config->writeEntry("SelectTextColor", sampleWidgets->selectTextColor);
+	config->writeEntry("Contrast", sampleWidgets->contrast);
 	
 	config->sync();
 }
@@ -562,6 +538,13 @@ void KColorScheme::slotWidgetColor( int indx )
 	colorPushColor=col;	
 }
 
+void KColorScheme::writeNamedColor(KConfigBase *config, const char *key, const char *name)
+{
+        QColor tmp;
+	tmp.setNamedColor(name);
+	config->writeEntry(key, tmp);
+}
+
 void KColorScheme::installSchemes()
 {
 	KConfig *config = kapp->getConfig();
@@ -592,73 +575,73 @@ void KColorScheme::installSchemes()
 	
 	config->setGroup( "Atlas Green" );
 
-	config->writeEntry("BackgroundColor","#afb49f");
-	config->writeEntry("SelectColor","#6f7a63");
-	config->writeEntry("TextColor","#000000");
-	config->writeEntry("ActiveTitleTextColor","#ffffff");
-	config->writeEntry("InactiveTitleBarColor","#000000");
-	config->writeEntry("ActiveTitleBarColor","#6f7a63");
-	config->writeEntry("InactiveTitleTextColor","#afb49f");
-	config->writeEntry("WindowTextColor","#000000");
-	config->writeEntry("WindowColor","#ffffff");
-	config->writeEntry("SelectTextColor","#ffffff");
-	config->writeEntry("Contrast","5");
+	writeNamedColor( config,"BackgroundColor","#afb49f");
+	writeNamedColor( config,"SelectColor","#6f7a63");
+	writeNamedColor( config,"TextColor","#000000");
+	writeNamedColor( config,"ActiveTitleTextColor","#ffffff");
+	writeNamedColor( config,"InactiveTitleBarColor","#000000");
+	writeNamedColor( config,"ActiveTitleBarColor","#6f7a63");
+	writeNamedColor( config,"InactiveTitleTextColor","#afb49f");
+	writeNamedColor( config,"WindowTextColor","#000000");
+	writeNamedColor( config,"WindowColor","#ffffff");
+	writeNamedColor( config,"SelectTextColor","#ffffff");
+	config->writeEntry("Contrast",5);
 	
 	config->setGroup( "Blue Slate" );
 
-	config->writeEntry("BackgroundColor","#9db9c8");
-	config->writeEntry("SelectColor","#558097");
-	config->writeEntry("TextColor","#000000");
-	config->writeEntry("ActiveTitleTextColor","#ffffff");
-	config->writeEntry("InactiveTitleBarColor","#9c9c9c");
-	config->writeEntry("ActiveTitleBarColor","#558097");
-	config->writeEntry("InactiveTitleTextColor","#d6d6d6");
-	config->writeEntry("WindowTextColor","#000000");
-	config->writeEntry("WindowColor","#c3c3c3");
-	config->writeEntry("SelectTextColor","#ffffff");
-	config->writeEntry("Contrast","5");
+	writeNamedColor( config,"BackgroundColor","#9db9c8");
+	writeNamedColor( config,"SelectColor","#558097");
+	writeNamedColor( config,"TextColor","#000000");
+	writeNamedColor( config,"ActiveTitleTextColor","#ffffff");
+	writeNamedColor( config,"InactiveTitleBarColor","#9c9c9c");
+	writeNamedColor( config,"ActiveTitleBarColor","#558097");
+	writeNamedColor( config,"InactiveTitleTextColor","#d6d6d6");
+	writeNamedColor( config,"WindowTextColor","#000000");
+	writeNamedColor( config,"WindowColor","#c3c3c3");
+	writeNamedColor( config,"SelectTextColor","#ffffff");
+	config->writeEntry("Contrast",5);
 	
 	config->setGroup( "Windows 95" );
 
-	config->writeEntry("BackgroundColor","#c3c3c3");
-	config->writeEntry("SelectColor","#000080");
-	config->writeEntry("TextColor","#000000");
-	config->writeEntry("ActiveTitleTextColor","#ffffff");
-	config->writeEntry("InactiveTitleBarColor","#9c9c9c");
-	config->writeEntry("ActiveTitleBarColor","#000080");
-	config->writeEntry("InactiveTitleTextColor","#d6d6d6");
-	config->writeEntry("WindowTextColor","#000000");
-	config->writeEntry("WindowColor","#ffffff");
-	config->writeEntry("SelectTextColor","#ffffff");
-	config->writeEntry("Contrast","7");
+	writeNamedColor( config,"BackgroundColor","#c3c3c3");
+	writeNamedColor( config,"SelectColor","#000080");
+	writeNamedColor( config,"TextColor","#000000");
+	writeNamedColor( config,"ActiveTitleTextColor","#ffffff");
+	writeNamedColor( config,"InactiveTitleBarColor","#9c9c9c");
+	writeNamedColor( config,"ActiveTitleBarColor","#000080");
+	writeNamedColor( config,"InactiveTitleTextColor","#d6d6d6");
+	writeNamedColor( config,"WindowTextColor","#000000");
+	writeNamedColor( config,"WindowColor","#ffffff");
+	writeNamedColor( config,"SelectTextColor","#ffffff");
+	config->writeEntry("Contrast", 7);
 	
 	config->setGroup( "CDE" );
 
-	config->writeEntry("BackgroundColor","#999999");
-	config->writeEntry("SelectColor","#326284");
-	config->writeEntry("TextColor","#ffffff");
-	config->writeEntry("ActiveTitleTextColor","#ffffff");
-	config->writeEntry("InactiveTitleBarColor","#818181");
-	config->writeEntry("ActiveTitleBarColor","#326284");
-	config->writeEntry("InactiveTitleTextColor","#ffffff");
-	config->writeEntry("WindowTextColor","#ffffff");
-	config->writeEntry("WindowColor","#818181");
-	config->writeEntry("SelectTextColor","#ffffff");
-	config->writeEntry("Contrast","7");
+	writeNamedColor( config,"BackgroundColor","#999999");
+	writeNamedColor( config,"SelectColor","#326284");
+	writeNamedColor( config,"TextColor","#ffffff");
+	writeNamedColor( config,"ActiveTitleTextColor","#ffffff");
+	writeNamedColor( config,"InactiveTitleBarColor","#818181");
+	writeNamedColor( config,"ActiveTitleBarColor","#326284");
+	writeNamedColor( config,"InactiveTitleTextColor","#ffffff");
+	writeNamedColor( config,"WindowTextColor","#ffffff");
+	writeNamedColor( config,"WindowColor","#818181");
+	writeNamedColor( config,"SelectTextColor","#ffffff");
+	config->writeEntry("Contrast",7);
 	
 	config->setGroup( "Pale Gray" );
 
-	config->writeEntry("BackgroundColor","#d6d6d6");
-	config->writeEntry("SelectColor","#000000");
-	config->writeEntry("TextColor","#000000");
-	config->writeEntry("ActiveTitleTextColor","#ffffff");
-	config->writeEntry("InactiveTitleBarColor","#a0a0a0");
-	config->writeEntry("ActiveTitleBarColor","#000000");
-	config->writeEntry("InactiveTitleTextColor","#d6d6d6");
-	config->writeEntry("WindowTextColor","#000000");
-	config->writeEntry("WindowColor","#ffffff");
-	config->writeEntry("SelectTextColor","#ffffff");
-	config->writeEntry("Contrast","3");
+	writeNamedColor( config,"BackgroundColor","#d6d6d6");
+	writeNamedColor( config,"SelectColor","#000000");
+	writeNamedColor( config,"TextColor","#000000");
+	writeNamedColor( config,"ActiveTitleTextColor","#ffffff");
+	writeNamedColor( config,"InactiveTitleBarColor","#a0a0a0");
+	writeNamedColor( config,"ActiveTitleBarColor","#000000");
+	writeNamedColor( config,"InactiveTitleTextColor","#d6d6d6");
+	writeNamedColor( config,"WindowTextColor","#000000");
+	writeNamedColor( config,"WindowColor","#ffffff");
+	writeNamedColor( config,"SelectTextColor","#ffffff");
+	config->writeEntry("Contrast", 3);
 	
 	config->sync();
 }
@@ -721,71 +704,76 @@ void KColorScheme::readSettings( int )
 		schemeFile = str;
 		
 	config->setGroup( schemeFile.data() );
-	str = config->readEntry( "InactiveTitleBarColor" );
-	if ( !str.isNull() )
-		sampleWidgets->inactiveTitleColor.setNamedColor( str );
-	else
-		sampleWidgets->inactiveTitleColor = col ;
-		
-	str = config->readEntry( "InactiveTitleTextColor" );
-	if ( !str.isNull() )
-		sampleWidgets->inactiveTextColor.setNamedColor( str );
-	else
-		sampleWidgets->inactiveTextColor = darkGray;
-		
-	str = config->readEntry( "ActiveTitleBarColor" );
-	if ( !str.isNull() )
-		sampleWidgets->activeTitleColor.setNamedColor( str );
-	else
-		sampleWidgets->activeTitleColor = darkBlue;
-		
-	str = config->readEntry( "ActiveTitleTextColor" );
-	if ( !str.isNull() )
-		sampleWidgets->activeTextColor.setNamedColor( str );
-	else
-		sampleWidgets->activeTextColor = white;
-		
-	str = config->readEntry( "TextColor" );
-	if ( !str.isNull() )
-		sampleWidgets->textColor.setNamedColor( str );
-	else
-		sampleWidgets->textColor = black;
-		
-	str = config->readEntry( "BackgroundColor" );
-	if ( !str.isNull() )
-		sampleWidgets->backgroundColor.setNamedColor( str );
-	else
-		sampleWidgets->backgroundColor = col;
-		
-	str = config->readEntry( "SelectColor" );
-	if ( !str.isNull() )
-		sampleWidgets->selectColor.setNamedColor( str );
-	else
-		sampleWidgets->selectColor = black;	
 	
-	str = config->readEntry( "SelectTextColor" );
-	if ( !str.isNull() )
-		sampleWidgets->selectTextColor.setNamedColor( str );
-	else
-		sampleWidgets->selectTextColor = white;
-		
-	str = config->readEntry( "WindowColor" );
-	if ( !str.isNull() )
-		sampleWidgets->windowColor.setNamedColor( str );
-	else
-		sampleWidgets->windowColor = white;
-		
-	str = config->readEntry( "WindowTextColor" );
-	if ( !str.isNull() )
-		sampleWidgets->windowTextColor.setNamedColor( str );
-	else
-		sampleWidgets->windowTextColor = black;
+	sampleWidgets->inactiveTitleColor = 
+	  config->readColorEntry( "InactiveTitleBarColor", &col);
 	
-	str = config->readEntry( "Contrast" );
-	if ( !str.isNull() )
-		sampleWidgets->contrast = atoi( str.data() );
-	else
-		sampleWidgets->contrast = 7;
+	sampleWidgets->inactiveTextColor = 
+	  config->readColorEntry( "InactiveTitleTextColor", &darkGray );
+
+	sampleWidgets->activeTitleColor =
+	  config->readColorEntry( "ActiveTitleBarColor", &darkBlue );
+
+	sampleWidgets->activeTextColor = 
+	  config->readColorEntry( "ActiveTitleTextColor", &white );
+
+	sampleWidgets->textColor = 
+	  config->readColorEntry( "TextColor", &black );
+	
+	sampleWidgets->backgroundColor = 
+	  config->readColorEntry( "BackgroundColor", &col );
+
+	sampleWidgets->selectColor =
+	  config->readColorEntry( "SelectColor", &black);
+
+	sampleWidgets->selectTextColor =
+	  config->readColorEntry( "SelectTextColor", &white );
+
+	sampleWidgets->windowColor =
+	  config->readColorEntry( "WindowColor", &white );
+	
+	sampleWidgets->windowTextColor =
+	  config->readColorEntry( "WindowTextColor", &black );
+	
+	sampleWidgets->contrast = 
+	  config->readNumEntry( "Contrast", 7 );
+
+	// actual settings
+	config->setGroup("Color Scheme"); 
+
+	sampleWidgets->inactiveTitleColor = 
+	  config->readColorEntry( "InactiveTitleBarColor", &sampleWidgets->inactiveTitleColor);
+	
+	sampleWidgets->inactiveTextColor = 
+	  config->readColorEntry( "InactiveTitleTextColor", &sampleWidgets->inactiveTextColor);
+
+	sampleWidgets->activeTitleColor =
+	  config->readColorEntry( "ActiveTitleBarColor", &sampleWidgets->activeTitleColor );
+
+	sampleWidgets->activeTextColor = 
+	  config->readColorEntry( "ActiveTitleTextColor", &sampleWidgets->activeTextColor );
+
+	sampleWidgets->textColor = 
+	  config->readColorEntry( "TextColor", &sampleWidgets->textColor );
+	
+	sampleWidgets->backgroundColor = 
+	  config->readColorEntry( "BackgroundColor", &sampleWidgets->backgroundColor );
+
+	sampleWidgets->selectColor =
+	  config->readColorEntry( "SelectColor", &sampleWidgets->selectColor );
+
+	sampleWidgets->selectTextColor =
+	  config->readColorEntry( "SelectTextColor", &sampleWidgets->selectTextColor );
+
+	sampleWidgets->windowColor =
+	  config->readColorEntry( "WindowColor", &sampleWidgets->windowColor );
+	
+	sampleWidgets->windowTextColor =
+	  config->readColorEntry( "WindowTextColor", &sampleWidgets->windowTextColor );
+	
+	sampleWidgets->contrast = 
+	  config->readNumEntry( "Contrast", sampleWidgets->contrast);
+	
 }
 
 void KColorScheme::writeSettings()
@@ -798,39 +786,17 @@ void KColorScheme::writeSettings()
 	KConfig* systemConfig = kapp->getConfig();
 	systemConfig->setGroup( "Color Scheme" );
 
-	str.sprintf("#%02x%02x%02x", sampleWidgets->backgroundColor.red(), sampleWidgets->backgroundColor.green(), sampleWidgets->backgroundColor.blue());
-	systemConfig->writeEntry("BackgroundColor", str, true, true);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->selectColor.red(), sampleWidgets->selectColor.green(), sampleWidgets->selectColor.blue());
-	systemConfig->writeEntry("SelectColor", str, true, true);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->textColor.red(),
-					sampleWidgets->textColor.green(), sampleWidgets->textColor.blue());
-	systemConfig->writeEntry("TextColor", str, true, true);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->activeTextColor.red(), sampleWidgets->activeTextColor.green(), sampleWidgets->activeTextColor.blue());
-	systemConfig->writeEntry("ActiveTitleTextColor", str, true, true);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->inactiveTitleColor.red(), sampleWidgets->inactiveTitleColor.green(), sampleWidgets->inactiveTitleColor.blue());
-	systemConfig->writeEntry("InactiveTitleBarColor", str, true, true);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->activeTitleColor.red(), sampleWidgets->activeTitleColor.green(), sampleWidgets->activeTitleColor.blue());
-	systemConfig->writeEntry("ActiveTitleBarColor", str, true, true);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->inactiveTextColor.red(), sampleWidgets->inactiveTextColor.green(), sampleWidgets->inactiveTextColor.blue());
-	systemConfig->writeEntry("InactiveTitleTextColor",str, true, true);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->windowTextColor.red(), sampleWidgets->windowTextColor.green(), sampleWidgets->windowTextColor.blue());
-	systemConfig->writeEntry("WindowTextColor", str, true, true);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->windowColor.red(), sampleWidgets->windowColor.green(), sampleWidgets->windowColor.blue());
-	systemConfig->writeEntry("WindowColor", str, true, true);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->selectTextColor.red(), sampleWidgets->selectTextColor.green(), sampleWidgets->selectTextColor.blue());
-	systemConfig->writeEntry("SelectTextColor", str, true, true);
-	
-	str.sprintf("%d", sampleWidgets->contrast);
-	systemConfig->writeEntry("Contrast", str, true, true);
+	systemConfig->writeEntry("BackgroundColor", sampleWidgets->backgroundColor, true, true);
+	systemConfig->writeEntry("SelectColor", sampleWidgets->selectColor, true, true);
+	systemConfig->writeEntry("TextColor", sampleWidgets->textColor, true, true);
+	systemConfig->writeEntry("ActiveTitleTextColor", sampleWidgets->activeTextColor, true, true);
+	systemConfig->writeEntry("InactiveTitleBarColor",sampleWidgets->inactiveTitleColor,  true, true);
+	systemConfig->writeEntry("ActiveTitleBarColor", sampleWidgets->activeTitleColor,  true, true);
+	systemConfig->writeEntry("InactiveTitleTextColor",sampleWidgets->inactiveTextColor , true, true);
+	systemConfig->writeEntry("WindowTextColor", sampleWidgets->windowTextColor, true, true);
+	systemConfig->writeEntry("WindowColor", sampleWidgets->windowColor, true, true);
+	systemConfig->writeEntry("SelectTextColor", sampleWidgets->selectTextColor, true, true);
+	systemConfig->writeEntry("Contrast", sampleWidgets->contrast, true, true);
         systemConfig->sync();
 	
 	systemConfig->setGroup( "ColorScheme" );
@@ -922,12 +888,13 @@ void KColorScheme::slotPreviewScheme( int indx )
 {
 	QString str;
 	
+	QColor col;
+	col.setRgb(192,192,192);
+
 	if ( indx == 0 )
 	{
 		schemeFile = NULL;
-		QColor col;
-		col.setRgb(192,192,192);
-		
+			
 		sampleWidgets->inactiveTitleColor = col;
 		sampleWidgets->inactiveTextColor = darkGray;
 		sampleWidgets->activeTitleColor = darkBlue;
@@ -939,82 +906,49 @@ void KColorScheme::slotPreviewScheme( int indx )
 		sampleWidgets->windowColor = white;
 		sampleWidgets->windowTextColor = black;
 		sampleWidgets->contrast = 7;
-	
 	}
 	else
 	{
-		QStrListIterator it( *schemeList );
+   	        QStrListIterator it( *schemeList );
 		it += indx-1;
 		schemeFile = it.current();
 		
 		KConfig *config = kapp->getConfig();
 
  		config->setGroup( schemeFile.data() );
-		str = config->readEntry( "InactiveTitleBarColor" );
-		if ( !str.isNull() )
-			sampleWidgets->inactiveTitleColor.setNamedColor( str );
-		else
-			sampleWidgets->inactiveTitleColor = lightGray;
 
-		str = config->readEntry( "InactiveTitleTextColor" );
-		if ( !str.isNull() )
-			sampleWidgets->inactiveTextColor.setNamedColor( str );
-		else
-			sampleWidgets->inactiveTextColor = darkGray;
-
-		str = config->readEntry( "ActiveTitleBarColor" );
-		if ( !str.isNull() )
-			sampleWidgets->activeTitleColor.setNamedColor( str );
-		else
-			sampleWidgets->activeTitleColor = black;
-
-		str = config->readEntry( "ActiveTitleTextColor" );
-		if ( !str.isNull() )
-			sampleWidgets->activeTextColor.setNamedColor( str );
-		else
-			sampleWidgets->activeTextColor = white;
-
-		str = config->readEntry( "TextColor" );
-		if ( !str.isNull() )
-			sampleWidgets->textColor.setNamedColor( str );
-		else
-			sampleWidgets->textColor = black;
-
-		str = config->readEntry( "BackgroundColor" );
-		if ( !str.isNull() )
-			sampleWidgets->backgroundColor.setNamedColor( str );
-		else
-			sampleWidgets->backgroundColor = lightGray;
-
-		str = config->readEntry( "SelectColor" );
-		if ( !str.isNull() )
-			sampleWidgets->selectColor.setNamedColor( str );
-		else
-			sampleWidgets->selectColor = black;	
-
-		str = config->readEntry( "SelectTextColor" );
-		if ( !str.isNull() )
-			sampleWidgets->selectTextColor.setNamedColor( str );
-		else
-			sampleWidgets->selectTextColor = white;
-
-		str = config->readEntry( "WindowColor" );
-		if ( !str.isNull() )
-			sampleWidgets->windowColor.setNamedColor( str );
-		else
-			sampleWidgets->windowColor = white;
-
-		str = config->readEntry( "WindowTextColor" );
-		if ( !str.isNull() )
-			sampleWidgets->windowTextColor.setNamedColor( str );
-		else
-			sampleWidgets->windowTextColor = black;
-			
-			str = config->readEntry( "Contrast" );
-		if ( !str.isNull() ) 
-			sampleWidgets->contrast = atoi( str.data() );
-		else
-			sampleWidgets->contrast = 7;	
+		sampleWidgets->inactiveTitleColor = 
+		  config->readColorEntry( "InactiveTitleBarColor", &col);
+		
+		sampleWidgets->inactiveTextColor = 
+		  config->readColorEntry( "InactiveTitleTextColor", &darkGray );
+		
+		sampleWidgets->activeTitleColor =
+		  config->readColorEntry( "ActiveTitleBarColor", &darkBlue );
+		
+		sampleWidgets->activeTextColor = 
+		  config->readColorEntry( "ActiveTitleTextColor", &white );
+		
+		sampleWidgets->textColor = 
+		  config->readColorEntry( "TextColor", &black );
+	
+		sampleWidgets->backgroundColor = 
+		  config->readColorEntry( "BackgroundColor", &col );
+		
+		sampleWidgets->selectColor =
+		  config->readColorEntry( "SelectColor", &black);
+		
+		sampleWidgets->selectTextColor =
+		  config->readColorEntry( "SelectTextColor", &white );
+		
+		sampleWidgets->windowColor =
+		  config->readColorEntry( "WindowColor", &white );
+		
+		sampleWidgets->windowTextColor =
+		  config->readColorEntry( "WindowTextColor", &black );
+		
+		sampleWidgets->contrast = 
+		  config->readNumEntry( "Contrast", 7 );
 	}
 	
 	sb->setValue( sampleWidgets->contrast );
