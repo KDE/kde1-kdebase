@@ -378,7 +378,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     titlestring_offset = 0;
     titlestring_offset_delta = 2;
     animation_is_active = FALSE;
-}  /* end Client::Client */
+}  
 
 Client::~Client(){
   if (ncmapwins != 0) {
@@ -509,7 +509,7 @@ void Client::layoutButtons(){
     }
     
 
-  }  /* end if !trans */
+  }  
   else{
     trX = BORDER;
     trY = BORDER;
@@ -606,7 +606,7 @@ void Client::mousePressEvent( QMouseEvent *ev ){
   else if (ev->pos().x() >= title_rect.x() && ev->pos().x() <= title_rect.x()+title_rect.width() &&
 	ev->pos().y() >= title_rect.y() && ev->pos().y() <= title_rect.y()+title_rect.height()){
       dragging_state = dragging_smooth_wait;
-    }  /* end if titlebar hit */
+    }  
 
 
   if (do_resize > 0){
@@ -623,10 +623,11 @@ void Client::mousePressEvent( QMouseEvent *ev ){
 			      current_cursor, 0);
   }
 
-}  /* end Client::mousePressEvent */
+}  
 
 void Client::mouseReleaseEvent( QMouseEvent* ev){
-  if (ev->button() == MidButton)
+  if (ev->button() == MidButton && 
+      !(ev->state() & AltButton))
     manager->lowerClient(this);
 
   dragging_state = dragging_nope;
@@ -756,7 +757,7 @@ void Client::resizeEvent( QResizeEvent * ){
     XMoveResizeWindow(qt_xdisplay(), window, 0,0,
 		      geometry.width(), geometry.height());
     
-}  /* end Client::resizeEvent */
+}  
 
 myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
   
@@ -968,7 +969,7 @@ void Client::setactive(bool on){
     QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
   }
 
-}  /* Client::setActive */
+}  
 
 void Client::paintState(bool only_label){
   QRect r = title_rect;
