@@ -301,7 +301,7 @@ void KMenuEdit::reload()
   if( changes_to_save )
     {
       if( QMessageBox::warning(this, "Reload Menus",
-			      "Reloading the menus will discard all changes.\n
+			      "Reloading the menus will discard all changes.\n\
 Are you sure you want to reload ?", "Yes", "No" ) != 0 )
         {
 	  return;
