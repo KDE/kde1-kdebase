@@ -9,7 +9,7 @@
 #include "kfmgui.h"
 #include "kfmpaths.h"
 #include "kfmexec.h"
-#include <config-kfm.h>
+#include "config-kfm.h"
 
 #include <klocale.h>
 

@@ -23,7 +23,7 @@
 #include "kfmman.h"
 #include "xview.h"
 #include "kbind.h"
-#include <config-kfm.h>
+#include "config-kfm.h"
 #include "kmsgwin.h"
 #include "kfmdlg.h"
 #include "kfmexec.h"
@@ -788,22 +788,26 @@ void KFMManager::slotMimeType( const char *_type )
 void KFMManager::setDefaultTextColors( const QColor& textc,const QColor& linkc,
 				    const QColor& vlinkc){
 
+printf("Setting default colors in KFMManger::setDefaultTextColors\n");
   text_color = text_color.sprintf("#%02x%02x%02x",
 				  textc.red(),textc.green(),textc.blue());
 
   link_color = link_color.sprintf("#%02x%02x%02x",
 				  linkc.red(),linkc.green(),linkc.blue());
 
-  vlink_color = bg_color.sprintf("#%02x%02x%02x",
+  vlink_color = vlink_color.sprintf("#%02x%02x%02x",
 				 vlinkc.red(),vlinkc.green(),vlinkc.blue());
+
+printf("text %s link %s vlink %s \n",text_color.data(),link_color.data(),vlink_color.data());
 
 }
 
 void KFMManager::setDefaultBGColor( const QColor& bgcolor ){
 
+printf("Setting default colors in KFMManger::setDefaultBGColors\n");
   bg_color = bg_color.sprintf("#%02x%02x%02x",
 			      bgcolor.red(),bgcolor.green(),bgcolor.blue());
-
+printf(" background %s \n",bg_color.data());
 
 }
 

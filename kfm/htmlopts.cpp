@@ -18,6 +18,7 @@
 #include "htmlopts.h"
 #include "htmlopts.moc"
 #include <klocale.h>
+#include "config-kfm.h"
 
 #include "root.h" // for the gridsize definitions
 
@@ -125,13 +126,13 @@ void KFontOptions::readOptions()
 
 	stdName = config->readEntry( "StandardFont" );
 	if ( stdName.isEmpty() )
-		stdName = "times";
+		stdName = DEFAULT_VIEW_FONT;
 	fontopts.standardfont = stdName;
 	fontopts.standardfont.detach();
 
 	fixedName = config->readEntry( "FixedFont" );
 	if ( fixedName.isEmpty() )
-		fixedName = "courier";
+		fixedName = DEFAULT_VIEW_FIXED_FONT;
 
 	fontopts.fixedfont = fixedName;
 	fontopts.fixedfont.detach();
@@ -253,10 +254,10 @@ void KColorOptions::readOptions()
 {
 	KConfig *config = KApplication::getKApplication()->getConfig();
 	config->setGroup( "KFM HTML Defaults" );	
-	bgColor = config->readColorEntry( "BgColor", &white );
-	textColor = config->readColorEntry( "TextColor", &black );
-	linkColor = config->readColorEntry( "LinkColor", &blue );
-	vLinkColor = config->readColorEntry( "VLinkColor", &magenta );
+	bgColor = config->readColorEntry( "BgColor", &HTML_DEFAULT_BG_COLOR );
+	textColor = config->readColorEntry( "TextColor", &HTML_DEFAULT_TXT_COLOR );
+	linkColor = config->readColorEntry( "LinkColor", &HTML_DEFAULT_LNK_COLOR );
+	vLinkColor = config->readColorEntry( "VLinkColor", &HTML_DEFAULT_VLNK_COLOR);
 	changeCursor = (bool) config->readNumEntry("ChangeCursor",0);
 	changed = false;
 }

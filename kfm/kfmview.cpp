@@ -30,7 +30,7 @@
 #include "kfmprops.h"
 #include "kbutton.h"
 #include "kfmpaths.h"
-#include <config-kfm.h>
+#include "config-kfm.h"
 #include "utils.h"
 
 #include <klocale.h>
@@ -140,11 +140,11 @@ void KfmView::setHTMLWidgetOptions(){
 
   stdName = config->readEntry( "StandardFont" );
   if ( stdName.isEmpty() )
-    stdName = "times";
+    stdName = DEFAULT_VIEW_FONT;
 
   fixedName = config->readEntry( "FixedFont" );
   if ( fixedName.isEmpty() )
-    fixedName = "courier";
+    fixedName = DEFAULT_VIEW_FIXED_FONT;
 
   bool changeCursor = (bool) config->readNumEntry("ChangeCursor",0);
 
@@ -159,12 +159,11 @@ void KfmView::setHTMLWidgetOptions(){
     htmlview->setURLCursor( arrowCursor );
 
   config->setGroup( "KFM HTML Defaults" );	
-  bgColor = config->readColorEntry( "BgColor", &white );
-  textColor = config->readColorEntry( "TextColor", &black );
-  linkColor = config->readColorEntry( "LinkColor", &blue );
-  vLinkColor = config->readColorEntry( "VLinkColor", &magenta );
-
-
+  bgColor = config->readColorEntry( "BgColor", &HTML_DEFAULT_BG_COLOR );
+  textColor = config->readColorEntry( "TextColor", &HTML_DEFAULT_TXT_COLOR );
+  linkColor = config->readColorEntry( "LinkColor", &HTML_DEFAULT_LNK_COLOR );
+  vLinkColor = config->readColorEntry( "VLinkColor", &HTML_DEFAULT_VLNK_COLOR);
+  
   setDefaultTextColors(textColor,linkColor,vLinkColor);
   setDefaultBGColor(bgColor);
 

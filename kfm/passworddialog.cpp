@@ -12,7 +12,7 @@
 
 #include "passworddialog.h"
 #include "passworddialog.moc"
-#include <config-kfm.h>
+#include "config-kfm.h"
 
 #include <klocale.h>
 #include <kapp.h>

@@ -17,6 +17,8 @@ class KfmView;
 #include "kfmgui.h"
 #include "htmlcache.h"
 
+#include "config-kfm.h"
+
 class KfmView : public KHTMLView
 {
     Q_OBJECT
@@ -126,7 +128,7 @@ public:
     /**
      * This function returns the default font of the HTML widget
      */
-    const QFont defaultFont( void ) { return QFont("times"); } 
+    const QFont defaultFont( void ) { return QFont(DEFAULT_VIEW_FONT); } 
 
     bool isHistoryStackLocked() { return stackLock; }
     

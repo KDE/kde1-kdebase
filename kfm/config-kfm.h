@@ -1,5 +1,3 @@
-/* Stephan: added this file to separate the debug outputs
-*/
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
@@ -24,3 +22,26 @@ void debugC( const char *msg , ...);
 #define ID_STRING_LINK 12 /* Link */
 #define ID_STRING_TRASH 13 /* Empty Trash Bin*/
 #define ID_STRING_ADD_TO_BOOMARKS 14
+
+// browser/tree window color defaults -- Bernd
+#define HTML_DEFAULT_BG_COLOR white
+#define HTML_DEFAULT_LNK_COLOR red
+#define HTML_DEFAULT_TXT_COLOR black
+#define HTML_DEFAULT_VLNK_COLOR magenta
+
+// root window grid spacing defaults -- Bernd
+#define DEFAULT_GRID_WIDTH 70
+#define DEFAULT_GRID_HEIGHT 70
+#define DEFAULT_GRID_MAX 150
+#define DEFAULT_GRID_MIN 50
+
+// lets be modern .. -- Bernd
+#define DEFAULT_VIEW_FONT "helvetica"
+#define DEFAULT_VIEW_FIXED_FONT "courier"
+
+// the default size of the kfm browswer windows
+// these are optimized sizes displaying a maximum number
+// of icons. -- Bernd
+#define KFMGUI_HEIGHT 360
+#define KFMGUI_WIDTH 540
+

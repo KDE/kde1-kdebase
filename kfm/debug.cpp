@@ -1,6 +1,6 @@
 #include <stdio.h>  
 #include <stdarg.h>      
-#include <config-kfm.h>
+#include "config-kfm.h"
 
 #ifdef TORBENSDEBUG
 void  debugT( const char *msg, ... )

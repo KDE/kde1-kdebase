@@ -8,7 +8,7 @@
 
 #include "kfmjob.h"
 #include "kbind.h"
-#include <config-kfm.h>
+#include "config-kfm.h"
 #include "kmsgwin.h"
 #include "kfmdlg.h"
 #include "kmimemagic.h"

@@ -1,6 +1,6 @@
 #include "krenamewin.moc"
 #include <stdio.h>
-#include <config-kfm.h>
+#include "config-kfm.h"
 
 #include <klocale.h>
 #include <kapp.h>

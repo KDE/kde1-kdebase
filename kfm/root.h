@@ -17,10 +17,7 @@
 #include "kstrlist.h"
 #include "kiojob.h"
 
-#define DEFAULT_GRID_WIDTH 75
-#define DEFAULT_GRID_HEIGHT 75
-#define DEFAULT_GRID_MAX 150
-#define DEFAULT_GRID_MIN 50
+#include "config-kfm.h"
 
 class KRootWidget;
 

@@ -20,7 +20,7 @@
 #include <kmisc.h>
 #include "cgi.h"
 #include <kapp.h>
-#include <config-kfm.h>
+#include "config-kfm.h"
 
 int idCounter = 0;
 

@@ -13,9 +13,6 @@
 
 #define TOOLBAR_URL_ID 1000
 
-// optimized values
-#define KFMGUI_HEIGHT 360
-#define KFMGUI_WIDTH 540
 
 class KfmGui;
 
@@ -38,6 +35,7 @@ class KfmGui;
 #include "kfmman.h"
 #include "kfmtree.h"
 #include "kURLcompletion.h"
+#include "config-kfm.h"
 
 class KfmGui : public KTopLevelWidget
 {

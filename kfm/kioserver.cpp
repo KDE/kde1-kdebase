@@ -23,7 +23,7 @@
 #include "kbind.h"
 #include "kfmpaths.h"
 #include "utils.h"
-#include <config-kfm.h>
+#include "config-kfm.h"
 
 KIOServer* KIOServer::pKIOServer;
 

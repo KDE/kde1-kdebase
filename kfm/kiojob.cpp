@@ -21,7 +21,7 @@
 #include "kmsgwin.h"
 #include "krenamewin.h"
 #include "passworddialog.h"
-#include <config-kfm.h>
+#include "config-kfm.h"
 
 #include <klocale.h>
 #include <kstring.h>

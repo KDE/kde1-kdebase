@@ -8,9 +8,8 @@ Executable=exec.xpm
 [Terminal]
 Terminal=kvt
 [KFM HTML Defaults]
-TextColor=#000000
-LinkColor=#FF0000
-BgColor=#FFFFFF
+StandardFont=Helvetica
+FixedFont=Courier
 [KFM Root Icons]
 Style=0
 

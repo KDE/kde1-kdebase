@@ -2,7 +2,7 @@
 #include <qscrbar.h>
 #include <kapp.h>
 
-#include <config-kfm.h>
+#include "config-kfm.h"
 
 QPixmap* KFinder::openPixmap = 0L;
 QPixmap* KFinder::closePixmap = 0L;

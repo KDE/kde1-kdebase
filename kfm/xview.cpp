@@ -6,7 +6,7 @@
 #include <qwmatrix.h>
 
 #include "xview.h"
-#include <config-kfm.h>
+#include "config-kfm.h"
 
 void read_xv_file( QImageIO *_imageio )
 {      
