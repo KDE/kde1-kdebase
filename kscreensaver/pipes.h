@@ -1,7 +1,7 @@
 #ifndef __PIPES_H__
 #define __PIPES_H__
 
-#ifdef HAVE_GL
+#if defined(HAVE_GL)
 
 #include <qtimer.h>
 #include <qlist.h>

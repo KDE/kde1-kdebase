@@ -109,6 +109,7 @@ FIXME: this could be clearer done by a calculation on the position.
    procedure starts over.
 
 -- ------------------------------------------------------------------------ */
+#include "config.h"
 
 #define QT_CLEAN_NAMESPACE
 
@@ -747,3 +748,4 @@ void kPipesSetup::slotAbout()
 
 
 #endif
+
