@@ -50,9 +50,8 @@ msgid "&Scaled"
 msgstr "Ver&größert"
 
 #: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
-#, fuzzy
 msgid "No wallpaper"
-msgstr "Hintergrundgrafik"
+msgstr "Keine Hintergrundgrafik"
 
 #: backgnd.cpp:333
 msgid "&Browse..."
@@ -258,20 +257,19 @@ msgstr "Ignorieren"
 
 #: scrnsave.cpp:49
 msgid "Save Screen"
-msgstr ""
+msgstr "Schone Bildschirm"
 
 #: scrnsave.cpp:50
 msgid "Lock Screen"
-msgstr ""
+msgstr "Sperre Bildschirm"
 
 #: scrnsave.cpp:110 scrnsave.cpp:179
 msgid "Screen Saver"
 msgstr "Bildschirmschoner"
 
 #: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
-#, fuzzy
 msgid "No screensaver"
-msgstr "&Bildschirmschoner"
+msgstr "Kein Bildschirmschoner"
 
 #: scrnsave.cpp:207
 msgid "&Setup ..."

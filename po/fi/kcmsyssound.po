@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-04-18 00:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -165,11 +165,11 @@ msgid ""
 msgstr "T‰t‰ URL tyyppi‰ ei viel‰ tueta KDE:n j‰rjestelm‰-‰‰ni modulissa"
 
 #: syssound.cpp:465
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
-"does not seemto be a WAV--file."
+"does not seem to be a WAV--file."
 msgstr ""
 "Tiedosto \n"
 "%s\n"
@@ -190,6 +190,6 @@ msgstr ""
 "%s\n"
 "on jo listalla"
 
-#: syssound.cpp:481
+#: syssound.cpp:483
 msgid "File Already in List"
 msgstr "Tiedosto jo listalla"

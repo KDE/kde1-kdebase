@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmsyssound\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-04-18 00:01+0200\n"
 "PO-Revision-Date: 1998-02-03 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -158,11 +158,11 @@ msgstr ""
 "de Sistema do KDE"
 
 #: syssound.cpp:465
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
-"does not seemto be a WAV--file."
+"does not seem to be a WAV--file."
 msgstr ""
 "Desculpe, mas \n"
 "%s\n"
@@ -183,6 +183,6 @@ msgstr ""
 "%s\n"
 "já pertence à lista"
 
-#: syssound.cpp:481
+#: syssound.cpp:483
 msgid "File Already in List"
 msgstr "Ficheiro Já Pertence à Lista"

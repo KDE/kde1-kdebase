@@ -1025,6 +1025,7 @@ msgid ""
 msgstr ""
 "Host sconosciuto in\n"
 "%s"
+
 #: kiojob.cpp:1231 kiojob.cpp:1362
 #, c-format
 msgid ""

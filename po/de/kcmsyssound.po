@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-04-18 00:01+0200\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1998-01-09 12:34:28+0100\n"
 "From: Christian Czezatke <ceci@klapauzius>\n"
@@ -160,11 +160,11 @@ msgstr ""
 "Dieser URL Typ wird im Moment von den KDE Systemklängen nicht unterstützt."
 
 #: syssound.cpp:465
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
-"does not seemto be a WAV--file."
+"does not seem to be a WAV--file."
 msgstr ""
 "Sorry, aber\n"
 "%s\n"
@@ -185,6 +185,6 @@ msgstr ""
 "%s\n"
 "ist bereits in der Liste."
 
-#: syssound.cpp:481
+#: syssound.cpp:483
 msgid "File Already in List"
 msgstr "Datei ist bereits in der Liste."

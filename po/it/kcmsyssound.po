@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-04-18 00:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -163,15 +163,15 @@ msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Mi dispiace ma questo tipo di URL non ee ancora supportata dal Sistema Sonoro "
-"del KDE "
+"Mi dispiace ma questo tipo di URL non ee ancora supportata dal Sistema "
+"Sonoro del KDE "
 
 #: syssound.cpp:465
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
-"does not seemto be a WAV--file."
+"does not seem to be a WAV--file."
 msgstr ""
 "Mi dispiace ma \n"
 "%s\n"
@@ -192,6 +192,6 @@ msgstr ""
 "%s\n"
 "è già nella lista"
 
-#: syssound.cpp:481
+#: syssound.cpp:483
 msgid "File Already in List"
 msgstr "File già presente nella lista"

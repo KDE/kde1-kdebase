@@ -77,7 +77,6 @@ msgstr ""
 "\n"
 "Portato su kscreensave by Emanuel Pirker."
 
-
 #: blankscrn.cpp:49
 msgid "Blank Screen"
 msgstr "Schermo nero"
@@ -578,7 +577,6 @@ msgid "Space (GL)"
 msgstr "Spazio (GL)"
 
 #: space.cpp:581
-
 msgid "Setup KSpace"
 msgstr "Impostazioni \"KSpace\""
 

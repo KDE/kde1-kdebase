@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-04-18 00:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -169,7 +169,7 @@ msgstr ""
 msgid ""
 "Sorry, but \n"
 "%s\n"
-"does not seemto be a WAV--file."
+"does not seem to be a WAV--file."
 msgstr ""
 
 #: syssound.cpp:468
@@ -184,6 +184,6 @@ msgid ""
 "is already in the list"
 msgstr ""
 
-#: syssound.cpp:481
+#: syssound.cpp:483
 msgid "File Already in List"
 msgstr ""

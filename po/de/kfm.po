@@ -95,9 +95,8 @@ msgid "&Long View"
 msgstr "&Ausführliche Ansicht"
 
 #: kfmgui.cpp:367
-#, fuzzy
 msgid "&Short View"
-msgstr "&Symbol-Ansicht"
+msgstr "&Knappe Ansicht"
 
 #: kfmgui.cpp:373
 msgid "Rel&oad Tree"
@@ -121,7 +120,7 @@ msgstr "Html-Code des D&okuments zeigen"
 
 #: kfmgui.cpp:393
 msgid "Show History"
-msgstr ""
+msgstr "Zeige Geschichte"
 
 #: kfmgui.cpp:395
 msgid "Show Cache"
@@ -558,9 +557,8 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "Vertikaler Gitter-Abstand auf dem Desktop:"
 
 #: bookmark.cpp:259
-#, fuzzy
 msgid "Could not write bookmark"
-msgstr "Konnte nicht schreiben auf \n"
+msgstr "Konnte Lesezeichen nicht schreiben"
 
 #: kfmprops.cpp:237
 msgid "Full Name"
@@ -695,7 +693,7 @@ msgstr ""
 
 #: kfmprops.cpp:654
 msgid "Swallowing on panel"
-msgstr ""
+msgstr "In Panel einbetten"
 
 #: kfmprops.cpp:672 kfmprops.cpp:695
 msgid "Execute"
@@ -711,7 +709,7 @@ msgstr "Arbeitsverzeichnis"
 
 #: kfmprops.cpp:703
 msgid "Window Title"
-msgstr ""
+msgstr "Fenster-Titel"
 
 #: kfmprops.cpp:707
 msgid "Run in terminal"
@@ -1017,7 +1015,7 @@ msgstr ""
 "konnte nicht erstellt werden."
 
 #: kiojob.cpp:1223 kiojob.cpp:1354
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Unknown host in\n"
 "%s"
@@ -1264,7 +1262,7 @@ msgstr "Keinen Proxy für:"
 
 #: kkfmoptdlg.cpp:19
 msgid "&Proxy"
-msgstr ""
+msgstr "&Proxy"
 
 #: kkfmoptdlg.cpp:21
 msgid "User &Agent"
@@ -1272,16 +1270,15 @@ msgstr ""
 
 #: kkfmoptdlg.cpp:24
 msgid "&Fonts"
-msgstr ""
+msgstr "&Schriften"
 
 #: kkfmoptdlg.cpp:27
 msgid "&Colors"
-msgstr ""
+msgstr "&Farben"
 
 #: kkfmoptdlg.cpp:30
-#, fuzzy
 msgid "&Other"
-msgstr "Andere"
+msgstr "An&dere"
 
 #: kkfmoptdlg.cpp:50
 msgid "KFM Browser Settings"

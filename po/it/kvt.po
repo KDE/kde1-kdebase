@@ -202,51 +202,51 @@ msgstr "-print-pipe <nome>       specifica il pipe per le stampanti vt100\n"
 
 #: main.C:1160
 msgid "-vt_bg <colour>           background color\n"
-msgstr "-vt_bg <colore>		 colore di sfondo\n"
+msgstr "-vt_bg <colore>\t\t colore di sfondo\n"
 
 #: main.C:1161
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr "-vt_fg <colore>		 colore primo piano\n"
+msgstr "-vt_fg <colore>\t\t colore primo piano\n"
 
 #: main.C:1162
 msgid "-vt_font <fontname>       normal font\n"
-msgstr "-vt_font <nome font>	 caratteri normali\n"
+msgstr "-vt_font <nome font>\t caratteri normali\n"
 
 #: main.C:1163
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr "-vt_size <dimensione>	 tiny, small, normal, large, huge\n"
+msgstr "-vt_size <dimensione>\t tiny, small, normal, large, huge\n"
 
 #: main.C:1164
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux			 imposta kvt come console linux\n"
+msgstr "-linux\t\t\t imposta kvt come console linux\n"
 
 #: main.C:1165
 msgid "-no_menubar               hide the menubar\n"
-msgstr "-no_menubar		 nasconde la barra menu\n"
+msgstr "-no_menubar\t\t nasconde la barra menu\n"
 
 #: main.C:1166
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr "-no_scrollbar		 nasconde le barre di scorrimento\n"
+msgstr "-no_scrollbar\t\t nasconde le barre di scorrimento\n"
 
 #: main.C:1167
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
-"-T <testo>		   testo nella barra titolo\n"
-"			   (Obsolet. Usa -caption al suo posto)\n"
+"-T <testo>\t\t   testo nella barra titolo\n"
+"\t\t\t   (Obsolet. Usa -caption al suo posto)\n"
 
 #: main.C:1169
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr "-tn <TERM>		 Tipo di terminal.Quello di default ee xterm.\n"
+msgstr "-tn <TERM>\t\t Tipo di terminal.Quello di default ee xterm.\n"
 
 #: main.C:1170
 msgid "-C                        Capture system console message\n"
-msgstr "-C			 Cattura i messagi di sistema della console\n"
+msgstr "-C\t\t\t Cattura i messagi di sistema della console\n"
 
 #: main.C:1171
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr "-n <testo>		 nome in icona o finestra icona\n"
+msgstr "-n <testo>\t\t nome in icona o finestra icona\n"
 
 #: main.C:1172
 msgid ""
@@ -255,7 +255,6 @@ msgid ""
 msgstr ""
 "-7                        esegue in modalitaa 7 bit\n"
 "-8                        esegue in modalitaa 8 bit\n"
-
 
 #: main.C:1174
 msgid ""
@@ -289,4 +288,3 @@ msgid ""
 msgstr ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
-
