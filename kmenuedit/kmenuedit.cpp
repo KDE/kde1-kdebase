@@ -191,7 +191,7 @@ void KMenuEdit::move_v( int y )
 
 void KMenuEdit::startHelp()
 {
-  KApplication::getKApplication()->invokeHTMLHelp("kmenuedit/kmenuedit.html", "");
+  KApplication::getKApplication()->invokeHTMLHelp( "", "");
 }
 
 void KMenuEdit::about()

@@ -68,7 +68,7 @@ int main( int argc, char **argv )
       else
 	{
 	  temp1 = KApplication::kdedir();
-	  temp1 += "/apps";
+	  temp1 += "/share/applnk";
 	}
       if( config->hasKey("PersonalPath") )
 	temp2 = config->readEntry("PersonalPath");
