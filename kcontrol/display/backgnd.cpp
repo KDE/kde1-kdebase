@@ -739,7 +739,7 @@ void KBackground::slotBrowse()
 {
 	QString path;
 
-	path = kapp->kdedir();
+	path = kapp->kdedir().copy();
 	path += "/share/wallpapers";
 
 	QDir dir( path );
