@@ -1,4 +1,3 @@
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -6,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-09-18 15:00+0200\n"
 "PO-Revision-Date: 1998-03-22 18:19+0100\n"
 "Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -17,10 +16,6 @@ msgstr ""
 #: main.cpp:87
 msgid "&Appearance"
 msgstr "&Utseende"
-
-#: main.cpp:91
-msgid "&Fonts"
-msgstr "&Skrifttyper"
 
 #: main.cpp:95
 msgid "&Background"
@@ -56,35 +51,39 @@ msgstr ""
 msgid "Missing privileges"
 msgstr "Mangler rettigheter"
 
-#: kdm-appear.cpp:66
-msgid "Appearance"
-msgstr "Utseende"
-
-#: kdm-appear.cpp:69
+#: kdm-appear.cpp:70
 msgid "Greeting string:"
 msgstr "Velkomststreng:"
 
-#: kdm-appear.cpp:77
+#: kdm-appear.cpp:78
 msgid "KDM logo:"
 msgstr "KDM-logo:"
 
-#: kdm-appear.cpp:104 kdm-users.cpp:135
+#: kdm-appear.cpp:105 kdm-users.cpp:135
 msgid "Click or drop an image here"
 msgstr "Klikk eller slipp et bilde her"
 
-#: kdm-appear.cpp:109
+#: kdm-appear.cpp:110
 msgid "GUI Style:"
 msgstr "GUI-stil"
 
-#: kdm-appear.cpp:115
+#: kdm-appear.cpp:116
 msgid "Motif"
 msgstr "Motif"
 
-#: kdm-appear.cpp:116
+#: kdm-appear.cpp:117
 msgid "Windows"
 msgstr "Windows"
 
-#: kdm-appear.cpp:143 kdm-appear.cpp:227 kdm-users.cpp:275
+#: kdm-appear.cpp:128
+msgid "Language"
+msgstr "Språk"
+
+#: kdm-appear.cpp:131
+msgid "Language:"
+msgstr "Språk:"
+
+#: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
 "There was an error loading the image:\n"
 ">"
@@ -92,16 +91,16 @@ msgstr ""
 "Det var en feil ved innlasting av bildet:\n"
 ">"
 
-#: kdm-appear.cpp:145 kdm-appear.cpp:164 kdm-users.cpp:195
+#: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
 msgid "<"
 msgstr "<"
 
-#: kdm-appear.cpp:146 kdm-appear.cpp:165 kdm-appear.cpp:230 kdm-users.cpp:196
-#: kdm-users.cpp:278
+#: kdm-appear.cpp:170 kdm-appear.cpp:189 kdm-appear.cpp:254 kdm-users.cpp:197
+#: kdm-users.cpp:279
 msgid "ERROR"
 msgstr "FEIL"
 
-#: kdm-appear.cpp:162 kdm-users.cpp:193
+#: kdm-appear.cpp:186 kdm-users.cpp:194
 msgid ""
 "There was an error saving the image:\n"
 ">"
@@ -109,11 +108,11 @@ msgstr ""
 "Det var en feil ved lagring av bildet:\n"
 ">"
 
-#: kdm-appear.cpp:195 kdm-users.cpp:226
+#: kdm-appear.cpp:219 kdm-users.cpp:227
 msgid "Sorry, but \n"
 msgstr "Beklager, men \n"
 
-#: kdm-appear.cpp:197 kdm-users.cpp:228
+#: kdm-appear.cpp:221 kdm-users.cpp:229
 msgid ""
 "\n"
 "does not seem to be an image file"
@@ -121,7 +120,7 @@ msgstr ""
 "\n"
 "ser ikke ut til å være en bildefil"
 
-#: kdm-appear.cpp:198 kdm-users.cpp:229
+#: kdm-appear.cpp:222 kdm-users.cpp:230
 msgid ""
 "\n"
 "Please use files with these extensions\n"
@@ -129,11 +128,11 @@ msgstr ""
 "\n"
 "Vennligst bruk filer med disse etternavn\n"
 
-#: kdm-appear.cpp:200 kdm-users.cpp:231
+#: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"
 msgstr "Feil fil-etternavn"
 
-#: kdm-appear.cpp:229 kdm-users.cpp:277
+#: kdm-appear.cpp:253 kdm-users.cpp:278
 msgid ""
 "<\n"
 "It will not be saved..."
@@ -145,43 +144,43 @@ msgstr ""
 msgid "Select fonts"
 msgstr "Velg skrifttyper"
 
-#: kdm-font.cpp:51
+#: kdm-font.cpp:50
 msgid "Change font"
 msgstr "Endre skrifttype"
 
-#: kdm-font.cpp:59
+#: kdm-font.cpp:55
 msgid "Greeting"
 msgstr "Hilsning"
 
-#: kdm-font.cpp:60
+#: kdm-font.cpp:56
 msgid "Fail"
 msgstr "Slo feil"
 
-#: kdm-font.cpp:61
+#: kdm-font.cpp:57
 msgid "Standard"
 msgstr "Standard"
 
-#: kdm-font.cpp:62
+#: kdm-font.cpp:59
 msgid "Example:"
 msgstr "Eksempel:"
 
-#: kdm-bgnd.cpp:67
+#: kdm-bgnd.cpp:66
 msgid "Color"
 msgstr "Farge"
 
-#: kdm-bgnd.cpp:75
+#: kdm-bgnd.cpp:74
 msgid "Wallpaper"
 msgstr "Tapet"
 
-#: kdm-bgnd.cpp:109
+#: kdm-bgnd.cpp:108
 msgid "Tiled"
 msgstr "Flislagt"
 
-#: kdm-bgnd.cpp:113
+#: kdm-bgnd.cpp:112
 msgid "Centred"
 msgstr "Sentrert"
 
-#: kdm-bgnd.cpp:117
+#: kdm-bgnd.cpp:116
 msgid "Scaled"
 msgstr "Skalert"
 
@@ -221,54 +220,54 @@ msgstr "Vis brukere"
 msgid "Sort users"
 msgstr "Sorter brukere"
 
-#: kdm-users.cpp:181 kdm-users.cpp:250
+#: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "No user selected"
 msgstr "Ingen bruker valgt"
 
-#: kdm-users.cpp:182 kdm-users.cpp:251
+#: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
 msgstr "Lagre bilde som standard bilde?"
 
 #: kdm-sess.cpp:50
-msgid "Allow to shutdown:"
-msgstr "Tillat å avslutte Unix:"
+msgid "Allow to shutdown"
+msgstr "Tillat å avslutte Unix"
 
-#: kdm-sess.cpp:56
-msgid "None"
-msgstr "Ingen"
-
-#: kdm-sess.cpp:57
+#: kdm-sess.cpp:55
 msgid "All"
 msgstr "Alle"
 
-#: kdm-sess.cpp:58
+#: kdm-sess.cpp:56
 msgid "Root Only"
 msgstr "Bare root"
 
-#: kdm-sess.cpp:59
+#: kdm-sess.cpp:57
 msgid "Console Only"
 msgstr "Bare konsoll"
 
-#: kdm-sess.cpp:63
+#: kdm-sess.cpp:61
 msgid "Commands"
 msgstr "Kommandoer"
 
-#: kdm-sess.cpp:65
+#: kdm-sess.cpp:62
 msgid "Shutdown"
 msgstr "Avslutt Unix"
 
-#: kdm-sess.cpp:73
+#: kdm-sess.cpp:67
 msgid "Restart"
 msgstr "Omstart"
 
-#: kdm-sess.cpp:85
+#: kdm-sess.cpp:73
 msgid "Session types"
 msgstr "Sesjonstyper"
 
-#: kdm-sess.cpp:88
+#: kdm-sess.cpp:75
 msgid "New type"
 msgstr "Ny type"
 
-#: kdm-sess.cpp:98
+#: kdm-sess.cpp:83
 msgid "Available types"
 msgstr "Tilgjengelige typer"
+
+#: klangcombo.cpp:133
+msgid "without name!"
+msgstr "uten navn!"
