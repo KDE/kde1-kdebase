@@ -1,13 +1,16 @@
+# KTranslator Generated File
+
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-12-03 01:15+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: Sat Dec 5 1998 16:35:20+0200\n"
+"Last-Translator: Andrea Rizzi <rizzi@kde.org>\n"
+"Language-Team: Italiano <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.4.0"
 
 #: main.cpp:67
 msgid "&Buttons"
@@ -18,27 +21,28 @@ msgid "&Titlebar"
 msgstr "&Barra Titolo"
 
 #: main.cpp:73
-#, fuzzy
+#
 msgid "Bo&rders"
-msgstr "Bordi Magici"
+msgstr "&Bordi"
 
 #: main.cpp:76
 msgid "&Mouse"
-msgstr ""
+msgstr "&Mouse"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr ""
+msgstr "&Avanzate"
 
 #: main.cpp:86
-#, fuzzy
+#
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
-msgstr "utilizzo: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
+msgstr ""
+"utilizzo: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
-msgstr "Stile Manager Finestre"
+msgstr "Stile Gestore Finestre"
 
 #: titlebar.cpp:125
 msgid "Minimize"
@@ -58,46 +62,43 @@ msgstr "Menu"
 
 #: titlebar.cpp:178 titlebar.cpp:934
 msgid "Left"
-msgstr ""
+msgstr "Sinistra"
 
 #: titlebar.cpp:182 titlebar.cpp:944
 msgid "Right"
-msgstr ""
+msgstr "Destra"
 
 #: titlebar.cpp:471
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Il lato sinistro della barra Titolo è pieno siabilito il pulsante "
-"'Ingrandisci'\n"
+"Il lato sinistro della barra Titolo è pieno disabilito il pulsante 'Ingrandisci'"
 
 #: titlebar.cpp:504
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Il lato destro della barra Titolo è pieno siabilito il pulsante "
-"'Ingrandisci'\n"
+"Il lato destro della barra Titolo è pieno siabilito il pulsante 'Ingrandisci'"
 
 #: titlebar.cpp:544
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Il lato sinistro della barra Titolo è pieno siabilito il pulsante "
-"'Iconifica'\n"
+"Il lato sinistro della barra Titolo è pieno siabilito il pulsante  'Iconifica'"
 
 #: titlebar.cpp:577
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Il lato destro della barra Titolo è pieno siabilito il pulsante 'Iconifica'\n"
+"Il lato destro della barra Titolo è pieno siabilito il pulsante 'Iconifica'"
 
 #: titlebar.cpp:930
 msgid "Title Alignment"
-msgstr ""
+msgstr "Allineamento titolo"
 
 #: titlebar.cpp:939
 msgid "Middle"
-msgstr ""
+msgstr "Centrale"
 
 #: titlebar.cpp:967
 msgid "Shaded Vertically"
@@ -117,48 +118,46 @@ msgstr "Immagine"
 
 #: titlebar.cpp:1003
 msgid "Active title has shaded frame"
-msgstr ""
+msgstr "Il titolo ha frmae sfumato"
 
 #: titlebar.cpp:1044
-#, fuzzy
+#
 msgid "Active pixmap:"
-msgstr "Immagine &Attiva"
+msgstr "Immagine attiva:"
 
 #: titlebar.cpp:1049
-#, fuzzy
+#
 msgid "Inactive pixmap:"
-msgstr "Immagine &Inattiva"
+msgstr "Immagine inattiva:"
 
 #: titlebar.cpp:1055
 msgid "No pixmap under text"
-msgstr ""
+msgstr "Nessuna immagine sotto il teso"
 
 #: titlebar.cpp:1066
 msgid "Mouse action"
 msgstr "Azione del Mouse"
 
 #: titlebar.cpp:1074
-#, fuzzy
+#
 msgid "Left Button double click does:"
-msgstr ""
-"Un doppio click con il pulsante sinistro del Mouse\n"
-"  sulla barra titolo provoca:"
+msgstr "Il doppio click con il pulsante sinistro:"
 
 #: titlebar.cpp:1084
 msgid "(Un)Maximize"
-msgstr "Ingrandisci/Riduci"
+msgstr "Ingrandisce/riduce"
 
 #: titlebar.cpp:1085
 msgid "(Un)Shade"
-msgstr "Ridotta/Intera"
+msgstr "Riduce(solo barra)"
 
 #: titlebar.cpp:1086
 msgid "Iconify"
-msgstr "Iconifica"
+msgstr "Riduce a icona"
 
 #: titlebar.cpp:1087
 msgid "(Un)Sticky"
-msgstr "Appiccicata/Staccata"
+msgstr "Appiccica/Stacca"
 
 #: titlebar.cpp:1107
 #, fuzzy
@@ -170,41 +169,43 @@ msgid "ms"
 msgstr "ms"
 
 #: titlebar.cpp:1366
-#, fuzzy
+#
 msgid "Window manager setup - ERROR"
-msgstr "Stile Manager Finestre"
+msgstr "ERRORE - Setup Window Manager"
 
 #: titlebar.cpp:1367
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
+"Si è riscontarto un errore nel salvataggio\n"
+"delle immagini della barra titolo! Controllare i permessi."
 
 #: windows.cpp:67
-#, fuzzy
+#
 msgid "Windows"
-msgstr "&Finestre"
+msgstr "Finestre"
 
 #: windows.cpp:81
 msgid "Vertical maximization only by default"
-msgstr ""
+msgstr "Solo Ingrandimento verticale "
 
 #: windows.cpp:86
 msgid "Display content in moving windows"
-msgstr ""
+msgstr "Mostra contenuto durante il movimento delle finestre"
 
 #: windows.cpp:91
 msgid "Display content in resizing windows"
-msgstr ""
+msgstr "Mostra contenuto durante il ridimensionamento delle finestre"
 
 #: windows.cpp:97
 #, fuzzy
 msgid "Resize animation:"
-msgstr "Animazione Titolo"
+msgstr "Animazione ridimensionamento:"
 
 #: windows.cpp:110
 msgid "None"
-msgstr ""
+msgstr "Nessuna"
 
 #: windows.cpp:116
 msgid "Fast"
@@ -224,7 +225,7 @@ msgstr "Cascata"
 
 #: windows.cpp:137
 msgid "Interactive"
-msgstr "Interattivo"
+msgstr "Interattiva"
 
 #: windows.cpp:139
 msgid "Random"
@@ -240,11 +241,13 @@ msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
+" Sovrapposizione consentita:\n"
+"(% dello spazio del Desktop)"
 
 #: windows.cpp:171
-#, fuzzy
+#
 msgid "Focus policy"
-msgstr "Attivazione"
+msgstr "Modalità di attivazione"
 
 #: windows.cpp:181
 msgid "Click to focus"
@@ -264,11 +267,11 @@ msgstr "Attivazione classica semplice"
 
 #: windows.cpp:198
 msgid "Auto Raise"
-msgstr ""
+msgstr "Primo piano automatico"
 
 #: windows.cpp:205
 msgid "Delay (ms)"
-msgstr ""
+msgstr "Attesa (ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
@@ -308,60 +311,60 @@ msgstr ""
 
 #: mouse.cpp:54
 msgid "Active"
-msgstr ""
+msgstr "Attiva"
 
 #: mouse.cpp:58
-#, fuzzy
+#
 msgid "Inactive"
-msgstr "Interattivo"
+msgstr "Inattiva"
 
 #: mouse.cpp:62
-#, fuzzy
+#
 msgid "Titlebar and frame:"
-msgstr "Aspetto Barra Titolo"
+msgstr "Barra titolo e cornice:"
 
 #: mouse.cpp:66
 msgid "Inactive inner window:"
-msgstr ""
+msgstr "Interno finestra inattiva:"
 
 #: mouse.cpp:70
 msgid "Inner window, titlebar and frame:"
-msgstr ""
+msgstr "Titolo , Cornice e interno finestra:"
 
 #: mouse.cpp:74 mouse.cpp:86
-#, fuzzy
+#
 msgid "Left Button"
-msgstr "&Pulsanti"
+msgstr "Pulsante Sinistro"
 
 #: mouse.cpp:78 mouse.cpp:90
 msgid "Middle Button"
-msgstr ""
+msgstr "Pulsante Centrale"
 
 #: mouse.cpp:82 mouse.cpp:94
 msgid "Right Button"
-msgstr ""
+msgstr "Pulsante Destro"
 
 #: mouse.cpp:98
 msgid "ALT + Left Button"
-msgstr ""
+msgstr "ALT + Pulsante Sinistro"
 
 #: mouse.cpp:102
 msgid "ALT + Middle Button"
-msgstr ""
+msgstr "ALT + Pulsante Centrale"
 
 #: mouse.cpp:106
 msgid "ALT + Right Button"
-msgstr ""
+msgstr "ALT + Pulsante Destro"
 
 #: mouse.cpp:113 mouse.cpp:122 mouse.cpp:132 mouse.cpp:196 mouse.cpp:207
 #: mouse.cpp:218
 msgid "Raise"
-msgstr ""
+msgstr "Alza"
 
 #: mouse.cpp:114 mouse.cpp:123 mouse.cpp:133 mouse.cpp:197 mouse.cpp:208
 #: mouse.cpp:219
 msgid "Lower"
-msgstr ""
+msgstr "Abbassa"
 
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 #, fuzzy
@@ -371,37 +374,37 @@ msgstr "Menu Operazioni"
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216
 msgid "Toggle raise and lower"
-msgstr ""
+msgstr "Scabia (alzata/abbassata)"
 
 #: mouse.cpp:126 mouse.cpp:136 mouse.cpp:198 mouse.cpp:209 mouse.cpp:220
 msgid "Nothing"
-msgstr ""
+msgstr "Niente"
 
 #: mouse.cpp:142 mouse.cpp:150 mouse.cpp:158 mouse.cpp:169 mouse.cpp:178
 #: mouse.cpp:187
 msgid "Activate and raise"
-msgstr ""
+msgstr "Attiva e alza"
 
 #: mouse.cpp:143 mouse.cpp:151 mouse.cpp:159
 msgid "Activate and lower"
-msgstr ""
+msgstr "Attiva e abbassa"
 
 #: mouse.cpp:144 mouse.cpp:152 mouse.cpp:160 mouse.cpp:168 mouse.cpp:177
 #: mouse.cpp:186
 msgid "Activate"
-msgstr ""
+msgstr "Attiva"
 
 #: mouse.cpp:166 mouse.cpp:175 mouse.cpp:184
 msgid "Activate, raise and pass click"
-msgstr ""
+msgstr "Attiva, alza e passa click"
 
 #: mouse.cpp:167 mouse.cpp:176 mouse.cpp:185
 msgid "Activate and pass click"
-msgstr ""
+msgstr "Attiva e passa click"
 
 #: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215
 msgid "Move"
-msgstr ""
+msgstr "Sposta"
 
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Resize"
@@ -409,73 +412,73 @@ msgstr "Ridimensiona"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
-msgstr ""
+msgstr "Tastiera e Mouse"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr ""
+msgstr "Ctrl-Tab cambia desktop"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr ""
+msgstr "Alt-Tab limitato al desktop attivo"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
-msgstr ""
+msgstr "Modalità Alt-Tab:"
 
 #: advanced.cpp:63
 msgid "KDE"
-msgstr ""
+msgstr "KDE"
 
 #: advanced.cpp:64
 msgid "CDE"
-msgstr ""
+msgstr "CDE"
 
 #: advanced.cpp:69
 msgid "Grab the Right Mouse Button"
-msgstr ""
+msgstr "Cattura il pulsante destro del mouse"
 
 #: advanced.cpp:78
 msgid "Filters"
-msgstr ""
+msgstr "Filtri"
 
 #: advanced.cpp:98
-#, fuzzy
+#
 msgid "Windows will:"
-msgstr "&Finestre"
+msgstr "Le finestre.."
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr ""
+msgstr "avranno decorazioni sottili"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr ""
+msgstr "non avranno decorazioni"
 
 #: advanced.cpp:106
 msgid "never gain focus"
-msgstr ""
+msgstr "non saranno attivabili"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr ""
+msgstr "inizieranno appiccicate"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr ""
+msgstr "saranno escluse dal session management"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr ""
+msgstr "se saranno verficate le seguenti condizioni:"
 
 #: advanced.cpp:121
-#, fuzzy
+#
 msgid "Titles"
-msgstr "&Barra Titolo"
+msgstr "Titoli"
 
 #: advanced.cpp:126
 msgid "Classes"
-msgstr ""
+msgstr "Classi"
 
 #~ msgid "Titlebar appearance"
 #~ msgstr "Aspetto Barra Titolo"
