@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay \n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: 1999-02-03 14:10+MET\n"
+"PO-Revision-Date: 1999-02-05 14:10+MET\n"
 "Translator: Carsten Pfeiffer <pfeiffer@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
@@ -124,7 +124,7 @@ msgstr "Fehler in Datei"
 
 #: backgnd.cpp:1385
 msgid "Can't load image file"
-msgstr "Bild-Datei kann nicht geladen werden"
+msgstr "Bilddatei kann nicht geladen werden"
 
 #: backgnd.cpp:1408 backgnd.cpp:1880
 msgid "Unsupported URL"
@@ -134,7 +134,7 @@ msgstr "Nicht unterstützte URL"
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
-"Sorry, dieser URL-Typ wird zur Zeit nicht vom KDE-Anzeigen-Modul "
+"Sorry, dieser URL-Typ wird zur Zeit nicht vom KDE-Anzeigemodul "
 "unterstützt"
 
 #: backgnd.cpp:1440
@@ -493,7 +493,7 @@ msgstr ""
 
 #: main.cpp:150
 msgid "Display settings"
-msgstr "Eigenschaften der Umgebung"
+msgstr "Eigenschaften der Bildschirmanzeige"
 
 #: widgetcanvas.cpp:104 widgetcanvas.cpp:105
 msgid "Inactive window"
