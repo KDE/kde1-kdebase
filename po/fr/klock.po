@@ -152,7 +152,7 @@ msgstr "Blobs"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Bouboule"
 
 #: bouboule.cpp:1005
 msgid "Setup KBouboule"
@@ -168,11 +168,11 @@ msgstr "Taille des points :"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "Fréquence de changement de couleur"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "mode 3D"
 
 #: bouboule.cpp:1223
 msgid "About Bouboule"
@@ -186,6 +186,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"Bouboule v0.1 -- un globe de spheres tournant et changeant de taille\n"
+"\n"
+"Copyright (c) 1996 by Jeremie PETIT\n"
+"\n"
+"Porté à kscreensave par Cedric Tefft"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -588,7 +593,7 @@ msgstr "Mot de passe incorrect"
 
 #: science.cpp:60
 msgid "Science"
-msgstr ""
+msgstr "Science"
 
 #: science.cpp:386
 msgid "Setup Science"
@@ -596,7 +601,7 @@ msgstr "Configuration de Science"
 
 #: science.cpp:413
 msgid "Intensity:"
-msgstr ""
+msgstr "Intensité:"
 
 #: science.cpp:544
 msgid "About Science"
@@ -609,6 +614,10 @@ msgid ""
 "written by Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
 msgstr ""
+"Science Version 0.2beta\n"
+"\n"
+"écrit par Rene Beutler 1998\n"
+"rbeutler@g26.ethz.ch"
 
 #: slip.cpp:293
 msgid "Slip"
