@@ -178,7 +178,7 @@ class KObjectConfig: public QObject {
 		       (~/.kde/share/apps/<app name> or $KDEDIR/.share/apps/<app name>).
       @param name   this interpreted acording to the value of type
   */
-  KObjectConfig(int type = AppRc, const char *name = 0L);
+  KObjectConfig(int type = AppRc, const char *name = 0L, bool readOnly = TRUE);
   ~KObjectConfig();
  public:
   KConfigBase* getConfig() {return config;}

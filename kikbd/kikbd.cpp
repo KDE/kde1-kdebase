@@ -206,7 +206,7 @@ void KiKbdApplication::save()
 			     ?entry.hotmap:0)->getName() + ",");
     }
   }
-  KiKbdConfig kikbdConfig;
+  KiKbdConfig kikbdConfig(FALSE);
   kikbdConfig.loadConfig();
   kikbdConfig << kikbdConfig.setGroup(confRunTimeGroup)
 	      << new KConfigNumberedKeysObject(confClassBase, 0, 

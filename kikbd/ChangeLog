@@ -1,3 +1,8 @@
+30 October 1998
+	* using base color instead of white for drawing label in widgets.cpp
+	* adding readOnly parameter for KObjectConfig anf KiKbdConfig
+	* fix bug in KeyMap:expandCodes
+
 19 October 1998
         * us.kimap removed, use en.kimap
 	* Added support to preload x codes from separate file. This is a solution

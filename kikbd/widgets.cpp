@@ -70,7 +70,7 @@ QPixmap mapLine(KiKbdMapConfig* map) {
   QBitmap  bm(width, 16);
 
   // pixmap
-  pm.fill(white);
+  pm.fill((kapp->mainWidget())->colorGroup().base());
   pp.begin(&pm);
   pp.setPen(map->getColor());
   pp.drawText(25, 1, width-25, 14, AlignLeft | AlignVCenter, text);

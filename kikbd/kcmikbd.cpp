@@ -51,7 +51,7 @@ KiKbdApplication::KiKbdApplication(int &argc, char **argv)
   if (runGUI())
     {
       //--- read configuration
-      kikbdConfig = new KiKbdConfig();
+      kikbdConfig = new KiKbdConfig(FALSE);
       kikbdConfig->loadConfig();
 
       startKikbd = (QString("-startkikbd")==argv[1])?TRUE:FALSE;

@@ -184,7 +184,8 @@ void KeySyms::allocSyms(KeySym min, KeySym max, unsigned codes)
 void KeySyms::expandCodes(unsigned n)
 {
   if(n <= kcodes) return;
-  KeySyms temp = *this;
+  KeySyms temp;
+  temp = *this;
   allocSyms(minKeyCode, maxKeyCode, n);
   unsigned i,j;for(i=j=0; i<((maxKeyCode-minKeyCode+1)*kcodes); 
 		   i+=kcodes, j+=temp.kcodes) {
@@ -283,15 +284,6 @@ KeySyms& KeySyms::operator=(KiKbdMapConfig* map)
       change(from, code.at(j), j-1);
     }
   }
-  /*cout << form("%d %d %d", minKeyCode, maxKeyCode, kcodes) << endl;
-  for(int i = 0; i<(max-min+1)*kcodes; i+=kcodes) {
-    cout << form("%4d : ", min+(i/kcodes));
-    for(int j=0; j<kcodes; j++) {
-      cout << form(" %6d", syms[i+j]);
-    }
-    cout << endl;
-  }
-  ::exit(0);*/
   return *this;
 }
 

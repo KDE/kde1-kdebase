@@ -82,7 +82,7 @@ class KiKbdConfig: public KObjectConfig {
   QColor          capsColor, altColor, forColor;
   QFont           font;
  public:
-  KiKbdConfig();
+  KiKbdConfig(bool readOnly = TRUE);
   ~KiKbdConfig(){}
   /*--- bool values ---*/
   const bool&    getKeyboardBeep() const {return keyboardBeep; }

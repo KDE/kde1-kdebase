@@ -105,12 +105,14 @@ KObjectConfig::KObjectConfig(KConfigBase* config, bool autoDelete)
   configFile   = 0L;
   configType   = External;
   version      = -1.0;
+  readOnly     = FALSE;
 }
-KObjectConfig::KObjectConfig(int type, const char* name)
+KObjectConfig::KObjectConfig(int type, const char* name, bool rdOnly)
 {
   init();
   configType = type;
   configFile = name;
+  readOnly   = rdOnly;
 }
 KObjectConfig::~KObjectConfig(){if(deleteConfig && config) delete config;}
 void KObjectConfig::init()
@@ -126,7 +128,6 @@ bool nonzeroFile(QString& file) {
 }
 void KObjectConfig::initConfig()
 {
-  readOnly = FALSE;
   if(config == 0L && configType != External) {
     QString file;
     switch(configType) {
@@ -163,7 +164,7 @@ void KObjectConfig::initConfig()
 	  QFileInfo info(file);
 	  if(info.isFile()) {
 	    configFile = file;
-	    readOnly = ! info.isWritable();
+	    if(!readOnly) readOnly = ! info.isWritable();
 	  } else {
 	    configFile = 0L;
 	    emit noSystemDataFile(file);

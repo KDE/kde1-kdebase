@@ -153,7 +153,8 @@ public:
 //=========================================================
 //   config class
 //=========================================================
-KiKbdConfig::KiKbdConfig():KObjectConfig(UserFromSystemRc)
+KiKbdConfig::KiKbdConfig(bool readOnly)
+  :KObjectConfig(UserFromSystemRc, 0L, readOnly)
 {
   setVersion(1.0);
   *this << setGroup(confMainGroup)
