@@ -396,11 +396,11 @@ msgstr "&Kursiv"
 
 #: fontchooser.cpp:125
 msgid "&Size"
-msgstr ""
+msgstr "G&röße"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr ""
+msgstr "Zei&chensatz"
 
 #: fontchooser.cpp:262
 msgid "default"

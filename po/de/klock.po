@@ -594,19 +594,19 @@ msgstr "Kugel"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "Exponential"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "Kontraktion"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "Welle"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "Krümmung"
 
 #: science.cpp:112
 msgid "Science"
