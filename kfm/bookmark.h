@@ -72,7 +72,8 @@ protected:
   /**
    * Creates a bookmark from a file.
    */
-  KBookmark( KBookmarkManager *, KBookmark *_parent, const char *_text, KSimpleConfig& _cfg );
+  KBookmark( KBookmarkManager *, KBookmark *_parent, const char *_text,
+             KSimpleConfig& _cfg, const char * _group );
 
   void clear();
   

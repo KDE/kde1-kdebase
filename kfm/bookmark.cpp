@@ -165,7 +165,14 @@ void KBookmarkManager::scanIntern( KBookmark *_bm, const char * _path )
 	  QString type = cfg.readEntry( "Type" );	
 	  // Is it really a bookmark file ?
 	  if ( type == "Link" )
-	    (void) new KBookmark( this, _bm, ep->d_name, cfg );
+	    (void) new KBookmark( this, _bm, ep->d_name, cfg, "KDE Desktop Entry" );
+	} else {
+	// maybe its an IE Favourite..
+	  KSimpleConfig cfg( file, true );
+	  cfg.setGroup("InternetShortCut");
+	  QString url = cfg.readEntry("URL");
+	  if (!url.isEmpty() )
+	    (void) new KBookmark( this, _bm, ep->d_name, cfg, "InternetShortCut" );
 	}
       }
     }
@@ -180,13 +187,14 @@ void KBookmarkManager::scanIntern( KBookmark *_bm, const char * _path )
  *
  ********************************************************************/
 
-KBookmark::KBookmark( KBookmarkManager *_bm, KBookmark *_parent, const char *_text, KSimpleConfig& _cfg )
+KBookmark::KBookmark( KBookmarkManager *_bm, KBookmark *_parent, const char
+                      *_text, KSimpleConfig& _cfg, const char * _group )
 {
   ASSERT( _bm != 0L );
   ASSERT( _parent != 0L );
   
-  _cfg.setGroup( "KDE Desktop Entry" );
-  m_url = _cfg.readEntry( "URL" );
+  _cfg.setGroup( _group );
+  m_url = _cfg.readEntry( "URL", "ERROR ! No URL !" );
   
   m_pPixmap = 0L;
   m_pMiniPixmap = 0L;

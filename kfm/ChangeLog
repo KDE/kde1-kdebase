@@ -1,3 +1,9 @@
+1999-03-27  David Faure  <faure@kde.org>
+
+	* bookmark.cpp : Added support for IE favourites. Very straightforward.
+	(syntax is compatible with kdelnks, it's only a different group name)
+	Patch from Sven Dowideit <svenud@ozemail.com.au>, slightly modified.
+
 1999-03-03  David Faure  <faure@kde.org>
 
 	* * : On startup, use kfmlib to know if kfm is already running.
