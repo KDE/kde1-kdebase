@@ -1,3 +1,7 @@
+1998-11-28  Christian Esken  <esken@kde.org>
+
+	* checkpass_shadow.cpp: Adding endspent() for the error condition execution path
+
 1998-11-26  Alex Zepeda  <garbanzo@hooked.net>
 
 	* kcheckpass.cpp: Don't include malloc.h on FreeBSD boxen.
