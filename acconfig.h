@@ -93,6 +93,9 @@
 /* Define, if you have setupterm in -l(n)curses */
 #undef HAVE_SETUPTERM
 
+/* Define, to enable volume management (Solaris 2.x), if you have -lvolmgt */
+#undef HAVE_VOLMGT
+
 #undef KDEMAXPATHLEN
 
 

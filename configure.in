@@ -111,6 +111,13 @@ if test "$kde_have_setupterm" = "yes"; then
   AC_DEFINE_UNQUOTED(HAVE_SETUPTERM)
 fi
 
+kde_have_volmgt=yes
+AC_CHECK_LIB(volmgt, volmgt_running, [LIBVOLMGT=-lvolmgt], kde_have_volmgt=no)
+AC_SUBST(LIBVOLMGT)
+if test "$kde_have_volmgt" = "yes"; then
+  AC_DEFINE_UNQUOTED(HAVE_VOLMGT)
+fi
+
 dnl Checks for typedefs, structures, and compiler characteristics.
 AC_LANG_CPLUSPLUS
 AC_HEADER_TIME
