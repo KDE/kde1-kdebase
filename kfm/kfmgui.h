@@ -163,6 +163,22 @@ public slots:
      * Menu "Edit->Paste"
      */
     void slotPaste();
+    /**
+     * Menu "Edit->Global Mime Types"
+     */
+    void slotEditSUMimeTypes();
+    /**
+     * Menu "Edit->Global Applications"
+     */
+    void slotEditSUApplications();
+    /**
+     * Menu "Edit->Mime Types"
+     */
+    void slotEditMimeTypes();
+    /**
+     * Menu "Edit->Applications"
+     */
+    void slotEditApplications();
 
     /**
      * Menu "Help->About"

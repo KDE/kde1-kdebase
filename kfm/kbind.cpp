@@ -40,22 +40,6 @@ char KMimeType::icon_path[ 1024 ];
 
 QStrList KMimeBind::appList;
 
-// A Hack, since KConfig has no constructor taking only a filename
-/*
-KFMConfig::KFMConfig( QFile * _f, QTextStream *_s ) : KConfig( _s )
-{
-    f = _f;
-    pstream = _s;
-}
-
-KFMConfig::~KFMConfig()
-{
-    f->close();
-    delete f;
-    delete pstream;
-}
-*/
-
 /***************************************************************
  *
  * KMimeType
@@ -148,8 +132,8 @@ KMimeType* KMimeType::getMagicMimeType( const char *_url )
 	    KMimeMagicResult* result = KMimeType::findFileType( u.path() );
 
 	    // Is it a directory or dont we know anything about it ?
-	    if ( result->getContent() == 0L || strcmp( "inode/directory", result->getContent() ) == 0 ) 
-		/* strcmp( "application/x-kdelnk", result->getContent() ) == 0 ) */
+	    if ( result->getContent() == 0L || strcmp( "inode/directory", result->getContent() ) == 0 ||
+		 strcmp( "application/octet-stream", result->getContent() ) == 0 )
 		return KMimeType::findType( _url );
 
 	    // Can we trust the result ?
@@ -221,18 +205,15 @@ void KMimeType::initMimeTypes( const char* _path )
 	    {
 		QFile f( file.data() );
 		if ( !f.open( IO_ReadOnly ) )
-		    return;
-		
-		f.close(); // kalle
-		// kalle		QTextStream pstream( &f );
-		// Kalle: Better use a KSimpleConfig here?
+		    return;		
+		f.close();
 		KConfig config( file );
 		config.setGroup( "KDE Desktop Entry" );
 		
 		// Read a new extension groups name
-		QString ext = ep->d_name;
-		if ( ext.length() > 7 && ext.right(7) == ".kdelnk" )
-		    ext = ext.left( ext.length() - 7 );
+		// QString ext = ep->d_name;
+		// if ( ext.length() > 7 && ext.right(7) == ".kdelnk" )
+		// ext = ext.left( ext.length() - 7 );
 		
 		// Get a ';' separated list of all pattern
 		QString pats = config.readEntry( "Patterns" );
@@ -240,47 +221,51 @@ void KMimeType::initMimeTypes( const char* _path )
 		QString defapp = config.readEntry( "DefaultApp" );
 		QString comment = config.readEntry( "Comment" );
 		QString mime = config.readEntry( "MimeType" );
-		
-		// Is this file type already registered ?
-		KMimeType *t = KMimeType::findByName( ext.data() );
-		// If not then create a new type, but only if we have an icon
-		if ( t == 0L && !icon.isNull() )
+		// Skip this one ?
+		bool bSkip = false;
+		if ( mime.isEmpty() )
 		{
+		    QString tmp;
+		    tmp.sprintf( "%s\n\r%s", klocale->translate( "The mime type config file " ),
+				 file.data(), klocale->translate("does not conatain a MimeType=... entry" ) );
+		    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+		    bSkip = true;
+		}
+		// Is this file type already registered ?
+		KMimeType *t = KMimeType::findByName( mime.data() );
+		// If not then create a new type
+		if ( t == 0L && !bSkip )
+		{
+		    if ( icon.isEmpty() )
+			icon = KMimeType::getDefaultPixmap();
+		    
 		    if ( mime == "inode/directory" )
-			types->append( t = new KFolderType( ext.data(), icon.data() ) );
+			types->append( t = new KFolderType( mime.data(), icon.data() ) );
 		    else if ( mime == "application/x-kdelnk" )
-			types->append( t = new KDELnkMimeType( ext.data(), icon.data() ) );
+			types->append( t = new KDELnkMimeType( mime.data(), icon.data() ) );
 		    else if ( mime == "application/x-executable" ||
 			      mime == "application/x-shellscript" )
-			types->append( t = new ExecutableMimeType( ext.data(), icon.data() ) );
+			types->append( t = new ExecutableMimeType( mime.data(), icon.data() ) );
 		    else
-			types->append( t = new KMimeType( ext.data(), icon.data() ) );
-		}
-		// If we have this type already we perhaps only change the pixmap ?
-		else if ( !icon.isNull() )
-		    t->setPixmap( icon.data() );
-		// Set the default binding
-		if ( !defapp.isNull() && t != 0L )
-		    t->setDefaultBinding( defapp.data() );
-		if ( t != 0L )
-		{
+			types->append( t = new KMimeType( mime.data(), icon.data() ) );
+
+		    // Set the default binding
+		    if ( !defapp.isNull() && t != 0L )
+			t->setDefaultBinding( defapp.data() );
 		    t->setComment( comment.data() );
-		    t->setMimeType( mime.data() );
-		}
 		
-		int pos2 = 0;
-		int old_pos2 = 0;
-		while ( ( pos2 = pats.find( ";", pos2 ) ) != - 1 )
-		{
-		    // Read a pattern from the list
-		    QString name = pats.mid( old_pos2, pos2 - old_pos2 );
-		    if ( t != 0L )
-			 t->addPattern( name.data() );
-		    pos2++;
-		    old_pos2 = pos2;
+		    int pos2 = 0;
+		    int old_pos2 = 0;
+		    while ( ( pos2 = pats.find( ";", pos2 ) ) != - 1 )
+		    {
+			// Read a pattern from the list
+			QString name = pats.mid( old_pos2, pos2 - old_pos2 );
+			if ( t != 0L )
+			    t->addPattern( name.data() );
+			pos2++;
+			old_pos2 = pos2;
+		    }
 		}
-		
-		f.close();
 	    }
 	}
     }
@@ -295,9 +280,14 @@ void KMimeType::init()
     
     types = new QList<KMimeType>;
     types->setAutoDelete( true );
+
+    // Read the application bindings in the local directories
+    QString path = getenv( "HOME" );
+    path += "/.kde/share/mimelnk";
+    initMimeTypes( path.data() );
     
-    // Read the application bindings
-    QString path = kapp->kdedir();
+    // Read the application bindings in the global directories
+    path = kapp->kdedir();
     path += "/share/mimelnk";
     initMimeTypes( path.data() );
 
@@ -352,7 +342,12 @@ void KMimeType::init()
 	    errorMissingMimeType( "application/x-kdelnk", &kdelnkType );
     }
     
-    // Read the application bindings
+    // Read the application bindings in the local directories
+    path = getenv( "HOME" );
+    path += "/.kde/share/applnk";
+    KMimeBind::initApplications( path.data() );
+
+    // Read the application bindings in the global directories
     path = kapp->kdedir();
     path += "/share/applnk";
     KMimeBind::initApplications( path.data() );
@@ -822,14 +817,12 @@ const char* KFolderType::getPixmapFile( const char *_url, bool _mini )
     QFile f( n.data() );
     if ( !f.open( IO_ReadOnly ) )
 	return KMimeType::getPixmapFile( _url, _mini );
-    
-	f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
+    f.close();
+
     KConfig config( n );
     config.setGroup( "KDE Desktop Entry" );
 
     QString icon = config.readEntry( "Icon" );
-    f.close();
     
     if ( icon.isEmpty() )
 	return KMimeType::getPixmapFile( _url, _mini );
@@ -837,11 +830,13 @@ const char* KFolderType::getPixmapFile( const char *_url, bool _mini )
     pixmapFile2 = getIconPath();
     pixmapFile2.detach();
     if ( _mini )
-	pixmapFile2 += "/";
-    else
 	pixmapFile2 += "/mini/";
+    else
+	pixmapFile2 += "/";
     pixmapFile2 += icon.data();
 
+    debugT("ICON = '%s'\n",pixmapFile2.data());
+    
     return pixmapFile2.data();
 }
 
@@ -1018,93 +1013,88 @@ void KMimeBind::initApplications( const char * _path )
 		if ( app.length() > 7 && app.right(7) == ".kdelnk" )
 		    app = app.left( app.length() - 7 );
 
-		KMimeBind::appendApplication( app.data() );
-		
-		QFile f( file.data() );
-		if ( !f.open( IO_ReadOnly ) )
-		    return;
-		
-		f.close(); // kalle
-		// kalle		QTextStream pstream( &f );
-		KConfig config( file ); // kalle
-
-		config.setGroup( "KDE Desktop Entry" );
-		QString exec = config.readEntry( "Exec" );
-		// An icon for the binary
-		QString app_icon = config.readEntry( "Icon" );
-		// The pattern to identify the binary
-		QString app_pattern = config.readEntry( "BinaryPattern" );
-		QString comment = config.readEntry( "Comment" );
-		// A ';' separated list of mime types
-		QString mime = config.readEntry( "MimeType" );
-		// Allow this program to be a default application for a mime type?
-		// For example gzip should never be a default for any mime type.
-		QString str_allowdefault = config.readEntry( "AllowDefault" );
-		bool allowdefault = true;
-		if ( str_allowdefault == "0" )
-		    allowdefault = false;
-		
-		// Define an icon for the program file perhaps ?
-		if ( !app_icon.isNull() && !app_pattern.isNull() )
+		// Do we have read access ?
+		if ( access( file, R_OK ) == 0 )
 		{
-		    KMimeType *t;
-		    types->append( t = new KMimeType( app.data(), app_icon.data() ) );
-		    t->setComment( comment.data() );
-		    t->setApplicationPattern();
+		    KConfig config( file );
+		    
+		    config.setGroup( "KDE Desktop Entry" );
+		    QString exec = config.readEntry( "Exec" );
+		    QString name = config.readEntry( "Name" );
+		    if ( name.isEmpty() )
+			name = app;
+		    KMimeBind::appendApplication( name.data() );
+		    // An icon for the binary
+		    QString app_icon = config.readEntry( "Icon" );
+		    // The pattern to identify the binary
+		    QString app_pattern = config.readEntry( "BinaryPattern" );
+		    QString comment = config.readEntry( "Comment" );
+		    // A ';' separated list of mime types
+		    QString mime = config.readEntry( "MimeType" );
+		    // Allow this program to be a default application for a mime type?
+		    // For example gzip should never be a default for any mime type.
+		    QString str_allowdefault = config.readEntry( "AllowDefault" );
+		    bool allowdefault = true;
+		    if ( str_allowdefault == "0" )
+			allowdefault = false;
+		    
+		    // Define an icon for the program file perhaps ?
+		    if ( !app_icon.isNull() && !app_pattern.isNull() )
+		    {
+			KMimeType *t;
+			types->append( t = new KMimeType( name.data(), app_icon.data() ) );
+			t->setComment( comment.data() );
+			t->setApplicationPattern();
+			int pos2 = 0;
+			int old_pos2 = 0;
+			while ( ( pos2 = app_pattern.find( ";", pos2 ) ) != - 1 )
+			{
+			    QString pat = app_pattern.mid( old_pos2, pos2 - old_pos2 );
+			    t->addPattern( pat.data() );
+			    pos2++;
+			    old_pos2 = pos2;
+			}
+		    } 
+		    
+		    // To which mime types is the application bound ?
 		    int pos2 = 0;
 		    int old_pos2 = 0;
-		    while ( ( pos2 = app_pattern.find( ";", pos2 ) ) != - 1 )
+		    while ( ( pos2 = mime.find( ";", pos2 ) ) != - 1 )
 		    {
-			QString pat = app_pattern.mid( old_pos2, pos2 - old_pos2 );
-			t->addPattern( pat.data() );
-			pos2++;
-			old_pos2 = pos2;
-		    }
-		} 
-		    
-		// To which mime types is the application bound ?
-		int pos2 = 0;
-		int old_pos2 = 0;
-		while ( ( pos2 = mime.find( ";", pos2 ) ) != - 1 )
-		{
-		    // 'bind' is the name of a mime type
-		    QString bind = mime.mid( old_pos2, pos2 - old_pos2 );
-		    // Bind this application to all files/directories
-		    if ( strcasecmp( bind.data(), "all" ) == 0 )
-		    {
-			defaultType->append( new KMimeBind( app.data(), exec.data(), allowdefault ) );
-			folderType->append( new KMimeBind( app.data(), exec.data(), allowdefault ) );
-		    }
-		    else if ( strcasecmp( bind.data(), "alldirs" ) == 0 )
-		    {
-			folderType->append( new KMimeBind( app.data(), exec.data(), allowdefault ) );
-		    }
-		    else if ( strcasecmp( bind.data(), "allfiles" ) == 0 )
-		    {
-			defaultType->append( new KMimeBind( app.data(), exec.data(), allowdefault ) );
-		    }
-		    // Bind this application to a mime type
-		    else
-		    {
-			KMimeType *t = KMimeType::findByName( bind.data() );
-			if ( t == 0 )
-			    QMessageBox::message( klocale->translate("ERROR"), 
-						  klocale->translate("Could not find mime type\n") + bind + "\n" + klocale->translate("in ") + file );
+			// 'bind' is the name of a mime type
+			QString bind = mime.mid( old_pos2, pos2 - old_pos2 );
+			// Bind this application to all files/directories
+			if ( strcasecmp( bind.data(), "all" ) == 0 )
+			{
+			    defaultType->append( new KMimeBind( name.data(), exec.data(), allowdefault ) );
+			    folderType->append( new KMimeBind( name.data(), exec.data(), allowdefault ) );
+			}
+			else if ( strcasecmp( bind.data(), "alldirs" ) == 0 )
+			{
+			    folderType->append( new KMimeBind( name.data(), exec.data(), allowdefault ) );
+			}
+			else if ( strcasecmp( bind.data(), "allfiles" ) == 0 )
+			{
+			    defaultType->append( new KMimeBind( name.data(), exec.data(), allowdefault ) );
+			}
+			// Bind this application to a mime type
 			else
 			{
-			    // debugT( "Added Binding '%s' to '%s'\n",app.data(),t->getMimeType() );
-			    
-			    t->append( new KMimeBind( app.data(), exec.data(), allowdefault ) );
+			    KMimeType *t = KMimeType::findByName( bind.data() );
+			    if ( t == 0 )
+				QMessageBox::message( klocale->translate("ERROR"), 
+						      klocale->translate("Could not find mime type\n") + bind + "\n" + klocale->translate("in ") + file );
+			    else
+			    {
+				t->append( new KMimeBind( name.data(), exec.data(), allowdefault ) );
+			    }
 			}
-		    }
-		    
-		    pos2++;
-		    old_pos2 = pos2;
-		} 
-		
-		f.close();
+			
+			pos2++;
+			old_pos2 = pos2;
+		    }    
+		}
 	    }
-	
 	}
     }
     (void) closedir( dp );

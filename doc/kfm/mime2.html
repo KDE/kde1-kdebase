@@ -13,12 +13,13 @@ to the numbered list under the image.</p>
 <h3>Open a KFM super user window</h3>
 <p>On your desktop you will find icons like these:</p>
 <img src="templates.gif">
-<p>Usually this is the correct method, but in our case we need a super users
-KFM window. The config files we want to edit are usually only writeable for
-the super user. If you dont now the super user password, then you are not
-allowed to change the configuration anyway ( user configureable stuff is not
-implemented yet ) so you may skip this chapter now.
-<p>There are different methods leading to a super user kfm window. You can
+<p>Now click on this icon to open a new KFM window.
+Usually this is the correct method, but in some cases we need a super users
+KFM window. If you want to edit the global config files which are usually only writeable for
+the super user, you need super user access. If you dont now the super user password, then you are not
+allowed to change the global configuration anyway, but you can of course edit
+your user specific configuration without being super user.
+There are different methods leading to a super user kfm window. You can
 log out, and log in as root. That is the Windows NT way, so we want to do it
 better. You could open a kvt window, switch to superuser with <tt>su</tt>
 and start <tt>kfm -ws</tt> now, but it is much easier to hit <tt>Alt+F2</tt>.
@@ -28,18 +29,18 @@ the following stuff, dont forget to close the KFM super user window again. At
 this time the terminal will desappear, too. the <tt>kfmsu</tt> script will
 allow the super user to access the display and will disallow it afterwards
 automatically for you.</p>
-<p>Before we start, click once with the left mouse button on <tt>Templates</tt>
-folder. Have a look at the files in this directory, you will
-remember them later in this chapter. Ok, you can close this window again, that
-was just for your education <tt>:-)</tt></p>
-<p>Now open a kfm super user window by choosing one of the above mentioned
-methodes. Open the menu <tt>Edit</tt> and choose <tt>Data types</tt>.
+<p>To start, click once with the left mouse button on <tt>Templates</tt>
+folder ( or open a super user KFM window as described above ).
+Have a look at the files in this directory, you will
+remember them later in this chapter.</p>
+<p>Now open the menu <tt>Edit</tt> and choose <tt>Mime Types</tt>
+( or <tt>Global Mime Types</tt> if you want to edit the global configuration ).
 Now you will see something like this:</p>
 <img src="mime1.gif">
 <br>
 <ol>
 <li>This is the magic file we talked about before. You should have
-a look at it later, but dont, worry, no need to understand it.
+a look at it later, but dont worry, no need to understand it.
 <li>The folder containing the <tt>image/gif</tt> mime type file.
 Click on this folder with the left mouse button to open it.
 </ol>

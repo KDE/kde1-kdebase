@@ -25,14 +25,14 @@ KFMServer::KFMServer() : KfmIpcServer()
 {
     // Create the password file if it does not exist
     QString fn = getenv( "HOME" );
-    fn += "/.kde/kfm/magic";
+    fn += "/.kde/share/apps/kfm/magic";
     FILE *f = fopen( fn.data(), "rb" );
     if ( f == 0L )
     {
 	FILE *f = fopen( fn.data(), "wb" );
 	if ( f == 0L )
 	{
-	    QMessageBox::message("KFM Error", "Could not create ~/.kde/kfm/magic" );
+	    QMessageBox::message("KFM Error", "Could not create ~/.kde/share/apps/kfm/magic" );
 	    return;
 	}
 	
@@ -41,7 +41,7 @@ KFMServer::KFMServer() : KfmIpcServer()
 	fwrite( pass.data(), 1, pass.length(), f );
 	fclose( f );
 
-	QMessageBox::message("KFM Warning", "Please change the password in\n\r~/.kde/kfm/magic" );
+	QMessageBox::message("KFM Warning", "Please change the password in\n\r~/.kde/share/apps/kfm/magic" );
     }
     else
 	fclose( f );
@@ -225,23 +225,41 @@ void KFMServer::slotOpenProperties( const char* _url )
     new Properties( _url );
 }
 
-void KFMServer::slotExec( const char* _url, const char * _binding )
+void KFMServer::slotExec( const char* _url, const char * _documents )
 {
-    if ( _binding == 0L && _url != 0L )
+    debugT("EXEC GOT '%s' and '%s'\n",_url,_documents);
+    
+    KURL u( _url );
+    if ( u.isMalformed() )
+    {
+	QString msg;
+	msg.sprintf("%s\n\r%s\n\r%s", klocale->translate( "The URL" ), _url,
+		    klocale->translate( "is malformed\n" ) );
+	QMessageBox::message( klocale->translate( "KFM Error" ), msg );
+	return;
+    }
+    
+    if ( _documents == 0L && _url != 0L )
     {
 	KFMExec *e = new KFMExec;
 	e->openURL( _url );
 	return;
     }
     
-    // Attention this is a little hack by me (Matthias)
-    /* QStrList sl;
-    sl.append(_binding);   
-
-    if ( _binding == 0L )
-	KMimeBind::runBinding( _url );
-    else
-	KMimeBind::runBinding( _url, _binding, &sl ); */
+    QString s( _documents );
+    QStrList urlList;
+        
+    int i;
+    while ( ( i = s.find( "\n" ) ) != -1 )
+    {
+	QString t = s.left( i );
+	urlList.append( t.data() );
+	s = s.mid( i + 1, s.length() );
+    }
+    
+    urlList.append( s.data() );
+    KMimeType *typ = KMimeType::getMagicMimeType( _url );
+    typ->runAsApplication( _url, &urlList );
 }
 
 KFMClient::KFMClient( KSocket *_sock, KFMServer *_server ) : KfmIpc( _sock )
@@ -260,11 +278,11 @@ void KFMClient::slotAuth( const char *_password )
     if ( KFMClient::password->isNull() )
     {
 	QString fn = getenv( "HOME" );
-	fn += "/.kde/kfm/magic";
+	fn += "/.kde/share/apps/kfm/magic";
 	FILE *f = fopen( fn.data(), "rb" );
 	if ( f == 0L )
 	{
-	    QMessageBox::message( "KFM Error", "You dont have the file ~/.kde/kfm/magic\n\rAuthorization failed" );
+	    QMessageBox::message( "KFM Error", "You dont have the file ~/.kde/share/apps/kfm/magic\n\rAuthorization failed" );
 	    return;
 	}
 	char buffer[ 1024 ];
@@ -272,7 +290,7 @@ void KFMClient::slotAuth( const char *_password )
 	fclose( f );
 	if ( p == 0L )
 	{
-	    QMessageBox::message( "KFM Error", "The file ~/.kde/kfm/magic is corrupted\n\rAuthorization failed" );
+	    QMessageBox::message( "KFM Error", "The file ~/.kde/share/apps/kfm/magic is corrupted\n\rAuthorization failed" );
 	    return;
 	}
 	*( KFMClient::password ) = buffer;

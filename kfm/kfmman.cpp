@@ -278,55 +278,6 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 	tryURL = KFMExec::openLocalURL( _url );
 	if ( tryURL.isEmpty() )
 	    return false;
-	/*
-	KMimeType *typ = KMimeType::getMagicMimeType( u.path() );
-	printf("URL='%s' Type: '%s'\n",u.path(),typ->getMimeType());
-	// A HACK
-	// We must support plugin protocols here!
-	// Do we try to open a tar file?
-	// tar files ( zipped ones ) can be recognized by extension very fast
-	QString tmp = _url;
-	if ( tmp.right(4) == ".tgz" || tmp.right(7) == ".tar.gz" )
-	{
-	    // We change the destination on the fly
-	    tryURL = _url;
-	    tryURL += "#tar:/";
-	}	
-	// Zipped file
-	else if ( strcmp( typ->getMimeType(), "application/x-gzip" ) == 0L )
-	{
-	    // We change the destination on the fly
-	    tryURL = _url;
-	    tryURL += "#gzip:/";
-	}
-	// Uncompressed tar file
-	else if ( tmp.right(4) == ".tgz" || tmp.right(4) == ".tar" || tmp.right(7) == ".tar.gz" 
-	     || ( typ && strcmp( typ->getMimeType(), "application/x-tar" ) == 0L ) )
-	{
-	    // We change the destination on the fly
-	    tryURL = _url;
-	    tryURL += "#tar:/";
-	}	
-	// HTML stuff is handled by us
-	else if ( strcmp( typ->getMimeType(), "text/html" ) == 0L )
-	{
-	    tryURL = _url;
-	}
-	// Executables
-	else if ( strcmp( typ->getMimeType(), "application/x-executable" ) == 0L ||
-		  strcmp( typ->getMimeType(), "application/x-shellscript" ) == 0L )
-	{
-	    KMimeBind::runCmd( u.path() );
-	    return false;
-	}
-	else
-	{
-	    printf("EXEC MIMETYPE\n");
-	    // Execute the best matching binding for this URL.
-	    if ( typ->run( _url ) )
-		return false;
-	    tryURL = _url;
-	} */
     }
     else
 	// We try to load this URL now

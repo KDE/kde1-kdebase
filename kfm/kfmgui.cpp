@@ -78,7 +78,6 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     /* read the settings. We have some defaults, if the 
        settings are not defined or if there are unknown
        words in it. */
-	/* This was reedited by Sven to use KWT read/save properties */
 
     KConfig *config = kapp->getConfig();
     config->setGroup( "Settings" );
@@ -117,9 +116,6 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
       bViewHTML = true;
     else
       bViewHTML = false;
-
-/*
-  +++ this Block commented out by Sven
 
     entry = config->readEntry("Toolbar", "top");
     showToolbar = true;
@@ -168,66 +164,25 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
 	statusbarPos = KStatusBar::Floating;    
     else
 	showStatusbar = false;
-	*/ 
-    initGUI(); 
 
-	// Sven start
-	/* Sven: Problem: By whom and when is the window title set? We should
-	   know the title by now. If not, we use the URL from the view.
-	   */
+    initGUI();
 
-	const char* url = view->getURL();
-	if( url ) //sven
-	  setCaption( url ); //sven: If we view a HTML page, the title
-						 //will change later  
-	// We will also do this in closeEvent() bevore saving specific
-	// props
+    windowList.setAutoDelete( false );
+    windowList.append( this );
 
-	if( readProperties( FALSE ) == FALSE ) // first try specific, then
-										   // global (Sven)
-	  {
-		// Sven; If we are here then neither global nor specific props
-		// exist.
-		menu->show(); // Sven: Oops! Forgot to implement
-					  // KMenuBar::enable(bool)!
-		menu->setMenuBarPos( KMenuBar::Top );
-		statusBar->enable( KStatusBar::Show );
-		toolbarButtons->setBarPos( KToolBar::Top );
-		toolbarButtons->enable( KToolBar::Show );
-		toolbarURL->setBarPos( KToolBar::Top );
-		toolbarURL->enable( KToolBar::Show );
-	  }
-	
-	debug( "Props loaded:" );
-	debug( url );
-
-	showToolbar = toolbarButtons->isVisible();
-	moptions->setItemChecked( moptions->idAt( 2 ), showToolbar );
-	showStatusbar = statusBar->isVisible();
-	moptions->setItemChecked( moptions->idAt( 1 ), showStatusbar );
-	showLocationBar = toolbarURL->isVisible();
-	moptions->setItemChecked( moptions->idAt( 3 ), showLocationBar );
-	showMenubar = menu->isVisible();
-	moptions->setItemChecked( moptions->idAt( 0 ), showMenubar );
-
-	// sven end
-
-    windowList.setAutoDelete( false ); 
-    windowList.append( this ); 
-
-    if ( _url ) 
-	view->openURL( _url ); 
+    if ( _url )
+	view->openURL( _url );
 }
 
-KfmGui* KfmGui::findWindow( const char *_url ) 
-{ 
-    KfmGui *w; 
-    for ( w = windowList.first(); w != 0L; w = windowList.next() ) 
-	if ( strcmp( _url, w->getURL() ) == 0 ) 
-	    return w; 
-     
-    return 0L; 
-} 
+KfmGui* KfmGui::findWindow( const char *_url )
+{
+    KfmGui *w;
+    for ( w = windowList.first(); w != 0L; w = windowList.next() )
+	if ( strcmp( _url, w->getURL() ) == 0 )
+	    return w;
+    
+    return 0L;
+}
 
 void KfmGui::initGUI()
 {
@@ -298,13 +253,10 @@ void KfmGui::initStatusBar()
  
     statusBar->insertItem( (char*)klocale->translate("KFM"), 1 );
     
-	//    statusBar->show(); sven
+    statusBar->show();
     setStatusBar( statusBar );
-	statusBar->show();
-	/* sven
-	   if ( !showStatusbar )
-	   statusBar->enable( KStatusBar::Hide );
-	*/
+    if ( !showStatusbar )
+	statusBar->enable( KStatusBar::Hide );
 }
 
 void KfmGui::initMenu()
@@ -380,6 +332,21 @@ void KfmGui::initMenu()
     edit->insertSeparator();
     edit->insertItem( klocale->translate("&Select"), this, 
 		      SLOT(slotSelect()), CTRL+Key_S );
+
+	edit->insertSeparator();
+    edit->insertItem( klocale->translate("Mime Types"), this, 
+		      SLOT(slotEditMimeTypes()) );
+    edit->insertItem( klocale->translate("Applications"), this, 
+		      SLOT(slotEditApplications()) );
+
+    if ( sumode )
+    {
+	edit->insertSeparator();
+	edit->insertItem( klocale->translate("Global Mime Types"), this, 
+		      SLOT(slotEditSUMimeTypes()) );
+	edit->insertItem( klocale->translate("Global Applications"), this, 
+		      SLOT(slotEditSUApplications()) );
+    }
 
     mview = new QPopupMenu;
     CHECK_PTR( mview );
@@ -466,7 +433,7 @@ void KfmGui::initMenu()
     connect( &bookmarkManager, SIGNAL( changed() ), 
 	     this, SLOT( slotBookmarksChanged() ) );
     QString p = getenv( "HOME" );
-    QString bmFile = p + "/.kde/kfm/bookmarks.html";
+    QString bmFile = p + "/.kde/share/apps/kfm/bookmarks.html";
     bookmarkMenu->insertItem( klocale->translate("&Add Bookmark"), 
 			      this, SLOT(slotAddBookmark()) );
     bookmarkManager.read( bmFile );
@@ -590,10 +557,8 @@ void KfmGui::initToolBar()
     addToolBar( toolbarButtons );
     toolbarButtons->setBarPos( toolbarPos );
     toolbarButtons->show();                
-	/*
-	  if ( !showToolbar )
-	  toolbarButtons->enable( KToolBar::Hide );
-	  */
+    if ( !showToolbar )
+	toolbarButtons->enable( KToolBar::Hide );
 
     toolbarURL = new KToolBar(this, "URL History");
     toolbarURL->insertLined( "", TOOLBAR_URL_ID,
@@ -603,10 +568,8 @@ void KfmGui::initToolBar()
     toolbarURL->setItemAutoSized( TOOLBAR_URL_ID, TRUE );
     toolbarURL->setBarPos( locationBarPos );
     toolbarURL->show();                
-	/*
     if ( !showLocationBar )
 	toolbarURL->enable( KToolBar::Hide );
-	*/
 }
 
 void KfmGui::initView()
@@ -627,22 +590,7 @@ void KfmGui::initView()
 
 void KfmGui::closeEvent( QCloseEvent *e )
 {
-  const char* url = view->getURL();
-  if( url ) // sven
-	{
-	  setCaption( url ); // Sven: to save page props right
-	  saveProperties( FALSE ); // Sven
-	  debug( "Props saved:" );
-	  debug( url );
-	}
-  e->accept();
-
-  if( toolbarURL )
-	delete toolbarURL;
-  if( toolbarButtons )
-	delete toolbarButtons;
-  if( menu )
-	delete menu;
+    e->accept();
 
     delete this;
 }
@@ -704,6 +652,34 @@ void KfmGui::slotOpenURL( const char *_url )
 {
     if ( view->getActiveView() )
 	view->getActiveView()->openURL( _url );
+}
+
+void KfmGui::slotEditSUMimeTypes()
+{
+    QString tmp( kapp->kdedir() );
+    tmp += "/share/mimelnk";
+    view->openURL( tmp );
+}
+
+void KfmGui::slotEditSUApplications()
+{
+    QString tmp( kapp->kdedir() );
+    tmp += "/share/applnk";
+    view->openURL( tmp );
+}
+
+void KfmGui::slotEditMimeTypes()
+{
+    QString tmp( getenv( "HOME" ) );
+    tmp += "/.kde/share/mimelnk";
+    view->openURL( tmp );
+}
+
+void KfmGui::slotEditApplications()
+{
+    QString tmp( getenv( "HOME" ) );
+    tmp += "/.kde/share/applnk";
+    view->openURL( tmp );
 }
 
 void KfmGui::slotPrint()
@@ -916,7 +892,7 @@ void KfmGui::slotHome()
 void KfmGui::addBookmark( const char *_title, const char *_url )
 {
     QString p = getenv( "HOME" );
-    QString bmFile = p + "/.kde/kfm/bookmarks.html";
+    QString bmFile = p + "/.kde/share/apps/kfm/bookmarks.html";
     bookmarkManager.add( _title, _url );
     bookmarkManager.write( bmFile );
 }
@@ -1109,7 +1085,7 @@ void KfmGui::slotQuit()
 	return;
     
     QString file = QDir::homeDirPath();
-    file += "/.kde/kfm/pid";
+    file += "/.kde/share/apps/kfm/pid";
     unlink( file.data() );
 
     // Clean up IO stuff
@@ -1136,7 +1112,7 @@ void KfmGui::slotAbout()
 
 void KfmGui::slotHelp()
 {
-  kapp->invokeHTMLHelp( "kfm/index.html", "" );
+  kapp->invokeHTMLHelp( "", "" );
 }
 
 void KfmGui::slotTreeUrlSelected( const char *_url , int _button )
@@ -1274,45 +1250,42 @@ void KfmGui::slotSaveSettings()
   
   config->writeEntry("HTMLView", entry);
 
-  saveProperties( TRUE ); // Sven: save global settings
+  if ( !showToolbar )
+      config->writeEntry( "Toolbar", "hide" );
+  else if ( toolbarButtons->barPos() == KToolBar::Top )
+      config->writeEntry( "Toolbar", "top" );
+  else if ( toolbarButtons->barPos() == KToolBar::Bottom )
+      config->writeEntry( "Toolbar", "bottom" );
+  else if ( toolbarButtons->barPos() == KToolBar::Left )
+      config->writeEntry( "Toolbar", "left" );
+  else if ( toolbarButtons->barPos() == KToolBar::Right )
+      config->writeEntry( "Toolbar", "right" );
+  else if ( toolbarButtons->barPos() == KToolBar::Floating )
+      config->writeEntry( "Toolbar", "floating" );
 
-  /* This block commented out by Sven
+  if ( !showLocationBar )
+      config->writeEntry( "LocationBar", "hide" );
+  else if ( toolbarURL->barPos() == KToolBar::Top )
+      config->writeEntry( "LocationBar", "top" );
+  else if ( toolbarURL->barPos() == KToolBar::Bottom )
+      config->writeEntry( "LocationBar", "bottom" );
+  else if ( toolbarURL->barPos() == KToolBar::Floating )
+      config->writeEntry( "LocationBar", "floating" );
 
-	 if ( !showToolbar )
-	 config->writeEntry( "Toolbar", "hide" );
-	 else if ( toolbarButtons->barPos() == KToolBar::Top )
-	 config->writeEntry( "Toolbar", "top" );
-	 else if ( toolbarButtons->barPos() == KToolBar::Bottom )
-	 config->writeEntry( "Toolbar", "bottom" );
-	 else if ( toolbarButtons->barPos() == KToolBar::Left )
-	 config->writeEntry( "Toolbar", "left" );
-	 else if ( toolbarButtons->barPos() == KToolBar::Right )
-	 config->writeEntry( "Toolbar", "right" );
-	 else if ( toolbarButtons->barPos() == KToolBar::Floating )
-	 config->writeEntry( "Toolbar", "floating" );
-	 
-	 if ( !showLocationBar )
-	 config->writeEntry( "LocationBar", "hide" );
-	 else if ( toolbarURL->barPos() == KToolBar::Top )
-	 config->writeEntry( "LocationBar", "top" );
-	 else if ( toolbarURL->barPos() == KToolBar::Bottom )
-	 config->writeEntry( "LocationBar", "bottom" );
-	 else if ( toolbarURL->barPos() == KToolBar::Floating )
-	 config->writeEntry( "LocationBar", "floating" );
-	 if ( !showStatusbar )
-	 config->writeEntry( "Statusbar", "hide" );
-	 else
-	 config->writeEntry( "Statusbar", "bottom" );
-	 
-	 if ( !showMenubar )
-	 config->writeEntry( "Menubar", "hide" );
-	 else if ( menu->menuBarPos() == KMenuBar::Top )
-	 config->writeEntry( "Menubar", "top" );
-	 else if ( menu->menuBarPos() == KMenuBar::Bottom )
-	 config->writeEntry( "Menubar", "bottom" );
-	 else if ( menu->menuBarPos() == KMenuBar::Floating )
-	 config->writeEntry( "Menubar", "floating" );
-	 */
+  if ( !showStatusbar )
+      config->writeEntry( "Statusbar", "hide" );
+  else
+      config->writeEntry( "Statusbar", "bottom" );
+
+  if ( !showMenubar )
+      config->writeEntry( "Menubar", "hide" );
+  else if ( menu->menuBarPos() == KMenuBar::Top )
+      config->writeEntry( "Menubar", "top" );
+  else if ( menu->menuBarPos() == KMenuBar::Bottom )
+      config->writeEntry( "Menubar", "bottom" );
+  else if ( menu->menuBarPos() == KMenuBar::Floating )
+      config->writeEntry( "Menubar", "floating" );
+
   config->sync();
 }
 
@@ -1337,30 +1310,26 @@ void KfmGui::slotViewDocumentSource()
     
 KfmGui::~KfmGui()
 {
-  if ( animatedLogoTimer )
-    { 
-	  animatedLogoTimer->stop();
-	  delete animatedLogoTimer;
-    } 
-  
-  /*
-  if ( toolbarButtons )
+    if ( animatedLogoTimer )
+    {
+	animatedLogoTimer->stop();
+	delete animatedLogoTimer;
+    }
+    
+    if ( toolbarButtons )
 	delete toolbarButtons;
-  if ( toolbarURL )
-	delete toolbarURL; 
-
-	if( menu )
-	delete menu;
-	*/
-  delete view;
-  windowList.remove( this );
+    if ( toolbarURL )
+	delete toolbarURL;
+    
+    delete view;
+    windowList.remove( this );
 
     // Last window and in window-only-mode ?
     if ( windowList.count() == 0 && !rooticons )
     {
 	// remove pid file
 	QString file = QDir::homeDirPath();
-	file += "/.kde/kfm/pid";
+	file += "/.kde/share/apps/kfm/pid";
 	unlink( file.data() );
 	// quit
 	exit(0);

@@ -150,7 +150,7 @@ void KBackground::readSettings( const char *group )
     name = group;
 
     cFile = getenv( "HOME" );
-    cFile += "/.kde/config/kdisplayrc";
+    cFile += "/.kde/share/config/kdisplayrc";
 
     KConfig config( cFile );
 

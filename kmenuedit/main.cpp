@@ -75,7 +75,7 @@ int main( int argc, char **argv )
       else
 	{
 	  temp2 = QDir::homeDirPath();
-	  temp2 += "/Personal";
+	  temp2 += "/.kde/share/applnk";
 	}
        DesktopPathDialog *desktop_dialog = new DesktopPathDialog( temp1, temp2 );
        desktop_dialog->exec();

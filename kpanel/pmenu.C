@@ -269,7 +269,7 @@ QString PMenuItem::getSaveName()
   QString name;
   KConfig config;
   config.setGroup("KDE Desktop Entries");
-  QString temp = QDir::homeDirPath() +"/Personal";
+  QString temp = QDir::homeDirPath() +"/.kde/share/applnk";
   QString personal = config.readEntry("PersonalPath", temp.data() );
   temp = KApplication::kdedir()+"/share/applnk";
   QString kde_apps = config.readEntry("Path", temp.data() );
@@ -702,7 +702,7 @@ PMenuItem * PMenu::searchItem(QString name)
   
   KConfig config;
   config.setGroup("KDE Desktop Entries");
-  QString temp = QDir::homeDirPath()+"/Personal";
+  QString temp = QDir::homeDirPath()+"/.kde/share/applnk";
   QString personal = config.readEntry("PersonalPath", temp.data() );
   temp = KApplication::kdedir()+"/share/applnk";
   QString kde_apps = config.readEntry("Path", temp.data() );

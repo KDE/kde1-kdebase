@@ -9,8 +9,11 @@ existing applications to work with KDE. In this lesson we
 try to install XV in the K Desktop Environment.</p>
 <h2>Why and where</h2>
 <p>Every application must put a config file in the directory
-tree <tt>$KDEDIR/share/applnk</tt>. KFM and KPanel scan these
-files on startup. KPanels system menu corresponds to this
+tree <tt>$KDEDIR/share/applnk</tt>. In addition you have a local
+directory structure in <77>~/.kde/share/applnk</tt> where you can
+install additional apps. These files will only be visible for
+you, not for other users. KFM and KPanel scan these
+directories on startup. KPanels system menu corresponds to this
 directory structure. The icons in this directory behave like
 real applications. You can click on them to start the
 application and you may drop files on them. It is sometimes
@@ -49,6 +52,8 @@ Icon=image.xpm
 Path=
 Type=Application
 Terminal=0
+Name=XV
+Name[de]=XV
 </pre>
 <p>The first line contains some magic bytes and
 the second line contains a <tt>;</tt> separated list of names that
@@ -61,7 +66,10 @@ by the documents filenames, but see the next chapter for more details.
 The <tt>Type</tt> tag is needed like in every KFM config file. You can
 tell KFM to start the app in a terminal by setting <tt>Terminal</tt> to
 1 and by setting some terminal options if needed. In addition the
-<tt>Path</tt> tag allows you to specify a working directory.</p>
+<tt>Path</tt> tag allows you to specify a working directory. The last two
+lines determine the name of the applicattion. This name is used in KFMs
+context sensitive popup menus for example. As with the comments you must
+provide a english version and may supply diffrent translations.</p>
 <h2>Secret tips</h2>
 <p>Most old style apps may need the <tt>%f</tt> argument. This means that
 they can only accept files on the local hard disks. If you use URLs

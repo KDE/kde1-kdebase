@@ -26,10 +26,23 @@
 #include <sys/stat.h>
 
 void autostart();
-void testDir();
+void testDir( const char* );
+void testDir2( const char* );
 void sig_handler( int signum );
 
 #include <klocale.h>
+
+void testDir2( const char *_name )
+{
+    DIR *dp;
+    QString c = getenv( "HOME" );
+    c += _name;
+    dp = opendir( c.data() );
+    if ( dp == NULL )
+	::mkdir( c.data(), S_IRWXU );
+    else
+	closedir( dp );
+}
 
 void testDir( const char *_name )
 {
@@ -51,78 +64,36 @@ void testDir( const char *_name )
 
 int main( int argc, char ** argv )
 {    
-    // Test for config file
-    QString c = getenv( "HOME" );
-    c += "/.kde";
-    DIR *dp;
-    dp = opendir( c.data() );
-    if ( dp == NULL )
-	::mkdir( c.data(), S_IRWXU );
-    else
-    {
-	debugT("Exist '%s'\n", c.data() );
-	closedir( dp );
-    }
+    testDir2( "/.kde" );
+    testDir2( "/.kde/share" );    
+    testDir2( "/.kde/share/config" );
+    testDir2( "/.kde/share/apps" );
+    testDir2( "/.kde/share/apps/kfm" );
+    testDir2( "/.kde/share/apps/kfm/cache" );
+    testDir2( "/.kde/share/apps/kfm/tmp" );
+    testDir2( "/.kde/share/icons" );
+    testDir2( "/.kde/share/icons/mini" );
+    testDir2( "/.kde/share/applnk" );
+    testDir2( "/.kde/share/mimelnk" );
+
+    QString c;
     
-    c = getenv( "HOME" );
-    c += "/.kde/config";
-    dp = opendir( c.data() );
-    if ( dp == NULL )
-	::mkdir( c.data(), S_IRWXU );
-    else
-    {
-	debugT("Exist '%s'\n", c.data() );
-	closedir( dp );
-    }
-    
-    // Test for kfm directories
-    c = getenv( "HOME" );
-    c += "/.kde/kfm";
-    dp = opendir( c.data() );
-    if ( dp == NULL )
-	::mkdir( c.data(), S_IRWXU );
-    else
-    {
-	debugT("Exist '%s'\n", c.data() );
-	closedir( dp );
-    }
-    
-    c = getenv( "HOME" );
-    c += "/.kde/kfm/cache";
-    dp = opendir( c.data() );
-    if ( dp == NULL )
-	::mkdir( c.data(), S_IRWXU );
-    else
-    {
-	debugT("Exist '%s'\n", c.data() );
-	closedir( dp );
-    }
     // Clean this directory
-    c.sprintf("rm -f %s/.kde/kfm/cache/*", getenv( "HOME" ) );
+    c.sprintf("rm -f %s/.kde/share/apps/kfm/cache/*", getenv( "HOME" ) );
     system( c );
     
-    c = getenv( "HOME" );
-    c += "/.kde/kfm/tmp";
-    dp = opendir( c.data() );
-    if ( dp == NULL )
-	::mkdir( c.data(), S_IRWXU );
-    else
-    {
-	debugT("Exist '%s'\n", c.data() );
-	closedir( dp );
-    }
     // Clean this directory
-    c.sprintf("rm -f %s/.kde/kfm/tmp/*", getenv( "HOME" ) );
+    c.sprintf("rm -f %s/.kde/share/apps/kfm/tmp/*", getenv( "HOME" ) );
     system( c );
 
     FILE *f2;
     c = getenv( "HOME" );
-    c += "/.kde/desktop";
+    c += "/.kde/share/apps/kfm/desktop";
     f2 = fopen( c.data(), "rb" );
     if ( f2 == 0L )
     {
 	QString cmd;
-	cmd.sprintf( "cp %s/share/config/desktop %s/.kde/desktop", kapp->kdedir().data(), getenv( "HOME" ) );
+	cmd.sprintf( "cp %s/share/config/desktop %s/.kde/share/apps/kfm/desktop", kapp->kdedir().data(), getenv( "HOME" ) );
 	system( cmd.data() );
     }
     else
@@ -136,7 +107,7 @@ int main( int argc, char ** argv )
     // Test for existing Templates
     bool bTemplates = true;
     
-    dp = opendir( KFMPaths::TemplatesPath().data() );
+    DIR* dp = opendir( KFMPaths::TemplatesPath().data() );
     if ( dp == NULL )
 	bTemplates = false;
     else
@@ -151,7 +122,7 @@ int main( int argc, char ** argv )
     testDir( KFMPaths::TrashPath() );
     testDir( KFMPaths::TemplatesPath() );
     testDir( KFMPaths::AutostartPath() );
-
+    
     QString kd = kapp->kdedir();
     d = kd.copy();
     d += "/share/applnk";
@@ -182,7 +153,7 @@ int main( int argc, char ** argv )
     KFMServer ipc;
     
     QString file = QDir::homeDirPath();
-    file += "/.kde/kfm/pid";
+    file += "/.kde/share/apps/kfm/pid";
     
     FILE *f = fopen( file.data(), "wb" );
     if ( f == 0L )

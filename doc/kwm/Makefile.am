@@ -1,5 +1,5 @@
 
-data_DATA = kwm.html 
+data_DATA = index.html 
 
 datadir = $(kde_htmldir)/en/kwm
 

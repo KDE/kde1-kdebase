@@ -40,7 +40,7 @@ KFMExec::KFMExec( int argc, char **argv )
 	      connect( kfm, SIGNAL( finished() ), this, SLOT( slotFinished() ) );
 	      
 	      QString tmp;
-	      tmp.sprintf( "%s/.kde/kfm/tmp/%s.%i.%i", getenv( "HOME" ), u.filename(), getpid(), kfmCounter++ );
+	      tmp.sprintf( "%s/.kde/share/apps/kfm/tmp/%s.%i.%i", getenv( "HOME" ), u.filename(), getpid(), kfmCounter++ );
 	      kfm->copy( argv[ i - 1 ], tmp );
 	      if ( !files.isEmpty() )
 		files += " ";

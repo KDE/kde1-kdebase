@@ -288,7 +288,8 @@ public:
      */
     virtual const char* getPixmapFile( const char *_url, bool _mini = FALSE );
     /**
-     * This function returns the default icon.
+     * This function returns the icon associated with this mime type. It returns
+     * a full qualified filename.
      */
     const char* getPixmapFile( bool _mini = FALSE );
     /**

@@ -127,7 +127,7 @@ int main(int argc, char *argv[])
 	{
 		initDoc = "file:";
 		initDoc += kapp->kdedir();
-		initDoc += "/share/doc/HTML/index.html";
+		initDoc += "/share/doc/HTML/default/kdehelp/main.html";
 	}
 
 	url = initDoc;
@@ -146,7 +146,7 @@ int main(int argc, char *argv[])
 
 	// create data directory if necessary
 	QString p = getenv( "HOME" );
-	QString rcDir = p + "/.kde";
+	QString rcDir = p + "/.kde/share/apps";
 	if ( access( rcDir, F_OK ) )
 		mkdir( rcDir, 0740 );
 

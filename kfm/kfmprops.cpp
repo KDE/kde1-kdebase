@@ -498,7 +498,7 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
 {
     execEdit = new QLineEdit( this, "LineEdit_1" );
     pathEdit = new QLineEdit( this, "LineEdit_2" );
-    iconBox = new QComboBox( false, this, "ComboBox_1" );
+    iconBox = new KIconLoaderButton( this );
     terminalCheck = new QCheckBox( this, "CheckBox_1" );
     terminalEdit = new QLineEdit( this, "LineEdit_4" );
     execBrowse = new QPushButton( this, "Button_1" );
@@ -520,9 +520,9 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     tmpQLabel->setGeometry( 10, 10, 100, 30 );
     tmpQLabel->setText( klocale->translate("Execute") );
 
-    tmpQLabel = new QLabel( this, "Label_2" );
-    tmpQLabel->setGeometry( 10, 130, 100, 30 );
-    tmpQLabel->setText( klocale->translate("Icon") );
+    // tmpQLabel = new QLabel( this, "Label_2" );
+    // tmpQLabel->setGeometry( 10, 130, 100, 30 );
+    // tmpQLabel->setText( klocale->translate("Icon") );
 
     tmpQLabel = new QLabel( this, "Label_3" );
     tmpQLabel->setGeometry( 10, 70, 120, 30 );
@@ -533,10 +533,7 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     pathEdit->setMaxLength( 256 );
     
     iconBox->raise();
-    iconBox->setGeometry( 10, 160, 120, 30 );
-
-    // iconView->raise();
-    // iconView->setGeometry( 140, 160, 32, 32 );
+    iconBox->setGeometry( 10, 140, 50, 50 );
 
     terminalCheck->raise();
     terminalCheck->setGeometry( 20, 210, 150, 30 );
@@ -556,10 +553,9 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
 
     QFile f( _props->getKURL()->path() );
     if ( !f.open( IO_ReadOnly ) )
-	return;
-    
-	f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
+	return;    
+    f.close();
+
     KConfig config( _props->getKURL()->path() );
     config.setGroup( "KDE Desktop Entry" );
     execStr = config.readEntry( "Exec" );
@@ -579,34 +575,17 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     if ( iconStr.isNull() )
 	iconStr = KMimeType::getDefaultPixmap();
     
-    // Load all pixmaps files in the combobox
-    QDir d( KMimeType::getIconPath() );
-    const QFileInfoList *list = d.entryInfoList();
-    QFileInfoListIterator it( *list );      // create list iterator
-    QFileInfo *fi;                          // pointer for traversing
+    iconBox->setIcon( iconStr ); 
 
-    int index = -1;
-    int i = 0;  
-    while ( ( fi = it.current() ) )
-    {
-	// Is this the currently selected icon ?
-	if ( strcmp( iconStr.data(), fi->fileName().data() ) == 0 )
-	    index = i;
-	iconBox->insertItem( fi->fileName().data(), i );
-	i++;
-	++it;                               // goto next list element
-    }
-    // The currently selected icon is not in the list .... strange ... ? Lets add it.
-    if ( index == -1 && iconStr.length() > 0 )
-    {
-	iconBox->insertItem( iconStr.data(), i );
-	index = i;
-    }
-    // Select the current icon
-    iconBox->setCurrentItem( index );
-    drawIcon();
-
-    connect( iconBox, SIGNAL( activated( int ) ), this, SLOT( slotIconChanged( int ) ) );
+    QStrList list;
+    QString tmp( kapp->kdedir() );
+    tmp += "/share/icons";
+    list.append( tmp.data() );
+    tmp = getenv( "HOME" );
+    tmp += "/.kde/share/icons";
+    list.append( tmp.data() );
+    iconBox->iconLoaderDialog().setDir( &list );
+    
     connect( execBrowse, SIGNAL( pressed() ), this, SLOT( slotBrowseExec() ) );
 }
 
@@ -617,18 +596,6 @@ bool ExecPropsPage::supports( KURL *_kurl )
     
     if ( strcmp( u2.protocol(), "file" ) != 0 )
 	return false;
-
-    /* FILE *fh = fopen( _kurl->path(), "rb" );
-    if ( fh == 0L )
-	return false;
-    
-    char buffer[ 1024 ];
-    buffer[0] = 0;
-    fgets( buffer, 1023, fh );
-    fclose( fh );
-    
-    if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return false; */
 
     QString t( _kurl->path() );
     KURL::decodeURL( t );
@@ -644,10 +611,9 @@ bool ExecPropsPage::supports( KURL *_kurl )
 	return false;
 
     if ( !f.open( IO_ReadOnly ) )
-	return false;
-    
-	f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
+	return false;    
+    f.close();
+
     KConfig config( t );
     config.setGroup( "KDE Desktop Entry" );
 
@@ -673,16 +639,13 @@ void ExecPropsPage::applyChanges()
 	return;
     }
 
-    f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
+    f.close();
+
     KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
     config.writeEntry( "Exec", execEdit->text() );
     config.writeEntry( "Path", pathEdit->text() );
-
-    int i = iconBox->currentItem();
-    if ( i != -1 )
-	config.writeEntry( "Icon", iconBox->text( i )  );
+    config.writeEntry( "Icon", iconBox->icon() );
 
     if ( terminalCheck->isChecked() )
 	config.writeEntry( "Terminal", "1" );
@@ -691,7 +654,6 @@ void ExecPropsPage::applyChanges()
 
     config.writeEntry( "TerminalOptions", terminalEdit->text() );
     config.sync();
-    f.close();
 }
 
 
@@ -704,48 +666,10 @@ void ExecPropsPage::slotBrowseExec()
     execEdit->setText( f.data() );
 }
 
-
-void ExecPropsPage::slotIconChanged( int )
-{
-    drawIcon();
-}
-
-void ExecPropsPage::paintEvent( QPaintEvent *_ev )
-{
-    QWidget::paintEvent( _ev );
-    drawIcon();
-}
-
-void ExecPropsPage::drawIcon()
-{
-    int i = iconBox->currentItem();
-    if ( i == -1 )
-	return;
-    
-    const char *text = iconBox->text( i );
-    QString file = KMimeType::getIconPath();
-    file += "/";
-    file += text;
-    
-    if ( file != pixmapFile )
-    {
-	pixmapFile = file.data();
-	pixmapFile.detach();	
-	pixmap.load( file.data() );
-    }
-    
-    erase( 140, 140, 100, 84 );
-    QPainter painter;
-    painter.begin( this );
-    painter.setClipRect( 140, 140, 100, 84 );
-    painter.drawPixmap( QPoint( 140, 140 ), pixmap );
-    painter.end();
-}
-
 URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
 {
     URLEdit = new QLineEdit( this, "LineEdit_1" );
-    iconBox = new QComboBox( false, this, "ComboBox_1" );
+    iconBox = new KIconLoaderButton( this );
 
     URLEdit->raise();
     URLEdit->setGeometry( 10, 40, 210, 30 );
@@ -758,7 +682,7 @@ URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
     tmpQLabel->setText( klocale->translate("URL") );
     
     iconBox->raise();
-    iconBox->setGeometry( 10, 90, 120, 30 );
+    iconBox->setGeometry( 10, 90, 50, 50 );
 
     QString path = _props->getKURL()->path();
     KURL::decodeURL( path );
@@ -766,10 +690,9 @@ URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
     QFile f( path );
     if ( !f.open( IO_ReadOnly ) )
 	return;
+    f.close();
 
-    f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
-    KConfig config( path ); // kalle
+    KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
     URLStr = config.readEntry(  "URL" );
     iconStr = config.readEntry( "Icon" );
@@ -778,38 +701,17 @@ URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
 	URLEdit->setText( URLStr.data() );
     if ( iconStr.isNull() )
 	iconStr = KMimeType::getDefaultPixmap();
-    
-    // Load all pixmaps files in the combobox
-    QDir d( KMimeType::getIconPath() );
-    const QFileInfoList *list = d.entryInfoList();
-    QFileInfoListIterator it( *list );      // create list iterator
-    QFileInfo *fi;                          // pointer for traversing
 
-    int index = -1;
-    int i = 0;  
-    while ( ( fi = it.current() ) )
-    {
-	if ( fi->fileName() != ".." && fi->fileName() != "." )
-	{
-	    // Is this the currently selected icon ?
-	    if ( strcmp( iconStr.data(), fi->fileName().data() ) == 0 )
-		index = i;
-	    iconBox->insertItem( fi->fileName().data(), i );
-	    i++;
-	}
-	++it;                               // goto next list element
-    }
-    // The currently selected icon is not in the list .... strange ... ? Lets add it.
-    if ( index == -1 && iconStr.length() > 0 )
-    {
-	iconBox->insertItem( iconStr.data(), i );
-	index = i;
-    }
-    // Select the current icon
-    iconBox->setCurrentItem( index );
-    drawIcon();
+    QStrList list;
+    QString tmp( kapp->kdedir() );
+    tmp += "/share/icons";
+    list.append( tmp.data() );
+    tmp = getenv( "HOME" );
+    tmp += "/.kde/share/icons";
+    list.append( tmp.data() );
+    iconBox->iconLoaderDialog().setDir( &list );
 
-    connect( iconBox, SIGNAL( activated( int ) ), this, SLOT( slotIconChanged( int ) ) );
+    iconBox->setIcon( iconStr );
 }
 
 bool URLPropsPage::supports( KURL *_kurl )
@@ -819,18 +721,6 @@ bool URLPropsPage::supports( KURL *_kurl )
     
     if ( strcmp( u2.protocol(), "file" ) != 0 )
 	return false;
-
-    /* FILE *fh = fopen( _kurl->path(), "rb" );
-    if ( fh == 0L )
-	return false;
-    
-    char buffer[ 1024 ];
-    buffer[0] = 0;
-    fgets( buffer, 1023, fh );
-    fclose( fh );
-    
-    if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return false; */
 
     QString path = _kurl->path();
     KURL::decodeURL( path );
@@ -846,10 +736,9 @@ bool URLPropsPage::supports( KURL *_kurl )
 	return false;
     if ( !f.open( IO_ReadOnly ) )
 	return false;
+    f.close();
 
-    f.close(); // kalle
-    // kalle QTextStream pstream( &f );
-    KConfig config( path ); // kalle
+    KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
 
     QString URL = config.readEntry( "URL" );
@@ -871,64 +760,20 @@ void URLPropsPage::applyChanges()
 			        klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
     }
-    
-	f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
-    KConfig config( path ); // kalle
+    f.close();
+
+    KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
     config.writeEntry( "URL", URLEdit->text() );
-
-    int i = iconBox->currentItem();
-    if ( i != -1 )
-	config.writeEntry( "Icon", iconBox->text( i )  );
-
+    config.writeEntry( "Icon", iconBox->icon() );
     config.sync();
-    f.close();
 }
-
-void URLPropsPage::slotIconChanged( int )
-{
-    drawIcon();
-}
-
-void URLPropsPage::paintEvent( QPaintEvent *_ev )
-{
-    QWidget::paintEvent( _ev );
-    drawIcon();
-}
-
-void URLPropsPage::drawIcon()
-{
-    int i = iconBox->currentItem();
-    if ( i == -1 )
-	return;
-    
-    const char *text = iconBox->text( i );
-    QString file = KMimeType::getIconPath();
-    file += "/";
-    file += text;
-    
-    if ( file != pixmapFile )
-    {
-	pixmapFile = file.data();
-	pixmapFile.detach();	
-	pixmap.load( file.data() );
-    }
-    
-    erase( 140, 90, 64, 64 );
-    QPainter painter;
-    painter.begin( this );
-    painter.setClipRect( 140, 90, 64, 64 );
-    painter.drawPixmap( QPoint( 140, 90 ), pixmap );
-    painter.end();
-}
-
 
 DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
 {
-    iconBox = new QComboBox( false, this, "ComboBox_1" );
+    iconBox = new KIconLoaderButton( this );
     iconBox->raise();
-    iconBox->setGeometry( 10, 20, 120, 30 );
+    iconBox->setGeometry( 10, 20, 50, 50 );
 
     wallBox = new QComboBox( false, this, "ComboBox_2" );
     wallBox->raise();
@@ -953,55 +798,44 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
     QFile f( tmp.data() );
     if ( f.open( IO_ReadOnly ) )
     {
-	  f.close(); // kalle
-	  // kalle	  QTextStream pstream( &f );
-	  KConfig config( tmp ); // kalle
+	f.close();
+
+	KConfig config( tmp );
 	config.setGroup( "KDE Desktop Entry" );
 	wallStr = config.readEntry( "BgImage" );
 	iconStr = config.readEntry( "Icon" );
     }
-        
-    // Load all pixmaps files in the combobox
-    QDir d( KMimeType::getIconPath() );
-    const QFileInfoList *list = d.entryInfoList();
-    QFileInfoListIterator it( *list );      // create list iterator
-    QFileInfo *fi;                          // pointer for traversing
 
-    // Insert default value
-    iconBox->insertItem( klocale->translate( "(Default)" ), 0 );
-
-    // Loop over all pixmaps
-    int index = 0;
-    int i = 1;  
-    while ( ( fi = it.current() ) )
+    if ( iconStr.isEmpty() )
     {
-	if ( fi->fileName() != ".." && fi->fileName() != "." )
-	{
-	    // Is this the currently selected icon ?
-	    if ( !iconStr.isEmpty() && strcmp( iconStr.data(), fi->fileName().data() ) == 0 )
-		index = i;
-	    iconBox->insertItem( fi->fileName().data(), i );
-	    i++;
-	}
-	++it;                               // goto next list element
+	QString str( KMimeType::getMagicMimeType( properties->getKURL()->url() )->getPixmapFile() );
+	KURL u( str );
+	iconStr = u.filename();
     }
-    // Select the current icon
-    iconBox->setCurrentItem( index );
-    drawIcon();
+    
+    QStrList list2;
+    tmp = kapp->kdedir();
+    tmp += "/share/icons";
+    list2.append( tmp.data() );
+    tmp = getenv( "HOME" );
+    tmp += "/.kde/share/icons";
+    list2.append( tmp.data() );
+    iconBox->iconLoaderDialog().setDir( &list2 );
 
-    connect( iconBox, SIGNAL( activated( int ) ), this, SLOT( slotIconChanged( int ) ) );
+    iconBox->setIcon( iconStr );
 
     // Load all wallpapers in the combobox
     tmp = kapp->kdedir();
     tmp += "/share/wallpapers";
     QDir d2( tmp.data() );
-    list = d2.entryInfoList();
+    const QFileInfoList *list = d2.entryInfoList();  
     QFileInfoListIterator it2( *list );      // create list iterator
+    QFileInfo *fi;                          // pointer for traversing  
 
     wallBox->insertItem(  klocale->translate("(Default)"), 0 );
     
-    index = 0;
-    i = 1;  
+    int index = 0;
+    int i = 1;  
     while ( ( fi = it2.current() ) )
     {
 	if ( fi->fileName() != ".." && fi->fileName() != "." )
@@ -1063,11 +897,9 @@ void DirPropsPage::applyChanges()
 			     klocale->translate("Could not write to\n") + tmp );
 	return;
     }
+    f.close();
 
-
-    f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
-    KConfig config( tmp ); // kalle
+    KConfig config( tmp );
     config.setGroup( "KDE Desktop Entry" );
 
     int i = wallBox->currentItem();
@@ -1078,18 +910,18 @@ void DirPropsPage::applyChanges()
 	else
 	    config.writeEntry( "BgImage", wallBox->text( i ) );
     }
-    
-    i = iconBox->currentItem();
-    if ( i != -1 )
-    {
-	if ( strcmp( iconBox->text( i ),  klocale->translate("(Default)") ) == 0 )
-	    config.writeEntry( "Icon", "" );
-	else
-	    config.writeEntry( "Icon", iconBox->text( i )  );
-    }
+
+    // Get the default image
+    QString str( KMimeType::getMagicMimeType( properties->getKURL()->url() )->getPixmapFile() );
+    KURL u( str );
+    QString str2 = u.filename();
+    // Is it still the default ?
+    if ( str2 == iconBox->icon() )
+	config.writeEntry( "Icon", "" );
+    else
+	config.writeEntry( "Icon", iconBox->icon()  );
     
     config.sync();
-    f.close();
 
     // Send a notify to the parent directory since the
     // icon may have changed
@@ -1106,13 +938,7 @@ void DirPropsPage::applyChanges()
 	return;
     tmp = tmp.left( i + 1 );
 
-    // debugT("$$$$$$$$$$$$$ Sending notify to '%s'\n", tmp.data());
     KIOServer::sendNotify( tmp.data() );
-}
-
-void DirPropsPage::slotIconChanged( int )
-{
-    drawIcon();
 }
 
 void DirPropsPage::slotWallPaperChanged( int )
@@ -1123,44 +949,7 @@ void DirPropsPage::slotWallPaperChanged( int )
 void DirPropsPage::paintEvent( QPaintEvent *_ev )
 {
     QWidget::paintEvent( _ev );
-    drawIcon();
     drawWallPaper();
-}
-
-void DirPropsPage::drawIcon()
-{
-    int i = iconBox->currentItem();
-    if ( i == -1 )
-    {
-	erase( 140, 20, 64, 64 );
-	return;
-    }
-    
-    QString file;
-    // Default value ?
-    if ( i == 0 )
-	file = KMimeType::getPixmapFileStatic( properties->getKURL()->url() );
-    else
-    {
-	file = KMimeType::getIconPath();
-	file += "/";
-	file += iconBox->text( i );
-    }
-    
-    if ( file != pixmapFile )
-    {
-	pixmapFile = file.data();
-	pixmapFile.detach();	
-	if ( !pixmap.load( file.data() ) )
-	    warning("Could not load icon %s\n",file.data());
-    }
-    
-    erase( 140, 20, 64, 64 );
-    QPainter painter;
-    painter.begin( this );
-    painter.setClipRect( 140, 20, 64, 64 );
-    painter.drawPixmap( QPoint( 140, 20 ), pixmap );
-    painter.end();
 }
 
 void DirPropsPage::drawWallPaper()
@@ -1224,12 +1013,6 @@ void DirPropsPage::slotApplyGlobal()
 	    config->writeEntry( "BgImage", wallBox->text( i ) );
     }
 
-    config->setGroup( "Icons" );
-
-    i = iconBox->currentItem();
-    if ( i != -1 )
-	config->writeEntry( "Icon", iconBox->text( i )  );
-
     config->sync();
 
     // Notify all opened windows
@@ -1254,43 +1037,12 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
 {
     binaryPatternEdit = new QLineEdit( this, "LineEdit_1" );
     commentEdit = new QLineEdit( this, "LineEdit_2" );
+    nameEdit = new QLineEdit( this, "LineEdit_3" );
 
     extensionsList = new QListBox( this );
     availableExtensionsList = new QListBox( this );
     addExtensionButton = new QPushButton( "<-", this );
     delExtensionButton = new QPushButton( "->", this );
-
-    /* protocolFTP = new QCheckBox( this );
-    protocolFTP->setText( klocale->translate("FTP") );
-    protocolFILE = new QCheckBox( this );
-    protocolFILE->setText( klocale->translate("FILE") );
-    protocolHTTP = new QCheckBox( this );
-    protocolHTTP->setText( klocale->translate("HTTP") );
-    protocolTAR = new QCheckBox( this );
-    protocolTAR->setText( klocale->translate("TAR") );
-    protocolMAN = new QCheckBox( this );
-    protocolMAN->setText( klocale->translate("MAN") );
-    protocolINFO = new QCheckBox( this );
-    protocolINFO->setText( klocale->translate("INFO") );
-
-    QGroupBox* tmpQGroupBox;
-    tmpQGroupBox = new QGroupBox( this, "GroupBox_1" );
-    tmpQGroupBox->setGeometry( 10, 140, 350, 70 );
-    tmpQGroupBox->setFrameStyle( 49 );
-    tmpQGroupBox->setAlignment( 1 );
-
-    protocolFILE->setGeometry( 20, 150, 100, 20 );
-    protocolFILE->raise();
-    protocolFTP->setGeometry( 120, 150, 100, 20 );
-    protocolFTP->raise();
-    protocolHTTP->setGeometry( 220, 150, 100, 20 );    
-    protocolHTTP->raise();
-    protocolTAR->setGeometry( 20, 180, 100, 20 );
-    protocolTAR->raise();
-    protocolINFO->setGeometry( 120, 180, 100, 20 );
-    protocolINFO->raise();
-    protocolMAN->setGeometry( 220, 180, 100, 20 );
-    protocolMAN->raise(); */
 
     binaryPatternEdit->raise();
     binaryPatternEdit->setGeometry( 10, 40, 210, 30 );
@@ -1306,16 +1058,23 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     tmpQLabel->setGeometry( 10, 70, 120, 30 );
     tmpQLabel->setText(  klocale->translate("Comment") );
 
+    tmpQLabel = new QLabel( this, "Label_4" );
+    tmpQLabel->setGeometry( 10, 130, 300, 30 );
+    tmpQLabel->setText(  klocale->translate("Name ( in your language )") );
+
     commentEdit->raise();
     commentEdit->setGeometry( 10, 100, 210, 30 );
     commentEdit->setMaxLength( 256 );
+
+    nameEdit->raise();
+    nameEdit->setGeometry( 10, 160, 210, 30 );
+    nameEdit->setMaxLength( 256 );
     
-    // extensionsList->setGeometry( 10, 220, 130, 100 );
-    extensionsList->setGeometry( 10, 140, 130, 180 );
-    availableExtensionsList->setGeometry( 230, 140, 130, 180 );
-    addExtensionButton->setGeometry( 160, 190, 40, 40 );
+    extensionsList->setGeometry( 10, 200, 130, 120 );
+    availableExtensionsList->setGeometry( 230, 200, 130, 120 );
+    addExtensionButton->setGeometry( 160, 220, 40, 40 );
     connect( addExtensionButton, SIGNAL( pressed() ), this, SLOT( slotAddExtension() ) );
-    delExtensionButton->setGeometry( 160, 230, 40, 40 );    
+    delExtensionButton->setGeometry( 160, 260, 40, 40 );    
     connect( delExtensionButton, SIGNAL( pressed() ), this, SLOT( slotDelExtension() ) );
 
     QString path = _props->getKURL()->path() ;
@@ -1323,18 +1082,27 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     QFile f( path );
     if ( !f.open( IO_ReadOnly ) )
 	return;
-    
-	f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
-    KConfig config( path ); // kalle
+    f.close();
+
+    KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
     commentStr = config.readEntry( "Comment" );
     binaryPatternStr = config.readEntry( "BinaryPattern" );
-    protocolsStr = config.readEntry( "Protocols" );
     extensionsStr = config.readEntry( "MimeType" );
-
+    nameStr = config.readEntry( "Name" );
+    // Use the file name if no name is specified
+    if ( nameStr.isEmpty() )
+    {
+	nameStr = _props->getKURL()->filename();
+	if ( nameStr.right(7) == ".kdelnk" )
+	    nameStr.truncate( nameStr.length() - 7 );
+	KURL::decodeURL( nameStr );
+    }
+    
     if ( !commentStr.isNull() )
 	commentEdit->setText( commentStr.data() );
+    if ( !nameStr.isNull() )
+	nameEdit->setText( nameStr.data() );
     if ( !binaryPatternStr.isNull() )
 	binaryPatternEdit->setText( binaryPatternStr.data() );
     if ( !extensionsStr.isNull() )
@@ -1347,23 +1115,7 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
 	    pos = pos2 + 1;
 	}
     }
-    /*
-    if ( !protocolsStr.isNull() )
-    {
-	if ( protocolsStr.find( "file;" ) == 0 || protocolsStr.find( ";file;" ) != -1 )
-	    protocolFILE->setChecked( true );
-	if ( protocolsStr.find( "ftp;" ) == 0 || protocolsStr.find( ";ftp;" ) != -1 )
-	    protocolFTP->setChecked( true );
-	if ( protocolsStr.find( "http;" ) == 0 || protocolsStr.find( ";http;" ) != -1 )
-	    protocolHTTP->setChecked( true );
-	if ( protocolsStr.find( "tar;" ) == 0 || protocolsStr.find( ";tar;" ) != -1 )
-	    protocolTAR->setChecked( true );
-	if ( protocolsStr.find( "man;" ) == 0 || protocolsStr.find( ";man;" ) != -1 )
-	    protocolMAN->setChecked( true );
-	if ( protocolsStr.find( "info;" ) == 0 || protocolsStr.find( ";info;" ) != -1 )
-	    protocolINFO->setChecked( true );
-    }
-    */
+
     KMimeType *ft;
     for ( ft = KMimeType::getFirstMimeType(); ft != 0L; ft = KMimeType::getNextMimeType() )
     {
@@ -1387,18 +1139,6 @@ bool ApplicationPropsPage::supports( KURL *_kurl )
     if ( strcmp( u2.protocol(), "file" ) != 0 )
 	return false;
 
-    /* FILE *fh = fopen( _kurl->path(), "rb" );
-    if ( fh == 0L )
-	return false;
-    
-    char buffer[ 1024 ];
-    buffer[0] = 0;
-    fgets( buffer, 1023, fh );
-    fclose( fh );
-    
-    if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return false; */
-
     QString path = _kurl->path();
     KURL::decodeURL( path );
     QFile f( path );
@@ -1413,10 +1153,9 @@ bool ApplicationPropsPage::supports( KURL *_kurl )
 	return false;
     if ( !f.open( IO_ReadOnly ) )
 	return false;
-    
-	f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
-    KConfig config( path ); // kalle
+    f.close(); 
+
+    KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
 
     QString type = config.readEntry( "Type" );
@@ -1445,30 +1184,13 @@ void ApplicationPropsPage::applyChanges()
 	// kalle    QTextStream pstream( &f );
     KConfig config( path ); // kalle
     config.setGroup( "KDE Desktop Entry" );
-    config.writeEntry( "Comment", commentEdit->text() );
+    config.writeEntry( "Comment", commentEdit->text(), true, false, true );
 
     QString tmp = binaryPatternEdit->text();
     if ( tmp.length() > 0 )
 	if ( tmp.right(1) != ";" )
 	    tmp += ";";
     config.writeEntry( "BinaryPattern", tmp.data() );
-
-    /* protocolsStr = "";
-    if ( protocolFILE->isChecked() )
-	protocolsStr += "file;";
-    if ( protocolFTP->isChecked() )
-	protocolsStr += "ftp;";
-    if ( protocolHTTP->isChecked() )
-	protocolsStr += "http;";
-    if ( protocolTAR->isChecked() )
-	protocolsStr += "tar;";
-    if ( protocolMAN->isChecked() )
-	protocolsStr += "man;";
-    if ( protocolINFO->isChecked() )
-	protocolsStr += "info;"; */
-    // HACK
-    protocolsStr = "file;ftp;http;tar;cgi;";
-    config.writeEntry( "Protocols", protocolsStr.data() );
 
     extensionsStr = "";
     for ( uint i = 0; i < extensionsList->count(); i++ )
@@ -1477,13 +1199,15 @@ void ApplicationPropsPage::applyChanges()
 	extensionsStr += ";";
     }
     config.writeEntry( "MimeType", extensionsStr.data() );
+    config.writeEntry( "Name", nameEdit->text(), true, false, true );
     
     config.sync();
     f.close();
 
     KMimeType::clearAll();
     KMimeType::init();
-    KRootWidget::getKRootWidget()->update();
+    if ( KRootWidget::getKRootWidget() )
+	KRootWidget::getKRootWidget()->update();
 
     KfmGui *win;
     for ( win = KfmGui::getWindowList().first(); win != 0L; win = KfmGui::getWindowList().next() )
@@ -1523,7 +1247,7 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     patternEdit = new QLineEdit( this, "LineEdit_1" );
     commentEdit = new QLineEdit( this, "LineEdit_3" );
     mimeEdit = new QLineEdit( this, "LineEdit_3" );
-    iconBox = new QComboBox( false, this, "ComboBox_1" );
+    iconBox = new KIconLoaderButton( this );
     appBox = new QComboBox( false, this, "ComboBox_2" );
 
     patternEdit->raise();
@@ -1544,9 +1268,9 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     tmpQLabel->setGeometry( 10, 10, 300, 30 );
     tmpQLabel->setText(  klocale->translate("Pattern ( example: *.html;*.HTML; )") );
 
-    tmpQLabel = new QLabel( this, "Label_2" );
-    tmpQLabel->setGeometry( 180, 210, 100, 30 );
-    tmpQLabel->setText(  klocale->translate("Icon") );
+    // tmpQLabel = new QLabel( this, "Label_2" );
+    // tmpQLabel->setGeometry( 180, 210, 100, 30 );
+    // tmpQLabel->setText(  klocale->translate("Icon") );
 
     tmpQLabel = new QLabel( this, "Label_2" );
     tmpQLabel->setGeometry( 10, 130, 100, 30 );
@@ -1557,7 +1281,7 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     tmpQLabel->setText(  klocale->translate("Comment") );
     
     iconBox->raise();
-    iconBox->setGeometry( 180, 240, 120, 30 );
+    iconBox->setGeometry( 180, 210, 50, 50 );
 
     tmpQLabel = new QLabel( this, "Label_2" );
     tmpQLabel->setGeometry( 10, 210, 170, 30 );
@@ -1569,10 +1293,9 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     QFile f( _props->getKURL()->path() );
     if ( !f.open( IO_ReadOnly ) )
 	return;
-    
-	f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
-    KConfig config( _props->getKURL()->path() ); // kalle
+    f.close();
+
+    KConfig config( _props->getKURL()->path() );
     config.setGroup( "KDE Desktop Entry" );
     patternStr = config.readEntry( "Patterns" );
     appStr = config.readEntry( "DefaultApp" );
@@ -1580,47 +1303,29 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     commentStr = config.readEntry( "Comment" );
     mimeStr = config.readEntry( "MimeType" );
 
-    if ( !patternStr.isNull() )
+    if ( !patternStr.isEmpty() )
 	patternEdit->setText( patternStr.data() );
-    //if ( !appStr.isNull() )
-
-    if ( !commentStr.isNull() )
+    if ( !commentStr.isEmpty() )
 	commentEdit->setText( commentStr.data() );
-    if ( iconStr.isNull() )
+    if ( iconStr.isEmpty() )
 	iconStr = KMimeType::getDefaultPixmap();
-    if ( !mimeStr.isNull() )
+    if ( !mimeStr.isEmpty() )
 	mimeEdit->setText( mimeStr.data() );
     
-    // Load all pixmaps files in the combobox
-    QDir d( KMimeType::getIconPath() );
-    const QFileInfoList *list = d.entryInfoList();
-    QFileInfoListIterator it( *list );      // create list iterator
-    QFileInfo *fi;                          // pointer for traversing
+    QStrList list;
+    QString tmp( kapp->kdedir() );
+    tmp += "/share/icons";
+    list.append( tmp.data() );
+    tmp = getenv( "HOME" );
+    tmp += "/.kde/share/icons";
+    list.append( tmp.data() );
+    iconBox->iconLoaderDialog().setDir( &list );
 
-    int index = -1;
-    int i = 0;  
-    while ( ( fi = it.current() ) )
-    {
-	// Is this the currently selected icon ?
-	if ( strcmp( iconStr.data(), fi->fileName().data() ) == 0 )
-	    index = i;
-	iconBox->insertItem( fi->fileName().data(), i );
-	i++;
-	++it;                               // goto next list element
-    }
-    // The currently selected icon is not in the list .... strange ... ? Lets add it.
-    if ( index == -1 && iconStr.length() > 0 )
-    {
-	iconBox->insertItem( iconStr.data(), i );
-	index = i;
-    }
-    // Select the current icon
-    iconBox->setCurrentItem( index );
-    drawIcon();
-
+    iconBox->setIcon( iconStr );
+    
     // Get list of all applications
-    index = -1;
-    i = 0;
+    int index = -1;
+    int i = 0;
     const char *p;
     for ( p = KMimeBind::getFirstApplication(); p != 0L; p = KMimeBind::getNextApplication() )
     {
@@ -1701,10 +1406,9 @@ void BindingPropsPage::applyChanges()
 			        klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
     }
-    
-	f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
-    KConfig config( path ); // kalle
+    f.close();
+
+    KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
     
     QString tmp = patternEdit->text();
@@ -1714,63 +1418,22 @@ void BindingPropsPage::applyChanges()
     config.writeEntry( "Patterns", tmp.data() );
     config.writeEntry( "Comment", commentEdit->text() );
     config.writeEntry( "MimeType", mimeEdit->text() );
-    
-    if ( iconBox->currentItem() != -1 )
+    config.writeEntry( "Icon", iconBox->icon() );
+
+    if ( appBox->currentItem() != -1 )
 	config.writeEntry( "DefaultApp", appBox->text( appBox->currentItem() ) );
-    
-    int i = iconBox->currentItem();
-    if ( i != -1 )
-	config.writeEntry( "Icon", iconBox->text( i )  );
 
     config.sync();
-    f.close();
 
     KMimeType::clearAll();
     KMimeType::init();
-    KRootWidget::getKRootWidget()->update();
+    if ( KRootWidget::getKRootWidget() )
+	KRootWidget::getKRootWidget()->update();
 
     KfmGui *win;
     for ( win = KfmGui::getWindowList().first(); win != 0L; win = KfmGui::getWindowList().next() )
 	win->updateView();
 }
-
-void BindingPropsPage::slotIconChanged( int )
-{
-    drawIcon();
-}
-
-void BindingPropsPage::paintEvent( QPaintEvent *_ev )
-{
-    QWidget::paintEvent( _ev );
-    drawIcon();
-}
-
-void BindingPropsPage::drawIcon()
-{
-    int i = iconBox->currentItem();
-    if ( i == -1 )
-	return;
-    
-    const char *text = iconBox->text( i );
-    QString file = KMimeType::getIconPath();
-    file += "/";
-    file += text;
-    
-    if ( file != pixmapFile )
-    {
-	pixmapFile = file.data();
-	pixmapFile.detach();	
-	pixmap.load( file.data() );
-    }
-    
-    erase( 310, 240, 64, 64 );
-    QPainter painter;
-    painter.begin( this );
-    painter.setClipRect( 310, 240, 64, 64 );
-    painter.drawPixmap( QPoint( 310, 240 ), pixmap );
-    painter.end();
-}
-
 
 /* ----------------------------------------------------
  *
@@ -1798,7 +1461,7 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     mountpoint->setText( "" );
     
     readonly = new QCheckBox( this, "CheckBox_1" );
-    readonly->setGeometry( 220, 40, 100, 30 );
+    readonly->setGeometry( 220, 40, 130, 30 );
     readonly->setText(  klocale->translate("Readonly") );
     
     tmpQLabel = new QLabel( this, "Label_4" );
@@ -1810,28 +1473,28 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     fstype->setText( "" );
     
     tmpQLabel = new QLabel( this, "Label_5" );
-    tmpQLabel->setGeometry( 10, 220, 100, 30 );
+    tmpQLabel->setGeometry( 10, 220, 150, 30 );
     tmpQLabel->setText(  klocale->translate("Mounted Icon") );
     
     tmpQLabel = new QLabel( this, "Label_6" );
-    tmpQLabel->setGeometry( 170, 220, 100, 30 );
+    tmpQLabel->setGeometry( 170, 220, 150, 30 );
     tmpQLabel->setText(  klocale->translate("Unmounted Icon") );
     
-    mounted = new QComboBox( false, this, "ComboBox_1" );
-    mounted->setGeometry( 10, 250, 150, 30 );
-    mounted->setSizeLimit( 10 );
+    mounted = new KIconLoaderButton( this );
+    mounted->setGeometry( 10, 250, 50, 50 );
     
-    unmounted = new QComboBox( false, this, "ComboBox_2" );
-    unmounted->setGeometry( 170, 250, 150, 30 );
-    unmounted->setSizeLimit( 10 );
+    unmounted = new KIconLoaderButton( this );
+    unmounted->setGeometry( 170, 250, 50, 50 );
+
+    QString path( _props->getKURL()->path() );
+    KURL::decodeURL( path );
     
-    QFile f( _props->getKURL()->path() );
+    QFile f( path );
     if ( !f.open( IO_ReadOnly ) )
 	return;
-    
-	f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
-    KConfig config( _props->getKURL()->path() );
+    f.close();
+
+    KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
     deviceStr = config.readEntry( "Dev" );
     mountPointStr = config.readEntry( "MountPoint" );
@@ -1850,49 +1513,23 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
 	readonly->setChecked( false );
     else
 	readonly->setChecked( true );
+    if ( mountedStr.isEmpty() )
+	mountedStr = KMimeType::getDefaultPixmap();
+    if ( unmountedStr.isEmpty() )
+	unmountedStr = KMimeType::getDefaultPixmap();    
 
-    // Load all pixmaps files in the combobox
-    QDir d( KMimeType::getIconPath() );
-    const QFileInfoList *list = d.entryInfoList();
-    QFileInfoListIterator it( *list );      // create list iterator
-    QFileInfo *fi;                          // pointer for traversing
+    mounted->setIcon( mountedStr ); 
+    unmounted->setIcon( unmountedStr ); 
 
-    int index1 = -1;
-    int index2 = -1;
-    int i = 0;  
-    while ( ( fi = it.current() ) )
-    {
-	// Is this the currently selected icon ?
-	if ( strcmp( mountedStr.data(), fi->fileName().data() ) == 0 )
-	    index1 = i;
-	// Is this the currently selected unmounted icon ?
-	if ( strcmp( unmountedStr.data(), fi->fileName().data() ) == 0 )
-	    index2 = i;
-	mounted->insertItem( fi->fileName().data(), i );
-	unmounted->insertItem( fi->fileName().data(), i );
-	i++;
-	++it;                               // goto next list element
-    }
-    // The currently selected icon is not in the list .... strange ... ? Lets add it.
-    if ( index1 == -1 && mountedStr.length() > 0 )
-    {
-	mounted->insertItem( mountedStr.data(), i );
-	index1 = i;
-    }
-    // The currently selected icon is not in the list .... strange ... ? Lets add it.
-    if ( index2 == -1 && unmountedStr.length() > 0 )
-    {
-	unmounted->insertItem( unmountedStr.data(), i );
-	index2 = i;
-    }
-    // Select the current icon
-    mounted->setCurrentItem( index1 );
-    unmounted->setCurrentItem( index2 );
-    drawIcon2();
-    drawIcon1();
-    
-    connect( mounted, SIGNAL( activated( int ) ), this, SLOT( slotIcon1Changed( int ) ) );
-    connect( unmounted, SIGNAL( activated( int ) ), this, SLOT( slotIcon2Changed( int ) ) );
+    QStrList list;
+    QString tmp( kapp->kdedir() );
+    tmp += "/share/icons";
+    list.append( tmp.data() );
+    tmp = getenv( "HOME" );
+    tmp += "/.kde/share/icons";
+    list.append( tmp.data() );
+    mounted->iconLoaderDialog().setDir( &list );
+    unmounted->iconLoaderDialog().setDir( &list );
 }
 
 bool DevicePropsPage::supports( KURL *_kurl )
@@ -1902,18 +1539,6 @@ bool DevicePropsPage::supports( KURL *_kurl )
     
     if ( strcmp( u2.protocol(), "file" ) != 0 )
 	return false;
-
-    /* FILE *fh = fopen( _kurl->path(), "rb" );
-    if ( fh == 0L )
-	return false;
-    
-    char buffer[ 1024 ];
-    buffer[0] = 0;
-    fgets( buffer, 1023, fh );
-    fclose( fh );
-    
-    if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return false; */
 
     QString path = _kurl->path();
     KURL::decodeURL( path );
@@ -1928,11 +1553,10 @@ bool DevicePropsPage::supports( KURL *_kurl )
     if ( !S_ISREG( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
 	return false;
     if ( !f.open( IO_ReadOnly ) )
-	return false;
-    
-	f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
-    KConfig config( path ); // kalle
+	return false;    
+    f.close();
+
+    KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
 
     QString type = config.readEntry( "Type" );
@@ -1955,20 +1579,17 @@ void DevicePropsPage::applyChanges()
 			        klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
     }
-    
-	f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
-    KConfig config( path ); // kalle
+    f.close();
+
+    KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
     
     config.writeEntry( "Dev", device->text() );
     config.writeEntry( "MountPoint", mountpoint->text() );
     config.writeEntry( "FSType", fstype->text() );
     
-    if ( mounted->currentItem() != -1 )
-	config.writeEntry( "Icon", mounted->text( mounted->currentItem() ) );
-    if ( unmounted->currentItem() != -1 )
-	config.writeEntry( "UnmountIcon", unmounted->text( unmounted->currentItem() ) );
+    config.writeEntry( "Icon", mounted->icon() );
+    config.writeEntry( "UnmountIcon", unmounted->icon() );
     
     if ( readonly->isChecked() )
 	config.writeEntry( "ReadOnly", "1" );
@@ -1976,76 +1597,6 @@ void DevicePropsPage::applyChanges()
 	config.writeEntry( "ReadOnly", "0" );
 
     config.sync();
-    f.close();
-}
-
-void DevicePropsPage::slotIcon1Changed( int )
-{
-    drawIcon1();
-}
-
-void DevicePropsPage::slotIcon2Changed( int )
-{
-    drawIcon2();
-}
-
-void DevicePropsPage::paintEvent( QPaintEvent *_ev )
-{
-    QWidget::paintEvent( _ev );
-    drawIcon1();
-    drawIcon2();
-}
-
-void DevicePropsPage::drawIcon1()
-{
-    int i = mounted->currentItem();
-    if ( i == -1 )
-	return;
-    
-    const char *text = mounted->text( i );
-    QString file = KMimeType::getIconPath();
-    file += "/";
-    file += text;
-    
-    if ( file != pixmapFile )
-    {
-	pixmapFile = file.data();
-	pixmapFile.detach();	
-	pixmap.load( file.data() );
-    }
-    
-    erase( 10, 290, 64, 64 );
-    QPainter painter;
-    painter.begin( this );
-    painter.setClipRect( 10, 290, 64, 64 );
-    painter.drawPixmap( QPoint( 10, 290 ), pixmap );
-    painter.end();
-}
-
-void DevicePropsPage::drawIcon2()
-{
-    int i = unmounted->currentItem();
-    if ( i == -1 )
-	return;
-    
-    const char *text = unmounted->text( i );
-    QString file = KMimeType::getIconPath();
-    file += "/";
-    file += text;
-    
-    if ( file != pixmapFile )
-    {
-	pixmapFile = file.data();
-	pixmapFile.detach();	
-	pixmap.load( file.data() );
-    }
-    
-    erase( 170, 290, 64, 64 );
-    QPainter painter;
-    painter.begin( this );
-    painter.setClipRect( 170, 290, 64, 64 );
-    painter.drawPixmap( QPoint( 170, 290 ), pixmap );
-    painter.end();
 }
 
 #include "kfmprops.moc"

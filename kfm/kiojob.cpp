@@ -565,7 +565,10 @@ void KIOJob::move()
 	KURL su( p );
 	KURL du( p2 );
 
-	// debugT("Moving from '%s' to '%s\n",p,p2);
+	QString supath( su.path() );
+	QString dupath( du.path() );
+	KURL::decodeURL( supath );
+	KURL::decodeURL( dupath );
 	
 	int i = 1;
 	// Moving on the local hard disk ?
@@ -575,7 +578,7 @@ void KIOJob::move()
 	    // Does the file already exist ?
 	    // If yes, care about renaming.
 	    struct stat buff;
-	    if ( stat( du.path(), &buff ) == 0 && !overwriteExistingFiles )
+	    if ( stat( dupath, &buff ) == 0 && !overwriteExistingFiles )
 	    {
 		KRenameWin *r = new KRenameWin( 0L, p, p2, true );
 		int button = r->exec();
@@ -604,7 +607,7 @@ void KIOJob::move()
 	    // Try to move the files with the help of UNIX.
 	    // 'i' will indicate wether we succeeded.
 	    // Now i is either 0 or -1.
-	    i = rename( su.path(), du.path() );
+	    i = rename( supath, dupath );
 	}
 	
 	// Did we succeed with our call to 'rename'
@@ -616,34 +619,34 @@ void KIOJob::move()
 	    {
 		// debugT("Testing for dir '%s'\n",su.path());
 		struct stat buff;
-		stat( su.path(), &buff );
+		stat( supath, &buff );
 		// We want to move a directory ?
 		// Then we must know each file in the tree ....
 		if ( S_ISDIR( buff.st_mode ) )
 		{
 		    // debugT("Making diretory '%s'\n",du.path());
 	    
-		    if ( ::mkdir( du.path(), S_IRWXU ) == -1 )
+		    if ( ::mkdir( dupath, S_IRWXU ) == -1 )
 			if ( errno != EEXIST )
 			{
 			    QString tmp;
-			    tmp.sprintf( klocale->translate( "Could not make directory\n\r%s" ), du.path() );
+			    tmp.sprintf( klocale->translate( "Could not make directory\n\r%s" ), dupath.data() );
 			    QMessageBox::message( klocale->translate( "KFM Error" ), tmp.data() );
 			    return;
 			}
 
 		    // Dont forget to delete this directory at the end
-		    tmpDelURLList.append( su.path() );
+		    tmpDelURLList.append( supath );
 		    // ... and dont try to copy it
 		    skipURLList.append( p );
 		    
 		    DIR *dp;
 		    struct dirent *ep;
-		    dp = opendir( su.path() );
+		    dp = opendir( supath );
 		    if ( dp == NULL )
 		    {
 			QString tmp;
-			tmp.sprintf( klocale->translate( "Could not access directory\n\r%s" ), du.path() );
+			tmp.sprintf( klocale->translate( "Could not access directory\n\r%s" ), dupath.data() );
 			QMessageBox::message( klocale->translate( "KFM Error" ), tmp.data() );
 			return;
 		    }
@@ -673,7 +676,7 @@ void KIOJob::move()
 	    else
 	    {
 		QString tmp;
-		tmp.sprintf( klocale->translate( "Could not move directory\n\r%s\n\rto '%s'\n\rPerhaps access denied" ), du.path(), su.path() );
+		tmp.sprintf( klocale->translate( "Could not move directory\n\r%s\n\rto '%s'\n\rPerhaps access denied" ), supath.data(), dupath.data() );
 		QMessageBox::message( klocale->translate( "KFM Error" ), tmp.data() );
 		return;
 	    }

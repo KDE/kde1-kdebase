@@ -21,6 +21,8 @@
 #include <qlistbox.h>
 
 #include <kurl.h>
+#include <kiconloaderdialog.h>
+#include <kiconloader.h>
 
 class Properties;
 
@@ -199,16 +201,13 @@ public:
     static bool supports( KURL *_kurl );
 
 public slots:
-    void slotIconChanged( int );
     void slotBrowseExec();
     
 protected:
-    void drawIcon();
-    virtual void paintEvent ( QPaintEvent *);
     
     QLineEdit *execEdit;
     QLineEdit *pathEdit;
-    QComboBox *iconBox;
+    KIconLoaderButton *iconBox;
     QCheckBox *terminalCheck;
     QLineEdit *terminalEdit;
     QButton *execBrowse;
@@ -218,9 +217,6 @@ protected:
     QString iconStr;
     QString termStr;
     QString termOptionsStr;
-
-    QPixmap pixmap;
-    QString pixmapFile;
 };
 
 /// Edit "KDE Desktop Entry" Files.
@@ -243,15 +239,9 @@ public:
 
     static bool supports( KURL *_kurl );
 
-public slots:
-    void slotIconChanged( int );
-    
 protected:
-    void drawIcon();
-    virtual void paintEvent ( QPaintEvent *);
-    
     QLineEdit *URLEdit;
-    QComboBox *iconBox;
+    KIconLoaderButton *iconBox;
 
     QString URLStr;
     QString iconStr;
@@ -273,27 +263,22 @@ public:
     static bool supports( KURL *_kurl );
 
 public slots:
-    void slotIconChanged( int );
     void slotWallPaperChanged( int );
     void slotApply();
     void slotApplyGlobal();
     
 protected:
-    void drawIcon();
     void drawWallPaper();
     virtual void paintEvent ( QPaintEvent *);
     
     QPushButton *applyButton;
     QPushButton *globalButton;
     
-    QComboBox *iconBox;
+    KIconLoaderButton *iconBox;
     QComboBox *wallBox;
 
     QString wallStr;
     QString iconStr;
-
-    QPixmap pixmap;
-    QString pixmapFile;
 
     QPixmap wallPixmap;
     QString wallFile;
@@ -328,18 +313,13 @@ protected:
     
     QLineEdit *binaryPatternEdit;
     QLineEdit *commentEdit;
-    QCheckBox *protocolFTP;
-    QCheckBox *protocolHTTP;
-    QCheckBox *protocolFILE;
-    QCheckBox *protocolTAR;
-    QCheckBox *protocolINFO;
-    QCheckBox *protocolMAN;
+    QLineEdit *nameEdit;
     QListBox  *extensionsList;
     QListBox  *availableExtensionsList;
     QPushButton *addExtensionButton;
     QPushButton *delExtensionButton;
 
-    QString protocolsStr;
+    QString nameStr;
     QString extensionsStr;
     QString binaryPatternStr;
     QString commentStr;
@@ -365,17 +345,12 @@ public:
 
     static bool supports( KURL *_kurl );
 
-public slots:
-    void slotIconChanged( int );
-    
 protected:
-    void drawIcon();
-    virtual void paintEvent ( QPaintEvent *);
     
     QLineEdit *commentEdit;
     QLineEdit *patternEdit;
     QLineEdit *mimeEdit;
-    QComboBox *iconBox;
+    KIconLoaderButton *iconBox;
     QComboBox *appBox;
 
     QString commentStr;
@@ -399,23 +374,14 @@ public:
     virtual void applyChanges();
 
     static bool supports( KURL *_kurl );
-
-public slots:
-    void slotIcon1Changed( int );
-    void slotIcon2Changed( int );
-    
-protected:
-    void drawIcon1();
-    void drawIcon2();
-    virtual void paintEvent ( QPaintEvent *);
     
 protected:
     QLineEdit* device;
     QLineEdit* mountpoint;
     QCheckBox* readonly;
     QLineEdit* fstype;
-    QComboBox* mounted;
-    QComboBox* unmounted;
+    KIconLoaderButton* mounted;
+    KIconLoaderButton* unmounted;
 
     QPixmap pixmap;
     QString pixmapFile;

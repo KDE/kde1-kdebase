@@ -29,8 +29,7 @@ KHelpMain::KHelpMain(const char *name)
 	helpwin = new KHelpWindow(this, name);     
 	CHECK_PTR(helpwin);
 
-	DOCS_PATH = kapp->kdedir() + "/share/doc/HTML/";
-
+	DOCS_PATH = kapp->kdedir() + "/share/doc/HTML/default/kdehelp/";
 
 	createMenu();
 	createLocationbar();
@@ -555,7 +554,7 @@ void KHelpMain::slotCloneWindow()
 		// in that case, select the title page...
 		url = "file:";
 		url += kapp->kdedir();
-		url += "/share/doc/HTML/index.html";
+		url += "/share/doc/HTML/default/kdehelp/main.html";
 	}
 
 	win->openURL( url );
@@ -570,7 +569,7 @@ void KHelpMain::slotUsingHelp()
 
 	win = new KHelpMain;
 	win->resize( size() );
-	win->openURL( "file:" + DOCS_PATH + "kdehelp.html" );
+	win->openURL( "file:" + DOCS_PATH + "index.html" );
 	win->show();
 	enableMenuItems();
 }

@@ -106,7 +106,7 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 
 void KFMJob::openFile()
 {
-    // debugT("OPEN FILE\n");
+    debugT("OPEN FILE\n");
     isDir = FALSE;
     
     // OK, we try to load the file
@@ -188,6 +188,8 @@ void KFMJob::slotError( int _kioerror, const char *_text )
 void KFMJob::slotNewDirEntry( int , KIODirectoryEntry * _entry )
 {
     // Now we know that it is a directory
+    debugT("New Dir Entry\n");
+    
     isDir = TRUE;
     emit newDirEntry( _entry );
 }

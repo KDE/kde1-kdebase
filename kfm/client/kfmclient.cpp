@@ -54,7 +54,7 @@ int main( int argc, char **argv )
 int doIt( int argc, char **argv )
 {
     QString file = QDir::homeDirPath();
-    file += "/.kde/kfm/pid";
+    file += "/.kde/share/apps/kfm/pid";
     
     FILE *f = fopen( file.data(), "rb" );
     if ( f == 0L )
@@ -110,12 +110,12 @@ int doIt( int argc, char **argv )
 
     // Read the password
     QString fn = getenv( "HOME" );
-    fn += "/.kde/kfm/magic";
+    fn += "/.kde/share/apps/kfm/magic";
     f = fopen( fn.data(), "rb" );
     if ( f == 0L )
     {
 	QMessageBox::message( "KFM Error",
-			      "You dont have the file ~/.kde/kfm/magic\n\rCould not do Authorization" );
+			      "You dont have the file ~/.kde/share/apps/kfm/magic\n\rCould not do Authorization" );
 	exit(1);
     }
     char *p = fgets( buffer, 1023, f );
@@ -123,7 +123,7 @@ int doIt( int argc, char **argv )
     if ( p == 0L )
     {
 	QMessageBox::message( "KFM Error",
-			      "The file ~/.kde/kfm/magic is corrupted\n\rCould not do Authorization" );
+			      "The file ~/.kde/share/apps/kfm/magic is corrupted\n\rCould not do Authorization" );
 	exit(1);
     }
 

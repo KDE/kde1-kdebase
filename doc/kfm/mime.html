@@ -22,6 +22,7 @@ know that the file <tt>MyGirlFriend</tt> contains an image.</p>
 helper of yours must know common extensions of this data type,
 an icon, some descriptive text, perhaps a default application
 ( we will learn more about this later ) and the mime type.</p>
+
 <h2>What is a Mime Type</h2>
 <p>Mime types are an internet standard. This standard is a naming
 scheme for data types. A data types name is devided in two sections.
@@ -42,9 +43,23 @@ which correspond to the first section of the mime type names. For example
 our example <tt>image/gif</tt> is represented by a file named
 <tt>$KDEDIR/share/mimelnk/image/gif.kdelnk</tt>. Every KFM config file
 has the <tt>.kdelnk</tt> extension. Sometimes KFM hides this extension, since
-it does not look very nice. Hackers may now have a look at this file, it is
-very simple and of course human readable. But you can have a look at it
-here:</p>
+it does not look very nice.</p>
+<p>You will find out sooner or later that the directory structure
+in your global KDE directory is the same as the one in your
+<tt>~/.kde</tt> directory. As sysadmin on your local Linux box,
+you may usually want to edit the global configuration, while a user
+at the universities UNIX cluster may only edit his personal
+configuration. Everything we say about the <tt>$KDEDIR</tt> directory
+here, applies to the <tt>~/.kde</tt> directory, too. To edit the
+global config files in <tt>$KDEDIR</tt> you need a super users password,
+for the personal stuff of course not.</p>
+<h2>Step by step</h2>
+You may now go on to a <a href="mime2.html">step by step tutorial</a>
+in installing new mime types or stay for some additional lines to read
+about some internals.</p>
+<h2>Internals</h2>
+The config files are very simple and of course human readable.
+You can have a look at it here:</p>
 <pre>
 # KDE Config File
 [KDE Desktop Entry]
@@ -57,9 +72,8 @@ Comment[de]=GIF Dokument
 Comment[nl]=Gif afbeelding
 </pre>
 <p>You dont need to understand what this means, since KFM provides a GUI
-for you, that makes things much easier. Hackers may continue reading here,
-all the others can skip this and continue in the <a href="mime2.html">next
-chapter</a>.</p>
+for you, that makes things much easier. Hackers never the less
+want to know and hack everything, so here is a brief description.
 <p>The first line is the header of every KDE config file.
 The <tt>Type</tt>line is included in every KFM config file to
 distinguish the purpose of the config file. This is followed

@@ -617,7 +617,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     pmenu = new PMenu;
     
     config->setGroup("KDE Desktop Entries");
-    QString temp = QDir::homeDirPath() +"/Personal";
+    QString temp = QDir::homeDirPath() +"/.kde/share/applnk";
     QString personal = config->readEntry("PersonalPath", temp.data() );
     temp = KApplication::kdedir()+"/share/applnk";
     QString kde_apps = config->readEntry("Path", temp.data() );

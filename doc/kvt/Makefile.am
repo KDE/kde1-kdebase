@@ -1,3 +1,3 @@
-data_DATA = kvt.html
+data_DATA = index.html
 
 datadir = $(kde_htmldir)/en/kvt

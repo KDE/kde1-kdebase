@@ -1,4 +1,10 @@
+echo "KFM Super User"
+echo "--------------"
+echo ""
+echo "Allowing root user to use this display"
 xhost +local:root
-su -c "kfm -sw"
+echo ""
+echo "Logging in as super user"
+su -c "kfm -sw >/dev/null"
 xhost -local:root
 

@@ -1,5 +1,5 @@
 
-data_DATA = kfontmanager.html kfontmanager-1.html kfontmanager-2.html kfontmanager-3.html kfontmanager-4.html 
+data_DATA = index.html index-1.html index-2.html index-3.html index-4.html 
 
 datadir = $(kde_htmldir)/en/kfontmanager
 

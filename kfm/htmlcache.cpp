@@ -50,7 +50,7 @@ HTMLCache::HTMLCache()
 	warning("ERROR: $HOME is not defined\n");
 	exit(1);
     }    
-    cachePath.sprintf( "file:%s/.kde/kfm/cache/", p );
+    cachePath.sprintf( "file:%s/.kde/share/apps/kfm/cache/", p );
 
     staticJobList.setAutoDelete( false );
     urlDict.setAutoDelete( true );
