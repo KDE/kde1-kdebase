@@ -1,3 +1,14 @@
+1999-01-18  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
+
+	* FINALLY!!! Fixed the extremely screwy startup
+	* disabled the first KDE start initialization 
+		(100% of the called votes)
+	* fixed a number of spelling errors
+	* made some dialog boxes read a little clearer
+	* disabled the KConfObject version check for now (useless, however)
+	* lame (temporary) solution to the inversion problem ("Espagnol idioma"
+		isn't correct, whether "English language" is
+
 1999-01-12  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
 
 	* Added HP9000 keyboard codes map thanks to Petter Reinholdtsen

@@ -145,7 +145,7 @@ KiKbdApplication::KiKbdApplication(int n, char**v)
   signal(SIGUSR1, emptyHandler);
   signal(SIGUSR2, emptyHandler);
   oldXerrorHandler = XSetErrorHandler(xerrorHandler);
-  /** sheduling configuration load
+  /** scheduling configuration load
    */
   QTimer::singleShot(configDelay, this, SLOT(loadConfig()));
 }
@@ -159,7 +159,7 @@ void KiKbdApplication::sendCommand(Atom atom)
 {
   Window win = findKiKbdWindow();
   if(!win) {
-    cerr << "Can not send command to running kikbd" << endl;
+    cerr << "Cannot send command to running kikbd" << endl;
     return;
   }
   
@@ -237,7 +237,7 @@ void KiKbdApplication::loadConfig()
   /**
      this is configurations object
   */
-  KiKbdConfig kikbdConfig;
+  KiKbdConfig kikbdConfig(FALSE);
   /**
      adding class input
   */
@@ -452,7 +452,7 @@ void KiKbdApplication::loadConfig()
 
   if(isInit) {
     /**
-       Take care about session menagment
+       Take care about session management
     */
     topWidget = new QWidget();
     setTopWidget(topWidget);

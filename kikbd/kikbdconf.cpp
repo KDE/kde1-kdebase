@@ -160,7 +160,7 @@ public:
 KiKbdConfig::KiKbdConfig(bool readOnly)
   :KObjectConfig(UserFromSystemRc, 0L, readOnly)
 {
-  setVersion(1.0);
+  setVersion(1);
   *this << setGroup(confMainGroup)
 	<< new KConfigBoolObject(confStringHotList, hotList)
 	<< new KConfigBoolObject(confStringBeep, keyboardBeep)
@@ -192,8 +192,8 @@ KiKbdConfig::KiKbdConfig(bool readOnly)
 				  sizeof(autoStartPlaceLabels)
 				  /sizeof(*autoStartPlaceLabels));
   connect(this, SIGNAL(newUserRcFile()), SLOT(newUserRc())); 
-  connect(this, SIGNAL(olderVersion(float)) , SLOT(olderVersion(float))); 
-  connect(this, SIGNAL(newerVersion(float)) , SLOT(newerVersion(float))); 
+  connect(this, SIGNAL(wrongVersion(int)) , SLOT(wrongVersion(int))); 
+  //CT connect(this, SIGNAL(newerVersion(float)) , SLOT(newerVersion(float))); 
   maps.setAutoDelete(TRUE);
   allMaps.setAutoDelete(TRUE);
 }
@@ -204,31 +204,31 @@ void KiKbdConfig::loadConfig()
 }
 void ask(const char* msg)
 {
-  if(!KiKbdConfig::isConfigProgram()) {
-    if(KiKbdMsgBox::yesNo(gettext("%s\nDo you want to start "
-				  "Configuration?"), msg)) {
+  if(!KiKbdConfig::isConfigProgram()) 
+  {
+    if(KiKbdMsgBox::yesNo(gettext("%s\nDo you want to configure now?"),
+			  msg))
       KiKbdConfig::startConfigProgram();
-    }
-  } else KiKbdMsgBox::warning(msg);
+  } 
+  else KiKbdMsgBox::warning(msg);
 }
 void KiKbdConfig::newUserRc()
 {
-  ask(gettext("Your configuration is empty. Install system default."));
+  ask(gettext("You're using \"International Keyboard\" for the first time."
+	      "\nI installed a number of default settings."));
 }
+//CT 17Jan1999 - rewritten
 int doneCheck = FALSE;
-void KiKbdConfig::olderVersion(float)
+void KiKbdConfig::wrongVersion(int how)
 {
   if(!doneCheck) {
-    ask(gettext("Configuration file you have has older format than expected.\n"
-		"Some settings may be incorrect."));
-    doneCheck = TRUE;
-  }
-}
-void KiKbdConfig::newerVersion(float)
-{
-  if(!doneCheck) {
-    ask(gettext("Configuration file you have has newer format than expected.\n"
-		"Some settings may be incorrect."));
+    QString tmp = "Your present configuration file uses a" ;
+    if ( how < 0 )
+      tmp = tmp + "n older ";
+    else 
+      tmp =tmp + " newer ";
+    tmp = tmp +  "format than needed.\nSome settings may be incorrect.";
+    ask(gettext(tmp));
     doneCheck = TRUE;
   }
 }
@@ -419,9 +419,25 @@ const QString KiKbdMapConfig::getInfo() const
 const QString KiKbdMapConfig::getGoodLabel() const
 {
   QString label;
-  label = language + " " + i18n("language");
-  if(!charset.isEmpty()) label += ", " + charset + " " + i18n("charset");
+  //CT 18Jan1999 - temporary solution for the inversion thing 
+  //      (where "Espagnol idioma" isn't right but "English language" is)
+  //  label = language + " " + i18n("language");
+  //  if(!charset.isEmpty()) label += ", " + charset + " " + i18n("charset");
+  //  return label + ".";
+  label = i18n("Language");
+  label += ": ";
+  label += language;
+  label += ". ";
+  label += i18n("Charset");
+  label += ": ";
+  if (charset.isEmpty())
+    label += i18n("default");
+  else
+    label += charset;
   return label + ".";
+  //CT don't ask me why the compiler had me to do this lame concatenation
+  //   this way. Perhaps because it evaluates from left to right. I could
+  //   have used QString::prepend()
 }
 const QColor KiKbdMapConfig::getColor() const
 {

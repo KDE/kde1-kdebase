@@ -156,7 +156,7 @@ class KObjectConfig: public QObject {
   bool                 deleteConfig;
   bool                 readOnly;
   short                configType;
-  float                version;
+  int                  version;
  protected:
    void                init();
    void                initConfig();
@@ -225,8 +225,8 @@ class KObjectConfig: public QObject {
      (disabled by default). Version number follow the standart convension:
      major number before dot, minor number after dot.
   */
-  void  setVersion(float v) {version = v;}
-  float getVersion() const {return version;}
+  void  setVersion(int v) {version = v;}
+  int getVersion() const {return version;}
   friend KObjectConfig& operator<<(KObjectConfig& config, KConfigObject* obj) {
     return config.registerObject(obj), config;
   }
@@ -259,12 +259,18 @@ class KObjectConfig: public QObject {
       readed file major version older then expected. Only integer part compared
       @param fileVersion version of readed configuration
   */
-  void olderVersion(float fileVersion);
+  //  void olderVersion(float fileVersion);
   /** This signal is emited when version control enabled by setVersion and
       readed file version newer then expected. Only integer part compared
       @param fileVersion version of readed configuration
   */
-  void newerVersion(float fileVersion);
+  //  void newerVersion(float fileVersion);
+  /** This signal is emited when version control enabled by setVersion and
+      the one read file version is not the expected on. 
+      Only integer part compared
+      @param fileVersion version of read configuration
+  */
+  void wrongVersion(int fileVersion);
   /** Object who whants to know about configuration changes should
       connect to this signal
   */

@@ -104,7 +104,7 @@ KObjectConfig::KObjectConfig(KConfigBase* config, bool autoDelete)
   config       = config;
   configFile   = 0L;
   configType   = External;
-  version      = -1.0;
+  version      = -1;
   readOnly     = FALSE;
 }
 KObjectConfig::KObjectConfig(int type, const char* name, bool rdOnly)
@@ -112,7 +112,7 @@ KObjectConfig::KObjectConfig(int type, const char* name, bool rdOnly)
   init();
   configType = type;
   configFile = name;
-  version      = -1.0; //CT 07Jan1999 - fix for segfault on Alphas
+  //version      = -1; //CT 07Jan1999 - fix for segfault on Alphas
   readOnly   = rdOnly;
 }
 KObjectConfig::~KObjectConfig(){if(deleteConfig && config) delete config;}
@@ -209,12 +209,15 @@ void KObjectConfig::loadConfig()
 	entries.at(j)->readObject(this);
       }
   }
-  if(version >= 0.0) {
+  /*CT 17Jan1999 - completely unneeded for the moment and very cumbersome
+                   take it out
+  if(version >= 0) {
     config->setGroup(configGroup);
-    double newversion = config->readDoubleNumEntry(configVersion, 0.0);
-    if(int(newversion) > int(version)) emit newerVersion(newversion);
-    else if(int(newversion) < int(version)) emit olderVersion(newversion);
+    int newversion = config->readNumEntry(configVersion, 1);
+    if (newversion != version) 
+      emit wrongVersion(newversion - version);
   }
+  */
 }
 void KObjectConfig::saveConfig()
 {
@@ -230,9 +233,9 @@ void KObjectConfig::saveConfig()
       if(groups.at(i) == entries.at(j)->group)
 	entries.at(j)->writeObject(this);
   }
-  if(version >= 0.0) {
-    QString str(6);
-    str.sprintf("%2.2f", version);
+  if(version >= 0) {
+    QString str;
+    str.sprintf("%2.1f", version);
     config->setGroup(configGroup);
     config->writeEntry(configVersion, str);
   }

@@ -119,8 +119,10 @@ class KiKbdConfig: public KObjectConfig {
   static bool     isConfigProgram();
  public slots:
   void newUserRc();
-  void olderVersion(float);
-  void newerVersion(float);
+ //CT 17Jan1999
+ //  void olderVersion(float);
+ //  void newerVersion(float);
+ void wrongVersion(int);
 };
 extern KiKbdConfig *kikbdConfig;
 
