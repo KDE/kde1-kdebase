@@ -41,24 +41,28 @@ void KFMPaths::initPaths()
   *desktopPath = config->readEntry( "Desktop", *desktopPath);
   if ( desktopPath->right(1) != "/")
     *desktopPath += "/";
+  *desktopPath = QDir::cleanDirPath( *desktopPath );
   
   // Templates Path
   *templatePath = *desktopPath + "Templates/";
   *templatePath = config->readEntry( "Templates" , *templatePath);
   if ( templatePath->right(1) != "/")
     *templatePath += "/";
+  *templatePath = QDir::cleanDirPath( *templatePath );
 
   // Autostart Path
   *autostartPath = *desktopPath + "Autostart/";
   *autostartPath = config->readEntry( "Autostart" , *autostartPath);
   if ( autostartPath->right(1) != "/")
     *autostartPath += "/";
+  *autostartPath = QDir::cleanDirPath( *autostartPath );
 
   // Trash Path
   *trashPath = *desktopPath + "Trash/";
   *trashPath = config->readEntry( "Trash" , *trashPath);
-  if ( autostartPath->right(1) != "/")
-    *autostartPath += "/";
+  if ( trashPath->right(1) != "/")
+    *trashPath += "/";
+  *trashPath = QDir::cleanDirPath( *trashPath );
   
   cachePath->sprintf(_PATH_TMP"/kfm-cache-%i", (int)getuid() );
 
