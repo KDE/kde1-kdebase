@@ -1,7 +1,7 @@
 
 data_DATA = 3floppy_mount.xpm 3floppy_unmount.xpm 5floppy_mount.xpm \
 	5floppy_unmount.xpm binary.xpm blockdevice.xpm c_src.xpm \
-	cdrom_mount.xpm cdrom_unmount.xpm chardevice.xpm closed.xpm \
+	cdrom_mount.xpm cdrom_unmount.xpm chardevice.xpm \
 	core.xpm document.xpm dvi.xpm exec.xpm f_src.xpm folder.xpm \
 	font.xpm gf.xpm h_src.xpm html.xpm image.xpm info.xpm \
 	java_src.xpm kfm_fulltrash.xpm kfm_home.xpm kfm_trash.xpm \
