@@ -21,7 +21,7 @@ bin_SCRIPTS = kfmsu kfmsu2 startkde kde unpack
 bin_PROGRAMS = kfm
 
 kfm_SOURCES =	\
-	kfmgui.cpp kfmview.cpp kbind.cpp main.cpp htmlopts.cpp \
+	kfmgui.cpp kfmview.cpp kbind.cpp main.cpp \
 	kfmdlg.cpp bookmark.cpp kfmprops.cpp kfmserver_ipc.cpp \
 	kfmserver_ipc2.cpp kfmserver.cpp kioserver.cpp kioserver_ipc.cpp \
 	kioserver_ipc2.cpp kfmipc.cpp root.cpp kfmman.cpp kiojob.cpp \
@@ -31,7 +31,7 @@ kfm_SOURCES =	\
 	open-with.cpp finddlg.cpp kcookiejar.cpp kcookiewin.cpp popup.cpp kintlist.cpp
 
 noinst_HEADERS =  \
-	kfmgui.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h htmlopts.h \
+	kfmgui.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h \
 	kfmprops.h kfmserver_ipc.h kioserver.h kioserver_ipc.h kfmipc.h \
 	kfmserver.h kfmman.h kiojob.h htmlcache.h kfmtree.h \
 	krenamewin.h passworddialog.h kURLcompletion.h utils.h kfm.h \
@@ -40,7 +40,7 @@ noinst_HEADERS =  \
 	kstrlist.h cgi.h kbookmarkdlg.h kintlist.h
 
 BUILT_SOURCES =	\
-	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc htmlopts.moc \
+	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc \
 	kfmprops.moc kfmserver_ipc.moc kfmserver.moc kioserver.moc \
 	kioserver_ipc.moc kfmman.moc kiojob.moc htmlcache.moc \
 	kfmtree.moc krenamewin.moc passworddialog.moc kURLcompletion.moc \
@@ -69,10 +69,6 @@ kURLcompletion.moc: kURLcompletion.h
 kfmserver.cpp:kfmserver.moc
 kfmserver.moc: kfmserver.h
 	$(MOC) kfmserver.h -o kfmserver.moc
-
-htmlopts.cpp:htmlopts.moc
-htmlopts.moc: htmlopts.h
-	$(MOC) htmlopts.h -o htmlopts.moc
 
 kiojob.cpp:kiojob.moc
 kiojob.moc: kiojob.h
