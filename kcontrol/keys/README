@@ -1,0 +1,6 @@
+CHANGES V0.2
+- Global keys stored by default in .kderc [Global Keys] group
+- KKeyDialog checks new key choices against exising bindings for the widget
+and against entries in .kderc [Global Keys]
+- kcmkeys now has two standard kcontrol pages - one for standard desktop
+accelerators and one for global keybindings. 

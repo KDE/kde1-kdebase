@@ -62,10 +62,12 @@ private:
 
   void GetSettings( void );
 
-  int getElectricBorders( void );
+  bool getElectricBorders( void );
+  int getElectricBordersDelay();
   bool getElectricBordersMovePointer( void );
 
-  void setElectricBorders( int );
+  void setElectricBorders( bool );
+  void setElectricBordersDelay( int );
   void setElectricBordersMovePointer( bool );
 
   //CT 15mar98 - magics

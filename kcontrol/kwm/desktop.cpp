@@ -37,7 +37,8 @@
 
 // kwm config keywords
 #define KWM_ELECTRIC_BORDER                  "ElectricBorder"
-#define KWM_ELECTRIC_BORDER_MOVE_POINTER     "ElectricBorderMovePointer"
+#define KWM_ELECTRIC_BORDER_DELAY                  "ElectricBorderNumberOfPushes"
+#define KWM_ELECTRIC_BORDER_MOVE_POINTER     "ElectricBorderPointerWarp"
 
 //CT 15mar 98 - magics
 #define KWM_BRDR_SNAP_ZONE                   "BorderSnapZone"
@@ -80,15 +81,15 @@ KDesktopConfig::KDesktopConfig (QWidget * parent, const char *name)
   movepointer = new 
     QCheckBox(klocale->translate("Move pointer towards center after switch"),ElectricBox);
 
-  delayslider = new KSlider(0,3000,100,0, KSlider::Horizontal, ElectricBox);
-  delayslider->setSteps(100,100);
+  delayslider = new KSlider(0,100,10,0, KSlider::Horizontal, ElectricBox);
+  delayslider->setSteps(10,10);
 
   delaylabel = 
     new QLabel(klocale->translate("Dekstop switch delay:"), ElectricBox);
   delaylcd = new QLCDNumber (5, ElectricBox);
   delaylcd->setFrameStyle( QFrame::NoFrame );
 
-  sec = new QLabel(klocale->translate("ms"),ElectricBox );
+  sec = new QLabel("", ElectricBox );
   connect( delayslider, SIGNAL(valueChanged(int)), delaylcd, SLOT(display(int)) );
   delaylcd->adjustSize();
   delaylabel->adjustSize();
@@ -145,12 +146,13 @@ void KDesktopConfig::setEBorders(){
 
 }
 
-int KDesktopConfig::getElectricBorders()
+bool KDesktopConfig::getElectricBorders()
 {
-  if (enable->isChecked())
+  return  enable->isChecked();
+}
+
+int KDesktopConfig::getElectricBordersDelay(){
     return delayslider->value();
-  else
-    return -1;
 }
 
 bool KDesktopConfig::getElectricBordersMovePointer()
@@ -173,27 +175,16 @@ void KDesktopConfig::setElectricBordersMovePointer(bool move){
 
 }
 
-void KDesktopConfig::setElectricBorders(int delay)
+void KDesktopConfig::setElectricBorders(bool b){
+    enable->setChecked(b);
+    setEBorders();
+}
+
+void KDesktopConfig::setElectricBordersDelay(int delay)
 {
-  if (delay == -1)
-  {
-    enable->setChecked(false);
-    movepointer->setEnabled(false);
-    delayslider->setValue(0);
-    delaylcd->display(0);
-    
-  }
-  else
-  {
-    enable->setChecked(TRUE);
-    movepointer->setEnabled(true);
-    movepointer->setChecked(true);
     delayslider->setValue(delay);
     delaylcd->display(delay);
-  }
-
-  setEBorders();
-
+    
 }
 
 
@@ -226,16 +217,16 @@ void KDesktopConfig::GetSettings( void )
   config->setGroup( "General" );
 
   v = config->readNumEntry(KWM_ELECTRIC_BORDER);
-  setElectricBorders(v);
+  setElectricBorders(v != -1);
+  
+  v = config->readNumEntry(KWM_ELECTRIC_BORDER_DELAY);
+  setElectricBordersDelay(v);
 
   //CT 17mar98 re-allign this reading with the one in kwm  ("on"/"off")
+  // matthias: this is obsolete now. Should be fixed in 1.1 with NoWarp, MiddleWarp, FullWarp
   key = config->readEntry(KWM_ELECTRIC_BORDER_MOVE_POINTER);
-  if (key == "on") setElectricBordersMovePointer(TRUE);
-  else if (key == "off") setElectricBordersMovePointer(FALSE);
-  else {
-    setElectricBordersMovePointer(FALSE);
-    config->writeEntry(KWM_ELECTRIC_BORDER_MOVE_POINTER,"off");
-  }
+  if (key == "MiddleWarp") 
+    setElectricBordersMovePointer(TRUE);
 
   //CT 15mar98 - magics
   v = config->readNumEntry(KWM_BRDR_SNAP_ZONE);
@@ -256,11 +247,17 @@ void KDesktopConfig::SaveSettings( void )
   bool bv;
   config->setGroup( "General" );
 
-  v = getElectricBorders();
-  config->writeEntry(KWM_ELECTRIC_BORDER,v);
+  v = getElectricBordersDelay()>10?80*getElectricBordersDelay():800;
+  if (getElectricBorders())
+    config->writeEntry(KWM_ELECTRIC_BORDER,v);
+  else
+    config->writeEntry(KWM_ELECTRIC_BORDER,-1);
+
+
+  config->writeEntry(KWM_ELECTRIC_BORDER_DELAY,getElectricBordersDelay());
 
   bv = getElectricBordersMovePointer();
-  config->writeEntry(KWM_ELECTRIC_BORDER_MOVE_POINTER,bv?"on":"off");
+  config->writeEntry(KWM_ELECTRIC_BORDER_MOVE_POINTER,bv?"MiddleWarp":"FullWarp");
 
   config->sync();
 
