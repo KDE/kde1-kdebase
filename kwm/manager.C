@@ -274,7 +274,7 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
   c = getClient(e->window);
 
   if (c && c->window == e->window) { // client already exists for this window
-
+    
     int x = c->geometry.x();
     int y = c->geometry.y();
     int dx = c->geometry.width();
@@ -412,7 +412,7 @@ void Manager::mapRequest(XMapRequestEvent *e){
 void Manager::unmapNotify(XUnmapEvent *e){
     Client *c;
     c = getClient(e->window);
-    if (c && c->window == e->window) {
+    if (c && c->window == e->window && c->winId() == e->event) {
       XGrabServer(qt_xdisplay());
       XEvent ev;
       Bool reparented;
@@ -845,11 +845,12 @@ void Manager::shapeNotify(XShapeEvent *e){
 void Manager::reparentNotify(XReparentEvent* e){
   // if sombody else reparents a window which is managed by kwm, we
   // have to give it free.
+  Client* ec = getClient(e->event);
+  if (!ec)
+    return;
   Client* c = getClient(e->window);
-  Client* p = getClient(e->parent);
-  if (c && c != p){
-    withdraw(c, true);
-  }
+  if (c && c==ec && e->parent != ec->winId())
+    withdraw(c);
 }
 
 // notification of pointer movements
@@ -1726,7 +1727,7 @@ void Manager::manage(Window w, bool mapped){
   c->setLabel();
 
 #ifdef DEBUG_EVENTS_ENABLED
-  printf("client %p with Window %ld has title '%s'\n", c, c->window, c->label.data());
+  printf("client %p with Window %ld and WinId %d has title '%s'\n", c, c->window, c->winId(), c->label.data());
 #endif
 
   doGlobalDecorationAndFocusHints(c);
@@ -1937,7 +1938,7 @@ void Manager::manage(Window w, bool mapped){
 
 // put the client in withdraw state (which means it is not managed any
 // longer)
-void Manager::withdraw(Client* c,  bool do_not_give_free_if_still_managed){
+void Manager::withdraw(Client* c){
   DEBUG_EVENTS2("widthdraw client", c,c->window)
   KWM::moveToDesktop(c->window, 0);
 
@@ -1963,11 +1964,6 @@ void Manager::withdraw(Client* c,  bool do_not_give_free_if_still_managed){
     if (wins[i] == c->window){
       // we still manage it => do reparenting 
       DEBUG_EVENTS2("widthdraw we still manage => do reparenting", c,c->window)
-      if (do_not_give_free_if_still_managed){
-	DEBUG_EVENTS2("nope, do not! return", c,c->window)
-                XFree((void *) wins);   
-	return;
-      } 
       gravitate(c, true);
       XUnmapWindow(qt_xdisplay(), c->window);
       XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(), 
@@ -2327,7 +2323,6 @@ void Manager::switchDesktop(int new_desktop){
 void Manager::sendConfig(Client* c, bool emit_changed){
   XConfigureEvent ce;
 
-  printf("********sendconfig\n");
   if (c->isShaded()){
     c->setGeometry(c->geometry.x(), c->geometry.y(),
 		   c->geometry.width(), 2*BORDER+TITLEBAR_HEIGHT);
@@ -2335,8 +2330,7 @@ void Manager::sendConfig(Client* c, bool emit_changed){
   else {
     c->setGeometry(c->geometry);
   }
-  printf("********sendconfig continue\n");
-  
+
   setQRectProperty(c->window, kwm_win_frame_geometry, c->geometry);
 
   ce.type = ConfigureNotify;

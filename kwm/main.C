@@ -1635,6 +1635,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
     break;
   case UnmapNotify:
     DEBUG_EVENTS("UnmapNotify", ev->xunmap.window)
+    DEBUG_EVENTS("UnmapNotifyEvent", ev->xunmap.event)
     manager->unmapNotify(&ev->xunmap);
     if (ev->xunmap.window != ev->xunmap.event){
       return true;
