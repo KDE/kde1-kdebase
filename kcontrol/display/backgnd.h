@@ -205,7 +205,7 @@ private:
   QLabel *timerLabel;
   QListBox *listBox;
   QList<QString> list;
-  QRadioButton *orderButton;
+  QCheckBox *orderButton;
 
   QCheckBox *dirCheckBox;
   QLineEdit *dirLined;
@@ -298,11 +298,12 @@ protected:
 
   QListBox     *deskListBox;
 
-  QRadioButton *oneDesktopButton;
-  QRadioButton *dockButton;
+  QCheckBox *oneDesktopButton;
+  QCheckBox *dockButton;
+  QCheckBox *randomButton;
+
   QRadioButton *rbPattern;
   QRadioButton *rbGradient;
-  QRadioButton *randomButton;
 
   KColorButton *colButton1;
   KColorButton *colButton2;

@@ -181,7 +181,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	
   groupLayout->addWidget( renameButton, 10 );
 
-  oneDesktopButton = new QRadioButton( i18n("&Common Background"), group );
+  oneDesktopButton = new QCheckBox( i18n("&Common Background"), group );
   oneDesktopButton->adjustSize();
   oneDesktopButton->setFixedHeight( oneDesktopButton->height() );
   oneDesktopButton->setMinimumWidth( oneDesktopButton->width() );
@@ -351,7 +351,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   pushLayout = new QHBoxLayout( 5 ); 
   groupLayout->addLayout( pushLayout );
 
-  randomButton = new QRadioButton( i18n("Ra&ndom"), group );
+  randomButton = new QCheckBox( i18n("Ra&ndom"), group );
   randomButton->adjustSize();
   randomButton->setFixedHeight( randomButton->height() );
   randomButton->setMinimumWidth( randomButton->width() );
@@ -368,7 +368,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 
   pushLayout->addWidget( randomSetupButton, 5 );
 
-  dockButton = new QRadioButton( i18n("&Dock into kpanel"), group );
+  dockButton = new QCheckBox( i18n("&Dock into kpanel"), group );
   dockButton->setChecked( docking );
   dockButton->setFixedHeight( dockButton->sizeHint().height() );
   dockButton->setChecked( docking );
@@ -1682,7 +1682,7 @@ KRandomDlg::KRandomDlg(int _desktop, KBackground *_kb, char *name)
   pushLayout->addWidget( timerLined, 5 );
   pushLayout->addStretch( 5 );
 
-  orderButton = new QRadioButton( i18n("In &order"), this );
+  orderButton = new QCheckBox( i18n("In &order"), this );
   orderButton->setChecked( inorder );
   orderButton->setFixedHeight( orderButton->sizeHint().height() );
   orderButton->setFixedWidth( orderButton->sizeHint().width() );
