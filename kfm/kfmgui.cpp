@@ -738,13 +738,21 @@ void KfmGui::openFilteredURL ( const char * _url )
         // Exit if the user did not enter a URL
         if ( url.isEmpty() )
 	        return;
+        // If url starts with // and contains no '~',
+        // clean it up so kfm can behave much like
+        // a normal shell would. (Dawit A.)
+        if ( url.find("//") == 0 && url.find ('~') == -1 )
+           url = QDir:: cleanDirPath (url.data());
         // Strip off "file:/" in order to properly
         // expand local URLs when necessary.
-        if ( url.find ("file:/") == 0 )
+        if ( url.find ("file:") == 0 )
         {
-            url.remove (0, 6);
-            if ( url.isEmpty() )
-                url = "/";
+           url.remove ( 0, 5 );
+           // Home directory preceeded by "file:/" or "file://"
+           if ( url.find("/~") == 0 || url.find("//~") == 0 )
+              url.remove( 0, url.find('~') );
+           else
+              url = QDir:: cleanDirPath (url.data());
         }
         // Home directory?
         if ( url.find ( QRegExp ( "^~.*" ) ) == 0 )
