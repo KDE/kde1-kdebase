@@ -107,7 +107,7 @@ msgstr "Huitième"
 
 #: main.C:566
 msgid "Unnamed Desktop"
-msgstr ""
+msgstr "Bureau sans nom"
 
 #: main.C:875
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
