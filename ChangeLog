@@ -1,3 +1,12 @@
+1998-03-05  Stephan Kulow  <coolo@kde.org>
+
+	* configure.in: sorted the Makefile entries alphabeticly (and all 
+	together: we love xemacs! we love xemacs! ;)
+	
+	* configure.in: added sk 
+
+	* acinclude.m4.in: substitute x_libraries to fix the empty -rpath
+	
 1998-03-03  Stephan Kulow  <coolo@kde.org>
 
 	* acinclude.m4.in: add a rpath for every shared library, that is 
