@@ -851,7 +851,12 @@ const char* KFolderType::getPixmapFile( const char *_url, bool _mini )
 	// Torben: Thanks!
         ep=readdir( dp );
         ep=readdir( dp );      // ignore '.' and '..' dirent
-        if ( readdir( dp ) == 0L ) // third file is NULL entry -> empty directory
+	ep=readdir( dp );      
+	bool empty = (ep == 0); // no third file
+	// or third file is .directory and no fourth file
+	if (!empty && !strcmp(ep->d_name, ".directory")) 
+	    empty = (readdir(dp) == 0L);
+	if ( empty ) // empty directory
         {
            pixmapFile2 = getIconPath( "kfm_trash.xpm", _mini );
 	   closedir( dp );

@@ -142,3 +142,7 @@
     on the desktop
   - copy a .directory file in the created Desktop directories
 
+10.01.98 Stephan
+
+  - take care of .directory, when calculating if Trash is empty
+
