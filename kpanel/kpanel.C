@@ -17,7 +17,7 @@
 #define DEFAULT_BOX_WIDTH 45
 
 /* 1 is the initial speed, hide_show_animation is the top speed. */
-#define PANEL_SPEED(x, c) (int)((1.0-2.0*fabs((x)-(c)/2.0)/c)*hide_show_animation+1.0) 
+#define PANEL_SPEED(x, c) (int)((1.0-2.0*fabs((x)-(c)/2.0)/c)*hide_show_animation+1.0)
 
 extern void execute(const char*);
 
@@ -1142,7 +1142,6 @@ void kPanel::launchSwallowedApplications(){
 }
 
 
-
 void kPanel::show(){
   if (!panelCurrentlyHidden) {
      QFrame::show();
@@ -1168,6 +1167,9 @@ void kPanel::hidePanel(){
   Bool old = panelHidden[currentDesktop];
 
   panelHidden[currentDesktop] = True;
+  
+  if (in_animation)
+      return;
 
   if (!panelCurrentlyHidden){
     QPoint p = pos();
@@ -1193,6 +1195,7 @@ void kPanel::hidePanel(){
 
     QRect geom = geometry();
     in_animation = true;
+
     if (orientation == vertical) {
       for (int i = 0; i<geom.height(); i+=PANEL_SPEED(i,geom.height())){
 	    move(geom.x(), geom.y()-i);
@@ -1219,6 +1222,12 @@ void kPanel::hidePanel(){
     doGeometry();
     layoutTaskbar (); //geometry changed
    }
+  
+  if (!panelHidden[currentDesktop]){
+     showPanel();
+     return;
+  }
+  
   if (old != panelHidden[currentDesktop]){
     KConfig *config = KApplication::getKApplication()->getConfig();
     config->setGroup("kpanel");
@@ -1234,9 +1243,13 @@ void kPanel::hidePanel(){
 void kPanel::showPanel(){
   Bool old = panelHidden[currentDesktop];
 
+  panelHidden[currentDesktop] = False;
+  if (in_animation)
+      return;
+
   panel_button_frame_standalone->hide();
 
-  panelHidden[currentDesktop] = False;
+
   if (panelCurrentlyHidden){
     panelCurrentlyHidden = False;
     raise();
@@ -1265,6 +1278,11 @@ void kPanel::showPanel(){
   hideMiniPanel();
   doGeometry();
   layoutTaskbar();
+
+  if (panelHidden[currentDesktop]){
+     hidePanel();
+     return;
+  }
 
   if (old != panelHidden[currentDesktop]){
     KConfig *config = KApplication::getKApplication()->getConfig();
