@@ -549,9 +549,9 @@ void KScreenSaver::apply( bool force )
 
 		if( lock ) {
 			lock1 = "-lock";
-			lock2 = (allowRoot) ? "-allow-root" : 0;
+			lock2 = (allowRoot) ? (char *)"-allow-root" : 0;
 		} else {
-			lock1 = (allowRoot) ? "-allow-root" : 0;
+			lock1 = (allowRoot) ? (char *)"-allow-root" : 0;
 			lock2 = 0;
 		}
 
