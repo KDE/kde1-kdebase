@@ -211,12 +211,10 @@ msgid "Save Settings for this &URL"
 msgstr "Lagre innstillinger for denne &URL"
 
 #: kfmgui.cpp:416
-#, fuzzy
 msgid "&Configure Browser..."
-msgstr "&Bla gjennom..."
+msgstr "&Konfigurer nettlos..."
 
 #: kfmgui.cpp:452
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -238,7 +236,8 @@ msgstr ""
 "\n"
 "Proxy-behandler ved Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de\n"
-"Feilrapporter og programfikser sendes til David Faure\n"
+"\n"
+"Gjeldende vedlikeholder: David Faure\n"
 "faure@kde.org"
 
 #: kfmgui.cpp:465

@@ -434,7 +434,7 @@ msgstr "&La ikke-KDE-programmer bruke stil"
 
 #: general.cpp:258
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "&Menylinjer øverst på skjermen i MacOS-stil"
 
 #: general.cpp:273
 msgid "Desktop fonts"
