@@ -1,3 +1,10 @@
+* Sun Oct 25 9:17:00 CEST 1998  Antonio Larrosa <larrosa@kde.org>
+
+Arrows dissapear when not needed now
+A new 2-row mode for people used to the traditional kpanel arrangement of desktops
+
+
+
 * Fri Oct 16 7:15:00 CEST 1998  Antonio Larrosa <larrosa@kde.org>
 
 Fixed a memory leackage bug 

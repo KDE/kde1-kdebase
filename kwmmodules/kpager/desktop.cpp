@@ -25,7 +25,8 @@
 #include <qpainter.h>
 #include <stdio.h>
 
-#define DESKTOPDEBUG
+//#define DESKTOPDEBUG
+//#define ALLOWSELFPICTURE
 
 Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
     : QWidget(parent,_name) , QDropSite(this)
@@ -853,9 +854,10 @@ void Desktop::grabDesktop(void)
 
 void Desktop::grabWindowContents(WindowProperties *wp)
 {
+#ifndef ALLOWSELFPICTURE
     if (wp->id==(KApplication::getKApplication())->mainWidget()->winId())
     {
-        /* I don't like recursive pixmaps */
+        // I don't like recursive pixmaps 
 #ifdef DESKTOPDEBUG
         printf("grabselfWin\n");
 #endif
@@ -869,6 +871,8 @@ void Desktop::grabWindowContents(WindowProperties *wp)
 #endif
         return;
     }
+#endif
+
     if ((!desktopActived)&&(!KWM::isSticky(wp->id)))
     {
         return;

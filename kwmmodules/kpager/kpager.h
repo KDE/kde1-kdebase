@@ -61,6 +61,7 @@ public slots:
 
     void options_toggleMenuBar();
     void options_toggleGlobalDesktop();
+    void options_2Rows();
     void options_drawPlain();
     void options_drawIcon();
     void options_drawPixmap();

@@ -42,6 +42,7 @@ KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const 
 */
 
     kwmmapp=_kwmmapp;
+    use2Rows=false;
     activedesktop=1;
     move_window_w=0;
     move_window_dsk=-1;
@@ -338,32 +339,91 @@ void KPagerClient::pressedButtonLR()
 
 void KPagerClient::updateRects(bool onlydesktops)
 {
+    if (deltax<0) deltax=0;
     int x=2;
     int y=0;
     int h=height()-10;
-    int w=(h-Desktop::getHeaderHeight())*screenwidth/screenheight;
-    if (visibleGlobalDesktop)
-        desktopContainer->setGeometry(3,5,width()-w-36,h);
+    int w;
+    int i;
+    if (use2Rows)
+        w=((h/2)-Desktop::getHeaderHeight())*screenwidth/screenheight;
     else
-        desktopContainer->setGeometry(3,5,width()-26,h);
+        w=(h-Desktop::getHeaderHeight())*screenwidth/screenheight;
+
+    if (visibleGlobalDesktop)
+        desktopContainer->setGeometry(3,5,width()-w-((areArrowsVisible())?(36):(16)),h);
+    else
+        desktopContainer->setGeometry(3,5,width()-((areArrowsVisible())?(26):(6)),h);
     
     if ((desktopContainer->width()==1)||(desktopContainer->height()==1))
         desktopContainer->hide();
     else if (!desktopContainer->isVisible())
         desktopContainer->show();
 
-        
-    for (int i=1;i<=numberofDesktops;i++)
+    int sizeofScroll=0;
+    if (desktop[numberofDesktops]->x()+desktop[numberofDesktops]->width()<desktopContainer->width()-2)
+        sizeofScroll=desktopContainer->width()-2-(desktop[numberofDesktops]->x()+desktop[numberofDesktops]->width());
+
+    if (desktop[1]->x()+sizeofScroll>2) sizeofScroll=2-desktop[1]->x();
+    deltax-=sizeofScroll;
+    
+    if (use2Rows)
     {
-        if (desktop[i]!=NULL) desktop[i]->setGeometry(x-deltax,y,w,h);
-        x+=w+5;
+        for (i=1;i<=numberofDesktops;i+=2)
+        {
+            if (desktop[i]!=NULL) desktop[i]->setGeometry(x-deltax,y,w,h/2);
+            if (desktop[i+1]!=NULL) desktop[i+1]->setGeometry(x-deltax,y+h/2,w,h/2);
+            x+=w+5;
+        }
+    }
+    else
+    {
+        for (i=1;i<=numberofDesktops;i++)
+        {
+            if (desktop[i]!=NULL) desktop[i]->setGeometry(x-deltax,y,w,h);
+            x+=w+5;
+        }
     }
     maxdeltax=x-5-desktopContainer->width()+2;
+    if (maxdeltax<0) maxdeltax=0;
+    
+#ifdef KPAGERCLIENTDEBUG
+    printf("maxdeltax : %d , x[1] : %d\n",maxdeltax,desktop[1]->x());
+#endif
     
     if (!onlydesktops)
+    {
+        if (((!areArrowsVisible())&&(maxdeltax==0))||((areArrowsVisible())&&(maxdeltax<20)))
+        {
+            if (areArrowsVisible())
+            {
+                right->hide();
+                left->hide();
+                if (visibleGlobalDesktop)
+                    desktopContainer->setGeometry(3,5,width()-w-((areArrowsVisible())?(36):(16)),h);
+                else
+                    desktopContainer->setGeometry(3,5,width()-((areArrowsVisible())?(26):(6)),h);
+            }
+        }
+        else
+        {
+            if (!areArrowsVisible())
+            {
+                right->show();
+                left->show();
+                if (visibleGlobalDesktop)
+                    desktopContainer->setGeometry(3,5,width()-w-((areArrowsVisible())?(36):(16)),h);
+                else
+                    desktopContainer->setGeometry(3,5,width()-((areArrowsVisible())?(26):(6)),h);
+            }
+        }
+
         if (visibleGlobalDesktop)
         {
-            desktop[0]->setGeometry(width()-w-5,5,w,h);
+            if (use2Rows)
+                desktop[0]->setGeometry(width()-w-5,h/4,w,h/2);
+            else
+                desktop[0]->setGeometry(width()-w-5,5,w,h);
             right->setGeometry(width()-w-30,0,20,height()/2);
             left->setGeometry(width()-w-30,height()/2,20,height()/2+1);
         }
@@ -371,7 +431,18 @@ void KPagerClient::updateRects(bool onlydesktops)
         {
             right->setGeometry(width()-20,0,20,height()/2);
             left->setGeometry(width()-20,height()/2,20,height()-height()/2);
-        };
+            /* Note that computationally, height()/2 != height()-height()/2 !!! */
+        }
+    }
+
+/*    int sizeofScroll=0;
+    if (desktop[numberofDesktops]->x()+desktop[numberofDesktops]->width()<desktopContainer->width()-2)
+        sizeofScroll=desktopContainer->width()-2-(desktop[numberofDesktops]->x()+desktop[numberofDesktops]->width());
+
+    if (desktop[1]->x()+sizeofScroll>2) sizeofScroll=2-desktop[1]->x();
+
+    desktopContainer->scroll(sizeofScroll,0);
+*/
 }
 
 void KPagerClient::resizeEvent(QResizeEvent *)
@@ -430,37 +501,57 @@ void KPagerClient::paintEvent(QPaintEvent *)
 //    painter->fillRect(0,0,right->x(),height(),QColor(96,129,137));
     QColorGroup qcg;
     qcg=colorGroup();
+
+    int inix;
+    if (visibleGlobalDesktop)
+        inix=width()-desktop[0]->width()-10;
+    else
+        inix=width();
+    
     if (visibleGlobalDesktop)
     {
-        painter->fillRect(right->x()+right->width(),0,desktop[0]->x(),height(),qcg.background());
+/*        painter->fillRect(right->x()+right->width(),0,desktop[0]->x(),height(),qcg.background());
         painter->fillRect(right->x()+right->width(),0,width()-right->x()-right->width(),desktop[0]->y(),qcg.background());
         painter->fillRect(desktop[0]->x()+desktop[0]->width(),0,width()-desktop[0]->x()-desktop[0]->width(),height(),qcg.background());
         painter->fillRect(right->x()+right->width(),desktop[0]->y()+desktop[0]->height(),width()-right->x()-right->width(),height()-desktop[0]->y()-desktop[0]->height(),qcg.background());
+*/
+        painter->fillRect(inix,0,desktop[0]->x(),height(),qcg.background());
+        painter->fillRect(inix,0,width()-inix,desktop[0]->y(),qcg.background());
+        painter->fillRect(desktop[0]->x()+desktop[0]->width(),0,width()-desktop[0]->x()-desktop[0]->width(),height(),qcg.background());
+        painter->fillRect(inix,desktop[0]->y()+desktop[0]->height(),width()-inix,height()-desktop[0]->y()-desktop[0]->height(),qcg.background());
     }
+
+    /* C++ is the reusable language , let's reuse inix :) */
+
+    if (visibleGlobalDesktop)
+        inix=width()-desktop[0]->width()-(areArrowsVisible()?(30):(10));
+    else
+        inix=width()-(areArrowsVisible()?(20):(0));
+
 
     //    painter->setPen(QColor(236,236,236));
     painter->setPen(qcg.light());
-    painter->drawLine(0,height()-1,right->x()-1,height()-1);
-    painter->drawLine(right->x()-1,0,right->x()-1,height()-1);
+    painter->drawLine(0,height()-1,inix-1,height()-1);
+    painter->drawLine(inix-1,0,inix-1,height()-1);
     //    painter->setPen(QColor(193,193,193));
     painter->setPen(qcg.background());
-    painter->drawLine(1,height()-2,right->x()-2,height()-2);
-    painter->drawLine(right->x()-2,1,right->x()-2,height()-2);
+    painter->drawLine(1,height()-2,inix-2,height()-2);
+    painter->drawLine(inix-2,1,inix-2,height()-2);
     //    painter->setPen(QColor(145,145,145));
     painter->setPen(qcg.mid());
     painter->drawLine(0,0,0,height()-1);
-    painter->drawLine(0,0,right->x()-1,0);
+    painter->drawLine(0,0,inix-1,0);
     //    painter->setPen(QColor(96,96,96));
     painter->setPen(qcg.dark());
     painter->drawLine(1,1,1,height()-2);
-    painter->drawLine(1,1,right->x()-2,1);
+    painter->drawLine(1,1,inix-2,1);
     painter->setPen(QColor(0,0,0));
-    painter->drawRect(2,2,right->x()-4,height()-4);
+    painter->drawRect(2,2,inix-4,height()-4);
     painter->setPen(QColor(96,129,137));
-    painter->drawLine(3,3,right->x()-4,3);
-    painter->drawLine(3,4,right->x()-4,4);
-    painter->drawLine(3,height()-4,right->x()-4,height()-4);
-    painter->drawLine(3,height()-5,right->x()-4,height()-5);
+    painter->drawLine(3,3,inix-4,3);
+    painter->drawLine(3,4,inix-4,4);
+    painter->drawLine(3,height()-4,inix-4,height()-4);
+    painter->drawLine(3,height()-5,inix-4,height()-5);
     delete painter;
 }
 
@@ -489,3 +580,12 @@ void KPagerClient::setDrawMode(int mode)
         if (desktop[i]!=NULL) desktop[i]->setDrawMode(mode);
     }
 }
+
+
+void KPagerClient::toggle2Rows()
+{
+    use2Rows=(use2Rows)?false:true;
+    updateRects();
+    
+}
+

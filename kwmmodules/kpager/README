@@ -19,10 +19,11 @@ in any u**x machine ! . The Pixmap draw mode . Try it !
 TODO
 ----
 
-Get back your menu after hiding it :-)
-Save configuration/position/etc.
+(DONE)A 2 rows mode to people used to kpanel's desktop arrangement
+(DONE)Get back your menu after hiding it :-)
+(DONE)Save configuration/position/etc.
 Help (really needed ?)
-A more useful menu that allows to configure some options like
+(DONE)A more useful menu that allows to configure some options like
    reading kbgndwm configuration, etc.
 Fix the tons of events that kpager receives when the about dialog appears 
 Tooltips to see the name of windows

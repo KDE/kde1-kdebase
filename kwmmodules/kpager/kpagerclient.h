@@ -55,6 +55,7 @@ private:
     
     QWidget *desktopContainer;
     bool visibleGlobalDesktop;
+    bool use2Rows;
     int drawMode;
     
     KTriangleButton *left;
@@ -81,10 +82,13 @@ public:
     virtual void resizeEvent(QResizeEvent *);
 
     void setVisibleGlobalDesktop(bool status);
-    bool isVisibleGlobalDesktop(void) { return visibleGlobalDesktop; };
+    bool isVisibleGlobalDesktop(void) { return visibleGlobalDesktop; }
 
     void setDrawMode(int mode);
-    int getDrawMode(void) { return drawMode; };
+    int getDrawMode(void) { return drawMode; }
+
+    bool areArrowsVisible(void) { return right->isVisible(); }
+    bool is2Rows(void) { return use2Rows; }
     
 public slots:
     void moveRight();
@@ -104,6 +108,9 @@ public slots:
 
     void moveWindow(Window w,int dsk,int x,int y, int origdesk);
     void switchToDesktop(int i);
+    void toggle2Rows();
+
+    
 };
 
 #endif

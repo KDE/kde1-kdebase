@@ -77,17 +77,24 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
     kKeysAccel->readSettings();
 
     m_file = new QPopupMenu;
+    m_file->setCheckable( TRUE );
     m_file->insertItem( i18n("&Quit"), kapp, SLOT(quit()), CTRL+Key_Q );
     m_options = new QPopupMenu;
     if (kpagerclient->isVisibleGlobalDesktop())
         m_options->insertItem(i18n("Hide &Global Desktop"), this, SLOT(options_toggleGlobalDesktop()), Key_0 , 1 );
     else
         m_options->insertItem(i18n("Show &Global Desktop"), this, SLOT(options_toggleGlobalDesktop()), Key_0 , 1 );
+    m_options->setId(0,0);
 
     kKeysAccel->changeMenuAccel(m_options,1, "Toggle Global Desktop");
         
     m_options->insertItem(i18n("Hide &Menubar"), this, SLOT(options_toggleMenuBar()), Key_Space , 2 );
+    m_options->setId(1,1);
+    
     kKeysAccel->changeMenuAccel(m_options,2, "Toggle Menubar");
+    m_options->insertItem(i18n("&2 Rows"), this, SLOT(options_2Rows()));
+    m_options->setId(2,2);
+    m_options->setItemChecked(2,FALSE);
     m_options->insertSeparator();
     m_drawmode = new QPopupMenu;
     m_drawmode->setCheckable( TRUE );
@@ -148,13 +155,13 @@ void KPager::options_toggleGlobalDesktop()
 {
     if (kpagerclient->isVisibleGlobalDesktop())
     {
-        m_options->changeItem(i18n("Show &Global Desktop"), 1);
+        m_options->changeItem(i18n("Show &Global Desktop"), 0);
         kpagerclient->setVisibleGlobalDesktop(false);
     }
     else
     {
         kpagerclient->setVisibleGlobalDesktop(true);
-        m_options->changeItem(i18n("Hide &Global Desktop"), 1);
+        m_options->changeItem(i18n("Hide &Global Desktop"), 0);
     }
 }
 
@@ -177,6 +184,14 @@ void KPager::options_toggleMenuBar()
     }
 
 }
+
+void KPager::options_2Rows()
+{
+    kpagerclient->toggle2Rows();
+    if (kpagerclient->is2Rows()) m_options->setItemChecked(2,TRUE);
+        else m_options->setItemChecked(2,FALSE);
+};
+
 
 void KPager::options_drawPlain()
 {
@@ -212,6 +227,7 @@ void KPager::saveProperties(KConfig *kcfg)
     kcfg->writeEntry("visibleMenuBar",menubar_visible);
     kcfg->writeEntry("visibleGlobalDesktop",kpagerclient->isVisibleGlobalDesktop());
     kcfg->writeEntry("drawMode",kpagerclient->getDrawMode());
+    kcfg->writeEntry("use2Rows",kpagerclient->is2Rows());
 }
 
 void KPager::readProperties(KConfig *kcfg)
@@ -246,4 +262,16 @@ void KPager::readProperties(KConfig *kcfg)
     case 1 : options_drawIcon();break;
     case 2 : options_drawPixmap();break;
     }
+
+    if (kcfg->readBoolEntry("use2Rows"))
+    {
+        if (!kpagerclient->is2Rows())
+            options_2Rows();
+    }
+    else
+    {
+        if (kpagerclient->is2Rows())
+            options_2Rows();
+    }
+        
 }
