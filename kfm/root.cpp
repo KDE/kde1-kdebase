@@ -1422,7 +1422,24 @@ void KRootIcon::paintEvent( QPaintEvent * )
     QPainter p;
     p.begin( this );
   
-    p.setPen( root->labelForeground() );   
+    int ascent = p.fontMetrics().ascent();
+    int descent = p.fontMetrics().descent();
+    int width = p.fontMetrics().width( file.data() );
+
+    QColor fillColor;
+
+    if ( bSelected )
+	fillColor = kapp->selectColor;
+    else
+	fillColor = root->iconBackground();
+
+    p.fillRect( textXOffset-1, textYOffset-ascent-1, width+2,
+	ascent+descent+2, fillColor );     
+    
+    if ( bSelected )
+	p.setPen( kapp->selectTextColor );
+    else
+	p.setPen( root->labelForeground() );   
     
     QFont myfont( font() );
     if ( bIsLink )
@@ -1434,8 +1451,10 @@ void KRootIcon::paintEvent( QPaintEvent * )
     
     if ( bSelected )
     {
-      p.setRasterOp( NotEraseROP );
-      p.fillRect( pixmapXOffset, pixmapYOffset, pixmap->width(), pixmap->height(), blue );
+//      p.setRasterOp( NotEraseROP );
+//      p.fillRect( pixmapXOffset, pixmapYOffset, pixmap->width(), pixmap->height(), blue );
+	QBrush b( kapp->selectColor, Dense4Pattern );
+        p.fillRect( pixmapXOffset, pixmapYOffset, pixmap->width(), pixmap->height(), b );
     }
     
     p.end();
