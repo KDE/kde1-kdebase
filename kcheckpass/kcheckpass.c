@@ -92,7 +92,7 @@ message(const char *fmt, ...)
     /* Not sure what's less portable -- vsyslog or
      * vsnprintf :-/
      */
-#ifndef HAVE_VSNPRINTF
+#ifdef HAVE_VSNPRINTF
     vsnprintf(buffer, sizeof(buffer), fmt, ap);
 #else
     vsprintf(buffer, fmt, ap);
