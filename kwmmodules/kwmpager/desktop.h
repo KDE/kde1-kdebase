@@ -38,6 +38,7 @@ class Desktop : public QFrame {
 
 public:
   Desktop(KWMModuleApplication *a, int id, Pager *parent);
+  ~Desktop() {};
   void activate(bool flag);
   void addWindow(Window);
   void removeWindow(Window);

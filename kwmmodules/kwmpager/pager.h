@@ -30,6 +30,7 @@ class Pager: public QWidget {
 
 public:
   Pager(KWMModuleApplication*);
+  ~Pager() {};
 
 private:
   KWMModuleApplication* kwmmapp;

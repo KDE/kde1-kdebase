@@ -25,13 +25,15 @@
 #include "pager.moc"
 #include "version.h"
 #include "desktop.h"
+#include <kwm.h>
+#include <unistd.h>
 
 Pager::Pager(KWMModuleApplication *a)
 {
   kwmmapp = a;
   kwmmapp -> connectToKWM();
   KWM::setSticky(winId(), true);
-  KWM::setDecoration(winId(), false),
+  // KWM::setDecoration(winId(), false);
   int count = KWM::numberOfDesktops();
   desktops.setAutoDelete(true);
 
