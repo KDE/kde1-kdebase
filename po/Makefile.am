@@ -15,8 +15,8 @@ SV_GMFILES = sv_kfind.gmo sv_kdehelp.gmo sv_kdisplay.gmo sv_kvt.gmo sv_kfm.gmo s
 FR_POFILES = fr_kfind.po  fr_kdehelp.po  fr_kdisplay.po
 FR_GMFILES = fr_kfind.gmo fr_kdehelp.gmo fr_kdisplay.gmo
 
-RU_POFILES = ru_kfind.po  ru_kdehelp.po  ru_kdisplay.po  ru_kvt.po
-RU_GMFILES = ru_kfind.gmo ru_kdehelp.gmo ru_kdisplay.gmo ru_kvt.gmo
+RU_POFILES = ru_kfind.po  ru_kdehelp.po  ru_kdisplay.po  ru_kvt.po  ru_kwm.po  ru_kfontmanager.po ru_klogout.po
+RU_GMFILES = ru_kfind.gmo ru_kdehelp.gmo ru_kdisplay.gmo ru_kvt.gmo ru_kwm.gmo ru_kfontmanger.gmo ru_klogout.gmo
 
 POFILES = $(DE_POFILES) $(CZ_POFILES) $(ES_POFILES) $(SV_POFILES) $(FR_POFILES) $(RU_POFILES)
 GMOFILES= $(DE_GMFILES) $(CZ_GMFILES) $(ES_GMFILES) $(SV_GMFILES) $(FR_GMFILES) $(RU_GMFILES)
