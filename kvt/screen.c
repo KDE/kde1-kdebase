@@ -55,7 +55,7 @@ extern struct sbar_info sbar;
 WindowInfo MyWinInfo;
 ScreenInfo screens[NSCREENS];
 ScreenInfo *cScreen = screens;
-int screenNum = 0, rstyle=0, save_rstyle = 0, focus = 0;
+
 /* Data for save-screen */
 int drow,dcol, save_row, save_col, save_charset_num;
 char save_charset = 'B';
@@ -147,6 +147,8 @@ static paste_internal_selection = 0; /* Matthias */
 
 /* set default rstyle colors */
 #define DEFAULT_RSTYLE (0)
+
+int screenNum = 0, rstyle=DEFAULT_RSTYLE, save_rstyle = DEFAULT_RSTYLE, focus = 0;
 
 extern Colormap	colormap;
 
@@ -381,7 +383,7 @@ void scrn_reset(void)
       for(k=0;k<=MyWinInfo.cwidth;k++)
 	{
 	  displayed_text[j*(MyWinInfo.cwidth+1) + k] = ' ';
-	  displayed_rend[j*(MyWinInfo.cwidth+1) + k] = 0;
+	  displayed_rend[j*(MyWinInfo.cwidth+1) + k] = DEFAULT_RSTYLE;
 	}
     }
   /* Make sure the cursor is on the screen */
@@ -568,12 +570,13 @@ void scr_change_rendition(int mode,int style)
 /*       rstyle = (rstyle & 0x0ff) | (fore_color <<8) | (back_color <<16);   */
 
 
-      if(style == ~0)
+      if(style == ~RS_NONE)
 	{
 	  /* the next two lines where commented out in rxvt-2.08. Why ?? (Matthias) */ 
 	  /* guess I know why now. Matthias */ 
 /*     	  fore_color = 0;     */
 /*     	  back_color = 1;    */
+	  rstyle = DEFAULT_RSTYLE;
 	}
     }
   set_font_style(); 
@@ -1169,6 +1172,7 @@ void scr_erase_line(int mode)
 #ifdef DEBUG
   check_text("erase line");
 #endif
+
   MyWinInfo.offset = 0;
   starttext = &cScreen->text[(cScreen->row+MyWinInfo.saved_lines)*
 			     (MyWinInfo.cwidth+1)];
@@ -1274,7 +1278,14 @@ void scr_erase_screen(int mode)
       x=(j+MyWinInfo.saved_lines-MyWinInfo.offset)*
 	(MyWinInfo.cwidth+1)+a;
       memset(&cScreen->text[x],' ',b-a+1);
-      memset(&cScreen->rendition[x],DEFAULT_RSTYLE,(b-a+1)*RENDSIZE);
+/*       memset(&cScreen->rendition[x],DEFAULT_RSTYLE,(b-a+1)*RENDSIZE); */
+      {
+	/* experimental (Matthias) */ 
+	int i = 0;
+	for (i=0; i<b-a+1; i++){
+	  cScreen->rendition[x+i] = rstyle & ~RS_CURSOR;
+	}
+      }
     }
 } 
 
@@ -2075,7 +2086,7 @@ void screen_refresh()
 	    MyWinInfo.offset + MyWinInfo.cheight -1);
 
    if(d_xcursor < (MyWinInfo.cheight*(MyWinInfo.cwidth+1))) 
-     displayed_rend[d_xcursor] = 255; 
+     displayed_rend[d_xcursor] = 255 | DEFAULT_RSTYLE; 
 
 #ifdef USE_XCOPYAREA
   if((refresh_type != SLOW))
@@ -2277,29 +2288,33 @@ void screen_refresh()
 		    }
 		}
 #ifdef COLOR
-	      if(fore != 0) {
-		if (rval & (RS_RVID | RS_SELECTED | RS_CURSOR)) {
-		  newgcv.background = pixel_colors[fore];
-		  newgcm = GCBackground;
-		} else {
-		  if (color_type == COLOR_TYPE_Linux && rval & RS_BOLD)
-		    newgcv.foreground = pixel_colors[fore+8];
-		  else 
-		    newgcv.foreground = pixel_colors[fore];
-		  newgcm = GCForeground;
+
+	      /* this is a hack because of one byte memset! (Matthias) */
+	      if (back == 0)
+		back = 1;
+	      else if (back == -1)
+		back = 0;
+
+	      if (rval & (RS_RVID | RS_SELECTED | RS_CURSOR)) {
+		newgcv.background = pixel_colors[fore];
+		newgcm = GCBackground;
+	      } else {
+		if (fore >= 2 && color_type == COLOR_TYPE_Linux && rval & RS_BOLD)
+		  newgcv.foreground = pixel_colors[fore+8];
+		else 
+		  newgcv.foreground = pixel_colors[fore];
+		newgcm = GCForeground;
 		}
-	      }
-	      if(back != 0) {
-		if (rval & (RS_RVID | RS_SELECTED | RS_CURSOR)) {
-		  if (color_type == COLOR_TYPE_Linux && rval & RS_BOLD)
-		    newgcv.foreground = pixel_colors[back+8];
-		  else 
-		    newgcv.foreground = pixel_colors[back];
-		  newgcm |= GCForeground; 
-		} else {
-		  newgcv.background = pixel_colors[back];
-		  newgcm |=GCBackground;
-		}
+
+	      if (rval & (RS_RVID | RS_SELECTED | RS_CURSOR)) {
+		if (back >= 2 && color_type == COLOR_TYPE_Linux && rval & RS_BOLD)
+		  newgcv.foreground = pixel_colors[back+8];
+		else 
+		  newgcv.foreground = pixel_colors[back];
+		newgcm |= GCForeground; 
+	      } else {
+		newgcv.background = pixel_colors[back];
+		newgcm |=GCBackground;
 	      }
 
 	      if(newgcm != 0){
@@ -2513,7 +2528,7 @@ scr_fore_color(int color)
       fore_color = color+2;
       rstyle = (rstyle &(0xffff00ff) ) | (fore_color <<8);
     }
-    if (color_type == COLOR_TYPE_Linux) {
+    if (color >= 0 && color_type == COLOR_TYPE_Linux) {
       alloc_color(color+10);
     }
   }  
@@ -2532,6 +2547,13 @@ scr_back_color(int color)
   /*   if((color <0)||(color > 7)) */ /* Matthias */ 
   if((color <-2)||(color > 7))
     return;
+
+  /* this is a hack because of one byte memset! (Matthias) */
+  if (color == -2)
+    color = -1;
+  else if (color == -1)
+    color = -2;
+  
   
   if(colors_loaded[color+2]==1) {
       back_color = color+2;
@@ -2542,7 +2564,7 @@ scr_back_color(int color)
       back_color = color+2;
       rstyle = (rstyle &(0xff00ffff) ) | (back_color <<16);
     }
-    if (color_type == COLOR_TYPE_Linux) {
+    if (color >= 0 && color_type == COLOR_TYPE_Linux) {
       alloc_color(color+10);
     } 
   }
