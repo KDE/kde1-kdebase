@@ -1,5 +1,5 @@
 [KCM Locale]
-Languages=C,cs,da,de,el,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sk,sv,zh,
+Languages=C,cs,da,de,el,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sk,sv,zh_GB2312,zh_TW_Big5,
 
 [ro]
 Name=Romanian
@@ -174,7 +174,12 @@ Name[zh]=克羅埃西亞文
 Name=Slovak
 Name[de]=Slovakisch
 
-[zh]
+[zh_TW_Big5]
 Name=Chinese
 Name[de]=Chinesisch
 Name[zh]=BIG5 中文
+
+[zh_GB2312]
+Name=Simplified Chinese
+Name[de]=Vereinfachtes Chinesisch
+
