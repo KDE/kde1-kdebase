@@ -14,9 +14,9 @@ kvt_SOURCES = \
 	xsetup.c debug.c resources.c main.C\
 	grkelot.c
 
-noinst_HEADERS = debug.h rxvt.h command.h screen.h xsetup.h sbar.h kvt_version.h main.h
+noinst_HEADERS = debug.h rxvt.h command.h screen.h xsetup.h sbar.h kvt_version.h main.h grkelot.h
 
-EXTRA_DIST = kvt.xpm mini-kvt.xpm
+EXTRA_DIST = kvt.xpm mini-kvt.xpm LICENSE.readme README.original 
 
 icon_DATA = kvt.xpm
 icondir = $(kde_icondir)

@@ -12,7 +12,7 @@ icondir = $(kde_icondir)
 data_DATA = directory.trash directory.autostart directory.templates directory.desktop
 datadir = $(kde_datadir)/kfm
 
-EXTRA_DIST = kfm.xpm link.xpm directory.trash directory.autostart directory.templates directory.desktop kfmsu kfmsu2 startkde kde unpack magic
+EXTRA_DIST = kfm.xpm link.xpm directory.trash directory.autostart directory.templates directory.desktop kfmsu kfmsu2 startkde kde unpack magic ipcc
 
 ####### Files
 

@@ -64,3 +64,6 @@ METASOURCES = kfdialog.moc kdmview.moc kdmshutdown.moc kgreeter.moc
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kdm_SOURCES) $(kdmdesktop_SOURCES) && mv messages.po ../po/kdm.pot
 
+EXTRA_DIST = Chooser.ad  chooser.cpp kdm-0.5.lsm kdm_on_RH5.0.html kdmusers.h \
+	krb5auth.c sessreg.c sessreg.man xdm.man xdmconfig xdmshell.c
+

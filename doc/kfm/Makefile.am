@@ -12,4 +12,5 @@ data_DATA = app.html mime.html app2.html mime2.html \
 
 datadir = $(kde_htmldir)/en/kfm
 
-EXTRA_DIST = $(data_DATA)
+EXTRA_DIST = $(data_DATA) index.nif index.sgml
+

@@ -11,5 +11,3 @@ install-data-local:
 
 uninstall-local:
 	-rm -f $(kde_minidir)/kdmconfig.xpm
-
-

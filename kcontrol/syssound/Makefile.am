@@ -20,7 +20,7 @@ noinst_HEADERS = syssound.h
 # just to make sure, automake makes them 
 METASOURCES =	syssound.moc
 
-EXTRA_DIST = kcmsyssound.xpm mini-kcmsyssound.xpm
+EXTRA_DIST = kcmsyssound.xpm mini-kcmsyssound.xpm CHANGES
 
 # make messages.po. Move this one to ../po/ and "make merge" in po
 messages:

@@ -3,4 +3,5 @@ data_DATA = kmenuedit1.gif index.html kmenuedit2.gif index-1.html index-2.html i
 
 datadir = $(kde_htmldir)/en/kmenuedit
 
-EXTRA_DIST = $(data_DATA)
+EXTRA_DIST = $(data_DATA) index.sgml
+

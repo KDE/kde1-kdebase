@@ -17,7 +17,7 @@ METASOURCES	= client.moc manager.moc main.moc minicli.moc \
 noinst_HEADERS = client.h options.h manager.h main.h gradientFill.h \
 	minicli.h logout.h taskmgr.h warning.h version.h kURLcompletion.h 
 
-EXTRA_DIST = kwm.xpm mini-kwm.xpm
+EXTRA_DIST = kwm.xpm mini-kwm.xpm CHANGES LICENSE.readme images
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kwm_SOURCES) && mv messages.po ../po/kwm.pot
@@ -30,4 +30,6 @@ install-data-local:
 
 uninstall-local:
 	rm -f $(kde_minidir)/kwm.xpm
+
+main.C: kwmbindings.cpp
 

@@ -5,5 +5,5 @@ data_DATA = kdisplay.html kdisplay-1.html kdisplay-2.html kdisplay-3.html \
 
 datadir = $(kde_htmldir)/en/kcontrol/kcmdisplay
 
-EXTRA_DIST = $(data_DATA)
+EXTRA_DIST = $(data_DATA) kdisplay.sgml
 

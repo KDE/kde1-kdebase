@@ -4,8 +4,5 @@ data_DATA = kfm.html kfm-1.html kfm-2.html kfm-3.html kfm-4.html \
 
 datadir = $(kde_htmldir)/en/kcontrol/kcmkfm
 
-EXTRA_DIST = $(data_DATA)
-
-
-
+EXTRA_DIST = $(data_DATA) kfm.nif kfm.sgml
 

@@ -24,7 +24,8 @@ noinst_HEADERS = kmenuedit.h pmenu.h MenuNameDialog.h cpopmenu.h \
 		IconPathDialogData.h DesktopPathDialog.h \
 		DesktopPathDialogData.h entrydialog.h
 
-EXTRA_DIST = kmenuedit.xpm mini-kmenuedit.xpm
+EXTRA_DIST = kmenuedit.xpm mini-kmenuedit.xpm ANNOUNCE *.dlg BUGS CHANGES \
+	kmenuedit-0.2.1.lsm 
 
 kde_icon_DATA = kmenuedit.xpm
 

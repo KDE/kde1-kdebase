@@ -14,3 +14,6 @@ install-data-local:
 
 uninstall-local:
 	-rm -f $(kdisknavdir)/CD-ROM.kdelnk
+
+EXTRA_DIST = $(kdisknav_DATA) CD-ROM.kdelnk xosview.kdelnk Calendar.kdelnk
+

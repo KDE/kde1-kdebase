@@ -28,6 +28,9 @@ kikbd_LDADD   = $(LIB_KDEUI)
 
 kcmikbd_SOURCES = widgets.cpp kcmikbd.cpp kikbdconf.cpp \
 	kobjconf.cpp kconfobjs.cpp
+
+noinst_HEADERS = kconfobjs.h keymap.h keytrans.h kikbd.h kikbdconf.h kobjconf.h
+
 kcmikbd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 kcmikbd_LDADD   = $(LIB_KDEUI)
 
@@ -60,4 +63,6 @@ install-data-local:
 
 uninstall-local:
 	-rm -f $(kde_minidir)/kikbd.xpm
+
+EXTRA_DIST = BUGS $(kdelnk_DATA) mini-kikbd.xpm $(icon_DATA) $(kdelnk2_DATA)
 

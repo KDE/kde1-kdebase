@@ -10,3 +10,5 @@ noinst_HEADERS = kwmsound.h
 
 METASOURCES = kwmsound.moc
 
+EXTRA_DIST = CHANGES
+

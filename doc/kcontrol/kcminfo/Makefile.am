@@ -5,4 +5,5 @@ data_DATA = info.html info-1.html info-2.html info-3.html info-4.html 	\
 
 datadir = $(kde_htmldir)/en/kcontrol/kcminfo
 
-EXTRA_DIST = $(data_DATA)
+EXTRA_DIST = $(data_DATA) info.nif info.sgml
+

@@ -27,3 +27,5 @@ install-data-local:
 uninstall-local:
 	-rm -f $(defaultdir)/personal_directory
 
+EXTRA_DIST = CHANGES Desktop.kdelnk Home.kdelnk LICENSE.readme \
+	README.kdisknav-devel SWALLOW.readme 

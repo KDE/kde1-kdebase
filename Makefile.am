@@ -27,8 +27,6 @@ install-data-local:
 acinclude.m4: $(top_srcdir)/admin/acinclude.m4.in $(top_srcdir)/kdminclude.m4 $(top_srcdir)/admin/libtool.m4.in
 	@cat $(top_srcdir)/admin/acinclude.m4.in $(top_srcdir)/kdminclude.m4 $(top_srcdir)/admin/libtool.m4.in > acinclude.m4
 
-EXTRA_DIST = kdminclude.m4 README.pam
-
 messages:
 	rm -rf po.backup
 	mkdir po.backup
@@ -54,3 +52,10 @@ messages:
 	rm -f temp.pot
 	rm -rf po.backup
 	(cd po && $(MAKE) -f Makefile.am merge)
+
+EXTRA_DIST = admin bsd-port debian kdebase.spec.in README.pam kde.pamd \
+	kdminclude.m4 ltconfig.patch-1
+
+dist-hook:
+	cd $(top_distdir) && perl $(top_srcdir)/admin/automoc -padmin
+

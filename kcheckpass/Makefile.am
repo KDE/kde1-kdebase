@@ -14,3 +14,6 @@ kcheckpass_SOURCES = kcheckpass.cpp \
 	checkpass_etcpasswd.cpp checkpass_pam.cpp checkpass_shadow.cpp
 
 noinst_HEADERS = kcheckpass.h
+
+EXTRA_DIST = README-1.0
+

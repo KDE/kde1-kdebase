@@ -13,14 +13,5 @@ METASOURCES = keyconfig.moc savescm.moc
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcmkeys_SOURCES) ../../kwm/kwmbindings.cpp ./stdbindings.cpp && mv messages.po ../../po/kcmkeys.pot
 
-
-
-
-
-
-
-
-
-
-
+$(srcdir)/keyconfig.cpp: stdbindings.cpp
 

@@ -18,6 +18,8 @@ install-data-local:
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) $(srcdir)/mini-kcmkpanel.xpm $(kde_minidir)/kcmkpanel.xpm
 
+EXTRA_DIST = mini-kcmkpanel.xpm kcmkpanel.xpm
+
 uninstall-local:
 	-rm -f $(kde_minidir)/kcmkpanel.xpm
 

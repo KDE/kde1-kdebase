@@ -14,3 +14,5 @@ noinst_HEADERS = krootwm.h version.h
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(krootwm_SOURCES) && mv messages.po ../po/krootwm.pot
 
+EXTRA_DIST = CHANGES
+
