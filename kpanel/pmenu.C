@@ -48,22 +48,25 @@ extern "C" {
 
 static int global_id = 1;
 
+bool isKdelnkFile(const char* filename){
 
-static bool isKdelnkFile(const char* name){
-  QFile file(name);
+  QFile file(filename);
   if (file.open(IO_ReadOnly)){
-    char s[19];
-    int r = file.readLine(s, 18);
-    if(r > -1){
-      s[r] = '\0';
-      file.close();
-      return (QString(s).left(17) == "# KDE Config File");
-    }
+    char s[1024];
+    int r = file.readBlock(s, 1024);
     file.close();
+
+    if(r == -1)
+      return FALSE;
+    
+    // terminate string
+    s[r] = '\0';
+
+    return ( QString(s).find("[KDE Desktop Entry]", 0, FALSE) != -1 );
   }
+
   return FALSE;
 }
-
 
 PMenuItem::PMenuItem()
 {

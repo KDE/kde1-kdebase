@@ -238,7 +238,13 @@ void kPanel::dockWindowRemove(Window){
 }
 
 // void kPanel::playSound(QString e){
-//   printf("sound event: %s \n", e.data());
+//   QDateTime d = QDateTime::currentDateTime();
+//   printf("sound event: %s (%.2d:%.2d:%.2d)\n", 
+// 	 e.data(),
+// 	 d.time().hour(),
+// 	 d.time().minute(),
+// 	 d.time().second()
+// 	 );
 // }
 
 
@@ -669,7 +675,7 @@ void kPanel::slotDropEvent( KDNDDropZone *_zone ){
       a = a.right(a.length() - 5);
       if (a.right(1) == "/")
 	a.truncate(a.length()-1);
-      PMenuItem* pmi = pmenu->searchItem(a);
+      PMenuItem* pmi = primary_menu->searchItem(a);
       
       if (pmi){
 	int x = margin;

@@ -1,5 +1,8 @@
 In kpanel-0.18:
 
+    Patchlevel 6:
+       - cleanups and a nicer configuration dialog (Martin Scherbaum)
+
     Patchlevel 5:
        - fixed autohide with docking. Authide cares about
          popups now. The hiding will be delayed until the popup

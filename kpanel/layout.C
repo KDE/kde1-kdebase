@@ -88,27 +88,42 @@ int kPanel::numberOfTaskbarRows(){
   return res;
 }
 
-
-
 void kPanel::reposition(int l){
   int i,i2,d;
 
   // brain dead. Don't ask me why I don't use a list, please....
 
   DesktopEntry tmp;
-  bool changed = FALSE;
+
+  /*
+
+    i = 1;
+    while ( i < nbuttons ) {
+    
+    if ( (orientation == vertical && entries[i-1].button->y() > entries[i].button->y()) ||
+    (orientation == horizontal && entries[i-1].button->x() > entries[i].button->x())) {
+    
+    tmp = entries[i-1];
+    entries[i-1] = entries[i];
+    entries[i] = tmp;
+    }
+    i++;
+    }
+    */
+  bool changed;
   do {
     changed = FALSE;
-    for (i=0; i<nbuttons-1; i++){
-      if ((orientation == vertical && entries[i].button->y() > entries[i+1].button->y())
-	  || (orientation == horizontal && entries[i].button->x() > entries[i+1].button->x())){
+    for (i = 0; i < (nbuttons - 1); i++) {
+
+      if ( (orientation == vertical && entries[i].button->y() > entries[i+1].button->y()) ||
+	   (orientation == horizontal && entries[i].button->x() > entries[i+1].button->x())) {
 	tmp = entries[i];
 	entries[i] = entries[i+1];
 	entries[i+1] = tmp;
 	changed = TRUE;
       }
     }
-  } while (changed);
+  } while (changed); 
 
   // the first button is always the KDE button
 //   if (orientation == vertical){
@@ -127,7 +142,6 @@ void kPanel::reposition(int l){
 // 	  entries[0].button->move(panel_button->x() + panel_button->width(),
 // 				  entries[0].button->y());
 //   }
-
 
   if (orientation == vertical){
     for (i=0; i<nbuttons-1; i++){
