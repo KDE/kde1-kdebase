@@ -70,7 +70,7 @@ bool isValidShortURL ( const char * cmd )
     char lastchr = *( cmd + strlen (cmd) - 1 );
     if ( strchr ( cmd, ' ' ) != 0L || strchr ( cmd, ';' ) != 0L )
        return false;
-    if ( *cmd  == '/'  ||  lastchr == '&' )
+    if ( *cmd  == '/'  ||  lastchr == '&' || lastchr == '.' )
         return  false;
     if ( strchr ( cmd, '<' ) != 0L ||  strchr ( cmd, '>' ) != 0L )
        return false;
@@ -95,26 +95,30 @@ void execute ( const char* cmd)
 
   // Torben
   // WWW Adress ?
-  if ( strnicmp( cmd, "www.", 4 ) == 0 ) {
+  if ( strnicmp( cmd, "www.", 4 ) == 0 )
+  {
       tmp = "kfmclient exec \"http://";
       tmp += cmd;
       cmd = tmp.append("\"").data();
   }
   // Torben
   // WWW Adress - Weird but valid per RFC 1736 ?
-  else if ( strnicmp( cmd, "//www.", 6 ) == 0 ) {
+  else if ( strnicmp( cmd, "//www.", 6 ) == 0 )
+  {
       tmp = "kfmclient exec \"http:";
       tmp += cmd;
       cmd = tmp.append("\"").data();
   }
   // FTP Adress ?
-  else if ( strnicmp( cmd, "ftp.", 4 ) == 0 ) {
+  else if ( strnicmp( cmd, "ftp.", 4 ) == 0 )
+  {
       tmp = "kfmclient exec \"ftp://";
       tmp += cmd;
       cmd = tmp.append("\"").data();
   }
   // FTP Adress - Weird but valid per RFC 1736 ?
-  else if ( strnicmp( cmd, "//ftp.", 6 ) == 0 ) {
+  else if ( strnicmp( cmd, "//ftp.", 6 ) == 0 )
+  {
       tmp = "kfmclient exec \"ftp:";
       tmp += cmd;
       cmd = tmp.append("\"").data();
@@ -133,10 +137,9 @@ void execute ( const char* cmd)
       cmd = tmp.append("\"").data();
   }
   // Looks like a valid URL ?
-  else if ( strstr( cmd, "://" ) != 0L ||
-            strnicmp ( cmd, "news:", 5) == 0 ||
-            strnicmp ( cmd, "mailto:", 7) == 0 ||
-	        strnicmp( cmd, "file:", 5 ) == 0 )
+  else if ( strnicmp ( cmd, "http://", 7) == 0 || strnicmp ( cmd, "ftp://", 6) == 0  ||
+            strnicmp ( cmd, "gopher://", 9 ) == 0 || strnicmp ( cmd, "news:", 5) == 0 ||
+            strnicmp ( cmd, "mailto:", 7) == 0 || strnicmp ( cmd, "file:", 5 ) == 0 )
   {
       tmp = "kfmclient exec \"";
       tmp += cmd;
@@ -154,15 +157,15 @@ void execute ( const char* cmd)
       // HOME directory ?
       if ( uri[0] == '~' )
       {
-         int length = uri.length();
-         if ( length == 1 )
+         int len = uri.length();
+         if ( len == 1 )
             uri.replace ( 0, 1, QDir::homeDirPath().data() );
-         else if ( length > 1 )
+         else if ( len > 1 )
          {
            int index = uri.find ( "/" );
-           struct passwd *dir = ((index == -1) ? getpwnam(uri.mid(1,length).data()) : getpwnam(uri.mid(1,index-1).data()));
+           struct passwd *dir = ((index == -1) ? getpwnam(uri.mid(1,len).data()) : getpwnam(uri.mid(1,index-1).data()));
            if ( !dir ) return; // Unknown user
-           (index == -1) ? uri.replace (0, length,  dir->pw_dir) : uri.replace (0, index, dir->pw_dir);
+           (index == -1) ? uri.replace (0, len,  dir->pw_dir) : uri.replace (0, index, dir->pw_dir);
          }
          cmd = uri.data();
       }
@@ -184,8 +187,8 @@ void execute ( const char* cmd)
         tmp += cmd;
         cmd = tmp.append ( "\"").data();
       }
-      // If cmd is NOT a local resource, executable or otherwise,
-      // then append "http://" as the default protocol.
+      // If cmd is NOT a local resource or a valid "shortURL"
+      // candidate, append "http://" as the default protocol.
       // FIXME: Make this option configurable !! (Dawit A.)
       else if ( !isLocalExec && isValidShortURL ( cmd ) )
       {
