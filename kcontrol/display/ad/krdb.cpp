@@ -88,8 +88,7 @@ QString fontString( QFont rFont )
 			aValue += "iso8859-9";
 			break;
 	}
-	debug( aValue );
-  return aValue;
+	return aValue;
 }
 
 main( int argc, char ** argv ) 
@@ -249,11 +248,11 @@ main( int argc, char ** argv )
 	
 	QString propString;
 
-	long timestamp;
-	::time( (long *) &timestamp );
+	time_t timestamp;
+	::time( &timestamp );
 
 	QString tmpFile;
-	tmpFile.sprintf("/tmp/krdb.%ld", timestamp);
+	tmpFile.sprintf("/tmp/krdb.%d", timestamp);
 	
 	QFile tmp( tmpFile );
 	if ( tmp.open( IO_WriteOnly ) ) {
