@@ -73,7 +73,7 @@ QSize EditButton::sizeHint()
       th += th/8 + 8;
       return QSize( tw, th );
     }
-  return QSize( pixmap()->width()+4, pixmap()->height()+4 ); 
+  return QSize( pixmap()->width()+8, pixmap()->height()+8 ); 
 }
 
 void EditButton::setText( const char *t )

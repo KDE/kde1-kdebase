@@ -665,8 +665,9 @@ void MenuButton::leaveEvent( QEvent * )
 
 void MenuButton::focusOutEvent( QFocusEvent * )
 {
-  raised = 0;
-  repaint();
+  // focus handling is not needed anymore; remove after next stable release
+  //raised = 0;
+  //repaint();
 }
 
 void MenuButton::drawButton( QPainter *_painter )
@@ -683,6 +684,8 @@ void MenuButton::paint( QPainter *painter )
 {
   QColorGroup g = colorGroup();
 
+  if( !rect().contains(mapFromGlobal(QCursor::pos())) )
+    raised = 0;
   if ( raised == 1 )
     {
       if ( style() == WindowsStyle )
