@@ -353,7 +353,6 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
   cmenu = (myPopupMenu *) menu;
   menu->installEventFilter((QObject *) panel);
   connect( menu, SIGNAL(highlighted(int)), this, SLOT(highlighted(int)) );
-
   if (add_button)
     connect( menu, SIGNAL(aboutToShow()), this, SLOT(aboutToShowAddMenu()) );
   else
@@ -824,7 +823,7 @@ bool PMenu::addFromDrop( QString name )
       if( !copyFiles(pmi->dir_path + '/' + pmi->real_name, dir_name + '/' + real_name) )
 	return FALSE;
 
-      if( list.getLast()->entry_type == prog_com )
+      if( list.getLast() != 0 && list.getLast()->entry_type == prog_com )
 	insert(pmi, list.count()-7);
       else
 	add(pmi);
@@ -883,7 +882,7 @@ bool PMenu::addFromDrop( QString name )
 		  pmi = 0;
 		  return FALSE;
 		}
-	      if( list.getLast()->entry_type == prog_com )
+	      if( list.getLast() != 0 && list.getLast()->entry_type == prog_com )
 		insert(pmi, list.count()-7);
 	      else
 		add(pmi);

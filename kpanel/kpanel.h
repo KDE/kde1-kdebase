@@ -433,6 +433,8 @@ private:
   myPushButton* kde_button;
   QPopupMenu* kmenu;
   PMenu*      personal_menu;
+  PMenu*      global_menu;
+  PMenuItem*  personal_pmi;
 
   QPopupMenu* windows;
   QPopupMenu* windowlist;

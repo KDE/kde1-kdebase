@@ -160,6 +160,7 @@ public:
   PMenuItem *searchItem( int id );
   bool       addFromDrop( QString a);
   bool       copyFiles( QString source, QString dest);
+  int        count() { return list.count(); }
   
 #ifdef DISKNAV_DEBUG
   PMenuItem *searchItem( PMenu* item );  // DEBUG
@@ -169,6 +170,7 @@ public:
 
   void       setAltSort( bool alternateSort ) { altSort = alternateSort; }
   bool       getAltSort() { return altSort; }
+  void       clearSubmenus();
 
   // this is a bit tricky: it returns the menu item of the menu editor (if any)
   PMenuItem* getMenuEditorItem(){return menu_editor_item;}
@@ -188,7 +190,6 @@ private:
 protected:
   QString uniqueFileName(QString name, QString dir_name);
   void parseBeforeShowing(bool is_add_menu);
-  void clearSubmenus();
 
   QList<PMenuItem> list;
   myPopupMenu      *cmenu;

@@ -801,8 +801,16 @@ void kPanel::slotDropEvent( KDNDDropZone *_zone ){
       if( QRect(kde_button->x(), kde_button->y(), kde_button->width(), 
 		kde_button->height()).contains(p) ){
 	// file was dropped onto the K-Button
-	if( personal_menu->addFromDrop(a) )
+	if( personal_menu->addFromDrop(a) ){
+	  if( global_menu != 0 ) {
+	    global_menu->insert( new PMenuItem((EntryType) separator), global_menu->count()-5 );
+	    global_menu->insert( personal_pmi, global_menu->count()-5 );
+	    global_menu->clearSubmenus();
+	    global_menu->createMenu(global_menu->getQPopupMenu(), this);
+	    global_menu = 0;
+	  }
 	  return;
+	}
       }
       else {
 	PMenuItem* pmi = pmenu->searchItem(a);

@@ -108,6 +108,8 @@ void kPanel::parseMenus(){
     if (personalFirst){
       pmenu->parse(QDir(personal));
       personal_menu = pmenu;         // I need this for K-Button drops; chris
+      global_menu = 0;
+      personal_pmi = 0;
       p_pmenu = new PMenu;
       p_pmenu->setAltSort(foldersFirst);
       p_pmenu->parse(QDir(kde_apps));
@@ -123,16 +125,31 @@ void kPanel::parseMenus(){
       tmp->setAltSort(foldersFirst);
       tmp->parse(QDir(personal));
       tmp->createMenu(new myPopupMenu, this);
+
       if (tmp->getQPopupMenu() && tmp->getQPopupMenu()->count()>0){
+//if (tmp->getQPopupMenu()){
 	p_pmenu = new PMenu;
 	p_pmenu->setAltSort(foldersFirst);
 	p_pmenu->parse(QDir(personal));
 	personal_menu = p_pmenu;         // I need this for K-Button drops; chris
+	global_menu = 0;
+	personal_pmi = 0;
 	PMenuItem* pmi = new PMenuItem ;
 	QFileInfo fi(personal);
 	pmi->parse(&fi, p_pmenu);
 	pmenu->add( new PMenuItem((EntryType) separator) );
 	pmenu->add( pmi );
+      }
+      else {
+	p_pmenu = new PMenu;
+	p_pmenu->setAltSort(foldersFirst);
+	p_pmenu->parse(QDir(personal));
+	personal_menu = p_pmenu;         // I need this for K-Button drops; chris
+	global_menu = pmenu;
+	personal_pmi = new PMenuItem ;
+	QFileInfo fi(personal);
+	personal_pmi->parse(&fi, personal_menu);
+	personal_menu->createMenu(personal_pmi->getQPopupMenu(), this);
       }
       delete tmp;
     }
