@@ -43,7 +43,7 @@ BUILT_SOURCES =	\
 	kfmjob.moc kfmexec.moc cgi.moc kbind.moc kfinder.moc kfm.moc	\
 	useragentdlg.moc kproxydlg.moc kkfmoptdlg.moc kbookmarkdlg.moc
 
-CLEANFILES = $(BUILT_SOURCES)
+DISTCLEANFILES = $(BUILT_SOURCES)
 
 
 kfmgui.cpp:kfmgui.moc
