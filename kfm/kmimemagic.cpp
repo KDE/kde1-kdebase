@@ -416,14 +416,14 @@ test_table()
 	struct magic *m;
 	struct magic *prevm = NULL;
 
-	debug("%s: started", __FUNCTION__);
+	// debug("%s: started", __FUNCTION__);
 	for (m = conf->magic; m; m = m->next) {
 		if (isprint((((unsigned long) m) >> 24) & 255) &&
 		    isprint((((unsigned long) m) >> 16) & 255) &&
 		    isprint((((unsigned long) m) >> 8) & 255) &&
 		    isprint(((unsigned long) m) & 255)) {
-			debug("%s: POINTER CLOBBERED! "
-			      "m=\"%c%c%c%c\" line=%d", __FUNCTION__,
+		    //debug("%s: POINTER CLOBBERED! "
+		    //"m=\"%c%c%c%c\" line=%d", __FUNCTION__,
 			      (((unsigned long) m) >> 24) & 255,
 			      (((unsigned long) m) >> 16) & 255,
 			      (((unsigned long) m) >> 8) & 255,
@@ -592,7 +592,7 @@ signextend(struct magic *m, unsigned long v)
 				break;
 			default:
 				error("%s: can't happen: m->type=%d",
-				      __FUNCTION__, m->type);
+				      "signextend", m->type);
 				return ERROR;
 		}
 	return v;
@@ -610,7 +610,7 @@ parse(char *l, int lineno)
 	*s;
 	/* allocate magic structure entry */
 	if ((m = (struct magic *) calloc(1, sizeof(struct magic))) == NULL) {
-		error("%s: Out of memory.", __FUNCTION__);
+		error("parse: Out of memory.");
 		return -1;
 	}
 	/* append to linked list */
@@ -639,7 +639,7 @@ parse(char *l, int lineno)
 	/* get offset, then skip over it */
 	m->offset = (int) strtol(l, &t, 0);
 	if (l == t) {
-		error("%s: offset %s invalid", __FUNCTION__, l);
+		error("parse: offset %s invalid", l);
 	}
 	l = t;
 
@@ -661,7 +661,7 @@ parse(char *l, int lineno)
 					m->in.type = BYTE;
 					break;
 				default:
-					error("%s: indirect offset type %c invalid", __FUNCTION__, *l);
+					error("parse: indirect offset type %c invalid", *l);
 					break;
 			}
 			l++;
@@ -676,8 +676,7 @@ parse(char *l, int lineno)
 		} else
 			t = l;
 		if (*t++ != ')') {
-			error("%s: missing ')' in indirect offset",
-			      __FUNCTION__);
+			error("parse: missing ')' in indirect offset");
 		}
 		l = t;
 	}
@@ -736,7 +735,7 @@ parse(char *l, int lineno)
 		m->type = LEDATE;
 		l += NLEDATE;
 	} else {
-		error("%s: type %s invalid", __FUNCTION__, l);
+		error("parse: type %s invalid", l);
 		return -1;
 	}
 	/* New-style anding: "0 byte&0x80 =0x80 dynamically linked" */
@@ -994,7 +993,7 @@ mconvert(union VALUETYPE *p, struct magic *m)
 			    ((p->hl[3] << 24) | (p->hl[2] << 16) | (p->hl[1] << 8) | (p->hl[0]));
 			return 1;
 		default:
-			error("%s: invalid type %d", __FUNCTION__, m->type);
+			error("mconvert: invalid type %d", m->type);
 			return 0;
 	}
 }
@@ -1089,8 +1088,7 @@ mcheck(union VALUETYPE *p, struct magic *m)
 			}
 			break;
 		default:
-			error("%s: invalid type %d",
-			      __FUNCTION__, m->type);
+			error("mcheck: invalid type %d", m->type);
 			return 0;	/* NOTREACHED */
 	}
 #if 0
@@ -1138,8 +1136,7 @@ mcheck(union VALUETYPE *p, struct magic *m)
 
 		default:
 			matched = 0;
-			error("%s: can't happen: invalid relation %d.",
-			      __FUNCTION__, m->reln);
+			error("mcheck: can't happen: invalid relation %d.", m->reln);
 			break;  /* NOTREACHED */
 	}
 
@@ -1207,7 +1204,7 @@ KMimeMagic::finishResult()
 			} else {
 				/* should not be possible */
 				/* abandon malfunctioning module */
-				error("%s: bad state %d (ws)", __FUNCTION__, state);
+				error("KMimeMagic::finishResult: bad state %d (ws)", state);
 				return DECLINED;
 			}
 			/* NOTREACHED */
@@ -1242,7 +1239,7 @@ KMimeMagic::finishResult()
 			} else {
 				/* should not be possible */
 				/* abandon malfunctioning module */
-				error("%s: bad state %d (ns)", __FUNCTION__, state);
+				error(" KMimeMagic::finishResult: bad state %d (ns)", state);
 				return DECLINED;
 			}
 			/* NOTREACHED */
@@ -1265,8 +1262,8 @@ KMimeMagic::finishResult()
 		magicResult->setEncoding(resultBuf.mid(encoding_pos,
 						       encoding_len));
 	/* detect memory allocation errors */
-	if (!magicResult->getContent ||
-	    (state == rsl_encoding && !magicResult->getEncoding)) {
+	if (!magicResult->getContent() ||
+	    (state == rsl_encoding && !magicResult->getEncoding())) {
 		return -1;
 	}
 	/* success! */
@@ -1446,8 +1443,7 @@ KMimeMagic::fsmagic(const char *fn, struct stat *sb)
 		case S_IFREG:
 			break;
 		default:
-			error("%s: invalid mode 0%o.", __FUNCTION__,
-			      sb->st_mode);
+			error("KMimeMagic::fsmagic: invalid mode 0%o.", sb->st_mode);
 			/* NOTREACHED */
 	}
 
@@ -1691,8 +1687,7 @@ KMimeMagic::mprint(union VALUETYPE *p, struct magic *m)
 			resultBufPrintf(m->desc, pp);
 			return;
 		default:
-			error("%s: invalid m->type (%d)",
-			      __FUNCTION__, m->type);
+			error("KMimeMagic::mprint: invalid m->type (%d)", m->type);
 			return;
 	}
 
