@@ -227,11 +227,16 @@ int KProtocolFTP::ftpLogin( const char *user, const char *pass, QString *redirec
     tempbuf = "pass ";
     tempbuf += pass;
 
-    if ( redirect == 0L )
-	return ftpSendCmd(tempbuf,'2');
-
     if ( ftpSendCmd( tempbuf, '2' ) == 1 )
     {
+        // Okay, we're logged in. If this is IIS 4, switch dir listing style to Unix:
+        if( ftpSendCmd( "syst", '2' ) )
+            if( !strncmp( rspbuf, "215 Windows_NT version", 22 ) ) // will do for any version
+                ftpSendCmd( "site dirstyle", '2' );                                                 
+
+        if( redirect == 0L )
+            return 1;
+
 	tempbuf = "pwd";
 	if ( ftpSendCmd( tempbuf, '2' ) == 0 )
 	    return 0;
