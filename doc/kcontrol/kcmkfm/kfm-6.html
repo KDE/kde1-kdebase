@@ -20,26 +20,36 @@
 </P>
 <H3><A NAME="s6">6. KFM Web Browser Configuration: User Agent</A></H3>
 
-<P>What is the "UserAgent" string ?
-Here is what Kalle Dalheimer said about it :
-<P>Some web servers send you different pages depending on which browser you
-use. Every browser sends a so-called "UserAgent" string (e.g. for
-Netscape, this string is "Mozilla" plus some version information), and
-servers can evaluate this. For example, there was a time when the web
-server serving www.microsoft.com returned pages with error messages on
-purpose when you browsed the site with Netscape Navigator. Another
-example: some webmasters tend to think that only Navigator and Internet
-Exploder can handle frames, thus, they automatically send non-frame
-versions to all other browsers, whether they can handle frames or not.
-<P>I have written this dialog (and Torben has integrated it into kfm) so
-that you can determine yourself which UserAgent string kfm sends (the
-default, as you can see, is "Konqueror" plus version information, a
-conqueror of course being the next one in the row navigator-explorer-).
-Unlike with other browsers, this dialog even allows you to set a certain
-UserAgent string for a specific web site. Thus, you can tell the web
-server at www.microsoft.com that you are an Internet Exploder, the web
-server at www.netscape.com that you are a Navigator and all others that
-you are a honest web browser :-)
+<P>
+<P>In this screen, you can configure the
+<B>User-Agent String</B>, which is what the
+KFM Browser reports as its name and version to web servers,
+when requesting web pages.
+<P>This name can be configured to be specific for a given
+web site.    
+<P>The usefulness of this is that webservers may decide
+on what form to send the information (i.e., frames or
+no frames) depending of which browser application it
+thinks it is talking to.  
+<P>Rumor also has it that certain
+browser distributors' sites have in the past been 
+programmed to send error messages when the the User-Agent
+String of a competing browser application is reported
+to them!
+<P>
+<P>The KFM Browser is perfectly capable of handling frames,
+but this  may not be known to a web site that only sends frames
+to browsers it thinks can handle them.  In such a case,
+you can configure KFM so that for that particular site,
+it reports the User-Agent String of another well-known browser such
+as <B>Netscape Navigator</B> (tm), 
+which has user-agent string "<B>Mozilla</B>", plus version information,
+or <B>Interner Explorer</B>(tm).
+<P>
+<P>The default User-Agent string for KFM is set to <B>Konqueror</B>
+plus version information
+(a conqueror of course being the next one in the
+sequence navigator - explorer - * )!
 <P>
 <P ALIGN="RIGHT">
 
