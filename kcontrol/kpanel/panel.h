@@ -51,7 +51,11 @@ public:
 
 protected:
     void  resizeEvent(QResizeEvent *e);
-    
+
+protected slots:
+    void location_clicked(int);
+    void taskbar_clicked(int);
+
 private:
     QVBoxLayout *layout;
 

@@ -25,7 +25,7 @@
 #include "desktops.moc"
 #include <ksimpleconfig.h>
 
-extern KSimpleConfig config;
+extern KConfigBase *config;
 
 KDesktopsConfig::KDesktopsConfig( QWidget *parent, const char* name ) 
     : KConfigWidget(parent, name)
@@ -95,7 +95,7 @@ void KDesktopsConfig::loadSettings() {
 	fields[i]->setEnabled(i<number_of_desktops);
     }
     visible->setValue(number_of_desktops/2);
-    width_value =  config.readNumEntry("DesktopButtonHorizontalSize");
+    width_value =  config->readNumEntry("DesktopButtonHorizontalSize");
     width->setValue(width_value);
 }
 
@@ -103,7 +103,7 @@ void KDesktopsConfig::justSave() {
     width_value = width->value();
     for (int i = 0; i < 8; i++)
 	KWM::setDesktopName(i+1, fields[i]->text());
-    config.writeEntry("DesktopButtonHorizontalSize", width_value);
+    config->writeEntry("DesktopButtonHorizontalSize", width_value);
 }
 
 void KDesktopsConfig::saveSettings() {

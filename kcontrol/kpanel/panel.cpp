@@ -25,12 +25,13 @@
 #include "panel.h"
 #include "panel.moc"
 #include <qlayout.h>
+#include <kconfigbase.h>
 
 const char * locations[] = { "top", "left", "bottom", "right" , 0};
 const char * taskbar_locations[] = { "hidden", "top", "bottom", "top_left", 0 };
 const char * styles[] = { "tiny", "normal", "large", 0};
 
-extern KConfig config;
+extern KConfigBase *config;
 
 class MyHelpFrame : public QFrame {
 
@@ -59,6 +60,7 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
     loc_buttons[1] = new QRadioButton( klocale->translate("Left"), loc_group );
     loc_buttons[2] = new QRadioButton( klocale->translate("Bottom"), loc_group);
     loc_buttons[location]->setChecked(true);
+    connect(loc_group, SIGNAL(clicked(int)), SLOT(location_clicked(int)));
     layout->addWidget(loc_group);
 
     task_group = new QButtonGroup(klocale->translate("Taskbar"), this);
@@ -67,6 +69,7 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
     task_buttons[2] = new QRadioButton( klocale->translate("Bottom"), task_group);
     task_buttons[3] = new QRadioButton( klocale->translate("Top/Left"), task_group);
     task_buttons[taskbar]->setChecked(true);
+    connect(task_group, SIGNAL(clicked(int)), SLOT(taskbar_clicked(int)));
     layout->addWidget(task_group);
 
     down_frame = new QFrame(this);
@@ -115,6 +118,14 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
     loadSettings();
 }
 
+void KPanelConfig::location_clicked(int i) {
+    location = static_cast<Location>(i);
+}
+
+void KPanelConfig::taskbar_clicked(int i) {
+    taskbar = static_cast<Taskbar>(i);
+}
+
 KPanelConfig::~KPanelConfig( ) {
 }
 
@@ -143,10 +154,10 @@ void KPanelConfig::resizeEvent(QResizeEvent *e) {
 
 void KPanelConfig::loadSettings() {
    
-    config.setGroup("kpanel");
+    config->setGroup("kpanel");
     int i = 0;
     loc_buttons[location]->setChecked(false);
-    QString t = config.readEntry("Position", locations[0]);
+    QString t = config->readEntry("Position", locations[0]);
 
     while (locations[i] && t != locations[i])  i++;
     if (!locations[i])
@@ -155,7 +166,7 @@ void KPanelConfig::loadSettings() {
     loc_buttons[location]->setChecked(true);
     
     task_buttons[taskbar]->setChecked(false);
-    i = 0; t = config.readEntry("TaskbarPosition", taskbar_locations[0]);
+    i = 0; t = config->readEntry("TaskbarPosition", taskbar_locations[0]);
     while (taskbar_locations[i] && t != taskbar_locations[i]) 
 	i++;
     if (!taskbar_locations[i])
@@ -163,12 +174,12 @@ void KPanelConfig::loadSettings() {
     taskbar = (Taskbar)i;
     task_buttons[taskbar]->setChecked(true);
 
-    options[0]->setChecked(config.readNumEntry("MenuToolTips")>=0);
-    options[1]->setChecked(config.readEntry("PersonalFirst") == "on");
-    options[2]->setChecked(config.readEntry("AutoHide") == "on");
-    options[3]->setChecked(config.readEntry("AutoHideTaskbar") == "on");
+    options[0]->setChecked(config->readNumEntry("MenuToolTips")>=0);
+    options[1]->setChecked(config->readEntry("PersonalFirst") == "on");
+    options[2]->setChecked(config->readEntry("AutoHide") == "on");
+    options[3]->setChecked(config->readEntry("AutoHideTaskbar") == "on");
 
-    i = 0; t = config.readEntry("Style", styles[0]);
+    i = 0; t = config->readEntry("Style", styles[0]);
     while (styles[i] && t != styles[i]) 
 	i++;
     if (!styles[i])
@@ -185,48 +196,50 @@ void KPanelConfig::applySettings() {
 }
 
 void KPanelConfig::saveSettings() {
-    config.setGroup("kpanel");
-    config.writeEntry("Position", locations[location]);
-    config.writeEntry("TaskbarPosition", taskbar_locations[taskbar]);
+
+    config->setGroup("kpanel");
+    config->writeEntry("Position", locations[location]);
+    config->writeEntry("TaskbarPosition", taskbar_locations[taskbar]);
 
     // out of kpanel's prop.C
-    config.writeEntry("MenuToolTips", options[0]->isChecked()?1000:-1);
-    config.writeEntry("PersonalFirst", options[1]->isChecked()?"on":"off");
-    config.writeEntry("AutoHide", options[2]->isChecked()?"on":"off");
-    config.writeEntry("AutoHideTaskbar", options[3]->isChecked()?"on":"off");
+    config->writeEntry("MenuToolTips", options[0]->isChecked()?1000:-1);
+    config->writeEntry("PersonalFirst", options[1]->isChecked()?"on":"off");
+    config->writeEntry("AutoHide", options[2]->isChecked()?"on":"off");
+    config->writeEntry("AutoHideTaskbar", options[3]->isChecked()?"on":"off");
    
     if (style_combo->currentItem() != style) {
 	switch (style_combo->currentItem()){
 	case 0: // tiny style
-	    config.writeEntry("Style", "tiny");
-	    config.writeEntry("BoxWidth",26);
-	    config.writeEntry("BoxHeight",26);
-	    config.writeEntry("Margin",0);
-	    config.writeEntry("TaskbarButtonHorizontalSize",4);
-	    config.writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
-	    config.writeEntry("DesktopButtonRows",1);
-	    config.writeEntry("DateFont","*-times-medium-i-normal--12-*");
+	    config->writeEntry("Style", "tiny");
+	    config->writeEntry("BoxWidth",26);
+	    config->writeEntry("BoxHeight",26);
+	    config->writeEntry("Margin",0);
+	    config->writeEntry("TaskbarButtonHorizontalSize",4);
+	    config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
+	    config->writeEntry("DesktopButtonRows",1);
+	    config->writeEntry("DateFont","*-times-medium-i-normal--12-*");
 	    break;
 	case 1: // normal style
-	    config.writeEntry("Style", "normal");
-	    config.writeEntry("BoxWidth",45);
-	    config.writeEntry("BoxHeight",45);
-	    config.writeEntry("Margin",0);
-	    config.writeEntry("TaskbarButtonHorizontalSize",4);
-	    config.writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
-	    config.writeEntry("DesktopButtonRows",2);
-	    config.writeEntry("DateFont","*-times-medium-i-normal--12-*");
+	    config->writeEntry("Style", "normal");
+	    config->writeEntry("BoxWidth",45);
+	    config->writeEntry("BoxHeight",45);
+	    config->writeEntry("Margin",0);
+	    config->writeEntry("TaskbarButtonHorizontalSize",4);
+	    config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
+	    config->writeEntry("DesktopButtonRows",2);
+	    config->writeEntry("DateFont","*-times-medium-i-normal--12-*");
 	    break;
 	case 2: // large style
-	    config.writeEntry("Style", "large");
-	    config.writeEntry("BoxWidth",47);
-	    config.writeEntry("BoxHeight",47);
-	    config.writeEntry("Margin",4);
-	    config.writeEntry("TaskbarButtonHorizontalSize",4);
-	    config.writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--14-*");
-	    config.writeEntry("DesktopButtonRows",2);
-	    config.writeEntry("DateFont","*-times-bold-i-normal--12-*");
+	    config->writeEntry("Style", "large");
+	    config->writeEntry("BoxWidth",47);
+	    config->writeEntry("BoxHeight",47);
+	    config->writeEntry("Margin",4);
+	    config->writeEntry("TaskbarButtonHorizontalSize",4);
+	    config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--14-*");
+	    config->writeEntry("DesktopButtonRows",2);
+	    config->writeEntry("DateFont","*-times-bold-i-normal--12-*");
 	    break;
 	}
     }
+    config->sync();
 }

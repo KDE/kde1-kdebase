@@ -26,7 +26,7 @@
 #include "desktops.h"
 #include <ksimpleconfig.h>
 
-KSimpleConfig config(KApplication::localconfigdir() + "/kpanelrc");
+KConfigBase *config;
 
 class KKPanelApplication : public KControlApplication
 {
@@ -72,19 +72,24 @@ void KKPanelApplication::apply()
 	panel->saveSettings();
     if (desktops)
 	desktops->justSave();
-    config.sync();
+    config->sync();
     KWM::sendKWMCommand("kpanel:restart");
 }
 
 
 int main(int argc, char **argv)
 {
+    config = new KConfig(KApplication::localconfigdir() + "/kpanelrc");
     KKPanelApplication app(argc, argv, "kcmkpanel");
     
     app.setTitle(klocale->translate("KPanel Configuration"));
-    
+
+    int ret;
     if (app.runGUI())
-	return app.exec();
+	ret = app.exec();
     else
-	return 0;
+	ret = 0;
+
+    delete config;
+    return ret;
 }
