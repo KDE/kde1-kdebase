@@ -72,7 +72,6 @@ int KSlave::Start( const char *command )
      {
 	 // init stdin, stdout and stderr for slave process
 	 
-	 fprintf(stderr,"KSlave: fork & pipes up, starting soon...!\n");
 	 dup2(s_in,0);	fcntl(0,F_SETFD,0);
 	 dup2(s_out,1);	fcntl(1,F_SETFD,0);
 	 dup2(s_err,2);	fcntl(2,F_SETFD,0);

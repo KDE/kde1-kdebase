@@ -1,5 +1,10 @@
 1999-01-03  David Faure  <faure@kde.org>
 
+	* kioslave/tar.cpp: Fixed tar protocol support. Looks like the tar 
+	output has changed. There are 2 items for the date, not 4 anymore.
+	(This is with GNU tar 1.12) Which tar has 4 items ? Old GNU tar or 
+	non-GNU tars ? Testing the tar version might be necessary...
+
 	* kfmgui.cpp: Argh, another late bug. When entering a directory in
 	a window, all other windows had out-of-date history menus (and
 	clicking on one item brought you to another item!). Fixed by

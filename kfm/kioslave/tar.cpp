@@ -16,6 +16,7 @@ KProtocolTAR::~KProtocolTAR()
 
 int KProtocolTAR::AttachTAR( const char *_command )
 {
+    //debug("KProtocolTAR::AttachTAR(command=%s)",_command);
     InitParent();
     
     KURL uparent( ParentURL );
@@ -44,10 +45,14 @@ int KProtocolTAR::AttachTAR( const char *_command )
 
 int KProtocolTAR::Open( KURL *url, int mode )
 {
+    //debug("KProtocolTAR::Open(url=%s)",url->url().data());
     if( mode & READ )
     {
-	const char *path = url->path();	// extracting /xxx from a tarfile
-	while( *path == '/' ) path++;	// containing the file xxx won't work
+	const char *path = url->path();
+
+	// extracting /xxx from a tarfile containing the file xxx won't work
+	while( *path == '/' ) path++;	
+
 	QString Command( "tar -%sOxf - \"" );
 	Command += path;
 	Command += "\"";
@@ -136,10 +141,9 @@ int KProtocolTAR::OpenDir(KURL *url)
 {
     subdir = "";
     dirpathmem = dirpath = strdup( url->path() );
+
+    // extracting /xxx from a tarfile containing the file xxx won't work
     while( dirpath[0] == '/' ) dirpath++;	
-    
-    // extracting /xxx from a tarfile
-    // containing the file xxx won't work
     
     QString Command( "tar -%stvf -");
     int rc = AttachTAR( Command.data() );
@@ -161,15 +165,21 @@ KProtocolDirEntry *KProtocolTAR::ReadDir()
 	    moredata = HandleRefill();
 	if( iomask & KSlave::OUT || !moredata )
 	{
-            char *p_access = 0L, *p_owner = 0L, *p_group = 0L, *p_date_4 = 0L;
-            char *p_size = 0L, *p_date_1 = 0L, *p_date_2 = 0L, *p_date_3 = 0L, *p_name = 0L;
+            char *p_access = 0L, *p_owner = 0L, *p_group = 0L;
+            char *p_size = 0L, *p_date_1 = 0L, *p_date_2 = 0L, *p_name = 0L;
+            // char *p_date_3 = 0L, *p_date_4 = 0L;
 	    
 	    readstr = fgets(buffer,1024,dirfile);
 	    
 	    if( readstr && (p_access = strtok(buffer," ")) != 0 && (p_owner = strtok(NULL,"/")) != 0 &&
 		(p_group = strtok(NULL," ")) != 0 && (p_size = strtok(NULL," ")) != 0 &&
 		(p_date_1 = strtok(NULL," ")) != 0 && (p_date_2 = strtok(NULL," ")) != 0 &&
-		(p_date_3 = strtok(NULL," ")) != 0 && (p_date_4 = strtok(NULL," ")) != 0 &&
+//		(p_date_3 = strtok(NULL," ")) != 0 && (p_date_4 = strtok(NULL," ")) != 0 &&
+// removed by David. Looks like tar output has changed. Here it looks like :
+// -rw-r--r-- user/group  2858 1998-12-27 22:13 dir/file
+// so there are only two items for the date & time, not 4.
+// This is with GNU tar 1.12. Which tar has 4 items ? Old GNU tar or 
+// non-GNU tars ? Testing the tar version might be necessary...
 		(p_name = strtok(NULL,"\r\n")) != 0 &&
 		( !strlen( dirpath ) || strncmp( p_name, dirpath, strlen( dirpath ) ) == 0 ) )
 		{
@@ -198,7 +208,8 @@ KProtocolDirEntry *KProtocolTAR::ReadDir()
 			    de.name	= p_name;
 			    if( de.isdir )
 				de.name += "/";
-			    de.date.sprintf("%s %s %s",p_date_1,p_date_2,p_date_4);
+			    //de.date.sprintf("%s %s %s",p_date_1,p_date_2,p_date_4);
+                            de.date = p_date_1;
 			    /* doesn't understand time */
 			    return( &de );
 			}
@@ -216,7 +227,8 @@ KProtocolDirEntry *KProtocolTAR::ReadDir()
 				de.isdir	= true;
 				de.name	        = p_name;
 				de.name += "/";
-				de.date.sprintf("%s %s %s",p_date_1,p_date_2,p_date_4);
+				//de.date.sprintf("%s %s %s",p_date_1,p_date_2,p_date_4);
+                                de.date = p_date_1;
 				/* doesn't understand time */
 				return( &de );
 			    }
