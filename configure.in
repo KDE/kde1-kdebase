@@ -50,6 +50,9 @@ case $host in
         shadow_support=no
      )
      ;;
+*-*-freebsd* )
+   SETUIDFLAGS="4755"
+     ;;
 esac
 
 AC_CHECK_KDM dnl in kdminclude.m4
