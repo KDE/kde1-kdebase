@@ -1,3 +1,23 @@
+/* This file is part of the KDE libraries
+    Copyright (C) 1997 Martin Jones (mjones@kde.org)
+              (C) 1997 Torben Weis (weis@kde.org)
+			  (C) 1997 Sirtaj Singh Kang (taj@kde.org)
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Library General Public
+    License as published by the Free Software Foundation; either
+    version 2 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Library General Public License for more details.
+
+    You should have received a copy of the GNU Library General Public License
+    along with this library; see the file COPYING.LIB.  If not, write to
+    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+    Boston, MA 02111-1307, USA.
+*/
 ////////////////////////////////////////////////////
 //
 // Transparent support for JPEG files in Qt Pixmaps,
@@ -15,12 +35,6 @@
 #include"qcolor.h"
 #include"qpixmap.h"
 #include"jpeg.h"
-
-extern "C"
-{
-#include"jpeglib.h"
-}
-
 
 
 /////////////////////
@@ -90,7 +104,7 @@ void read_jpeg_jfif(QImageIO * iio)
 
 	// Read colourmap
 
-	for (col = 0; (int)col < cinfo.actual_number_of_colors; col++) {
+	for (col = 0; col < (unsigned int) cinfo.actual_number_of_colors; col++) {
 	    image.setColor(col, qRgb(cinfo.colormap[0][col],
 				     cinfo.colormap[1][col],
 				     cinfo.colormap[2][col]));
@@ -171,17 +185,17 @@ void read_jpeg_jfif(QImageIO * iio)
 
 void qimageio_jpeg_src(j_decompress_ptr cinfo, QDataStream * image)
 {
-    struct qimageio_jpeg_source_mgr *src;
+    qimageio_jpeg_source_mgr *src;
 
     // Set up buffer for the first time
 
-    if (cinfo->src == NULL) {
+    if (cinfo->src == 0L) {
 
 	cinfo->src = (struct jpeg_source_mgr *)
 	    (*cinfo->mem->alloc_small)
 	    ((j_common_ptr) cinfo,
 	     JPOOL_PERMANENT,
-	     sizeof(struct qimageio_jpeg_source_mgr));
+	     sizeof(qimageio_jpeg_source_mgr));
 
 	src = (qimageio_jpeg_source_mgr *) cinfo->src;
 
@@ -206,7 +220,7 @@ void qimageio_jpeg_src(j_decompress_ptr cinfo, QDataStream * image)
     src->infile = image;
 
     src->pub.bytes_in_buffer = 0;	/* forces fill_input_buffer on first read */
-    src->pub.next_input_byte = NULL;	/* until buffer loaded */
+    src->pub.next_input_byte = 0L;	/* until buffer loaded */
 
 }
 
