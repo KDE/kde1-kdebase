@@ -15,7 +15,7 @@
 #include <X11/Xutil.h>
 #include <X11/keysym.h>
 #include <qcursor.h>
-#include <sys/time.h>  
+#include <sys/time.h>
 
 //CT 17mar98
 #include <stdlib.h>
@@ -36,13 +36,13 @@ extern GC rootfillgc;
 // local prototypes
 
 void resizecalc(Client *c, int x, int y);
-void resizecalc_bl(Client *c, int x, int y); 
-void resizecalc_tl(Client *c, int x, int y); 
-void resizecalc_tr(Client *c, int x, int y); 
-void resizecalc_l(Client *c, int x, int y); 
-void resizecalc_r(Client *c, int x, int y); 
-void resizecalc_t(Client *c, int x, int y); 
-void resizecalc_b(Client *c, int x, int y); 
+void resizecalc_bl(Client *c, int x, int y);
+void resizecalc_tl(Client *c, int x, int y);
+void resizecalc_tr(Client *c, int x, int y);
+void resizecalc_l(Client *c, int x, int y);
+void resizecalc_r(Client *c, int x, int y);
+void resizecalc_t(Client *c, int x, int y);
+void resizecalc_b(Client *c, int x, int y);
 
 
 void resizecalc(Client *c, int x, int y){
@@ -61,8 +61,8 @@ void resizecalc_bl(Client *c, int x, int y){
   c->geometry.setHeight(y - c->geometry.y());
   c->adjustSize();
   c->geometry.moveBy(dx - c->geometry.width(),0);
-  
-}  
+
+}
 
 
 void resizecalc_tl(Client *c, int x, int y){
@@ -73,8 +73,8 @@ void resizecalc_tl(Client *c, int x, int y){
   c->adjustSize();
   c->geometry.moveBy(dx - c->geometry.width(),
 		      dy - c->geometry.height());
-  
-}  
+
+}
 
 void resizecalc_tr(Client *c, int x, int y){
   int dy = c->geometry.height();
@@ -83,7 +83,7 @@ void resizecalc_tr(Client *c, int x, int y){
   c->geometry.setHeight(c->geometry.y() + c->geometry.height() - y);
   c->adjustSize();
   c->geometry.moveBy(0, dy - c->geometry.height());
-}  
+}
 
 
 void resizecalc_l(Client *c, int x, int /* y */){
@@ -91,13 +91,13 @@ void resizecalc_l(Client *c, int x, int /* y */){
   c->geometry.setWidth( c->geometry.x() + c->geometry.width() - x);
   c->adjustSize();
   c->geometry.moveBy(dx - c->geometry.width(), 0);
-}  
+}
 
 void resizecalc_r(Client *c, int x, int /* y */){
     x+=1;
     c->geometry.setWidth( x - c->geometry.x());
     c->adjustSize();
-} 
+}
 
 void resizecalc_t(Client *c, int /* x */, int y){
   int dy = c->geometry.height();
@@ -105,18 +105,18 @@ void resizecalc_t(Client *c, int /* x */, int y){
   c->geometry.setHeight(c->geometry.y() + c->geometry.height() - y);
   c->adjustSize();
   c->geometry.moveBy(0, dy - c->geometry.height());
-} 
+}
 
 void resizecalc_b(Client *c, int /* x */, int y){
     y+=1;
     c->geometry.setHeight(y - c->geometry.y());
     c->adjustSize();
-} 
+}
 
 
 void dragcalc(Client* c, int x, int y) {
   c->geometry.moveTopLeft(QPoint(QPoint(x,y)- c->old_cursor_pos));
-  if (options.WindowSnapZone || options.BorderSnapZone) 
+  if (options.WindowSnapZone || options.BorderSnapZone)
     manager->snapIt(c);
 }
 
@@ -134,7 +134,7 @@ void draw_animation_rectangle(int x, int y, int dx, int dy, bool decorated, int 
     dx = 7;
   if (dy <= 7)
     dy = 7;
-  
+
    rects[0].x = x;
    rects[0].y = y;
    rects[0].width = dx;
@@ -150,14 +150,14 @@ void draw_animation_rectangle(int x, int y, int dx, int dy, bool decorated, int 
    XDrawRectangles(qt_xdisplay(),root,rootgc,rects,3);
    if (decorated){
      if (dy > TITLEBAR_HEIGHT + 3 + BORDER){
-       XDrawLine(qt_xdisplay(), root, rootgc, x+3, y+BORDER+TITLEBAR_HEIGHT, 
+       XDrawLine(qt_xdisplay(), root, rootgc, x+3, y+BORDER+TITLEBAR_HEIGHT,
 		 x+dx-3, y+BORDER+TITLEBAR_HEIGHT);
-       XDrawLine(qt_xdisplay(), root, rootgc, x+3, y+BORDER+TITLEBAR_HEIGHT+1, 
+       XDrawLine(qt_xdisplay(), root, rootgc, x+3, y+BORDER+TITLEBAR_HEIGHT+1,
 		 x+dx-3, y+BORDER+TITLEBAR_HEIGHT+1);
        if (dx > o1 + o2){
 	 XFillRectangle(qt_xdisplay(), root, rootfillgc,
 			x+o1, y+BORDER+1,
-			dx-o1-o2, 
+			dx-o1-o2,
 			TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION -2);
        }
      }
@@ -183,11 +183,11 @@ void drawbound(Client* c){
         y += dy;
         dy = -dy;
     }
-    draw_animation_rectangle(x,y,dx,dy, 
+    draw_animation_rectangle(x,y,dx,dy,
 			     c->getDecoration()==KWM::normalDecoration,
-			     c->title_rect.x(), 
+			     c->title_rect.x(),
 			     c->width()-c->title_rect.right());
-    
+
 }
 
 
@@ -201,7 +201,7 @@ bool electricBorder(Client* c, bool grab_server, int &x, int &y){
   if (n > 0){
     value.tv_usec = n % 1000000;
     value.tv_sec = n / 1000000;
-    (void) select(1, 0, 0, 0, &value);       
+    (void) select(1, 0, 0, 0, &value);
   }
   if (XCheckMaskEvent(qt_xdisplay(), PointerMotionMask, &ev)){
     while (XCheckMaskEvent(qt_xdisplay(), PointerMotionMask, &ev));
@@ -232,7 +232,7 @@ bool electricBorder(Client* c, bool grab_server, int &x, int &y){
     manager->moveDesktopInDirection(d, c);
     manager->timeStamp();
     while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
-    myapp->processEvents(); 
+    myapp->processEvents();
     if (grab_server){
       XGrabServer(qt_xdisplay());
     }
@@ -256,13 +256,13 @@ bool electricBorder(Client* c, bool grab_server, int &x, int &y){
 // recalc function which is called to recalculate the size and
 // position of the client.
 bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
-	      
+	
     XEvent ev;
     int cx, cy, rx, ry;
     QRect other;
 
     bool do_not_clear_rectangle = false;
-    
+
     bool transparent = false;
     if (recalc == dragcalc)
       transparent = (options.WindowMoveType == TRANSPARENT);
@@ -283,14 +283,14 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
     // set the focus policy to ClickToFocus to avoid flickering
     FOCUS_POLICY oldFocusPolicy = options.FocusPolicy;
     options.FocusPolicy = CLICK_TO_FOCUS;
-    
+
     if (transparent){
       XGrabServer(qt_xdisplay());
       drawbound(c);
     }
-    
+
     while (c->dragging_is_running() && !return_pressed){
-      
+
       XMaskEvent(qt_xdisplay(), ButtonMask|KeyPressMask|PointerMotionMask, &ev);
       return_pressed = ev.type == ButtonRelease;
       if (ev.type == KeyPress){
@@ -311,6 +311,7 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
 	continue;
       }
       else if (ev.type == MotionNotify){
+                while ( XCheckTypedEvent(qt_xdisplay(),MotionNotify, &ev) );// compress motion events
 	rx = ev.xmotion.x_root;
 	ry = ev.xmotion.y_root;
 	// electric borders
@@ -343,7 +344,7 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
 	XSync(qt_xdisplay(), False);
 	while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
 	Window w = c->window;
-	myapp->processEvents(); 
+	myapp->processEvents();
 	c = manager->getClient(w);
 	if (!c)
 	  return true;
@@ -423,7 +424,7 @@ bool movedrag(Client *c){
 // shows a skull and lets the user select a window that will be killed
 // with manager->killWindowAtPosition() later.
 void killSelect(){
-	      
+	
     XEvent ev;
     int return_pressed = 0;
     int escape_pressed = 0;
@@ -434,7 +435,7 @@ void killSelect(){
     while (!return_pressed &&
 	   ! escape_pressed &&
 	   ! button_1_released){
-      XMaskEvent(qt_xdisplay(), KeyPressMask | ButtonMask | 
+      XMaskEvent(qt_xdisplay(), KeyPressMask | ButtonMask |
 		 PointerMotionMask, &ev);
       if (ev.type == KeyPress){
 	int kc = XKeycodeToKeysym(qt_xdisplay(), ev.xkey.keycode, 0);
