@@ -17,6 +17,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <kprocess.h>
 #include <qapp.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
@@ -43,7 +44,7 @@ extern "C" {
 
 extern void initPasswd();
 int mode = MODE_NONE, lock = FALSE, passOk = FALSE;
-bool canGetPasswd = true;
+bool canGetPasswd;
 static int lockOnce = FALSE;
 static int only1Time = 0;
 static int xs_timeout, xs_interval, xs_prefer_blanking, xs_allow_exposures;
@@ -271,6 +272,36 @@ void setLock(QString type)
 	}
 }
 
+/* Verify, if kcheckpass is able to verify passwords.
+ * I cannot use KProcess here, as it needs ProcessEvents */
+bool canReadPasswdDatabase()
+{
+	KProcess chkpass;
+	QString kcp_binName = "";
+	kcp_binName += KApplication::kde_bindir();
+	kcp_binName += "/kcheckpass";
+	chkpass.clearArguments();
+	chkpass << kcp_binName;
+	bool ret = chkpass.start(KProcess::DontCare, KProcess::Stdin);
+	if (ret == false)
+          return false;
+
+	chkpass.closeStdin();
+	int timeout = 1000;
+	while ( timeout != 0 ) {
+	  if (! chkpass.isRunning() )
+	    break;
+	  else {
+	    globalKapp->processEvents();
+	    timeout--;
+	    usleep(10000);
+	  }
+	}
+	
+	int canRead = ( chkpass.normalExit() && (chkpass.exitStatus() != 2) );
+	return canRead;
+}
+
 //----------------------------------------------------------------------------
 
 int main( int argc, char *argv[] )
@@ -373,6 +404,15 @@ int main( int argc, char *argv[] )
 	initPasswd();
 	// ... and drop them again before doing anything important
 	setuid(getuid());
+
+	// now check, if I can verify passwords (might be a problem
+	// only with shadow passwords, due to missing SUID on
+	// kcheckpass program.
+#ifdef HAVE_SHADOW
+        canGetPasswd = canReadPasswdDatabase();
+#else
+	canGetPasswd = true;
+#endif
 
 	catchSignals();
 	if ( mode == MODE_INSTALL )

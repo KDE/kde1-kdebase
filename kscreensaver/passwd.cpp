@@ -102,7 +102,6 @@ static login_cap_t *rlc = NULL;
 #endif
 
 extern int mode;
-extern bool canGetPasswd;
 
 #if ( HAVE_FCNTL_H && defined( USE_MULTIPLE_ROOT ))
 #include <fcntl.h>
@@ -530,14 +529,9 @@ getCryptedUserPasswd(void)
 
 	if (!(pw = my_passwd_entry()))
 		error("%s: could not get encrypted user password.\n");
-	/*if ((pw = (struct passwd *) getpwuid(getuid())) == NULL) */
-	/* Check if there is any chance of unlocking the display later...  */
-	/* Program probably needs to be setuid to root.  */
-	/* If this is not possible, compile with -DUSE_XLOCKRC */
-#ifdef USE_SHADOW
-	if (passwd_invalid(pw->pw_passwd)) 
-	  canGetPasswd = true; // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! false
-#endif
+
+	// checking of "canGetPasswd" was here once. But it is now
+	// done in main.cpp (only for Shadow passwords).
 	(void) strcpy(userpass, pw->pw_passwd);
 
 #endif /* !OSF1_ENH_SEC */
@@ -798,7 +792,7 @@ checkPasswd(char *buffer)
 #endif /* !USE_PAM */
 #endif /* !DCE_PASSWD */
 
-	return !canGetPasswd || done;
+	return done;
 }
 
 /*-

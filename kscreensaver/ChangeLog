@@ -1,3 +1,8 @@
+1998-12-13  Christian Esken  <esken@kde.org>
+
+	* Calling kcheckpass (only on Shadow systems). This checks if the password
+	database can be acessed. This uses the new return code (#2) by kcheckpass.
+
 1998-10-24  Alex Zepeda  <garbanzo@hooked.net>
 
 	* bsod.cpp (BSODSaver::BSODSaver): Use srandomdev where available.

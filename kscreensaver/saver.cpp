@@ -1,4 +1,5 @@
 #include <pwd.h>
+#include <unistd.h>
 #include <qapp.h>
 #include <X11/Xlib.h>
 #include <qbitmap.h>
@@ -162,14 +163,14 @@ int KPasswordDlg::tryPassword()
         chkpass.writeStdin(password.data(),password.length()); // write Password to stdin
 	chkpass.closeStdin();                // eof
 
-	int timeout = 10;
+	int timeout = 1000;
 	while ( timeout != 0 ) {
 	  if (! chkpass.isRunning() )
 	    break;
 	  else {
 	    globalKapp->processEvents();
 	    timeout--;
-	    sleep(1);
+	    usleep(10000);
 	  }
 	}
 	
