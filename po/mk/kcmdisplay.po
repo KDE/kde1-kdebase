@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-06 01:13+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: 1998-05-22 10:10+0000\n"
 "Last-Translator: Sasha Konecni <sasha@msi-uk.com>\n"
 "Language-Team: Macedonian\n"
@@ -447,82 +447,78 @@ msgstr "Nisko"
 
 #: general.cpp:222
 #, fuzzy
-msgid "Fonts etc."
-msgstr "Fontovi"
+msgid "Style"
+msgstr "&Stil"
 
 #: general.cpp:230
 msgid "&Draw widgets in the style of Windows 95"
 msgstr ""
 
-#: general.cpp:244
-msgid "&Apply style to non-KDE apps"
-msgstr ""
-
-#: general.cpp:258
+#: general.cpp:246
 msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr ""
 
-#: general.cpp:273
-#, fuzzy
-msgid "Desktop fonts"
-msgstr "Desktop"
+#: general.cpp:260
+msgid "&Apply fonts and colors to non-KDE apps"
+msgstr ""
 
-#: general.cpp:285
+#: general.cpp:531
 msgid "General font"
 msgstr "Generalen font"
 
-#: general.cpp:290
+#: general.cpp:536
 msgid "Fixed font"
 msgstr ""
 
-#: general.cpp:296
+#: general.cpp:542
 #, fuzzy
 msgid "Window title font"
 msgstr "Tekst na Prozorec"
 
-#: general.cpp:301
+#: general.cpp:547
 msgid "Panel button font"
 msgstr ""
 
-#: general.cpp:306
+#: general.cpp:552
 msgid "Panel clock font"
 msgstr ""
 
-#: general.cpp:336
+#: general.cpp:582
 #, fuzzy
 msgid "Sample text"
 msgstr "Selektiraj tekst"
 
-#: general.cpp:344
+#: general.cpp:590
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
 
-#: main.cpp:63
+#: main.cpp:64
 msgid "&Background"
 msgstr "&Pozadina"
 
-#: main.cpp:66
+#: main.cpp:67
 msgid "&Screensaver"
 msgstr "&Zashtituvach na Ekran"
 
-#: main.cpp:70
+#: main.cpp:71
 msgid "&Colors"
 msgstr "&Boi"
 
-#: main.cpp:73
-#, fuzzy
-msgid "&Fonts etc."
-msgstr "Fontovi"
+#: main.cpp:77
+msgid "&Style"
+msgstr "&Stil"
 
-#: main.cpp:79
-msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+#: main.cpp:83
+#, fuzzy
+msgid ""
+"usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
 "upotreba:  kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:140
+#: main.cpp:150
 msgid "Display settings"
 msgstr "Pokazi gi postavkite"
 
@@ -570,6 +566,18 @@ msgstr "standarden"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "koj bilo"
+
+#, fuzzy
+#~ msgid "Fonts etc."
+#~ msgstr "Fontovi"
+
+#, fuzzy
+#~ msgid "Desktop fonts"
+#~ msgstr "Desktop"
+
+#, fuzzy
+#~ msgid "&Fonts etc."
+#~ msgstr "Fontovi"
 
 #, fuzzy
 #~ msgid "One Des&ktop"
@@ -650,6 +658,3 @@ msgstr "koj bilo"
 
 #~ msgid "Large"
 #~ msgstr "Golem"
-
-#~ msgid "&Style"
-#~ msgstr "&Stil"

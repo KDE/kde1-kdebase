@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-01-09 01:15+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -20,7 +20,7 @@ msgstr "特性"
 msgid "Go!"
 msgstr "开始!"
 
-#: kpanel.C:333 tools.C:890
+#: kpanel.C:333 tools.C:900
 msgid "Where do you want to go tomorrow?"
 msgstr "主菜单"
 
@@ -52,7 +52,7 @@ msgstr ""
 msgid "No comment available"
 msgstr "没有说明"
 
-#: kpanel.C:1246 tools.C:899
+#: kpanel.C:1246 tools.C:909
 msgid "Windowlist"
 msgstr "窗口列表"
 
@@ -87,7 +87,7 @@ msgstr "加在窗口列表中"
 msgid "Add a windowlist menu onto the panel"
 msgstr "在窗口面板上新增窗口列表菜单"
 
-#: events.C:800 props.C:182
+#: events.C:810 props.C:182
 msgid "Configure"
 msgstr "配置"
 
@@ -103,7 +103,7 @@ msgstr "编辑菜单项"
 msgid "Add or remove applications in the menu structure "
 msgstr "在菜单结构中增加或去掉应用程序 "
 
-#: events.C:802 props.C:188
+#: events.C:812 props.C:188
 msgid "Restart"
 msgstr "重新开始"
 
@@ -127,7 +127,7 @@ msgstr "锁住屏幕"
 msgid "The menu editor is not installed."
 msgstr "菜单编辑器没有安装."
 
-#: events.C:856 props.C:451
+#: events.C:866 props.C:451
 msgid "Oops!"
 msgstr "错误!"
 
@@ -137,11 +137,11 @@ msgid ""
 "%b %d"
 msgstr ""
 
-#: tools.C:908
+#: tools.C:918
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:855
+#: events.C:865
 msgid "Cannot put this as button onto the panel!"
 msgstr "不能把这个对象当作按钮放到面板上!"
 

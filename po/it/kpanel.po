@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
-"POT-Creation-Date: 1999-01-09 01:15+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
 "<Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -23,7 +23,7 @@ msgstr "&Proprietà"
 msgid "Go!"
 msgstr "Va!"
 
-#: kpanel.C:333 tools.C:890
+#: kpanel.C:333 tools.C:900
 msgid "Where do you want to go tomorrow?"
 msgstr "Dove vuoi andare Domani ?"
 
@@ -55,7 +55,7 @@ msgstr "Riduci a icona le altre finestre"
 msgid "No comment available"
 msgstr "Nessun commento disponibile"
 
-#: kpanel.C:1246 tools.C:899
+#: kpanel.C:1246 tools.C:909
 msgid "Windowlist"
 msgstr "Lista Finestre"
 
@@ -89,7 +89,7 @@ msgstr "Aggiungi Lista Finestre"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Aggiunge la Lista Finestre sul Pannello"
 
-#: events.C:800 props.C:182
+#: events.C:810 props.C:182
 msgid "Configure"
 msgstr "Configura"
 
@@ -105,7 +105,7 @@ msgstr "Modifica Menu"
 msgid "Add or remove applications in the menu structure "
 msgstr "Aggiunge o rimuove un'applicazione dal menu"
 
-#: events.C:802 props.C:188
+#: events.C:812 props.C:188
 msgid "Restart"
 msgstr "Riavvia"
 
@@ -129,7 +129,7 @@ msgstr "Blocca schermo"
 msgid "The menu editor is not installed."
 msgstr "Il menu editor non è installato"
 
-#: events.C:856 props.C:451
+#: events.C:866 props.C:451
 msgid "Oops!"
 msgstr "Ops!"
 
@@ -141,11 +141,11 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:908
+#: tools.C:918
 msgid "KDiskNavigator"
 msgstr "KDiskNavigator"
 
-#: events.C:855
+#: events.C:865
 msgid "Cannot put this as button onto the panel!"
 msgstr "Impossibile mettere questo come pulsante sul pannello!"
 

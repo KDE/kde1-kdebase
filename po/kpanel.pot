@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-09 01:15+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Go!"
 msgstr ""
 
-#: kpanel.C:333 tools.C:890
+#: kpanel.C:333 tools.C:900
 msgid "Where do you want to go tomorrow?"
 msgstr ""
 
@@ -58,7 +58,7 @@ msgstr ""
 msgid "No comment available"
 msgstr ""
 
-#: kpanel.C:1246 tools.C:899
+#: kpanel.C:1246 tools.C:909
 msgid "Windowlist"
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Add a windowlist menu onto the panel"
 msgstr ""
 
-#: events.C:800 props.C:182
+#: events.C:810 props.C:182
 msgid "Configure"
 msgstr ""
 
@@ -106,7 +106,7 @@ msgstr ""
 msgid "Add or remove applications in the menu structure "
 msgstr ""
 
-#: events.C:802 props.C:188
+#: events.C:812 props.C:188
 msgid "Restart"
 msgstr ""
 
@@ -130,7 +130,7 @@ msgstr ""
 msgid "The menu editor is not installed."
 msgstr ""
 
-#: events.C:856 props.C:451
+#: events.C:866 props.C:451
 msgid "Oops!"
 msgstr ""
 
@@ -140,11 +140,11 @@ msgid ""
 "%b %d"
 msgstr ""
 
-#: tools.C:908
+#: tools.C:918
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:855
+#: events.C:865
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-06 01:13+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -438,51 +438,47 @@ msgid "Low"
 msgstr "낮음"
 
 #: general.cpp:222
-msgid "Fonts etc."
-msgstr "글꼴 등등.."
+msgid "Style"
+msgstr ""
 
 #: general.cpp:230
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "윈도우 95 스타일로 위젯 그림(&D)"
 
-#: general.cpp:244
-msgid "&Apply style to non-KDE apps"
-msgstr ""
-
-#: general.cpp:258
+#: general.cpp:246
 msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr ""
 
-#: general.cpp:273
-msgid "Desktop fonts"
-msgstr "데스크탑 글꼴"
+#: general.cpp:260
+msgid "&Apply fonts and colors to non-KDE apps"
+msgstr ""
 
-#: general.cpp:285
+#: general.cpp:531
 msgid "General font"
 msgstr "일반 글꼴"
 
-#: general.cpp:290
+#: general.cpp:536
 msgid "Fixed font"
 msgstr "고정폭 글꼴"
 
-#: general.cpp:296
+#: general.cpp:542
 #, fuzzy
 msgid "Window title font"
 msgstr "윈도우 문자"
 
-#: general.cpp:301
+#: general.cpp:547
 msgid "Panel button font"
 msgstr "패널 단추 글꼴"
 
-#: general.cpp:306
+#: general.cpp:552
 msgid "Panel clock font"
 msgstr "패널 시계 글꼴"
 
-#: general.cpp:336
+#: general.cpp:582
 msgid "Sample text"
 msgstr "예제 글"
 
-#: general.cpp:344
+#: general.cpp:590
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
@@ -492,27 +488,29 @@ msgstr ""
 "가 나 다 라 마 바 사 아 자 차 카 타 파 하\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" � $ % ^ & * ( )"
 
-#: main.cpp:63
+#: main.cpp:64
 msgid "&Background"
 msgstr "배경(&B)"
 
-#: main.cpp:66
+#: main.cpp:67
 msgid "&Screensaver"
 msgstr "화면보호기(&S)"
 
-#: main.cpp:70
+#: main.cpp:71
 msgid "&Colors"
 msgstr "색(&C)"
 
-#: main.cpp:73
-msgid "&Fonts etc."
-msgstr "글꼴 등등(&F)"
+#: main.cpp:77
+msgid "&Style"
+msgstr ""
 
-#: main.cpp:79
-msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+#: main.cpp:83
+#, fuzzy
+msgid ""
+"usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr "사용법: kcmdisplay [-init | {배경,화면보호기,색,스타일}]\n"
 
-#: main.cpp:140
+#: main.cpp:150
 msgid "Display settings"
 msgstr "디스플레이 설정"
 
@@ -559,6 +557,15 @@ msgstr "기본"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "무관하게"
+
+#~ msgid "Fonts etc."
+#~ msgstr "글꼴 등등.."
+
+#~ msgid "Desktop fonts"
+#~ msgstr "데스크탑 글꼴"
+
+#~ msgid "&Fonts etc."
+#~ msgstr "글꼴 등등(&F)"
 
 #, fuzzy
 #~ msgid "One Des&ktop"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-09 01:15+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Go!"
 msgstr "출발!"
 
-#: kpanel.C:333 tools.C:890
+#: kpanel.C:333 tools.C:900
 msgid "Where do you want to go tomorrow?"
 msgstr "내일 어디로 가시겠습니까?"
 
@@ -58,7 +58,7 @@ msgstr ""
 msgid "No comment available"
 msgstr "설명이 없습니다"
 
-#: kpanel.C:1246 tools.C:899
+#: kpanel.C:1246 tools.C:909
 msgid "Windowlist"
 msgstr "윈도우목록"
 
@@ -93,7 +93,7 @@ msgstr "윈도우목록 추가"
 msgid "Add a windowlist menu onto the panel"
 msgstr "윈도우목록 메뉴 패널에 추가"
 
-#: events.C:800 props.C:182
+#: events.C:810 props.C:182
 msgid "Configure"
 msgstr "설정"
 
@@ -109,7 +109,7 @@ msgstr "메뉴 편집"
 msgid "Add or remove applications in the menu structure "
 msgstr "메뉴 구조의 응용프로그램 추가 또는 삭제 "
 
-#: events.C:802 props.C:188
+#: events.C:812 props.C:188
 msgid "Restart"
 msgstr "다시 시작"
 
@@ -133,7 +133,7 @@ msgstr "화면 잠금"
 msgid "The menu editor is not installed."
 msgstr "메뉴 편집기가 설치되지 않았습니다."
 
-#: events.C:856 props.C:451
+#: events.C:866 props.C:451
 msgid "Oops!"
 msgstr "아!"
 
@@ -143,11 +143,11 @@ msgid ""
 "%b %d"
 msgstr ""
 
-#: tools.C:908
+#: tools.C:918
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:855
+#: events.C:865
 msgid "Cannot put this as button onto the panel!"
 msgstr "패널에 단추로 넣을 수 없습니다!"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-01-09 01:15+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -21,7 +21,7 @@ msgstr "&Propriedades"
 msgid "Go!"
 msgstr "Começar!"
 
-#: kpanel.C:333 tools.C:890
+#: kpanel.C:333 tools.C:900
 msgid "Where do you want to go tomorrow?"
 msgstr "Onde é que queres ir amanhã?"
 
@@ -53,7 +53,7 @@ msgstr "Iconificar outras &janelas"
 msgid "No comment available"
 msgstr "Nenhum comentário disponivel"
 
-#: kpanel.C:1246 tools.C:899
+#: kpanel.C:1246 tools.C:909
 msgid "Windowlist"
 msgstr "Lista de Janelas"
 
@@ -85,7 +85,7 @@ msgstr "Adicionar Lista de Janelas"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Adicionar lista de janelas ao painel"
 
-#: events.C:800 props.C:182
+#: events.C:810 props.C:182
 msgid "Configure"
 msgstr "Configurar"
 
@@ -101,7 +101,7 @@ msgstr "Editar Menus"
 msgid "Add or remove applications in the menu structure "
 msgstr "Adicionar ou remover aplicações ao menu"
 
-#: events.C:802 props.C:188
+#: events.C:812 props.C:188
 msgid "Restart"
 msgstr "Reinicializar"
 
@@ -125,7 +125,7 @@ msgstr "Bloquear Écran"
 msgid "The menu editor is not installed."
 msgstr "O editor de menus não está instalado."
 
-#: events.C:856 props.C:451
+#: events.C:866 props.C:451
 msgid "Oops!"
 msgstr "Oops!"
 
@@ -137,11 +137,11 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:908
+#: tools.C:918
 msgid "KDiskNavigator"
 msgstr "Navegador"
 
-#: events.C:855
+#: events.C:865
 msgid "Cannot put this as button onto the panel!"
 msgstr "Não é possivel adicionar isto ao painel como botão!"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt\n"
-"POT-Creation-Date: 1998-11-12 01:17+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
 "MIME-Version:\n"
@@ -177,7 +177,7 @@ msgstr ""
 "As novas definições de cor serão mostradas\n"
 "quando o teclado estiver destrancado."
 
-#: main.C:1435
+#: main.C:1433
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -190,64 +190,64 @@ msgstr ""
 "Emulação de terminal para o KDE Desktop Environment\n"
 "baseado no rvt-2.08 de Robert Nation\n"
 
-#: main.C:1439
+#: main.C:1437
 msgid "Permitted arguments are:\n"
 msgstr "Argumentos aceites são:\n"
 
-#: main.C:1440
+#: main.C:1438
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <comando> <arg> ...    executar comando com arg - deve ser o último "
 "argumento\n"
 
-#: main.C:1441
+#: main.C:1439
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <nome>           especificar o écran (servidor)\n"
 
-#: main.C:1442
+#: main.C:1440
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <spec>       a geometria inicial da janela do vt\n"
 
-#: main.C:1443
+#: main.C:1441
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr "-print-pipe <nome>        especificar pipe para impressora de vt100\n"
 
-#: main.C:1444
+#: main.C:1442
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <cor>              cor de fundo\n"
 
-#: main.C:1445
+#: main.C:1443
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <cor>              cor das letras\n"
 
-#: main.C:1446
+#: main.C:1444
 msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <nome da fonte>   fonte normal\n"
 
-#: main.C:1447
+#: main.C:1445
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr ""
 "-no_font_hack             desligar o \"arranjo\" do bug das fontes de Qt\n"
 
-#: main.C:1448
+#: main.C:1446
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <tamanho>        tiny, small, normal, large, huge\n"
 
-#: main.C:1449
+#: main.C:1447
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr ""
 "-linux                    configura o kvt para imitar a consola de linux\n"
 
-#: main.C:1450
+#: main.C:1448
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar               esconde a barra de menu\n"
 
-#: main.C:1451
+#: main.C:1449
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar             esconde a barra de arrasto\n"
 
-#: main.C:1452
+#: main.C:1450
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -255,19 +255,19 @@ msgstr ""
 "-T <texto>                texto no título da janela\n"
 "                          (Obsoleto. Use -caption)\n"
 
-#: main.C:1454
+#: main.C:1452
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <TERM>               Tipo de terminal. Por omissão xterm.\n"
 
-#: main.C:1455
+#: main.C:1453
 msgid "-C                        Capture system console message\n"
 msgstr "-C                        Capturar mensagens da consola do sistema\n"
 
-#: main.C:1456
+#: main.C:1454
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <texto>                nome no ícone ou janela de ícone\n"
 
-#: main.C:1457
+#: main.C:1455
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -275,7 +275,7 @@ msgstr ""
 "-7                        correr em modo de 7 bits\n"
 "-8                        correr em modo de 8 bits\n"
 
-#: main.C:1459
+#: main.C:1457
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
@@ -284,7 +284,7 @@ msgstr ""
 "-ls                       iniciar kvt como shell de login\n"
 "-ls-                      initiar kvt não como shell de login (por omissão)\n"
 
-#: main.C:1461
+#: main.C:1459
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
@@ -292,13 +292,13 @@ msgstr ""
 "-meta <arg>               tratar Meta com prefixo de ESCAPE, 8THBIT "
 "colocado, ou ignorar\n"
 
-#: main.C:1462
+#: main.C:1460
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr ""
 "-sl <número>              número de linhas gravadas no buffer de "
 "scroll-back\n"
 
-#: main.C:1463
+#: main.C:1461
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -310,7 +310,7 @@ msgstr ""
 "-pagedown <keysym>        utilizar alt-keysym para descer no buffer de "
 "scroll-back\n"
 
-#: main.C:1467
+#: main.C:1465
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

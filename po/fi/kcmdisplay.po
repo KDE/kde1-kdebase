@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDISPLAY\n"
-"POT-Creation-Date: 1999-01-06 01:13+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -422,50 +422,47 @@ msgid "Low"
 msgstr "Matala"
 
 #: general.cpp:222
-msgid "Fonts etc."
-msgstr "Kirjasimet"
+msgid "Style"
+msgstr ""
 
 #: general.cpp:230
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "&Piirrä työkalut Windows 95 tyylillä"
 
-#: general.cpp:244
-msgid "&Apply style to non-KDE apps"
-msgstr "&Käytä tyyliä muissa sovelluksissa"
-
-#: general.cpp:258
+#: general.cpp:246
 msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr "&Otsikkopalkki ruudun ylälaidassa MacOS tyyliin"
 
-#: general.cpp:273
-msgid "Desktop fonts"
-msgstr "Työpöydän kirjasimet"
+#: general.cpp:260
+#, fuzzy
+msgid "&Apply fonts and colors to non-KDE apps"
+msgstr "&Käytä tyyliä muissa sovelluksissa"
 
-#: general.cpp:285
+#: general.cpp:531
 msgid "General font"
 msgstr "Yleinen kirjasin"
 
-#: general.cpp:290
+#: general.cpp:536
 msgid "Fixed font"
 msgstr "Tasavälinen kirjasin"
 
-#: general.cpp:296
+#: general.cpp:542
 msgid "Window title font"
 msgstr "Ikkunan ostikkokirjasin"
 
-#: general.cpp:301
+#: general.cpp:547
 msgid "Panel button font"
 msgstr "Paneelin napin kirjasin"
 
-#: general.cpp:306
+#: general.cpp:552
 msgid "Panel clock font"
 msgstr "Paneelin kellon kirjasin"
 
-#: general.cpp:336
+#: general.cpp:582
 msgid "Sample text"
 msgstr "Malliteksti"
 
-#: general.cpp:344
+#: general.cpp:590
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
@@ -475,27 +472,29 @@ msgstr ""
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 
-#: main.cpp:63
+#: main.cpp:64
 msgid "&Background"
 msgstr "&Tausta"
 
-#: main.cpp:66
+#: main.cpp:67
 msgid "&Screensaver"
 msgstr "&Näytönsäästäjä"
 
-#: main.cpp:70
+#: main.cpp:71
 msgid "&Colors"
 msgstr "&Värit"
 
-#: main.cpp:73
-msgid "&Fonts etc."
-msgstr "&Kirjasimet"
+#: main.cpp:77
+msgid "&Style"
+msgstr ""
 
-#: main.cpp:79
-msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+#: main.cpp:83
+#, fuzzy
+msgid ""
+"usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr "käyttö: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:140
+#: main.cpp:150
 msgid "Display settings"
 msgstr "Näytön asetukset"
 
@@ -542,6 +541,15 @@ msgstr "oletus"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "kaikki"
+
+#~ msgid "Fonts etc."
+#~ msgstr "Kirjasimet"
+
+#~ msgid "Desktop fonts"
+#~ msgstr "Työpöydän kirjasimet"
+
+#~ msgid "&Fonts etc."
+#~ msgstr "&Kirjasimet"
 
 #~ msgid "kb"
 #~ msgstr "kb"

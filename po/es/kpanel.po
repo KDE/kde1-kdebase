@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-09 01:15+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: 1999-01-06 17:59+0100\n"
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -22,7 +22,7 @@ msgstr "&Propiedades"
 msgid "Go!"
 msgstr "Inicio"
 
-#: kpanel.C:333 tools.C:890
+#: kpanel.C:333 tools.C:900
 msgid "Where do you want to go tomorrow?"
 msgstr "¿Hasta dónde quiere llegar mañana?"
 
@@ -54,7 +54,7 @@ msgstr "Iconizar otras &ventanas"
 msgid "No comment available"
 msgstr "No hay comentario disponible"
 
-#: kpanel.C:1246 tools.C:899
+#: kpanel.C:1246 tools.C:909
 msgid "Windowlist"
 msgstr "Lista de ventanas"
 
@@ -86,7 +86,7 @@ msgstr "Añadir Lista de Ventanas"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Añadir una lista de ventanas al panel"
 
-#: events.C:800 props.C:182
+#: events.C:810 props.C:182
 msgid "Configure"
 msgstr "Configurar"
 
@@ -102,7 +102,7 @@ msgstr "Editar Menús"
 msgid "Add or remove applications in the menu structure "
 msgstr "Añadir o suprimir aplicaciones en la estructura del menú "
 
-#: events.C:802 props.C:188
+#: events.C:812 props.C:188
 msgid "Restart"
 msgstr "Reiniciar"
 
@@ -126,7 +126,7 @@ msgstr "Bloquear pantalla"
 msgid "The menu editor is not installed."
 msgstr "El editor de menús no está instalado."
 
-#: events.C:856 props.C:451
+#: events.C:866 props.C:451
 msgid "Oops!"
 msgstr "¡Ups!"
 
@@ -138,11 +138,11 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:908
+#: tools.C:918
 msgid "KDiskNavigator"
 msgstr "Navegador de disco"
 
-#: events.C:855
+#: events.C:865
 msgid "Cannot put this as button onto the panel!"
 msgstr "Imposible poner este botón en el panel."
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: 1998-12-23 14:17 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
@@ -84,31 +84,31 @@ msgstr "Implicitní znaková sada"
 msgid "Use language charset"
 msgstr "Pou¾ívat znakovou sadu jazyka"
 
-#: htmlopts.cpp:329
+#: htmlopts.cpp:330
 msgid "Background Color:"
 msgstr "Barva pozadí:"
 
-#: htmlopts.cpp:341
+#: htmlopts.cpp:342
 msgid "Normal Text Color:"
 msgstr "Barva normálního textu:"
 
-#: htmlopts.cpp:353
+#: htmlopts.cpp:354
 msgid "URL Link Color:"
 msgstr "Barva URL odkazu:"
 
-#: htmlopts.cpp:365
+#: htmlopts.cpp:366
 msgid "Followed Link Color:"
 msgstr "Barva pou¾itého odkazu:"
 
-#: htmlopts.cpp:377
+#: htmlopts.cpp:378
 msgid "Change cursor over link."
 msgstr "Zmìnit kurzor nad odkazem."
 
-#: htmlopts.cpp:383
+#: htmlopts.cpp:384
 msgid "Underline links"
 msgstr "Podtrhávat odkazy"
 
-#: htmlopts.cpp:390
+#: htmlopts.cpp:391
 msgid "Always use my colors"
 msgstr ""
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KPANEL\n"
-"POT-Creation-Date: 1999-01-09 01:15+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr "&Asetukset"
 msgid "Go!"
 msgstr "Siirry!"
 
-#: kpanel.C:333 tools.C:890
+#: kpanel.C:333 tools.C:900
 msgid "Where do you want to go tomorrow?"
 msgstr "Mihin haluat t‰n‰‰n menn‰?"
 
@@ -57,7 +57,7 @@ msgstr "Pienenn‰ &muut ikkunat"
 msgid "No comment available"
 msgstr "Tietoa ei ole saatavilla"
 
-#: kpanel.C:1246 tools.C:899
+#: kpanel.C:1246 tools.C:909
 msgid "Windowlist"
 msgstr "Ikkunalista"
 
@@ -89,7 +89,7 @@ msgstr "Lis‰‰ Ikkunalista"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Lis‰‰ ikkunalista -valikko paneeliin"
 
-#: events.C:800 props.C:182
+#: events.C:810 props.C:182
 msgid "Configure"
 msgstr "Asetukset"
 
@@ -105,7 +105,7 @@ msgstr "Muokkaa valikoita"
 msgid "Add or remove applications in the menu structure "
 msgstr "Lis‰‰ tai poista valikoiden sovelluksia"
 
-#: events.C:802 props.C:188
+#: events.C:812 props.C:188
 msgid "Restart"
 msgstr "K‰ynnist‰ uudelleen"
 
@@ -129,7 +129,7 @@ msgstr "Lukitse n‰yttˆ"
 msgid "The menu editor is not installed."
 msgstr "Valikkoeditoria ei ole asennettu."
 
-#: events.C:856 props.C:451
+#: events.C:866 props.C:451
 msgid "Oops!"
 msgstr "Hups!"
 
@@ -141,11 +141,11 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:908
+#: tools.C:918
 msgid "KDiskNavigator"
 msgstr "Levyselain"
 
-#: events.C:855
+#: events.C:865
 msgid "Cannot put this as button onto the panel!"
 msgstr "En voi laittaa t‰t‰ nappina paneeliin!"
 

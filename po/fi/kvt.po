@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KVT\n"
-"POT-Creation-Date: 1998-11-12 01:17+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -181,7 +181,7 @@ msgstr ""
 "Uudet väriasetukset astuvat voimaan\n"
 "heti, kun näppäimistö vapautetaan."
 
-#: main.C:1435
+#: main.C:1433
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -194,62 +194,62 @@ msgstr ""
 "Pääte-emulaatio KDE Desktop Ympäristöön\n"
 "perustuu Robert Nationin rxvt-2.08 ohjelmaan.\n"
 
-#: main.C:1439
+#: main.C:1437
 msgid "Permitted arguments are:\n"
 msgstr "Sallitut komentorivioptiot ovat:\n"
 
-#: main.C:1440
+#: main.C:1438
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <komento> <arg> ...    suorita komento argumenteilla - pitää olla "
 "viimeinen\n"
 
-#: main.C:1441
+#: main.C:1439
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <nimi>           määrittele näytön nimi (palvelin)\n"
 
-#: main.C:1442
+#: main.C:1440
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <muoto>      aloitusmuoto ikkunalle\n"
 
-#: main.C:1443
+#: main.C:1441
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr "-print-pipe <nimi>        määrittele putki VT-100 tulostimelle\n"
 
-#: main.C:1444
+#: main.C:1442
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <väri>             taustaväri\n"
 
-#: main.C:1445
+#: main.C:1443
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <väri>             edustaväri\n"
 
-#: main.C:1446
+#: main.C:1444
 msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <kirjasinnimi>   normaalikirjasin\n"
 
-#: main.C:1447
+#: main.C:1445
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr "-no_font_hack             poista Qt:n fonttivirheen kierto\n"
 
-#: main.C:1448
+#: main.C:1446
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <koko>           tiny, small, normal, large, huge\n"
 
-#: main.C:1449
+#: main.C:1447
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr "-linux                    aseta kvt matkimaan linuxin konsolia\n"
 
-#: main.C:1450
+#: main.C:1448
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar               piilota valikkorivi\n"
 
-#: main.C:1451
+#: main.C:1449
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar             piilota vierityspalkki\n"
 
-#: main.C:1452
+#: main.C:1450
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -257,19 +257,19 @@ msgstr ""
 "-T <teksti>               ikkunan otsikkoteksti \n"
 "                          (Vanha. Käytä -caption:ia)\n"
 
-#: main.C:1454
+#: main.C:1452
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <TERM>                Päätteen tyyppi. Oletus on xterm.\n"
 
-#: main.C:1455
+#: main.C:1453
 msgid "-C                        Capture system console message\n"
 msgstr "-C                        Kaappaa järjestelmän konsoliviestit\n"
 
-#: main.C:1456
+#: main.C:1454
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <teksti>               nimi kuvakkeen yhteydessä\n"
 
-#: main.C:1457
+#: main.C:1455
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -277,7 +277,7 @@ msgstr ""
 "-7                        aja 7-bittisessä tilassa\n"
 "-8                        aja 8-bittisessä tilassa\n"
 
-#: main.C:1459
+#: main.C:1457
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
@@ -287,7 +287,7 @@ msgstr ""
 "-ls-                      aseta kvt:n komentotulkki ei-login tilaan "
 "(oletus)\n"
 
-#: main.C:1461
+#: main.C:1459
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
@@ -295,11 +295,11 @@ msgstr ""
 "-meta <arg>               Käsittele Meta ESCAPE etumerkillä, 8THBIT "
 "asetettu, tai ohita\n"
 
-#: main.C:1462
+#: main.C:1460
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr "-sl <määrä>               kuinka monta riviä säilytetään puskurissa\n"
 
-#: main.C:1463
+#: main.C:1461
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -309,7 +309,7 @@ msgstr ""
 "-pageup <näpp.symb.>      käytä alt + näppäintä puskurin ylös selaamiseen\n"
 "-pagedown <näpp.symb.>    käytä alt + näppäintä puskurin ylös selaamiseen\n"
 
-#: main.C:1467
+#: main.C:1465
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

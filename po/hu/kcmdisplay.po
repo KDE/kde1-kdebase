@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay VERSION\n"
-"POT-Creation-Date: 1999-01-06 01:13+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: 1998-02-26 19:20+0100\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -443,85 +443,80 @@ msgid "Low"
 msgstr "Kicsi"
 
 #: general.cpp:222
-#, fuzzy
-msgid "Fonts etc."
-msgstr "Betûk"
+msgid "Style"
+msgstr ""
 
 #: general.cpp:230
 msgid "&Draw widgets in the style of Windows 95"
 msgstr ""
 
-#: general.cpp:244
-msgid "&Apply style to non-KDE apps"
-msgstr ""
-
-#: general.cpp:258
+#: general.cpp:246
 msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr ""
 
-#: general.cpp:273
-#, fuzzy
-msgid "Desktop fonts"
-msgstr "Asztal"
+#: general.cpp:260
+msgid "&Apply fonts and colors to non-KDE apps"
+msgstr ""
 
-#: general.cpp:285
+#: general.cpp:531
 msgid "General font"
 msgstr "Általános betû"
 
-#: general.cpp:290
+#: general.cpp:536
 msgid "Fixed font"
 msgstr ""
 
-#: general.cpp:296
+#: general.cpp:542
 #, fuzzy
 msgid "Window title font"
 msgstr "Ablak szövege"
 
-#: general.cpp:301
+#: general.cpp:547
 #, fuzzy
 msgid "Panel button font"
 msgstr "Általános betû"
 
-#: general.cpp:306
+#: general.cpp:552
 msgid "Panel clock font"
 msgstr ""
 
-#: general.cpp:336
+#: general.cpp:582
 #, fuzzy
 msgid "Sample text"
 msgstr "Szöveg kiválasztása"
 
-#: general.cpp:344
+#: general.cpp:590
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
 
-#: main.cpp:63
+#: main.cpp:64
 #, fuzzy
 msgid "&Background"
 msgstr "Háttér"
 
-#: main.cpp:66
+#: main.cpp:67
 msgid "&Screensaver"
 msgstr "&Képernyõvédõ"
 
-#: main.cpp:70
+#: main.cpp:71
 msgid "&Colors"
 msgstr "&Színek"
 
-#: main.cpp:73
-#, fuzzy
-msgid "&Fonts etc."
-msgstr "Betûk"
+#: main.cpp:77
+msgid "&Style"
+msgstr ""
 
-#: main.cpp:79
-msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+#: main.cpp:83
+#, fuzzy
+msgid ""
+"usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
 "használat: kcmdisplay [-init | {háttér,képernyõkímélõ,színek,stílus}]\n"
 
-#: main.cpp:140
+#: main.cpp:150
 msgid "Display settings"
 msgstr "Beállítások megjelenítése"
 
@@ -570,6 +565,18 @@ msgstr "KDE alap"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "bármelyik"
+
+#, fuzzy
+#~ msgid "Fonts etc."
+#~ msgstr "Betûk"
+
+#, fuzzy
+#~ msgid "Desktop fonts"
+#~ msgstr "Asztal"
+
+#, fuzzy
+#~ msgid "&Fonts etc."
+#~ msgstr "Betûk"
 
 #, fuzzy
 #~ msgid "One Des&ktop"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: 1998-12-26 00:00+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -85,31 +85,31 @@ msgstr "Кодировка по умолчанию"
 msgid "Use language charset"
 msgstr "Использовать кодировку"
 
-#: htmlopts.cpp:329
+#: htmlopts.cpp:330
 msgid "Background Color:"
 msgstr "Цвет фона:"
 
-#: htmlopts.cpp:341
+#: htmlopts.cpp:342
 msgid "Normal Text Color:"
 msgstr "Цвет нормального текста:"
 
-#: htmlopts.cpp:353
+#: htmlopts.cpp:354
 msgid "URL Link Color:"
 msgstr "Цвет ссылки:"
 
-#: htmlopts.cpp:365
+#: htmlopts.cpp:366
 msgid "Followed Link Color:"
 msgstr "Цвет пройденной ссылки:"
 
-#: htmlopts.cpp:377
+#: htmlopts.cpp:378
 msgid "Change cursor over link."
 msgstr "Изменять курсор над ссылками."
 
-#: htmlopts.cpp:383
+#: htmlopts.cpp:384
 msgid "Underline links"
 msgstr "Подчеркивать ссылки."
 
-#: htmlopts.cpp:390
+#: htmlopts.cpp:391
 msgid "Always use my colors"
 msgstr "Всегда использовать мои цвета"
 
