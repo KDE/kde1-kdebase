@@ -99,7 +99,10 @@ datadir = $(kde_datadir)/kscreensaver
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) $(srcdir)/mini-kscreensaver.xpm $(kde_minidir)/kscreensaver.xpm
+	$(mkinstalldirs) $(kde_icondir)/large
+	$(INSTALL_DATA) $(srcdir)/large-kscreensaver.xpm $(kde_icondir)/large/kscreensaver.xpm
 
 uninstall-local:
 	rm -f $(kde_minidir)/kscreensaver.xpm
+	rm -f $(kde_icondir)/large)/kscreensaver.xpm
 

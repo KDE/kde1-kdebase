@@ -60,8 +60,11 @@ configdir = $(kde_confdir)
 install-data-local:
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) $(srcdir)/mini-kikbd.xpm $(kde_minidir)/kikbd.xpm
+	$(mkinstalldirs) $(kde_icondir)/large
+	$(INSTALL_DATA) $(srcdir)/large-kikbd.xpm $(kde_icondir)/large/kikbd.xpm
 
 uninstall-local:
+	-rm -f $(kde_icondir)/large/kikbd.xpm
 	-rm -f $(kde_minidir)/kikbd.xpm
 
 EXTRA_DIST = BUGS $(kdelnk_DATA) mini-kikbd.xpm $(icon_DATA) $(kdelnk2_DATA)

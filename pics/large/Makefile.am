@@ -18,7 +18,7 @@ txt.xpm unknown.xpm utilities_package.xpm video.xpm  www.xpm \
 y_src.xpm zip_mount.xpm zip_unmount.xpm trash_full.xpm kfm_fulltrash.xpm \
 settings_package.xpm shredder.xpm document.xpm editors_package.xpm library.xpm \
 magneto-optical_mount.xpm magneto-optical_unmount.xpm readme.xpm single_doc.xpm \
-socket.xpm tablet.xpm x.xpm script.xpm readonly.xpm l_src.xpm package.xpm
+socket.xpm tablet.xpm x.xpm script.xpm readonly.xpm l_src.xpm package.xpm desktop_settings.xpm
 
 
 # FIXME - there is no $(kde_largedir) yet
