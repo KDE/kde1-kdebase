@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-25 01:11+0100\n"
+"POT-Creation-Date: 1999-01-05 01:13+0100\n"
 "PO-Revision-Date: 1998-01-27 HO:MI+ZONE\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -154,57 +154,61 @@ msgstr "Disk Navigator"
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kan ikke placere dette som en trykknap på panelet!"
 
-#: pfilemenu.C:425
+#: pfilemenu.C:423
 msgid "(empty folder)"
 msgstr "(tom folder)"
 
-#: pfilemenu.C:480
+#: pfilemenu.C:478
 msgid "Open Folder"
 msgstr "Åben folder"
 
-#: pfilemenu.C:491
+#: pfilemenu.C:481
+msgid "Open this folder (+Shift: Launch a terminal here)"
+msgstr ""
+
+#: pfilemenu.C:489
 msgid "(Too Many Files)"
 msgstr "(for mange filer)"
 
-#: pfilemenu.C:500
+#: pfilemenu.C:498
 msgid "(Access Denied)"
 msgstr "(Adgang nægtet)"
 
-#: pfilemenu.C:503
+#: pfilemenu.C:501
 msgid "(Unreadable)"
 msgstr "(Ulæselig)"
 
-#: pfilemenu.C:752
+#: pfilemenu.C:750
 msgid "Shared:"
 msgstr ""
 
-#: pfilemenu.C:754
+#: pfilemenu.C:752
 msgid "Entries shared among all users"
 msgstr ""
 
-#: pfilemenu.C:773
+#: pfilemenu.C:771
 #, fuzzy
 msgid "Personal:"
 msgstr "Personlige først"
 
-#: pfilemenu.C:775
+#: pfilemenu.C:773
 #, fuzzy
 msgid "Personal entries"
 msgstr "Personlige først"
 
-#: pfilemenu.C:793
+#: pfilemenu.C:791
 msgid "Recent:"
 msgstr ""
 
-#: pfilemenu.C:795
+#: pfilemenu.C:793
 msgid "Recent entries"
 msgstr ""
 
-#: pfilemenu.C:841
+#: pfilemenu.C:839
 msgid "Options..."
 msgstr ""
 
-#: pfilemenu.C:843
+#: pfilemenu.C:841
 #, fuzzy
 msgid "Customize Disk Navigator"
 msgstr "Disk Navigator"

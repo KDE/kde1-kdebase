@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-04 01:15+0100\n"
+"POT-Creation-Date: 1999-01-05 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Macedonian <LL@li.org>\n"
@@ -223,7 +223,7 @@ msgid ""
 "faure@kde.org"
 msgstr ""
 
-#: kfmgui.cpp:444 kfmgui.cpp:1110
+#: kfmgui.cpp:444 kfmgui.cpp:1112
 msgid "&Go"
 msgstr ""
 
@@ -260,16 +260,16 @@ msgstr "Ne mozzam da vchitam ikona\n"
 #: kfmman.cpp:1388 kfmman.cpp:1616 kfmman.cpp:1642 kfmprops.cpp:380
 #: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:948 kfmprops.cpp:1080
 #: kfmprops.cpp:1211 kfmprops.cpp:1685 kfmprops.cpp:2046 kfmprops.cpp:2228
-#: kfmserver.cpp:40 kfmserver.cpp:163 kfmserver.cpp:243 kfmserver.cpp:258
-#: kfmserver.cpp:305 kfmserver.cpp:314 kfmserver.cpp:322 kfmtree.cpp:341
+#: kfmserver.cpp:45 kfmserver.cpp:218 kfmserver.cpp:298 kfmserver.cpp:313
+#: kfmserver.cpp:360 kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:341
 #: kfmtree.cpp:468 kfmtree.cpp:499 kfmtree.cpp:505 kfmtree.cpp:511
 #: kfmview.cpp:438 kfmview.cpp:588 kfmview.cpp:607 kfmview.cpp:676
 #: kfmview.cpp:682 kfmview.cpp:688 kfmview.cpp:794 kfmview.cpp:798
 #: kfmview.cpp:837 kfmview.cpp:863 kfmview.cpp:884 kfmview.cpp:892
 #: kfmview.cpp:900 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
-#: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:559
-#: kiojob.cpp:799 kiojob.cpp:830 kiojob.cpp:871 kiojob.cpp:1318
-#: kiojob.cpp:1326 kiojob.cpp:1554 krenamewin.cpp:120 popup.cpp:102
+#: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:332 kiojob.cpp:351 kiojob.cpp:561
+#: kiojob.cpp:801 kiojob.cpp:832 kiojob.cpp:873 kiojob.cpp:1331
+#: kiojob.cpp:1339 kiojob.cpp:1567 krenamewin.cpp:120 popup.cpp:102
 #: root.cpp:943 root.cpp:1204 root.cpp:1222 root.cpp:1228 root.cpp:1234
 #: root.cpp:1315 root.cpp:1840 root.cpp:1865
 msgid "KFM Error"
@@ -284,63 +284,63 @@ msgstr "Otvori Lokacija:"
 msgid "Malformed URL\n"
 msgstr "Pogreshen URL\n"
 
-#: kfmgui.cpp:932
+#: kfmgui.cpp:934
 msgid "Select files:"
 msgstr "Izberi dokumenti:"
 
-#: kfmgui.cpp:998
+#: kfmgui.cpp:1000
 msgid "Find Complete"
 msgstr ""
 
-#: kfmgui.cpp:999
+#: kfmgui.cpp:1001
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: kfmgui.cpp:1017
+#: kfmgui.cpp:1019
 msgid "&Edit Bookmarks..."
 msgstr "&Editiraj gi Bookmarks ..."
 
-#: kfmgui.cpp:1027
+#: kfmgui.cpp:1029
 msgid "&Add Bookmark"
 msgstr "&Dodadi Bookmark"
 
-#: kfmgui.cpp:1061 kfmman.cpp:1427 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1063 kfmman.cpp:1427 kfmtree.cpp:389 root.cpp:285
 #, fuzzy
 msgid "&New"
 msgstr "Nov "
 
-#: kfmgui.cpp:1086
+#: kfmgui.cpp:1088
 msgid "&Up"
 msgstr ""
 
-#: kfmgui.cpp:1088
+#: kfmgui.cpp:1090
 msgid "&Back"
 msgstr ""
 
-#: kfmgui.cpp:1090
+#: kfmgui.cpp:1092
 msgid "&Forward"
 msgstr ""
 
-#: kfmgui.cpp:1092
+#: kfmgui.cpp:1094
 #, fuzzy
 msgid "&Home"
 msgstr "Doma"
 
-#: kfmgui.cpp:1161 kfmgui.cpp:1333 kfmjob.cpp:36 kfmman.cpp:244
+#: kfmgui.cpp:1163 kfmgui.cpp:1322 kfmjob.cpp:36 kfmman.cpp:244
 #: kfmtree.cpp:500 kfmview.cpp:608 kfmview.cpp:677 kfmview.cpp:885
 #: kiojob.cpp:87 root.cpp:1223
 msgid "ERROR: Malformed URL"
 msgstr "GRESKA: Pogresen URL"
 
-#: kfmgui.cpp:1287 kfmserver.cpp:190
+#: kfmgui.cpp:1276 kfmserver.cpp:245
 msgid "Open Location:"
 msgstr "Otvori Lokacija:"
 
-#: kfmgui.cpp:1344
+#: kfmgui.cpp:1333
 msgid "KFM Confirm"
 msgstr "KFM Potvrdi"
 
-#: kfmgui.cpp:1345
+#: kfmgui.cpp:1334
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -348,7 +348,7 @@ msgstr ""
 "Dali navistina sakate da zavrsite?\n"
 "Vazznite desktop funkcii ke bidat izgubeni"
 
-#: kfmgui.cpp:1458
+#: kfmgui.cpp:1447
 msgid "Document: Done"
 msgstr "Dokument: Zavrsen"
 
@@ -361,8 +361,8 @@ msgstr "GRESKA: URL vnesen preku samiot sebe si"
 msgid "ERROR: Drop over malformed URL"
 msgstr "GRESKA: Pad na sistemot zaradi greshen URL"
 
-#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:538 kfmview.cpp:648
-#: kfmview.cpp:928 krenamewin.cpp:20 root.cpp:1266
+#: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:648 kfmview.cpp:928
+#: krenamewin.cpp:20 root.cpp:1266
 msgid "KFM Warning"
 msgstr "KFM Predupreduvanje"
 
@@ -879,23 +879,15 @@ msgstr "Mounted (Zakachi) Ikona"
 msgid "Unmounted Icon"
 msgstr "Unmounted (Otkachi) Ikona"
 
-#: kfmserver.cpp:41
+#: kfmserver.cpp:46
 msgid "Could not create ~/.kde/share/apps/kfm/magic"
 msgstr "Ne mozam da sozdadam ~/.kde/share/apps/kfm/magic"
 
-#: kfmserver.cpp:51
-msgid ""
-"Please change the password in\n"
-"~/.kde/share/apps/kfm/magic"
-msgstr ""
-"Molim te promeni ja lozinkata vo \n"
-"~/.kde/share/apps/kfm/magic"
-
-#: kfmserver.cpp:79
+#: kfmserver.cpp:134
 msgid "Do you really want to rearrange your icons ?"
 msgstr "Dali navistina sakate da gi reorganizirate ikonite ?"
 
-#: kfmserver.cpp:255
+#: kfmserver.cpp:310
 #, c-format
 msgid ""
 "The URL\n"
@@ -906,7 +898,7 @@ msgstr ""
 "%s\n"
 "e pogreshen"
 
-#: kfmserver.cpp:306
+#: kfmserver.cpp:361
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
 "Authorization failed"
@@ -914,7 +906,7 @@ msgstr ""
 "Nemas dokument ~/.kde/share/apps/kfm/magic\n"
 "Nemam dozvola"
 
-#: kfmserver.cpp:315
+#: kfmserver.cpp:370
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
@@ -922,7 +914,7 @@ msgstr ""
 "Dokumentot ~/.kde/share/apps/kfm/magic e korumpiran\n"
 "Nemam dozvola"
 
-#: kfmserver.cpp:323
+#: kfmserver.cpp:378
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
@@ -978,7 +970,7 @@ msgstr ""
 "VNATRESHNA GRESHKA: Mora da specijalizirate device kade treba da se vrshi "
 "mount (zakachuvanje)"
 
-#: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1184 kiojob.cpp:1250
+#: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1197 kiojob.cpp:1263
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -1000,7 +992,7 @@ msgstr ""
 "Ne mozzam da prezapisham\n"
 "%s"
 
-#: kiojob.cpp:306 kiojob.cpp:329 kiojob.cpp:348
+#: kiojob.cpp:306 kiojob.cpp:331 kiojob.cpp:350
 #, c-format
 msgid ""
 "Could not make symlink to\n"
@@ -1009,12 +1001,12 @@ msgstr ""
 "Ne mozzam da napravam simbolik link kon\n"
 "%s"
 
-#: kiojob.cpp:384
+#: kiojob.cpp:386
 #, c-format
 msgid " ERROR: Could not write to %s"
 msgstr " GRESHKA: Ne mozzam da zapisham na %s"
 
-#: kiojob.cpp:558 kiojob.cpp:798 kiojob.cpp:1206
+#: kiojob.cpp:560 kiojob.cpp:800 kiojob.cpp:1219
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -1023,12 +1015,12 @@ msgstr ""
 "Ne mozzam da napravam direktorium\n"
 "%s"
 
-#: kiojob.cpp:571 kiojob.cpp:1017
+#: kiojob.cpp:573 kiojob.cpp:1030
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
 msgstr "GRESHKA: Ne mozzam da pistapam kon direktorium '%s'"
 
-#: kiojob.cpp:829
+#: kiojob.cpp:831
 #, c-format
 msgid ""
 "Could not access directory\n"
@@ -1037,7 +1029,7 @@ msgstr ""
 "Ne mozzam da pristapam kon direktorium\n"
 "%s"
 
-#: kiojob.cpp:870
+#: kiojob.cpp:872
 #, c-format
 msgid ""
 "Could not move directory\n"
@@ -1050,7 +1042,7 @@ msgstr ""
 "na %s\n"
 "Najverojatno nemam pristap"
 
-#: kiojob.cpp:1187 kiojob.cpp:1254
+#: kiojob.cpp:1200 kiojob.cpp:1267
 #, c-format
 msgid ""
 "Could not read\n"
@@ -1061,7 +1053,7 @@ msgstr ""
 "%s\n"
 "Dokumentot ne postoi ili jas nemam pristap do nego"
 
-#: kiojob.cpp:1190
+#: kiojob.cpp:1203
 #, c-format
 msgid ""
 "Could not write\n"
@@ -1072,7 +1064,7 @@ msgstr ""
 "%s\n"
 "Najverojatno nemam pristap"
 
-#: kiojob.cpp:1194 kiojob.cpp:1258
+#: kiojob.cpp:1207 kiojob.cpp:1271
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -1081,7 +1073,7 @@ msgstr ""
 "Ne mozzam da sozdadam Socket za\n"
 "%s"
 
-#: kiojob.cpp:1197 kiojob.cpp:1262
+#: kiojob.cpp:1210 kiojob.cpp:1275
 #, fuzzy, c-format
 msgid ""
 "Unknown host in\n"
@@ -1090,7 +1082,7 @@ msgstr ""
 "Nepoznat host vo\n"
 "%s"
 
-#: kiojob.cpp:1200 kiojob.cpp:1266
+#: kiojob.cpp:1213 kiojob.cpp:1279
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -1099,7 +1091,7 @@ msgstr ""
 "Ne mozzam da se povrzam so\n"
 "%s"
 
-#: kiojob.cpp:1203 kiojob.cpp:1270
+#: kiojob.cpp:1216 kiojob.cpp:1283
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1110,7 +1102,7 @@ msgstr ""
 "%s\n"
 "seuste ne e vkluchena vo ovoj program."
 
-#: kiojob.cpp:1209
+#: kiojob.cpp:1222
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -1119,7 +1111,7 @@ msgstr ""
 "Ne mozzam da ja izlistam sodzzinata na direktoriumot\n"
 "%s"
 
-#: kiojob.cpp:1213
+#: kiojob.cpp:1226
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1130,7 +1122,7 @@ msgstr ""
 "%s\n"
 "Baraniot URL ili ne postoi ili jas ne mozzam da my pristapam"
 
-#: kiojob.cpp:1217 kiojob.cpp:1275
+#: kiojob.cpp:1230 kiojob.cpp:1288
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1141,7 +1133,7 @@ msgstr ""
 "%s\n"
 "Najverojatno greshna lozinka"
 
-#: kiojob.cpp:1228
+#: kiojob.cpp:1241
 #, c-format
 msgid ""
 "Tar reproted an error\n"
@@ -1150,7 +1142,7 @@ msgstr ""
 "Programot Tar prikazzuva greshka\n"
 "%s"
 
-#: kiojob.cpp:1231
+#: kiojob.cpp:1244
 #, c-format
 msgid ""
 "Gzip reproted an error for\n"
@@ -1159,7 +1151,7 @@ msgstr ""
 "Programot Gzip prikazzuva greshka\n"
 "%s"
 
-#: kiojob.cpp:1237 kiojob.cpp:1246
+#: kiojob.cpp:1250 kiojob.cpp:1259
 #, c-format
 msgid ""
 "File %s\n"
@@ -1168,7 +1160,7 @@ msgstr ""
 "Dokumentot %s\n"
 "ne postoi"
 
-#: kiojob.cpp:1287
+#: kiojob.cpp:1300
 #, fuzzy, c-format
 msgid ""
 "Tar reported a fatal error\n"
@@ -1177,7 +1169,7 @@ msgstr ""
 "Programot Tar prikazzuva greshka\n"
 "%s"
 
-#: kiojob.cpp:1291
+#: kiojob.cpp:1304
 #, fuzzy, c-format
 msgid ""
 "Gzip reported a fatal error\n"
@@ -1186,7 +1178,7 @@ msgstr ""
 "Programot Gzip prikazzuva greshka\n"
 "%s"
 
-#: kiojob.cpp:1295
+#: kiojob.cpp:1308
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1199,7 +1191,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1299
+#: kiojob.cpp:1312
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1212,21 +1204,21 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1403
+#: kiojob.cpp:1416
 msgid "Making directory"
 msgstr "Sozdavam direktorium"
 
-#: kiojob.cpp:1519 kiojob.cpp:1573 kiojob.cpp:1615
+#: kiojob.cpp:1532 kiojob.cpp:1586 kiojob.cpp:1628
 #, c-format
 msgid "File %i/%i"
 msgstr "Dokument %i/%i"
 
-#: kiojob.cpp:1522 kiojob.cpp:1577
+#: kiojob.cpp:1535 kiojob.cpp:1590
 #, c-format
 msgid "to %s"
 msgstr "na %s"
 
-#: kiojob.cpp:1553
+#: kiojob.cpp:1566
 #, c-format
 msgid ""
 "Could not delete directory\n"
@@ -1235,22 +1227,22 @@ msgstr ""
 "Ne mozzam da go izbrsham direktoriumot\n"
 "%s"
 
-#: kiojob.cpp:1643
+#: kiojob.cpp:1656
 #, c-format
 msgid "Mounting %s ..."
 msgstr "Zakachuvam (mount) %s ..."
 
-#: kiojob.cpp:1645
+#: kiojob.cpp:1658
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "Otkachuvam (unmount) %s ..."
 
-#: kiojob.cpp:1673
+#: kiojob.cpp:1686
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr "Ja povikuvam listata na %s"
 
-#: kiojob.cpp:1911
+#: kiojob.cpp:1924
 msgid "Segmentation fault in io subprocess"
 msgstr "Segmentaciona greshka vo IO podprocesite"
 
@@ -1465,6 +1457,13 @@ msgid ""
 msgstr ""
 "Sintaktichka Greshka:\n"
 "kfmexec naredbata [URLs ....]\n"
+
+#~ msgid ""
+#~ "Please change the password in\n"
+#~ "~/.kde/share/apps/kfm/magic"
+#~ msgstr ""
+#~ "Molim te promeni ja lozinkata vo \n"
+#~ "~/.kde/share/apps/kfm/magic"
 
 #~ msgid ""
 #~ "Could not rename the file or directory\n"

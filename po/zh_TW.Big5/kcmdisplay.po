@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1998-12-28 01:13+0100\n"
+"POT-Creation-Date: 1999-01-05 01:13+0100\n"
 "PO-Revision-Date: 1998-04-20 22:09+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -55,8 +55,8 @@ msgstr "設定[&U]..."
 msgid "Wallpaper"
 msgstr "桌布"
 
-#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1218
-#: backgnd.cpp:1372 backgnd.cpp:1910
+#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1222
+#: backgnd.cpp:1379 backgnd.cpp:1917
 #, fuzzy
 msgid "No wallpaper"
 msgstr "沒有桌布"
@@ -133,121 +133,121 @@ msgstr ""
 msgid "Cache size (kB):"
 msgstr ""
 
-#: backgnd.cpp:1339
+#: backgnd.cpp:1346
 #, fuzzy
 msgid "Desktop names"
 msgstr "桌面名稱"
 
-#: backgnd.cpp:1384
+#: backgnd.cpp:1391
 #, fuzzy
 msgid "File error"
 msgstr "命名時發生錯誤"
 
-#: backgnd.cpp:1385
+#: backgnd.cpp:1392
 msgid "Can't load image file"
 msgstr ""
 
-#: backgnd.cpp:1408 backgnd.cpp:1880
+#: backgnd.cpp:1415 backgnd.cpp:1887
 msgid "Unsupported URL"
 msgstr ""
 
-#: backgnd.cpp:1409 backgnd.cpp:1881
+#: backgnd.cpp:1416 backgnd.cpp:1888
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 
-#: backgnd.cpp:1440
+#: backgnd.cpp:1447
 #, fuzzy
 msgid "Two color backgrounds"
 msgstr "雙色背景"
 
-#: backgnd.cpp:1477
+#: backgnd.cpp:1484
 msgid "Blend colors from &top to bottom"
 msgstr "由上到下混合兩種顏色[&T]"
 
-#: backgnd.cpp:1483
+#: backgnd.cpp:1490
 msgid "Blend colors from &right to left"
 msgstr "由右至左調和兩種顏色[&R]"
 
-#: backgnd.cpp:1489
+#: backgnd.cpp:1496
 msgid "Use &pattern"
 msgstr "使用花樣[&P]"
 
-#: backgnd.cpp:1516
+#: backgnd.cpp:1523
 msgid "Preview"
 msgstr "預覽"
 
-#: backgnd.cpp:1527
+#: backgnd.cpp:1534
 msgid "Pattern &name"
 msgstr "花樣名稱[&N]"
 
-#: backgnd.cpp:1566
+#: backgnd.cpp:1573
 msgid "Current"
 msgstr "目前"
 
-#: backgnd.cpp:1626
+#: backgnd.cpp:1633
 #, fuzzy
 msgid "Filled"
 msgstr "填滿"
 
-#: backgnd.cpp:1629
+#: backgnd.cpp:1636
 msgid "Fish net"
 msgstr "魚網"
 
-#: backgnd.cpp:1632
+#: backgnd.cpp:1639
 msgid "Triangles"
 msgstr "三角"
 
-#: backgnd.cpp:1635
+#: backgnd.cpp:1642
 msgid "Flowers"
 msgstr "花"
 
-#: backgnd.cpp:1638
+#: backgnd.cpp:1645
 msgid "Rattan"
 msgstr "藤蔓"
 
-#: backgnd.cpp:1641
+#: backgnd.cpp:1648
 msgid "Cobbled Pavement"
 msgstr "鵝卵石人行道"
 
-#: backgnd.cpp:1707
+#: backgnd.cpp:1714
 msgid "Random mode setup"
 msgstr ""
 
-#: backgnd.cpp:1713
+#: backgnd.cpp:1720
 msgid "Pick files from &directory"
 msgstr ""
 
-#: backgnd.cpp:1727
+#: backgnd.cpp:1734
 #, fuzzy
 msgid "&Browse ..."
 msgstr "瀏覽[&B]..."
 
-#: backgnd.cpp:1748
+#: backgnd.cpp:1755
 msgid "Timer Delay in seconds :"
 msgstr ""
 
-#: backgnd.cpp:1760
+#: backgnd.cpp:1767
 #, fuzzy
 msgid "In &order"
 msgstr "忽略"
 
-#: backgnd.cpp:1777
+#: backgnd.cpp:1784
 #, fuzzy
 msgid "Desktops :"
 msgstr "桌面"
 
-#: backgnd.cpp:1816
+#: backgnd.cpp:1823
 #, fuzzy
 msgid "&Add"
 msgstr "新增[&A] ..."
 
-#: backgnd.cpp:1987
+#: backgnd.cpp:1994
 #, fuzzy
 msgid "Directory error"
 msgstr "命名時發生錯誤"
 
-#: backgnd.cpp:1988
+#: backgnd.cpp:1995
 msgid "Selected directory doesn't exists"
 msgstr ""
 

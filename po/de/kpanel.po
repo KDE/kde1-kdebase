@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1998-12-25 01:11+0100\n"
+"POT-Creation-Date: 1999-01-05 01:13+0100\n"
 "PO-Revision-Date: 1997-10-25 18:28 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German/KDE\n"
@@ -154,55 +154,59 @@ msgstr "Platten-Navigator"
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kann dies nicht als Button in das Panel legen!"
 
-#: pfilemenu.C:425
+#: pfilemenu.C:423
 msgid "(empty folder)"
 msgstr "(leeres Verzeichnis)"
 
-#: pfilemenu.C:480
+#: pfilemenu.C:478
 msgid "Open Folder"
 msgstr "Öffne Verzeichnis"
 
-#: pfilemenu.C:491
+#: pfilemenu.C:481
+msgid "Open this folder (+Shift: Launch a terminal here)"
+msgstr ""
+
+#: pfilemenu.C:489
 msgid "(Too Many Files)"
 msgstr "(Zuviele Dateien)"
 
-#: pfilemenu.C:500
+#: pfilemenu.C:498
 msgid "(Access Denied)"
 msgstr "(Zugriff verweigert)"
 
-#: pfilemenu.C:503
+#: pfilemenu.C:501
 msgid "(Unreadable)"
 msgstr "(Nicht lesbar)"
 
-#: pfilemenu.C:752
+#: pfilemenu.C:750
 msgid "Shared:"
 msgstr "Gemeinsam genutzt:"
 
-#: pfilemenu.C:754
+#: pfilemenu.C:752
 msgid "Entries shared among all users"
 msgstr "Einträge, die von allen Anwendern gemeinsam genutzt werden:"
 
-#: pfilemenu.C:773
+#: pfilemenu.C:771
 msgid "Personal:"
 msgstr "Persönlich:"
 
-#: pfilemenu.C:775
+#: pfilemenu.C:773
 msgid "Personal entries"
 msgstr "Persönliche Einträge"
 
-#: pfilemenu.C:793
+#: pfilemenu.C:791
 msgid "Recent:"
 msgstr "Letzte:"
 
-#: pfilemenu.C:795
+#: pfilemenu.C:793
 msgid "Recent entries"
 msgstr "Einträge neueren Datums"
 
-#: pfilemenu.C:841
+#: pfilemenu.C:839
 msgid "Options..."
 msgstr "Optionen..."
 
-#: pfilemenu.C:843
+#: pfilemenu.C:841
 #, fuzzy
 msgid "Customize Disk Navigator"
 msgstr "Platten-Navigator"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
-"POT-Creation-Date: 1998-12-25 01:11+0100\n"
+"POT-Creation-Date: 1999-01-05 01:13+0100\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
 "<Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -149,54 +149,58 @@ msgstr "KDiskNavigator"
 msgid "Cannot put this as button onto the panel!"
 msgstr "Impossibile mettere questo come pulsante sul pannello!"
 
-#: pfilemenu.C:425
+#: pfilemenu.C:423
 msgid "(empty folder)"
 msgstr "(cartella vuota)"
 
-#: pfilemenu.C:480
+#: pfilemenu.C:478
 msgid "Open Folder"
 msgstr "(Apri Cartella)"
 
-#: pfilemenu.C:491
+#: pfilemenu.C:481
+msgid "Open this folder (+Shift: Launch a terminal here)"
+msgstr ""
+
+#: pfilemenu.C:489
 msgid "(Too Many Files)"
 msgstr "(Troppi File)"
 
-#: pfilemenu.C:500
+#: pfilemenu.C:498
 msgid "(Access Denied)"
 msgstr "(Accesso Negato)"
 
-#: pfilemenu.C:503
+#: pfilemenu.C:501
 msgid "(Unreadable)"
 msgstr "(Illeggibile)"
 
-#: pfilemenu.C:752
+#: pfilemenu.C:750
 msgid "Shared:"
 msgstr "Comuni:"
 
-#: pfilemenu.C:754
+#: pfilemenu.C:752
 msgid "Entries shared among all users"
 msgstr "Voci condivise da tutti gil utenti"
 
-#: pfilemenu.C:773
+#: pfilemenu.C:771
 msgid "Personal:"
 msgstr "Personali:"
 
-#: pfilemenu.C:775
+#: pfilemenu.C:773
 msgid "Personal entries"
 msgstr "Voci personali"
 
-#: pfilemenu.C:793
+#: pfilemenu.C:791
 msgid "Recent:"
 msgstr "Recenti:"
 
-#: pfilemenu.C:795
+#: pfilemenu.C:793
 msgid "Recent entries"
 msgstr "Voci recenti"
 
-#: pfilemenu.C:841
+#: pfilemenu.C:839
 msgid "Options..."
 msgstr "Opzioni..."
 
-#: pfilemenu.C:843
+#: pfilemenu.C:841
 msgid "Customize Disk Navigator"
 msgstr "Personalizza il Disk Navigator"

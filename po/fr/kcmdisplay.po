@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1998-12-28 01:13+0100\n"
+"POT-Creation-Date: 1999-01-05 01:13+0100\n"
 "PO-Revision-Date: 1998-03-09 22:13 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
@@ -51,8 +51,8 @@ msgstr "Config&urer..."
 msgid "Wallpaper"
 msgstr "Papier peint"
 
-#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1218
-#: backgnd.cpp:1372 backgnd.cpp:1910
+#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1222
+#: backgnd.cpp:1379 backgnd.cpp:1917
 msgid "No wallpaper"
 msgstr "Pas de papier peint"
 
@@ -120,114 +120,114 @@ msgstr "Inclure &dans le panneau"
 msgid "Cache size (kB):"
 msgstr "Taille du cache (kB) :"
 
-#: backgnd.cpp:1339
+#: backgnd.cpp:1346
 msgid "Desktop names"
 msgstr "Nom des bureaux"
 
-#: backgnd.cpp:1384
+#: backgnd.cpp:1391
 msgid "File error"
 msgstr "Erreur de fichier"
 
-#: backgnd.cpp:1385
+#: backgnd.cpp:1392
 msgid "Can't load image file"
 msgstr "Impossible de charger l'image"
 
-#: backgnd.cpp:1408 backgnd.cpp:1880
+#: backgnd.cpp:1415 backgnd.cpp:1887
 msgid "Unsupported URL"
 msgstr "URL non supportée"
 
-#: backgnd.cpp:1409 backgnd.cpp:1881
+#: backgnd.cpp:1416 backgnd.cpp:1888
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 "Désolé, ce type d'URL n'est actuellement pas supporté pas le Module "
 "d'Affichage de KDE"
 
-#: backgnd.cpp:1440
+#: backgnd.cpp:1447
 msgid "Two color backgrounds"
 msgstr "Arrière-plan en deux couleurs"
 
-#: backgnd.cpp:1477
+#: backgnd.cpp:1484
 msgid "Blend colors from &top to bottom"
 msgstr "Dégradé du &haut vers le bas"
 
-#: backgnd.cpp:1483
+#: backgnd.cpp:1490
 msgid "Blend colors from &right to left"
 msgstr "Dégradé de la d&roite vers la gauche"
 
-#: backgnd.cpp:1489
+#: backgnd.cpp:1496
 msgid "Use &pattern"
 msgstr "Utiliser un &motif"
 
-#: backgnd.cpp:1516
+#: backgnd.cpp:1523
 msgid "Preview"
 msgstr "Aperçu"
 
-#: backgnd.cpp:1527
+#: backgnd.cpp:1534
 msgid "Pattern &name"
 msgstr "&Nom du motif"
 
-#: backgnd.cpp:1566
+#: backgnd.cpp:1573
 msgid "Current"
 msgstr "Actuel"
 
-#: backgnd.cpp:1626
+#: backgnd.cpp:1633
 msgid "Filled"
 msgstr "Plein"
 
-#: backgnd.cpp:1629
+#: backgnd.cpp:1636
 msgid "Fish net"
 msgstr "Filet de poisson"
 
-#: backgnd.cpp:1632
+#: backgnd.cpp:1639
 msgid "Triangles"
 msgstr "Triangles"
 
-#: backgnd.cpp:1635
+#: backgnd.cpp:1642
 msgid "Flowers"
 msgstr "Fleurs"
 
-#: backgnd.cpp:1638
+#: backgnd.cpp:1645
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1641
+#: backgnd.cpp:1648
 msgid "Cobbled Pavement"
 msgstr "Pavés"
 
-#: backgnd.cpp:1707
+#: backgnd.cpp:1714
 msgid "Random mode setup"
 msgstr "Configuration du mode aléatoire"
 
-#: backgnd.cpp:1713
+#: backgnd.cpp:1720
 msgid "Pick files from &directory"
 msgstr ""
 
-#: backgnd.cpp:1727
+#: backgnd.cpp:1734
 msgid "&Browse ..."
 msgstr "&Parcourir ..."
 
-#: backgnd.cpp:1748
+#: backgnd.cpp:1755
 msgid "Timer Delay in seconds :"
 msgstr ""
 
-#: backgnd.cpp:1760
+#: backgnd.cpp:1767
 msgid "In &order"
 msgstr "Dans l'&ordre"
 
-#: backgnd.cpp:1777
+#: backgnd.cpp:1784
 msgid "Desktops :"
 msgstr "Bureaux :"
 
-#: backgnd.cpp:1816
+#: backgnd.cpp:1823
 msgid "&Add"
 msgstr "&Ajouter"
 
-#: backgnd.cpp:1987
+#: backgnd.cpp:1994
 msgid "Directory error"
 msgstr "Erreur de répertoire"
 
-#: backgnd.cpp:1988
+#: backgnd.cpp:1995
 msgid "Selected directory doesn't exists"
 msgstr "Le répertoire sélectionné n'existe pas"
 

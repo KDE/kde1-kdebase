@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-28 01:13+0100\n"
+"POT-Creation-Date: 1999-01-05 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,8 +55,8 @@ msgstr "Ρύσμισε..."
 msgid "Wallpaper"
 msgstr "Ταπετσαρία"
 
-#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1218
-#: backgnd.cpp:1372 backgnd.cpp:1910
+#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1222
+#: backgnd.cpp:1379 backgnd.cpp:1917
 #, fuzzy
 msgid "No wallpaper"
 msgstr "Ταπετσαρία"
@@ -134,116 +134,116 @@ msgstr ""
 msgid "Cache size (kB):"
 msgstr ""
 
-#: backgnd.cpp:1339
+#: backgnd.cpp:1346
 msgid "Desktop names"
 msgstr ""
 
-#: backgnd.cpp:1384
+#: backgnd.cpp:1391
 msgid "File error"
 msgstr ""
 
-#: backgnd.cpp:1385
+#: backgnd.cpp:1392
 msgid "Can't load image file"
 msgstr ""
 
-#: backgnd.cpp:1408 backgnd.cpp:1880
+#: backgnd.cpp:1415 backgnd.cpp:1887
 msgid "Unsupported URL"
 msgstr ""
 
-#: backgnd.cpp:1409 backgnd.cpp:1881
+#: backgnd.cpp:1416 backgnd.cpp:1888
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 
-#: backgnd.cpp:1440
+#: backgnd.cpp:1447
 #, fuzzy
 msgid "Two color backgrounds"
 msgstr "Επιλογή φόντου"
 
-#: backgnd.cpp:1477
+#: backgnd.cpp:1484
 msgid "Blend colors from &top to bottom"
 msgstr ""
 
-#: backgnd.cpp:1483
+#: backgnd.cpp:1490
 msgid "Blend colors from &right to left"
 msgstr ""
 
-#: backgnd.cpp:1489
+#: backgnd.cpp:1496
 msgid "Use &pattern"
 msgstr ""
 
-#: backgnd.cpp:1516
+#: backgnd.cpp:1523
 msgid "Preview"
 msgstr ""
 
-#: backgnd.cpp:1527
+#: backgnd.cpp:1534
 msgid "Pattern &name"
 msgstr ""
 
-#: backgnd.cpp:1566
+#: backgnd.cpp:1573
 msgid "Current"
 msgstr ""
 
-#: backgnd.cpp:1626
+#: backgnd.cpp:1633
 #, fuzzy
 msgid "Filled"
 msgstr "Πλακάκια"
 
-#: backgnd.cpp:1629
+#: backgnd.cpp:1636
 msgid "Fish net"
 msgstr ""
 
-#: backgnd.cpp:1632
+#: backgnd.cpp:1639
 msgid "Triangles"
 msgstr ""
 
-#: backgnd.cpp:1635
+#: backgnd.cpp:1642
 msgid "Flowers"
 msgstr ""
 
-#: backgnd.cpp:1638
+#: backgnd.cpp:1645
 msgid "Rattan"
 msgstr ""
 
-#: backgnd.cpp:1641
+#: backgnd.cpp:1648
 msgid "Cobbled Pavement"
 msgstr ""
 
-#: backgnd.cpp:1707
+#: backgnd.cpp:1714
 msgid "Random mode setup"
 msgstr ""
 
-#: backgnd.cpp:1713
+#: backgnd.cpp:1720
 msgid "Pick files from &directory"
 msgstr ""
 
-#: backgnd.cpp:1727
+#: backgnd.cpp:1734
 #, fuzzy
 msgid "&Browse ..."
 msgstr "Κοίταξε"
 
-#: backgnd.cpp:1748
+#: backgnd.cpp:1755
 msgid "Timer Delay in seconds :"
 msgstr ""
 
-#: backgnd.cpp:1760
+#: backgnd.cpp:1767
 #, fuzzy
 msgid "In &order"
 msgstr "Αγνόησε"
 
-#: backgnd.cpp:1777
+#: backgnd.cpp:1784
 msgid "Desktops :"
 msgstr ""
 
-#: backgnd.cpp:1816
+#: backgnd.cpp:1823
 msgid "&Add"
 msgstr ""
 
-#: backgnd.cpp:1987
+#: backgnd.cpp:1994
 msgid "Directory error"
 msgstr ""
 
-#: backgnd.cpp:1988
+#: backgnd.cpp:1995
 msgid "Selected directory doesn't exists"
 msgstr ""
 

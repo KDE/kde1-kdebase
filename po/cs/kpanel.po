@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1998-12-25 01:11+0100\n"
+"POT-Creation-Date: 1999-01-05 01:13+0100\n"
 "PO-Revision-Date: 1998-12-23 14:08 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -149,54 +149,58 @@ msgstr "Diskový navigátor"
 msgid "Cannot put this as button onto the panel!"
 msgstr "Toto není mo¾né dát na panel jako tlaèítko!"
 
-#: pfilemenu.C:425
+#: pfilemenu.C:423
 msgid "(empty folder)"
 msgstr "(prázdný adresáø)"
 
-#: pfilemenu.C:480
+#: pfilemenu.C:478
 msgid "Open Folder"
 msgstr "Otevøít adresáø"
 
-#: pfilemenu.C:491
+#: pfilemenu.C:481
+msgid "Open this folder (+Shift: Launch a terminal here)"
+msgstr ""
+
+#: pfilemenu.C:489
 msgid "(Too Many Files)"
 msgstr "(pøíli¹ mnoho souborù)"
 
-#: pfilemenu.C:500
+#: pfilemenu.C:498
 msgid "(Access Denied)"
 msgstr "(pøístup zamezen)"
 
-#: pfilemenu.C:503
+#: pfilemenu.C:501
 msgid "(Unreadable)"
 msgstr "(neèitelné)"
 
-#: pfilemenu.C:752
+#: pfilemenu.C:750
 msgid "Shared:"
 msgstr "Sdílené:"
 
-#: pfilemenu.C:754
+#: pfilemenu.C:752
 msgid "Entries shared among all users"
 msgstr "Polo¾ky sdílené v¹emi u¾ivateli"
 
-#: pfilemenu.C:773
+#: pfilemenu.C:771
 msgid "Personal:"
 msgstr "Osobní:"
 
-#: pfilemenu.C:775
+#: pfilemenu.C:773
 msgid "Personal entries"
 msgstr "Osobní polo¾ky"
 
-#: pfilemenu.C:793
+#: pfilemenu.C:791
 msgid "Recent:"
 msgstr "Nedávné:"
 
-#: pfilemenu.C:795
+#: pfilemenu.C:793
 msgid "Recent entries"
 msgstr "Nedávné polo¾ky"
 
-#: pfilemenu.C:841
+#: pfilemenu.C:839
 msgid "Options..."
 msgstr "Mo¾nosti..."
 
-#: pfilemenu.C:843
+#: pfilemenu.C:841
 msgid "Customize Disk Navigator"
 msgstr "Nastavení diskového navigátoru"
