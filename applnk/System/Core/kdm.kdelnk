@@ -9,4 +9,4 @@ Title=Kdm
 Info=Info on the KDE Display Manager (Xdm replacement).
 Info[de]=Der KDE Anmeldeschirm (xdm - Ersatz)
 Info[nl]=Informatie over het KDE schermbeheer (Xdm vervanger).
-
+Type=Application
