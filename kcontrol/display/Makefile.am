@@ -1,3 +1,5 @@
+# $Id$
+# kdebase/kcontrol/display
 
 INCLUDES = $(all_includes) 
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
@@ -5,7 +7,7 @@ LDADD =  $(LIB_KFILE) $(LIB_KIMGIO)
 
 DISTCLEANFILES = $(BUILT_SOURCES)
 
-SUBDIRS = kcs ad
+SUBDIRS = kcs ad pics
 
 bin_PROGRAMS = kcmdisplay
 

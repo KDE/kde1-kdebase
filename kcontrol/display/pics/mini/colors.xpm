@@ -1,0 +1,30 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*colors[]={
+"16 16 9 1",
+". c None",
+"g c #ffdca8",
+"d c #00c000",
+"b c #c000c0",
+"c c #00c0c0",
+"# c #000000",
+"e c #ffa858",
+"a c #0000ff",
+"f c #ff0000",
+"......###.......",
+"......#aa##.....",
+"......###aa###..",
+"....###bb##aaa##",
+"....#cc##bb##aa#",
+"....###cc###bba#",
+"..###dd##ccc##a#",
+"..#ee##dd##cc#a#",
+"..###ee###ddc#a#",
+"..#ff##eee#dc#a#",
+".##ffff##e#dc###",
+"#gg###ff#e#dc#..",
+"#gggg#ff#e#dc#..",
+"#ggg#fff#e###...",
+"#gg#.##f#e#.....",
+".##....###......"};
