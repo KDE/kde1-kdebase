@@ -793,7 +793,7 @@ AC_DEFUN(AC_HAVE_GL,
   else
     AC_DEFINE(HAVE_GL)
     if test "$GL_LDFLAGS" = ""; then
-       GLLIB="-lGl"
+       GLLIB="-lMesaGL -lMesaGLU"
     else
        GLLIB="-L$GL_LDFLAGS -lMesaGL -lMesaGLU"
     fi
