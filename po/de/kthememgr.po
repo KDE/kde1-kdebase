@@ -12,7 +12,7 @@ msgstr ""
 
 #: theme.cpp:164
 msgid "Mappings file theme.mappings not found."
-msgstr "Themanabbildungsdatei theme.mappings nicht gefunden."
+msgstr "Designabbildungsdatei theme.mappings nicht gefunden."
 
 #: theme.cpp:182
 #, c-format
@@ -45,7 +45,7 @@ msgstr ""
 
 #: theme.cpp:258
 msgid "Theme contains no .themerc file"
-msgstr "Thema enthält keine .themerc Datei"
+msgstr "Design enthält keine .themerc Datei"
 
 #: theme.cpp:371 themecreator.cpp:347
 #, c-format
@@ -145,7 +145,7 @@ msgstr "Hinzufügen..."
 
 #: installer.cpp:84
 msgid "Add a new theme to the list."
-msgstr "Der Liste ein neues Thema hinzufügen."
+msgstr "Der Liste ein neues Design hinzufügen."
 
 #: installer.cpp:88
 msgid "Save the Work directory"
@@ -161,15 +161,15 @@ msgstr "Erstellen..."
 
 #: installer.cpp:96
 msgid "Create a new theme from the current settings."
-msgstr "Aus den aktuellen Einstellungen ein Thema erzeugen"
+msgstr "Aus den aktuellen Einstellungen ein Design erzeugen"
 
 #: installer.cpp:100
 msgid "Remove the selected theme."
-msgstr "Das ausgewählte Thema entfernen"
+msgstr "Das ausgewählte Design entfernen"
 
 #: installer.cpp:306
 msgid "Theme created."
-msgstr "Thema erstellt"
+msgstr "Design erstellt"
 
 #: installer.cpp:335
 msgid "The "
@@ -182,38 +182,38 @@ msgid ""
 "%s\n"
 "(%s)"
 msgstr ""
-"Fehler beim Entfernen des Themas:\n"
+"Fehler beim Entfernen des Designs:\n"
 "%s\n"
 "(%s)"
 
 #: installer.cpp:352
 #, c-format
 msgid "Failed to remove theme %s"
-msgstr "Fehler beim Entfernen des Themas %s"
+msgstr "Fehler beim Entfernen des Designs %s"
 
 #: installer.cpp:359
 msgid "The file(s) of this theme could not be found!"
-msgstr "Die Datei(en) dieses Themas konnten nicht gefunden werden!"
+msgstr "Die Datei(en) dieses Designs konnten nicht gefunden werden!"
 
 #: installer.cpp:391
 msgid ""
 "Theme removed locally.\n"
 "Now using global version."
 msgstr ""
-"Thema lokal entfernt.\n"
+"Design lokal entfernt.\n"
 "Benutze jetzt die globale Version."
 
 #: installer.cpp:395
 msgid "Theme removed."
-msgstr "Thema entfernt"
+msgstr "Design entfernt"
 
 #: installer.cpp:438
 msgid "(no theme chosen)"
-msgstr "(kein Thema ausgewählt)"
+msgstr "(kein Design ausgewählt)"
 
 #: installer.cpp:463
 msgid "Add Theme"
-msgstr "Thema hinzufügen"
+msgstr "Design hinzufügen"
 
 #: installer.cpp:473
 msgid ""
@@ -222,7 +222,7 @@ msgid ""
 "either with '.tar.gz' or '.tgz'\n"
 msgstr ""
 "Falsche Datei.\n"
-"Der Name der Thema-Datei sollte entweder\n"
+"Der Name der Design-Datei sollte entweder\n"
 "mit '.tar.gz' oder '.tgz' enden\n"
 
 #: installer.cpp:485
@@ -231,20 +231,20 @@ msgid ""
 "Failed to copy theme %s\n"
 "into themes directory %s"
 msgstr ""
-"Fehler beim Kopieren des %s Themas\n"
+"Fehler beim Kopieren des %s Designs\n"
 "in das Themen-Verzeichnis %s"
 
 #: installer.cpp:492
 msgid "Theme added."
-msgstr "Thema hinzugefügt"
+msgstr "Design hinzugefügt"
 
 #: installer.cpp:524
 msgid "Save Theme"
-msgstr "Thema speichern"
+msgstr "Design speichern"
 
 #: installer.cpp:532 installer.cpp:559
 msgid "Theme saved."
-msgstr "Thema gespeichert"
+msgstr "Design gespeichert"
 
 #: installer.cpp:579
 msgid "(no preview pixmap)"
@@ -264,7 +264,7 @@ msgstr "Schwerwiegender Fehler"
 
 #: main.cpp:168
 msgid "Kde Theme Manager"
-msgstr "KDE Thema Verwaltung"
+msgstr "KDE Designmanager"
 
 #: kwmcom.cpp:78 kwmcom.cpp:105
 msgid "kwmcom: communication with kwm failed\n"
@@ -272,7 +272,7 @@ msgstr "kwmcom: Kommunikation mit kwm fehlgeschlagen\n"
 
 #: options.cpp:42
 msgid "Uninstall parts of previous theme"
-msgstr "Teile des vorherigen Themas entfernen"
+msgstr "Teile des vorherigen Designs entfernen"
 
 #: options.cpp:50
 msgid "Work on the following parts:"
@@ -360,7 +360,7 @@ msgstr "Ausgewählt"
 
 #: about.cpp:64
 msgid "KDE Theme Manager"
-msgstr "KDE Thema-Verwaltung"
+msgstr "KDE Designmanager"
 
 #: about.cpp:69
 #, c-format
@@ -386,7 +386,7 @@ msgstr "Unbekannt"
 #: about.cpp:111
 #, c-format
 msgid "%s Theme"
-msgstr "%s Thema"
+msgstr "%s Design"
 
 #: about.cpp:117
 #, c-format
@@ -405,7 +405,7 @@ msgstr "Konnte Verzeichnis %s nicht erstellen: %s"
 
 #: newthemedlg.cpp:37
 msgid "Create New Theme"
-msgstr "Neues Thema erstellen"
+msgstr "Neues Design erstellen"
 
 #: newthemedlg.cpp:44
 msgid "&Name"
@@ -429,8 +429,8 @@ msgstr "&Beschreibung"
 
 #: newthemedlg.cpp:92
 msgid "MyNewTheme"
-msgstr "MeinNeuesThema"
+msgstr "MeinNeuesDesign"
 
 #: newthemedlg.cpp:96
 msgid "Give a short description of the theme here..."
-msgstr "Geben Sie hier eine kurze Beschreibung des Themas ein..."
+msgstr "Geben Sie hier eine kurze Beschreibung des Designs ein..."
