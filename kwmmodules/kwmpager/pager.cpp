@@ -230,7 +230,8 @@ void Pager::changeNumber(int)
 void Pager::moveEvent ( QMoveEvent *e) {
     if (moved) {
 	QString pos;
-	pos.sprintf("%d %d",e->pos().x(), e->pos().y());
+	QPoint position = KWM::geometry(winId(), false).topLeft();
+	pos.sprintf("%d %d",position.x(), position.y());
 	KConfig *config = kapp->getConfig();
 	config->setGroup("GUI Settings");
 	config->writeEntry("Geometry",pos);
@@ -239,7 +240,7 @@ void Pager::moveEvent ( QMoveEvent *e) {
     moved = true;
 }
 
-void Pager::closeEvent( QCloseEvent *e)
+void Pager::closeEvent( QCloseEvent *)
 {
     kapp->quit();
 }

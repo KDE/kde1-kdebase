@@ -78,7 +78,6 @@ private:
     QSize pixmap_size;
     QPoint dragStart;
     PagerWindow *dragWindow;
-    QTime startTime;
     bool cursor_set;
 
 signals:

@@ -26,7 +26,7 @@
 #include <qtooltip.h>
 #include <qcursor.h>
 
-const int TIME_TO_ELAPSE = 30;
+const int PIXELS_TO_MOVE = 3;
 
 Desktop::Desktop(KWMModuleApplication *a, int id, Pager *parent) :
   QFrame(parent)
@@ -225,7 +225,6 @@ void Desktop::mousePressEvent( QMouseEvent *e )
 	
 	win->mrect = win->prect;
 	dragWindow = win;
-	startTime.start();
 	cursor_set = false;
 	if (dragWindow)
 	    dragStart = e->pos();
@@ -260,15 +259,18 @@ void Desktop::mouseMoveEvent( QMouseEvent *e)
 {
     if (e->state() != LeftButton || !dragWindow)
 	return;
-
-    if (startTime.elapsed() < TIME_TO_ELAPSE)
-	return;
-
-    if (!cursor_set) {
-	kapp->setOverrideCursor(sizeAllCursor);
-	cursor_set = true;
-    }
+      
     QPoint tmp = e->pos() - dragStart;
+    
+    if (!cursor_set) {
+	if ( abs(tmp.x()) >= PIXELS_TO_MOVE ||  
+	     abs(tmp.y()) >= PIXELS_TO_MOVE ) {
+	    kapp->setOverrideCursor(sizeAllCursor);
+	    cursor_set = true;
+	} else 
+	    return;
+    }
+    
     QRect backup = dragWindow->prect;
     dragWindow->prect = dragWindow->mrect;
     dragWindow->prect.moveBy(tmp.x(), tmp.y());
