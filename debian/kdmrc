@@ -1,0 +1,21 @@
+# KDE Config File
+[KDMDESKTOP]
+BackGroundPicture=/usr/share/wallpapers/abnormal_fluid.jpg
+BackGroundPictureMode=None
+BackGroundColor1=0,0,128
+BackGroundColor2=0,255,255
+BackGroundColorMode=Vertical
+[KDM]
+SortUsers=true
+#Users=root;johndoe
+NoUsers=bin;daemon;games;halt;mail;man;news;nobody;reboot;shutdown;sync;uucp;xten;
+GreetString=K Desktop Environment [HOSTNAME]
+UserView=false
+#ShutdownButton=RootOnly
+ShutdownButton=ConsoleOnly
+FailFont=helvetica,12,5,iso-8859-1,75,0
+GreetFont=charter,24,5,iso-8859-1,50,0
+StdFont=Helvetica,12,5,iso-8859-1,50,0
+SessionTypes=kde;fvwm;failsafe;
+#GUIStyle=Windows
+

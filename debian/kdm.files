@@ -2,9 +2,9 @@ etc/init.d
 etc/X11
 etc/kde/kdm*
 usr/bin/kdm
+usr/bin/kdmdesktop
 usr/bin/switchdm
 usr/bin/kdmconfig
-usr/bin/kdmdesktop
 usr/man/man1/kdm.1.gz
 usr/man/man1/switchdm.1.gz
 usr/man/man1/kdmconfig.1.gz

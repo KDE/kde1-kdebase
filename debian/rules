@@ -19,7 +19,7 @@ $(BUILDDIR)/build-stamp:
 	  -DUTMP='\"/var/run/utmp\"'" \
 	  CXXFLAGS="-O2 -g -Wall -Wno-uninitialized" \
 	  RUN_KAPPFINDER="no" \
-	../configure --enable-debug --with-shadow --without-pam \
+	../configure --without-shadow --with-pam \
 	--with-install-root=`pwd`/../debian/tmp \
 	--disable-rpath ; \
 	fi
@@ -36,6 +36,8 @@ debian-clean:
 	-rm -f $(BUILDDIR)/build-stamp
 	-rm -f debian/files
 	-rm -f debian/menu
+	-rm -f debian/substvars
+	-rm -f configure
 
 binary-indep:	checkroot build
 	$(checkdir)
@@ -69,8 +71,9 @@ binary-arch: checkroot build
 	debian/tmp/etc/init.d/xdm
 	dh_undocumented 
 	perl -w debian/kderules
-#	-rm -f debian/tmp/usr/bin/rman
-#	-rm -rf debian/tmp/usr/doc/kdebase/kdehelp/rman
+	mv debian/tmp/usr/share/mimelnk/magic debian/tmp/etc/kde
+	ln -s /etc/kde/magic debian/tmp/usr/share/mimelnk/magic
+	cp debian/kdmrc debian/tmp/etc/kde
 	dh_movefiles
 	dh_installdocs
 	dh_installmenu
@@ -81,7 +84,7 @@ binary-arch: checkroot build
 	chown root.shadow debian/tmp/usr/bin/kcheckpass
 	chmod 2755 debian/tmp/usr/bin/kcheckpass
 	chmod 4755 debian/tmp/usr/bin/konsole_grantpty
-	chmod 4775 debian/tmp/usr/bin/kvt
+	chmod 4755 debian/tmp/usr/bin/kvt
 	dh_suidregister
 	dh_installdeb
 	dh_shlibdeps
