@@ -117,7 +117,7 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
 void KRootWm::rmb_menu_activated(int item){
   switch (item) {
   case RMB_DISPLAY_PROPERTIES:
-    execute("kcc background");
+    execute("kcc background colors screensaver style");
     break;
   case RMB_ARRANGE_ICONS:
     {
