@@ -314,7 +314,6 @@ KGreeter::slot_user_name( int i)
 {
      loginEdit->setText( kdmcfg->users()->at( i)->text());
      passwdEdit->setFocus();
-
      load_wm();
 }
 
@@ -361,6 +360,7 @@ KGreeter::shutdown_button_clicked()
 void
 KGreeter::save_wm()
 {
+#ifdef HAVE_INITGROUPS
      // read passwd
      struct passwd *pwd = getpwnam(greet->name);
      endpwent();
@@ -370,30 +370,31 @@ KGreeter::save_wm()
 
      QString file;
      ksprintf(&file, "%s/"WMRC, pwd->pw_dir);
-     QFile f(file);
+     QString sesstype (sessiontags.at( sessionargBox->currentItem()));
 
-     // open file as user which is loging in
-     if( setegid( pwd->pw_gid) == -1) {
-	  return; // error
-     }
-     if( seteuid(pwd->pw_uid) == -1) {
-	  setegid(0);  
-	  return; //error
-     }
+     switch ( fork() ) {
+     case -1 :
+	     LogError("fork: %m");
+	     break;
+     case 0 :
+	     // open file as user which is loging in
+	     initgroups(pwd->pw_name, pwd->pw_gid);
+	     setuid(pwd->pw_uid);
 
-     if ( f.open(IO_WriteOnly) ) {
-	  QTextStream t;
-	  t.setDevice( &f );
-          t << sessiontags.at( sessionargBox->currentItem()) << endl;
-	  f.close();
+	     FILE *f = fopen(file.data(), "w");
+	     if (f) {
+        	  fprintf(f, "%s\n", sesstype.data());
+	          fclose(f);
+	     }
+	     _exit(0);
      }
-     seteuid(0);
-     setegid(0);
+#endif /* HAVE_INITGROUPS */
 }
 
 void
 KGreeter::load_wm()
 {
+#ifdef HAVE_INITGROUPS
      // read passwd
      passwd *pwd = getpwnam(loginEdit->text());
      endpwent();
@@ -403,39 +404,49 @@ KGreeter::load_wm()
 
      QString file;
      ksprintf(&file, "%s/"WMRC, pwd->pw_dir);
-     QFile f(file);
 
-     // open file as user which is loging in
-     if( setegid( pwd->pw_gid) == -1) {
-	  return; // error
-     }
-     if( seteuid(pwd->pw_uid) == -1) {
-	  setegid(0);
-	  return; // error
-     }
+     int pipefd[2];
+     pipe(pipefd);
 
-     // set default wm
+     switch ( fork() ) {
+     case -1 :
+	     LogError("fork: %m");
+     	     return;
+     case 0 :
+     	     ::close(pipefd[0]);
+
+	     // open file as user which is loging in
+	     initgroups(pwd->pw_name, pwd->pw_gid);
+	     setuid(pwd->pw_uid);
+
+	     FILE *f = fopen(file.data(), "r");
+	     if (f) {
+	          char s[255];
+
+	          fgets(s, sizeof s, f);
+	          fclose(f);
+
+		  if (char *p = strchr(s, '\n')) *p = 0;
+	          write(pipefd[1], s, strlen(s) + 1);
+	     }
+	     ::close(pipefd[1]);
+	     _exit(0);
+     }
+     ::close(pipefd[1]);
+
+     char s[255];
+     int j = read(pipefd[0], &s, sizeof s);
+     ::close(pipefd[0]);
+
      int wm = 0;
-     if ( f.open(IO_ReadOnly) ) {
-	  char s[256];
-
-	  bool r = f.readLine(s, sizeof(s)) != -1;
-	  f.close();
-
-	  if (r) {
-	       // the readLine in qfile does not strip the terminating newline
-	       if (s[strlen(s) - 1] == '\n') s[strlen(s) - 1] = '\0';
-
-	       for (int i = 0; i < sessionargBox->count(); i++)
-		    if (strcmp(sessiontags.at(i), s) == 0) {
-			 wm = i;
-			 break;
-		    }
-	  }
-     }
-     seteuid(0);
-     setegid(0);
+     if (j)
+	  for (int i = 0; i < sessionargBox->count(); i++)
+	       if (strcmp(sessiontags.at(i), s) == 0) {
+		    wm = i;
+		    break;
+	       }
      sessionargBox->setCurrentItem(wm);
+#endif /* HAVE_INITGROUPS */
 }
 
 /* This stuff should doesn't really belong to the kgreeter, but verify.c is
@@ -687,7 +698,6 @@ KGreeter::go_button_clicked()
 				    sessionargBox->currentItem()));
 
      save_wm();
-
      //qApp->desktop()->setCursor( waitCursor);
      qApp->setOverrideCursor( waitCursor);
      hide();
