@@ -19,7 +19,6 @@ msgid "&Rename ..."
 msgstr "&Renombrar ..."
 
 #: backgnd.cpp:184
-#, fuzzy
 msgid "&Common Background"
 msgstr "Fondo"
 
@@ -53,94 +52,86 @@ msgid "&Browse..."
 msgstr "Examinar..."
 
 #: backgnd.cpp:333
-#, fuzzy
 msgid "Tiled"
 msgstr "Mosáico"
 
 #: backgnd.cpp:334
 msgid "Mirrored"
-msgstr ""
+msgstr "Reflejado"
 
 #: backgnd.cpp:335
-#, fuzzy
 msgid "Center Tiled"
-msgstr "&Centrado"
+msgstr "Mosaico Centrado"
 
 #: backgnd.cpp:336
-#, fuzzy
 msgid "Centred"
-msgstr "&Centrado"
+msgstr "Centrado"
 
 #: backgnd.cpp:337
-#, fuzzy
 msgid "Centred Brick"
-msgstr "&Centrado"
+msgstr "Centrado y Enladrillado"
 
 #: backgnd.cpp:338
-#, fuzzy
 msgid "Centred Warp"
-msgstr "&Centrado"
+msgstr "Centrado y Warp"
 
 #: backgnd.cpp:339
-#, fuzzy
 msgid "Centred Maxpect"
-msgstr "&Centrado"
+msgstr "Maximizado Conservando Aspecto"
 
 #: backgnd.cpp:340
 msgid "Symmetrical Tiled"
-msgstr ""
+msgstr "Mosaico Simétrico"
 
 #: backgnd.cpp:341
 msgid "Symmetrical Mirrored"
-msgstr ""
+msgstr "Reflejado Simétrico"
 
 #: backgnd.cpp:342
-#, fuzzy
 msgid "Scaled"
 msgstr "Escalado"
 
 #: backgnd.cpp:354
 msgid "Ra&ndom"
-msgstr ""
+msgstr "Aleatorio"
 
 #: backgnd.cpp:363
-#, fuzzy
 msgid "Setu&p..."
 msgstr "Configuración..."
 
 #: backgnd.cpp:371
 msgid "&Dock into the panel"
-msgstr ""
+msgstr "&Fijar en el panel"
 
 #: backgnd.cpp:381
 msgid "Cache size"
-msgstr ""
+msgstr "Tamaño de Cache"
 
 #: backgnd.cpp:399
 msgid "kb"
-msgstr ""
+msgstr "kb"
 
 #: backgnd.cpp:1264
 msgid "Desktop names"
 msgstr "Nombres de escritorios"
 
 #: backgnd.cpp:1309
-#, fuzzy
 msgid "File error"
-msgstr "Error de nombramiento"
+msgstr "Error de archivo"
 
 #: backgnd.cpp:1310
 msgid "Can't load image file"
-msgstr ""
+msgstr "No se puede cargar imagen"
 
 #: backgnd.cpp:1333 backgnd.cpp:1803
 msgid "Unsupported URL"
-msgstr ""
+msgstr "URL no soportado"
 
 #: backgnd.cpp:1334 backgnd.cpp:1804
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
+"Perdón, este tipo de URL no está soportado actualmente por el KDE Display Module"
 
 #: backgnd.cpp:1365
 msgid "Two color backgrounds"
@@ -196,44 +187,39 @@ msgstr "Pavimento"
 
 #: backgnd.cpp:1632
 msgid "Random mode setup"
-msgstr ""
+msgstr "Configuración del modo aleatorio"
 
 #: backgnd.cpp:1638
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "Coje archivos del &directorio"
 
 #: backgnd.cpp:1652
-#, fuzzy
 msgid "&Browse ..."
-msgstr "Examinar..."
+msgstr "&Examinar..."
 
 #: backgnd.cpp:1673
 msgid "Timer Delay in seconds :"
-msgstr ""
+msgstr "Duración en segundos :"
 
 #: backgnd.cpp:1685
-#, fuzzy
 msgid "In &order"
-msgstr "Ignorar"
+msgstr "En &orden"
 
 #: backgnd.cpp:1702
-#, fuzzy
 msgid "Desktops :"
-msgstr "Escritorio"
+msgstr "Escritorios :"
 
 #: backgnd.cpp:1740
-#, fuzzy
 msgid "&Add"
 msgstr "&Añadir"
 
 #: backgnd.cpp:1910
-#, fuzzy
 msgid "Directory error"
-msgstr "Error de nombramiento"
+msgstr "Error de directorio"
 
 #: backgnd.cpp:1911
 msgid "Selected directory doesn't exists"
-msgstr ""
+msgstr "El directorio seleccionado no existe"
 
 #: colorscm.cpp:120
 msgid "Color Scheme"
@@ -439,7 +425,7 @@ msgstr "Pintar widgets en el estilo de Windows 95"
 
 #: general.cpp:242
 msgid "&Apply style to non-KDE apps"
-msgstr ""
+msgstr "&Aplicar estilo a apps. no-KDE"
 
 #: general.cpp:255
 msgid "Desktop fonts"
@@ -454,9 +440,8 @@ msgid "Fixed font"
 msgstr "Fuente fija"
 
 #: general.cpp:278
-#, fuzzy
 msgid "Window title font"
-msgstr "Texto en la ventana"
+msgstr "Fuente del título de la ventana"
 
 #: general.cpp:283
 msgid "Panel button font"
