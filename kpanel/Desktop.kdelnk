@@ -1,0 +1,7 @@
+# KDE Config File
+[KDE Desktop Entry]
+MiniIcon=desktop_settings.xpm
+Comment=Your desktop
+URL=file:$HOME/Desktop
+Icon=desktop_settings.xpm
+Type=Link
