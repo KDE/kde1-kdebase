@@ -148,7 +148,6 @@ void KDMAppearanceWidget::setupPage(QWidget *pw)
       QBoxLayout *main = new QVBoxLayout(this, 10);
       main->addWidget(group);
       main->addWidget(group2);
-      main->addStretch(1);
       main->activate();
 }
 

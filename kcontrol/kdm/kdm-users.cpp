@@ -175,6 +175,7 @@ void KDMUsersWidget::setupPage(QWidget *)
 
 void KDMUsersWidget::slotUserPixChanged(const char*)
 {
+  debug("KDMUsersWidget::slotUserPixChanged()");
   QString msg, user(userlabel->text());
   if(user.isEmpty())
   {
