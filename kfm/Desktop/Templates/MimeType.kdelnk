@@ -1,11 +1,11 @@
 # KDE Config File
 [KDE Desktop Entry]
 MimeType=
-Comment=mime type
 DefaultApp=
 Icon=unknown.xpm
 Type=MimeType
 Patterns=
+Comment=Mime Type
 Comment[de]=Mime Type
 Comment[is_IS]=MIME tag
 Comment[no]=Mimetype

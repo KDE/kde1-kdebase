@@ -3,6 +3,7 @@
 URL=ftp://ftp.kde.org/pub/kde
 Icon=ftp.xpm
 Type=Link
+Comment=FTP URL
 Comment[de]=FTP URL
 Comment[is_IS]=FTP slóð
 Comment[no]=FTP-URL

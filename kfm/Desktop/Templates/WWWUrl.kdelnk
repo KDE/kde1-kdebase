@@ -3,6 +3,7 @@
 URL=http://www.kde.org
 Icon=www.xpm
 Type=Link
+Comment=World Wide Web URL
 Comment[de]=World-Wide-Web URL
 Comment[no]=World Wide Web-URL
 Comment[pt]=URL de HTTP
