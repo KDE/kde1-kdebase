@@ -6,20 +6,6 @@
 //  Copyright (C) 1998 Pietro Iglio
 //  email:  iglio@fub.it, iglio@geocities.com
 //
-//  This program is free software; you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation; either version 2 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with this program; if not, write to the Free Software
-//  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-//
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -326,7 +312,7 @@ PFileMenu::aboutToShow()
     return;
 
   // HACK; TODO: understand why here we receive >1 events for a submenu;
-#if QT_VERSION < 141   
+#if QT_VERSION < 141
   //should not happen with qt-1.41 any more (matthias)
    if (this == lastActivated)
      return;
@@ -352,8 +338,8 @@ PFileMenu::aboutToShow()
                             0, "mini-eyes.xpm"));
 
   this->createMenu(this->parentItem->cmenu, the_panel);
-  
-  
+
+
 #if QT_VERSION < 141
   // no longer necessary :-) (Matthias)
   this->fixMenuPosition();
