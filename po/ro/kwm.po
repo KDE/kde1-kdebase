@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-06-11 00:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ionescu Paul <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.C:67
+#: main.C:68
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
@@ -22,107 +22,133 @@ msgstr ""
 "kwm: se pare ca este deja în funcþiune un alt Window Manager, aºa cã nu am "
 "pornit kwm-ul\n"
 
-#: main.C:81
+#: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: eroare în timpul iniþializãrii; pa \n"
 
-#: main.C:449
+#: main.C:474
+msgid ""
+"You want to switch to another window. Unfortunately you have selected \n"
+"one of the classic focus policies which do not allow this.  These policies "
+"are \n"
+"included not because they make sense, but for compatibility reasons. Well, \n"
+"even old hand unix users should feel comfortable with the K Desktop "
+"Environment ;-)\n"
+"\n"
+"Anyway, if you prefer modern windowmanagement, please choose one of the \n"
+"recommended focus policies like ClickToFocus or FocusFollowMouse instead."
+msgstr ""
+
+#: main.C:492
+msgid "Preparing session ... "
+msgstr ""
+
+#: main.C:511
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:456
+#: main.C:518
 msgid "Usage: "
 msgstr "Folosire: "
 
-#: main.C:467
+#: main.C:529
 msgid "&Maximize"
 msgstr "Ma&ximizare"
 
-#: main.C:468
+#: main.C:530
 msgid "&Restore"
 msgstr "&Refacere"
 
-#: main.C:469
+#: main.C:531
 msgid "&Iconify"
 msgstr "Mi&nimizare"
 
-#: main.C:470
+#: main.C:532
 msgid "&DeIconify"
 msgstr "&DezMinimizare"
 
-#: main.C:471
+#: main.C:533
 msgid "&Sticky"
 msgstr "&Lipicioasã"
 
-#: main.C:472
+#: main.C:534
 msgid "&UnSticky"
 msgstr "Nelipicioasã"
 
-#: main.C:473
+#: main.C:535
 msgid "Mo&ve"
 msgstr "&Mutã"
 
-#: main.C:474
+#: main.C:536
 msgid "Resi&ze"
 msgstr "Schim&bã dimensiunea"
 
-#: main.C:476
+#: main.C:538
 msgid "&To desktop"
 msgstr "În &ecranul"
 
-#: main.C:478
+#: main.C:540
 msgid "&Onto current desktop"
 msgstr "&În ecranul curent"
 
-#: main.C:531
+#: main.C:593
 msgid "One"
 msgstr "Unu"
 
-#: main.C:534
+#: main.C:596
 msgid "Two"
 msgstr "Doi"
 
-#: main.C:537
+#: main.C:599
 msgid "Three"
 msgstr "Trei"
 
-#: main.C:540
+#: main.C:602
 msgid "Four"
 msgstr "Patru"
 
-#: main.C:543
+#: main.C:605
 msgid "Five"
 msgstr "Cinci"
 
-#: main.C:546
+#: main.C:608
 msgid "Six"
 msgstr "ªase"
 
-#: main.C:549
+#: main.C:611
 msgid "Seven"
 msgstr "ªapte"
 
-#: main.C:552
+#: main.C:614
 msgid "Eight"
 msgstr "Opt"
 
-#: main.C:566
+#: main.C:628
 msgid "Unnamed Desktop"
 msgstr "Ecran fãrã nume"
 
-#: main.C:875
+#: main.C:950
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niºte pixmap-uri sunt defecte: ShapeMode nu este activat\n"
 
-#: main.C:1193
+#: main.C:1062
+#, fuzzy
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr "Niºte pixmap-uri sunt defecte: ShapeMode nu este activat\n"
+
+#: main.C:1295
 msgid "*** No Tasks ***"
 msgstr "*** Nici un Program ***"
 
-#: minicli.C:115
+#: minicli.C:116
 msgid "Command:"
 msgstr "Comandã : "
 
-#: logout.C:36 taskmgr.C:107
+#: warning.C:36
+msgid "Ooops!"
+msgstr ""
+
+#: logout.C:36 taskmgr.C:108
 msgid "Logout"
 msgstr "Ieºire"
 
@@ -154,11 +180,10 @@ msgstr ""
 "Aplicaþiile urmãtoare nu sunt X11 native ºi de aceea nu pot fi restaurate\n"
 "în sesiunea urmãtoare. Asigurã-te cã nu conþin date importante nesalvate."
 
-#: taskmgr.C:106
+#: taskmgr.C:107
 msgid "Switch to"
 msgstr "Schimbã la"
 
-#: taskmgr.C:120
+#: taskmgr.C:121
 msgid "Current session"
 msgstr "Sesiune curentã"
-
