@@ -1260,9 +1260,8 @@ msgid "Don't forget to save your settings!"
 msgstr "Não se esqueça de gravar a sua configuração"
 
 #: kproxydlg.cpp:16
-#, fuzzy
 msgid "Use proxy"
-msgstr "Utilizador"
+msgstr "Usar proxy"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"
