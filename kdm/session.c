@@ -607,6 +607,14 @@ extern void ResetServer( struct display *d );
 void SessionExit (d, status, removeAuth)
     struct display  *d;
 {
+#ifdef USE_PAM
+    if( pamh) {
+        /* shutdown PAM session */
+        pam_close_session(pamh, 0);
+        pam_end(pamh, PAM_SUCCESS);
+        pamh = NULL;
+    }
+#endif
     /* make sure the server gets reset after the session is over */
     if (d->serverPid >= 2 && d->resetSignal)
 	kill (d->serverPid, d->resetSignal);
@@ -645,14 +653,6 @@ void SessionExit (d, status, removeAuth)
 	    }
 	}
 #endif /* K5AUTH */
-#ifdef USE_PAM
-	if( pamh) {
-	  /* shutdown PAM session */
-	  pam_close_session(pamh, 0);
-	  pam_end(pamh, PAM_SUCCESS);
-	  pamh = NULL;
-	}
-#endif
     }
     Debug ("Display %s exiting with status %d\n", d->name, status);
     exit (status);
