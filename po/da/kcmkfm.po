@@ -46,7 +46,7 @@ msgstr "Coo&kier"
 # kfmtree.cpp:398
 #: main.cpp:80
 msgid "&Desktop Icons"
-msgstr "Arbejdsområde&ikoner"
+msgstr "Skrivebords&ikoner"
 
 #: main.cpp:89
 #, c-format
@@ -242,7 +242,7 @@ msgstr "Afstand i lodret bundgitter:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
-msgstr "&Gennemsigtig tekst for ikoner på arbejdsområdet."
+msgstr "&Gennemsigtig tekst for ikoner på skrivebordt."
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
@@ -254,4 +254,4 @@ msgstr "Baggrundsfarve for ikon:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr "Vis skj&ulte filer på arbejdsområde"
+msgstr "Vis skj&ulte filer på skrivebord"

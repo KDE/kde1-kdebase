@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
 "POT-Creation-Date: 1999-04-17 01:15+0200\n"
 "PO-Revision-Date: 1999-02-16 01:40+CET-5\n"
-"Last-Translator: Bo Thorsen <gobo@imada.sdu.dk>\n"
+"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
@@ -380,7 +380,7 @@ msgstr "FEJL: Du lagde en URL på sig selv"
 
 #: kfmtree.cpp:510 kfmview.cpp:590 kfmview.cpp:822 root.cpp:1259
 msgid "ERROR: You dropped a directory over one of its children"
-msgstr "FEJL: Du lagde en katalog i en af dens underkataloger"
+msgstr "FEJL: Du lagde et katalog i en af dens underkataloger"
 
 #: kfmexec.cpp:303 kfmman.cpp:1214 kfmview.cpp:606 root.cpp:1134
 msgid "Open With:"
@@ -400,7 +400,7 @@ msgstr ""
 "Kan ikke gemme indstillingerne da dette katalog\n"
 "ikke har et bogmærke og er skrivebeskyttet.\n"
 "\n"
-"Lav først et bogmærke hertil, eller et kdelnk på arbejdsområdet."
+"Lav først et bogmærke hertil, eller et kdelnk på skrivebordet."
 
 #: kfmview.cpp:719
 msgid ""
@@ -410,9 +410,9 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 "Kan ikke gemme egenskaberne idet denne URL hverken\n"
-"har et bogmærke eller er på arbejdsområdet\n"
+"har et bogmærke eller er på skrivebordet\n"
 "\n"
-"Lav først et bogmærke, eller lav en kdelnk på arbejdsområdet."
+"Lav først et bogmærke, eller lav en kdelnk på skrivebordet."
 
 #: kfmtree.cpp:467 kfmview.cpp:758 root.cpp:1340
 msgid "Could not access Trash Bin"
@@ -478,7 +478,7 @@ msgstr "Afmontér"
 
 #: kbind.cpp:875 kbind.cpp:887 kbind.cpp:897 popup.cpp:49 popup.cpp:129
 msgid "Folder"
-msgstr "Katalog"
+msgstr "Mappe"
 
 #: kbind.cpp:1176
 msgid "ERROR"
@@ -928,7 +928,7 @@ msgid ""
 msgstr ""
 "Kunne ikke udføre forespørgslen.\n"
 "De nye dimensioner ville flytte nogle ikoner\n"
-"ud over arbejdsområdet."
+"ud over skrivebordet."
 
 #: root.cpp:769
 msgid "Internal Error: desktopDir is malformed"
@@ -1349,7 +1349,7 @@ msgstr "Hjemme"
 
 #: kfmtree.cpp:589
 msgid "Desktop"
-msgstr "Arbejdsområde"
+msgstr "Skrivebord"
 
 #: kfmtree.cpp:591
 msgid "Root"

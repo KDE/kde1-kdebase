@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kpager\n"
 "POT-Creation-Date: 1998-12-15 07:34+0100\n"
-"PO-Revision-Date: 1999-02-16 01:10-0500\n"
+"PO-Revision-Date: 1999-05-28 01:10-0500\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
-"Language-Team: da <LL@li.org>\n"
+"Language-Team: da <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kpager.cpp:72
 msgid "Toggle Global Desktop"
-msgstr "Global arbejdsområde til/fra"
+msgstr "Global skrivebord til/fra"
 
 #: kpager.cpp:74
 msgid "Toggle Menubar"
@@ -31,11 +31,11 @@ msgstr "Flyt til venstre"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
-msgstr "Skjul &global arbejdsområde"
+msgstr "Skjul &globalt skrivebord"
 
 #: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
 msgid "Show &Global Desktop"
-msgstr "Vis &global arbejdsområde"
+msgstr "Vis &globalt skrivebord"
 
 #: kpager.cpp:97 kpager.cpp:380
 msgid "Hide &Menubar"
@@ -47,15 +47,15 @@ msgstr "&2 rækker"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
-msgstr "&Et klik skifter arbejdsområde"
+msgstr "&Et klik skifter skrivebord"
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
 msgid "Hide Desktop &Names"
-msgstr "Skjul arbejdsområde&navne"
+msgstr "Skjul skrivebord&navne"
 
 #: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
 msgid "Show Desktop &Names"
-msgstr "Vis arbejdsområde&navne"
+msgstr "Vis skrivebord&navne"
 
 #: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
@@ -106,7 +106,7 @@ msgstr "Vis &menubjælke"
 
 #: kpager.cpp:389
 msgid "One Click change Desktop"
-msgstr "Et klik skifter arbejdsområde"
+msgstr "Et klik skifter skrivebord"
 
 #: kpager.cpp:446
 msgid "&Maximize"
@@ -126,4 +126,4 @@ msgstr "&Frigjort"
 
 #: kpager.cpp:453
 msgid "&To Desktop"
-msgstr "&Til arbejdsområde"
+msgstr "&Til skrivebord"

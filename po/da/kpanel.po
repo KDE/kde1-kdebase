@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kpanel\n"
 "POT-Creation-Date: 1999-04-24 01:28+0200\n"
-"PO-Revision-Date: 1999-02-16 12:35+0100\n"
+"PO-Revision-Date: 1999-05-28 12:35+0100\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -143,15 +143,15 @@ msgstr "Dette kan ikke placeres som en trykknap på panelet!"
 
 #: pfilemenu.C:425
 msgid "(empty folder)"
-msgstr "(tomt katalog)"
+msgstr "(tom mappe)"
 
 #: pfilemenu.C:480
 msgid "Open Folder"
-msgstr "Åbn katalog"
+msgstr "Åbn mappe"
 
 #: pfilemenu.C:483
 msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr "Åbn dette katalog (+skift: start en terminal her)"
+msgstr "Åbn denne mappe (+skift: start en terminal her)"
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"

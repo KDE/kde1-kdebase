@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmsyssound\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1999-02-16 15:33+0100\n"
-"Last-Translator: Bo Thorsen <gobo@imada.sdu.dk>\n"
+"PO-Revision-Date: 1999-05-28 15:33+0100\n"
+"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
@@ -27,35 +27,35 @@ msgstr "(ingen)"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"
-msgstr "Skift til arbejdsområde 1"
+msgstr "Skift til skrivebord 1"
 
 #: syssound.cpp:148
 msgid "Change to Desktop 2"
-msgstr "Skift til arbejdsområde 2"
+msgstr "Skift til skrivebord 2"
 
 #: syssound.cpp:149
 msgid "Change to Desktop 3"
-msgstr "Skift til arbejdsområde 3"
+msgstr "Skift til skrivebord 3"
 
 #: syssound.cpp:150
 msgid "Change to Desktop 4"
-msgstr "Skift til arbejdsområde 4"
+msgstr "Skift til skrivebord 4"
 
 #: syssound.cpp:151
 msgid "Change to Desktop 5"
-msgstr "Skift til arbejdsområde 5"
+msgstr "Skift til skrivebord 5"
 
 #: syssound.cpp:152
 msgid "Change to Desktop 6"
-msgstr "Skift til arbejdsområde 6"
+msgstr "Skift til skrivebord 6"
 
 #: syssound.cpp:153
 msgid "Change to Desktop 7"
-msgstr "Skift til arbejdsområde 7"
+msgstr "Skift til skrivebord 7"
 
 #: syssound.cpp:154
 msgid "Change to Desktop 8"
-msgstr "Skift til arbejdsområde 8"
+msgstr "Skift til skrivebord 8"
 
 #: syssound.cpp:156
 msgid "Activate Window"
