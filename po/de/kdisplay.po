@@ -102,7 +102,7 @@ msgstr "&Einstellungen..."
 #: backgnd.cpp:370
 #, fuzzy
 msgid "&Dock into the panel"
-msgstr "In kpanal einbinden"
+msgstr "In kpanel einbinden"
 
 #: backgnd.cpp:379
 msgid "Cache size"

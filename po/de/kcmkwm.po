@@ -271,7 +271,7 @@ msgstr "Zeitraum für Desktop-Wechsel:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
-msgstr "Magic Ränder"
+msgstr "Magische Ränder"
 
 #: desktop.cpp:126
 msgid ""
