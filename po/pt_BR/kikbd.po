@@ -182,6 +182,7 @@ msgid "X default codes"
 msgstr "Códigos padrões do X"
 
 #: kikbdconf.cpp:209
+#, c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
@@ -193,8 +194,9 @@ msgstr ""
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
-msgstr "Você está usando o \"Teclado Internacional\" pela primeira vez.\n"
- "Instalei algumas configurações padrões."
+msgstr ""
+"Você está usando o \"Teclado Internacional\" pela primeira vez.\n"
+"Instalei algumas configurações padrões."
 
 #: kikbdconf.cpp:357
 msgid "unknown"

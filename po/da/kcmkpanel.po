@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDEBASE/kcmkfm\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-20 03:02+0600\n"
 "PO-Revision-Date: 1999-01-03 23:59-0500\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -224,4 +224,3 @@ msgstr "Vis indstillingsindgang"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Terminal applikation"
-

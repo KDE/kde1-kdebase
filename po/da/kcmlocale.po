@@ -13,7 +13,6 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-
 #: main.cpp:52
 msgid "&Locale"
 msgstr "&Lokalisering"

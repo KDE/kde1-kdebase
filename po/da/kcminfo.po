@@ -68,7 +68,7 @@ msgid ""
 "No Information available\n"
 " or\n"
 "this system is not yet supported :-("
-msgstr"" 
+msgstr ""
 "Ingen tilgængelig information\n"
 "eller\n"
 "Dette system er desværre ikke understøttet endnu :-("
@@ -227,4 +227,3 @@ msgstr "Ikke tilgængeligt"
 #: memory_sgi.cpp:30
 msgid "Not Available"
 msgstr "Ikke tilgængeligt"
-
