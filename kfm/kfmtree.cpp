@@ -1,5 +1,6 @@
 #include <kurl.h>
 #include <sys/stat.h>
+#include <sys/syslimits.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <dirent.h>
