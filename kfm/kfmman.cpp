@@ -1116,8 +1116,10 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 	    // Look thru all bindings we have so far
 	    for ( b = bindings.first(); b != 0L; b = bindings.next() )
 	    {
-		// Does the binding match this file, too ?
-		if ( bindings2.find( b ) != -1 )
+		// Does the binding match this file, too
+		// and don't we already have this binding?
+		if ( ( bindings2.find( b ) != -1 ) &&	
+		     ( bindings3.find( b ) == -1  ) )
 		{
 		    // Keep these entries
 		    bindings3.append( b );

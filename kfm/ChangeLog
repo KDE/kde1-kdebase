@@ -1,3 +1,8 @@
+Sat Jun 27 18:11:23 1998 Carsten Pfeiffer <carpdjih@sp.zrz.tu-berlin.de>
+
+	* kfmman.cpp (openPopupMenu): fixed multiple equal entries in 
+	  popupmenu when several files of same mimetype are selected.
+
 Fri Jun 26 17:20:03 1998    <weis@snoopy.rz.uni-frankfurt.de>
 
 	* open-with.cpp (KAppTreeListItem): Fixed seg fault with
