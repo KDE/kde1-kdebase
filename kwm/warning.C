@@ -1,4 +1,4 @@
-// klogout 
+// klogout
 // Copyright (C) 1997 Matthias Ettrich
 
 #include "warning.moc"
@@ -60,7 +60,7 @@ void KWarning::SetPointerGrab(QPoint pos){
 
 bool KWarning::eventFilter( QObject *ob, QEvent * e){
   if (e->type() == Event_MouseButtonPress){
-    if (ob->isWidgetType() && 
+    if (ob->isWidgetType() &&
 	!rect().contains(
 			 mapFromGlobal(
 				       ((QWidget*)ob)->mapToGlobal(
@@ -102,7 +102,7 @@ void KWarning::setText(const char* text, bool with_button){
   else {
     button->hide();
   }
-    
+
   frame->setGeometry(0,0, width(), height());
 }
 
@@ -124,7 +124,7 @@ bool KWarning::do_grabbing(){
   button->grabMouse();
   SetPointerGrab(QCursor::pos());
   button->setFocus();
-  
+
   return True;
 }
 
@@ -140,9 +140,9 @@ void KWarning::release(){
     mouseGrabber()->releaseMouse();
   hide();
   do_not_draw = false;
-  if (reactive){
+  if (reactive && manager->hasClient( reactive )){
     reactive->setactive(True);
-    XSetInputFocus (qt_xdisplay(), reactive->window, 
+    XSetInputFocus (qt_xdisplay(), reactive->window,
 		    RevertToPointerRoot, CurrentTime);
   }
 }

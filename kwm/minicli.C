@@ -221,10 +221,10 @@ void Minicli::cleanup(){
   lineedit->releaseMouse();
   hide();
   do_not_draw = false;
-  if (reactive){
-    reactive->setactive(True);
-    XSetInputFocus (qt_xdisplay(), reactive->window,
-		    RevertToPointerRoot, CurrentTime);
+  if (reactive && manager->hasClient( reactive )){
+      reactive->setactive(True);
+      XSetInputFocus (qt_xdisplay(), reactive->window,
+		      RevertToPointerRoot, CurrentTime);
   }
   XSync(qt_xdisplay(), false);
 

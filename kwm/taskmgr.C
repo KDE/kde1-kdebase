@@ -49,14 +49,14 @@ const char *KListBoxItem_Desktop::text() const {
 
 int KListBoxItem_Desktop::height(const QListBox *lb) const {
   QFont f = lb->font();
-  f.setBold(true);  
+  f.setBold(true);
   QFontMetrics fm(f);
   return fm.lineSpacing();
 }
 
 int KListBoxItem_Desktop::width(const QListBox *lb) const {
   QFont f = lb->font();
-  f.setBold(true);  
+  f.setBold(true);
   QFontMetrics fm(f);
   return fm.boundingRect(_text.data()).width();
 }
@@ -73,7 +73,7 @@ void KListBoxItem_Program::paint(QPainter *p) {
   p->save();
   QFontMetrics fm = p->fontMetrics();
   p->drawPixmap(fm.boundingRect("XXXX").width(), 2, _pm);
-  p->drawText( fm.boundingRect("XXXX").width() + 4 + 14 + 4,  
+  p->drawText( fm.boundingRect("XXXX").width() + 4 + 14 + 4,
 	       fm.ascent() + fm.leading()/2 + 2, _text.data()+3 );
   p->restore();
 }
@@ -92,7 +92,7 @@ int KListBoxItem_Program::height(const QListBox *lb) const {
 
 int KListBoxItem_Program::width(const QListBox *lb) const {
   QFontMetrics fm(lb->font());
-  return fm.boundingRect("XXXX").width() + 4 + 14 + 
+  return fm.boundingRect("XXXX").width() + 4 + 14 +
     4 + fm.boundingRect(_text.data()).width() ;
 }
 
@@ -131,7 +131,7 @@ Ktask::Ktask( QWidget *parent, const char *name, WFlags f)
 }
 
 
-void Ktask::prepareToShow(QStrList* strlist, int active){ 
+void Ktask::prepareToShow(QStrList* strlist, int active){
   int w = 360;
   int h = 0;
 
@@ -140,7 +140,7 @@ void Ktask::prepareToShow(QStrList* strlist, int active){
   fnt.setPointSize(14);
   label->setFont(fnt);
   label->adjustSize();
-  
+
   listbox->clear();
 
   FILE *f = fopen("/dev/console", "w");
@@ -168,21 +168,21 @@ void Ktask::prepareToShow(QStrList* strlist, int active){
 
   label->move(w/2-label->width()/2, 15);
   h = label->geometry().bottom() + 15;
-  
+
   listbox->setGeometry(5, h, w-10, 200);
   h = listbox->geometry().bottom() + 10;
 
-  button->setGeometry((w/2-w/8-w/4)/2, 
+  button->setGeometry((w/2-w/8-w/4)/2,
 		      h,
 		      w/4, 30);
-  button_logout->setGeometry(w/2-w/8, 
+  button_logout->setGeometry(w/2-w/8,
 		      h,
 		      w/4, 30);
-  button_cancel->setGeometry(w/2+w/8 + (w/2-w/8-w/4)/2, 
+  button_cancel->setGeometry(w/2+w/8 + (w/2-w/8-w/4)/2,
 			     h,
 			     w/4, 30);
   h = button_cancel->geometry().bottom()+10;
-  
+
   setGeometry(QApplication::desktop()->width()/2 - w/2,
 	      QApplication::desktop()->height()/2 - h/2,
 	      w, h);
@@ -211,7 +211,7 @@ void Ktask::SetPointerGrab(QPoint pos){
 
 bool Ktask::eventFilter( QObject *ob, QEvent * e){
   if (e->type() == Event_MouseButtonPress){
-    if (ob->isWidgetType() && 
+    if (ob->isWidgetType() &&
 	!rect().contains(
 			 mapFromGlobal(
 				       ((QWidget*)ob)->mapToGlobal(
@@ -254,7 +254,7 @@ bool Ktask::do_grabbing(){
   listbox->grabMouse();
   SetPointerGrab(QCursor::pos());
   listbox->setFocus();
-  
+
   return True;
 }
 
@@ -262,7 +262,7 @@ void Ktask::buttonSelect(){
   if (listbox->currentItem() != -1){
     listboxSelect(listbox->currentItem());
   }
-  else 
+  else
     cleanup();
 }
 
@@ -283,9 +283,9 @@ void Ktask::cleanup() {
     mouseGrabber()->releaseMouse();
   hide();
   do_not_draw = false;
-  if (reactive){
+  if (reactive && manager->hasClient( reactive )){
     reactive->setactive(True);
-    XSetInputFocus (qt_xdisplay(), reactive->window, 
+    XSetInputFocus (qt_xdisplay(), reactive->window,
 		    RevertToPointerRoot, CurrentTime);
   }
   XSync(qt_xdisplay(), false);

@@ -10,9 +10,15 @@ originally based on David Hogan's 9wm (a smart and small windowmanager
 written in plain C).
 
 
+Current is 0.14. No Changes and no patchlevels yet :-)
+
 
 In 0.13:
 --------
+patchlevel 9:
+        - fixed initial focus handling (non decorated windows where sometimes broken)
+        - fixed occasional crashbugs when internal window close (such as minicli)
+
 patchlevel 8:
         - delayed internal event handling fix (kwm sometimes lost the 
            mouse on opaque resize)

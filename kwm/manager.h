@@ -136,6 +136,10 @@ public:
   void closeClient(Client* c);
   // emits a signal to the kwm modules that a client has changed.
   void changedClient(Client* c);
+   
+  // checks whether the client is still existing
+  bool hasClient(Client* c);
+
 
   // this is called if the current client loses focus. This can happen
   // if the window is destroyed, the client becomes unmapped or the

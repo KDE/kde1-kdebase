@@ -2394,6 +2394,18 @@ void Manager::changedClient(Client* c){
   sendToModules(module_win_change, c);
 }
 
+
+// checks whether the client is still existing
+bool Manager::hasClient(Client* c)
+{
+    for (Client* i = clients.first(); i; i = clients.next() ) {
+	if (i == c)
+	    return  TRUE;
+    }
+    return FALSE;
+}
+
+
 // this is called if the current client loses focus. This can happen
 // if the window is destroyed, the client becomes unmapped or the
 // user has chosen the brain dead classic focus follows mouse policy
