@@ -372,7 +372,8 @@ void PFileMenu::deactivated(int _id)
     submenu->list.clear();
     submenu->isClean = true;
     submenu->lastActivated = 0L;
-    submenu->tail = 0L;
+    // The destructor will take care of this
+    // submenu->tail = 0L;
     submenu->finfos.clear();
     DEBUG_STMT(tot_deactivated++;)
   }
