@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-12-11 14:41+0100\n"
+"POT-Creation-Date: 1998-12-03 01:16+0100\n"
+"PO-Revision-Date: 1999-02-03 23:48+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,107 +25,107 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: error al inicialitzar; s'està cancel·lant el procés\n"
 
-#: main.C:527
+#: main.C:485
 msgid "Preparing session ... "
 msgstr "S'està preparant la sessió ... "
 
-#: main.C:551
+#: main.C:509
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:558
+#: main.C:516
 msgid "Usage: "
 msgstr "Ús: "
 
-#: main.C:569
+#: main.C:527
 msgid "&Maximize"
 msgstr "&Maximitza"
 
-#: main.C:570
+#: main.C:528
 msgid "&Restore"
 msgstr "&Restaura"
 
-#: main.C:571
+#: main.C:529
 msgid "&Iconify"
 msgstr "&Iconitza"
 
-#: main.C:572
+#: main.C:530
 msgid "&DeIconify"
 msgstr "&DesIconitza"
 
-#: main.C:573
+#: main.C:531
 msgid "&Sticky"
 msgstr "&Apegalós"
 
-#: main.C:574
+#: main.C:532
 msgid "&UnSticky"
 msgstr "&No apegalós"
 
-#: main.C:575
+#: main.C:533
 msgid "Mo&ve"
 msgstr "M&ou"
 
-#: main.C:576
+#: main.C:534
 msgid "Resi&ze"
 msgstr "Dimen&siona"
 
-#: main.C:578
+#: main.C:536
 msgid "&To desktop"
 msgstr "A l'&escriptori"
 
-#: main.C:580
+#: main.C:538
 msgid "&Onto current desktop"
 msgstr "Sobre l'escriptori &actual"
 
-#: main.C:620
+#: main.C:578
 msgid "One"
 msgstr "Un"
 
-#: main.C:623
+#: main.C:581
 msgid "Two"
 msgstr "Dos"
 
-#: main.C:626
+#: main.C:584
 msgid "Three"
 msgstr "Tres"
 
-#: main.C:629
+#: main.C:587
 msgid "Four"
 msgstr "Quatre"
 
-#: main.C:632
+#: main.C:590
 msgid "Five"
 msgstr "Cinc"
 
-#: main.C:635
+#: main.C:593
 msgid "Six"
 msgstr "Sis"
 
-#: main.C:638
+#: main.C:596
 msgid "Seven"
 msgstr "Set"
 
-#: main.C:641
+#: main.C:599
 msgid "Eight"
 msgstr "Vuit"
 
-#: main.C:655
+#: main.C:613
 msgid "Unnamed Desktop"
 msgstr "Escriptori sense nom"
 
-#: main.C:1082
+#: main.C:1040
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Alguns pixmaps no són vàlids: desactivo el mode ombrejat\n"
 
-#: main.C:1199
+#: main.C:1152
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Alguns pixmaps no són vàlids: desactivo el mode Gimmick\n"
 
-#: main.C:1524
+#: main.C:1477
 msgid "*** No Tasks ***"
 msgstr "*** Sense Tasques ***"
 
-#: minicli.C:124
+#: minicli.C:122
 msgid "Command:"
 msgstr "Comanda:"
 
@@ -139,7 +139,7 @@ msgstr "Sortida"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Sessió preparada per la sortida"
+msgstr "Sessió preparada per a la sortida"
 
 #: logout.C:52
 msgid ""

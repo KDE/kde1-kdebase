@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1999-01-20 01:15+0100\n"
-"PO-Revision-Date: 1999-01-29 22:16+0100\n"
+"PO-Revision-Date: 1999-02-03 23:49+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr "KFM"
 
 #: kfmgui.cpp:223
 msgid "New &Window"
-msgstr "&Finestra Nova"
+msgstr "&Finestra nova"
 
 #: kfmgui.cpp:226
 msgid "&Run..."
@@ -47,7 +47,7 @@ msgstr "&Selecciona"
 
 #: kfmgui.cpp:263
 msgid "Select &all"
-msgstr "&Selecciona-ho tot"
+msgstr "Se&lecciona-ho tot"
 
 #: kfmgui.cpp:266
 msgid "&Find in page..."
@@ -55,7 +55,7 @@ msgstr "&Busca a la pàgina..."
 
 #: kfmgui.cpp:268
 msgid "Find &next"
-msgstr "Busca &següent"
+msgstr "Busca se&güent"
 
 #: kfmgui.cpp:271
 msgid "Mime &Types"
@@ -63,7 +63,7 @@ msgstr "&Tipus mime"
 
 #: kfmgui.cpp:273
 msgid "App&lications"
-msgstr "Ap&licacions"
+msgstr "A&plicacions"
 
 #: kfmgui.cpp:279
 msgid "Global Mime Types"
@@ -131,7 +131,7 @@ msgstr "Auto"
 
 #: kfmgui.cpp:334
 msgid "Document Encodin&g"
-msgstr "Codi&ficació del document"
+msgstr "&Codificació del document"
 
 #: kfmgui.cpp:350
 msgid "Show History"
@@ -221,7 +221,7 @@ msgstr ""
 
 #: kfmgui.cpp:443 kfmgui.cpp:1125
 msgid "&Go"
-msgstr "&Ves-hi"
+msgstr "Ve&s-hi"
 
 #: kfmgui.cpp:444
 msgid "&Bookmarks"
