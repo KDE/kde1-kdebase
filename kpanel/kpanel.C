@@ -110,8 +110,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     else if ( a == "right"){
       // no longer valid! Do left instead
       orientation = vertical;
-      position = top_left;
-//       position = bottom_right;
+      //position = top_left;
+      position = bottom_right;
 
     }
     else if ( a == "top"){
@@ -1261,7 +1261,7 @@ void kPanel::doGeometry () {
      py = 0;
    }
    if (px + pw >w){
-     pw = w-px;
+     pw = w-px+1;
    }
    if (py + ph >h){
      ph = h-py+1;

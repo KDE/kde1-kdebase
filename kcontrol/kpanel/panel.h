@@ -32,8 +32,8 @@
 #include <qlabel.h>
 #include <qbttngrp.h>
 #include <qradiobt.h>
-#include <qcombo.h> 
-#include <qchkbox.h> 
+#include <qcombo.h>
+#include <qchkbox.h>
 
 class QButtonGroup;
 class MyHelpFrame;
@@ -60,14 +60,14 @@ protected slots:
 private:
     QVBoxLayout *layout;
 
-    enum Location {LTop, Left, Button} location;
-    QRadioButton *loc_buttons[3];
+    enum Location {LTop, Left, Button, Right} location;
+    QRadioButton *loc_buttons[4];
     QButtonGroup *loc_group;
-  
+
     enum Taskbar {Hidden, TTop, Bottom, Top_Left } taskbar;
     QRadioButton *task_buttons[4];
     QButtonGroup *task_group;
-    
+
     enum Style { Tiny, Normal, Large } style;
     QRadioButton *style_buttons[3];
     QButtonGroup *style_group;

@@ -88,13 +88,13 @@ void myPushButton::paint(QPainter *painter){
     draw_down = true;
 	
   drawButtonLabel(painter);
-  
+
   if (draw_down ) {
     if ( style() == WindowsStyle )
-      qDrawWinButton( painter, 0, 0, width(), 
+      qDrawWinButton( painter, 0, 0, width(),
 		      height(), colorGroup(), true );
-    else        
-	  qDrawShadePanel( painter, 0, 0, width(), 
+    else
+	  qDrawShadePanel( painter, 0, 0, width(),
 	  	       height(), colorGroup(), true, 2, 0L );
   }
   else if (!flat || never_flat) {
@@ -102,10 +102,10 @@ void myPushButton::paint(QPainter *painter){
       qDrawWinButton( painter, 0, 0, width(), height(),
 		      colorGroup(), false );
     else {
-      qDrawShadePanel( painter, 0, 0, width(), height(), 
+      qDrawShadePanel( painter, 0, 0, width(), height(),
 		       colorGroup(), false, 2, 0L );
 //       painter->setPen(black);
-//       painter->drawRect(0,0,width(),height()); 
+//       painter->drawRect(0,0,width(),height());
     }
   }
 
@@ -157,7 +157,7 @@ void myPushButton::mouseReleaseEvent( QMouseEvent *e){
     if ( isToggleButton() )
       emit toggled( isOn() );
     emit released();
-    emit clicked(); 
+    emit clicked();
   }
   else {
     repaint();
@@ -171,12 +171,12 @@ void myPushButton::mouseMoveEvent( QMouseEvent *e ){
 
   if (!last_button)
     return;
-  
+
   if ( !(e->state() & LeftButton) &&
        !(e->state() & MidButton) &&
        !(e->state() & RightButton))
     return;
-  
+
   bool hit = hitButton( e->pos() );
   if ( hit ) {
     if ( !isDown() ) {
@@ -259,13 +259,13 @@ void myTaskButton::drawButtonLabel( QPainter *painter ){
     QString s2 = s;
     if (fontMetrics().width(s2) > width()-32){
       s2.detach();
-      while (s2.length()>0 && 
+      while (s2.length()>0 &&
 	     fontMetrics().width(s2) > width()-32-fontMetrics().width("...")){
 	s2.resize(s2.length()-1);
       }
       s2.append("...");
     }
-    if ( draw_down && style() == WindowsStyle ) 
+    if ( draw_down && style() == WindowsStyle )
       painter->drawText( 33, 1, width()-31, height()+1, AlignLeft|AlignVCenter, s2);
     else
       painter->drawText( 32, 0, width()-32, height(), AlignLeft|AlignVCenter, s2);
@@ -282,7 +282,7 @@ void execute(const char* cmd){
 
 void kPanel::init_popup(QPopupMenu* popup){
   popup->installEventFilter( this );
-  
+
 //   popup->move(-1000, -1000);
 //   popup->show();
 //   popup->hide();
@@ -311,7 +311,7 @@ void kPanel::generateWindowlist(QPopupMenu* p){
 	    (KWM::desktop(callbacklist[i]) == d
 	     && !KWM::isSticky(callbacklist[i])
 	     )
-	    || 
+	    ||
 	    (d == cd && KWM::isSticky(callbacklist[i]))
 	    ){
 	  p->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
@@ -330,7 +330,7 @@ void kPanel::generateWindowlist(QPopupMenu* p){
 	  (KWM::desktop(callbacklist[i]) == d
 	   && !KWM::isSticky(callbacklist[i])
 	   )
-	  || 
+	  ||
 	  (d == cd && KWM::isSticky(callbacklist[i]))
 	  ){
 	p->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
@@ -399,11 +399,11 @@ int kPanel::show_popup(QPopupMenu* popup, QWidget* button, bool isTaskButton){
 	yp = button->mapToGlobal(QPoint(0,0)).y() - popup->height();
     }
   }
-  
+
   popup->move(QPoint(xp, yp));
   int v = popup->exec();
   QEvent ev(Event_Leave);
-  QMouseEvent mev (Event_MouseButtonRelease, 
+  QMouseEvent mev (Event_MouseButtonRelease,
 		   QCursor::pos(), LeftButton, LeftButton);
   QApplication::sendEvent(button, &ev);
   QApplication::sendEvent(button, &mev);
@@ -415,7 +415,7 @@ void kPanel::set_button_text(QButton* button, const char* s){
   QToolTip::add(button, s);
   QPixmap pm(button->width(), button->height());
   pm.fill(button->backgroundColor());
-  
+
   QPainter p;
   int a = 2+ (pm.height() - button->fontMetrics().height())/2;
   if (a > button->fontMetrics().height()/2)
@@ -423,14 +423,14 @@ void kPanel::set_button_text(QButton* button, const char* s){
   int b = (pm.height() + button->fontMetrics().height())/2-button->fontMetrics().descent();
   if (a<3) a = 3;
 
-  p.begin( &pm ); 
+  p.begin( &pm );
   p.setFont(button->font());
   p.setPen(colorGroup().text());
   p.drawText(a,b,s);
   p.end();
   QBitmap bm(pm.width(), pm.height());
   bm.fill( color0 );
-  p.begin(&bm); 
+  p.begin(&bm);
   p.setFont(button->font());
   p.drawText(a,b,s);
   p.end();
@@ -439,8 +439,8 @@ void kPanel::set_button_text(QButton* button, const char* s){
 }
 
 QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
-  QColorGroup colgrp = QColorGroup( colorGroup().text(), 
-				    backgroundColor(), 
+  QColorGroup colgrp = QColorGroup( colorGroup().text(),
+				    backgroundColor(),
 				    white, black, black,
   				    black, white );
   QColorGroup colgrp2 = QColorGroup( color1, color0, color1, color1, color1,
@@ -453,23 +453,23 @@ QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
 
   QPainter p;
   QPainter p2;
-  
+
   pm2.fill( backgroundColor() );
 	  	
   p.begin( &pm2 );
-  
+
   p2.begin( pm2.mask());
 	
   if (!pm.isNull()){
-    p.drawPixmap( (pm2.width()-pm.width())/2, 
-		  (pm2.height()-pm.height())/2, 
+    p.drawPixmap( (pm2.width()-pm.width())/2,
+		  (pm2.height()-pm.height())/2,
 		  pm, 0, 0, pm.width(), pm.height());
     if (pm.mask())
-      p2.drawPixmap( (pm2.width()-pm.mask()->width())/2, 
-		     (pm2.height()-pm.mask()->height())/2, 
+      p2.drawPixmap( (pm2.width()-pm.mask()->width())/2,
+		     (pm2.height()-pm.mask()->height())/2,
 		     *(pm.mask()), 0, 0, pm.mask()->width(), pm.mask()->height());
   }
-  
+
   if (orientation == horizontal){
     if (position == top_left){
       qDrawArrow( &p, DownArrow, WindowsStyle, false,
@@ -505,8 +505,8 @@ QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
 
 
 void kPanel::arrow_on_pixmap(QPixmap* pm, ArrowType rt){
-  QColorGroup colgrp = QColorGroup( colorGroup().text(), 
-				    backgroundColor(), 
+  QColorGroup colgrp = QColorGroup( colorGroup().text(),
+				    backgroundColor(),
 				    white, black, black,
 				    black, white );
   QColorGroup colgrp2 = QColorGroup( color1, color0, color1, color1, color1,
@@ -539,7 +539,7 @@ QPixmap kPanel::load_pixmap(const char* name, bool is_folder){
       ->loadApplicationIcon(name, box_width-4, box_height-4);
     if (pm.isNull())
       pm = kapp->getIconLoader()
-	->loadApplicationIcon(is_folder?"folder.xpm":"exec.xpm", 
+	->loadApplicationIcon(is_folder?"folder.xpm":"exec.xpm",
 			      box_width-4, box_height-4);
   }
   else {
@@ -547,7 +547,7 @@ QPixmap kPanel::load_pixmap(const char* name, bool is_folder){
       ->loadApplicationMiniIcon(name, box_width-4, box_height-4);
     if (pm.isNull())
       pm = kapp->getIconLoader()
-	->loadApplicationMiniIcon(is_folder?"folder.xpm":"exec.xpm", 
+	->loadApplicationMiniIcon(is_folder?"folder.xpm":"exec.xpm",
 				  box_width-4, box_height-4);
   }
   return pm;
@@ -564,16 +564,16 @@ void kPanel::set_label_date(){
 
   curtime=time(0);
   loctime=localtime(&curtime);
-  
+
   strftime(dayline,256,"%a\n",loctime);
 
   if (!clockAmPm)
     strftime(timeline,256,"%H:%M",loctime);
-  else 
+  else
     strftime(timeline,256,"%I:%M%p",loctime);
-  
+
   strftime(dateline,256,"\n%b %d",loctime);
-  
+
   QToolTip::add(label_date, QString(dayline)+QString(timeline)+QString(dateline));
 
   if (label_date->fontMetrics().lineSpacing() * 3 <= label_date->height())
@@ -697,7 +697,7 @@ void kPanel::cleanup(){
 	 KWM::close(entries[i].swallowed);
 	 XFlush(qt_xdisplay());
        }
-     
+
 }
 
 void kPanel::showSystem(){
@@ -709,7 +709,7 @@ void kPanel::showSystem(){
     info_label->hide();
   tipTimer->stop();
   if (panelHidden[currentDesktop]){
-    miniButtons(1); 
+    miniButtons(1);
   }
   else {
     kmenu->setActiveItem(kmenu->count()-1);
@@ -722,18 +722,18 @@ void kPanel::tipTimerDone(){
   info_label->move(QCursor::pos().x()+6, QCursor::pos().y()+16);
   // make sure it is visible
   if (info_label->y() + info_label->height() > QApplication::desktop()->height())
-    info_label->move(info_label->x(), 
+    info_label->move(info_label->x(),
 		     QCursor::pos().y()-16 - info_label->height());
   if (info_label->x() + info_label->width() > QApplication::desktop()->width())
     info_label->move(QCursor::pos().x()-6 - info_label->width(),
 		     info_label->y());
-  
+
   if (QString("") != info_label->text()){
     // one might think the check below is stupid since I also
     // check the leave-events, BUT.....
     // when you leave a window during you position another
     // (new) window for kwm, you get NO leave event!
-    if (!last_tip_widget || 
+    if (!last_tip_widget ||
 	last_tip_widget->rect().contains(last_tip_widget->mapFromGlobal(QCursor::pos()))){
       info_label->raise();
       {
@@ -746,7 +746,7 @@ void kPanel::tipTimerDone(){
       info_label->show();
     }
   }
-  else 
+  else
     info_label->hide();
   info_label_is_sleeping = False;
   tipSleepTimer->start(4000, true);
@@ -765,33 +765,33 @@ void kPanel::showMiniPanel ()
 
   if (!miniPanelHidden) // if allready here do nothing
     return;
-  
+
   miniPanelHidden = false;
-  
+
   int mh = taskbar_height;
-  
+
   int h = QApplication::desktop()->height();
-  
-  miniPanelFrame = new QFrame(0, 0, 
+
+  miniPanelFrame = new QFrame(0, 0,
 			      WStyle_Customize|WStyle_NoBorder|WStyle_Tool);
   miniPanelFrame->setMouseTracking( true );
   miniPanelFrame->installEventFilter (this);
-  
+
   miniPanel = new QButtonGroup(miniPanelFrame);
   miniPanel->setFrameStyle(QFrame::Panel| QFrame::Raised);
   miniPanel->setMouseTracking( true );
   miniPanel->installEventFilter (this);
   connect( miniPanel, SIGNAL( pressed( int )), this, SLOT( miniButtons(int)) );
-  
+
   miniSystem = new myPushButton(miniPanel);
   QToolTip::add(miniSystem, klocale->translate("Where do you want to go tomorrow?"));
   miniSystem->setFocusPolicy(NoFocus);
   miniSystem->setPixmap(kapp->getIconLoader()
-			->loadMiniIcon("go.xpm", mh,mh)); 
+			->loadMiniIcon("go.xpm", mh,mh));
 
   miniSystem->setMouseTracking( true );
   miniSystem->installEventFilter (this);
-  
+
   miniDesk = new myPushButton(miniPanel);
   QToolTip::add(miniDesk, klocale->translate("Windowlist"));
   miniDesk->setFocusPolicy(NoFocus);
@@ -799,20 +799,20 @@ void kPanel::showMiniPanel ()
 		      ->loadMiniIcon("window_list.xpm", mh, mh));
   miniDesk->setMouseTracking( true );
   miniDesk->installEventFilter (this);
-  
+
   miniPanel->setGeometry (0, 0, 2*mh, mh);
   miniPanel->insert(miniSystem, 1);
   miniPanel->insert(miniDesk, 2);
-  
+
   miniSystem->setGeometry(1, 1, mh-1, mh-2);
   miniDesk->setGeometry(mh, 1, mh-1, mh-2);
-  
+
   int sx=0; int sx1 =0;
   if (position == top_left)
     sx = x() + panel_button->x() + panel_button->width()+1;
   if (position == bottom_right && orientation == horizontal)
     sx1 = x() + panel_button->x() + panel_button->width()+1;
-  
+
   if (taskbar_position == taskbar_top_left)
     miniPanelFrame->setGeometry(sx, 0, 2*mh, mh);
   else if (taskbar_position == hidden)
@@ -821,12 +821,12 @@ void kPanel::showMiniPanel ()
     miniPanelFrame->setGeometry(sx1, h-mh, 2*mh, mh);
   else if (taskbar_position == top)
     miniPanelFrame->setGeometry(sx, 0, 2*mh, mh);
-  
+
   miniPanelFrame->show();
   miniPanelFrame->raise();
   KWM::sendKWMCommand("moduleRaised");
 }
- 
+
  void kPanel::hideMiniPanel() {
    if (miniPanelHidden)
      return;              // do nothing if not there
@@ -844,7 +844,7 @@ void kPanel::miniButtons(int i){
       if (taskbar_position == bottom){
 	kmenu->move(-1000,-1000);
 	kmenu->show();
-	kmenu->move(QPoint(miniPanelFrame->x()+miniSystem->x(), 
+	kmenu->move(QPoint(miniPanelFrame->x()+miniSystem->x(),
 			   miniPanelFrame->y()-
 			   kmenu->height()));
       }
@@ -854,13 +854,13 @@ void kPanel::miniButtons(int i){
 			   miniPanelFrame->height()));
       kmenu->exec();
       break;
-      
+
     case 2:
       generateWindowlist(windowlist);
       if (taskbar_position == bottom){
 	windowlist->move(-1000,-1000);
 	windowlist->show();
-	windowlist->move(QPoint(miniPanelFrame->x()+miniDesk->x(), 
+	windowlist->move(QPoint(miniPanelFrame->x()+miniDesk->x(),
 				miniPanelFrame->y()-
 				windowlist->height()));
 	}
@@ -868,15 +868,15 @@ void kPanel::miniButtons(int i){
 	windowlist->move(QPoint(miniPanelFrame->x()+miniDesk->x(),
 				miniDesk->y()+
 				miniPanelFrame->height()));
-      
+
       windowlist->exec();
       break;
-      
+
     }
-  
+
   QButton* button = miniPanel->find(i);
   QEvent ev(Event_Leave);
-  QMouseEvent mev (Event_MouseButtonRelease, 
+  QMouseEvent mev (Event_MouseButtonRelease,
 		   QCursor::pos(), LeftButton, LeftButton);
   QApplication::sendEvent(button, &ev);
   QApplication::sendEvent(button, &mev);

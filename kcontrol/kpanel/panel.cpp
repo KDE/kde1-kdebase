@@ -37,7 +37,7 @@ class MyHelpFrame : public QFrame {
 
     QWidget *widget;
 protected:
-    
+
     void resizeEvent(QResizeEvent *) {
 	widget->resize(width(), widget->height());
 	widget->move(0, (height() - widget->height())/ 2);
@@ -50,7 +50,7 @@ public:
 
 };
 
-KPanelConfig::KPanelConfig( QWidget *parent, const char* name ) 
+KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
     : KConfigWidget (parent, name), location(LTop), taskbar(TTop)
 {
     layout = new QVBoxLayout(this, 10);
@@ -59,9 +59,10 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
     loc_group = new QButtonGroup(i18n("Location"), this);
     loc_buttons[0] = new QRadioButton( i18n("&Top"), loc_group );
     loc_buttons[1] = new QRadioButton( i18n("&Left"), loc_group );
-    loc_buttons[2] = new QRadioButton( i18n("&Bottom"), loc_group);    
- 
-    for (i = 0; i < 3; i++) {
+    loc_buttons[2] = new QRadioButton( i18n("&Bottom"), loc_group);
+    loc_buttons[3] = new QRadioButton( i18n("&Right"), loc_group);
+
+    for (i = 0; i < 4; i++) {
 	loc_buttons[i]->adjustSize();
 	if (w < loc_buttons[i]->width())
 	    w = loc_buttons[i]->width();
@@ -72,13 +73,13 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
     layout->addWidget(loc_group, 1);
 
     task_group = new QButtonGroup(i18n("Taskbar"), this);
-    task_buttons[0] = new QRadioButton( i18n("&Hidden"), 
+    task_buttons[0] = new QRadioButton( i18n("&Hidden"),
 					task_group );
-    task_buttons[1] = new QRadioButton( i18n("T&op"), 
+    task_buttons[1] = new QRadioButton( i18n("T&op"),
 					task_group );
-    task_buttons[2] = new QRadioButton( i18n("Botto&m"), 
+    task_buttons[2] = new QRadioButton( i18n("Botto&m"),
 					task_group);
-    task_buttons[3] = new QRadioButton( i18n("Top/Le&ft"), 
+    task_buttons[3] = new QRadioButton( i18n("Top/Le&ft"),
 					task_group);
     task_buttons[taskbar]->setChecked(true);
     for (i = 0; i < 4; i++) {
@@ -92,34 +93,34 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
 
 
     style_group = new QButtonGroup(i18n("Style"), this);
-    
-    style_buttons[0] = new QRadioButton( i18n("T&iny"), 
+
+    style_buttons[0] = new QRadioButton( i18n("T&iny"),
 					 style_group );
-    style_buttons[1] = new QRadioButton( i18n("&Normal"), 
+    style_buttons[1] = new QRadioButton( i18n("&Normal"),
 					 style_group );
-    style_buttons[2] = new QRadioButton( i18n("L&arge"), 
+    style_buttons[2] = new QRadioButton( i18n("L&arge"),
 					 style_group);
     connect(style_group, SIGNAL(clicked(int)), SLOT(style_clicked(int)));
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < 3; i++) {
 	style_buttons[i]->adjustSize();
 	if (w < style_buttons[i]->width())
 	    w = style_buttons[i]->width();
     }
-    
+
     layout->addWidget(style_group, 1);
 
     w = 4*w + 10;
 
     loc_group->setMinimumSize(w, loc_buttons[0]->sizeHint().height() * 3);
     loc_group->setMaximumSize(1000, loc_buttons[0]->sizeHint().height() * 5);
-    task_group->setMinimumSize(w, task_buttons[0]->sizeHint().height() * 3);
+    task_group->setMinimumSize(w, task_buttons[0]->sizeHint().height() * 4);
     task_group->setMaximumSize(1000, task_buttons[0]->sizeHint().height() * 5);
     style_group->setMinimumSize(w, style_buttons[0]->sizeHint().height() * 3);
     style_group->setMaximumSize(1000, style_buttons[0]->sizeHint().height() * 5);
 
     layout->addStretch(2);
     layout->activate();
-  
+
     loadSettings();
 }
 
@@ -148,16 +149,16 @@ void KPanelConfig::resizeEvent(QResizeEvent *e) {
 
     rect = task_group->contentsRect();
     w = (rect.width() - 10) / 4;
-    h = rect.top() + 
+    h = rect.top() +
 	(rect.height() - task_buttons[0]->sizeHint().height()) / 2;
 
     for (i = 0;  i < 4; i++)
 	task_buttons[i]->move(w * i + 10, h);
 
     rect = loc_group->contentsRect();
-    h = rect.top() + 
+    h = rect.top() +
 	(rect.height() - loc_buttons[0]->sizeHint().height()) / 2;
-    for (i = 0; i < 3; i++)
+    for (i = 0; i < 4; i++)
 	loc_buttons[i]->move(w * i + 10, h);
 
     rect = style_group->contentsRect();
@@ -168,7 +169,7 @@ void KPanelConfig::resizeEvent(QResizeEvent *e) {
 }
 
 void KPanelConfig::loadSettings() {
-   
+
     config->setGroup("kpanel");
     int i = 0;
     loc_buttons[location]->setChecked(false);
@@ -179,10 +180,10 @@ void KPanelConfig::loadSettings() {
 	i = 0;
     location = (Location)i;
     loc_buttons[location]->setChecked(true);
-    
+
     task_buttons[taskbar]->setChecked(false);
     i = 0; t = config->readEntry("TaskbarPosition", taskbar_locations[0]);
-    while (taskbar_locations[i] && t != taskbar_locations[i]) 
+    while (taskbar_locations[i] && t != taskbar_locations[i])
 	i++;
     if (!taskbar_locations[i])
 	i = 0;
@@ -190,13 +191,13 @@ void KPanelConfig::loadSettings() {
     task_buttons[taskbar]->setChecked(true);
 
     i = 0; t = config->readEntry("Style", styles[0]);
-    while (styles[i] && t != styles[i]) 
+    while (styles[i] && t != styles[i])
 	i++;
     if (!styles[i])
 	style = Normal;
     else
 	style = static_cast<Style>(i);
-    
+
     style_buttons[style]->setChecked(true);
 }
 
@@ -210,7 +211,7 @@ void KPanelConfig::saveSettings() {
     config->setGroup("kpanel");
     config->writeEntry("Position", locations[location]);
     config->writeEntry("TaskbarPosition", taskbar_locations[taskbar]);
-    
+
     switch (style){
     case 0: // tiny style
 	config->writeEntry("Style", "tiny");
