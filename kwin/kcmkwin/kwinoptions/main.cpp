@@ -24,7 +24,9 @@
 #include <kcontrol.h>
 #include "windows.h"
 #include "titlebar.h"
+#include <ksimpleconfig.h>
 
+KSimpleConfig *config;
 
 class KKWMApplication : public KControlApplication
 {
@@ -84,11 +86,13 @@ void KKWMApplication::apply()
 
 int main(int argc, char **argv)
 {
-  KKWMApplication app(argc, argv, "kwm");
-  app.setTitle(klocale->translate("Window manager style"));
-  
-  if (app.runGUI())
-    return app.exec();
-  else
-    return 0;
+    config = new KSimpleConfig(KApplication::localconfigdir() + "/kwmrc");
+    KKWMApplication app(argc, argv, "kcmkwm");
+    app.setTitle(klocale->translate("Window manager style"));
+    
+    if (app.runGUI())
+	return app.exec();
+    else
+	return 0;
+    delete config;
 }

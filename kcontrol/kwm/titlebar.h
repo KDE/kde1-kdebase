@@ -118,7 +118,6 @@ private:
  // current button->func mapping
  int selectedFunc[NUM_BUTTONS];
 
- KConfig       *config;
 };
 
 
@@ -165,7 +164,6 @@ private:
  QPixmap *pixmapActive, *pixmapInactive;
 
  QString sPixmapActive, sPixmapInactive; 
- KConfig       *config;
 };
 
 

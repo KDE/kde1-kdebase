@@ -35,6 +35,7 @@
 
 #include "windows.h"
 #include "geom.h"
+#include <ksimpleconfig.h>
 
 // kwm config keywords
 #define KWM_MOVE      "WindowMoveType"
@@ -55,6 +56,8 @@ KWindowConfig::~KWindowConfig ()
   delete resizeBox;
   delete focusBox;
 }
+
+extern KSimpleConfig *config;
 
 KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   : KConfigWidget (parent, name)
@@ -92,8 +95,6 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   sec->adjustSize();
   connect( clickTo, SIGNAL(clicked()), this, SLOT(setAutoRaiseEnabled()));
   connect( followMouse, SIGNAL(clicked()), this, SLOT(setAutoRaiseEnabled()));
-
-  config = kapp->getConfig();
 
   GetSettings();
 }

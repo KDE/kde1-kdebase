@@ -100,7 +100,6 @@ private:
   QLCDNumber *s;
   QLabel *sec;
 
-  KConfig       *config;
 };
 
 #endif

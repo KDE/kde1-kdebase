@@ -30,10 +30,13 @@
 #include <kapp.h>
 #include <kiconloaderdialog.h>
 #include <kiconloader.h>
+#include <ksimpleconfig.h>
 
 #include "titlebar.h"
 
 #include "geom.h"
+
+extern KSimpleConfig *config;
 
 // config file keywords used by kwm
 #define KWM_TITLEBARLOOK   "TitlebarLook"
@@ -221,8 +224,6 @@ KTitlebarButtons::KTitlebarButtons (QWidget * parent, const char *name)
   label_width = label_w;
   pixmap_width = pixmap_w;
   selection_width = 3*selection_w + 2*SPACE_XO;
-
-  config = kapp->getConfig();
 
   GetSettings();
 }
@@ -955,8 +956,6 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   lPixmapActive->adjustSize(); 
   lPixmapInactive = new QLabel(pbPixmapInactive, klocale->translate("&Inactive pixmap"), pixmapBox);
   lPixmapInactive->adjustSize();
-
-  config = kapp->getConfig();
 
   GetSettings();
 }
