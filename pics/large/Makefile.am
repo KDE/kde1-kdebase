@@ -15,10 +15,8 @@ network_package.xpm o_src.xpm p_src.xpm pdf.xpm perl.xpm perl_doc.xpm \
 pers_applnk.xpm pk.xpm postscript.xpm resource.xpm shell_script.xpm sound.xpm \
 system_package.xpm tape_archive.xpm terminal.xpm tex.xpm tgz.xpm trash.xpm \
 txt.xpm unknown.xpm utilities_package.xpm video.xpm window_list.xpm www.xpm \
-y_src.xpm zip_mount.xpm zip_unmount.xpm trash_full.xpm kfm_fulltrash.xpm
-
-
-# ftp.xpm gf.xpm list metafont.xpm postscript.xpm
+y_src.xpm zip_mount.xpm zip_unmount.xpm trash_full.xpm kfm_fulltrash.xpm \
+settings_package.xpm 
 
 
 # FIXME - there is no $(kde_largedir) yet
