@@ -1,8 +1,9 @@
 # KDE Config File
 [kpanelButtons]
-controldelta=763.547
-Buttons=system,windowlist,$$KDEAPPS/Home.kdelnk,$$KDEAPPS/System/kcc.kdelnk,$$KDEAPPS/Help.kdelnk,
-ButtonDelta=714.286,825.123,775.862,1280.79,1354.68,
+controldelta=3055.56
+Buttons=system,windowlist,$$KDEAPPS/Home.kdelnk,$$KDEAPPS/Applications/KEdit.kdelnk,$$KDEAPPS/He
+p.kdelnk,
+ButtonDelta=0,0,0,0,2002.92,
 control=2
 [kpanel]
 DesktopButtonRows=2
@@ -19,7 +20,7 @@ MenuToolTips=1000
 ClockAmPm=off
 PersonalFirst=off
 AutoHide=off
-TaskbarPosition=top_left
+TaskbarPosition=top
 DesktopButtonHorizontalSize=4
 PanelHidden=00000000
 TaskbarButtonMinimumHorizontalSize=3
