@@ -27,16 +27,13 @@
 #include <string.h>
 #include <qwidget.h>
 #include <unistd.h>
+#include <kimgio.h>
 
-#ifdef HAVE_LIBJPEG
-#include <qimage.h>
-#include "jpeg.h"
-#endif
-
-    
 int main(int argc, char **argv)
 {
     KWMModuleApplication *app=new KWMModuleApplication(argc,argv);
+
+    kimgioRegister();
 
     while (!KWM::isKWMInitialized()) sleep(1);
 
@@ -46,10 +43,6 @@ int main(int argc, char **argv)
 	}
 
     app->enableSessionManagement(TRUE);
-
-#ifdef HAVE_LIBJPEG
-    QImageIO::defineIOHandler("JFIF","^\377\330\377\340", 0, read_jpeg_jfif, NULL);
-#endif
 
     KPager *kpager=new KPager(app,"KPager");
 
