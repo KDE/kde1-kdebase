@@ -6,6 +6,8 @@
 #include "kio_errors.h"
 #include <qmsgbox.h>
 #include <kstring.h>
+#include <ksimpleconfig.h>
+#include <kapp.h>
 
 /************************** Authorization stuff: copied from wget-source *****/
 
@@ -81,15 +83,24 @@ KProtocolHTTP::KProtocolHTTP()
 {
     connected = 0;
     use_proxy = 0;
+    
 
     char *proxy = 0L;
     int port = 80;
-    
-    QString tmp = getenv("http_proxy");
-    if ( tmp.isEmpty() )
-	tmp = getenv("HTTP_PROXY");
-    if ( !tmp.isEmpty() )
-    {
+
+    // All right. Now read the proxy settings
+    KSimpleConfig prxcnf(KApplication::localconfigdir() + "/kfmrc");
+    prxcnf.setGroup("Browser Settings/Proxy");
+
+    // Do we need mr. proxy?
+    if ( ! (prxcnf.readEntry("HTTP-URL")).isEmpty() ) {
+        // Ok, now build the url
+        QString tmp("http://");
+        tmp += prxcnf.readEntry("HTTP-URL");
+        tmp += ":";
+        tmp += prxcnf.readEntry("HTTP-Port");
+        printf("Using proxy: %s\n", tmp.data());
+
 	KURL u( tmp );
 	if ( u.isMalformed() )
 	{

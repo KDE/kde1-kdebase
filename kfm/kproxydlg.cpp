@@ -7,7 +7,7 @@ KProxyDlg::KProxyDlg(QWidget *parent=0, const char *name=0, WFlags f)
   : QWidget(parent, name, f)
 {
 //  lb_info = new QLabel( klocale->translate("You may configure a proxy and port number for each of\nthe internet protocols that KFM supports."), this);
-  lb_info = new QLabel( klocale->translate("This feature is not implemented yet!"), this);
+  lb_info = new QLabel( klocale->translate("Only HTTP-Proxy is implemented yet!"), this);
   lb_info->setGeometry(20, 20, 360, 30);
   
   lb_http_url = new QLabel("HTTP Proxy:", this);
