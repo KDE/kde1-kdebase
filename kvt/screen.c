@@ -1171,8 +1171,7 @@ void scr_insert_delete_characters(int count, int insdel)
   /* Matthias */ 
   {
     int x;
-    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + MyWinInfo.c
-width;
+    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + MyWinInfo.cwidth;
     cScreen->text[x] = '\0';
     cScreen->wrap_next = 0;
   }
