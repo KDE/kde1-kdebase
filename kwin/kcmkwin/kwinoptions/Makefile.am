@@ -4,7 +4,7 @@ LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_
 bin_PROGRAMS = kcmkwm
 
 kcmkwm_SOURCES = main.cpp titlebar.cpp windows.cpp
-BUILT_SOURCED = titlebar.moc windows.moc
+BUILT_SOURCES = titlebar.moc windows.moc
 
 windows.cpp: windows.moc
 windows.moc: windows.h

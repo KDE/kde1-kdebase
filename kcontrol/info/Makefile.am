@@ -4,7 +4,7 @@ LDADD = $(all_libraries) -lkdeui -lkdecore -lqt  -lXext -lX11 $(LIBSOCKET) $(KDE
 bin_PROGRAMS = kcminfo
 
 kcminfo_SOURCES = main.cpp memory.cpp processor.cpp
-BUILT_SOURCED = memory.moc processor.moc
+BUILT_SOURCES = memory.moc processor.moc
 
 memory.cpp: memory.moc
 memory.moc: memory.h

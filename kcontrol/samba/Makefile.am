@@ -4,7 +4,7 @@ LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_
 bin_PROGRAMS = kcmsamba
 
 kcmsamba_SOURCES = main.cpp ksmbstatus.cpp
-BUILT_SOURCED = ksmbstatus.moc
+BUILT_SOURCES = ksmbstatus.moc
 
 ksmbstatus.cpp: ksmbstatus.moc 
 ksmbstatus.moc: ksmbstatus.h

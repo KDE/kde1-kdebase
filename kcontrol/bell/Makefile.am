@@ -4,7 +4,7 @@ LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_
 bin_PROGRAMS = kcmbell
 
 kcmbell_SOURCES = main.cpp bell.cpp
-BUILT_SOURCED = bell.moc
+BUILT_SOURCES = bell.moc
 
 bell.cpp: bell.moc
 bell.moc: bell.h

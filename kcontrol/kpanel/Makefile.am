@@ -4,7 +4,7 @@ LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_
 bin_PROGRAMS = kcmkpanel
 
 kcmkpanel_SOURCES = main.cpp panel.cpp desktops.cpp options.cpp
-BUILT_SOURCED = panel.moc desktops.moc options.moc
+BUILT_SOURCES = panel.moc desktops.moc options.moc
 noinst_HEADERS = panel.h desktops.h options.h
 
 messages:

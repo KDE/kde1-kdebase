@@ -6,7 +6,7 @@ bin_PROGRAMS = kdmconfig
 
 kdmconfig_SOURCES = main.cpp jpeg.cpp utils.cpp kdm-appear.cpp kdm-font.cpp kdm-bgnd.cpp kdm-users.cpp kdm-sess.cpp
 kdmconfig_LDADD = $(LDADD)
-BUILT_SOURCED =  kdm-appear.moc kdm-font.moc kdm-bgnd.moc kdm-users.moc kdm-sess.moc
+BUILT_SOURCES =  kdm-appear.moc kdm-font.moc kdm-bgnd.moc kdm-users.moc kdm-sess.moc
 
 kdm-appear.cpp: kdm-appear.moc
 kdm-appear.moc: kdm-appear.h

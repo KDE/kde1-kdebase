@@ -4,7 +4,7 @@ LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_
 bin_PROGRAMS = kcminput
 
 kcminput_SOURCES = main.cpp mouse.cpp keyboard.cpp
-BUILT_SOURCED = mouse.moc keyboard.moc
+BUILT_SOURCES = mouse.moc keyboard.moc
 
 mouse.cpp: mouse.moc geom.h
 mouse.moc: mouse.h
