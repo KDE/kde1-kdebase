@@ -203,17 +203,17 @@ bool electricBorder(Client* c, bool grab_server, int &x, int &y){
     x = ev.xmotion.x_root;
     y = ev.xmotion.y_root;
   }
-  if (x <= 2 || y <= 2 ||
-      x >= QApplication::desktop()->width()-2 ||
-      y >= QApplication::desktop()->height()-2){
+  if (x < 1 || y < 1 ||
+      x >= QApplication::desktop()->width()-1 ||
+      y >= QApplication::desktop()->height()-1){
     Manager::DesktopDirection d;
-    if (y<=2)
+    if (y< 1)
       d = Manager::Up;
-    else if (y >= QApplication::desktop()->height()-2)
+    else if (y >= QApplication::desktop()->height()-1)
       d = Manager::Down;
-    else if (x<= 2)
+    else if (x< 1)
       d = Manager::Left;
-    else if (x >= QApplication::desktop()->width()-2)
+    else if (x >= QApplication::desktop()->width()-1)
       d = Manager::Right;
     else{
       return false;
@@ -226,6 +226,7 @@ bool electricBorder(Client* c, bool grab_server, int &x, int &y){
     }
     manager->moveDesktopInDirection(d, c);
     manager->timeStamp();
+    while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
     myapp->processEvents(); 
     if (grab_server){
       XGrabServer(qt_xdisplay());
@@ -299,9 +300,9 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
 	rx = ev.xmotion.x_root;
 	ry = ev.xmotion.y_root;
 	// electric borders
-	if (rx <= 2 || ry <=2 ||
-	    rx >= QApplication::desktop()->width()-2 ||
-	    ry >= QApplication::desktop()->height()-2)
+	if (rx < 1 || ry < 1 ||
+	    rx >= QApplication::desktop()->width()-1 ||
+	    ry >= QApplication::desktop()->height()-1)
 	  if (recalc == dragcalc)
 	    do_not_clear_rectangle =
 	      electricBorder(c, options.WindowMoveType == TRANSPARENT,

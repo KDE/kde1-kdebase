@@ -166,7 +166,7 @@ Manager::Manager(): QObject(){
 					  XC_sb_up_arrow);
     top_border = XCreateWindow (qt_xdisplay(), qt_xrootwin(),
 				0,0,
-				r.width(),2,
+				r.width(),1,
 				0,
 				CopyFromParent, InputOnly,
 				CopyFromParent,
@@ -176,8 +176,8 @@ Manager::Manager(): QObject(){
     attributes.cursor = XCreateFontCursor(qt_xdisplay(), 
 					  XC_sb_down_arrow);
     bottom_border = XCreateWindow (qt_xdisplay(), qt_xrootwin(),
-				   0,r.height()-2,
-				   r.width(),2,
+				   0,r.height()-1,
+				   r.width(),1,
 				   0,
 				   CopyFromParent, InputOnly,
 				   CopyFromParent,
@@ -188,7 +188,7 @@ Manager::Manager(): QObject(){
 					  XC_sb_left_arrow);
     left_border = XCreateWindow (qt_xdisplay(), qt_xrootwin(),
 				 0,0,
-				 2,r.height(),
+				 1,r.height(),
 				 0,
 				 CopyFromParent, InputOnly,
 				 CopyFromParent,
@@ -198,8 +198,8 @@ Manager::Manager(): QObject(){
     attributes.cursor = XCreateFontCursor(qt_xdisplay(), 
 					  XC_sb_right_arrow);
     right_border = XCreateWindow (qt_xdisplay(), qt_xrootwin(),
-				  r.width()-2,0,
-				  2,r.height(),
+				  r.width()-1,0,
+				  1,r.height(),
 				  0,
 				  CopyFromParent, InputOnly,
 				  CopyFromParent,
