@@ -323,7 +323,7 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
 	    x.prepend("0");
 	  while (y.length()<4)
 	    y.prepend("0");
-	  XAllowEvents(qt_xdisplay(), AsyncPointer, CurrentTime);
+	  //	  XAllowEvents(qt_xdisplay(), AsyncPointer, CurrentTime);
 	  XUngrabPointer(qt_xdisplay(), CurrentTime);
 	  XSync(qt_xdisplay(), False);
 	  KWM::sendKWMCommand(QString("kpanel:go")+x+y);
