@@ -121,6 +121,7 @@ void Installer::readThemesList(void)
   if (entryList) for(name=entryList->first(); name; name=entryList->next())
   {
     if (name[0]=='.') continue;
+    if (name=="CVS" || name.right(8)==".themerc") continue;
     mThemesList->insertItem(name);
   }
 
@@ -130,6 +131,7 @@ void Installer::readThemesList(void)
   if (entryList) for(name=entryList->first(); name; name=entryList->next())
   {
     if (name[0]=='.') continue;
+    if (name=="CVS" || name.right(8)==".themerc") continue;
     // Dirty hack: the trailing space marks global themes ;-)
     mThemesList->insertItem(name + " ");
   }

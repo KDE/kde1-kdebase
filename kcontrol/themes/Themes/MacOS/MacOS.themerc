@@ -3,14 +3,16 @@ name=MacOS
 author=Daniel Mettler
 email=mettlerd@usa.net
 info=MacOS.htm
-description=This is the first Mac OS theme\nfor KDE!\nBy Daniel Mettler <mettlerd@usa.net>
+description=This is the first Mac OS theme\nfor KDE!\nBy Daniel Mettler <mettlerd@usa.net>\nModified for KThemeMgr by\nStefan Taferner <taferner@kde.org>
 version=0.50
 [Panel]
 background=panel.xpm
-[Filemanager]
 [Display]
 Wallpaper0=desktop.jpg
 WallpaperMode0=Tiled
+RootIconTextStyle=1
+RootIconTextForeground=white
+RootIconTextBackground=black
 [Colors]
 contrast=7
 foreground=0,0,0
@@ -18,9 +20,9 @@ background=206,206,206
 selectForeground=255,255,255
 selectBackground=49,49,156
 activeBlend=206,206,206
-inactiveBlend=222,222,222
+inactiveBlend=206,206,206
 activeBackground=206,206,206
-inactiveBackground=222,222,222
+inactiveBackground=206,206,206
 activeForeground=0,0,0
 inactiveForeground=107,107,107
 windowForeground=0,0,0
@@ -44,8 +46,21 @@ MaximizeDownButton=maximizedown.xpm
 StickyButton=pinup.xpm
 StickyDownButton=pindown.xpm
 MenuButton=menu.xpm
-[sounds]
+PixmapUnderTitleText=no
+TitleFrameShaded=no
+TitleAlignment=middle
+[Sounds]
 WindowMaximize=clap.wav
 WindowMaximize=clap.wav
 WindowTransNew=marbles.wav
+[Window Button Layout]
+ButtonC=Off
+ButtonD=Maximize
+ButtonE=Iconify
+ButtonF=Off
+ButtonA=Close
+ButtonB=Off
+[Icons]
+Trash=trash.xpm
+TrashFull=trash-full.xpm
 

@@ -9,8 +9,9 @@ version=0.2
 background=
 [Filemanager]
 [Display]
-Wallpaper0=
-WallpaperMode0=
+ColorMode0=Gradient
+Color1_0=#000000
+Color2_0=#000080
 [Colors]
 contrast=5
 activeBlend=0,0,0

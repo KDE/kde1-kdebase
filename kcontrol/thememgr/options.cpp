@@ -55,7 +55,7 @@ Options::Options (QWidget * aParent, const char *aName, bool aInit)
   // will not be able to determine the translation for the
   // details dialog.
   mCbxColors = newLine("Colors", i18n("Colors"), &mStatColors);
-  mCbxWallpapers = newLine("Wallpapers", i18n("Wallpapers"), &mStatWallpapers);
+  mCbxWallpapers = newLine("Display", i18n("Wallpapers"), &mStatWallpapers);
   mCbxPanel = newLine("Panel", i18n("Panel"), &mStatPanel);
   mCbxSounds = newLine("Sounds", i18n("Sounds"), &mStatSounds);
   mCbxIcons = newLine("Icons", i18n("Icons"), &mStatIcons);
@@ -244,7 +244,7 @@ void Options::updateStatus(void)
   updateStatus("Window Border", mStatWindowBorder);
   updateStatus("Window Titlebar", mStatWindowTitlebar);
   updateStatus("Window Button Layout", mStatWindowButtonLayout);
-  updateStatus("Wallpapers", mStatWallpapers);
+  updateStatus("Display", mStatWallpapers);
   updateStatus("Panel", mStatPanel);
   updateStatus("Sounds", mStatSounds);
   updateStatus("Icons", mStatIcons);

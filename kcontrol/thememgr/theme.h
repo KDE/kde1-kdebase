@@ -184,6 +184,9 @@ protected:
   /** Rotate image file by given angle. */
   virtual void rotateImage(const QString filename, int angle);
 
+  /** Convert icon to mini icon */
+  void iconToMiniIcon(const QString icon, const QString miniIcon);
+
   /** Add file to list of installed files. */
   virtual void addInstFile(const char* filename);
 
@@ -192,6 +195,9 @@ protected:
 
   /** Write list of installled files. */
   virtual void writeInstFileList(const char* groupName);
+
+  /** Run krdb if krdb-usage is enabled. */
+  virtual void runKrdb(void) const;
 
 protected:
   QString mName;           // Name of the theme

@@ -1,14 +1,14 @@
 /* XPM */
-static char*top[]={
-"70 7 4 1",
-"b c #cecece",
-"# c #000000",
-". c None",
-"a c #ffffff",
-"......................................................................",
-"......................................................................",
-"......................................................................",
-"######################################################################",
-"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"};
+static char * top_xpm[] = {
+"7 7 4 1",
+" 	c None",
+".	c #000000",
+"+	c #FFFFFF",
+"@	c #CECECE",
+"       ",
+"       ",
+"       ",
+".......",
+"+++++++",
+"@@@@@@@",
+"@@@@@@@"};

@@ -197,7 +197,7 @@ void Theme::cleanupWorkDir(void)
 //-----------------------------------------------------------------------------
 bool Theme::load(const QString aPath)
 {
-  QString cmd;
+  QString cmd, str;
   QFile file;
   QFileInfo finfo(aPath);
   int rc, num, i;
@@ -212,14 +212,19 @@ bool Theme::load(const QString aPath)
   if (finfo.isDir())
   {
     // The theme given is a directory. Copy files over into work dir.
-    cmd.sprintf("cd \"%s\"; cp -r * \"%s\"", (const char*)aPath,
-		(const char*)workDir());
+
+    i = aPath.findRev('/');
+    if (i >= 0) str = workDir() + aPath.mid(i, 1024);
+    else str = workDir();
+
+    cmd.sprintf("cp -r \"%s\" \"%s\"", (const char*)aPath,
+		(const char*)str);
     debug(cmd);
     rc = system(cmd);
     if (rc)
     {
       warning(i18n("Failed to copy theme contents\nfrom %s\ninto %s"),
-	      (const char*)aPath, (const char*)workDir());
+	      (const char*)aPath, (const char*)str);
       return false;
     }
   }
@@ -589,9 +594,16 @@ void Theme::installCmd(KSimpleConfig* aCfg, const QString& aCmd,
     aCfg->setGroup("GlobalConfiguration");
     aCfg->writeEntry("EnableSounds", aInstalled>0 ? "Yes" : "No");
   }
+  else if (cmd == "setWallpaperMode")
+  {
+    value = aCfg->readEntry("wallpaper",0);
+    aCfg->writeEntry("UseWallpaper", !value.isEmpty());
+  }
   else if (cmd == "oneDesktopMode")
   {
     aCfg->writeEntry("OneDesktopMode", (aInstalled==1));
+    if (aInstalled==1)
+      aCfg->writeEntry("DeskNum", 0);
   }
   else
   {
@@ -625,7 +637,10 @@ void Theme::doCmdList(void)
       system(cmd);
     }
     else if (cmd == "applyColors")
+    {
       colorSchemeApply();
+      runKrdb();
+    }
     else if (strncmp(cmd, "restart", 7) == 0)
     {
       appName = cmd.mid(7,256).stripWhiteSpace();
@@ -712,7 +727,7 @@ int Theme::installIcons(void)
     key = it->currentKey();
     value = entry->aValue;
     i = value.find(':');
-    if (i>=0)
+    if (i > 0)
     {
       icon = value.left(i);
       miniIcon = value.mid(i+1, 1024);
@@ -720,7 +735,8 @@ int Theme::installIcons(void)
     else
     {
       icon = value;
-      miniIcon = 0;
+      miniIcon = "mini-" + icon;
+      iconToMiniIcon(mThemePath + icon, mThemePath + miniIcon);
     }
 
     // test if there is a 1:1 mapping in the mappings file
@@ -760,11 +776,11 @@ int Theme::installIcons(void)
     if (destName.isEmpty()) continue;
 
     // install icons
-    value = iconDir+destName;
+    value = iconDir + destName;
     if (installFile(icon, value)) installed++;
 
-    value = miniIconDir+destName;
-    if (installFile(icon, value)) installed++;
+    value = miniIconDir + destName;
+    if (installFile(miniIcon, value)) installed++;
   }
 
 #ifdef NOT_NEEDED
@@ -777,7 +793,7 @@ int Theme::installIcons(void)
 #endif
 
   // Schedule restart of kfm
-  value = "kfmclient configure";
+  value = "restart kfm";
   if ((installed>0 || wantRestart) && mCmdList.find(value) < 0)
     mCmdList.append(value);
 
@@ -1150,6 +1166,33 @@ void Theme::rotateImage(const QString aFname, int aAngle)
   dest = src.xForm(mx);
 
   dest.save(aFname, QPixmap::imageFormat(aFname));
+}
+
+
+//-----------------------------------------------------------------------------
+void Theme::iconToMiniIcon(const QString aIcon, const QString aMiniIcon)
+{
+  QPixmap src, dest;
+  QWMatrix mx;
+
+  src.load(aIcon);
+  if (src.isNull()) return;
+
+  mx.scale(.5, .5);
+  dest = src.xForm(mx);
+
+  dest.save(aMiniIcon, QPixmap::imageFormat(aIcon));
+}
+
+
+//-----------------------------------------------------------------------------
+void Theme::runKrdb(void) const
+{
+  KSimpleConfig cfg("kdisplayrc", true);
+
+  cfg.setGroup("X11");
+  if (cfg.readBoolEntry("useResourceManager", true))
+    system("krdb");
 }
 
 

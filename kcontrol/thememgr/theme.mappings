@@ -239,12 +239,17 @@ ConfigGroup=Desktop0
 ConfigAppDir=apps/kdisplay/pics
 ConfigFile=desktop0rc
 ConfigAbsolutePaths=true
+ConfigInstallCmd=setWallpaperMode
 Wallpaper0=Wallpaper
 WallpaperMode0=WallpaperMode!
+ColorMode0=ColorMode!
+Color1_0=Color1!
+Color2_0=Color2!
 #
 [Display-1]
 ConfigNextGroup=Display-2
 ConfigGroup=Desktop0
+ConfigInstallCmd=setWallpaperMode
 ConfigAppDir=apps/kdisplay/pics
 ConfigFile=desktop1rc
 ConfigAbsolutePaths=true
@@ -254,6 +259,7 @@ WallpaperMode1=WallpaperMode!
 [Display-2]
 ConfigNextGroup=Display-3
 ConfigGroup=Desktop0
+ConfigInstallCmd=setWallpaperMode
 ConfigAppDir=apps/kdisplay/pics
 ConfigFile=desktop2rc
 ConfigAbsolutePaths=true
@@ -263,6 +269,7 @@ WallpaperMode2=WallpaperMode!
 [Display-3]
 ConfigNextGroup=Display-4
 ConfigGroup=Desktop0
+ConfigInstallCmd=setWallpaperMode
 ConfigAppDir=apps/kdisplay/pics
 ConfigFile=desktop3rc
 ConfigAbsolutePaths=true
@@ -272,6 +279,7 @@ WallpaperMode3=WallpaperMode!
 [Display-4]
 ConfigNextGroup=Display-5
 ConfigGroup=Desktop0
+ConfigInstallCmd=setWallpaperMode
 ConfigAppDir=apps/kdisplay/pics
 ConfigFile=desktop4rc
 ConfigAbsolutePaths=true
@@ -282,6 +290,7 @@ WallpaperMode4=WallpaperMode!
 ConfigNextGroup=Display-6
 ConfigGroup=Desktop0
 ConfigAppDir=apps/kdisplay/pics
+ConfigInstallCmd=setWallpaperMode
 ConfigFile=desktop5rc
 ConfigAbsolutePaths=true
 Wallpaper5=Wallpaper
@@ -290,6 +299,7 @@ WallpaperMode5=WallpaperMode!
 [Display-6]
 ConfigNextGroup=Display-7
 ConfigGroup=Desktop0
+ConfigInstallCmd=setWallpaperMode
 ConfigAppDir=apps/kdisplay/pics
 ConfigFile=desktop6rc
 ConfigAbsolutePaths=true
@@ -299,6 +309,7 @@ WallpaperMode6=WallpaperMode!
 [Display-7]
 ConfigGroup=Desktop0
 ConfigAppDir=apps/kdisplay/pics
+ConfigInstallCmd=setWallpaperMode
 ConfigFile=desktop7rc
 ConfigAbsolutePaths=true
 ConfigNextGroup=Display-dtm
