@@ -21,3 +21,6 @@
 	added kcalc and kpaint
 	updated kdisplay
 	added kscreensaver
+	added --enable-kscreensaver
+	added --enable-debug (and @CXXFLAGS@ to all Makefile.ins)
+	updated kwm
