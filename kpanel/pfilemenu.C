@@ -119,6 +119,19 @@ static bool testDir2( const char *_name )
 // TEMPORARY SECTION END
 
 //////////////////////////////////////////////////////////////////////////////
+// isKdelnkFile("/usr/foo.kdelnk") -> true
+// isKdelnkFile("/usr/foo") -> false
+//
+static bool
+isKdelnkFile(const char* filename)
+{
+  int len = strlen(filename);
+
+  return (len > 7 && filename[len - 7] == '.' &&
+      strcmp(filename + len - 6, "kdelnk") == 0);
+}
+
+//////////////////////////////////////////////////////////////////////////////
 
 static const char*
 getFileInfo(const char* _path, const char* file_name, char* new_file,
@@ -242,6 +255,46 @@ PFileMenu::newDirBrowserItem(const QFileInfo* fi, bool useCurrentPath)
     new PMenuItem(dirbrowser, fi->fileName() + "/", 0,
                   DEFAULT_FOLDER_ICON,
                   new PFileMenu(newpath), 0, 0, new myPopupMenu(this));
+
+  CHECK_PTR(fileb);
+  return fileb;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+PMenuItem*
+PFileMenu::newLinkItem(const QFileInfo* fi, bool useCurrentPath)
+{
+  KSimpleConfig kconfig(this->path + "/" + fi->fileName(), true);
+  kconfig.setGroup("KDE Desktop Entry");
+
+  if (kconfig.readEntry("Type") != "Link")
+    return newFileItem(fi, useCurrentPath);   // <<---------
+
+  QString url = kconfig.readEntry("URL");
+
+  if (url.left(5) == "file:")
+    url = url.mid(5, 0xffff);   // remove "file:"
+
+  if (url.left(1) != "/")
+    return newFileItem(fi, useCurrentPath);   // <<---------
+
+  QString pixmap_name = kconfig.readEntry("MiniIcon", DEFAULT_FOLDER_ICON);
+  QString comment = kconfig.readEntry("Comment");
+  QString name = kconfig.readEntry("Name", fi->fileName());
+
+#ifdef DISKNAV_DEBUG
+  printf("this->path = [%s]\n", this->path.data());
+  printf("name = [%s]\n", name.data());
+  printf("url = [%s]\n", url.data());
+  printf("pixmap_name = [%s]\n", pixmap_name.data());
+  printf("comment = [%s]\n", comment.data());
+#endif
+
+  PMenuItem* fileb =
+    new PMenuItem(dirbrowser, name + "/", 0,
+                  pixmap_name,
+                  new PFileMenu(url), 0, 0, new myPopupMenu(this),
+		  false, QString(), comment);
 
   CHECK_PTR(fileb);
   return fileb;
@@ -450,6 +503,8 @@ bool PFileMenu::addFile(QFileInfo* fi, bool useDefaultPath)
 
   if(fi->isDir())
     item = newDirBrowserItem(fi, useDefaultPath);
+  else if (isKdelnkFile(fi->fileName()))
+    item = newLinkItem(fi, useDefaultPath);
   else
     item = newFileItem(fi, useDefaultPath);
 

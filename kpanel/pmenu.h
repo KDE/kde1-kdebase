@@ -221,6 +221,7 @@ public:
   int parseTail();
 
   PMenuItem* newDirBrowserItem(const QFileInfo* fi, bool useCurrentPath);
+  PMenuItem* newLinkItem(const QFileInfo* fi, bool useCurrentPath);
   PMenuItem* newFileItem(const QFileInfo* fi, bool useCurrentPath);
   void buildRootMenu();
 
