@@ -7,6 +7,7 @@ Icon=konsole.xpm
 DocPath=konsole/konsole.html
 Comment=Terminal Emulation
 Comment[ja]=ターミナル エミュレーション
+Comment[pl]=Emulator terminala (konsole)
 Terminal=0
 Name=Konsole
 Name[ca]=Consola
