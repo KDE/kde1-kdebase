@@ -59,3 +59,4 @@
 	changed to Makefiles to depend on Makefile.in
 	changed the Makefiles to let install depend on all
 	added kjots-0.2.2
+	added kjots-0.2.3
