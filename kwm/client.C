@@ -546,7 +546,7 @@ void Client::layoutButtons(){
       trW -= BUTTON_SIZE;
     }
     if (!trans){
-      if( buttons[1] && !fixedSize()){
+      if( buttons[1] ){
 	buttons[1]->setGeometry(trX,
 				button_y,
 				BUTTON_SIZE, BUTTON_SIZE);
