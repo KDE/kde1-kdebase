@@ -1,5 +1,5 @@
 [KCM Locale]
-Languages=C,cs,da,de,el,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sv,
+Languages=C,cs,da,de,el,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sk,sv,zh,
 
 [ro]
 Name=Romanian
@@ -169,6 +169,10 @@ Name[pl]=Chorwacki
 Name[fr]=Croatien
 Name[hu]=Horv嫢
 Name[zh]=克羅埃西亞文
+
+[sk]
+Name=Slokavian
+Name[de]=Slovakisch
 
 [zh]
 Name=Chinese
