@@ -18,6 +18,8 @@ In 0.10:
        - tiny fix for gravity handling
        - *many* modifications to autoraise
        - fix for FocusFollowMouse
+       - animation a bit faster
+       - small fix for resize/move with the mouse 
 
   patchlevel 16:
        - fix for "move" via keyboard (pointer warp)

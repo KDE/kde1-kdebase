@@ -200,11 +200,11 @@ void animate_size_change(QRect before, QRect after, bool decorated, int o1, int 
   dym = dy1>dy2?dy1-dy2:dy2-dy1;
   Time mpp = 1;
   if (dxm>dym?dxm:dym > 0)
-    mpp = 600 / (dxm>dym?dxm:dym);
+    mpp = 400 / (dxm>dym?dxm:dym);
   if (mpp < 1)
     mpp = 1;
   if (mpp > 10)
-    mpp = 10;
+     mpp = 10;
   f = 1;
   dx1 = x1+dx1;
   dy1 = y1+dy1;
@@ -570,7 +570,6 @@ void Client::mousePressEvent( QMouseEvent *ev ){
       do_resize = 0; // Alt-LMB does only move! (mwm-like)
     }
     dragging_state = dragging_smooth_wait;
-    grabMouse();
     // set the current cursor
     XChangeActivePointerGrab( qt_xdisplay(), 
 			      ButtonPressMask | ButtonReleaseMask |
@@ -659,10 +658,11 @@ void Client::mouseMoveEvent( QMouseEvent *ev ){
 	(ev->pos().y() - old_cursor_pos.y())
 	*
 	(ev->pos().y() - old_cursor_pos.y())
-	< 9)
+	< 9){
       return;
+    }
     else{
-      dragging_state = dragging_enabled;
+         dragging_state = dragging_enabled;
       if (do_resize == 0)
 	grabMouse(sizeAllCursor);
     }
