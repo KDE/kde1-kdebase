@@ -31,13 +31,12 @@
 #include <kapp.h>
 #include <kiconloaderdialog.h>
 #include <kiconloader.h>
-#include <ksimpleconfig.h>
 
 #include "titlebar.h"
 
 #include "geom.h"
 
-extern KSimpleConfig *config;
+extern KConfig *config;
 
 // config file keywords used by kwm
 #define KWM_TITLEBARLOOK   "TitlebarLook"
@@ -722,9 +721,6 @@ void KTitlebarButtons::SaveSettings( void )
 
   config->sync();
 
-  // tell kwm to re-parse the config file
-  //system("kwmclient configure");
-  KWM::configureWm();
 }
 
 int KTitlebarButtons::buttonFunc(QString *key)
@@ -1245,8 +1241,6 @@ void KTitlebarAppearance::SaveSettings( void )
   
   config->sync();
 
-  // tell kwm to re-parse the config file
-  KWM::configureWm();
 }
 
 void KTitlebarAppearance::GetSettings( void )

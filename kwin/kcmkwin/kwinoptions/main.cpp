@@ -1,7 +1,8 @@
 /*
-  main.cpp - A sample KControl Application
+  main.cpp - kwm configuration
 
-  written 1997 by Matthias Hoelzer
+ * Copyright (c) 1997 Patrick Dowler dowler@morgul.fsh.uvic.ca
+ * Copyright (c) 1998 Matthias Ettrich <ettrich@kde.org>
   
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -25,9 +26,9 @@
 #include "windows.h"
 #include "desktop.h"
 #include "titlebar.h"
-#include <ksimpleconfig.h>
+#include "mouse.h"
 
-KSimpleConfig *config;
+KConfig *config;
 
 class KKWMApplication : public KControlApplication
 {
@@ -44,13 +45,14 @@ private:
   KTitlebarButtons *buttons;
   KTitlebarAppearance *appearance;
   KDesktopConfig *desktop;
+  KMouseConfig *mouse;
 };
 
 
 KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
   : KControlApplication(argc, argv, name)
 {
-  windows = 0; buttons = 0; appearance = 0; desktop = 0;
+  windows = 0; buttons = 0; appearance = 0; desktop = 0; mouse = 0;
 
   if (runGUI())
     {
@@ -66,12 +68,15 @@ KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
       if (!pages || pages->contains("borders"))
 	addPage(desktop = new KDesktopConfig(dialog, "borders"), 
 		klocale->translate("&Borders"), "kwm-3.html");
+      if (!pages || pages->contains("mouse"))
+	addPage(mouse = new KMouseConfig(dialog, "mouse"), 
+		klocale->translate("&Mouse"), "kwm-3.html");
 
-      if (windows || buttons || appearance || desktop)
+      if (windows || buttons || appearance || desktop || mouse)
         dialog->show();
       else
         {
-          fprintf(stderr, klocale->translate("usage: kcmkwm [-init | {windows,buttons,titlebar,borders}]\n"));
+          fprintf(stderr, klocale->translate("usage: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse}]\n"));
           justInit = TRUE;
         }
 
@@ -81,7 +86,6 @@ KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
 
 void KKWMApplication::init()
 {
-  KWM::configureWm();
 }
 
 
@@ -95,18 +99,22 @@ void KKWMApplication::apply()
     buttons->applySettings();
   if (appearance)
     appearance->applySettings();
+  if (mouse)
+    mouse->applySettings();
+
+  KWM::configureWm();
 }
 
 
 int main(int argc, char **argv)
 {
-    config = new KSimpleConfig(KApplication::localconfigdir() + "/kwmrc");
+    config = new KConfig(KApplication::kde_configdir() + "/kwmrc", 
+                         KApplication::localconfigdir() + "/kwmrc");
     KKWMApplication app(argc, argv, "kcmkwm");
     app.setTitle(klocale->translate("Window manager style"));
-    
+    int result = 0;
     if (app.runGUI())
-	return app.exec();
-    else
-	return 0;
+	result =  app.exec();
     delete config;
+    return result;
 }

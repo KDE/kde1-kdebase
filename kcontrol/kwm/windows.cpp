@@ -75,7 +75,7 @@ KWindowConfig::~KWindowConfig ()
   delete resizeBox;
 }
 
-extern KSimpleConfig *config;
+extern KConfig *config;
 
 KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   : KConfigWidget (parent, name)
@@ -575,9 +575,6 @@ void KWindowConfig::SaveSettings( void )
 
   config->sync();
 
-  // tell kwm to re-parse the config file
-  //system("kwmclient configure");
-  KWM::configureWm();
 }
 
 void KWindowConfig::loadSettings()

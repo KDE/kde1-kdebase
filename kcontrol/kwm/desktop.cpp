@@ -33,7 +33,6 @@
 
 #include "desktop.h"
 #include "geom.h"
-#include <ksimpleconfig.h>
 
 // kwm config keywords
 #define KWM_ELECTRIC_BORDER                  "ElectricBorder"
@@ -68,7 +67,7 @@ KDesktopConfig::~KDesktopConfig ()
   //CT ---
 }
 
-extern KSimpleConfig *config;
+extern KConfig *config;
 
 KDesktopConfig::KDesktopConfig (QWidget * parent, const char *name)
   : KConfigWidget (parent, name)
@@ -268,9 +267,6 @@ void KDesktopConfig::SaveSettings( void )
   v = getWindowSnapZone();
   config->writeEntry(KWM_WNDW_SNAP_ZONE,v);
 
-  // tell kwm to re-parse the config file
-  //system("kwmclient configure");
-  KWM::configureWm();
 }
 
 void KDesktopConfig::loadSettings()
