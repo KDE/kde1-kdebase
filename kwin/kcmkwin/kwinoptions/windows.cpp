@@ -44,6 +44,9 @@
 #define KWM_RESIZE    "ResizeAnimation"
 #define KWM_AUTORAISE "AutoRaise"
 
+// CT 19jan98
+#define KWM_PLACEMENT "WindowsPlacement"
+
 KWindowConfig::~KWindowConfig ()
 {
   delete transparent;
@@ -72,15 +75,20 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   animOn = new QRadioButton(klocale->translate("On"), resizeBox);
   animOff = new QRadioButton(klocale->translate("Off"), resizeBox);
 
-  // focus policy
-  focusBox = new QButtonGroup(klocale->translate("Focus Policy"), this);
-  clickTo =  new QRadioButton(klocale->translate("Click to focus"), focusBox);
-  followMouse = new QRadioButton(klocale->translate("Focus follows mouse"), focusBox);
+  // placement policy --- CT 19jan98 ---
+  placementBox = new QButtonGroup(klocale->translate("Placement policy"), this);
+  random = new QRadioButton(klocale->translate("Random placement"), placementBox);
+  smart = new QRadioButton(klocale->translate("Smart placement"), placementBox);
 
   // maximize behaviour
   maximizeBox = new QButtonGroup(klocale->translate("Maximize Style"), this);
   fullScreen =  new QRadioButton(klocale->translate("Maximize fully"), maximizeBox);
   vertOnly = new QRadioButton(klocale->translate("Maximize vertically"), maximizeBox);
+
+  // focus policy
+  focusBox = new QButtonGroup(klocale->translate("Focus Policy"), this);
+  clickTo =  new QRadioButton(klocale->translate("Click to focus"), focusBox);
+  followMouse = new QRadioButton(klocale->translate("Focus follows mouse"), focusBox);
 
   // autoraise delay
   autoRaise = new KSlider(0,3000,100,0, KSlider::Horizontal, this);
@@ -142,15 +150,15 @@ void KWindowConfig::resizeEvent(QResizeEvent *)
   if (boxW < buttonW + 2*SPACE_XI)
     boxW = buttonW + 2*SPACE_XI;
 
-  // focus policy
-  clickTo->adjustSize();
-  clickTo->move(SPACE_XI, SPACE_YI + titleH);
-  followMouse->adjustSize();
-  followMouse->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
+  // placement policy --- CT 19jan98 ---
+  random->adjustSize();
+  random->move(SPACE_XI, SPACE_YI + titleH);
+  smart->adjustSize();
+  smart->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
   int h3 = h;
 
-  titleW = fm.width(focusBox->title());
-  buttonW = max( clickTo->width(), followMouse->width() );
+  titleW = fm.width(placementBox->title());
+  buttonW = max( smart->width(), random->width() );
   if (boxW < titleW + 4*SPACE_XI)
     boxW =  titleW + 4*SPACE_XI;
   if (boxW < buttonW + 2*SPACE_XI)
@@ -171,10 +179,26 @@ void KWindowConfig::resizeEvent(QResizeEvent *)
   if (boxW < buttonW + 2*SPACE_XI)
     boxW = buttonW + 2*SPACE_XI;
 
+    // focus policy
+  clickTo->adjustSize();
+  clickTo->move(SPACE_XI, SPACE_YI + titleH);
+  followMouse->adjustSize();
+  followMouse->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
+  int h5 = h;
+  h += boxH + SPACE_YO;
+
+  titleW = fm.width(focusBox->title());
+  buttonW = max( clickTo->width(), followMouse->width() );
+  if (boxW < titleW + 4*SPACE_XI)
+    boxW =  titleW + 4*SPACE_XI;
+  if (boxW < buttonW + 2*SPACE_XI)
+    boxW = buttonW + 2*SPACE_XI;
+
   moveBox->setGeometry(SPACE_XO, h1, boxW, boxH);
   resizeBox->setGeometry(moveBox->x() + boxW + SPACE_XO, h2, boxW, boxH);
-  focusBox->setGeometry(SPACE_XO, h3, boxW, boxH);
-  maximizeBox->setGeometry(focusBox->x() + boxW + SPACE_XO, h4, boxW, boxH);
+  placementBox->setGeometry(SPACE_XO, h3, boxW, boxH);
+  maximizeBox->setGeometry(placementBox->x()+ boxW + SPACE_XO, h4, boxW, boxH);
+  focusBox->setGeometry(SPACE_XO + boxW/2, h5, boxW, boxH);
 
   int w = alabel->width();
   alabel->move(SPACE_XO, h);
@@ -208,6 +232,31 @@ void KWindowConfig::setMove(int trans)
     transparent->setChecked(FALSE);
   }
 }
+
+// placement policy --- CT 19jan98 ---
+int KWindowConfig::getPlacement()
+{
+  if (random->isChecked())
+    return RANDOM_PLACEMENT;
+  else
+    return SMART_PLACEMENT;
+}
+
+void KWindowConfig::setPlacement(int plac)
+{ 
+  if (plac == RANDOM_PLACEMENT)
+    {
+      random->setChecked(TRUE);
+      smart->setChecked(FALSE);
+    }
+  else
+    {
+      smart->setChecked(TRUE);
+      random->setChecked(FALSE);
+    }
+}
+
+
 
 int KWindowConfig::getFocus()
 {
@@ -323,6 +372,14 @@ void KWindowConfig::GetSettings( void )
   else if( key == "off")
     setAnim(RESIZE_ANIM_OFF);
 
+  // placement policy --- CT 19jan98 ---
+  key = config->readEntry(KWM_PLACEMENT);
+  if( key == "random")
+    setPlacement(RANDOM_PLACEMENT);
+  else if( key == "smart")
+    setPlacement(SMART_PLACEMENT);
+
+
   key = config->readEntry(KWM_FOCUS);
   if( key == "ClickToFocus")
     setFocus(CLICK_TO_FOCUS);
@@ -352,6 +409,15 @@ void KWindowConfig::SaveSettings( void )
     config->writeEntry(KWM_MOVE,"Transparent");
   else
     config->writeEntry(KWM_MOVE,"Opaque");
+
+
+  // placement policy --- CT 19jan98 ---
+  v =getPlacement();
+  if (v == RANDOM_PLACEMENT)
+    config->writeEntry(KWM_PLACEMENT, "random");
+  else
+    config->writeEntry(KWM_PLACEMENT, "smart");
+
 
   v = getFocus();
   if (v == CLICK_TO_FOCUS)

@@ -52,6 +52,10 @@
 #define MAXIMIZE_FULL 0
 #define MAXIMIZE_VERT 1
 
+// CT 19jan98
+#define RANDOM_PLACEMENT 0
+#define SMART_PLACEMENT  1
+
 class KWindowConfig : public KConfigWidget
 {
   Q_OBJECT
@@ -73,18 +77,25 @@ private:
 
   int getMove( void );
   int getAnim( void );
+  int getPlacement( void ); //CT
   int getFocus( void );
   int getMaximize( void );
   int getAutoRaise( void );
 
   void setMove(int);
   void setAnim(int);
+  void setPlacement(int); //CT
   void setFocus(int);
   void setMaximize(int);
   void setAutoRaise(int);
 
   QButtonGroup *moveBox;
   QRadioButton *transparent, *opaque; 
+
+  // CT 19jan98
+  QButtonGroup *placementBox;
+  QRadioButton *random, *smart;
+
 
   QButtonGroup *focusBox;
   QRadioButton *clickTo, *followMouse;
