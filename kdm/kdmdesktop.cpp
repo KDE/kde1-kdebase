@@ -37,10 +37,7 @@
 #include <config.h>
 #include <sys/types.h>
 
-// NEW 26-2-97 added by Henk Punt < h.punt@wing.rug.nl > :
-#include <math.h>
-//#include "gif.h"
-#include "jpeg.h"
+#include <kimgio.h>
 
 #include <X11/Xlib.h>
 
@@ -124,10 +121,7 @@ DesktopConfig::~DesktopConfig()
 static void 
 do_picture_background( DesktopConfig* dc)
 {
-  /*     QImageIO::defineIOHandler("GIF", "^GIF[0-9][0-9][a-z]", 0, 
-			       read_gif_file, NULL);*/
-     QImageIO::defineIOHandler("JFIF","^\377\330\377\340..JFIF", 0,
-			       read_jpeg_jfif, NULL);
+     kimgioRegister();
      
      QWidget* desktop = qApp->desktop();
      KPixmap image;

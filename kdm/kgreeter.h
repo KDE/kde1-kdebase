@@ -82,6 +82,7 @@ public slots:
 protected:
      void timerEvent( QTimerEvent * ) {};
 private:
+     QStrList       sessiontags;
      QTimer*        timer;
      KDMView*       user_view;
      QLabel*        pixLabel;

@@ -15,10 +15,10 @@ bin_PROGRAMS = kdm kdmdesktop
 
 # Libraries:
 LDADD  = $(all_libraries) -lkdecore -lqt -lXext\
-           -lXau $(LIBXDMCP) -lX11 -lm $(PASSLIB) $(LIB_LIBS) $(LIBSOCKET) $(LIBCRYPT) $(KDE_RPATH) $(LIBUCB) $(LIBUTIL)
+           -lXau $(LIBXDMCP) -lX11 $(PASSLIB) $(LIB_LIBS) $(LIBSOCKET) $(LIBCRYPT) $(KDE_RPATH) $(LIBUCB) $(LIBUTIL) $(KIMGIO_LIBS) 
 
 # For kdmdesktop
-kdmdesktop_LDADD = $(all_libraries) -lkdecore -lqt -lm $(LIBJPEG) -lXext\
+kdmdesktop_LDADD = $(all_libraries) -lkdecore -lqt -lm $(KIMGIO_LIBS) -lXext\
 		   -lX11 $(LIBSOCKET) $(KDE_RPATH)
 
 # Sources for xdm (both C and C++):
@@ -55,8 +55,7 @@ kdm_SOURCES = kdmconfig.cpp \
 	$(kdmlib_source)
 
 kdmdesktop_SOURCES = \
-	kdmdesktop.cpp \
-	jpeg.cpp
+	kdmdesktop.cpp
 
 noinst_HEADERS = kdmconfig.h kdmview.h kdm-config.h kdmshutdown.h kfdialog.h dm.h kgreeter.h greet.h
 

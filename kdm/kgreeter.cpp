@@ -30,7 +30,6 @@
 #include <pwd.h>
 #include <sys/param.h>
 #include <sys/types.h>
-#include <math.h>
 #include <unistd.h>
 
 #include <qmsgbox.h>
@@ -41,6 +40,9 @@
 
 #include "dm.h"
 #include "greet.h"
+
+#include <kiconloader.h>
+#include <kimgio.h>
 
 // Make the C++ compiler shut the f... up:
 extern "C" {
@@ -155,6 +157,9 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      pixLabel->setFrameStyle( QFrame::Panel| QFrame::Sunken);
      pixLabel->setAutoResize( true);
      pixLabel->setMargin( 0);
+
+     kimgioRegister();
+
      QPixmap pixmap;
      if( QFile::exists( kdmcfg->logo()->data()))
 	  pixmap.load( kdmcfg->logo()->data());
@@ -213,10 +218,29 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      hbox2->addWidget( sessionargLabel);
      sessionargBox = new QComboBox( false, this);
 
-     QStrListIterator it( *kdmcfg->sessionTypes());
-
+     QStrListIterator it ( *kdmcfg->sessionTypes());
+     sessiontags.clear();
      for( ; it.current(); ++it) {
-	  sessionargBox->insertItem( it.current());
+       QPainter p;
+
+       QString output = QString(it.current());
+
+       int w = fontMetrics().width(output) + 24;
+       QPixmap pm(w, 16);
+
+       KIconLoader iconLoader;
+       QPixmap sessflag(iconLoader.loadIcon(QString("session_") + it.current() + ".xpm"));
+  
+       pm.fill(colorGroup().background());
+       p.begin(&pm);
+
+       p.drawText(24,1,w-24,16,AlignLeft | AlignTop,output);
+       if (!sessflag.isNull())
+         p.drawPixmap(1,1,sessflag);
+       p.end();
+
+       sessiontags.append(it.current());
+       sessionargBox->insertItem(pm);
      }
      
      set_fixed( sessionargBox);
@@ -344,7 +368,7 @@ KGreeter::save_wm()
      if ( f.open(IO_WriteOnly) ) {
 	  QTextStream t;
 	  t.setDevice( &f );
-	  t << sessionargBox->text( sessionargBox->currentItem()) << endl;
+          t << sessiontags.at( sessionargBox->currentItem()) << endl;
 	  f.close();
      }
      seteuid(0);
@@ -380,7 +404,7 @@ KGreeter::load_wm()
 	       if (s[strlen(s) - 1] == '\n') s[strlen(s) - 1] = '\0';
 
 	       for (int i = 0; i < sessionargBox->count(); i++)
-		    if (strcmp(sessionargBox->text(i), s) == 0) {
+		    if (strcmp(sessiontags.at(i), s) == 0) {
 			 wm = i;
 			 break;
 		    }
@@ -635,7 +659,7 @@ KGreeter::go_button_clicked()
 
      // Set session argument:
      verify->argv = parseArgs( verify->argv, 
-			       sessionargBox->text( 
+			       sessiontags.at(
 				    sessionargBox->currentItem()));
 
      save_wm();

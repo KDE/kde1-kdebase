@@ -1,6 +1,6 @@
 
 picsdir = $(kde_datadir)/kdm/pics
-pics_DATA = kdelogo.xpm kdeflower.xpm
+pics_DATA = kdelogo.xpm kdeflower.xpm session_kde.xpm
 
 usersdir = $(picsdir)/users
 users_DATA = default.xpm default2.xpm root.xpm root2.xpm
