@@ -71,26 +71,26 @@ msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Il lato sinistro della barra Titolo è pieno disabilito il pulsante "
-"'Ingrandisci'"
+"'Ingrandisci'\n"
 
 #: titlebar.cpp:504
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Il lato destro della barra Titolo è pieno siabilito il pulsante 'Ingrandisci'"
+"Il lato destro della barra Titolo è pieno siabilito il pulsante 'Ingrandisci'\n"
 
 #: titlebar.cpp:544
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Il lato sinistro della barra Titolo è pieno siabilito il pulsante  "
-"'Iconifica'"
+"'Iconifica'\n"
 
 #: titlebar.cpp:577
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Il lato destro della barra Titolo è pieno siabilito il pulsante 'Iconifica'"
+"Il lato destro della barra Titolo è pieno siabilito il pulsante 'Iconifica'\n"
 
 #: titlebar.cpp:930
 msgid "Title Alignment"

@@ -1345,7 +1345,7 @@ msgid ""
 "Please check it.\n"
 msgstr ""
 " non è una directory ! Avviso di sicurezza ! \n"
-"Si consiglia di controllare. "
+"Si consiglia di controllare.\n"
 
 #: htmlcache.cpp:368
 msgid ""
@@ -1353,7 +1353,7 @@ msgid ""
 "Check it before clearing the cache.\n"
 msgstr ""
 " non è una directory ! Avviso di sicurezza ! \n"
-"Si consiglia di controllare prima di pulire la cache. "
+"Si consiglia di controllare prima di pulire la cache.\n"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
