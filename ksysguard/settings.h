@@ -35,7 +35,7 @@ const int SET_MAX_SORT=4;
 //-----------------------------------------------------------------------------
 class AppSettings : public QDialog
 {
-    Q_OBJECT;
+    Q_OBJECT
 public:
      AppSettings(QWidget *parent = 0, const char *name = 0);
     ~AppSettings();

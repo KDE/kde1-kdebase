@@ -38,7 +38,7 @@
 class CpuMon : public QWidget
 {
 
-  Q_OBJECT;
+  Q_OBJECT
 
 public:
 
