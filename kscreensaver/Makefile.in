@@ -13,7 +13,7 @@ LDFLAGS = @LDFLAGS@ @all_libraries@ -L. -lkdecore -lkdeui -lqt -lXext -lX11
 
 ############# Install ##############
 
-INSTALL = @INSTALL@ -s -m 0755
+INSTALL = @INSTALL@ -m 0755
 INSTALL_STICKY = @INSTALL@ -m 4755
 INSTALL_DATA = @INSTALL@ -m 0644
 INSTALL_DIR = @INSTALL@ -d -m 0755

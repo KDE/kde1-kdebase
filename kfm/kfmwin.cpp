@@ -47,7 +47,7 @@ KFileWindow* KFileWindow::findWindow( const char *_url )
 }
 
 KFileWindow::KFileWindow( QWidget *parent, const char *name, const char* _url )
-    : QWidget( parent, name )
+    : KTopLevelWidget( name )
 {
     bTreeViewInitialized = FALSE;
     bTreeView = FALSE;
@@ -279,7 +279,7 @@ void KFileWindow::initMenu()
     help->insertItem( "About", this, SLOT(slotAbout()) );
     help->insertItem( "How can I ...", this, SLOT(slotHelp()) );
 
-    menu = new QMenuBar( this );
+    menu = new KMenuBar( this );
     CHECK_PTR( menu );
     menu->insertItem( "File", file );
     menu->insertItem( "Edit", edit );
@@ -295,137 +295,50 @@ void KFileWindow::enableToolbarButton( int id, bool enable )
     if ( toolbar == 0L )
 	return;
     
-    if ( !toolbar->isA( "QButtonGroup" ) )
-	return;
-    
-    QButtonGroup *grp = (QButtonGroup*) toolbar;
-    QButton *b = grp->find( id );
-    
-    b->setEnabled( enable );
-    b->setPixmap( toolbarPixmaps[ id*2 + (enable ? 0 : 1) ] );
+    toolbar->setItemEnabled( id, enable );
 }
 
 void KFileWindow::initToolBar()
 {
-    QString file;
-    file = KFileType::getIconPath();
-    file += "/toolbar/back.xpm";
-    toolbarPixmaps[0].load( file.data() );
-    file = KFileType::getIconPath();
-    file += "/toolbar/back_gray.xpm";
-    toolbarPixmaps[1].load( file.data() );
-    file = KFileType::getIconPath();
-    file += "/toolbar/forward.xpm";
-    toolbarPixmaps[2].load( file.data() );
-    file = KFileType::getIconPath();
-    file += "/toolbar/forward_gray.xpm";
-    toolbarPixmaps[3].load( file.data() );
-    file = KFileType::getIconPath();
-    file += "/toolbar/home.xpm";
-    toolbarPixmaps[4].load( file.data() );
-    file = KFileType::getIconPath();
-    file += "/toolbar/home.xpm";
-    toolbarPixmaps[5].load( file.data() );
-    file = KFileType::getIconPath();
-    file += "/toolbar/reload.xpm";
-    toolbarPixmaps[6].load( file.data() );
-    file = KFileType::getIconPath();
-    file += "/toolbar/reload.xpm";
-    toolbarPixmaps[7].load( file.data() );
+    QString file, path;
+    KPixmap pixmap;
+    toolbar = new KToolBar(this, "kfmwin-toolbar");
+    path = KFileType::getIconPath() + QString("/toolbar/");
 
-    file = KFileType::getIconPath();
-    file += "/toolbar/editcopy.xpm";
-    toolbarPixmaps[8].load( file.data() );
-    file = KFileType::getIconPath();
-    file += "/toolbar/editcopy.xpm";
-    toolbarPixmaps[9].load( file.data() );
-    file = KFileType::getIconPath();
-    file += "/toolbar/editpaste.xpm";
-    toolbarPixmaps[10].load( file.data() );
-    file = KFileType::getIconPath();
-    file += "/toolbar/editpaste.xpm";
-    toolbarPixmaps[11].load( file.data() );
-
-    file = KFileType::getIconPath();
-    file += "/toolbar/help.xpm";
-    toolbarPixmaps[12].load( file.data() );
-    file = KFileType::getIconPath();
-    file += "/toolbar/help.xpm";
-    toolbarPixmaps[13].load( file.data() );
-
-    file = KFileType::getIconPath();
-    file += "/toolbar/exit.xpm";
-    toolbarPixmaps[14].load( file.data() );
-    file = KFileType::getIconPath();
-    file += "/toolbar/exit_gray.xpm";
-    toolbarPixmaps[15].load( file.data() );
-
-    int	pos = 6, buttonWidth, buttonHeight;
-    KButton *pb;
-
-    buttonWidth = BUTTON_WIDTH;
-    buttonHeight = BUTTON_HEIGHT;
-
-    toolbar = new QButtonGroup( this );
-    toolbar->setGeometry( 0, menu->frameGeometry().height(), width(), buttonHeight + 8 );
+    pixmap.load(path + "back.xpm");
+    toolbar->insertItem(pixmap, 0, SIGNAL( clicked() ), this, SLOT( slotBack() ), FALSE, "Back");
     
-    pb = new KButton( toolbar ,"Back" );
-    pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
-    connect( pb, SIGNAL( clicked() ), SLOT( slotBack() ) );
-    pos += buttonWidth;
-    QToolTip::add( pb, "Back" );
+    pixmap.load(path + "forward.xpm");
+    toolbar->insertItem(pixmap, 1, SIGNAL( clicked() ), this, SLOT( slotForward() ), FALSE, "Forward");
 
-    pb = new KButton( toolbar ,"Forward" );
-    pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
-    connect( pb, SIGNAL( clicked() ), SLOT( slotForward() ) );
-    pos += buttonWidth;
-    QToolTip::add( pb, "Forward" );
+    pixmap.load(path + "home.xpm");
+    toolbar->insertItem(pixmap, 2, SIGNAL( clicked() ), this, SLOT( slotHome() ), TRUE, "Home");
+    
+    toolbar->insertSeparator();
+    
+    pixmap.load(path + "reload.xpm");
+    toolbar->insertItem(pixmap, 3, SIGNAL( clicked() ), this, SLOT( slotViewUpdate() ), TRUE, "Reload");
 
-    pb = new KButton( toolbar , "Home" );
-    pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
-    connect( pb, SIGNAL( clicked() ), SLOT( slotHome() ) );
-    pos += buttonWidth + BUTTON_SEPARATION;
-    QToolTip::add( pb, "Home" );
+    toolbar->insertSeparator();
+    
+    pixmap.load(path + "editcopy.xpm");
+    toolbar->insertItem(pixmap, 4, SIGNAL( clicked() ), this, SLOT( slotCopy() ), TRUE, "Copy");
+    
+    pixmap.load(path + "editpaste.xpm");
+    toolbar->insertItem(pixmap, 5, SIGNAL( clicked() ), this, SLOT( slotPaste() ), TRUE, "Paste");
+    
+    toolbar->insertSeparator();
+    
+    pixmap.load(path + "help.xpm");
+    toolbar->insertItem(pixmap, 6, SIGNAL( clicked() ), this, SLOT( slotHelp() ), TRUE, "Help");
+    
+    toolbar->insertSeparator();
+    
+    pixmap.load(path + "exit.xpm");
+    toolbar->insertItem(pixmap, 7, SIGNAL( clicked() ), this, SLOT( slotStop() ), FALSE, "Stop");
 
-    pb = new KButton( toolbar , "Reload" );
-    pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
-    connect( pb, SIGNAL( clicked() ), SLOT( slotViewUpdate() ) );
-    pos += buttonWidth + BUTTON_SEPARATION;
-    QToolTip::add( pb, "Reload" );
-
-    pb = new KButton( toolbar , "Copy" );
-    pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
-    connect( pb, SIGNAL( clicked() ), SLOT( slotCopy() ) );
-    pos += buttonWidth;
-    QToolTip::add( pb, "Copy" );
-
-    pb = new KButton( toolbar , "Paste" );
-    pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
-    connect( pb, SIGNAL( clicked() ), SLOT( slotPaste() ) );
-    pos += buttonWidth + BUTTON_SEPARATION;
-    QToolTip::add( pb, "Paste" );
-
-    pb = new KButton( toolbar, "Help" );
-    pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
-    connect( pb, SIGNAL( clicked() ), SLOT( slotHelp() ) );
-    pos += buttonWidth + BUTTON_SEPARATION;
-    QToolTip::add( pb, "Help" );
-
-    pb = new KButton( toolbar, "Stop" );
-    pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
-    connect( pb, SIGNAL( clicked() ), SLOT( slotStop() ) );
-    pos += buttonWidth + BUTTON_SEPARATION;
-    QToolTip::add( pb, "Stop" );
-
-    enableToolbarButton( 0, FALSE );
-    enableToolbarButton( 1, FALSE );
-    enableToolbarButton( 2, TRUE );
-    enableToolbarButton( 3, TRUE );
-    enableToolbarButton( 4, TRUE );
-    enableToolbarButton( 5, TRUE );
-    enableToolbarButton( 6, TRUE );
-    enableToolbarButton( 7, FALSE );
-
+    toolbar->show();
+    toolbar->enableMoving(FALSE);
     topOffset = menu->frameGeometry().height() + toolbar->frameGeometry().height();
 }
 
@@ -1284,8 +1197,8 @@ void KFileWindow::resizeEvent( QResizeEvent * )
     printf("Got resize event !!!!!!!!!!!!!!!!!!!!!!!! %i %i\n",width(),height());
     
     if ( toolbar != 0L )
-	toolbar->setGeometry( 0, menu->height(), width(), toolbar->height() );
-
+      toolbar->setGeometry( 0, menu->height(), toolbar->width(), toolbar->height() );
+    
     if ( panner )
     {
 	printf("++++++++++ Resizing Panner ++++++++++++++++++++ %i %i\n",topOffset,width());

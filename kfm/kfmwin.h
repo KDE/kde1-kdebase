@@ -7,14 +7,6 @@
 #define QUIT                13
 #define HELP                50
 
-#define TOOLBAR_HEIGHT 26
-#define TOOLBAR_Y_OFFSET 2
-#define TOOLBAR_BUTTON_HEIGHT 22
-
-#define BUTTON_HEIGHT		26
-#define BUTTON_WIDTH		26
-#define BUTTON_SEPARATION	6
-
 #define BOOKMARK_ID_BASE	200
 
 #include <qwidget.h>
@@ -37,8 +29,9 @@ class KFileWindow;
 
 #include "kfmman.h"
 #include "kfmtree.h"
+#include <ktopwidget.h>
 
-class KFileWindow : public QWidget
+class KFileWindow : public KTopLevelWidget
 {
     Q_OBJECT
 public:
@@ -366,12 +359,9 @@ protected:
     QAccel *accel;
 
     /// The toolbar
-    QGroupBox *toolbar;
+    KToolBar *toolbar;
 
-    /// Pixmaps used for the toolbars buttons
-    KPixmap toolbarPixmaps[18];
-
-    QMenuBar *menu;
+    KMenuBar *menu;
     QPopupMenu *mview;
     QScrollBar *horz;
     QScrollBar *vert;
