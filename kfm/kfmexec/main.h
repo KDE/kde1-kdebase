@@ -10,7 +10,9 @@ class KFMExec : public QObject
     Q_OBJECT
 public:
     KFMExec( int argc, char **argv );
-    
+
+    QString shellQuote( const char *_data );    
+
 public slots:
     void slotFinished();
     

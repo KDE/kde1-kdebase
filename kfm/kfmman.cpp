@@ -26,6 +26,7 @@
 #include "kmsgwin.h"
 #include "kfmdlg.h"
 #include "kfmexec.h"
+#include "utils.h"
 
 // A HACK
 QString HTMLBuffer;
@@ -757,7 +758,11 @@ void KFMManager::slotMimeType( const char *_type )
 	    if ( pattern.isEmpty() )
 		return;
 
-	    QString decoded( tryURL );
+	    QStrList list;
+	    list.append( tryURL );
+	    openWithOldApplication( l.getText(), list );
+	    
+	    /* QString decoded( tryURL );
 	    KURL::decodeURL( decoded );
 	    decoded = KIOServer::shellQuote( decoded ).data();
 	    
@@ -769,7 +774,7 @@ void KFMManager::slotMimeType( const char *_type )
 	    cmd += "\"";
 	    debugT("Executing stuff '%s'\n", cmd.data());
 	    
-	    KMimeBind::runCmd( cmd.data() );
+	    KMimeBind::runCmd( cmd.data() ); */
 	}
 	return;
     }

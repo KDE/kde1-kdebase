@@ -9,6 +9,7 @@
 #include "config-kfm.h"
 #include "kfmgui.h"
 #include "kfmdlg.h"
+#include "utils.h"
 
 #include <klocale.h>
 
@@ -238,7 +239,11 @@ void KFMExec::slotMimeType( const char *_type )
 		return;
 	    }
 	    
-	    QString decoded( tryURL );
+	    QStrList list;
+	    list.append( tryURL );
+	    openWithOldApplication( pattern, list );
+	    
+	    /* QString decoded( tryURL );
 	    KURL::decodeURL( decoded );
 	    decoded = KIOServer::shellQuote( decoded ).data();
 	    
@@ -248,9 +253,9 @@ void KFMExec::slotMimeType( const char *_type )
 	    cmd += "\"";
 	    cmd += decoded;
 	    cmd += "\"";
-	    debugT("Executing stuff '%s'\n", cmd.data());
+	    debugT("Executing stuff '%s'\n", cmd.data()); 
 	    
-	    KMimeBind::runCmd( cmd.data() );
+	    KMimeBind::runCmd( cmd.data() ); */
 
 	    delete this;
 	    return;

@@ -16,6 +16,7 @@
 #include "kfmgui.h"
 #include "config-kfm.h"
 #include "kfmexec.h"
+#include "utils.h"
 
 QPixmapCache* KMimeType::pixmapCache = 0L;
 
@@ -1225,12 +1226,24 @@ bool KMimeBind::runBinding( const char *_url )
     cmd.detach();
     
     // Did the user forget to append something like '%f' ?
-    // If so, then assume that '%f' is the right joice.
+    // If so, then assume that '%f' is the right joice => the application
+    // accepts only local files.
     if ( cmd.find( "%f" ) == -1 && cmd.find( "%u" ) == -1 && cmd.find( "%n" ) == -1 &&
 	 cmd.find( "%d" ) == -1 )
     {
-	cmd += " ";
-	cmd += f.data();
+      QStrList list;
+      list.append( _url );
+      openWithOldApplication( cmd, list );
+      // cmd += " ";
+      // cmd += f.data();
+    }
+    // The application accepts only local files ?
+    else if ( cmd.find( "%f" ) != -1 && cmd.find( "%u" ) == -1 && cmd.find( "%n" ) == -1 &&
+	      cmd.find( "%d" ) == -1 )
+    {
+      QStrList list;
+      list.append( _url );
+      openWithOldApplication( cmd, list );      
     }
     else
     {

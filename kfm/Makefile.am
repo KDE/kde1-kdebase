@@ -18,13 +18,13 @@ kfm_SOURCES =	\
 	kioserver_ipc2.cpp kfmipc.cpp root.cpp kfmman.cpp kiojob.cpp \
 	kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp xview.cpp \
 	krenamewin.cpp passworddialog.cpp fileentry.cpp debug.cpp \
-	kfmpaths.cpp kfmjob.cpp kfmexec.cpp kmimemagic.cpp kfinder.cpp
+	kfmpaths.cpp kfmjob.cpp kfmexec.cpp kmimemagic.cpp kfinder.cpp utils.cpp
 
 noinst_HEADERS =  \
 	kfmgui.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h \
 	kfmprops.h kfmserver_ipc.h kioserver.h kioserver_ipc.h kfmipc.h \
 	kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kfmtree.h \
-	xview.h krenamewin.h passworddialog.h fileentry.h \
+	xview.h krenamewin.h passworddialog.h fileentry.h utils.h \
 	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h kfinder.h
 
 BUILT_SOURCES =	\

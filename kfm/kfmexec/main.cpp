@@ -17,31 +17,50 @@ KFMExec::KFMExec( int argc, char **argv )
 {
     for ( int i = 3; i <= argc; i++ )
     {
-	KURL u( argv[ i - 1 ] );
-	if ( u.isMalformed() )
+        // A local file, not an URL ?
+	if ( *argv[ i - 1 ] == '/' )
 	{
-	    QString err;
-	    err.sprintf( "%s\n\r%s", argv[ i - 1 ], klocale->translate( "is malformed" ) );
-	    QMessageBox::message( klocale->translate( "KFM Error" ), err );
+	    QString tmp( shellQuote( argv[ i - 1 ] ) );
+	    files += tmp.data();
 	}
+	// It is an URL
 	else
-	{
-	    KFM *kfm = new KFM;
-	    connect( kfm, SIGNAL( finished() ), this, SLOT( slotFinished() ) );
-	    
-	    QString tmp;
-	    tmp.sprintf( "%s/.kfm/tmp/%s.%i.%i", getenv( "HOME" ), u.filename(), getpid(), kfmCounter++ );
-	    kfm->copy( argv[ i - 1 ], tmp );
-	    if ( !files.isEmpty() )
+        {
+	  KURL u( argv[ i - 1 ] );
+	  if ( u.isMalformed() )
+	    {
+	      QString err;
+	      err.sprintf( "%s\n\r%s", argv[ i - 1 ], klocale->translate( "is malformed" ) );
+	      QMessageBox::message( klocale->translate( "KFM Error" ), err );
+	    }
+	  // Must KFM fetch the file ?
+	  else if ( strcmp( u.protocol(), "file" ) != 0 )
+	    {
+	      KFM *kfm = new KFM;
+	      connect( kfm, SIGNAL( finished() ), this, SLOT( slotFinished() ) );
+	      
+	      QString tmp;
+	      tmp.sprintf( "%s/.kfm/tmp/%s.%i.%i", getenv( "HOME" ), u.filename(), getpid(), kfmCounter++ );
+	      kfm->copy( argv[ i - 1 ], tmp );
+	      if ( !files.isEmpty() )
 		files += " ";
-	    files += "\"";
-	    files += tmp;
-	    files += "\"";
-	    fileList.append( tmp );
-	    urlList.append( argv[ i - 1 ] );
+	      files += "\"";
+	      files += tmp;
+	      files += "\"";
+	      fileList.append( tmp );
+	      urlList.append( argv[ i - 1 ] );
+	    }
+	  else
+	    // It is a local file system URL
+	    {
+	      QString tmp1( u.path() );
+	      KURL::decodeURL( tmp1 );
+	      QString tmp( shellQuote( tmp1 ) );
+	      files += tmp.data();
+	    }
 	}
     }
-
+    
     command = argv[ 1 ];
     
     expectedCounter = argc - 2;
@@ -104,6 +123,44 @@ void KFMExec::slotFinished()
 
     sleep( 10 );
     exit(1);
+}
+
+QString KFMExec::shellQuote( const char *_data )
+{
+    QString cmd = _data;
+   
+    int pos = 0;
+    while ( ( pos = cmd.find( ";", pos )) != -1 )
+    {
+	cmd.replace( pos, 1, "\\;" );
+	pos += 2;
+    }
+    pos = 0;
+    while ( ( pos = cmd.find( "\"", pos )) != -1 )
+    {
+	cmd.replace( pos, 1, "\\\"" );
+	pos += 2;
+    }
+    pos = 0;
+    while ( ( pos = cmd.find( "|", pos ) ) != -1 )
+    {
+	cmd.replace( pos, 1, "\\|" );
+	pos += 2;
+    }
+    pos = 0;
+    while ( ( pos = cmd.find( "(", pos )) != -1 )
+    {
+	cmd.replace( pos, 1, "\\(" );
+	pos += 2;
+    }
+    pos = 0;
+    while ( ( pos = cmd.find( ")", pos )) != -1 )
+    {
+	cmd.replace( pos, 1, "\\)" );
+	pos += 2;
+    }
+
+    return QString( cmd.data() );
 }
 
 int main( int argc, char **argv )

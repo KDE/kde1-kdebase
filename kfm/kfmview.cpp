@@ -31,6 +31,7 @@
 #include "root.h"
 #include "kfmpaths.h"
 #include <config-kfm.h>
+#include "utils.h"
 
 #include <klocale.h>
 
@@ -341,38 +342,63 @@ void KfmView::slotPopupOpenWith()
 	if ( pattern.length() == 0 )
 	    return;
     }
-
-    QString cmd;
-    cmd = l.getText();
-    cmd += " ";
-
-    QString tmp;
+    else
+      return;
     
+    openWithOldApplication( l.getText(), popupFiles );
+    /*
+    // Find out wether there are some URL with a
+    // protocol != "file"
+    bool prot = FALSE;
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
     {
+      KURL u( s );
+      if ( !u.isMalformed() )
+	if ( strcmp( u.protocol(), "file" ) != 0 )
+	  prot = TRUE;
+    }
+
+    // Are there externel files ?
+    if ( prot )
+    {
+      QString cmd;
+      cmd = l.getText();
+      cmd += " %f";
+      QStrList list;
+      list.append( cmd );
+      
+      for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
+      {
+	list.append( s );
+      }
+      
+      KMimeBind::runCmd( "kfmexec", list );
+    }
+    // Only local files
+    else
+    {	
+      QString cmd( l.getText() );
+      cmd += " ";
+
+      QString tmp;
+      
+      char *s;
+      for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
+      {
 	cmd += "\"";
 	KURL file = s;    
 	
-	if ( strcmp( file.protocol(), "file" ) == 0L && !file.hasSubProtocol() )
-	{
-	    QString decoded( file.path() );
-	    KURL::decodeURL( decoded );
-	    decoded = KIOServer::shellQuote( decoded ).data();
-	    cmd += decoded.data();
-	}
-	else
-	{
-	    QString decoded( s );
-	    KURL::decodeURL( decoded );
-	    decoded = KIOServer::shellQuote( decoded ).data();
-	    cmd += decoded.data();
-	}
+	QString decoded( file.path() );
+	KURL::decodeURL( decoded );
+	decoded = KIOServer::shellQuote( decoded ).data();
+	cmd += decoded.data();
 	cmd += "\" ";
-    }
-    debugT("Executing '%s'\n", cmd.data());
-    
-    KMimeBind::runCmd( cmd.data() );
+      }
+      debugT("Executing '%s'\n", cmd.data());
+      
+      KMimeBind::runCmd( cmd.data() );
+    } */
 }              
 
 void KfmView::slotPopupProperties()

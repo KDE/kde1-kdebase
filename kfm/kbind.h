@@ -153,6 +153,11 @@ public:
     static void runCmd( const char *_cmd );
 
     /**
+     * Another interface to the 'exec' clib functions.
+     */
+    static void runCmd( const char *_exec, QStrList &_args );
+
+    /**
      * Open a KConfig file
      * @return a KConfig if the file starts with "[KDE Desktop Entry]" otherwise 0L.
      *         The group "[KDE Desktop Entry"] will be already selected in the returned
