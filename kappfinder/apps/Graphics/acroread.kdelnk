@@ -2,10 +2,8 @@
 [KDE Desktop Entry]
 Name=Acrobat Reader
 Name[da]=Acrobat læser
-Name[eo]=Ekrananima¼o
 Name[fi]=Acrobat -lukija
 Name[hr]=Acrobat èitaè
-Name[hu]=Képernyõvédõ
 Name[is]=Acrobat lesarinn
 Name[it]=Lettore Acrobat
 Name[no]=Acrobat-leser
@@ -22,12 +20,10 @@ Comment[ca]=Visualitzador de documents PDF
 Comment[cs]=Prohlí¾eè PDF dokumentù
 Comment[da]=PostScript dokument fremviser
 Comment[de]=Betrachter für PDF-Dokumente
-Comment[eo]=Stircentro de KDE
 Comment[es]=Visor de documentos PDF
 Comment[fi]=PDF-dokumenttien näyttäjä
 Comment[fr]=Un visualiseur de documents PDF
 Comment[hr]=Preglednik PDF dokumenata
-Comment[hu]=PostScript dokumentum nézõ
 Comment[is]=xpdf:  Tól til að skoða PDF skrár
 Comment[it]=Lettore documenti PDF
 Comment[no]=PDF-dokumentfremviser

@@ -10,7 +10,6 @@ Comment[ca]=Emulació de terminal (experimental)
 Comment[cs]=Emulátor terminálu (experimentální)
 Comment[da]=Terminalemulering (eksperimentel)
 Comment[de]=Terminal Emulation (experimentell)
-Comment[eo]=Terminalimita¼o (kvt)
 Comment[es]=Emulador de Terminal (experimental)
 Comment[fi]=Terminaaliemulaattori (kokeellinen)
 Comment[fr]=Emulateur de Terminal (expérimental)
@@ -30,9 +29,7 @@ Terminal=0
 Name=Konsole
 Name[ca]=Consola
 Name[da]=Konsol
-Name[eo]=NAme[eo]=Stilo
 Name[hr]=Konzola
-Name[hu]=Stílus
 Name[is]=Skjáhermir
 Name[no]=Konsoll
 Name[pl]=Konsola
