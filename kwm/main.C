@@ -1113,12 +1113,16 @@ bool MyApp::x11EventFilter( XEvent * ev){
   
   switch (ev->type) {
   case KeyPress:
-    if (!operations->isVisible())
-      return handleKeyPress(ev->xkey);
+    if (operations->isVisible())
+      return FALSE;
+    handleKeyPress(ev->xkey);
+    return TRUE;
     break;
   case KeyRelease:
-    if (!operations->isVisible())
-      handleKeyRelease(ev->xkey);
+    if (operations->isVisible())
+      return FALSE;
+    handleKeyRelease(ev->xkey);
+    return TRUE;
     break;
   case ButtonPress:
     {

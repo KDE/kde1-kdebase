@@ -21,6 +21,8 @@ In 0.10:
          anything.
        - resize animation improved (thanks to Hans-Guenther Nusseck)
        - bugfixes for auto-iconify
+       - bugfix in keyevent-handling: no longer passed to Qt, if not
+         necessary.
 
   patchlevel 18:
        - transient windows become iconified if the main window loses
