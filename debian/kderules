@@ -27,6 +27,11 @@ find(\&docwanted,".");
 if (! -d "debian/tmp/usr/doc/$package") {
 	mkdir("-p", "debian/tmp/usr/doc/$package") ;
 }
+
+if (! -d "debian/tmp/usr/X11R6/include/X11/pixmaps") {
+       mkdir("-p", "debian/tmp/usr/X11R6/include/X11/pixmaps");
+}
+
 cp( "-aP", @docs, "debian/tmp/usr/doc/$package") ;
 
 # copy shlibs to local directory
@@ -75,8 +80,6 @@ if (-e "debian/menu.in") {
 	close MENUIN;
 }
 
-xpmtoppm /usr/X11R6/include/X11/pixmaps/cmap.xpm > /tmp/cmp.ppm
-
 open MENU, ">debian/menu" or die "can't open debian/menu : $!\n";
 
 foreach $file (@lnkfiles) {
@@ -118,8 +121,12 @@ foreach $file (@lnkfiles) {
 	}
 	if (defined $kdelnk{"Icon"}) {
    	        $icon=$kdelnk{"Icon"} ;
-	        system("xpmtoppm debian/tmp/usr/share/icons/$icon | ppmquant -map /tmp/cmap.ppm | ppmtoxpm > menu_$icon");
-		$icon="/usr/share/icons/menu_" . $icon ;
+		if (! -f "debian/tmp/usr/share/icons/$icon" ) {
+                   $icon="";
+	        } else {
+	          system("convert -map /usr/X11R6/include/X11/pixmaps/cmap.xpm debian/tmp/usr/share/icons/$icon debian/tmp/usr/X11R6/include/X11/pixmaps/$icon");
+	  	  $icon="/usr/X11R6/include/X11/pixmaps/" . $icon ;
+               }
 	}
 	($kdelnk=$file) =~ s/^.*tmp// ;
 	print MENU "?package($package):\\\n" ;

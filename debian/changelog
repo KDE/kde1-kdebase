@@ -1,3 +1,10 @@
+kdebase (2:980312-3) unstable; urgency=low
+
+  * test prefix() before removing it. This should avoid a rm -rf /, when possible
+  * new kdm (with bugfixes and new location for configuration files)
+
+ -- Stephan Kulow <coolo@kde.org>  Fri, 27 Mar 1998 16:07:37 +0100
+
 kdebase (2:980312-2) frozen; urgency=low
 
   * new compile cycle with qt-1.33 and libstd++-2.8
