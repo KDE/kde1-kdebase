@@ -31,9 +31,9 @@ KProxyOptions::KProxyOptions(QWidget *parent, const char *name)
 	lay->setRowStretch(1,0); // USEPROXY
 	lay->setRowStretch(2,0); // HTTP
 	lay->setRowStretch(3,0); // FTP
-	lay->setRowStretch(4,1);
+	lay->setRowStretch(4,2);
 	lay->setRowStretch(5,0); // NOPROXY
-	lay->setRowStretch(6,1);
+	lay->setRowStretch(6,20);
 
 	lay->setColStretch(0,0);
 	lay->setColStretch(1,0);

@@ -27,8 +27,8 @@ KHTTPOptions::KHTTPOptions(QWidget *parent, const char *name)
   lay->setRowStretch(4,0);
   lay->setRowStretch(5,0);
   lay->setRowStretch(6,1);
-  lay->setRowStretch(7,1);
-  lay->setRowStretch(8,0);
+  lay->setRowStretch(7,0);
+  lay->setRowStretch(8,20);
   
   lay->setColStretch(0,0);
   lay->setColStretch(1,1);
