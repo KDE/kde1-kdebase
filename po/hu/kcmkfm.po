@@ -1,3 +1,11 @@
+# KTranslator Generated File
+
+# John Zero <johnzero@telnet.hu>, 1997
+# Balazs Nagy <julian7@kva.hu>, 1998
+# KTranslator Generated File
+
+# John Zero <johnzero@telnet.hu>, 1997
+# Balazs Nagy <julian7@kva.hu>, 1998
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # Marcell Lengyel <miketkf@yahoo.com>, 1998.
@@ -6,13 +14,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
-"PO-Revision-Date: 1998-12-17 12:18+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"PO-Revision-Date: Mon Mar 8 1999 16:38:57+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.4.0"
 
 #: main.cpp:61
 msgid "&Font"
@@ -40,21 +49,21 @@ msgstr "&Bejelentkezés"
 
 #: main.cpp:76
 msgid "Coo&kies"
-msgstr ""
+msgstr "Coo&kik"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
 msgstr "&Asztal Ikonok"
 
 #: main.cpp:89
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr "használat: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
-msgstr "KFM Beáálítás"
+msgstr "KFM Beálítás"
 
 #: htmlopts.cpp:64
 msgid "Small"
@@ -110,7 +119,7 @@ msgstr "Húzza alá a linkeket"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr ""
+msgstr "Mindíg a saját színeimet használja"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
@@ -122,7 +131,11 @@ msgstr "Fa nézet kö&vesse a navigációt"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr ""
+msgstr "Terminál"
+
+#: miscopts.cpp:57
+msgid "Editor"
+msgstr "Szerkesztõ"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
@@ -134,15 +147,15 @@ msgstr "Használjon proxyt"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
-msgstr ""
+msgstr "HTTP Proxy:"
 
 #: kproxydlg.cpp:82 kproxydlg.cpp:113
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: kproxydlg.cpp:98
 msgid "FTP Proxy:"
-msgstr ""
+msgstr "FTP Proxy:"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
@@ -178,36 +191,36 @@ msgstr "Ismert kötések:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr ""
+msgstr "Cookies &engedélyezése"
 
 #: kcookiesdlg.cpp:56
-#, fuzzy
+#
 msgid "Default accept policy"
-msgstr "Alapértelmezett betûkészlet"
+msgstr "Alapértelmezett fogadás"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
-msgstr ""
+msgstr "Elfogadja"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
-msgstr ""
+msgstr "Megkérdezi"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
-msgstr ""
+msgstr "Elutasítja"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
-msgstr ""
+msgstr "Tartomány specifikus beállítások:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr ""
+msgstr "Tartományban, fogadás megváltoztatása"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr ""
+msgstr "Elõször írj be egy tartományt!"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
@@ -231,4 +244,4 @@ msgstr "Ikon háttér szín:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr ""
+msgstr "M&utassa a rejtett fájlokat az Asztalon"

@@ -1,27 +1,52 @@
+# KTranslator Generated File
+
+# John Zero <johnzero@telnet.hu>, 1997
+# Balazs Nagy <julian7@kva.hu>, 1998
+# KTranslator Generated File
+
+# John Zero <johnzero@telnet.hu>, 1997
+# Balazs Nagy <julian7@kva.hu>, 1998
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Marcell Lengyel <miketkf@yahoo.com>, 1998.
+#
+#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# John Zero <johnzero@telnet.hu>, 1998.
+# Balazs Nagy <julian7@kva.hu>, 1998.
+#
+#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# John Zero <johnzero@telnet.hu>, 1997
+# Balazs Nagy <julian7@kva.hu>, 1998
+#
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 1997 Free Software Foundation, Inc.
 # Nagy Balazs <julian7@kva.hu>, 1997.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kdehelp 0.5.2\n"
+"Project-Id-Version: kde 1.1\n"
 "POT-Creation-Date: 1999-02-09 01:13+0100\n"
-"PO-Revision-Date: 1997-09-21 19:39+MET\n"
-"Last-Translator: Nagy Balazs <julian7@kva.hu>\n"
+"PO-Revision-Date: Mon Mar 8 1999 16:57:57+0100\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.4.0"
 
 #: kpanel.C:292
-#, fuzzy
+#
 msgid "&Move"
-msgstr "Áthelyez"
+msgstr "Á&thelyez"
 
 #: kpanel.C:295
-#, fuzzy
+#
 msgid "&Properties"
-msgstr "Tulajdonságok"
+msgstr "&Tulajdonságok"
 
 #: kpanel.C:338
 msgid "Go!"
@@ -29,7 +54,7 @@ msgstr "Mehet!"
 
 #: kpanel.C:341 tools.C:901
 msgid "Where do you want to go tomorrow?"
-msgstr ""
+msgstr "KDE világlegjobb!"
 
 #: kpanel.C:416
 msgid "No info available"
@@ -40,7 +65,7 @@ msgid "Logout"
 msgstr "Kilép"
 
 #: kpanel.C:463 props.C:206
-#, fuzzy
+#
 msgid "Lock screen"
 msgstr "Képernyõzár"
 
@@ -54,11 +79,11 @@ msgstr "Panel megjelenítése"
 
 #: kpanel.C:1067
 msgid "Iconify other &windows"
-msgstr ""
+msgstr "Többi &ablak ikonizálása"
 
 #: kpanel.C:1204
 msgid "No comment available"
-msgstr "Nincs róla info"
+msgstr "Nincs megjegyzés"
 
 #: kpanel.C:1213 tools.C:910
 msgid "Windowlist"
@@ -66,10 +91,10 @@ msgstr "Ablaklista"
 
 #: kpanel.C:1221 props.C:197
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Fájrendszer gyors elérése"
 
 #: props.C:167
-#, fuzzy
+#
 msgid "Add Application"
 msgstr "Alkalmazás hozzáadása"
 
@@ -79,21 +104,21 @@ msgstr "Alkalmazás vagy almenü hozzáadása a panelhez"
 
 #: props.C:175
 msgid "Add Disk Navigator"
-msgstr ""
+msgstr "Lemez Navigátor hozzáadása"
 
 #: props.C:177
-#, fuzzy
+#
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Ablaklista hozzáadása a panelhez"
+msgstr "Lemez Navigátor menü hozzáadása a panelhez"
 
 #: props.C:180
-#, fuzzy
+#
 msgid "Add Windowlist"
 msgstr "Ablaklista hozzáadása"
 
 #: props.C:182
 msgid "Add a windowlist menu onto the panel"
-msgstr "Ablaklista hozzáadása a panelhez"
+msgstr "Ablaklista menü hozzáadása a panelhez"
 
 #: events.C:851 props.C:183
 msgid "Configure"
@@ -105,11 +130,11 @@ msgstr "Panel konfigurálása"
 
 #: props.C:186
 msgid "Edit Menus"
-msgstr ""
+msgstr "Menük szerkesztése"
 
 #: props.C:188
 msgid "Add or remove applications in the menu structure "
-msgstr ""
+msgstr "Alkalmazások hozzáadása/eltávolítása a menüstruktúrában/ból"
 
 #: events.C:853 props.C:189
 msgid "Restart"
@@ -121,11 +146,11 @@ msgstr "Panel újraindítása"
 
 #: props.C:194
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Lemez Navigátor"
 
 #: props.C:202
 msgid "Panel"
-msgstr ""
+msgstr "Panel"
 
 #: props.C:204
 msgid "Lock Screen"
@@ -133,83 +158,85 @@ msgstr "Képernyõzár"
 
 #: props.C:451
 msgid "The menu editor is not installed."
-msgstr ""
+msgstr "A menüszerkesztõ nincs telepítve"
 
 #: events.C:908 props.C:452
 msgid "Oops!"
-msgstr ""
+msgstr "Hiba!"
 
 #: tools.C:648
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
+"\n"
+"%b %d"
 
 #: tools.C:919
 msgid "KDiskNavigator"
-msgstr ""
+msgstr "KDiskNavigator"
 
 #: events.C:907
 msgid "Cannot put this as button onto the panel!"
-msgstr ""
+msgstr "Ezt a gombot nem tudom a panelra rakni!"
 
 #: pfilemenu.C:425
 msgid "(empty folder)"
-msgstr ""
+msgstr "(üres mappa)"
 
 #: pfilemenu.C:480
 msgid "Open Folder"
-msgstr ""
+msgstr "Mappa megnyitás"
 
 #: pfilemenu.C:483
 msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr ""
+msgstr "Ennek a mappának a megnyitása (+Shift: terminálablak megnyitása)"
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(Túl sok fájl)"
 
 #: pfilemenu.C:500
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(Hozzáférés megtagadva)"
 
 #: pfilemenu.C:503
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(Nem olvasható)"
 
 #: pfilemenu.C:752
 msgid "Shared:"
-msgstr ""
+msgstr "Megosztott:"
 
 #: pfilemenu.C:754
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Minden felhasználó által megosztott bejegyzések"
 
 #: pfilemenu.C:773
-#, fuzzy
+#
 msgid "Personal:"
-msgstr "Személyes menü elöl"
+msgstr "Személyes:"
 
 #: pfilemenu.C:775
-#, fuzzy
+#
 msgid "Personal entries"
-msgstr "Személyes menü elöl"
+msgstr "Személyes bejegyzések"
 
 #: pfilemenu.C:793
 msgid "Recent:"
-msgstr ""
+msgstr "Legutóbbi:"
 
 #: pfilemenu.C:795
 msgid "Recent entries"
-msgstr ""
+msgstr "Legutóbbi bejegyzések"
 
 #: pfilemenu.C:841
 msgid "Options..."
-msgstr ""
+msgstr "Beállítások..."
 
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
-msgstr ""
+msgstr "Lemez Navigátor testreszabása"
 
 #~ msgid "Location"
 #~ msgstr "Hely"

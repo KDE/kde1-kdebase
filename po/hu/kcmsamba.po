@@ -1,3 +1,16 @@
+# KTranslator Generated File
+
+# John Zero <johnzero@telnet.hu>, 1997
+# Balazs Nagy <julian7@kva.hu>, 1998
+# KTranslator Generated File
+
+# John Zero <johnzero@telnet.hu>, 1997
+# Balazs Nagy <julian7@kva.hu>, 1998
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Marcell Lengyel <miketkf@yahoo.com>, 1998.
+#
+#, fuzzy
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # John Zero <johnzero@telnet.hu>, 1998.
@@ -8,16 +21,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-11-17 15:21+0100\n"
-"PO-Revision-Date: 1998-01-12 12:21+CET\n"
-"Last-Translator: John Zero <johnzero@telnet.hu>\n"
+"PO-Revision-Date: Mon Mar 8 1999 16:47:14+0100\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.4.0"
 
 #: main.cpp:48
 msgid "&Status"
-msgstr ""
+msgstr "&Státusz"
 
 #: main.cpp:57
 msgid "usage: kcmsamba [-init | status]\n"
@@ -25,36 +39,36 @@ msgstr "használat: kcmsamba [-init | status]\n"
 
 #: main.cpp:68
 msgid "Samba"
-msgstr ""
+msgstr "Samba"
 
 #: ksmbstatus.cpp:114
 msgid "Error launching smbstatus !"
-msgstr ""
+msgstr "Hiba az smbstatus indításakor!"
 
 #: ksmbstatus.cpp:116
 msgid "Error ! smbstatus not found or non working !"
-msgstr ""
+msgstr "Hiba! Az smbstatus nem található, vegy nem müködik!"
 
 #: ksmbstatus.cpp:158
 msgid "Service"
-msgstr ""
+msgstr "Szolgáltatás"
 
 #: ksmbstatus.cpp:160
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 #: ksmbstatus.cpp:161
 msgid "GID"
-msgstr ""
+msgstr "GID"
 
 #: ksmbstatus.cpp:162
 msgid "PID"
-msgstr ""
+msgstr "PID"
 
 #: ksmbstatus.cpp:163
 msgid "Machine"
-msgstr ""
+msgstr "Gép"
 
 #: ksmbstatus.cpp:164
 msgid "Open Files"
-msgstr ""
+msgstr "Nyitott Fájlok"
