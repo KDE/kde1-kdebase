@@ -98,7 +98,10 @@ int cIndirectList::Read(const char *filename)
 					return 1;
 				}
 				posPtr = strtok(NULL, ".");
-				Add(file, atoi(posPtr));
+                if ( posPtr )
+                {
+                    Add(file, atoi(posPtr));
+                }
 			}
 			while ((buffer[0] != INFO_MARKER) && (!stream.eof()));
 
