@@ -1582,6 +1582,50 @@ void ApplicationPropsPage::applyChanges()
 	      //	 lDir.absPath().data());
 	      break;                      // and exit while
 	    }
+	    // Begin copy .directory if exists here.
+	    // This block can be commented out without problems
+	    // in case of problems.
+	    {
+	      QFile tmp(kapp->kde_appsdir() +
+			"/" + path.left(i) + "/.directory");
+	      //debug ("---- looking for: %s", tmp.name());
+	      if (tmp.open( IO_ReadOnly))
+	      {
+		//debug ("--- opened RO");
+		char *buff = new char[tmp.size()+10];
+		if (buff != 0)
+		{
+		  if (tmp.readBlock(buff, tmp.size()) != -1)
+		  {
+		    size_t tmpsize = tmp.size();
+		    //debug ("--- read");
+		    tmp.close();
+		    tmp.setName(lDir.absPath() + "/.directory");
+		    //debug ("---- copying to: %s", tmp.name());
+		    if (tmp.open(IO_ReadWrite))
+		    {
+		      //debug ("--- opened RW");
+		      if (tmp.writeBlock(buff, tmpsize) != -1)
+		      {
+			//debug ("--- wrote");
+			tmp.close();
+		      }
+		      else
+		      {
+                        //debug ("--- removed");
+			tmp.remove();
+		      }
+		    }                 // endif can open to write
+		  }                   // endif can read
+		  else     //coulnd't read
+		    tmp.close();
+
+		  delete[] buff;
+		}                     // endif is alocated
+	      }                       // can open to write
+	    }
+	    // End coping .directory file
+	    
 	  }
 	  path.remove (0, i);           // cded to;
 	  if (path[0] == '/')
@@ -1908,24 +1952,39 @@ void BindingPropsPage::applyChanges()
 	    // in case of problems.
 	    {
 	      QFile tmp(kapp->kde_mimedir() +
-		       "/" + path.left(i) + "/.directory");
+			"/" + path.left(i) + "/.directory");
+	      //debug ("---- looking for: %s", tmp.name());
 	      if (tmp.open( IO_ReadOnly))
 	      {
+		//debug ("--- opened RO");
 		char *buff = new char[tmp.size()+10];
 		if (buff != 0)
 		{
 		  if (tmp.readBlock(buff, tmp.size()) != -1)
 		  {
+		    size_t tmpsize = tmp.size();
+		    //debug ("--- read");
 		    tmp.close();
 		    tmp.setName(lDir.absPath() + "/.directory");
+		    //debug ("---- copying to: %s", tmp.name());
 		    if (tmp.open(IO_ReadWrite))
 		    {
-		      if (tmp.writeBlock(buff, tmp.size()) != -1)
+		      //debug ("--- opened RW");
+		      if (tmp.writeBlock(buff, tmpsize) != -1)
+		      {
+			//debug ("--- wrote");
 			tmp.close();
+		      }
 		      else
+		      {
+                        //debug ("--- removed");
 			tmp.remove();
+		      }
 		    }                 // endif can open to write
 		  }                   // endif can read
+		  else     //coulnd't read
+		    tmp.close();
+
 		  delete[] buff;
 		}                     // endif is alocated
 	      }                       // can open to write

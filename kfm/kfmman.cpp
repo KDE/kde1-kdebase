@@ -453,7 +453,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     // We must check here are we root; In that case whole storry is off
     if (view->getGUI()->sumode)
     {
-      debug ("I'm a rooooooot!!!!!!!!!!");
+      //debug ("I'm a rooooooot!!!!!!!!!!");
       bindingDir = false;
       pass2 = false;
     }
