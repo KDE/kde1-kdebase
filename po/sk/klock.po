@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -27,7 +27,7 @@ msgstr "Farba:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:427 slip.cpp:378 space.cpp:587
+#: polygon.cpp:122 rock.cpp:561 science.cpp:646 slip.cpp:378 space.cpp:587
 #: swarm.cpp:341
 msgid "Speed:"
 msgstr "Rýchlos»:"
@@ -591,25 +591,52 @@ msgstr "Zadajte heslo"
 msgid "Failed"
 msgstr "Neúspe¹né"
 
-#: science.cpp:60
+#: science.cpp:74
 msgid "Science"
 msgstr "Science"
 
-#: science.cpp:386
+#: science.cpp:562
 msgid "Setup Science"
 msgstr "Nastavenie Science"
 
-#: science.cpp:413
+#: science.cpp:580
+#, fuzzy
+msgid "Mode:"
+msgstr "Stredná:"
+
+#: science.cpp:585
+msgid "Whirl"
+msgstr ""
+
+#: science.cpp:586
+#, fuzzy
+msgid "Sphere"
+msgstr "Rýchlos»:"
+
+#: science.cpp:598
+msgid "Inverse"
+msgstr ""
+
+#: science.cpp:607
+msgid "Gravity"
+msgstr ""
+
+#: science.cpp:632
 msgid "Intensity:"
 msgstr "Intenzita:"
 
-#: science.cpp:544
+#: science.cpp:660
+msgid "Motion:"
+msgstr ""
+
+#: science.cpp:845
 msgid "About Science"
 msgstr "Informácie o Science"
 
-#: science.cpp:545
+#: science.cpp:846
+#, fuzzy
 msgid ""
-"Science Version 0.2beta\n"
+"Science Version 0.24.2 beta\n"
 "\n"
 "written by Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"

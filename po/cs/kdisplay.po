@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-05-14 18:13 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -64,10 +64,6 @@ msgstr "®ádná tapeta"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "&Listovat..."
-
-#: backgnd.cpp:536
-msgid "Default"
-msgstr "Implicitní"
 
 #: backgnd.cpp:863
 msgid "Desktop names"
@@ -394,3 +390,6 @@ msgstr "Implicitní"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "libovolné"
+
+#~ msgid "Default"
+#~ msgstr "Implicitní"

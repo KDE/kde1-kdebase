@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -64,10 +64,6 @@ msgstr "Bez tapety"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "&Nalistova»..."
-
-#: backgnd.cpp:536
-msgid "Default"
-msgstr "©tandardné"
 
 #: backgnd.cpp:863
 msgid "Desktop names"
@@ -394,6 +390,9 @@ msgstr "¹tandardné"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "µubovoµné"
+
+#~ msgid "Default"
+#~ msgstr "©tandardné"
 
 #~ msgid "Window title font"
 #~ msgstr "Písmo v titulku okna"

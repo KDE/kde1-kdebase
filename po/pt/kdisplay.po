@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay.po\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-01-26 14:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -56,10 +56,6 @@ msgstr "Nenhumm papel de parede"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "&Escolher..."
-
-#: backgnd.cpp:536
-msgid "Default"
-msgstr "Por omissão"
 
 #: backgnd.cpp:863
 msgid "Desktop names"
@@ -387,3 +383,6 @@ msgstr "por omissão"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "qualquer"
+
+#~ msgid "Default"
+#~ msgstr "Por omissão"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-03-30 14:57+01\n"
 "Last-Translator: Oliver Hensel <oliver.hensel@gmx.de>\n"
 
@@ -56,10 +56,6 @@ msgstr "Keine Hintergrundgrafik"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "&Auswählen..."
-
-#: backgnd.cpp:536
-msgid "Default"
-msgstr "Standard"
 
 #: backgnd.cpp:863
 msgid "Desktop names"
@@ -387,3 +383,6 @@ msgstr "Standard"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "irgendein"
+
+#~ msgid "Default"
+#~ msgstr "Standard"

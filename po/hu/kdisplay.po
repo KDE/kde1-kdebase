@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-02-26 19:20+0100\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -71,11 +71,6 @@ msgstr "Tapéta"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr ""
-
-#: backgnd.cpp:536
-#, fuzzy
-msgid "Default"
-msgstr "KDE alap"
 
 #: backgnd.cpp:863
 #, fuzzy
@@ -416,6 +411,10 @@ msgstr "KDE alap"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "bármelyik"
+
+#, fuzzy
+#~ msgid "Default"
+#~ msgstr "KDE alap"
 
 #, fuzzy
 #~ msgid "Window title font"

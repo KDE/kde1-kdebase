@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-05-22 10:10+0000\n"
 "Last-Translator: Sasha Konecni <sasha@msi-uk.com>\n"
 "Language-Team: Macedonian\n"
@@ -69,10 +69,6 @@ msgstr "Tapet"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "&Prelistaj..."
-
-#: backgnd.cpp:536
-msgid "Default"
-msgstr "Standarden"
 
 #: backgnd.cpp:863
 #, fuzzy
@@ -411,6 +407,9 @@ msgstr "standarden"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "koj bilo"
+
+#~ msgid "Default"
+#~ msgstr "Standarden"
 
 #~ msgid "Color"
 #~ msgstr "Boja"

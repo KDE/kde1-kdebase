@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-04-20 22:09+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -73,10 +73,6 @@ msgstr "沒有桌布"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "瀏覽[&B]..."
-
-#: backgnd.cpp:536
-msgid "Default"
-msgstr "預設"
 
 #: backgnd.cpp:863
 #, fuzzy
@@ -422,6 +418,9 @@ msgstr "預設"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "任何"
+
+#~ msgid "Default"
+#~ msgstr "預設"
 
 #, fuzzy
 #~ msgid "Window title font"

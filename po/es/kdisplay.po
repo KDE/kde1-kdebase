@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-05-16 20:16+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
@@ -56,10 +56,6 @@ msgstr "Sin tapiz"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "Examinar..."
-
-#: backgnd.cpp:536
-msgid "Default"
-msgstr "KDE por defecto"
 
 #: backgnd.cpp:863
 msgid "Desktop names"
@@ -387,3 +383,6 @@ msgstr "KDE por defecto"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "cualquiera"
+
+#~ msgid "Default"
+#~ msgstr "KDE por defecto"

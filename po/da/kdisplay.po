@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,10 +74,6 @@ msgstr "Tapet"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "&Gennemsøg..."
-
-#: backgnd.cpp:536
-msgid "Default"
-msgstr ""
 
 #: backgnd.cpp:863
 #, fuzzy

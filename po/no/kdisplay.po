@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-02-26 22:36+0100\n"
 "Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -74,10 +74,6 @@ msgstr "Tapet"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr ""
-
-#: backgnd.cpp:536
-msgid "Default"
-msgstr "Standard"
 
 #: backgnd.cpp:863
 #, fuzzy
@@ -415,6 +411,9 @@ msgstr "standard"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "hvilken som helst"
+
+#~ msgid "Default"
+#~ msgstr "Standard"
 
 #, fuzzy
 #~ msgid "Window title font"

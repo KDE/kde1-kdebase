@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-02-23 19:44\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN  <LL@li.org>\n"
@@ -26,35 +26,35 @@ msgstr "Propietats"
 msgid "Go!"
 msgstr "Vinga!"
 
-#: kpanel.C:256 tools.C:800
+#: kpanel.C:256 tools.C:787
 msgid "Where do you want to go tomorrow?"
 msgstr "On vols anar demà?"
 
-#: kpanel.C:329
+#: kpanel.C:330
 msgid "No info available"
 msgstr "No hi ha informació"
 
-#: kpanel.C:368 props.C:156 props.C:157
+#: kpanel.C:369 props.C:156 props.C:157
 msgid "Logout"
 msgstr "Sortida"
 
-#: kpanel.C:376 props.C:155
+#: kpanel.C:377 props.C:155
 msgid "Lock screen"
 msgstr "Bloquejar la pantalla"
 
-#: kpanel.C:385
+#: kpanel.C:386
 msgid "Hide the panel"
 msgstr "Ocultar el panell"
 
-#: kpanel.C:395
+#: kpanel.C:396
 msgid "Show the panel"
 msgstr "Mostrar el panell"
 
-#: kpanel.C:1104 tools.C:616
+#: kpanel.C:1105 tools.C:616
 msgid "No comment available"
 msgstr "Cap comentari"
 
-#: kpanel.C:1113 tools.C:809
+#: kpanel.C:1114 tools.C:796
 msgid "Windowlist"
 msgstr "Llista de finestres"
 
@@ -74,7 +74,7 @@ msgstr "Afegir llista de finestres"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Afegir un menú de llista de finestres al panell"
 
-#: events.C:714 props.C:142
+#: events.C:722 props.C:142
 msgid "Configure"
 msgstr "Configurar"
 
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Add or remove applications in the menu structure "
 msgstr ""
 
-#: events.C:716 props.C:148
+#: events.C:724 props.C:148
 msgid "Restart"
 msgstr "Reengegar"
 
@@ -106,15 +106,15 @@ msgstr "Panell"
 msgid "Lock Screen"
 msgstr "Bloquejar la pantalla"
 
-#: props.C:309
+#: props.C:310
 msgid "The menu editor is not installed."
 msgstr ""
 
-#: events.C:752 props.C:310
+#: events.C:760 props.C:311
 msgid "Oops!"
 msgstr ""
 
-#: events.C:751
+#: events.C:759
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 

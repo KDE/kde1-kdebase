@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -64,10 +64,6 @@ msgstr "Nema pozadinske slike"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "Po&tra¾i..."
-
-#: backgnd.cpp:536
-msgid "Default"
-msgstr "Podrazumjevano"
 
 #: backgnd.cpp:863
 msgid "Desktop names"
@@ -394,6 +390,9 @@ msgstr "podrazumjevano"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "bilo koji"
+
+#~ msgid "Default"
+#~ msgstr "Podrazumjevano"
 
 #~ msgid "Window title font"
 #~ msgstr "Pismo imena prozora"

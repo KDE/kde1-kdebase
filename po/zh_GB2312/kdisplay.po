@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -59,10 +59,6 @@ msgstr "没有墙纸"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr ""
-
-#: backgnd.cpp:536
-msgid "Default"
-msgstr "缺省"
 
 #
 #: backgnd.cpp:863
@@ -401,6 +397,9 @@ msgstr "缺省"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "任何"
+
+#~ msgid "Default"
+#~ msgstr "缺省"
 
 #, fuzzy
 #~ msgid "Window title font"

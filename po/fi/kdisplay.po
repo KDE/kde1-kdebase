@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDISPLAY\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,10 +64,6 @@ msgstr "Ei taustakuvaa"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "&Selaa..."
-
-#: backgnd.cpp:536
-msgid "Default"
-msgstr "Oletus"
 
 #: backgnd.cpp:863
 msgid "Desktop names"
@@ -394,6 +390,9 @@ msgstr "oletus"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "kaikki"
+
+#~ msgid "Default"
+#~ msgstr "Oletus"
 
 #~ msgid "Window title font"
 #~ msgstr "Ikkunan otsikon kirjasin"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
@@ -17,35 +17,35 @@ msgstr "Ιδιότητες"
 msgid "Go!"
 msgstr "Εκτέλεση"
 
-#: kpanel.C:256 tools.C:800
+#: kpanel.C:256 tools.C:787
 msgid "Where do you want to go tomorrow?"
 msgstr "Που θέλετε να πάτε αύριο;"
 
-#: kpanel.C:329
+#: kpanel.C:330
 msgid "No info available"
 msgstr "Δεν υπάρχουν σχετικές πληροφορίες"
 
-#: kpanel.C:368 props.C:156 props.C:157
+#: kpanel.C:369 props.C:156 props.C:157
 msgid "Logout"
 msgstr "Έξοδος"
 
-#: kpanel.C:376 props.C:155
+#: kpanel.C:377 props.C:155
 msgid "Lock screen"
 msgstr "Κλέιδωμα οθόνης"
 
-#: kpanel.C:385
+#: kpanel.C:386
 msgid "Hide the panel"
 msgstr "Απόκρυψη του πίνακα"
 
-#: kpanel.C:395
+#: kpanel.C:396
 msgid "Show the panel"
 msgstr "Εμφάνιση του πίνακα"
 
-#: kpanel.C:1104 tools.C:616
+#: kpanel.C:1105 tools.C:616
 msgid "No comment available"
 msgstr "Δεν υπάρχει σχετικό σχόλιο"
 
-#: kpanel.C:1113 tools.C:809
+#: kpanel.C:1114 tools.C:796
 msgid "Windowlist"
 msgstr "Λίστα παραθύρων"
 
@@ -65,7 +65,7 @@ msgstr "Προσθήκη λίστας παραθύρων"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Προσθήκη λίστας παραθύρων στον πίνακα"
 
-#: events.C:714 props.C:142
+#: events.C:722 props.C:142
 msgid "Configure"
 msgstr "Διαμόρφωση"
 
@@ -81,7 +81,7 @@ msgstr ""
 msgid "Add or remove applications in the menu structure "
 msgstr ""
 
-#: events.C:716 props.C:148
+#: events.C:724 props.C:148
 msgid "Restart"
 msgstr "Επανεκίννηση"
 
@@ -97,15 +97,15 @@ msgstr "Πίνακας"
 msgid "Lock Screen"
 msgstr "Κλέιδωμα οθόνης"
 
-#: props.C:309
+#: props.C:310
 msgid "The menu editor is not installed."
 msgstr ""
 
-#: events.C:752 props.C:310
+#: events.C:760 props.C:311
 msgid "Oops!"
 msgstr ""
 
-#: events.C:751
+#: events.C:759
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,11 +74,6 @@ msgstr "Ταπετσαρία"
 #, fuzzy
 msgid "&Browse..."
 msgstr "Κοίταξε"
-
-#: backgnd.cpp:536
-#, fuzzy
-msgid "Default"
-msgstr "Συνιθισμένο KDE"
 
 #: backgnd.cpp:863
 msgid "Desktop names"
@@ -420,6 +415,10 @@ msgstr "Συνιθισμένο KDE"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Default"
+#~ msgstr "Συνιθισμένο KDE"
 
 #, fuzzy
 #~ msgid "Window title font"

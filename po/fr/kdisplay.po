@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-03-09 22:13 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -64,10 +64,6 @@ msgstr "Pas de papier peint"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "&Parcourir ..."
-
-#: backgnd.cpp:536
-msgid "Default"
-msgstr "Par défaut"
 
 #: backgnd.cpp:863
 msgid "Desktop names"
@@ -395,6 +391,9 @@ msgstr "par défaut"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "n'importe lequel"
+
+#~ msgid "Default"
+#~ msgstr "Par défaut"
 
 #~ msgid "Window title font"
 #~ msgstr "Police du titre des fenêtres"

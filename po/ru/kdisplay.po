@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1997-09-05 02:51+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -77,11 +77,6 @@ msgstr "Обои"
 #: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "&Просмотреть..."
-
-#
-#: backgnd.cpp:536
-msgid "Default"
-msgstr "По умолчанию"
 
 #: backgnd.cpp:863
 #, fuzzy
@@ -428,6 +423,10 @@ msgstr "по умолчанию"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "любой"
+
+#
+#~ msgid "Default"
+#~ msgstr "По умолчанию"
 
 #, fuzzy
 #~ msgid "Window title font"

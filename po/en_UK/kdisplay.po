@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-30 17:26+0200\n"
 "PO-Revision-Date: 1998-04-26 21:22+1000\n"
 "Last-Translator: Martin Jones <mjones@kde.org>\n"
 
@@ -60,10 +60,6 @@ msgstr ""
 
 #: backgnd.cpp:334
 msgid "&Browse..."
-msgstr ""
-
-#: backgnd.cpp:536
-msgid "Default"
 msgstr ""
 
 #: backgnd.cpp:863
