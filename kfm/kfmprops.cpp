@@ -540,19 +540,19 @@ void ExecPropsPage::applyChanges()
     QTextStream pstream( &f );
     KConfig config( &pstream );
     config.setGroup( "KDE Desktop Entry" );
-    config.writeEntry( "Exec", execEdit->text() );
-    config.writeEntry( "Path", pathEdit->text() );
+    config.writeEntry( "Exec", QString( execEdit->text() ) );
+    config.writeEntry( "Path", QString( pathEdit->text() ) );
 
     int i = iconBox->currentItem();
     if ( i != -1 )
-	config.writeEntry( "Icon", iconBox->text( i )  );
+	config.writeEntry( "Icon", QString( iconBox->text( i ) ) );
 
     if ( terminalCheck->isChecked() )
-	config.writeEntry( "Terminal", "1" );
+	config.writeEntry( "Terminal", QString( "1" ) );
     else
-	config.writeEntry( "Terminal", "0" );
+	config.writeEntry( "Terminal", QString( "0" ) );
 
-    config.writeEntry( "TerminalOptions", terminalEdit->text() );
+    config.writeEntry( "TerminalOptions", QString( terminalEdit->text() ) );
     config.sync();
     f.close();
 }
@@ -712,11 +712,11 @@ void URLPropsPage::applyChanges()
     QTextStream pstream( &f );
     KConfig config( &pstream );
     config.setGroup( "KDE Desktop Entry" );
-    config.writeEntry( "URL", URLEdit->text() );
+    config.writeEntry( "URL", QString( URLEdit->text() ) );
 
     int i = iconBox->currentItem();
     if ( i != -1 )
-	config.writeEntry( "Icon", iconBox->text( i )  );
+	config.writeEntry( "Icon", QString( iconBox->text( i ) ) );
 
     config.sync();
     f.close();
@@ -900,14 +900,14 @@ void DirPropsPage::applyChanges()
     if ( i != -1 )
     {
 	if ( strcmp( wallBox->text( i ), "(None)" ) == 0 )
-	    config.writeEntry( "BgImage", "" );
+	    config.writeEntry( "BgImage", QString( "" ) );
 	else
-	    config.writeEntry( "BgImage", wallBox->text( i ) );
+	    config.writeEntry( "BgImage", QString( wallBox->text( i ) ) );
     }
     
     i = iconBox->currentItem();
     if ( i != -1 )
-	config.writeEntry( "Icon", iconBox->text( i )  );
+	config.writeEntry( "Icon", QString( iconBox->text( i ) ) );
 
     config.sync();
     f.close();
@@ -1033,16 +1033,16 @@ void DirPropsPage::slotApplyGlobal()
     if ( i != -1 )
     {
 	if ( strcmp( wallBox->text( i ), "(None)" ) == 0 )
-	    config->writeEntry( "BgImage", "" );
+	    config->writeEntry( "BgImage", QString( "" ) );
 	else
-	    config->writeEntry( "BgImage", wallBox->text( i ) );
+	    config->writeEntry( "BgImage", QString( wallBox->text( i ) ) );
     }
 
     config->setGroup( "Icons" );
 
     i = iconBox->currentItem();
     if ( i != -1 )
-	config->writeEntry( "Icon", iconBox->text( i )  );
+	config->writeEntry( "Icon", QString( iconBox->text( i ) ) );
 
     config->sync();
 
@@ -1231,13 +1231,13 @@ void ApplicationPropsPage::applyChanges()
     QTextStream pstream( &f );
     KConfig config( &pstream );
     config.setGroup( "KDE Desktop Entry" );
-    config.writeEntry( "Comment", commentEdit->text() );
+    config.writeEntry( "Comment", QString( commentEdit->text() ) );
 
     QString tmp = binaryPatternEdit->text();
     if ( tmp.length() > 0 )
 	if ( tmp.right(1) != ";" )
 	    tmp += ";";
-    config.writeEntry( "BinaryPattern", tmp.data() );
+    config.writeEntry( "BinaryPattern", tmp );
 
     protocolsStr = "";
     if ( protocolFILE->isChecked() )
@@ -1252,7 +1252,7 @@ void ApplicationPropsPage::applyChanges()
 	protocolsStr += "man;";
     if ( protocolINFO->isChecked() )
 	protocolsStr += "info;";
-    config.writeEntry( "Protocols", protocolsStr.data() );
+    config.writeEntry( "Protocols", protocolsStr );
 
     extensionsStr = "";
     for ( int i = 0; i < extensionsList->count(); i++ )
@@ -1260,7 +1260,7 @@ void ApplicationPropsPage::applyChanges()
 	extensionsStr += extensionsList->text( i );
 	extensionsStr += ";";
     }
-    config.writeEntry( "Extensions", extensionsStr.data() );
+    config.writeEntry( "Extensions", extensionsStr );
     
     config.sync();
     f.close();
@@ -1456,16 +1456,17 @@ void BindingPropsPage::applyChanges()
     if ( tmp.length() > 1 )
 	if ( tmp.right(1) != ";" )
 	    tmp += ";";
-    config.writeEntry( "Patterns", tmp.data() );
+    config.writeEntry( "Patterns", tmp );
 
-    config.writeEntry( "Comment", commentEdit->text() );
+    config.writeEntry( "Comment", QString( commentEdit->text() ) );
 
     if ( iconBox->currentItem() != -1 )
-	config.writeEntry( "DefaultApp", appBox->text( appBox->currentItem() ) );
+	config.writeEntry( "DefaultApp", 
+					   QString( appBox->text( appBox->currentItem() ) ) );
     
     int i = iconBox->currentItem();
     if ( i != -1 )
-	config.writeEntry( "Icon", iconBox->text( i )  );
+	config.writeEntry( "Icon", QString( iconBox->text( i ) )  );
 
     config.sync();
     f.close();
