@@ -1,0 +1,25 @@
+/* XPM */
+static char * kdisknav_xpm[] = {
+"16 16 6 1",
+" 	c None"
+".	c #00000000FFFF",
+"X	c #FFFFFFFF0000",
+"o	c #000000000000",
+"O	c #FFFF00000000",
+"+	c #6185A699FFFF",
+"                ",
+"      .         ",
+" XXX  .   oo oo ",
+" XXX  ..    o   ",
+" XXX  ...       ",
+"      ....    o ",
+"      .....     ",
+"      ......    ",
+" O    .......   ",
+" OO   ........  ",
+" OOOOOOOOOOOOOOO",
+"  OOOOOOOOOOOOOO",
+"++OOOOOOOOOOOOO+",
+"+++OOOOOOOOOOO++",
+"++++++++++++++++",
+"++++++++++++++++"};
