@@ -69,6 +69,8 @@ struct kwmOptions {
   const char* rstart;
   int titlebar_doubleclick_command;
 
+  bool TraverseAll;
+
   BUTTON_FUNCTIONS buttons[6];
 
   QPixmap* titlebarPixmapActive;

@@ -31,6 +31,11 @@ In 0.10:
        Hopefully kcmkwm will soon support this feature, too.
 
      - new windowPlacement=cascade (Cristian Tibirna)
+     - new option
+                      TraverseAll=on/off
+       which makes Alt-Tab traverse all windows on all virtual desktops.
+       Default is "off", which means that Alt-trab traversal is only
+       possible on the current desktop.
      - small bugfix for FreeBSD (Marc van Kempen)
      - menuButton (if defined) on the top
 

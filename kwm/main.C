@@ -778,6 +778,16 @@ void MyApp::readConfiguration(){
   options.titlebar_doubleclick_command = Client::operationFromCommand(s);
   config->writeEntry("TitlebarDoubleClickCommand", s);
 
+  key = config->readEntry("TraverseAll");
+  if( key == "on")
+    options.TraverseAll = true;
+  else if( key == "off")
+    options.TraverseAll = false;
+  else{
+    config->writeEntry("TraverseAll", "off");
+    options.TraverseAll = false;
+  }
+
   config->setGroup( "Buttons");
 
   for (i=0; i<6; i++){
@@ -980,15 +990,20 @@ bool MyApp::handleKeyPress(XKeyEvent key){
 	else
 	  infoBoxClient = manager->previousClient(infoBoxClient);
       } while (infoBoxClient != sign && infoBoxClient && 
+	       !options.TraverseAll &&
 	       !infoBoxClient->isOnDesktop(manager->currentDesktop()));
-	       
-      if (infoBoxClient && infoBoxClient->
-	  isOnDesktop(manager->currentDesktop())){
+
+      if (infoBoxClient){
+	QString s;
+	if (!infoBoxClient->isOnDesktop(manager->currentDesktop())){
+	  s = KWM::getDesktopName(infoBoxClient->desktop);
+	  s.append(": ");
+	}
 	if (infoBoxClient->isIconified())
-	  setInfoBoxText(QString("(")+infoBoxClient->label+")", 
+	  setInfoBoxText(s + QString("(")+infoBoxClient->label+")", 
 			 infoBoxClient->window);
 	else
-	  setInfoBoxText(infoBoxClient->label,
+	  setInfoBoxText(s + infoBoxClient->label,
 			 infoBoxClient->window);
       }
       else
@@ -1026,9 +1041,6 @@ bool MyApp::handleKeyPress(XKeyEvent key){
 	if (infoBoxVirtualDesktop > manager->number_of_desktops)
 	  infoBoxVirtualDesktop = 1;
       }
-//       QString s = desktopMenu->text(desktopMenu->idAt(infoBoxVirtualDesktop-1));
-//       while (s.find('&',0) != -1)
-//  	s.remove(s.find('&',0),1);
       setInfoBoxText(KWM::getDesktopName(infoBoxVirtualDesktop), None);
       return False;
     }
@@ -1151,6 +1163,9 @@ void MyApp::handleKeyRelease(XKeyEvent key){
 	hideInfoBox();
 	tab_grab = FALSE;
 	if (infoBoxClient){
+	  if (!infoBoxClient->isOnDesktop(manager->currentDesktop()))
+	    manager->switchDesktop(infoBoxClient->desktop);
+	  
 	  if (infoBoxClient->state == NormalState){
 	    manager->raiseClient(infoBoxClient);
 	    manager->activateClient(infoBoxClient);

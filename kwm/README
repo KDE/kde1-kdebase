@@ -170,6 +170,7 @@ Answer: Yes it is. You simple have to go through kwm.h/kwm.C from
     ResizeAnimation=on, off
     ControlTab=on, off
     Button3Grab=on, off
+    TraverseAll=on, off
     RstartProtocol=.... [default is "rstart -v"]
 
     ShapeMode=off, on
