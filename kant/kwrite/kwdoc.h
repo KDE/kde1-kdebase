@@ -162,12 +162,9 @@ class KWriteDoc : QObject {
     void setHighlight(int n);
     void makeAttribs();
     void updateFontData();
-//    void setHighlight(Highlight *);
     void setTabWidth(int);
-//    void update(VConfig &);
     void updateLines(int startLine = 0, int endLine = 0xffffff, int flags = 0);
     void updateMaxLength(TextLine *);
-//    void updateCursors(PointStruc &start, PointStruc &end, bool insert = true);
     void updateViews(KWriteView *exclude = 0L);
 
     int textWidth(TextLine *, int cursorX);
@@ -188,12 +185,13 @@ class KWriteDoc : QObject {
     void deselectAll();
     void invertSelection();
 
+    QString text();
+    void setText(const char *);
     bool hasMarkedText() {return (selectEnd >= selectStart);}
     QString markedText(int flags);
     void delMarkedText(KWriteView *, VConfig &);
 
     QColor &cursorCol(int x, int y);
-//    void paintTextLine(QPainter &, int line, int xPos, int xStart, int xEnd, int yPos);
     void paintTextLine(QPainter &, int line, int xStart, int xEnd);
 
     void setModified(bool);
@@ -224,8 +222,7 @@ class KWriteDoc : QObject {
     void newUndo();
     void recordStart(PointStruc &, bool keepModal = false);
     void recordAction(KWAction::Action, PointStruc &);
-    void recordReplace(PointStruc &, int len, const
-      char *text = 0L, int textLen = 0);
+    void recordReplace(PointStruc &, int len, const char *text = 0L, int textLen = 0);
     void recordEnd(KWriteView *, VConfig &);
     void recordEnd(KWriteView *, PointStruc &, int flags);
     void doActionGroup(KWActionGroup *, int flags);
@@ -240,10 +237,8 @@ class KWriteDoc : QObject {
 
     QList<TextLine> contents;
     QColor colors[5];
-//    Attribute **attribs;//[nAttribs];
     HlManager *hlManager;
     Highlight *highlight;
-//    int hlNumber;
     Attribute attribs[nAttribs];
 
     int tabChars;

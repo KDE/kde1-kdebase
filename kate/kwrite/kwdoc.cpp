@@ -1361,19 +1361,61 @@ void KWriteDoc::invertSelection() {
 }
 
 
+QString KWriteDoc::text() {
+  TextLine *textLine;
+  int len, last, z, end, i;
+
+  len = 1;
+  last = lastLine();
+  for (z = 0; z <= last; z++) {
+    textLine = contents.at(z);
+    len += textLine->length() + 1;
+  }
+  QString s(len);
+  len = 0;
+  for (z = 0; z <= last; z++) {
+    textLine = contents.at(z);
+    end = textLine->length();
+    len += end;
+    for (i = 0; i < end; i++) s[len] = textLine->getChar(i);
+    s[len] = '\n';
+    len++;
+  }
+  s[len] = '\0';
+  return s;
+}
+
+void KWriteDoc::setText(const char *s) {
+  TextLine *textLine;
+
+  clear();
+
+  textLine = contents.getFirst();
+  while (*s) {
+    if ((unsigned char) *s >= 32 || *s == '\t') {
+      textLine->append(*s);
+    } else if (*s == '\n') {
+      textLine = new TextLine();
+      contents.append(textLine);
+    }
+    s++;
+  }
+  updateLines();
+}
+
+
 QString KWriteDoc::markedText(int flags) {
   TextLine *textLine;
   int len, z, start, end, i;
 
-  len = 0;
-
+  len = 1;
   if (!(flags & cfVerticalSelect)) {
     for (z = selectStart; z <= selectEnd; z++) {
       textLine = contents.at(z);
       len += textLine->numSelected();
       if (textLine->isSelected()) len++;
     }
-    QString s(len + 1);
+    QString s(len);
     len = 0;
     for (z = selectStart; z <= selectEnd; z++) {
       textLine = contents.at(z);
@@ -1398,7 +1440,7 @@ QString KWriteDoc::markedText(int flags) {
       textLine = contents.at(z);
       len += textLine->numSelected() + 1;
     }
-    QString s(len + 1);
+    QString s(len);
     len = 0;
     for (z = selectStart; z <= selectEnd; z++) {
       textLine = contents.at(z);

@@ -938,7 +938,8 @@ KWBookmark::KWBookmark() {
   cursor.y = -1;
 }
 
-KWrite::KWrite(KWriteDoc *doc, QWidget *parent) : QWidget(parent) {
+KWrite::KWrite(KWriteDoc *doc, QWidget *parent, const char *name)
+  : QWidget(parent, name) {
   kWriteDoc = doc;
   kWriteView = new KWriteView(this,doc);
 
@@ -955,7 +956,7 @@ KWrite::KWrite(KWriteDoc *doc, QWidget *parent) : QWidget(parent) {
 
 KWrite::~KWrite() {
   delete kWriteView;
-  delete popup;
+  delete popup; //right mouse button popup
 }
 
 
@@ -965,6 +966,16 @@ int KWrite::currentLine() {
 
 int KWrite::currentColumn() {
   return kWriteDoc->currentColumn(kWriteView->cursor);
+}
+
+void KWrite::setCursorPosition(int line, int col) {
+  PointStruc cursor;
+
+  cursor.x = col;
+  cursor.y = line;
+  kWriteView->updateCursor(cursor);
+  kWriteDoc->unmarkFound();
+  kWriteDoc->updateViews();
 }
 
 int KWrite::config() {
@@ -982,12 +993,12 @@ bool KWrite::isOverwriteMode() {
   return (configFlags & cfOvr);
 } */
 
-void KWrite::setModified(bool m) {
-  kWriteDoc->setModified(m);
-}
-
 bool KWrite::isModified() {
   return kWriteDoc->modified;//isModified();
+}
+
+void KWrite::setModified(bool m) {
+  kWriteDoc->setModified(m);
 }
 
 bool KWrite::isLastView() {
@@ -1042,6 +1053,19 @@ void KWrite::toggleVertical() {
 
 void KWrite::toggleOverwrite() {
   setConfig(configFlags ^ cfOvr);
+}
+
+QString KWrite::text() {
+  return kWriteDoc->text();
+}
+
+QString KWrite::markedText() {
+  return kWriteDoc->markedText(configFlags);
+}
+
+void KWrite::setText(const char *s) {
+  kWriteDoc->setText(s);
+  kWriteDoc->updateViews();
 }
 
 
@@ -1338,9 +1362,12 @@ void KWrite::kfmError(int e, const char *s) {
 
 
 const char *KWrite::fileName() {
-  return kWriteDoc->fileName();//fPath;
+  return kWriteDoc->fileName();
 }
 
+void KWrite::setFileName(const char *s) {
+  kWriteDoc->setFileName(s);
+}
 
 bool KWrite::canDiscard() {
   int query;
