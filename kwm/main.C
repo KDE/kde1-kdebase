@@ -785,17 +785,6 @@ void MyApp::readConfiguration(){
       manager->destroyBorderWindows();
   }    
 
-
-  if (config->hasKey("EdgeResistance")){
-    options.EdgeResistance = config->readNumEntry("EdgeResistance");
-    if (options.EdgeResistance < -1)
-      options.EdgeResistance = 50;
-  }
-  else{
-    options.EdgeResistance = 50;
-    config->writeEntry("EdgeResistance", options.EdgeResistance);
-  }
-
   key = config->readEntry("ShapeMode");
   if( key == "on")
     options.ShapeMode = true;
@@ -914,7 +903,7 @@ void MyApp::readConfiguration(){
     if (options.BorderSnapZone > 50) options.BorderSnapZone = 50;
   }
   else{
-    options.BorderSnapZone = 0;
+    options.BorderSnapZone = 10;
     config->writeEntry("BorderSnapZone", options.BorderSnapZone);
   }
   
@@ -924,7 +913,7 @@ void MyApp::readConfiguration(){
     if (options.WindowSnapZone > 50) options.WindowSnapZone = 50;
   }
   else{
-    options.WindowSnapZone = 0;
+    options.WindowSnapZone = 10;
     config->writeEntry("WindowSnapZone", options.WindowSnapZone);
   }
   //CT ---  

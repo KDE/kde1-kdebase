@@ -11,6 +11,11 @@ influences from my experiences with the former kwm.
 
 In 0.11:
 --------
+patchlevel 3:
+        - "snap to border" and "snap to window" modified: they are
+           working in "real time", now. The default is 10 pixel for
+           both. This made my older edge resitance obsolete (removed)
+
 patchlevel 2:
 	- fixed a bunch of bugs with smart placement, cascade placement,
 	  unclutter, snap to border and snap to window (bugs given mostly

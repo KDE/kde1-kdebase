@@ -116,27 +116,8 @@ void resizecalc_b(Client *c, int /* x */, int y){
 
 void dragcalc(Client* c, int x, int y) {
   c->geometry.moveTopLeft(QPoint(QPoint(x,y)- c->old_cursor_pos));
-  // Edge Resistance
-  QRect r = KWM::getWindowRegion(manager->currentDesktop());
-  int tmp;
-  // horizontal
-  if (c->geometry.width() <= r.width()){
-    tmp = c->geometry.right() - r.right();
-    if (tmp > 0 && tmp < options.EdgeResistance)
-      c->geometry.moveBy(-tmp, 0);
-    tmp = r.left() - c->geometry.left();
-    if (tmp > 0 && tmp < options.EdgeResistance)
-      c->geometry.moveBy(tmp, 0);
-  }
-  // vertical
-  if (c->geometry.height() <= r.height()){
-    tmp = c->geometry.bottom() - r.bottom();
-    if (tmp > 0 && tmp < options.EdgeResistance)
-      c->geometry.moveBy(0, -tmp);
-    tmp = r.top() - c->geometry.top();
-    if (tmp > 0 && tmp < options.EdgeResistance)
-      c->geometry.moveBy(0, tmp);
-  }
+  if (options.WindowSnapZone > 0) manager->snapToWindow(c);
+  if (options.BorderSnapZone > 0) manager->snapToBorder(c);
 }
 
 void draw_selection_rectangle(int x, int y, int dx, int dy){
@@ -372,6 +353,10 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
       c->geometry.moveBy(0, c->geometry.height());
       c->geometry.setHeight(-c->geometry.height());
     }
+
+    if (options.WindowSnapZone > 0) manager->snapToWindow(c);
+    if (options.BorderSnapZone > 0) manager->snapToBorder(c);
+
     manager->sendConfig(c);
     
     if (options.WindowMoveType == TRANSPARENT || recalc != dragcalc)
@@ -385,16 +370,6 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
       if (c->buttonMaximize->isOn())
 	c->buttonMaximize->toggle();
     }
-
-    //CT 17mar98 - magics; 22mar98 - snap to border last
-    if (options.WindowSnapZone > 0) manager->snapToWindow(c);
-    if (options.BorderSnapZone > 0) manager->snapToBorder(c);
-    //send config to clients once for both
-    if ((options.BorderSnapZone > 0) ||
-	(options.WindowSnapZone > 0))
-      manager->sendConfig(c,FALSE);
-
-
 
     options.FocusPolicy =  oldFocusPolicy;
 

@@ -1365,9 +1365,6 @@ void Manager::snapToBorder(Client *c) {
   
   //then snap 
   c->geometry.moveTopLeft(QPoint(cx, cy));
-  /*this is maybe better to be done in sweepdrag once
-    manager->sendConfig(c,FALSE);
-  */
 }
 
 //CT 17mar98 - magics: WindowSnapZone
@@ -1446,7 +1443,6 @@ void Manager::snapToWindow(Client *c) {
 
   //now snap it  
   c->geometry.moveTopLeft(QPoint(nx, ny));
-  //sendConfig issued in sweepdrag
 }
 
 void Manager::manage(Window w, bool mapped){
