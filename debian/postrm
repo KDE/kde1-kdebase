@@ -1,13 +1,26 @@
-#!/bin/sh
+#! /bin/sh  
+# postrm script for kdebase
+#
+# see: dh_installdeb(1)
 
 set -e
 
 case "$1" in
-remove)
-	grep -v '\<kde\>' /etc/X11/window-managers > /etc/X11/window-managers.temp
-	mv /etc/X11/window-managers.temp /etc/X11/window-managers
-	rm -rf /usr/share/applnk/debian_menu
-	;; 
+       upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+       ;;
+
+       purge)
+         rm -rf /usr/share/applnk/ > /dev/null 2>&1
+       ;;
+       remove)
+         if [ -x /usr/sbin/register-window-manager ]; then
+           /usr/sbin/register-window-manager --remove /usr/bin/kde
+         fi
+	 rm -rf /usr/share/applnk/debian_menu
+       ;; 
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 0
 
 esac   
 

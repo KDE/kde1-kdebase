@@ -1,3 +1,12 @@
+kdebase (4:1.1.1-19990822-1) unstable; urgency=low
+
+  * New upstream CVS version
+  * Re-Writing post/pre scripts to follow debian policy a bit more as well
+    as verify validity of install/remove process...in the process cleaned
+    up a couple of bugs I had overlooked before
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Sun, 22 Aug 1999 02:00:27 -0400
+
 kdebase (4:1.1.1-19990818-1) unstable; urgency=low
 
   * New upstream CVS version

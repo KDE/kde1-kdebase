@@ -2,13 +2,12 @@ Source: kdebase
 Section: contrib/x11
 Priority: optional
 Maintainer: Stephan Kulow <coolo@kde.org>
-Standards-Version: 2.5.0
+Standards-Version: 2.5.1
 
 Package: kdebase
 Architecture: any
-Pre-Depends: xbase-clients, xfree86-common
-Depends: menu (>=1.5-5), ${shlibs:Depends}, rman
-Suggests: kdewallpapers, kdm, kdeadmin, kdegames, kdegraphics, kdemultimedia, kdenetwork, kdetoys, kdeutils, korganizer, kdebase-doc, kdebase-i18n
+Depends: menu (>=1.5-5), ${shlibs:Depends}, rman, xfree86-common
+Suggests: kdewallpapers, kdm, kdeadmin, kdegames, kdegraphics, kdemultimedia, kdenetwork, kdetoys, kdeutils, korganizer, kdebase-doc, kdebase-i18n, xbase-clients
 Description: KDE core applications
  This is a suite of all kde core applications :
  file manager kfm, window manager kwm
