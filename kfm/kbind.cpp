@@ -613,7 +613,7 @@ KMimeType* KMimeType::findType( const char *_url )
 	
 	struct stat buff;
 	// Can we make a stat ?
-	if ( stat( path, &buff ) == 0 )
+	if ( stat( path.data(), &buff ) == 0 )
 	{
 	    if ( S_ISFIFO( buff.st_mode ) )
 		return PipeType;

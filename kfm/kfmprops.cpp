@@ -221,10 +221,10 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 	path = path.left( path.length() - 1 );             
 
     struct stat buff;
-    stat( path, &buff );
+    stat( path.data(), &buff );
 
     struct stat lbuff;
-    lstat( path, &lbuff );
+    lstat( path.data(), &lbuff );
 
     QLabel *l;
  
@@ -294,7 +294,7 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 	lname->setEnabled( false );
 
 	char buffer[1024];
-	int n = readlink( path, buffer, 1022 );
+	int n = readlink( path.data(), buffer, 1022 );
 	if ( n > 0 )
 	{
 	    buffer[ n ] = 0;
@@ -390,7 +390,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
 	path = path.left ( path.length() - 1 );          
 
     struct stat buff;
-    stat( path, &buff );
+    stat( path.data(), &buff );
     struct passwd * user = getpwuid( buff.st_uid );
     struct group * ge = getgrgid( buff.st_gid );
 
@@ -620,7 +620,7 @@ void FilePermissionsPropsPage::applyChanges()
     if ( p != permissions )
     {
 	struct stat buff;
-	stat( path, &buff );
+	stat( path.data(), &buff );
 	// int mask = ~( S_IRWXU | S_IRWXG | S_IRWXO );
 	// mask |= p;
 	if ( chmod( path, p ) != 0 )
