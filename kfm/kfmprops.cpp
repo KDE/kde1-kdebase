@@ -18,6 +18,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <time.h>
+#include <errno.h>
 #include <kconfig.h>
 
 #include <qfile.h>
@@ -373,9 +374,11 @@ void FilePropsPage::applyChanges()
 	s.truncate( i );
 	s += "/";
 	s += n.data();
-	if ( rename( path, s ) != 0 )
-	    QMessageBox::warning( this, klocale->translate( "KFM Error" ),
-				  klocale->translate( "Could not rename the file or directory\nThe destination seems to already exist\n" ) );
+	if ( rename( path, s ) != 0 ) {
+            QString tmp;
+            tmp.sprintf(i18n("Could not rename the file or directory\n%s\n"), strerror(errno));
+            QMessageBox::warning( this, klocale->translate( "KFM Error" ), tmp );
+        }
 	properties->emitPropertiesChanged( n );
     }
 }
