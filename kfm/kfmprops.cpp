@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <time.h>
-#include <Kconfig.h>
+#include <kconfig.h>
 
 #include <qfile.h>
 #include <qdir.h>
@@ -558,8 +558,9 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     if ( !f.open( IO_ReadOnly ) )
 	return;
     
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+	f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( _props->getKURL()->path() );
     config.setGroup( "KDE Desktop Entry" );
     execStr = config.readEntry( "Exec" );
     pathStr = config.readEntry( "Path" );
@@ -645,8 +646,9 @@ bool ExecPropsPage::supports( KURL *_kurl )
     if ( !f.open( IO_ReadOnly ) )
 	return false;
     
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+	f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( t );
     config.setGroup( "KDE Desktop Entry" );
 
     QString type = config.readEntry( "Type" );
@@ -670,9 +672,10 @@ void ExecPropsPage::applyChanges()
 			      klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
     }
-    
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+
+    f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
     config.writeEntry( "Exec", execEdit->text() );
     config.writeEntry( "Path", pathEdit->text() );
@@ -763,9 +766,10 @@ URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
     QFile f( path );
     if ( !f.open( IO_ReadOnly ) )
 	return;
-    
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+
+    f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( path ); // kalle
     config.setGroup( "KDE Desktop Entry" );
     URLStr = config.readEntry(  "URL" );
     iconStr = config.readEntry( "Icon" );
@@ -842,9 +846,10 @@ bool URLPropsPage::supports( KURL *_kurl )
 	return false;
     if ( !f.open( IO_ReadOnly ) )
 	return false;
-    
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+
+    f.close(); // kalle
+    // kalle QTextStream pstream( &f );
+    KConfig config( path ); // kalle
     config.setGroup( "KDE Desktop Entry" );
 
     QString URL = config.readEntry( "URL" );
@@ -867,8 +872,9 @@ void URLPropsPage::applyChanges()
 	return;
     }
     
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+	f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( path ); // kalle
     config.setGroup( "KDE Desktop Entry" );
     config.writeEntry( "URL", URLEdit->text() );
 
@@ -947,8 +953,9 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
     QFile f( tmp.data() );
     if ( f.open( IO_ReadOnly ) )
     {
-	QTextStream pstream( &f );
-	KConfig config( &pstream );
+	  f.close(); // kalle
+	  // kalle	  QTextStream pstream( &f );
+	  KConfig config( tmp ); // kalle
 	config.setGroup( "KDE Desktop Entry" );
 	wallStr = config.readEntry( "BgImage" );
 	iconStr = config.readEntry( "Icon" );
@@ -1056,9 +1063,11 @@ void DirPropsPage::applyChanges()
 			     klocale->translate("Could not write to\n") + tmp );
 	return;
     }
-    
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+
+
+    f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( tmp ); // kalle
     config.setGroup( "KDE Desktop Entry" );
 
     int i = wallBox->currentItem();
@@ -1315,8 +1324,9 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     if ( !f.open( IO_ReadOnly ) )
 	return;
     
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+	f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( path ); // kalle
     config.setGroup( "KDE Desktop Entry" );
     commentStr = config.readEntry( "Comment" );
     binaryPatternStr = config.readEntry( "BinaryPattern" );
@@ -1404,8 +1414,9 @@ bool ApplicationPropsPage::supports( KURL *_kurl )
     if ( !f.open( IO_ReadOnly ) )
 	return false;
     
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+	f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( path ); // kalle
     config.setGroup( "KDE Desktop Entry" );
 
     QString type = config.readEntry( "Type" );
@@ -1430,8 +1441,9 @@ void ApplicationPropsPage::applyChanges()
 	return;
     }
     
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+	f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( path ); // kalle
     config.setGroup( "KDE Desktop Entry" );
     config.writeEntry( "Comment", commentEdit->text() );
 
@@ -1558,8 +1570,9 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     if ( !f.open( IO_ReadOnly ) )
 	return;
     
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+	f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( _props->getKURL()->path() ); // kalle
     config.setGroup( "KDE Desktop Entry" );
     patternStr = config.readEntry( "Patterns" );
     appStr = config.readEntry( "DefaultApp" );
@@ -1663,8 +1676,9 @@ bool BindingPropsPage::supports( KURL *_kurl )
     if ( !f.open( IO_ReadOnly ) )
 	return false;
     
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+	f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( path ); // kalle
     config.setGroup( "KDE Desktop Entry" );
 
     QString type = config.readEntry( "Type" );
@@ -1688,8 +1702,9 @@ void BindingPropsPage::applyChanges()
 	return;
     }
     
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+	f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( path ); // kalle
     config.setGroup( "KDE Desktop Entry" );
     
     QString tmp = patternEdit->text();
@@ -1814,8 +1829,9 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     if ( !f.open( IO_ReadOnly ) )
 	return;
     
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+	f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( _props->getKURL()->path() );
     config.setGroup( "KDE Desktop Entry" );
     deviceStr = config.readEntry( "Dev" );
     mountPointStr = config.readEntry( "MountPoint" );
@@ -1914,8 +1930,9 @@ bool DevicePropsPage::supports( KURL *_kurl )
     if ( !f.open( IO_ReadOnly ) )
 	return false;
     
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+	f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( path ); // kalle
     config.setGroup( "KDE Desktop Entry" );
 
     QString type = config.readEntry( "Type" );
@@ -1939,8 +1956,9 @@ void DevicePropsPage::applyChanges()
 	return;
     }
     
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
+	f.close(); // kalle
+	// kalle    QTextStream pstream( &f );
+    KConfig config( path ); // kalle
     config.setGroup( "KDE Desktop Entry" );
     
     config.writeEntry( "Dev", device->text() );

@@ -1,6 +1,6 @@
 #include <qlist.h>
 #include <qmsgbox.h>
-#include <Kconfig.h>
+#include <kconfig.h>
 #include <qlabel.h>
 #include <qpushbt.h>
 
@@ -76,8 +76,9 @@ void KFMExec::openURL( const char *_url  )
 	QFile file( path );
 	if ( file.open( IO_ReadOnly ) )
 	{
-	    QTextStream pstream( &file );
-	    KConfig config( &pstream );
+	  file.close(); // kalle
+	  //	    QTextStream pstream( &file );
+	    KConfig config( path );
 	    config.setGroup( "KDE Desktop Entry" );
 	    QString typ = config.readEntry( "Type" );
 	    // Is it a link ?

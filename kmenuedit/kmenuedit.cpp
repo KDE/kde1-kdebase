@@ -299,8 +299,9 @@ void KMenuEdit::reloadFileTypes()
 	  QFile config(fi->absFilePath());
 	  if( !config.open(IO_ReadOnly) ) 
 	    { ++subd_it; continue; }
-	  QTextStream st( (QIODevice *) &config);
-	  KConfig kconfig(&st);
+	  config.close(); // kalle
+	  // kalle	  QTextStream st( (QIODevice *) &config);
+	  KConfig kconfig(fi->absFilePath());
 	  kconfig.setGroup("KDE Desktop Entry");
 	  kconfig.readEntry("WmCommand");
 	  //debug("type = %s", (const char *) kconfig.readEntry("MimeType") );

@@ -17,7 +17,7 @@
 #include <qclipbrd.h>
 #include <qbitmap.h>
 #include <kapp.h>
-#include <Kconfig.h>
+#include <kconfig.h>
 #include <kurl.h>
 #include <kfm.h>
 #include <klocale.h>

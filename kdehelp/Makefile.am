@@ -1,7 +1,7 @@
 
 MOC = @MOC@
 INCLUDES =  @all_includes@  
-LDADD = @all_libraries@ -lkfm @LIBKHTMLW@ -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif @LIBJPEG@
+LDADD = @all_libraries@ -lkfm @LIBKHTMLW@ -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif -ljpeg
 SUBDIRS = search index
 
 ########## Files ##########

@@ -29,7 +29,7 @@
 #include <X11/Xutil.h>
 
 // KDE includes
-#include <Kconfig.h>
+#include <kconfig.h>
 #include <kapp.h>
 #include <kurl.h>
 

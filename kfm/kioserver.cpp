@@ -9,7 +9,7 @@
 #include <dirent.h>
 #include <sys/stat.h>
 
-#include <Kconfig.h>
+#include <kconfig.h>
 
 #include "kioserver_ipc.h"
 #include "kioserver.h"

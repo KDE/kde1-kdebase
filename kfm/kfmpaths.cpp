@@ -1,5 +1,5 @@
 #include "kfmpaths.h"
-#include <Kconfig.h>
+#include <kconfig.h>
 #include <qdir.h>
 #include <kapp.h>
 

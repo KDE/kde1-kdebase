@@ -4,7 +4,7 @@
 SUBDIRS = kfm kdehelp kdisplay kfontmanager kfind kvt \
 	@KWM@ kdm kscreensaver \
 	kmenuedit kaudio kcontrolcenter \
-	pics po mimetypes doc applnk 
+	pics po mimetypes doc applnk kpanel2
 
 install-data-local:
 	@echo ""

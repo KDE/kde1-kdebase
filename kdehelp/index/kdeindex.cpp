@@ -8,7 +8,7 @@
 #include <iostream.h>
 #include <qlist.h>
 #include <qdir.h>
-#include "Kconfig.h"
+#include "kconfig.h"
 #include <kapp.h>
 
 //-----------------------------------------------------------------------------
@@ -32,9 +32,10 @@ int Entry::readEntry( const char *filename )
 	if ( !file.open( IO_ReadOnly ) )
 		return FALSE;
 
-	QTextStream pstream( &file );
+	file.close(); // kalle
+// kalle	QTextStream pstream( &file );
 
-	KConfig config( &pstream );
+	KConfig config( filename ); // kalle
 	config.setGroup( "KDE Desktop Entry" );
 
 	QString path = config.readEntry( "DocPath" );

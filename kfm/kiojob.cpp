@@ -329,8 +329,9 @@ void KIOJob::link()
 		QFile f( du.path() );
 		if ( f.open( IO_ReadWrite ) )
 		{
-		    QTextStream pstream( &f );
-		    KConfig config( &pstream );
+		  f.close(); // kalle
+		  // kalle		    QTextStream pstream( &f );
+		  KConfig config( du.path() ); // kalle
 		    config.setGroup( "KDE Desktop Entry" );
 		    config.writeEntry( "URL", p );
 		    config.writeEntry( "Type", "Link" );

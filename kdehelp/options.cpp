@@ -11,7 +11,7 @@
 #include <qlabel.h>
 #include <qchkbox.h>
 #include <kapp.h>
-#include <Kconfig.h>
+#include <kconfig.h>
 #include <X11/Xlib.h>
 
 #include "kcolorbtn.h"

@@ -13,7 +13,7 @@
 #include <dirent.h>
 #include <unistd.h>
 #include <sys/wait.h>
-#include <Kconfig.h>
+#include <kconfig.h>
 #include <kapp.h>
 #include "misc.h"
 #include "man.h"

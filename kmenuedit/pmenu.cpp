@@ -247,8 +247,9 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
       QFile config(file);
       if( config.open(IO_ReadOnly) ) 
 	{
-	  QTextStream st( (QIODevice *) &config);
-	  KConfig kconfig(&st);
+	  config.close(); // kalle
+	  // kalle	  QTextStream st( (QIODevice *) &config);
+	  KConfig kconfig(file);
 	  kconfig.setGroup("KDE Desktop Entry");
 	  pixmap_name = kconfig.readEntry("MiniIcon");
 	  big_pixmap_name = kconfig.readEntry("Icon");
@@ -263,8 +264,9 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
       QFile config(fi->absFilePath());
       if( !config.open(IO_ReadOnly) ) 
 	return -1;
-      QTextStream st( (QIODevice *) &config);
-      KConfig kconfig(&st);
+	  config.close(); // kalle
+	  // kalle      QTextStream st( (QIODevice *) &config);
+      KConfig kconfig(fi->absFilePath());
       kconfig.setGroup("KDE Desktop Entry");
       command_name    = kconfig.readEntry("WmCommand");
       comment         = kconfig.readEntry("Comment");
@@ -334,8 +336,9 @@ void PMenuItem::writeConfig( QDir dir )
   QFile config(file);
   if( !config.open(IO_ReadWrite) ) 
     return;
-  QTextStream st( (QIODevice *) &config);
-  KConfig kconfig(&st);
+  config.close(); // kalle
+  // kalle  QTextStream st( (QIODevice *) &config);
+  KConfig kconfig(file);
   kconfig.setGroup("KDE Desktop Entry");
   kconfig.writeEntry("Comment", comment );
   kconfig.writeEntry("Icon", big_pixmap_name );
@@ -573,8 +576,9 @@ short PMenu::parse( QDir d )
   QFile config(file);
   if( config.open(IO_ReadOnly) ) 
     {
-      QTextStream st( (QIODevice *) &config);
-      KConfig kconfig(&st);
+	  config.close(); // kalle
+	  // kalle      QTextStream st( (QIODevice *) &config);
+      KConfig kconfig(file);
       kconfig.setGroup("KDE Desktop Entry");
       QString order = kconfig.readEntry("SortOrder");
       int len = order.length();
@@ -767,8 +771,9 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item = NULL )
   QFile config(file);
   if( !config.open(IO_ReadWrite) ) 
     return;
-  QTextStream st( (QIODevice *) &config);
-  KConfig kconfig(&st);
+  config.close(); // kalle
+  // kalle  QTextStream st( (QIODevice *) &config);
+  KConfig kconfig(file);
   kconfig.setGroup("KDE Desktop Entry");
   kconfig.writeEntry("SortOrder", sort_order);
   if( parent_item )

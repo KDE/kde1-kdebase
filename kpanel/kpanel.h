@@ -36,7 +36,7 @@
 
 
 // KDE includes
-#include <Kconfig.h>
+#include <kconfig.h>
 #include <kwmmapp.h>
 #include <kiconloader.h>
 #include <X11/Xlib.h>

@@ -122,7 +122,7 @@ void kPanel::read_in_configuration(){
      control = config->readNumEntry("control");
 
    if (config->hasKey("controldelta"))
-     controldelta = config->readEntry("controldelta").toFloat();
+     controldelta = QString(config->readEntry("controldelta")).toFloat();
   
    if (controldelta >= 0){
      bound_top_left = 0;

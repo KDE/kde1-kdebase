@@ -3,7 +3,7 @@
 
 class KMimeType;
 class KMimeBind;
-class KFMConfig;
+// kalle class KFMConfig;
 
 #include <qstring.h>
 #include <qlist.h>
@@ -13,7 +13,7 @@ class KFMConfig;
 
 #include <kurl.h>
 #include <kapp.h>
-#include <Kconfig.h>
+#include <kconfig.h>
 
 #include "kioserver.h"
 #include "kmimemagic.h"
@@ -30,6 +30,7 @@ extern KMimeType *CDevType;
 extern KMimeType *BDevType;   
 
 // A Hack, since KConfig has no constructor taking only a filename
+/*
 class KFMConfig : public KConfig
 {
 public:
@@ -40,7 +41,7 @@ protected:
     QTextStream *pstream;
     QFile *f;
 };
-
+*/
 
 /**
  * @short The application bindings.
@@ -163,7 +164,7 @@ public:
      *         The group "[KDE Desktop Entry"] will be already selected in the returned
      *         KConfig object.
      */
-    static KFMConfig* openKFMConfig( const char *_url );
+    static KConfig* openKConfig( const char *_url );
 
     /**
      * Scan the $KDEDIR/apps directory for application bindings

@@ -17,7 +17,7 @@
 #include <qfile.h>
 #include <qtstream.h>
 #include <qpainter.h>
-#include <Kconfig.h>
+#include <kconfig.h>
 
 // NEW 26-2-97 added by Henk Punt < h.punt@wing.rug.nl > :
 #include <math.h>

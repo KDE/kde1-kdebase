@@ -11,7 +11,7 @@
 #include <qtabdlg.h>
 #include <qcombo.h>
 #include <qstrlist.h>
-#include <Kconfig.h>
+#include <kconfig.h>
 
 
 //-----------------------------------------------------------------------------

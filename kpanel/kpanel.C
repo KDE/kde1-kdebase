@@ -126,7 +126,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       margin = 1;
       
     if (config->hasKey("IconScale")){
-      pm_scale_factor = config->readEntry("IconScale").toFloat();
+      pm_scale_factor = QString(config->readEntry("IconScale")).toFloat();
     }
     if (config->hasKey("DesktopButtonHorizontalSize"))
       dbhs = config->readNumEntry("DesktopButtonHorizontalSize");
@@ -963,21 +963,23 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
        QFile myfile(pmi->fullPathName());
        if (myfile.exists()){
 	 if (myfile.open ( IO_ReadOnly )){
-	   QTextStream mystream(&myfile);
-	   KConfig pConfig(&mystream );
+	   // kalle	   QTextStream mystream(&myfile);
+
+	   myfile.close(); // kalle
+	   KConfig pConfig(pmi->fullPathName() );
 	   pConfig.setGroup("KDE Desktop Entry");
 	   QString aString;
 	   if (pConfig.hasKey("SwallowTitle"))
-	  entries[nbuttons-1].swallow = pConfig.readEntry("SwallowTitle").copy();
+	  entries[nbuttons-1].swallow = QString(pConfig.readEntry("SwallowTitle")).copy();
 	   if (pConfig.hasKey("SwallowExec")){
-	     aString = pConfig.readEntry("SwallowExec").copy();
+	     aString = QString(pConfig.readEntry("SwallowExec")).copy();
 	     aString.append(" &");
 	     system(aString.data());
 	   }
 	   if (pConfig.hasKey("PanelIdentity")){
 	     entries[nbuttons-1].icon[0] = new QPixmap();
 	     *(entries[nbuttons-1].icon[0]) = *entries[nbuttons-1].button->pixmap();
-	     entries[nbuttons-1].identity = (pConfig.readEntry("PanelIdentity")).copy();
+	     entries[nbuttons-1].identity = QString(pConfig.readEntry("PanelIdentity")).copy();
 	     if (pConfig.hasKey("Icon2")){
 	       entries[nbuttons-1].icon[1] = new QPixmap();
 	       *(entries[nbuttons-1].icon[1]) = load_pixmap(pConfig.readEntry("Icon2"));

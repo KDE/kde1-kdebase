@@ -16,7 +16,7 @@
 #include <qregexp.h>
 #include <qfontmet.h>
 #include <qmsgbox.h>
-#include <Kconfig.h>
+#include <kconfig.h>
 #include <klocale.h>
 
 #include "kfmman.h"
@@ -234,8 +234,9 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 	QFile file( path );
 	if ( file.open( IO_ReadOnly ) )
 	{
-	    QTextStream pstream( &file );
-	    KConfig config( &pstream );
+	  file.close(); // kalle
+	  // kalle	    QTextStream pstream( &file );
+	    KConfig config( path );
 	    config.setGroup( "KDE Desktop Entry" );
 	    QString typ = config.readEntry( "Type" );
 	    // Is it a link ?
@@ -410,8 +411,9 @@ void KFMManager::writeBodyTag()
 	{
 	    // debugT("Opened .directory\n");
 	    
-	    QTextStream pstream( &f );
-	    KConfig config( &pstream );
+	  f.close(); // kalle
+	  // kalle	    QTextStream pstream( &f );
+	    KConfig config( d );
 	    config.setGroup( "KDE Desktop Entry" );
 	    
 	    QString tmp = config.readEntry( "TextColor" );

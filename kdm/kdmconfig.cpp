@@ -43,13 +43,14 @@ KDMConfig::KDMConfig( const char* rc)
 void
 KDMConfig::initStream( const char* rc)
 {
-     cf = new QFile( rc);
+  /* kalle     cf = new QFile( rc);
      if( cf->exists()) {
 	  cf->open( IO_ReadOnly);
 	  cs = new QTextStream( cf);
      } else {
 	  cs = NULL;
      }
+	 */
 }
 
 KVItemList*
@@ -107,7 +108,8 @@ KDMConfig::getUsers( QString s, bool sorted = false)
 void
 KDMConfig::getConfig()
 {
-     kc = new KConfig( cs);
+  QString aFileName = QString( kdedir ) + KDMRC; // kalle
+  kc = new KConfig( aFileName ); // kalle
      kc->setGroup( "KDM");
 
      // Read Entries

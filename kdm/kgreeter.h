@@ -38,7 +38,7 @@ typedef unsigned int    UINT32;                 // 32 bit unsigned
 #include <qlayout.h>
 #include <qmsgbox.h>
 #include <kapp.h>
-#include <Kconfig.h>
+#include <kconfig.h>
 
 #include "kfdialog.h"
 #include "kdmshutdown.h"

@@ -23,7 +23,7 @@
 #include <qfont.h>
 #include <qcolor.h>
 #include <qfile.h>
-#include <Kconfig.h>
+#include <kconfig.h>
 
 #include "kdmview.h"
 
