@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-10-29 14:31+0100\n"
-"PO-Revision-Date: 1998-07-09 11:59+02:00\n"
+"PO-Revision-Date: 1998-10-30 13:11+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -28,9 +28,8 @@ msgid "ERROR: Template does not exist '%s'"
 msgstr "FEL: Mallen '%s' finns inte"
 
 #: kfmgui.cpp:304
-#, fuzzy
 msgid "&New"
-msgstr "Ny "
+msgstr "&Ny"
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -57,9 +56,8 @@ msgid "&Select"
 msgstr "&Markera"
 
 #: kfmgui.cpp:341
-#, fuzzy
 msgid "Select &all"
-msgstr "&Markera"
+msgstr "Markera &allt"
 
 #: kfmgui.cpp:344
 msgid "Mime Types"
@@ -218,12 +216,11 @@ msgstr "Upp"
 
 #: kfmgui.cpp:533 kfmman.cpp:1079
 msgid "Forward"
-msgstr ""
+msgstr "Framåt"
 
 #: kfmgui.cpp:538
-#, fuzzy
 msgid "Home"
-msgstr "Hemkatalogen"
+msgstr "Hem"
 
 #: kfmgui.cpp:595
 msgid "Could not load icon\n"
@@ -249,7 +246,7 @@ msgstr "Kunde inte ladda ikonen\n"
 #: root.cpp:874 root.cpp:1135 root.cpp:1153 root.cpp:1159 root.cpp:1165
 #: root.cpp:1246 root.cpp:1757 root.cpp:1782
 msgid "KFM Error"
-msgstr ""
+msgstr "KFM-fel"
 
 #: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1041
 msgid "Malformed URL\n"
@@ -513,7 +510,7 @@ msgstr "Öppna med"
 
 #: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
 msgid "Move"
-msgstr ""
+msgstr "Flytta"
 
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
@@ -529,15 +526,15 @@ msgstr "Lägg till bokmärken"
 
 #: htmlopts.cpp:39
 msgid "Small"
-msgstr ""
+msgstr "Liten"
 
 #: htmlopts.cpp:43
 msgid "Medium"
-msgstr ""
+msgstr "Mellan"
 
 #: htmlopts.cpp:47
 msgid "Large"
-msgstr ""
+msgstr "Stor"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -588,9 +585,8 @@ msgid "Could not write bookmark"
 msgstr "Kunde inte spara bokmärke"
 
 #: kfmprops.cpp:234
-#, fuzzy
 msgid "Name"
-msgstr "Fullständig sökväg"
+msgstr "Namn"
 
 #: kfmprops.cpp:251
 msgid "Full Name"
@@ -679,7 +675,7 @@ msgstr "Ägare"
 
 #: kfmprops.cpp:460 kfmprops.cpp:559
 msgid "Group"
-msgstr ""
+msgstr "Grupp"
 
 #: kfmprops.cpp:465
 msgid "Others"
@@ -702,9 +698,8 @@ msgid "Ownership"
 msgstr "Ägarinformation"
 
 #: kfmprops.cpp:504
-#, fuzzy
 msgid "Owner"
-msgstr "Ägarinformation"
+msgstr "Ägare"
 
 #: kfmprops.cpp:628
 msgid ""
@@ -1400,11 +1395,3 @@ msgid ""
 msgstr ""
 "Syntaxfel:\n"
 "kfmexec kommando [URL:er ...]\n"
-
-#, fuzzy
-#~ msgid "&Quit..."
-#~ msgstr "&Kör..."
-
-#, fuzzy
-#~ msgid "&About..."
-#~ msgstr "&Kör..."
