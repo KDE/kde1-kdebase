@@ -256,7 +256,7 @@ msgstr "Fokus folgt der Maus (klassisch)"
 
 #: windows.cpp:191
 msgid "Classic sloppy focus"
-msgstr "Fokuswechsel durch Klicken (klassisch)"
+msgstr "Klassischer verzögerter Fokus"
 
 #: windows.cpp:203
 msgid "Auto Raise"
