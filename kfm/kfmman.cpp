@@ -39,8 +39,10 @@ KFMManager::KFMManager( KfmView *_v )
     popupMenu = new QPopupMenu();
     popupMenu->installEventFilter( this );
 
-    files.setAutoDelete( true );
+    // Connect to the popup menu
     connect( popupMenu, SIGNAL( activated( int )), this, SLOT( slotPopupActivated( int )) );
+
+    files.setAutoDelete( true );
     job = new KFMJob;
     connect( job, SIGNAL( error( const char* ) ), this, SLOT( slotError( const char* ) ) );
     connect( job, SIGNAL( newDirEntry( KIODirectoryEntry* ) ),

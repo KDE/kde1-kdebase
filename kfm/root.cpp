@@ -55,6 +55,7 @@ KRootWidget::KRootWidget( QWidget *parent=0, const char *name=0 ) : QWidget( par
     KApplication::getKApplication()->setRootDropZone( rootDropZone );
 
     popupMenu = new QPopupMenu();
+    connect( popupMenu, SIGNAL( activated( int )), this, SLOT( slotPopupActivated( int )) );
     
     noUpdate = false;
     
@@ -71,6 +72,60 @@ KRootWidget::KRootWidget( QWidget *parent=0, const char *name=0 ) : QWidget( par
     layoutList.setAutoDelete( true );
     
     update();
+}
+
+bool KRootWidget::isBindingHardcoded( const char *_txt )
+{
+    if ( strcmp( klocale->getAlias(ID_STRING_CD), _txt ) == 0 )
+	return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_NEW_VIEW), _txt ) == 0 )
+	return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_COPY), _txt ) == 0 )
+	return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_DELETE), _txt ) == 0 )
+	return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_MOVE_TO_TRASH), _txt ) == 0 )
+	return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_PASTE), _txt ) == 0 )
+	return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_OPEN_WITH), _txt ) == 0 )
+	return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_CUT), _txt ) == 0 )
+	return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_MOVE), _txt ) == 0 )
+	return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_PROP), _txt ) == 0 )
+	return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_LINK), _txt ) == 0 )
+	return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_OPEN), _txt ) == 0 )
+	return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_TRASH), _txt ) == 0 )
+	return true;
+
+    return false;
+}
+
+void KRootWidget::slotPopupActivated( int _id )
+{
+    if ( popupMenu->text( _id ) == 0 )
+	return;
+    
+    // Text of the menu entry
+    QString txt = popupMenu->text( _id );
+    
+    // Is this some KFM internal stuff ?
+    if ( isBindingHardcoded( txt ) )
+	return;
+
+    // Loop over all selected files
+    char *s;
+    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
+    {
+	debugT("Exec '%s'\n", s );
+	// Run the action 'txt' on every single file
+	KMimeBind::runBinding( s, txt );    
+    }
 }
 
 void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )

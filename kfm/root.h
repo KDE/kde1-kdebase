@@ -189,6 +189,7 @@ public:
 
     void openURL( const char *_url );
     void openPopupMenu( QStrList &_urls, const QPoint &_point );
+    bool isBindingHardcoded( const char *_txt );
     
     /// Takes all icons corresponding to the given URLs and moves them.
     /** 
@@ -262,6 +263,8 @@ public:
     int iconStyle( void ) const { return iconstyle; }        
 
 public slots:
+    void slotPopupActivated( int _id );
+
     /// Updates the icons
     /**
       This function is used to synchronize the filesystem with
