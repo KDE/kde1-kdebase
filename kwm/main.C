@@ -454,13 +454,14 @@ static void grabKey(KeySym keysym, unsigned int mod){
 // sound event. In addition switchActivateClient also takes care about
 // crappy focus policies: It will show a warning message in such a
 // case.
-void switchActivateClient(Client* c){
+void switchActivateClient(Client* c, bool show_warning){
   manager->raiseClient(c);
   if (options.FocusPolicy == CLASSIC_FOCUS_FOLLOWS_MOUSE
       || options.FocusPolicy == CLASSIC_SLOPPY_FOCUS){ 
     
-    showWarning(
-		klocale->translate(
+    if (show_warning){
+      showWarning(
+		  klocale->translate(
 "You want to switch to another window. Unfortunately you have selected \n"
 "one of the classic focus policies which do not allow this.  These policies are \n"
 "included not because they make sense, but for compatibility reasons. Well, \n"
@@ -468,7 +469,7 @@ void switchActivateClient(Client* c){
 "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
 "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
 ));
-    
+    }
   }
   else {
     manager->activateClient(c);
@@ -1439,7 +1440,7 @@ void MyApp::handleKeyRelease(XKeyEvent key){
 	    manager->switchDesktop(infoBoxClient->desktop);
 	  
 	  if (infoBoxClient->state == NormalState){
-	    switchActivateClient(infoBoxClient);
+	    switchActivateClient(infoBoxClient, true);
 	  }
 	  else{ // IconicState
 	    infoBoxClient->unIconify();

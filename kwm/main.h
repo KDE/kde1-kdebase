@@ -84,5 +84,9 @@ private:
 
 
 void logout();
+bool focus_grabbed();
+void showMinicli();
+void showTask();
+void switchActivateClient(Client*, bool show_warning=false);
 
 #endif /* MAIN_H */

@@ -11,6 +11,14 @@ influences from my experiences with the former kwm.
 
 In 0.11:
 --------
+patchlevel 10:
+        - Warning message for crappy focus policies only occurs with Alt-Tab now.
+            The ACTIVATE_WINDOW client message (used by modules such as 
+            kpanel(taskbar) and kpager) will be interpreted as change-to-the-desktop-
+            and-raise-the-window instead.
+
+
+
 patchlevel 9 (CT - 27May98):
 	- SnapToWindow and SnapToBorder FUNCTIONS replaced with snapIt. The
 	    user-visible configurability remains the same. The on-screen

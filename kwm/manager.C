@@ -47,10 +47,6 @@ static char stipple_bits[] = {
 extern bool ignore_badwindow; // for the X error handler
 extern bool initting;
 
-extern bool focus_grabbed();
-extern void showMinicli();
-extern void showTask();
-extern void switchActivateClient(Client*);
 
 Manager::Manager(): QObject(){
 
