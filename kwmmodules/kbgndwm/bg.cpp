@@ -54,8 +54,7 @@ void KBackground::readSettings( const char *group )
     hasPm = false;
     name = group;
 
-    cFile = getenv( "HOME" );
-    cFile += "/.kde/share/config/kdisplayrc";
+    cFile = KApplication::localkdedir() + "/share/config/kdisplayrc";
 
     KSimpleConfig config( cFile, true );
 
