@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <HTML>
 <HEAD>
-<TITLE>International Keyboard Handbook: Creating a new National Keyboard</TITLE>
+<TITLE>International Keyboard Handbook: International Keyboard - General settings</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
 <META NAME="keywords" CONTENT="KDE multilanguage X11">
 <META NAME="description" CONTENT="KDE International Keyboard">
@@ -18,64 +18,131 @@
 <A HREF="kikbd-4.html">Previous</A>
 <A HREF="kikbd.html#toc5">Table of Contents</A>
 </P>
-<H3><A NAME="create"></A> <A NAME="s5">5. Creating a new National Keyboard</A></H3>
+<H3><A NAME="general"></A> <A NAME="s5">5. International Keyboard - General settings</A></H3>
 
 <P>
-<P>All system-wide keyboard files are stored in <CODE>$KDEDIR/share/apps/kikbd</CODE>
-and all personal keyboard files in <CODE>$HOME/.kde/share/apps/kikbd</CODE>.
-Each is identified by its file name excluding the <CODE>.kimap</CODE> extension. A
-personal keyboard file hides a system keyboard file having the same file name
-(not label).
-<P>For creating a new keyboard map you should use one of the existing <CODE>.kimap</CODE>
-files as a template. Each keyboard file has two major sections.
 <P>
-<OL>
-<LI><B>International Keyboard</B><BR>
-In this section the following items can be defined:
+<P>
+<P>The  <I>KDE International Keyboard</I>
+program (<CODE>kikbd</CODE>) allows you to select
+different keyboard maps for various national languages so you can
+easily switch between different  national keyboard layouts.
+The program is started
+by clicking on the <B>International Keyboard Layout</B> item
+in the <B>System</B> menu; it may also be configured to start
+automatically every time you start  the KDE Desktop.
+You can switch between different keyboard layouts
+by using  a 
+specially-defined <B>Switch</B>
+``hotkey'' combination, or by 
+clicking on the <B>keyboard-indicator
+button</B> that is present whenever the <I>International Keyboard</I> 
+program  is running.   
+<P>
+<P>
+<P>
+<IMG SRC="general.gif">
+<P>The <B>General Settings</B>  screen configures the keyboard
+maps and ``hotkeys''.
+<P>
+<P><B>Keyboard maps</B>:
+<P>Your personal list of national keyboard maps is shown in the box.   The
+first entry is the  <I>default</I> keyboard map,
+used by <I>International Keyboard</I> when it starts.  When you start
+the  <I>International Keyboard</I> program (or its Control Center
+configuration module) for the first time, the current keyboard map
+is copied to your personal list of keyboard maps  as the default entry.
+(In the example screenshot above, the default keyboard is
+<CODE>En</CODE> - US English Language.)
+<P>
+<P>
+<P>Use the buttons at the right to control your keyboard map list.
 <UL>
-<LI><CODE>Authors</CODE>:a list of authors, separated by commas, 
-in the format "name last_name &lt; email address&gt;";</LI>
-<LI><CODE>Comment</CODE>**: a descriptive comment phrase for this keyboard;</LI>
-<LI><CODE>Language</CODE>**: the language this keyboard is for;</LI>
-<LI><CODE>Charset</CODE>: the charset this keyboard is for;</LI>
-<LI><CODE>Locale</CODE>: the locale this keyboard is for;</LI>
-<LI><CODE>Label</CODE>*: the label used by <CODE>KiKbd</CODE> to identify this keyboard.</LI>
+<LI>Click on the <B>Add</B> button to add entries to
+the list of keyboard maps.   
+This opens the
+<B>Add Keyboard</B> screen which has a pull-down list of available
+keyboard maps, and gives information about the keyboard you select
+from it.  Click on its <B>OK</B> button to add the chosen keyboard map
+to your personal list, or on <B>Cancel</B> to close the screen without
+changing your list.
+</LI>
+<LI>Click on the <B>Delete</B> button to remove the selected  
+(highlighted) keyboard map from your personal list.
+</LI>
+<LI> Use the <B>Up</B> and <B>Down</B> buttons to select 
+a  keyboard map by moving up or down in your personal list.  
+The selected keyboard, which is
+highlighted, is the ``<I>hot</I>'' keyboard.
+</LI>
+<LI>Click on the <B>Info</B> button to view the
+<B>Keyboard Map Information</B> screen about the  selected
+keyboard.
+</LI>
+</UL>
+<P>If you use more then two keyboard maps, it is very helpful to check
+the ``<B>Use hotlist</B>'' box. In this case you can switch between
+the ``<I>hot</I>'' (highlighted) keyboard and the <I>default</I> 
+(first) keyboard by 
+using the <B>Switch</B>
+key(s).  
+You can  change the choice of 
+``<I>hot</I>'' keyboard in the <I>International Keyboard</I>  
+pop-up menu
+that appears when you right-click on the 
+keyboard-indicator  button.
+<P>
+<P><B>Switch and Alt Switch</B>:
+<P>This section allows you to choose the ``hotkey'' combinations  used
+by  <I>International Keyboard</I>  for
+the <B>Switch</B> and <B>Alternate Switch</B> keys.
+<P>The box on the left shows the key combination chosen for
+the <B>Switch</B> key .
+<UL>
+<LI> Pressing the <B>Switch</B> key combination switches the keyboard
+map to the the next one in your personal list of keyboard maps 
+(or between the <I>default</I> and the highlighted (``<I>hot</I>'') 
+map, if
+the ``<B>use hotlist</B>'' box is checked).   </LI>
+</UL>
+<P>The box on the right shows the key chosen as the <B>Alternate Switch</B>
+key. This acts as a second shift-type key for accessing any
+<I>alternate characters</I> defined in the keyboard map.
+<P>
+<UL>
+<LI> The ``lower-case''  alternate characters
+in the keyboard map
+for the current national keyboard 
+are obtained if the key is typed with the <B> Alternate Switch</B> key
+held down, and the ``upper-case'' alternate characters
+are obtained if the key is typed with both the <B>Alternate Switch</B> and
+the <B> Shift</B> held down.</LI>
 </UL>
 
-* - required<BR>
-** - can be translated to other languages
+Both boxes have a pull-down menu allowing different choices for these
+special keys to be selected.
+<P>In the  example screenshot above, you can switch between
+keyboards by pressing <B>Right Ctrl</B>
+and <B>Right Shift</B>  keys 
+at the same time (the selected <B> Switch </B> key combination), and
+you can obtain any alternate symbols defined for the
+current national keyboard by holding down the 
+<B>Right Alt</B> key (the selected <B> Alternate Switch</B> key)
+while you type.
 <P>
+<P>
+<P><B>Options</B>:
+<P>This section allows other options to be configured.
+<P>
+<UL>
+<LI>If the ``<B>Beep</B>'' box is checked,
+the system will make an audible beep each time the keyboard map  changes.
 </LI>
-<LI><B>KeyboardMap</B><BR>
-This section contains mapping from default symbols to two, three or four
-new symbols in the form:
-<PRE>
-    keysym&lt;num> = &lt;default sym>,&lt;sym1>,&lt;sym2>,&lt;sym3>,&lt;sym4>,
-  
-</PRE>
-
-and mapping from key codes to symbols:
-<PRE>
-    keycode&lt;num> = &lt;key code>,&lt;sym1>,&lt;sym2>,&lt;sym3>,&lt;sym4>,
-  
-</PRE>
-
-
-Where <CODE>num</CODE> means any unique number, <CODE>sym</CODE> means symbol
-in the form of a hexadecimal number or a form interpreted by X11,
-<CODE>keycode</CODE> means the decimal code, and <CODE>default sym</CODE> means the
-default symbol for this key (before starting <CODE>KiKbd</CODE>).
-The first two symbols <CODE>sym1, sym2</CODE> define the <I>national</I>
-symbols while <CODE>sym3, sym4</CODE> define <I>alternate</I> symbols.
-It is preferrable to use only <CODE>keysym</CODE> definitions. 
-<P>Additionally, in this section, you can also specify
-<I>CapsSymbols</I> as a list of Latin symbols, separated by commas.
-which <CODE>KiKbd</CODE> should process during <CODE>Caps Lock</CODE> emulation.
+<LI>Click on the <B>Advanced</B> button to open the 
+<A HREF="kikbd-6.html#advanced">Advanced Options screen</A>
+for more options.
 </LI>
-</OL>
-<P>After you create and test a new keyboard map, you could submit
-it to the KDE developer team, or directly to the author or
-maintainer of <CODE>KiKbd</CODE>.
+</UL>
 <P>
 <P ALIGN="RIGHT">
 

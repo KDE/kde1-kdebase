@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <HTML>
 <HEAD>
-<TITLE>International Keyboard Handbook: Personal Configuration</TITLE>
+<TITLE>International Keyboard Handbook: Configuring the KDE International Keyboard.</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
 <META NAME="keywords" CONTENT="KDE multilanguage X11">
 <META NAME="description" CONTENT="KDE International Keyboard">
@@ -18,229 +18,30 @@
 <A HREF="kikbd-3.html">Previous</A>
 <A HREF="kikbd.html#toc4">Table of Contents</A>
 </P>
-<H3><A NAME="config"></A> <A NAME="s4">4. Personal Configuration</A></H3>
+<H3><A NAME="config"></A> <A NAME="s4">4. Configuring the KDE International Keyboard.</A></H3>
 
 <P>
-<P>``Personal configuration'' 
-includes all your runtime settings for <CODE>KiKbd</CODE>.
-You should use the KDE Control Center module
-program <CODE>kcmikbd</CODE>  
-for creating/modifing your personal
-configuration. When you start <CODE>KiKbd</CODE> or <CODE>kcmikbd</CODE>
-for the first time it will
-copy the default system configuration to your personal configuration.
-<P>
-<H3><A NAME="ss4.1">4.1 General settings</A>
-</H3>
-
-<P>
-<P>
-<P>
-<IMG SRC="general.gif">
-<P>
-<H4>Keyboards</H4>
-
-<P>
-<P>Using the <B>Add</B> and <B>Delete</B> buttons you can create/update
-your personal list of national keyboards. The topmost keyboard (
-<CODE>En</CODE> - US English Language -
-in the example on the screenshot shown) becomes the <I>default</I>
-keyboard when you start <CODE>KiKbd</CODE>.
-<P>If you use more then two keyboards it is very helpful to check
-the <B>Use hotlist</B> box. In this case you can switch between
-the ``<I>hot</I>'' (highlighted) keyboard and the <I>default</I> 
-(first) keyboard by 
-using the <B>Switch</B>
-key(s).  
-<P>You can  change the choice of 
-``<I>hot</I>'' keyboard from the <CODE>KiKbd</CODE>  pop up menu
-that appears when you right-click on the <CODE>KiKbd</CODE> button.
-<P>
-<H4>Switch and Alt Switch:</H4>
-
-<P>
-<P>The box on the left shows the key combination chosen for
-the <B>Switch</B> key .
-<UL>
-<LI> Pressing the <B>Switch</B> key combination switches the keyboard
-map to the the next one in  <CODE>KiKbd</CODE>'s selected list of keyboard maps 
-(or between the default and the highlighted (``hot'') map, if
-<B>use hot list</B> is checked).   </LI>
-</UL>
-
-(You can also change the keyboard
-map by clicking on the <CODE>KiKbd</CODE> button if it is docked
-in the panel or placed at a corner of the screen.)
-<P>
-<P>
-<P>The box on the right shows the key chosen as the <B>Alternate Switch</B>
-key.
-<UL>
-<LI> The ``lower-case''  alternate characters
-in the keyboard map
-for the current national keyboard 
-are obtained if the key is typed with the <B> Alternate Switch</B> key
-held down, and the ``upper-case'' alternate characters
-are obtained if the key is typed with both the <B>Alternate Switch</B> and
-the <B> Shift</B> held down.</LI>
-</UL>
-
-Each box has a pull-down menu allowing different choices for these
-special keys to be selected.
+<P>There are three configuration screens for the
+KDE <I>International Keyboard</I>.
 <P>
 <UL>
-<LI>In the  example screenshot, you can switch between
-keyboards by pressing <B>Right Ctrl</B>
-and <B>Right Shift</B>  keys 
-at the same time (the selected <B> Switch </B> key combination), and
-you can obtain any alternate symbols defined for the
-current national keyboard by holding down the 
-<B>Right Alt</B> key (the selected <B> Alternative Switch</B> key)
-while you type.</LI>
-</UL>
-<P>
-<H4>Options:</H4>
-
-<P>
-<P>If the <B>Beep</B> box is checked,
-<CODE>KiKbd</CODE> will beep when the keyboard map is changed.
-<P>Click on the <B>Advanced</B> button to open the Advanced Options
-screen.
-<P>
-<H3><A NAME="advanced"></A> <A NAME="ss4.2">4.2 Advanced Options</A>
-</H3>
-
-<P>
-<P>
-<IMG SRC="advanced.gif">
-<P>
-<H4>Emulate Caps Lock:</H4>
-
-<P>
-<P>For some keyboards (e.g. Russian, Greek) there are problems with
-the default <B>CapsLock</B> behavior. 
-Using this option, you instruct <CODE>KiKbd</CODE>
-to emulate <B>CapsLock</B> in order to fix this problem. 
-The Caps Lock state (on or off) is then indicated by the color of the 
-<CODE>KiKbd</CODE> language button instead of
-the corresponding keyboard LED.
-<P>
-<H4>World Menu:</H4>
-
-<P>
-<P>You can have a popup menu in any active window by pressing and holding
-the <B>Switch</B>
-keys for a sufficiently long time (hold <B>Right Ctrl</B> 
-and <B>Right Shift</B> as in the example screenshot and 
-wait for the popup menu).
-<H4>Save Classes:</H4>
-
-<P>
-<P>If the <B>Input</B>  selection (see below) is 
-``<B>Class</B>'', you may
-check the <B>Save Classes</B> box so that
-the keyboard-map to window-manager (WM) window-class
-association is automatically saved at the end of each KDE Session,
-and restored at the beginning of the next session. For example, if you
-have selected the Russian keyboard in a <CODE>Kedit</CODE> 
-window when you log out
-today, you will get it automatically in your <CODE>Kedit</CODE> windows
-when you log in tomorrow.
-<P>
-<H4>Keyboard codes:</H4>
-
-<P>
-<P>The pull-down menu allows you to select the appropriate set
-of keyboard codes used by your particular keyboard.
-<H4>Input:</H4>
-
-<P>
-<P>This determines how the keyboard maps are associated
-with different windows.
-You can select one of three choices:
-<P>
-<UL>
-<LI><B>Global</B> - 
-"standard" behavior: your keyboard map applies to all windows.</LI>
-<LI><B>Window</B> - 
-"extended" behavior: a keyboard map is "remembered" for each
-top level window, and inherited by  each lower-level
-window created from
-within  it.
-When  the active window changes, the keyboard map will change
-to the map associated with the active window.
+<LI> The  
+<A HREF="kikbd-5.html#general">General</A> settings screen,
+for selecting the keyboard map, and hot keys. This also
+accesses the  
+<A HREF="kikbd-6.html#advanced">Advanced Options</A> screen.
 </LI>
-<LI><B>Class</B> - 
-"special" behavior: a keyboard map is "remembered" for each window
-manager (WM) window-class member. For example, if you switch to the
-Russian keyboard
-in any window in which the <CODE>Kedit</CODE> program is running, 
-you will automatically also get the Russian keyboard in any
-other <CODE>Kedit</CODE> window.</LI>
+<LI> The 
+<A HREF="kikbd-7.html#style">Style</A> screen for
+configuring the fonts and colors used by the <I>International
+Keyboard</I> keyboard-indicator button.
+</LI>
+<LI> The 
+<A HREF="kikbd-8.html#startup">Startup</A> screen for
+configuring how the <I>International Keyboard</I> is started, 
+and the placement of the keyboard-indicator  button.
+</LI>
 </UL>
-<P>
-<P>
-<H3><A NAME="ss4.3">4.3 Style</A>
-</H3>
-
-<P>
-<P>In the <B>Style</B> screen, You can customize the colors and
-font used by the <CODE>KiKbd</CODE> button that indicates which
-keyboard map is currently in use, and (by its color) shows whether
-the emulated <B>Caps Lock</B> is on or if the  <B>Alternate Switch</B> key
-is depressed.
-<P>
-<P>
-<IMG SRC="style.gif">
-<P>
-<H4>Button Colors:</H4>
-
-<P>
-<UL>
-<LI> <B>Foreground:</B>
-Foreground Color used for the text label.</LI>
-<LI><B>Background:</B>
-Normal Background color used for the text label.
-(<I> Not shown in screenshot!</I>.)</LI>
-<LI><B>With CapsLock:</B>
-Background used for the text label when <CODE>Caps Lock</CODE> emulation is
-selected and the <CODE>Caps Lock</CODE> key is activated.</LI>
-<LI><B>With Alternate:</B>
-Background used for the text label while the <B>Alt
-Switch</B> key is held down to provide the alternate
-characters.</LI>
-</UL>
-<P>
-<H4>Button Font:</H4>
-
-<P>Check the <B>Customize Font</B> Check box if you
-wish to use custom or KDE wide fonts.   If this
-box is checked, clicking the <B>Change Font</B>
-button will open the <B>Select Font</B> dialog.
-<H3><A NAME="ss4.4">4.4 Startup</A>
-</H3>
-
-<P>
-<P>The  <B>Startup</B> screen configures how <CODE>KiKbd</CODE>
-is started.
-<P>
-<IMG SRC="startup.gif">
-<H4>Autostart:</H4>
-
-<P>if the <B>Autostart</B> box is checked,
-<CODE>KiKbd</CODE> will be started automatically at the
-beginning of each KDE session.
-<H4>Docked:</H4>
-
-<P>If the <B>Docked</B> box is checked,  the
-<CODE>KiKbd</CODE> button will be docked into the panel.
-<H4>Place:</H4>
-
-<P>If you don't like docking, and the <B>Docked</B> box
-is unchecked, you can choose to place the <CODE>KiKbd</CODE>
-button at one the the corners of the display.
-(The  pull-down <B>Place</B> menu presents a list
-of choices for the location).
 <P>
 <P ALIGN="RIGHT">
 

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <HTML>
 <HEAD>
-<TITLE>International Keyboard Handbook: Troubleshooting</TITLE>
+<TITLE>International Keyboard Handbook: International Keyboard -  Advanced Options</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
 <META NAME="keywords" CONTENT="KDE multilanguage X11">
 <META NAME="description" CONTENT="KDE International Keyboard">
@@ -18,37 +18,81 @@
 <A HREF="kikbd-5.html">Previous</A>
 <A HREF="kikbd.html#toc6">Table of Contents</A>
 </P>
-<H3><A NAME="s6">6. Troubleshooting</A></H3>
+<H3><A NAME="advanced"></A> <A NAME="s6">6. International Keyboard -  Advanced Options</A></H3>
 
 <P>
 <P>
-<H3><A NAME="ss6.1">6.1 ``Can not find symbol'' error.</A>
-</H3>
-
-<P>This may happen if your X server has loaded non-Latin or unusual
-symbols before <CODE>KiKbd</CODE> starts.
-<P>Beginning with version 1.0b1, you can
-predefine symbols in the
-<A HREF="kikbd-4.html#advanced">Advanced Options</A> configuration screen
-for fixing this problem. 
-(<I> This feature not currently available </I>) 
-<H3><A NAME="ss6.2">6.2 Screen-saver password problems.</A>
-</H3>
-
-<P>This problem might appear when your favorite screen saver starts
-while a national keyboard is active. The solution is to use KDE
-screen-savers with the default (first in the list) English keyboard.
-<CODE>KiKbd</CODE> automatically switches the keyboard map to 
-the default, when one of
-KDE's screen-savers opens a password dialog.
-<P>The other solution is to use Alternate Latin symbols in all 
-your keyboard maps.
-Then you can type a password using the <B>Alternate Switch</B> key.
-<H3><A NAME="ss6.3">6.3 Bug reporting</A>
-</H3>
-
-<P>Please report bugs at 
-<A HREF="http://buglist.kde.org">http://buglist.kde.org</A><P ALIGN="RIGHT">
+<IMG SRC="advanced.gif">
+<P><B>Emulate Caps Lock</B>:
+<P>For some keyboards (e.g. Russian, Greek) there are problems with
+the default <B>CapsLock</B> behavior. 
+If you check this box, you instruct the <I>International Keyboard</I>
+to emulate <B>CapsLock</B> in order to fix this problem. 
+The ``Caps Lock'' state (on or off) is then indicated by the color of the 
+keyboard-indicator button instead of
+the corresponding keyboard LED.
+<P><B>World Menu</B>:
+<P>If you check this box, You can get a <I>International Keyboard</I>
+pop-up menu in any active window by pressing and holding
+down the <B>Switch</B>
+key combination  until the menu appears.
+<P><B>Save Classes</B>:
+<P>If the the selection in the <B>Input</B> section (see below) is 
+``<B>Class</B>'', you may
+check the ``<B>Save Classes</B>'' box so that
+the  
+association of a given keyboard map with a given class
+of windows is automatically saved at the end of each KDE Session,
+and restored at the beginning of the next session. This means
+that, for example,  if  the
+the Russian keyboard map is selected for use in your <CODE>Kedit</CODE> 
+windows when you log out
+today, you will get it automatically in your <CODE>Kedit</CODE> windows
+when you log in tomorrow.
+<P>
+<P>
+<P><B> Keyboard codes</B>:
+<P>The pull-down menu allows you  to choose to use 
+the keyboard codes native to your particular type of keyboard, instead of
+the <B>X default codes</B> used by the X Window system.
+<P>
+<P>
+<P><B>Input</B>:
+<P>This determines how the keyboard maps are associated
+with different windows.
+You can select one of three choices:
+<P>
+<UL>
+<LI>``<B>Global</B>'' - 
+the current keyboard map applies to <B>all</B> windows.</LI>
+<LI>`` <B>Window</B>'' - 
+a separate keyboard map is associated with
+<B>each top level window</B>, and inherited by  each lower-level
+window created from
+within  it.
+When  the active window changes, the keyboard map will change
+to the map associated with the active window.</LI>
+<LI>``<B>Class</B>'' - 
+a separate keyboard map is 
+associated with  <B>each class
+of window</B>
+(generally, the <I>class</I> of a window corresponds to
+to the application that opens it).  For example, if this
+selection is made, and you switch to the
+Russian keyboard
+in any window in which the <CODE>Kedit</CODE> program is running, 
+you will automatically also get the Russian keyboard in any
+other <CODE>Kedit</CODE> window, until you switch keyboards again.</LI>
+</UL>
+<P>(
+<A HREF="kikbd-5.html#general">Back to the ``General Settings'' main Help page</A>.)
+<P>
+<P>
+<P>
+<P>
+<P>
+<P>
+<P ALIGN="RIGHT">
 
 <A HREF="kikbd-7.html">Next</A>
 <A HREF="kikbd-5.html">Previous</A>
