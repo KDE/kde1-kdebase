@@ -1,6 +1,6 @@
 
 INCLUDES =  $(all_includes)
-LDFLAGS = $(all_libraries)
+LDFLAGS = $(all_libraries) $(KDE_RPATH)
 LDADD = $(LIB_KFILE) $(LIB_KHTMLW) $(LIBCOMPAT)
 SUBDIRS = search index rman
 
