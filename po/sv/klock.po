@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
 "POT-Creation-Date: 1998-12-14 01:17+0100\n"
-"PO-Revision-Date: 1998-07-09 15:37+02:00\n"
+"PO-Revision-Date: 1998-12-19 18:01+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -15,14 +15,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8BIT\n"
 
 #: attraction.cpp:716
-#, fuzzy
 msgid "Attraction"
 msgstr "Sammandragning"
 
 #: attraction.cpp:803
-#, fuzzy
 msgid "Setup KAttraction"
-msgstr "Ställ in Fladdermus"
+msgstr "Ställ in Sammandragning"
 
 #: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
@@ -34,7 +32,7 @@ msgstr "Läge:"
 
 #: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
-msgstr ""
+msgstr "Bollar"
 
 #: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
@@ -46,19 +44,17 @@ msgstr "Polygoner"
 
 #: attraction.cpp:837 slidescreen.cpp:501
 msgid "Tails"
-msgstr ""
+msgstr "Spår"
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
-msgstr ""
+msgstr "Glöd"
 
 #: attraction.cpp:951
-#, fuzzy
 msgid "About Attraction"
-msgstr "Sammandragning"
+msgstr "Om Sammandragning"
 
 #: attraction.cpp:952
-#, fuzzy
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -68,11 +64,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Bumling version 3.3\n"
+"Sammandragning version 1.0\n"
 "\n"
-"Copyright (c) 1992 av Jamie Zawinski\n"
+"Copyright (c) 1992-1997 av Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Portad till kscreensave av Martin Jones."
+"Portad till kscreensaver av:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> okt 1998"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -83,13 +81,12 @@ msgid "Setup kbanner"
 msgstr "Ställ in Baner"
 
 #: banner.cpp:95
-#, fuzzy
 msgid "Family:"
-msgstr "Misslyckades"
+msgstr "Familj:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr ""
+msgstr "Storlek:"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -97,7 +94,7 @@ msgstr "Färg:"
 
 #: banner.cpp:147
 msgid "Bold"
-msgstr ""
+msgstr "Fet"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
@@ -267,9 +264,8 @@ msgstr ""
 "Portad till kscreensave av Cedric Tefft"
 
 #: bsod.cpp:1192
-#, fuzzy
 msgid "Black Screen of Death"
-msgstr "Tom skärm"
+msgstr "Svarta dödsskärmen"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -467,7 +463,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Flaggan %s stöds inte på den här plattformen!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -475,9 +470,10 @@ msgid ""
 "Please contact your system administrator,\n"
 "tell him, that you need suid for the screensavers!"
 msgstr ""
-"Ditt system använder skuggade lösenord!\n"
-"Var god kontakta din systemadministratör.\n"
+"Varning: Du kommer inte kunna låsa skärmen!\n"
 "\n"
+"Ditt system använder skuggade lösenord.\n"
+"Var god kontakta din systemadministratör.\n"
 "Säg åt honom att du behöver suid för skärmsläckarna!"
 
 #: main.cpp:427
@@ -491,18 +487,21 @@ msgid ""
 "use klock instead.\n"
 "\n"
 msgstr ""
+"\n"
+"var god använd inte -test tillsammans med -lock.\n"
+"använd klock i stället.\n"
+"\n"
 
 #: main.cpp:580
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Användning: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"            [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
 #: main.cpp:583
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -523,12 +522,11 @@ msgid ""
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
 "  -corners xxxx     Om markören placeras i hörnet görs:\n"
-"                     x = i inget (ignorera)\n"
-"                     x = s släck skärmen\n"
-"                     x = l lås skärmen\n"
-"                    ordning: övre vänstra, övre högra, nedre vänstra, nedre "
-"högra\n"
-"  -delay num        Fördröjning innan skärmsläckaren startat\n"
+"                     x = i  inget (ignorera)\n"
+"                     x = s  släck skärmen\n"
+"                     x = l  lås skärmen\n"
+"                    ordning: övre vänstra,övre högra,nedre vänstra,nedre högra\n"
+"  -delay num        Fördröjning innan skärmsläckaren startar\n"
 "                     (standardvärdet är 10 min)\n"
 "  -desc             Skriv skärmsläckarens beskrivning till stdout\n"
 "  -install          Installera skärmsläckaren\n"
@@ -537,6 +535,7 @@ msgstr ""
 "\n"
 "  -preview wid      Kör i angivet X-fönster\n"
 "  -inroot           Kör på skrivbordet\n"
+"  -setup            Ställ in skärmsläckaren\n"
 "  -test             Starta skärmsläckaren med en gång\n"
 
 #: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
@@ -574,24 +573,20 @@ msgstr ""
 "Portad till kscreensave av Emanuel Pirker."
 
 #: pipes.cpp:299
-#, fuzzy
 msgid "Pipes (GL)"
-msgstr "Rymden (GL)"
+msgstr "Rör (GL)"
 
 #: pipes.cpp:672
-#, fuzzy
 msgid "Setup KPipes"
-msgstr "Ställ in Lappar"
+msgstr "Ställ in Rör"
 
 #: pipes.cpp:678
-#, fuzzy
 msgid "Number of Pipes"
-msgstr "Antal bin:"
+msgstr "Antal rör:"
 
 #: pipes.cpp:743
-#, fuzzy
 msgid "About KPipes"
-msgstr "Om Linjer"
+msgstr "Om Rör"
 
 #: pipes.cpp:745
 msgid ""
@@ -599,6 +594,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"Rör\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
 
 #: polygon.cpp:85
 msgid "Setup kpolygon"
@@ -663,9 +661,8 @@ msgid "Setup krock"
 msgstr "Ställ in Bumling"
 
 #: rock.cpp:589
-#, fuzzy
 msgid "Move"
-msgstr "Läge:"
+msgstr "Flytta"
 
 #: rock.cpp:595
 msgid "Rotate"
@@ -770,22 +767,18 @@ msgid "About Science"
 msgstr "Om Vetenskap"
 
 #: slidescreen.cpp:419
-#, fuzzy
 msgid "SlideScreen"
-msgstr "Tom skärm"
+msgstr "Skyffla skärmen"
 
 #: slidescreen.cpp:465
-#, fuzzy
 msgid "Setup KSlideScreen"
-msgstr "Ställ in Vetenskap"
+msgstr "Ställ in Skyffla skärmen"
 
 #: slidescreen.cpp:558
-#, fuzzy
 msgid "About SlideScreen"
-msgstr "Om Vetenskap"
+msgstr "Om Skyffla skärmen"
 
 #: slidescreen.cpp:559
-#, fuzzy
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -795,11 +788,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Bumling version 3.3\n"
+"Skyffla skärmen version 1.1\n"
 "\n"
-"Copyright (c) 1992 av Jamie Zawinski\n"
+"Copyright (c) 1992-1997 av Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Portad till kscreensave av Martin Jones."
+"Portad till kscreensaver av:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> okt 1998"
 
 #: slip.cpp:293
 msgid "Slip"

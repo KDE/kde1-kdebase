@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-12-13 14:42+01:00\n"
+"PO-Revision-Date: 1998-12-19 17:05+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -114,7 +114,7 @@ msgstr "&Katalogträdet följer med när du bläddrar"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
@@ -177,7 +177,6 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "y-avstånd för skrivbordsikoner:"
 
 #: rootopts.cpp:92
-#, fuzzy
 msgid "&Transparent Text for Desktop Icons."
 msgstr "&Rita ej textbakgrund till skrivbordsikoner"
 

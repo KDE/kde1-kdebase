@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-12-12 18:37+01:00\n"
+"PO-Revision-Date: 1998-12-19 17:25+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr "Stänga av eller starta om?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Skriv in root-lösenordet)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -32,7 +32,7 @@ msgstr "Stäng av och starta om"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Starta om X-servern"
 
 #: kgreeter.cpp:222
 msgid "Login:"

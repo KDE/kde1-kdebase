@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-11-16 01:20+0100\n"
-"PO-Revision-Date: 1998-12-09 21:57+0100\n"
+"PO-Revision-Date: 1998-12-19 17:49+01:00\n"
 "Last-Translator: Karl Backström <backstrom@kde.org>\n"
 "Language-Team: Sv <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -431,7 +431,7 @@ msgstr "Definera X koder"
 
 #: widgets.cpp:491
 msgid "Input"
-msgstr ""
+msgstr "Inmatning"
 
 #: widgets.cpp:495
 msgid "Standard behavior. Keyboard map active for all windows"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-05-13 12:05+0200\n"
-"PO-Revision-Date: 1998-01-20 15:40 +0100\n"
+"PO-Revision-Date: 1998-12-19 17:16+01:00\n"
 "Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
 "Language-Team: Swedish <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #: main.cpp:52
 msgid "&Locale"
-msgstr "&Plats"
+msgstr "&Språk"
 
 #: main.cpp:58
 msgid "usage: kcmlocale [-init | language]\n"

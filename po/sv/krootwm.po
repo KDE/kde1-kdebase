@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-07-09 11:05+02:00\n"
+"PO-Revision-Date: 1998-12-19 18:31+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -52,27 +52,27 @@ msgstr "Hjäp om KDE"
 
 #: krootwm.C:235
 msgid "About KDE..."
-msgstr ""
+msgstr "Om KDE..."
 
 #: krootwm.C:250 krootwm.C:277 krootwm.C:747 krootwm.C:755
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 #: krootwm.C:251 krootwm.C:278
 msgid "Bookmarks"
-msgstr ""
+msgstr "Bokmärken"
 
 #: krootwm.C:279
 msgid "Desk"
-msgstr ""
+msgstr "Skrivbord"
 
 #: krootwm.C:280
 msgid "Windows"
-msgstr ""
+msgstr "Fönster"
 
 #: krootwm.C:331
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "Redigera bokmärkena"
 
 #: krootwm.C:345 krootwm.C:757
 msgid "Folder"

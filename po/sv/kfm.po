@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-12-19 01:20+0100\n"
-"PO-Revision-Date: 1998-12-13 13:17+01:00\n"
+"PO-Revision-Date: 1998-12-19 17:29+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -273,9 +273,8 @@ msgid "KFM Error"
 msgstr "KFM-fel"
 
 #: kfmgui.cpp:557
-#, fuzzy
 msgid "Location:"
-msgstr "Öppna plats:"
+msgstr "Plats:"
 
 #: kfmexec.cpp:59 kfmgui.cpp:743 kfmman.cpp:1375
 msgid "Malformed URL\n"
@@ -578,6 +577,10 @@ msgid ""
 "\n"
 "Would you like to install the new ones?"
 msgstr ""
+"En ny version av KDE har installerats.\n"
+"Mallfilerna kan ha ändrats.\n"
+"\n"
+"Vill du installera de nya mallfilerna?"
 
 #: main.cpp:263
 msgid "Cd"
@@ -1173,21 +1176,21 @@ msgstr ""
 "existerar inte"
 
 #: kiojob.cpp:1287
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Tar reported a fatal error\n"
 "%s"
 msgstr ""
-"Tar rapporterade ett fel\n"
+"Tar rapporterade ett allvarligt fel\n"
 "%s"
 
 #: kiojob.cpp:1291
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reported a fatal error\n"
 "%s"
 msgstr ""
-"Gzip rapporterade ett fel\n"
+"Gzip rapporterade ett allvarligt fel\n"
 "%s"
 
 #: kiojob.cpp:1295
@@ -1356,32 +1359,31 @@ msgstr "Känslig för stora/små bokstäver"
 
 #: kcookiewin.cpp:58
 msgid "Cookie Alert!"
-msgstr ""
+msgstr "Kakvarning!"
 
 #: kcookiewin.cpp:76
 msgid "You received a cookie from host:"
-msgstr ""
+msgstr "Du tog emot en kaka från datorn:"
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr ""
+msgstr "Vill du godta eller vägra denna kaka?"
 
 #: kcookiewin.cpp:120
-#, fuzzy
 msgid "Apply to "
-msgstr "Applicera globalt"
+msgstr "Använd för "
 
 #: kcookiewin.cpp:125
 msgid "&This cookie only"
-msgstr ""
+msgstr "&Enbart denna kaka"
 
 #: kcookiewin.cpp:133
 msgid "All cookies from this &domain"
-msgstr ""
+msgstr "Alla kakor från den här &domänen"
 
 #: kcookiewin.cpp:140
 msgid "All &cookies"
-msgstr ""
+msgstr "Alla &kakor"
 
 #: popup.cpp:69
 #, c-format

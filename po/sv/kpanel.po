@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
 "POT-Creation-Date: 1998-12-19 01:20+0100\n"
-"PO-Revision-Date: 1998-12-01 22:18+01:00\n"
+"PO-Revision-Date: 1998-12-19 18:30+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgstr "Visa panelen"
 
 #: kpanel.C:1097
 msgid "Iconify other &windows"
-msgstr ""
+msgstr "Ikonifiera de andra &fönstren"
 
 #: kpanel.C:1234
 msgid "No comment available"
@@ -66,26 +66,22 @@ msgid "Quickly navigate through the filesystem"
 msgstr "Navigera snabbt genom filsystemet"
 
 #: props.C:166
-#, fuzzy
 msgid "Add Application"
-msgstr "Lägg till applikation"
+msgstr "Lägg till program"
 
 #: props.C:168
 msgid "Add an application or a submenu onto the panel"
 msgstr "Lägg till applikation eller undermeny till panelen"
 
 #: props.C:170
-#, fuzzy
 msgid "Add Disk Navigator"
-msgstr "Disknavigator"
+msgstr "Lägg till disknavigator"
 
 #: props.C:172
-#, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Lägg till fönsterlista till panelen"
+msgstr "Lägg till en disknavigatormeny till panelen"
 
 #: props.C:174
-#, fuzzy
 msgid "Add Windowlist"
 msgstr "Lägg till fönsterlista"
 
@@ -144,7 +140,6 @@ msgid ""
 msgstr ""
 
 #: tools.C:883
-#, fuzzy
 msgid "KDiskNavigator"
 msgstr "Disknavigator"
 

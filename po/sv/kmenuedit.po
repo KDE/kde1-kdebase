@@ -1,43 +1,38 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Magnus Reftel <d96reftl@dtek.chalmers.se>, 1997,1998.
+# Anders Widell <d95-awi@nada.kth.se>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kmenuedit\n"
 "POT-Creation-Date: 1998-11-24 01:15+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 1998-12-19 18:17+01:00\n"
+"Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
 
 #: kmenuedit.cpp:68
-#, fuzzy
 msgid "Change &Menuname"
-msgstr "Byt menynamn"
+msgstr "Byt &menynamn"
 
 #: kmenuedit.cpp:69
-#, fuzzy
 msgid "Reload &Filetypes"
-msgstr "Ladda filtyper igen"
+msgstr "Ladda om &filtyper"
 
 #: kmenuedit.cpp:76
 msgid "by"
-msgstr ""
+msgstr "av"
 
 #: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
-msgstr "Ändringarna inte sparade!"
+msgstr "Ändringarna ej sparade!"
 
 #: kmenuedit.cpp:176 kmenuedit.cpp:201
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to save your changes ?"
-msgstr "Vill du spara dina ändringar"
+msgstr "\nVill du spara dina ändringar ?"
 
 #: confmenu.cpp:337 confmenu.cpp:929 kmenuedit.cpp:260
 msgid "EMPTY"
@@ -45,7 +40,7 @@ msgstr "TOM"
 
 #: kmenuedit.cpp:339
 msgid "Reload Menus"
-msgstr "Ladda menyer igen"
+msgstr "Ladda om menyer"
 
 #: kmenuedit.cpp:340
 msgid ""
@@ -89,15 +84,15 @@ msgstr "! SKYDDAD Knapp !"
 
 #: confmenu.cpp:116
 msgid "Select item for moving"
-msgstr ""
+msgstr "Välj post att flytta"
 
 #: confmenu.cpp:117
 msgid "Select menu for moving"
-msgstr ""
+msgstr "Välj meny att flytta"
 
 #: confmenu.cpp:119
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 #: confmenu.cpp:176 confmenu.cpp:316
 msgid "Warning !"
@@ -164,7 +159,7 @@ msgstr "Applikation"
 
 #: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
 msgid "Swallow"
-msgstr ""
+msgstr "Svälj"
 
 #: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
@@ -223,18 +218,16 @@ msgid "Binary Pattern:"
 msgstr "Binärt mönster"
 
 #: entrydialog.cpp:300
-#, fuzzy
 msgid "Application to swallow:"
-msgstr "Applikation"
+msgstr "Program att svälja"
 
 #: entrydialog.cpp:306
-#, fuzzy
 msgid "Title of application:"
-msgstr "Applikation"
+msgstr "Programmets titel:"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
-msgstr ""
+msgstr "Program att köra vid musklick"
 
 #: entrydialog.cpp:342
 msgid "URL:"
@@ -275,25 +268,3 @@ msgstr "Personligt:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Standard:"
-
-#, fuzzy
-#~ msgid "&Reload"
-#~ msgstr "Ladda menyer igen"
-
-#~ msgid ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) by Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-#~ msgstr ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) av Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-
-#~ msgid "Fvwm Command"
-#~ msgstr "Fvwm-kommando"
-
-#~ msgid "Fvwm"
-#~ msgstr "Fvwm"
-
-#~ msgid "Fvwm Command:"
-#~ msgstr "Fvwm-kommando:"

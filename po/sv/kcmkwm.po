@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-12-19 01:20+0100\n"
-"PO-Revision-Date: 1998-12-13 15:01+01:00\n"
+"PO-Revision-Date: 1998-12-19 17:18+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -163,7 +163,7 @@ msgstr "Namnlistsanimering"
 
 #: titlebar.cpp:1123
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #: titlebar.cpp:1366
 msgid "Window manager setup - ERROR"
@@ -183,7 +183,7 @@ msgstr "Fönster"
 
 #: windows.cpp:82
 msgid "Vertical maximization only by default"
-msgstr "Vertikal maximering enbart som standard"
+msgstr "Maximera enbart vertikalt som standard"
 
 #: windows.cpp:87
 msgid "Display content in moving windows"
@@ -261,9 +261,8 @@ msgid "Auto Raise"
 msgstr "Autohöjning"
 
 #: windows.cpp:209
-#, fuzzy
 msgid "Click Raise"
-msgstr "Höj"
+msgstr "Höj vid klick"
 
 #: windows.cpp:216
 msgid "Delay (ms)"
@@ -282,9 +281,8 @@ msgid "Move pointer towards center after switch"
 msgstr "Flytta muspekaren mot mitten efter byte"
 
 #: desktop.cpp:87
-#, fuzzy
 msgid "Desktop switch delay:"
-msgstr "Fördröjning innan byte:"
+msgstr "Fördröjning innan skrivbordsbyte:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-01-20 15:20+0100\n"
+"PO-Revision-Date: 1998-12-19 17:03+01:00\n"
 "Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -40,7 +40,7 @@ msgstr "Tröskelvärde"
 
 #: mouse.cpp:72
 msgid "pixels"
-msgstr ""
+msgstr "pixlar"
 
 #: mouse.cpp:81
 msgid "Button mapping"
