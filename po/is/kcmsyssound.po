@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-10-19 22:00+0200\n"
+"PO-Revision-Date: 1999-04-26 22:06-0500\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
 
@@ -102,11 +102,11 @@ msgstr "Losa glugga af gleri"
 
 #: syssound.cpp:169
 msgid "Window Trans New"
-msgstr ""
+msgstr "Nýr gluggi"
 
 #: syssound.cpp:170
 msgid "Window Trans Delete"
-msgstr ""
+msgstr "Glugga lokað"
 
 #: syssound.cpp:171
 msgid "Logout"
