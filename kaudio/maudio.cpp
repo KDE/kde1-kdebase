@@ -4,7 +4,7 @@
 #include <iostream.h>
 #include <string.h>
 #include <fcntl.h>
-
+#include <kmisc.h>
 
 extern "C" {
 #include <mediatool.h>
