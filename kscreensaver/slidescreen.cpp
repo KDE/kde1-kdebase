@@ -531,7 +531,7 @@ kSlideScreenSetup::kSlideScreenSetup( QWidget *parent, const char *name )
 	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
 	bbox->addStretch(1);
 
-	button = bbox->addButton( glocale->translate("Ok"));	
+	button = bbox->addButton( glocale->translate("OK"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
 	button = bbox->addButton(glocale->translate("Cancel"));
@@ -560,6 +560,6 @@ void kSlideScreenSetup::slotAbout()
 				"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n\n"
 				"Ported to kscreensaver by:\n\n"
 				"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"),
-			     glocale->translate("Ok"));
+			     glocale->translate("OK"));
 }
 
