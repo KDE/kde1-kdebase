@@ -171,9 +171,8 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "Espaçamento da grade-raiz vertical:"
 
 #: rootopts.cpp:92
-#, fuzzy
 msgid "&Transparent Text for Desktop Icons."
-msgstr "&Texto transparente para ícones-raiz:"
+msgstr "&Texto transparente para ícones do ambiente:"
 
 #: rootopts.cpp:103
 msgid "Icon foreground color:"
