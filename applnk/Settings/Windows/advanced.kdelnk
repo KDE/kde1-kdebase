@@ -5,4 +5,6 @@ Icon=winprops.xpm
 Type=Application
 DocPath=kcontrol/kcmkwm/kwm-3.html
 Comment=Advanced window properties
+Comment[no]=Avanserte vinduegenskaper
 Name=Advanced
+Name[no]=Avansert
