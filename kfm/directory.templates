@@ -1,26 +1,14 @@
 [KDE Desktop Entry]
 Name=Templates
-Name[de]=Vorlagen
-Name[pl]=Szablony
-Name[fi]=Pohjat
-Name[no]=Maler
-Name[fr]=Gabarit
-Name[es]=Modelos
-Name[it]=Modelli
-Name[cs]=©ablony
-Name[sk]=©ablóny
-Name[pt]=Modelos
-Name[pt_BR]=Modelos
-Name[sv]=Mallar
-Name[ro]=Fiºiere Model
-Comment[pl]=Gotowe wzorce dokumentów i innych plików
-Comment[sk]=Hotové vzory dokumentov a iných súborov
-Comment[es]=Esta carpeta contiene los modelos para crear documentos nuevos en KDE
-Comment[no]=Maler for å lage nye dokumenter
-Comment[fr]=Ce répertoire contient des gabaris pour fabriquer de nouveaux documents
-Comment[it]=Questa cartella contiene i Modelli di Documento del KDE
-Comment[pt]=Esta pasta contém modelos para criar novos documentos
-Comment[pt_BR]=Esta pasta contém modelos para criar novos documentos
-Comment[sv]=Mallar för att skapa nya filer
-Comment[ro]=Modele de fiºiere folosite la crearea de noi documente KDE.
+Name[ca]=Terminal
+Name[cs]=Terminál
+Name[da]=Emacs
+Name[eo]=Terminalo
+Name[es]=Tetris
+Name[fi]=Pääteikkuna
+Name[fr]=Terminal
+Name[hr]=Terminal
+Name[hu]=Tetrisz
+Name[is]=Skjáhermir
+Name[it]=Tetris
 

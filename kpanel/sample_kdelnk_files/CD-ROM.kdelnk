@@ -2,6 +2,8 @@
 [KDE Desktop Entry]
 MiniIcon=cdrom_mount.xpm
 Comment=CD-ROM
+Comment[eo]=Stircentro de KDE
+Comment[hu]=CD lejАtszС
 Comment[is]=Geisladiskur
 Comment[ru]=Компакт диск
 Icon=cdrom_mount.xpm
