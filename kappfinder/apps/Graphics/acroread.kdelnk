@@ -3,6 +3,7 @@
 Name=Acrobat Reader
 Name[pl]=Acrobat Reader
 Name[no]=Acrobat-leser
+Name[pt_BR]=Acrobat Reader
 MimeType=application/pdf;
 Exec=acroread %f
 Icon=kghostview.xpm
@@ -13,6 +14,7 @@ Comment[no]=PDF-dokumentfremviser
 Comment[ro]=Vizualizor de documente PDF
 Comment[pl]=Przegl╠darka dokumentСw PDF
 Comment[ru]=Просмотрщик PDF документов
+Comment[pt_BR]=Visualizador de documentos PDF
 Terminal=0
 MiniIcon=kghostview.xpm
 Caption=PDF Viewer
