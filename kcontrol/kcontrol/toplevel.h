@@ -74,10 +74,7 @@ private:
 
 public slots:
 
-  void about();
- 
   void pannerChanged();
-  void help();
   void swallowChanged();
     
   void item_selected(int item);

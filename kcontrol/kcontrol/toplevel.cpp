@@ -70,7 +70,6 @@ void TopLevel::setupMenuBar()
 {
     file = new QPopupMenu();
     options = new QPopupMenu();
-    helpMenu = new QPopupMenu();
       
     file->insertItem(klocale->translate("E&xit"), 
 		     KApplication::getKApplication(), SLOT(quit()));
@@ -79,12 +78,13 @@ void TopLevel::setupMenuBar()
     swallowID = options->insertItem(klocale->translate("&Swallow modules"),
                         this, SLOT(swallowChanged()));
 
-    helpMenu->insertItem(klocale->translate("&About KControl..."), 
-			 this, SLOT(about()));
-    helpMenu->insertSeparator(-1);
-    helpID = helpMenu->insertItem(klocale->translate("&Using KControl"), 
-				  this, SLOT(help()));
-    
+    QPopupMenu *helpMenu = kapp->getHelpMenu(true, klocale->translate("KDE Control Center - "
+					"Version 0.3\n\n"
+					"Written by Matthias Hölzer\n"
+					"(hoelzer@physik.uni-wuerzburg.de)\n\n"
+					"Thanks to:\n"
+					"S. Kulow, P. Dowler, M. Wuebben & M. Jones."));
+
     menubar = new KMenuBar(this);
     menubar->insertItem(klocale->translate("&File"), file);
     menubar->insertItem(klocale->translate("&Options"), options);
@@ -94,19 +94,6 @@ void TopLevel::setupMenuBar()
     setMenu(menubar);
 }
  
-
-void TopLevel::about()
-{
-    KMsgBox::message(this, klocale->translate("About KControl"),
-		     klocale->translate("KDE Control Center - "
-					"Version 0.3\n\n"
-					"Written by Matthias Hölzer\n"
-					"(hoelzer@physik.uni-wuerzburg.de)\n\n"
-					"Thanks to:\n"
-					"S. Kulow, P. Dowler, M. Wuebben & M. Jones."),
-		     KMsgBox::INFORMATION, klocale->translate("Close"));
-}
-
 
 void TopLevel::setupStatusBar()
 {
@@ -180,12 +167,6 @@ KModuleListEntry *TopLevel::getListEntry(int item)
     return NULL;
   else
     return list_item->moduleListEntry; 
-}
-
-
-void TopLevel::help()
-{
-  kapp->invokeHTMLHelp("kcontrol/index.html", "" );    
 }
 
 
