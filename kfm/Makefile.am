@@ -86,5 +86,7 @@ clientIPC: ./ipcc/kfm.ipc
 kioIPC: ./ipcc/kio.ipc
 	cd ipcc ; ./ipcc.pl kio.ipc kioserver_ipc kioslave_ipc ; cp kioserver_ipc* ../ ; cp kioslave_ipc* ../kioslave ; cd ..
 
+messages:
+	@XGETTEXT@ -C --keyword=translate -x ../../kdelibs/po/de_kde.po $(kfm_SOURCES)
 
 
