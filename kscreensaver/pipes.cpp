@@ -110,8 +110,6 @@ FIXME: this could be clearer done by a calculation on the position.
 
 -- ------------------------------------------------------------------------ */
 
-#ifdef HAVE_GL
-
 #define QT_CLEAN_NAMESPACE
 
 #include "xlock.h"
@@ -126,6 +124,9 @@ extern KLocale *glocale;
 
 #include "pipes.h"
 #include <X11/Intrinsic.h>
+
+#ifdef HAVE_GL
+
 #include <GL/xmesa.h>
 #include <GL/gl.h>
 #include <GL/glx.h>
@@ -134,8 +135,6 @@ extern KLocale *glocale;
 #include "GL/glu.h"
 
 // GL related helper routines /////////////////////////////////////////////////
-
-#ifdef HAVE_GL
 
 GLenum doubleBuffer, directRender;
 GLint windW, windH;
@@ -311,6 +310,8 @@ const char *getScreenSaverName()
 #include <time.h>
 
 #define HERE fprintf(stderr,"%s(%d): here.\n",__FILE__,__LINE__)
+
+#ifdef HAVE_GL
 
 static GLfloat color[6][4] = 
 { 
