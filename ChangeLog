@@ -47,3 +47,4 @@
 	patches from Matthias
 	updated kfm to 0.6.4
 	updated kghostview to 0.4
+	added QTINC and QTLIB
