@@ -94,6 +94,9 @@ KfmView::~KfmView()
     if ( dropZone != 0L )
 	delete dropZone;
     dropZone = 0L;
+
+    // MRJ: make sure all requests are cancelled before the cache is deleted
+    cancelAllRequests();
     
     delete manager;
  
@@ -179,6 +182,8 @@ void KfmView::slotTerminal()
 
 void KfmView::slotStop()
 {
+    // MRJ: cancel any file requests before the htmlCache is stopped.
+    cancelAllRequests();
     manager->stop();
     htmlCache->stop();
 }
