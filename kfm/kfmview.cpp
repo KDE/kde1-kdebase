@@ -371,6 +371,39 @@ void KfmView::slotMountNotify()
 
 void KfmView::slotFilesChanged( const char *_url )
 {
+    //-------- Sven's refresh bindings if mime/app dirs changed start ---
+    // Few defines:
+#define GLOBALMIME kapp->kde_mimedir().data()
+#define LOCALMIME (kapp->localkdedir() + "/share/mimelnk").data()
+
+#define GLOBALAPPS kapp->kde_appsdir().data()
+#define LOCALAPPS (kapp->localkdedir() + "/share/applnk").data()
+
+    // Refreshing.
+    if (strstr (_url, LOCALMIME) != 0 ||  // local Mimes or ...
+	strstr (_url, LOCALAPPS) != 0 )   // local apps  written to?
+    {
+      gui->slotRescanBindings();
+      return;
+    }
+    // Note:
+    // This updates if user wrote into local mime/apps dir
+    // If user or root wrote to global dirs (without this redirection)
+    // There will be no updateing; I belive that it might be what
+    // they want - to make massive changes to globals and then
+    // update manualy.
+    // If you don't agree, add check for GLOBALMIME and GLOBALAPPS.
+    // Also I must call gui->slotRescanBindings(), although it updates
+    // templates and krootwm which are changed in this case. The
+    // reason for that is that I wan't to update all windows,
+    // but I cannot get the list of them (Because it usees protected
+    // windowlist, instead of public one from KTW. OK, in that case
+    // updateView should be virtual, and so on and on...)
+    
+    // David, if I cause some serious shit here, I am sorry :-)
+    // I wish you all merry, merry Xmass, and very happy New Year.
+
+    //-------- Sven's refresh bindings if mime/app dirs changed end ---
     QString u1 = _url;
     if ( u1.right( 1 ) != "/" )
 	u1 += "/";
@@ -394,6 +427,11 @@ void KfmView::slotDropLeaveEvent( KDNDDropZone * )
 
 void KfmView::slotDropEvent( KDNDDropZone *_zone )
 {
+      //-------- Sven's write to pseudo global mime/app dirs start ---
+      QString tryPath; // Sven needs this for mime things;
+      bool specialCase = false; // this too
+      //-------- Sven's write to pseudo global mime/app dirs end ---
+      
       // check if dropped data is an URL
       if ( _zone->getDataType() != DndURL )
       {
@@ -409,7 +447,141 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
       if ( url == 0L )
 	// dropped over white ground
 	url = manager->getURL();
+      //-------- Sven's write to pseudo global mime/app dirs start ---
 
+      // Consider the following case:
+      // User opened mime/apps dir and has not any local items =>
+      // displayed are global items or global dirs with items.
+      // Now he clicks on dir Images/. Global Images/ dir openes. Now
+      // user wants to drag some new item  he got from friend to this
+      // dir; He can't; this is a global directory. He is frustrated.
+
+      // Fix: If url contains global mime/apps path, repair it to
+      // point to local variant; create all needed dirs too.
+      // If user is root do nothing - if he can't write to global
+      // changes, he better remounts this drive Read-Write :-)
+      // If user is not root but can somehow write to globals
+      // (whole KDE installed in his home dir), also do nothing.
+
+      // Most of code is from kfmprops.cpp (= tested good).
+
+
+      if (!getGUI()->sumode) // if not root...
+      {
+	tryPath = url; // copy (hope deep)
+
+	// Some users CAN write to GLOBAL*.
+	if (tryPath.contains(GLOBALMIME) && // if global mime..
+	    access (GLOBALMIME, W_OK) != 0) // ..and canot write
+	{
+	  tryPath.remove(5, strlen(GLOBALMIME));
+	  tryPath.insert(5, LOCALMIME);
+	  specialCase = true;
+
+	}
+	else  if (tryPath.contains(GLOBALAPPS) && // if global apps..
+		  access (GLOBALAPPS, W_OK) != 0) // ..and canot write
+	{
+	  tryPath.remove(5, strlen(GLOBALAPPS));
+	  tryPath.insert(5, LOCALAPPS);
+	  specialCase = true;
+	}
+	// Ok repaired. Now we have to check/create nedded dir(s)
+
+	if (specialCase)
+	{
+	  QString path = &url[5];
+	  QDir lDir;
+	  // debug ("********SPECIAL CASE");
+	  if (path.find(kapp->kde_appsdir()) == 0) // kde_appsdir on start of path
+	  {
+	    path.remove(0, strlen(kapp->kde_appsdir())); //remove kde_appsdir
+	    lDir.setPath(LOCALAPPS);
+	  }
+	  else if (path.find(kapp->kde_mimedir()) == 0) // kde_mimedir on start of path
+	  {
+	    path.remove(0, strlen(kapp->kde_mimedir())); //remove kde_appsdir
+	    lDir.setPath(LOCALMIME);
+	  }
+	  else
+	  {
+	    debug ("HEEELP");
+	    return;
+	  }
+
+	  if (path[0] == '/')
+	    path.remove(0, 1); // remove /
+	  bool err;
+	  while (path.contains('/'))
+	  {
+	    int i = path.find('/'); // find separator
+	    if (!lDir.cd(path.left(i)))  // exists?
+	    {
+	      lDir.mkdir((path.left(i)));  // no, create
+	      if (!lDir.cd((path.left(i)))) // can cd to?
+	      {
+		err = true;                 // no flag it...
+		// debug ("Can't cd to  %s in %s", path.left(i).data(),
+		//	 lDir.absPath().data());
+		break;                      // and exit while
+	      }
+	      // Begin copy .directory if exists here.
+	      // This block can be commented out without problems
+	      // in case of problems.
+	      {
+		QFile tmp(kapp->kde_appsdir() +
+			  "/" + path.left(i) + "/.directory");
+		//debug ("---- looking for: %s", tmp.name());
+		if (tmp.open( IO_ReadOnly))
+		{
+		  //debug ("--- opened RO");
+		  char *buff = new char[tmp.size()+10];
+		  if (buff != 0)
+		  {
+		    if (tmp.readBlock(buff, tmp.size()) != -1)
+		    {
+		      size_t tmpsize = tmp.size();
+		      //debug ("--- read");
+		      tmp.close();
+		      tmp.setName(lDir.absPath() + "/.directory");
+		      //debug ("---- copying to: %s", tmp.name());
+		      if (tmp.open(IO_ReadWrite))
+		      {
+			//debug ("--- opened RW");
+			if (tmp.writeBlock(buff, tmpsize) != -1)
+			{
+			  //debug ("--- wrote");
+			  tmp.close();
+			}
+			else
+			{
+			  //debug ("--- removed");
+			  tmp.remove();
+			}
+		      }                 // endif can open to write
+		    }                   // endif can read
+		    else     //coulnd't read
+		      tmp.close();
+
+		    delete[] buff;
+		  }                     // endif is alocated
+		}                       // can open to write
+	      }
+	      // End coping .directory file
+
+	    }
+	    path.remove (0, i);           // cded to;
+	    if (path[0] == '/')
+	      path.remove(0, 1); // remove / from path
+	  }
+
+	  // if it fails, kfmman will let us know
+	  url = tryPath.data();
+	  // Note: we have to force rescaning; we didn't copy
+	  // to dir which is displayed (that is what KFM thinks)
+	}                            // end if special case
+      }                              // end if not root
+      //-------- Sven's write to pseudo global mime/app dirs end ---
     KURL u( url );
     if ( u.isMalformed() )
     {
@@ -446,7 +618,7 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
     
     QPoint p2( _zone->getMouseX(), _zone->getMouseY() );
     manager->dropPopupMenu( _zone, url, &p2, ( nested == 0 ? false : true ) );
-  
+
 }
 
 void KfmView::slotCopy()
