@@ -1015,14 +1015,17 @@ int main(int argc, char **argv)
   // first make an argument copy for a new kvt
   o_argc = argc;
   o_argv = new char*[o_argc + 2];
-  int i;
+  int i,i2;
+  i2 = 0;
   for (i=0; i<o_argc; i++) {
     if (QString("-restore")==argv[i])
       i++;
-    else
-      o_argv[i] = argv[i];
+    else {
+      o_argv[i2] = argv[i];
+      i2++;
+    }
   }
-  o_argv[i]=NULL;
+  o_argv[i2]=NULL;
 
   // cut off the command arguments for the terminal command and set com_arg
   int commands = -1;
