@@ -14,9 +14,8 @@ msgid "&Desktops"
 msgstr "&Desktops"
 
 #: main.cpp:97
-#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
-msgstr "Benutzung: kcmkpanel [-init | {panel, desktops}]\n"
+msgstr "Benutzung: kcmkpanel [-init | {panel,options,desktops}]\n"
 
 #: main.cpp:127
 msgid "KPanel Configuration"
@@ -28,112 +27,97 @@ msgstr "Stelle"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr ""
+msgstr "&Oben"
 
 #: panel.cpp:61
-#, fuzzy
 msgid "&Left"
-msgstr "Links/Oben"
+msgstr "&Links/Oben"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr ""
+msgstr "&Unten"
 
 #: panel.cpp:74
 msgid "Taskbar"
 msgstr "Taskbar"
 
 #: panel.cpp:75
-#, fuzzy
 msgid "&Hidden"
-msgstr "Versteckt"
+msgstr "&Versteckt"
 
 #: panel.cpp:77
 msgid "T&op"
-msgstr ""
+msgstr "O&ben"
 
 #: panel.cpp:79
 msgid "Botto&m"
-msgstr ""
+msgstr "Un&ten"
 
 #: panel.cpp:81
-#, fuzzy
 msgid "Top/Le&ft"
-msgstr "Links/Oben"
+msgstr "Lin&ks/Oben"
 
 #: panel.cpp:96
 msgid "T&iny"
-msgstr ""
+msgstr "&Winzig"
 
 #: panel.cpp:98
-#, fuzzy
 msgid "&Normal"
-msgstr "Normal"
+msgstr "&Normal"
 
 #: panel.cpp:100
 msgid "L&arge"
-msgstr ""
+msgstr "G&roß"
 
 #: desktops.cpp:73
-#, fuzzy
 msgid "&Visible"
-msgstr "Sichtbar"
+msgstr "&Sichtbar"
 
 #: desktops.cpp:82
-#, fuzzy
 msgid "&Width"
-msgstr "Breite"
+msgstr "&Breite"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
 msgstr "Menü-Hilfen"
 
 #: options.cpp:39
-#, fuzzy
 msgid "Show &Menu Tooltips"
-msgstr "Menü-Hilfen"
+msgstr "&Menü-Hilfen anzeigen"
 
 #: options.cpp:44
 msgid "De&lay:"
-msgstr ""
+msgstr "Zeit&spanne"
 
 #: options.cpp:56
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #: options.cpp:68
 msgid "Others"
-msgstr ""
+msgstr "Andere"
 
 #: options.cpp:69
-#, fuzzy
 msgid "Personal &First"
-msgstr "Persönliches Menü zuerst"
+msgstr "Per&sönliches Menü zuerst"
 
 #: options.cpp:71
-#, fuzzy
 msgid "Auto &Hide Panel"
-msgstr "Panel autom. verstecken"
+msgstr "Panel &autom. verstecken"
 
 #: options.cpp:73
-#, fuzzy
 msgid "Auto Hide &Taskbar"
-msgstr "Taskbar autom. verstecken"
+msgstr "Tas&kbar autom. verstecken"
 
 #: options.cpp:81
 msgid "Clock"
-msgstr ""
+msgstr "Uhr"
 
 #: options.cpp:83
 msgid "&24h"
-msgstr ""
+msgstr "&24h"
 
 #: options.cpp:85
 msgid "&12h AM/PM"
-msgstr ""
+msgstr "&12h AM/PM"
 
-#~ msgid "Tiny Style"
-#~ msgstr "Winzig"
-
-#~ msgid "Large Style"
-#~ msgstr "Groß"
