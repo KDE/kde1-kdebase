@@ -20,6 +20,7 @@
    April 1998, Cedric Tefft <cedric@earthling.net>
    In case of problems contact me, not the original author
 */
+// layout management added 1998/04/19 by Mario Weilguni <mweilguni@kde.org>
 
 #include "xlock.h"		/* in xlockmore distribution */
 
@@ -821,6 +822,11 @@ release_bouboule()
 
 #include "bouboule.moc"
 
+#include <qlayout.h>
+#include <kbuttonbox.h>
+#include "helpers.h"
+
+
 // this refers to klock.po. If you want an extra dictionary, 
 // create an extra KLocale instance here.
 extern KLocale *glocale;
@@ -1003,70 +1009,99 @@ kBoubouleSetup::kBoubouleSetup( QWidget *parent, const char *name )
 	QPushButton *button;
 	KSlider *slider;
 
+	QVBoxLayout *tl = new QVBoxLayout(this, 10, 10);
+	QHBoxLayout *tl1 = new QHBoxLayout;
+	tl->addLayout(tl1);
+	QVBoxLayout *tl11 = new QVBoxLayout(5);
+	tl1->addLayout(tl11);		
+
 	label = new QLabel( glocale->translate("Speed:"), this );
-	label->setGeometry( 15, 15, 60, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	slider = new KSlider( KSlider::Horizontal, this );
-	slider->setGeometry( 15, 35, 135, 20 );
+	slider->setMinimumSize( 135, 20 );
 	slider->setRange( MINSPEED, MAXSPEED );
 	slider->setSteps( (MAXSPEED-MINSPEED)/4, (MAXSPEED-MINSPEED)/2 );
 	slider->setValue( speed );
-	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
+	connect( slider, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotSpeed( int ) ) );
+	tl11->addWidget(slider);
+	tl11->addSpacing(5);
 
 	label = new QLabel( glocale->translate("Number of points:"), this );
-	label->setGeometry( 15, 65, 100, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	slider = new KSlider( KSlider::Horizontal, this );
-	slider->setGeometry( 15, 85, 135, 20 );
+	slider->setMinimumSize( 135, 20 );
 	slider->setRange( MINPOINTS, MAXPOINTS );
 	slider->setSteps( (MAXPOINTS-MINPOINTS)/4, (MAXPOINTS-MINPOINTS)/2 );
 	slider->setValue( numPoints );
-	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotPoints( int ) ) );
+	connect( slider, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotPoints( int ) ) );
+	tl11->addWidget(slider);
+	tl11->addSpacing(5);
 
 	label = new QLabel( glocale->translate("Point size:"), this );
-	label->setGeometry( 15, 105, 90, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	slider = new KSlider( KSlider::Horizontal, this );
-	slider->setGeometry( 15, 130, 135, 20 );
+	slider->setMinimumSize( 135, 20 );
 	slider->setRange( MINSIZE, MAXSIZE );
 	slider->setSteps( (MAXSIZE-MINSIZE)/4, (MAXSIZE-MINSIZE)/2 );
 	slider->setValue( pointSize );
-	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSize( int ) ) );
+	connect( slider, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotSize( int ) ) );
+	tl11->addWidget(slider);
+	tl11->addSpacing(5);
 
 	freqlabel = new QLabel( glocale->translate("Color-change frequency:"), this );
-	freqlabel->setGeometry( 15, 155, 140, 20 );
+	min_size(freqlabel);
+	tl11->addWidget(freqlabel);
 	freqlabel->setEnabled( !flag_3dmode );
 
 	freqslider = new KSlider( KSlider::Horizontal, this );
-	freqslider->setGeometry( 15, 185, 135, 20 );
 	freqslider->setRange( MINCCSPEED, MAXCCSPEED );
-	freqslider->setSteps( (MAXCCSPEED-MINCCSPEED)/4, (MAXCCSPEED-MINCCSPEED)/2 );
+	freqslider->setSteps( (MAXCCSPEED-MINCCSPEED)/4, 
+			      (MAXCCSPEED-MINCCSPEED)/2 );
 	freqslider->setValue( colorCycleDelay );
-	connect( freqslider, SIGNAL( valueChanged( int ) ), SLOT( slotColorCycle( int ) ) );
+	connect( freqslider, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotColorCycle( int ) ) );
+	freqslider->setMinimumSize( 135, 20 );
+	tl11->addWidget(freqslider);
+	tl11->addSpacing(5);
 	freqslider->setEnabled( !flag_3dmode );
 
 	QCheckBox *cb = new QCheckBox( glocale->translate("3D mode"), this );
-	cb->setGeometry( 20, 210, 60, 20 );
+	min_size(cb);
 	cb->setChecked( flag_3dmode );
 	connect( cb, SIGNAL( toggled( bool ) ), SLOT( slot3DMode( bool ) ) );
+	tl11->addWidget(cb);
+	tl11->addStretch(1);
 
 	preview = new QWidget( this );
-	preview->setGeometry( 160, 15, 220, 170 );
+	preview->setFixedSize( 220, 170 );
 	preview->setBackgroundColor( black );
 	preview->show();    // otherwise saver does not get correct size
 	saver = new kBoubouleSaver( preview->winId() );
+	tl1->addWidget(preview);
 
-	button = new QPushButton( glocale->translate("About"), this );
-	button->setGeometry( 140, 210, 50, 25 );
-	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
+	KButtonBox *bbox = new KButtonBox(this);	
+	button = bbox->addButton( glocale->translate("About"));
+	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
+	bbox->addStretch(1);
 
-	button = new QPushButton( glocale->translate("Ok"), this );
-	button->setGeometry( 235, 210, 50, 25 );
+	button = bbox->addButton( glocale->translate("Ok"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( glocale->translate("Cancel"), this );
-	button->setGeometry( 300, 210, 50, 25 );
+	button = bbox->addButton(glocale->translate("Cancel"));
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
+	bbox->layout();
+	tl->addWidget(bbox);
+
+	tl->freeze();
 }
 
 void kBoubouleSetup::readSettings()
