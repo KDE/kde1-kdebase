@@ -165,11 +165,11 @@ int main(int argc, char *argv[])
 	QString p = KApplication::localkdedir();
 	QString rcDir = p + "/share/apps";
 	if ( access( rcDir, F_OK ) )
-		mkdir( rcDir, 0740 );
+		mkdir( rcDir.data(), 0740 );
 
 	rcDir += "/kdehelp";
 	if ( access( rcDir, F_OK ) )
-		mkdir( rcDir, 0740 );
+		mkdir( rcDir.data(), 0740 );
 
 	pidFile.sprintf("%s/kdehelp%s.pid", rcDir.data(), displayName().data());
 

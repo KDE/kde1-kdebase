@@ -433,7 +433,7 @@ static int _getprop(Window w, Atom a, Atom type, long len, unsigned char **p){
   if (status != Success || *p == 0)
     return -1;
   if (n == 0)
-    XFree((void*) *p);
+    XFree((char*) *p);
   return n;
 }
 
@@ -484,7 +484,7 @@ void KGeneral::apply( bool  )
 	XFlush(kde_display);
 	XSetErrorHandler(defaultHandler);
 	
-	XFree((void *) rootwins);
+	XFree((char *) rootwins);
 	
 	KWM::sendKWMCommand("kpanel:restart");
 	
