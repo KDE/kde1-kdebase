@@ -1465,7 +1465,9 @@ void Manager::deskUnclutter() {
   for(cl = clients.last(); cl; cl = clients.prev()) {
     //save the current position in the clients list
     bm = clients.current(); 
-    if((!cl->isOnDesktop(currentDesktop())) || (cl->isIconified()) )
+    if((!cl->isOnDesktop(currentDesktop())) ||
+       (cl->isIconified())                  ||
+       (cl->isSticky()))
       continue;
     smartPlacement(cl);
     sendConfig(cl, false); //ask Matthias if this is the best way

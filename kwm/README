@@ -126,7 +126,8 @@ Answer: Yes it is. You simple have to go through kwm.h/kwm.C from
             right mouse button: show windows operation menu if the
                  window is active, otherwise activate it without raising.
 
-     doubleclick on title toggles maximize
+     doubleclick on title performs a selectable action 
+	(e.g. Maximize, (Un)Shade )
 
      drag of the titlebar: move window (left mouse raises, middle mouse
             keeps the stacking position)
@@ -160,10 +161,11 @@ Answer: Yes it is. You simple have to go through kwm.h/kwm.C from
 
     [General]
     WindowMoveType=Opaque, Transparent
-    FocusPolicy=ClickToFocus, FocusFollowMouse
+    WindowResizeType=Opaque, Transparent
+    FocusPolicy=ClickToFocus, FocusFollowMouse, ClassicSloppyFocus, ClassicFocusFollowsMouse
     AutoRaise=0 (milliseconds), -1 (no timer but raise on first click)
     MaximizeOnlyVertically=off, on
-    TitlebarLook=shaded, plain, pixmap
+    TitlebarLook=shadedVertical, shadedHorizontal, plain, pixmap
     TitlebarPixmapActive=<pixmap>
     TitlebarPixmapInactive=<pixmap>
     TitleAnimation=50 (milliseconds)
@@ -171,6 +173,12 @@ Answer: Yes it is. You simple have to go through kwm.h/kwm.C from
     ControlTab=on, off
     Button3Grab=on, off
     TraverseAll=on, off
+    ElectricBorder=500
+    ElectricBorderNumberofPushes=5
+    ElectricBorderPointerWarp=noWarp,middleWarp,fullWarp
+    WindowsPlacement=smart,interactive,manual,random
+    SnapToBorder=10
+    SnapToWindow=10
     RstartProtocol=.... [default is "rstart -v"]
 
     ShapeMode=off, on
