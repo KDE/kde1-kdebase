@@ -341,9 +341,10 @@ const QString& KOldTabListBox::text(int row, int col) const
 {
     const KOldTabListBoxItem* item = getItem(row);
     static QString str;
+    static QString empty("");
     int i, cols;
     
-    if (!item) return QString("");
+    if (!item) return empty;
     if (col >= 0) return item->text(col);
     
     cols = item->columns - 1;
