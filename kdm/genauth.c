@@ -35,6 +35,8 @@ from the X Consortium.
  * Author:  Keith Packard, MIT X Consortium
  */
 
+#include <string.h>
+ 
 # include   <X11/Xauth.h>
 # include   <X11/Xos.h>
 # include   "dm.h"
