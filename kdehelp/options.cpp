@@ -72,6 +72,7 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	cb = new QComboBox( false, this );
 	cb->setGeometry( 120, 130, 180, 25 );
 	getFontList( fixedFonts, "-*-*-*-*-*-*-*-*-*-*-m-*-*-*" );
+	getFontList( fixedFonts, "-*-*-*-*-*-*-*-*-*-*-c-*-*-*" );
 	cb->insertStrList( &fixedFonts );
 	QStrListIterator fit( fixedFonts );
 	for ( i = 0; fit.current(); ++fit, i++ )

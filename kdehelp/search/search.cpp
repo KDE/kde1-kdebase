@@ -48,6 +48,7 @@ int main()
 	}
 	while ( str );
 
+	cout << "Content-type: text/html" << endl << endl;
 	cout << "<HTML><HEAD><TITLE>Search Results: " << search;
 	cout << "</TITLE></HEAD><BODY>" << endl;
 	cout << "<H1>Search Results: " << search << "</H1>" << endl;

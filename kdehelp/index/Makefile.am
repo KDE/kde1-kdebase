@@ -7,3 +7,5 @@ bindir = $(kde_cgidir)
 bin_PROGRAMS = helpindex
 helpindex_SOURCES = kdeindex.cpp
 
+messages:
+	$(XGETTEXT) -C -ktranslate -kaliasLocale -x ../../../kdelibs/po/kde.pot $(helpindex_SOURCES) && mv messages.po ../../po/helpindex.pot

@@ -21,6 +21,7 @@
 #include <kurl.h>
 #include <kfm.h>
 #include <klocale.h>
+#include <kfiledialog.h>
 #include "cgi.h"
 #include "kbutton.h"
 #include "helpwin.h"
@@ -790,7 +791,8 @@ int KHelpWindow::openHTML( const char *location )
 	{
 		buffer[0] = '\0';
 		val = file.readLine( buffer, 256 );
-		view->write(buffer);
+		if ( strncmp( buffer, "Content-type", 12 ) )
+		    view->write(buffer);
 	}
 	while ( !file.atEnd() );
 
@@ -1039,7 +1041,7 @@ void KHelpWindow::layout()
 
 void KHelpWindow::slotOpenFile()
 {
-	QString fileName = QFileDialog::getOpenFileName();
+	QString fileName = KFileDialog::getOpenFileName();
 
 	if ( !fileName.isNull() )
 	{

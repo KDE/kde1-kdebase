@@ -8,8 +8,9 @@
 #include <iostream.h>
 #include <qlist.h>
 #include <qdir.h>
-#include "kconfig.h"
 #include <kapp.h>
+#include <ksimpleconfig.h>
+#include <klocale.h>
 
 //-----------------------------------------------------------------------------
 
@@ -33,9 +34,8 @@ int Entry::readEntry( const char *filename )
 		return FALSE;
 
 	file.close(); // kalle
-// kalle	QTextStream pstream( &file );
 
-	KConfig config( filename ); // kalle
+	KSimpleConfig config( filename, true );
 	config.setGroup( "KDE Desktop Entry" );
 
 	QString path = config.readEntry( "DocPath" );
@@ -127,9 +127,21 @@ int processDir( const char *dirName, QTextStream &stream )
 		filename += itDir.current();
 
 		stream << "<blockquote>";
+
+		QString dirFile = filename + "/.directory";
+		if ( QFile::exists( dirFile ) )
+		{
+		    KSimpleConfig sc( dirFile, true );
+		    sc.setGroup( "KDE Desktop Entry" );
+		    QString dirName = sc.readEntry( "Name", itDir.current() );
+		    stream << "<h2>" << dirName << "</h2>" << endl;
+		}
+		else
+		    stream << "<h2>" << itDir.current() << "</h2>" << endl;
+
+
 		if ( readEntries( filename, list ) > 0 )
 		{
-			stream << "<h2>" << itDir.current() << "</h2>" << endl;
 			stream << "<dl>";
 			for ( Entry *entry = list.first(); entry; entry = list.next() )
 				entry->writeHTML( stream );
@@ -147,16 +159,17 @@ int processDir( const char *dirName, QTextStream &stream )
 
 int main( int argc, char **argv )
 {
-	KApplication a( argc, argv );
+	KApplication a( argc, argv, "helpindex" );
 
 	QString home = getenv( "HOME" );
 
 	QTextStream stream( stdout, IO_WriteOnly );
 
-	stream << "<html><head><title>KDE Applications Index</title></head>"
-		<< endl;
+	stream << "Content-type: text/html" << endl << endl;
+	stream << "<html><head><title>" << klocale->translate( "KDE Applications Index" ) <<
+		"</title></head>" << endl;
 	stream << "<body>" << endl;
-	stream << "<h1>KDE Applications Index</h1>" << endl;
+	stream << "<h1>" << klocale->translate( "KDE Applications Index" ) << "</h1>" << endl;
 
 	// System applications
 	QString appPath = kapp->kde_appsdir();
