@@ -16,4 +16,4 @@ msgstr ""
 
 #: main.cpp:29
 msgid "KDE Control Application Sample"
-msgstr "KDE Control applikasjons eksempel"
+msgstr "KDE Control-applikasjonseksempel"

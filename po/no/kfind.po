@@ -71,7 +71,6 @@ msgid "&Preferences ..."
 msgstr "&Preferanser..."
 
 #: kfindtop.cpp:173
-#, c-format
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
@@ -189,27 +188,27 @@ msgstr "Alle filer og mapper"
 
 #: kftabdlg.cpp:233
 msgid "Files"
-msgstr ""
+msgstr "Filer"
 
 #: kftabdlg.cpp:234
 msgid "Folders"
-msgstr ""
+msgstr "Mapper"
 
 #: kftabdlg.cpp:235
 msgid "Symbolic links"
-msgstr ""
+msgstr "Symbolske lenker"
 
 #: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"
-msgstr ""
+msgstr "Sepsialfiler (sockets, enhetsfiler...)"
 
 #: kftabdlg.cpp:237
 msgid "Executable files"
-msgstr ""
+msgstr "Programfiler"
 
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
-msgstr ""
+msgstr "SUID-programfiler"
 
 #: kftabdlg.cpp:247
 msgid "At Least"
@@ -364,9 +363,3 @@ msgstr "Kunne ikke gjenkjenne arkiv type!"
 #: kfwin.cpp:495
 msgid "Error while creating child process!"
 msgstr "Feil ved opprettelse av underordnet prosess!"
-
-#~ msgid "Kfind &help"
-#~ msgstr "KFind &hjelp"
-
-#~ msgid "About &Qt"
-#~ msgstr "Om &Qt"

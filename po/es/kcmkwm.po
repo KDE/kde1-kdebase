@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-30 13:16+0200\n"
-"PO-Revision-Date: 1998-05-11 21:09+0200\n"
+"PO-Revision-Date: 1998-06-03 18:49+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.cpp:59
@@ -78,13 +78,12 @@ msgid "Titlebar appearance"
 msgstr "Aspecto barra de título"
 
 #: titlebar.cpp:928
-#, fuzzy
 msgid "Shaded Vertically"
-msgstr "Maximizado vertical"
+msgstr "Sombreado vertical"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
-msgstr ""
+msgstr "Sombreado horizontal"
 
 #: titlebar.cpp:934
 msgid "Plain"
@@ -167,14 +166,12 @@ msgid "Opaque"
 msgstr "Opaco"
 
 #: windows.cpp:79
-#, fuzzy
 msgid "Window resize"
-msgstr "&Ventanas"
+msgstr "Redimensión de ventanas"
 
 #: windows.cpp:80
-#, fuzzy
 msgid "With animation"
-msgstr "Animación del título"
+msgstr "Con animación"
 
 #: windows.cpp:85
 msgid "Placement policy"
@@ -229,14 +226,12 @@ msgid "Focus follows mouse"
 msgstr "El foco sigue el ratón"
 
 #: windows.cpp:120
-#, fuzzy
 msgid "Classic focus follows mouse"
-msgstr "El foco sigue el ratón"
+msgstr "El foco sigue el ratón clásico"
 
 #: windows.cpp:122
-#, fuzzy
 msgid "Classic sloppy focus"
-msgstr "Click para focalizar"
+msgstr "Focalizar clásico"
 
 #: windows.cpp:131
 msgid ""
@@ -284,9 +279,3 @@ msgid ""
 msgstr ""
 "Zona de adhesión en ventanas:\n"
 "       (pixels)"
-
-#~ msgid "Shaded"
-#~ msgstr "Sombreado"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Anim. de redimensión"

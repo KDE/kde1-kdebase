@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-30 13:16+0200\n"
-"PO-Revision-Date: 1998-05-11 10:18+0200\n"
+"PO-Revision-Date: 1998-06-03 18:54+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.C:68
@@ -116,12 +116,11 @@ msgstr "Escritorio sin nombre"
 
 #: main.C:931
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Algunos pixmaps no son válidos: desactivando modo\n"
+msgstr "Algunos pixmaps no son válidos: desactivando modo de formas\n"
 
 #: main.C:1043
-#, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Algunos pixmaps no son válidos: desactivando modo\n"
+msgstr "Algunos pixmaps no son válidos: desactivando modo de gimmicks\n"
 
 #: main.C:1281
 msgid "*** No Tasks ***"
@@ -133,7 +132,7 @@ msgstr "Comando:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "Ups!"
 
 #: logout.C:36 taskmgr.C:107
 msgid "Logout"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-30 17:26+0200\n"
-"PO-Revision-Date: 1998-05-11 21:06+0200\n"
+"PO-Revision-Date: 1998-06-03 18:51+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: banner.cpp:62
@@ -590,26 +590,24 @@ msgid "Setup Science"
 msgstr "Configurar Ciencia"
 
 #: science.cpp:580
-#, fuzzy
 msgid "Mode:"
-msgstr "Mitad:"
+msgstr "Modo:"
 
 #: science.cpp:585
 msgid "Whirl"
-msgstr ""
+msgstr "Remolino"
 
 #: science.cpp:586
-#, fuzzy
 msgid "Sphere"
-msgstr "Velocidad:"
+msgstr "Esfera"
 
 #: science.cpp:598
 msgid "Inverse"
-msgstr ""
+msgstr "Inverso"
 
 #: science.cpp:607
 msgid "Gravity"
-msgstr ""
+msgstr "Gravedad"
 
 #: science.cpp:632
 msgid "Intensity:"
@@ -617,21 +615,20 @@ msgstr "Intensidad:"
 
 #: science.cpp:660
 msgid "Motion:"
-msgstr ""
+msgstr "Movimiento:"
 
 #: science.cpp:845
 msgid "About Science"
 msgstr "Acerca de Ciencia"
 
 #: science.cpp:846
-#, fuzzy
 msgid ""
 "Science Version 0.24.2 beta\n"
 "\n"
 "written by Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
 msgstr ""
-"Science Version 0.2beta\n"
+"Science Version 0.24.2 beta\n"
 "\n"
 "escrito por Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
