@@ -45,9 +45,11 @@ msgid "&Desktop Icons"
 msgstr "&Ikonky plochy"
 
 #: main.cpp:89
+#, c-format
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
-msgstr "pou¾itie: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+msgstr ""
+"pou¾itie: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"

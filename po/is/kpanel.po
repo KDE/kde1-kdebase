@@ -3,120 +3,136 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-12 01:17+0100\n"
+"POT-Creation-Date: 1998-12-25 01:11+0100\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
 
-#: kpanel.C:273
+#: kpanel.C:284
 msgid "&Move"
 msgstr "&Færa"
 
-#: kpanel.C:276
+#: kpanel.C:287
 msgid "&Properties"
 msgstr "&Eiginleikar"
 
-#: kpanel.C:313
+#: kpanel.C:330
 msgid "Go!"
 msgstr "Núna!"
 
-#: kpanel.C:316 tools.C:832
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "Hvert vilt þú komast á morgun?"
 
-#: kpanel.C:391
+#: kpanel.C:408
 msgid "No info available"
 msgstr "Engar upplýsingar fáanlegar"
 
-#: kpanel.C:430 props.C:193 props.C:194
+#: kpanel.C:447 props.C:206 props.C:207
 msgid "Logout"
 msgstr "Stimpla út"
 
-#: kpanel.C:438 props.C:192
+#: kpanel.C:455 props.C:205
 msgid "Lock screen"
 msgstr "Læsa skjá"
 
-#: kpanel.C:447 kpanel.C:456
+#: kpanel.C:464 kpanel.C:473
 msgid "Hide the panel"
 msgstr "Fela spjaldið"
 
-#: kpanel.C:466 kpanel.C:478
+#: kpanel.C:483 kpanel.C:495
 msgid "Show the panel"
 msgstr "Sýna spjaldið"
 
-#: kpanel.C:1203
+#: kpanel.C:1100
+msgid "Iconify other &windows"
+msgstr ""
+
+#: kpanel.C:1237
 msgid "No comment available"
 msgstr "Engin athugasemd"
 
-#: kpanel.C:1212 tools.C:841
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Gluggalisti"
 
-#: props.C:162
-msgid "Add application"
-msgstr "Bæta forriti við"
-
-#: props.C:164
-msgid "Add an application or a submenu onto the panel"
-msgstr "Bæta forriti eða undirvalmynd á spjaldið"
-
-#: props.C:165
-msgid "Add windowlist"
-msgstr "Bæta við gluggalista"
-
-#: props.C:167
-msgid "Add a windowlist menu onto the panel"
-msgstr "Bæta gluggalistavalmynd á spjaldið"
-
-#: events.C:782 props.C:168
-msgid "Configure"
-msgstr "Stilla"
-
-#: props.C:170
-msgid "Configure panel"
-msgstr "Stilla spjaldið"
-
-#: props.C:171
-msgid "Edit Menus"
-msgstr "Sýsla með valmyndir"
-
-#: props.C:173
-msgid "Add or remove applications in the menu structure "
-msgstr "Bæta forritum við valmyndakerfið, eða fjarlægja þau"
-
-#: events.C:784 props.C:174
-msgid "Restart"
-msgstr "Endurræsa"
-
-#: props.C:176
-msgid "Restart panel"
-msgstr "Endurræsa spjald"
-
-#: props.C:179
-msgid "Disk Navigator"
-msgstr "Diskaflakkari"
-
-#: props.C:182
+#: kpanel.C:1254 props.C:196
 msgid "Quickly navigate through the filesystem"
 msgstr "Flakka hratt um skráakerfið"
 
-#: props.C:188
+#: props.C:166
+#, fuzzy
+msgid "Add Application"
+msgstr "Bæta forriti við"
+
+#: props.C:168
+msgid "Add an application or a submenu onto the panel"
+msgstr "Bæta forriti eða undirvalmynd á spjaldið"
+
+#: props.C:174
+#, fuzzy
+msgid "Add Disk Navigator"
+msgstr "Diskaflakkari"
+
+#: props.C:176
+#, fuzzy
+msgid "Add a Disk Navigator menu onto the panel"
+msgstr "Bæta gluggalistavalmynd á spjaldið"
+
+#: props.C:179
+#, fuzzy
+msgid "Add Windowlist"
+msgstr "Bæta við gluggalista"
+
+#: props.C:181
+msgid "Add a windowlist menu onto the panel"
+msgstr "Bæta gluggalistavalmynd á spjaldið"
+
+#: events.C:800 props.C:182
+msgid "Configure"
+msgstr "Stilla"
+
+#: props.C:184
+msgid "Configure panel"
+msgstr "Stilla spjaldið"
+
+#: props.C:185
+msgid "Edit Menus"
+msgstr "Sýsla með valmyndir"
+
+#: props.C:187
+msgid "Add or remove applications in the menu structure "
+msgstr "Bæta forritum við valmyndakerfið, eða fjarlægja þau"
+
+#: events.C:802 props.C:188
+msgid "Restart"
+msgstr "Endurræsa"
+
+#: props.C:190
+msgid "Restart panel"
+msgstr "Endurræsa spjald"
+
+#: props.C:193
+msgid "Disk Navigator"
+msgstr "Diskaflakkari"
+
+#: props.C:201
 msgid "Panel"
 msgstr "Spjald"
 
-#: props.C:190
+#: props.C:203
 msgid "Lock Screen"
 msgstr "Læsa skjá"
 
-#: props.C:419
+#: props.C:450
 msgid "The menu editor is not installed."
 msgstr "Valmyndaritillinn er ekki settur upp."
 
-#: events.C:838 props.C:420
+#: events.C:856 props.C:451
 msgid "Oops!"
 msgstr "Úps!"
 
-#: tools.C:618
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
@@ -124,58 +140,63 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: events.C:837
+#: tools.C:908
+#, fuzzy
+msgid "KDiskNavigator"
+msgstr "Diskaflakkari"
+
+#: events.C:855
 msgid "Cannot put this as button onto the panel!"
 msgstr "Ekki er hægt að setja þennan hnapp á spjaldið!"
 
-#: pfilemenu.C:415
+#: pfilemenu.C:425
 msgid "(empty folder)"
 msgstr "(tóm mappa)"
 
-#: pfilemenu.C:470
+#: pfilemenu.C:480
 msgid "Open Folder"
 msgstr "Opna möppu"
 
-#: pfilemenu.C:481
+#: pfilemenu.C:491
 msgid "(Too Many Files)"
 msgstr "(Of margar skrár)"
 
-#: pfilemenu.C:490
+#: pfilemenu.C:500
 msgid "(Access Denied)"
 msgstr "(Aðgangi hafnað)"
 
-#: pfilemenu.C:493
+#: pfilemenu.C:503
 msgid "(Unreadable)"
 msgstr "(Ekki læsilegt)"
 
-#: pfilemenu.C:742
+#: pfilemenu.C:752
 msgid "Shared:"
 msgstr "Sameign:"
 
-#: pfilemenu.C:744
+#: pfilemenu.C:754
 msgid "Entries shared among all users"
 msgstr "Allir notendur samnýta færslur"
 
-#: pfilemenu.C:763
+#: pfilemenu.C:773
 msgid "Personal:"
 msgstr "Einka:"
 
-#: pfilemenu.C:765
+#: pfilemenu.C:775
 msgid "Personal entries"
 msgstr "Einkafærslur"
 
-#: pfilemenu.C:783
+#: pfilemenu.C:793
 msgid "Recent:"
 msgstr "Nýlegt:"
 
-#: pfilemenu.C:785
+#: pfilemenu.C:795
 msgid "Recent entries"
 msgstr "Nýlegar færslur"
 
-#: pfilemenu.C:831
+#: pfilemenu.C:841
 msgid "Options..."
 msgstr "Stillingar..."
 
-#: pfilemenu.C:833
+#: pfilemenu.C:843
 msgid "Customize Disk Navigator"
 msgstr "Stilla Diskaflakkara"

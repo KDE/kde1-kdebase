@@ -63,7 +63,8 @@ msgid ""
 "No Information available\n"
 " or\n"
 "this system is not yet supported :-("
-msgstr "Annað hvort eru engar upplýsingar fánlegar,\n"
+msgstr ""
+"Annað hvort eru engar upplýsingar fánlegar,\n"
 "eða þá að þetta kerfi er ennþá óstutt."
 
 #: info_fbsd.cpp:73

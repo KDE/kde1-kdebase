@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
-"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-12-23 23:42+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"

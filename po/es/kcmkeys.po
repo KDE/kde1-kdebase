@@ -87,7 +87,7 @@ msgstr ""
 "que se añadirá a su lista personal.\n"
 "\n"
 "Las teclas en uso actualmente en la ventana\n"
-"serán copiadas a este esquema para empezar."  
+"serán copiadas a este esquema para empezar."
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"

@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-11-27 18:11+0100\n"
+"POT-Creation-Date: 1998-12-15 07:34+0100\n"
 "PO-Revision-Date: 1998-12-17 22:28+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: ia <kde-isl@mmedia.is>\n"
@@ -16,39 +16,61 @@ msgstr "Víðvært skjáborð af/á"
 msgid "Toggle Menubar"
 msgstr "Valslá af/á"
 
-#: kpager.cpp:84 kpager.cpp:188 kpager.cpp:323
+#: kpager.cpp:77
+msgid "Move Right"
+msgstr ""
+
+#: kpager.cpp:79
+msgid "Move Left"
+msgstr ""
+
+#: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
 msgstr "Fela &víðvært skjábort"
 
-#: kpager.cpp:86 kpager.cpp:182 kpager.cpp:325
+#: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
 msgid "Show &Global Desktop"
 msgstr "Sýna víðvært skjáborp"
 
-#: kpager.cpp:91 kpager.cpp:331
+#: kpager.cpp:97 kpager.cpp:380
 msgid "Hide &Menubar"
 msgstr "Fela &valslá"
 
-#: kpager.cpp:95 kpager.cpp:337
+#: kpager.cpp:101 kpager.cpp:386
 msgid "&2 Rows"
 msgstr "&2 raðir"
 
-#: kpager.cpp:101 kpager.cpp:344
+#: kpager.cpp:104
+msgid "&One Click change Desktop"
+msgstr ""
+
+#: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
+#, fuzzy
+msgid "Hide Desktop &Names"
+msgstr "Fela &víðvært skjábort"
+
+#: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
+#, fuzzy
+msgid "Show Desktop &Names"
+msgstr "Sýna víðvært skjáborp"
+
+#: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
 msgstr "Einfalt"
 
-#: kpager.cpp:104 kpager.cpp:346
+#: kpager.cpp:118 kpager.cpp:404
 msgid "Icon"
 msgstr "Táknmynd"
 
-#: kpager.cpp:107 kpager.cpp:348
+#: kpager.cpp:121 kpager.cpp:406
 msgid "Pixmap"
 msgstr "Bitamynd"
 
-#: kpager.cpp:111 kpager.cpp:354
+#: kpager.cpp:125 kpager.cpp:412
 msgid "Draw Mode"
 msgstr "Teikning"
 
-#: kpager.cpp:115
+#: kpager.cpp:129
 #, c-format
 msgid ""
 "%s\n"
@@ -75,26 +97,30 @@ msgstr ""
 "Þetta er frjáls hugbúnaður og þér er heimilt að dreifa honum með\n"
 "ákveðnum skilyrðum\n"
 
-#: kpager.cpp:333
+#: kpager.cpp:382
 msgid "Show &Menubar"
 msgstr "Sýna &Valslá"
 
-#: kpager.cpp:388
+#: kpager.cpp:389
+msgid "One Click change Desktop"
+msgstr ""
+
+#: kpager.cpp:446
 msgid "&Maximize"
 msgstr "&Hámarka"
 
-#: kpager.cpp:389
+#: kpager.cpp:447
 msgid "&Iconify"
 msgstr "Í &táknmynd"
 
-#: kpager.cpp:391
+#: kpager.cpp:449
 msgid "&UnSticky"
 msgstr "&Losa af gleri"
 
-#: kpager.cpp:393
+#: kpager.cpp:451
 msgid "&Sticky"
 msgstr "&Líma við gler"
 
-#: kpager.cpp:395
+#: kpager.cpp:453
 msgid "&To Desktop"
 msgstr "Á &skjáborð"

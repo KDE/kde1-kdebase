@@ -44,7 +44,8 @@ msgstr "&Iconos de Escritorio"
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
-"modo de uso: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+"modo de uso: %s [-init | "
+"{font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"

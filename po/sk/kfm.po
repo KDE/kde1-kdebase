@@ -666,6 +666,7 @@ msgid "Last Modified"
 msgstr "Posledná modifikácia"
 
 #: kfmprops.cpp:379
+#, c-format
 msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
@@ -1477,4 +1478,3 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
-
