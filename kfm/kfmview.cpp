@@ -727,8 +727,12 @@ void KfmView::slotPopupOpenWith()
     printf("KfmView::slotPopupOpenWith starts openWithOldApplication(%s)\n",
        l.getText());
     KURL u(popupFiles.first());
-    if (!strcmp(u.protocol(),"file"))
-          openWithOldApplication( l.getText(), popupFiles, u.directory() );
+    if (!strcmp(u.protocol(),"file")) {
+        QString udir(u.directory());
+        udir.detach();
+        KURL::decodeURL(udir); // I hate KURL, you never know when it's encoded ... David.
+        openWithOldApplication( l.getText(), popupFiles, udir ); 
+    }
     else  openWithOldApplication( l.getText(), popupFiles );
 }              
 
