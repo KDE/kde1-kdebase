@@ -100,16 +100,13 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     visualSchnauzer = false;
     bViewHTML = true;
 
-    kfmgui_width = KFMGUI_WIDTH;
-    kfmgui_height = KFMGUI_HEIGHT;
-
     showToolbar = true;
     toolbarPos = KToolBar::Top;
 
     showLocationBar = true;
     locationBarPos = KToolBar::Top;
 
-    showMenubar = true;;
+    showMenubar = true;
     menubarPos = KMenuBar::Top;
 
     showStatusbar = true;
