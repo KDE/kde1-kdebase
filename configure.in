@@ -70,6 +70,7 @@ else
 fi
 
 KDE_PROG_LIBTOOL
+AC_CHECK_RPATH
 
 AC_MSG_CHECKING([dynamic loading])
 eval "`egrep '^build_libtool_libs=' libtool`"
@@ -179,14 +180,6 @@ AC_CHECK_USLEEP
 dnl output files
 topdir=`pwd`
 AC_SUBST(topdir)
-
-if test -z "$KDE_RPATH"; then
-  KDE_RPATH="-rpath \$(kde_libraries)"
-  if test -n "$qt_libraries"; then
-    KDE_RPATH="$KDE_RPATH -rpath \$(qt_libraries)"
-  fi
-fi 
-AC_SUBST(KDE_RPATH)
 
 dnl Perform program name transformation
 AC_ARG_PROGRAM
