@@ -7,7 +7,7 @@ data_DATA = back.xpm bottom.xpm contents.xpm \
 	finish.xpm forward.xpm help.xpm \
 	home.xpm idea.xpm lock.xpm next.xpm \
 	page.xpm paintbucket.xpm \
-	prev.xpm reload.xpm \
+	prev.xpm reload.xpm send.xpm openbook.xpm \
 	tick.xpm rightjust.xpm start.xpm\
 	top.xpm up.xpm viewmag+.xpm \
 	viewmag-.xpm viewmag.xpm \
