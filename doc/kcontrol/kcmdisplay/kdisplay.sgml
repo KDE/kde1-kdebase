@@ -1,0 +1,333 @@
+<!doctype linuxdoc system>
+
+<!-- The KDE Display Setup Handbook.
+
+	 This could be considered a template for producing online help files for
+	 the K Desktop Environment.
+ -->
+
+<article>
+
+<!-- Title information -->
+
+<title>Display Setup Handbook
+<author>Mark Donohoe and Martin Jones
+<date>v1.0, 22 May 1997
+
+<!-- Table of contents -->
+<toc>
+
+<!-- Begin the document -->
+
+<sect>Introduction
+<p>
+
+KDisplay is a display setup utility. Running <verb> kdisplay -setup </verb>
+gives a tab dialog with five pages dealing with different aspects of the
+desktop display.
+
+<enum>
+<item>The desktop <bf>Background</bf>.
+<item>The <bf>Screen Saver</bf>.
+<item>The desktop <bf>Color Scheme</bf>.
+<item><bf>General</bf> desktop preferences.
+<item><bf>Input</bf> device setup.
+</enum>
+
+Running <verb>kdisplay -init</verb> simply applies your preferences to the
+desktop.
+
+<!-- NEW SECTION	NEW SECTION		NEW SECTION		NEW SECTION		 -->
+
+
+
+<sect>Tutorial
+<p>
+
+
+<!-- NEW SECTION	NEW SECTION		NEW SECTION		NEW SECTION		 -->
+
+
+
+<sect>Background
+<p>
+
+The Background setup dialog is comprised of three sections:
+
+<enum>
+<item>The background <bf>Preview Monitor</bf>.
+<item>The background <bf>Color</bf>.
+<item>The background <bf>Wallpaper</bf>.
+</enum>
+
+<sect1>Preview Monitor
+
+<p>
+
+This is a minature representation of your display background, using the
+current settings.  To apply these settings to your display, press the
+<em>Apply</em> button to continue using the KDE display setup utility, or the
+<em>Ok</em> button to apply your changes and quit.
+
+<p>
+
+<bf>Note:</bf> Pressing <em>Ok</em> or <em>Apply</em> applies changes made in
+all of the display setup modules.
+
+<sect1>Background Color
+
+<p>
+
+The display background can be filled with a single color or with a color
+gradient.
+
+<p>
+
+Click the <em>Flat</em> button to fill the background with a single color.
+The background color can be changed by clicking on the colored box in the
+<bf>Color</bf> group.  This will display a color selection dialog from which
+you may select a background color.
+
+<p>
+
+When you are happy with your color selection, press <em>Ok</em> in the color
+selection dialog.  The color will be updated in the <bf>Preview
+Monitor</bf>.  If you have a wallpaper selected, you may not see the
+background color, as the wallpaper will cover it.
+
+<p>
+
+To fill the background with a color gradient click the <em>Gradient</em>
+button. A second colored box will appear. The color gradient will run between
+the colors shown in the two boxes. The gradient runs up and down the display
+if  the <em>Portrait</em> option is selected. Alternatively, if the
+<em>Landscape</em> option is selected, the color gradient will run across the
+display.
+
+<p>
+
+A gradient fill uses only 8 colors leaving plenty free for other
+applications. However, it requires an image the size of your display to be
+maintained in memory.
+
+<sect1>Wallpaper
+
+<p>
+
+The wallpaper is an image displayed in the background (root window) of your
+display.  To change the wallpaper displayed, select one from the list
+or click the <em>Browse</em> button and select an image.
+
+<p>
+
+The image may be: <em>Tiled</em>, <em>Centred</em>, or <em>Scaled</em> to fit
+the size of the display.
+
+<p>
+
+Displaying wallpaper requires that the image be kept memory.  If you are low
+on memory, using a small, tiled image or none at all is recommended. Note
+that scaling or centring a small image still requires an image the size of
+your display to be maintained in memory.
+
+
+<!-- NEW SECTION	NEW SECTION		NEW SECTION		NEW SECTION		 -->
+
+
+<sect>Screen Saver
+<p>
+
+The Screen Saver setup dialog is comprised of three sections:
+
+<enum>
+<item>The screen saver <bf>Preview Monitor</bf>.
+<item>The global screen saver <bf>Settings</bf>.
+<item>The <bf>Screen Saver</bf> to display.
+</enum>
+
+<sect1>Preview Monitor
+<p>
+
+This is a minature representation of your screen saver, using the current
+settings.  To apply these settings to your display, press the <em>Apply</em>
+button to continue using the KDE display setup utility or <em>Ok</em> button
+to apply your changes and quit.
+
+<p>
+
+In the corners of this monitor are four grey boxes.  These boxes indicate
+what action to take if the cursor is left in one of the corners for more than
+5 seconds.  The options are:
+
+<itemize>
+<item>Ignore - take no action
+<item>Save - invoke the screen saver
+<item>Lock - lock the screen
+</itemize>
+
+<p>
+
+<bf>Note:</bf> Pressing <em>Ok</em> or <em>Apply</em> applies changes made in
+all of the display setup modules.
+
+<sect1>Settings
+<p>
+
+Enter the time (in minutes) without activity to wait before the screen saver
+is invoked.
+
+<p>
+
+Checking <em>Requires Password</em> will make the screen saver prompt you for
+a password before restoring the screen.
+(Either the user's or the root password can unlock the screen.)
+
+<p>
+
+<em>Priority</em> sets the "nice" value of the screen saver.
+
+<sect1>Screen Saver
+<p>
+
+To change your screen saver, select one from the list.  The screen saver will
+be shown in minature in the preview monitor.
+
+<p>
+
+Most screen savers have settings which can be changed by clicking the
+<em>Setup...</em> button.  This will display a dialog specific to the
+currently selected screen saver.
+
+<p>
+
+The <em>Test</em> button runs the screen saver immediately, full screen.
+
+
+
+<!-- NEW SECTION	NEW SECTION		NEW SECTION		NEW SECTION		 -->
+
+
+<sect>Color Scheme
+<p>
+
+The Color Scheme setup dialog is comprised of three sections:
+
+<enum>
+<item>The color scheme <bf>Preview</bf>.
+<item>The current <bf>Widget Color</bf>.
+<item>The available <bf>Color Schemes</bf>.
+</enum>
+
+<bf>Note:</bf> User interface elements ( e.g. buttons, menus, scroll bars )
+are known as widgets.
+
+<sect1>Preview
+<p>
+
+This section of the dialog demonstrates how a color scheme applies to a
+sample selection of widgets. A color scheme consists of a set of ten
+colors. These colors apply to the :-
+
+<enum>
+<item>Inactive title bar background
+<item>Inactive title bar text
+<item>Active title bar background
+<item>Active title bar text
+<item>General background
+<item>General foreground
+<item>Selection background
+<item>Selection text
+<item>Window background
+<item>Window text
+</enum>
+
+Labels on the sample widgets will help you identify where these colors apply.
+
+<p>
+
+The colors are grouped into 5 foreground / background pairs. Thus, good
+contrast between the foreground and background colors of widgets can be
+ensured at all times.
+
+<p>
+
+When you press <em>Ok</em> or <em>Apply</em> the color scheme you have selected
+will be written to the desktop configuration.  There are some problems in
+the Qt toolkit when changing the colors in a running application, particularly
+with lists and combo boxes.  These elements will not be displayed properly
+until the applications are restarted.  Hopefully these problems will be
+fixed in a future release of Qt.
+
+<sect1>Widget Color
+<p>
+
+The currently selected member of the color scheme is shown in the combo box
+of the <bf>Widget Color</bf> group. This can be changed by clicking on the
+colored box. A color selection dialog will then appear, from which you may
+select a new color.
+
+<p>
+
+When you are happy with your color selection, press <em>Ok</em> in the color
+selection dialog.  The color will be updated in the <bf>Preview</bf>.
+
+<p>
+
+You may select any member of the color scheme from the combo box.
+
+<sect1>Color schemes
+<p>
+
+Six color schemes are supplied with KDisplay. These are called
+<enum>
+<item>KDE Default
+<item>Atlas Green
+<item>Blue Slate
+<item>Windows 95
+<item>CDE
+<item>Pale Gray
+</enum>
+
+To preview a scheme click on its name in the list box. You can use the
+supplied color schemes as a starting point to devise your own. Click the 
+<em>Save</em> button to store your color scheme under a new name. The
+<em>Remove</em> button is presently disabled.
+
+
+<!-- NEW SECTION	NEW SECTION		NEW SECTION		NEW SECTION		 -->
+
+
+<sect>General
+<p>
+
+The General setup dialog is comprised of two sections:
+
+<enum>
+<item>The <bf>Widget style</bf> box.
+<item>The <bf>Fonts</bf> selection dialog.
+</enum>
+
+<sect1>Widget Style
+<p>
+
+This allows you to switch between a Motif look or a Windows 95 look for the K
+Desktop Environment.  Currently, Qt does not adjust combo boxes properly when
+the widget style is changed.
+
+<sect1>Fonts
+<p>
+
+You may change the font for the desktop.  This option has only recently been
+enabled in all KDE applications, therefore some applications may not behave
+correctly when their fonts are changed, or if a large font is used.
+
+
+
+<!-- NEW SECTION	NEW SECTION		NEW SECTION		NEW SECTION		 -->
+
+
+
+<sect>Questions and answers
+<p>
+
+</article>
