@@ -1,0 +1,11 @@
+# KDE Config File
+[KDE Desktop Entry]
+UnmountIcon=unknown.xpm
+MountPoint=
+Icon=unknown.xpm
+Dev=
+ReadOnly=0
+FSType=default
+Type=FSDevice
+Comment=File System Device
+Comment[pl]=Urz±dzenie
