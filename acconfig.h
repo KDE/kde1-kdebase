@@ -77,6 +77,9 @@
 /* Define if you have random */
 #undef HAVE_RANDOM
 
+/* Define if you have S_ISSOCK */
+#undef HAVE_S_ISSOCK
+
 /* Define the file for utmp entries */
 #undef UTMP
 
@@ -143,5 +146,10 @@ int unsetenv(const char *name);
 #define HAVE_RANDOM
 long int random(void); // defined in fakes.cpp
 void srandom(unsigned int seed);
+#endif
+
+#ifndef HAVE_S_ISSOCK
+#define HAVE_S_ISSOCK
+#define S_ISSOCK(mode) (1==0)
 #endif
 
