@@ -157,10 +157,12 @@ void KBookmarkDlg::rename() // SLOT
 
   int i= myList->currentItem();
 
-  s= myManager->getRoot()->getChildren().at(i)->getURL();
-  dlg= new KBookmarkDlgRenameDlg(myList->text(i), s);
-  if (dlg->exec()) {
-    myManager->rename(i, dlg->text());
+  if (i != -1) {
+    s= myManager->getRoot()->getChildren().at(i)->getURL();
+     dlg= new KBookmarkDlgRenameDlg(myList->text(i), s);
+     if (dlg->exec()) {
+       myManager->rename(i, dlg->text());
+     }
   }
 }
 
