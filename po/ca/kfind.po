@@ -22,14 +22,12 @@ msgid "Cannot open or read directory."
 msgstr "No es pot obrir o llegir el directori"
 
 #: kfindtop.cpp:118
-#, fuzzy
 msgid "&Start search"
-msgstr "Engegar cerca"
+msgstr "&Engegar cerca"
 
 #: kfindtop.cpp:120
-#, fuzzy
 msgid "S&top search"
-msgstr "Aturar cerca"
+msgstr "&Aturar cerca"
 
 #: kfindtop.cpp:125
 msgid "&Open"

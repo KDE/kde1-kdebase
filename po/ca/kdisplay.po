@@ -297,7 +297,7 @@ msgstr "&Cal password"
 
 #: scrnsave.cpp:273
 msgid "Show &password as stars"
-msgstr ""
+msgstr "Mostrar &paraules de pas amb asteriscs"
 
 #: scrnsave.cpp:281
 msgid "Priority"
@@ -340,9 +340,8 @@ msgid "Panel clock font"
 msgstr "Font rellotge panell"
 
 #: general.cpp:298
-#, fuzzy
 msgid "Sample text"
-msgstr "Text de selecció"
+msgstr "Text de mostra"
 
 #: general.cpp:306
 msgid ""
@@ -350,6 +349,9 @@ msgid ""
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
+"SETGE JUTGES D'UN JUTJAT MENGEN FETGE D'UN PENJAT\n"
+"setge jutges d'un jutjat mengen fetge d'un penjat\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 
 #: main.cpp:62
 msgid "&Fonts etc."
@@ -389,7 +391,7 @@ msgstr "Text seleccionat"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
-msgstr ""
+msgstr "&Tipografia"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
@@ -401,11 +403,11 @@ msgstr "&Cursiva"
 
 #: fontchooser.cpp:125
 msgid "&Size"
-msgstr ""
+msgstr "&Grandària"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr ""
+msgstr "Joc de &caràcters"
 
 #: fontchooser.cpp:262
 msgid "default"
@@ -414,9 +416,3 @@ msgstr "omissió"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "qualsevol"
-
-#~ msgid "&Remove"
-#~ msgstr "&Eliminar"
-
-#~ msgid "Default"
-#~ msgstr "Omissió"

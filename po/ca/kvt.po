@@ -27,7 +27,7 @@ msgstr "La tecla backspace enviarà un"
 
 #: main.C:365
 msgid "Cursor key set"
-msgstr ""
+msgstr "Conjunt de tecles cursor"
 
 #: main.C:532
 msgid "&New Terminal"
@@ -127,7 +127,7 @@ msgstr "Terminal..."
 
 #: main.C:593
 msgid "Font..."
-msgstr ""
+msgstr "Font..."
 
 #: main.C:595
 msgid "Save &Options"
@@ -224,7 +224,7 @@ msgstr "-vt_font <nomfont>        font normal\n"
 
 #: main.C:1334
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr ""
+msgstr "-no_font_hack             desactivar la solució a l'error de font Qt\n"
 
 #: main.C:1335
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"

@@ -82,13 +82,12 @@ msgid "Titlebar appearance"
 msgstr "Aparença de la barra de títol"
 
 #: titlebar.cpp:928
-#, fuzzy
 msgid "Shaded Vertically"
-msgstr "Maximitzar verticalment"
+msgstr "Degradat verticalment"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
-msgstr ""
+msgstr "Degradat horitzontalment"
 
 #: titlebar.cpp:934
 msgid "Plain"
@@ -163,18 +162,16 @@ msgid "Opaque"
 msgstr "Opac"
 
 #: windows.cpp:89
-#, fuzzy
 msgid "Window resize"
-msgstr "&Finestres"
+msgstr "Dimensionament de finestra"
 
 #: windows.cpp:90
-#, fuzzy
 msgid "Animation:"
-msgstr "Animació de títol"
+msgstr "Animació:"
 
 #: windows.cpp:92
 msgid "Fast"
-msgstr ""
+msgstr "Ràpid"
 
 #: windows.cpp:98
 msgid "Placement policy"
@@ -229,14 +226,12 @@ msgid "Focus follows mouse"
 msgstr "Focus al ratolí"
 
 #: windows.cpp:133
-#, fuzzy
 msgid "Classic focus follows mouse"
-msgstr "Focus al ratolí"
+msgstr "Focus al ratolí clàssic"
 
 #: windows.cpp:135
-#, fuzzy
 msgid "Classic sloppy focus"
-msgstr "Focus al clic"
+msgstr "Focus descurat clàssic"
 
 #: windows.cpp:144
 msgid ""
@@ -285,19 +280,3 @@ msgid ""
 msgstr ""
 "Zona de salt a les finestres:\n"
 "       (pixels)"
-
-#, fuzzy
-#~ msgid "With animation"
-#~ msgstr "Animació de títol"
-
-#~ msgid "Move"
-#~ msgstr "Moure"
-
-#~ msgid "Restore"
-#~ msgstr "Restaurar"
-
-#~ msgid "Shaded"
-#~ msgstr "Ombrejada"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Animació al dimensionar"

@@ -588,28 +588,27 @@ msgstr "Fallat"
 
 #: science.cpp:65
 msgid "Whirl"
-msgstr ""
+msgstr "Remolí"
 
 #: science.cpp:68
-#, fuzzy
 msgid "Sphere"
-msgstr "Velocitat:"
+msgstr "Esfera"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "Exponencial"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "Contracció"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "Ona"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "Curvatura"
 
 #: science.cpp:112
 msgid "Science"
@@ -617,32 +616,31 @@ msgstr "Ciència"
 
 #: science.cpp:447
 msgid "rendering lens..."
-msgstr ""
+msgstr "lents reproductores..."
 
 #: science.cpp:769
 msgid "grabbing screen..."
-msgstr ""
+msgstr "pantalla capturadora..."
 
 #: science.cpp:931
 msgid "Setup Science"
 msgstr "Valors Ciència"
 
 #: science.cpp:949
-#, fuzzy
 msgid "Mode:"
-msgstr "Meitat:"
+msgstr "Mode:"
 
 #: science.cpp:964
 msgid "Inverse"
-msgstr ""
+msgstr "Invers"
 
 #: science.cpp:974
 msgid "Gravity"
-msgstr ""
+msgstr "Gravetat"
 
 #: science.cpp:983
 msgid "Hide Background"
-msgstr ""
+msgstr "Amagar fons"
 
 #: science.cpp:1009
 msgid "Intensity:"
@@ -650,16 +648,15 @@ msgstr "Intensitat:"
 
 #: science.cpp:1039
 msgid "Motion:"
-msgstr ""
+msgstr "Moviment:"
 
 #: science.cpp:1260
-#, fuzzy
 msgid "Science Version"
-msgstr "Ciència"
+msgstr "Versió de Ciència"
 
 #: science.cpp:1261
 msgid "written by"
-msgstr ""
+msgstr "escrit per"
 
 #: science.cpp:1262
 msgid "About Science"
@@ -750,18 +747,3 @@ msgstr ""
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
 "Portat a kscreensave per Emanuel Pirker."
-
-#~ msgid "Move"
-#~ msgstr "Moviment"
-
-#, fuzzy
-#~ msgid ""
-#~ "Science Version 0.24.2 beta\n"
-#~ "\n"
-#~ "written by Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"
-#~ msgstr ""
-#~ "Ciència Versió 0.2beta\n"
-#~ "\n"
-#~ "escrit per Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"

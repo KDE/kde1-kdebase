@@ -143,14 +143,12 @@ msgid "Never look in cache"
 msgstr "No mirar mai al cau"
 
 #: kfmgui.cpp:411
-#, fuzzy
 msgid "Always save cache"
-msgstr "Mirar sempre al cau"
+msgstr "Desar sempre el cau"
 
 #: kfmgui.cpp:413
-#, fuzzy
 msgid "Never save cache"
-msgstr "No mirar mai al cau"
+msgstr "No desar mai el cau"
 
 #: kfmgui.cpp:424
 msgid "Show &Menubar"
@@ -525,7 +523,7 @@ msgstr "Separació graella vertical a Root:"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr ""
+msgstr "Text transparent per icones de l'arrel."
 
 #: bookmark.cpp:264
 msgid "Could not write bookmark"
@@ -1230,7 +1228,7 @@ msgstr "&Procuració"
 
 #: kkfmoptdlg.cpp:22
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: kkfmoptdlg.cpp:25
 msgid "User &Agent"
@@ -1250,15 +1248,15 @@ msgstr "Arranjaments del Fullejador KFM"
 
 #: khttpoptdlg.cpp:13
 msgid "Accept languages:"
-msgstr ""
+msgstr "Accepta idiomes:"
 
 #: khttpoptdlg.cpp:18
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Accepta jocs de caràcters:"
 
 #: khttpoptdlg.cpp:23
 msgid "Assume HTML"
-msgstr ""
+msgstr "Assumeig HTML"
 
 #: kfmprops.h:73
 msgid "&General"

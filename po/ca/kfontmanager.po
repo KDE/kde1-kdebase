@@ -39,7 +39,7 @@ msgstr "Fonts disponibles per KDE"
 
 #: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
-msgstr "Cadena d'exemple de l'administrador de Fonts KDE "
+msgstr "Text d'exemple de l'administrador de Fonts KDE "
 
 #: kfontlist.cpp:62 kfontmanager.cpp:109
 msgid "About kfontmanager"

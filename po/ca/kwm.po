@@ -27,7 +27,7 @@ msgstr "kwm: error al inicialitzar; cancel·lant el procés\n"
 
 #: main.C:470
 msgid "Preparing session ... "
-msgstr ""
+msgstr "Preparant la sessió ... "
 
 #: main.C:489
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -118,9 +118,8 @@ msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Alguns pixmaps no són vàlids: desactivat el mode ombrejat\n"
 
 #: main.C:1054
-#, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Alguns pixmaps no són vàlids: desactivat el mode ombrejat\n"
+msgstr "Alguns pixmaps no són vàlids: desactivat el mode Gimmick\n"
 
 #: main.C:1311
 msgid "*** No Tasks ***"
@@ -132,7 +131,7 @@ msgstr "Ordre:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "Epa!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
