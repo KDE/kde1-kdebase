@@ -391,11 +391,23 @@ void KColorScheme::slotAdd()
 	sList->setCurrentItem( sList->count()-1 );
 	
 	QString kcsPath( getenv( "HOME" ) );
-	kcsPath += "/.kde/share/apps/kdisplay/color-schemes/";
+	kcsPath += "/.kde/share/apps/kdisplay/";
 	
 	QDir d( kcsPath.data() );
 	if ( !d.exists() )
-		d.mkdir( kcsPath.data() );
+		if ( !d.mkdir( kcsPath.data() ) ) {
+			warning("KColorScheme: Could not make directory to store user info.");
+			return;
+		}
+		
+	kcsPath += "color-schemes/";
+	
+	d.setPath( kcsPath.data() );
+	if ( !d.exists() )
+		if ( !d.mkdir( kcsPath.data() ) ) {
+			warning("KColorScheme: Could not make directory to store user info.");
+			return;
+		}
 	
 	sFile.prepend( kcsPath );
 	sFile += ".kcsrc";
