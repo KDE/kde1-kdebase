@@ -70,6 +70,9 @@ binary-arch: checkroot build
 	install -d debian/tmp/usr/man/man5
 	cp debian/kdm.options.5.gz debian/tmp/usr/man/man5
 	cp debian/kdmrc debian/tmp/etc/kde
+	chmod +x debian/tmp/etc/X11/kdm/Xreset* \
+	debian/tmp/etc/X11/kdm/Xsetup* \
+	debian/tmp/etc/X11/kdm/Xstartup* 
 ## Move on to rest
 	install -d debian/tmp/usr/bin
 	cp debian/kappfinder debian/tmp/usr/bin
