@@ -1,3 +1,11 @@
+Sun Feb  8 14:07:23 1998  Stephan Kulow  <coolo@kde.org>
+
+	* acinclude.m4.in: updated all packages
+
+	* libtool.m4.in: applied patch for libtool.m4.in to show the
+	correct default for shared and static
+	
+
 Sat Feb  7 10:56:00 1998  Stephan Kulow  <coolo@kde.org>
 
 	* configure.in: good news - KDE is relocatable again.
