@@ -258,7 +258,7 @@ msgstr ""
 "HTML-fenestra¼o de Martin Jones\n"
 "mjones@kde.org\n"
 "\n"
-"Peranto-administrilo de Lars Hoss\n"
+"Prokuro-administrilo de Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de"
 
 #: kfmgui.cpp:1355
@@ -854,7 +854,7 @@ msgstr "La dosiero ne enhavas URLon."
 
 #: kfmman.cpp:347
 msgid "Contacting host "
-msgstr "Kontaktante la komputilon"
+msgstr "Kontaktante la komputilon "
 
 #: kfmman.cpp:351
 msgid "Working ..."
@@ -1217,7 +1217,7 @@ msgstr "Ne forgesu sekurigi vian konfigura¼on!"
 
 #: kproxydlg.cpp:16
 msgid "Use proxy"
-msgstr "Uzu peranton"
+msgstr "Uzu prokuran servilon"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"
@@ -1225,7 +1225,7 @@ msgstr "Ne uzu por:"
 
 #: kkfmoptdlg.cpp:19
 msgid "&Proxy"
-msgstr "&Peranto"
+msgstr "&Prokuo"
 
 #: kkfmoptdlg.cpp:22
 msgid "&HTTP"

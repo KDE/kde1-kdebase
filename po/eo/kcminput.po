@@ -32,11 +32,11 @@ msgstr "Konfigura¼o de enigaparatoj"
 
 #: mouse.cpp:75
 msgid "Acceleration"
-msgstr "&Akcelado"
+msgstr "Akcelado"
 
 #: mouse.cpp:81
 msgid "Threshold"
-msgstr "&Sojlo de reago"
+msgstr "Reagosojlo"
 
 #: mouse.cpp:84
 msgid "Button mapping"

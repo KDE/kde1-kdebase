@@ -33,8 +33,7 @@ msgstr "&Seancoj"
 #: main.cpp:106
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
-msgstr ""
-"uzo: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+msgstr "uzo: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:145
 msgid "KDM Configuration"
@@ -239,7 +238,7 @@ msgstr "al Radiko"
 
 #: kdm-sess.cpp:57
 msgid "Console Only"
-msgstr "al rekta terminalo"
+msgstr "al pupitro"
 
 #: kdm-sess.cpp:61
 msgid "Commands"
@@ -268,10 +267,3 @@ msgstr "Disponeblaj tipoj"
 #: klangcombo.cpp:133
 msgid "without name!"
 msgstr "sen nomo!"
-
-
-
-
-
-
-

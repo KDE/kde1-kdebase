@@ -138,7 +138,7 @@ msgstr "Adiaýu"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Seanco estas preparata por adiaýo"
+msgstr "Seanco estas preparita por adiaýo"
 
 #: logout.C:52
 msgid ""

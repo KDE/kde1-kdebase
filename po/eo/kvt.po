@@ -188,6 +188,7 @@ msgstr ""
 "Kopirajto (C) 1997 M.B. Berberich\n"
 "Terminalimita¼o por KDE-LAbortabula-Medio\n"
 "bazita sur rxvt-2.08 de Robert nation\n"
+"\n"
 
 #: main.C:1326
 msgid "Permitted arguments are:\n"
@@ -197,8 +198,7 @@ msgstr "Eblaj argumentoj estas:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <komando> <arg> ...    lanæu komandon kun arg-oj, devas esti lasta "
-"argumento\n"
+"-e <komando> <arg> ...    lanæu komandon kun arg-oj - estu lasta argumento\n"
 
 #: main.C:1328
 msgid "-display <name>           specify the display (server)\n"
@@ -234,8 +234,7 @@ msgstr "-vt_size <grand>         tiny, small, normal, large, huge\n"
 
 #: main.C:1336
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr ""
-"-linux                   konfiguru Kvt-on por imiti Linuksan terminalon\n"
+msgstr "-linux                   konfiguru Kvt-on por imiti linuksan ekranon\n"
 
 #: main.C:1337
 msgid "-no_menubar               hide the menubar\n"
