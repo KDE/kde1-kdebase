@@ -6,7 +6,7 @@
 
 <title>KDE Control Center - KDE Theme Manager
 <author>The KDE team, Stefan Taverner,  Waldo Bastian ; documentation by Duncan
-<date>v0.4 16 August 1999
+<date>v0.41 25 August 1999
 
 <!-- Begin the document -->
 
@@ -26,7 +26,8 @@ some or all of the following:
 panel appearance,
 sounds associated with events,
 standard icons,
-window appearance (borders, titlebar, buttons), etc.
+window appearance (borders, titlebar, buttons, etc.), 
+file manager and konsole appearance, etc.
 
 </itemize>
 
