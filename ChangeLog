@@ -1,3 +1,8 @@
+1998-04-06  Stephan Kulow  <coolo@kde.org>
+
+	* acinclude.m4.in: don't test compiling, linking, running in
+	one step. This proved to be too dangerous for my mail box.
+	
 1998-03-21  Stephan Kulow  <coolo@kde.org>
 
 	* libtool.m4.in: created some new macros to work around this 

@@ -18,6 +18,5 @@ dist:
 	for i in $$LIST; do \
 	 file2=`echo $$i | sed -e "s#\.po#\.gmo#"`; \
 	 msgfmt -o $$file2 $$i || touch $$file2 ; \
-	done ;\
-	rm -f acinclude.m4.in kdminclude.m4
+	done 
 

@@ -24,8 +24,8 @@ install-data-local:
 	@echo "****************************************************"
 	@echo ""
 
-#acinclude.m4: acinclude.m4.in libtool.m4.in kdminclude.m4
-#	cat acinclude.m4.in libtool.m4.in kdminclude.m4 > acinclude.m4
+acinclude.m4: acinclude.m4.in libtool.m4.in kdminclude.m4
+	cat acinclude.m4.in libtool.m4.in kdminclude.m4 > acinclude.m4
 
 messages:
 	@for subdir in $(SUBDIRS); do \
