@@ -493,7 +493,7 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
 
   DEBUG_EVENTS("RootWindow", qt_xrootwin());
 
-  manager = 0; 
+  manager = 0;
   process_events_mode = false;
 
   int i;
@@ -1202,7 +1202,9 @@ void MyApp::restoreSession(){
   manager->setProxyData(ph, pp, pi);
 }
 
-void MyApp::cleanup(){
+void MyApp::cleanup()
+{
+  delete keys;
   writeConfiguration();
   manager->cleanup();
 }
@@ -1623,7 +1625,7 @@ bool MyApp::eventFilter( QObject *obj, QEvent * ev){
 
 
 bool MyApp::x11EventFilter( XEvent * ev){
-    
+
     if (process_events_mode) {
 	switch (ev->type) {
 	case EnterNotify:
@@ -1644,8 +1646,8 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	    break ;
 	}
     }
-    
-    
+
+
   if (keys->x11EventFilter(ev))
       return true;
 
@@ -1822,9 +1824,9 @@ bool MyApp::x11EventFilter( XEvent * ev){
   case FocusOut:
       {
  	  // handle multi screen displays. The other window manager
- 	  // might take the focus away. 
+ 	  // might take the focus away.
   	  Client *c = manager->getClient(ev->xfocus.window);
-  	  if (ev->xfocus.mode == NotifyNormal && 
+  	  if (ev->xfocus.mode == NotifyNormal &&
 	      ev->xfocus.detail != NotifyPointer &&
 	      c && c == manager->current()){
 	      c->setactive(False);
