@@ -1,0 +1,134 @@
+DlgEdit:v1.2:Dialog:
+Dialog {
+	ClassHeader {entry3.h}
+	ClassSource {entry3.cpp}
+	ClassName {entry3}
+	DataHeader {entry3Data.h}
+	DataSource {entry3Data.cpp}
+	DataName {entry3Data}
+	WindowBaseClass {QWidget}
+}
+WidgetLayout {
+		Rect {5 102 336 184}
+		Grid {8}
+
+CheckBox {
+		Checked {FALSE}
+		Text {FILE}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {16 8 56 24}
+		Name {CheckBox_2}
+		Variable {cb_file}
+}
+CheckBox {
+		Checked {FALSE}
+		Text {FTP}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {72 8 56 24}
+		Name {CheckBox_3}
+		Variable {cb_ftp}
+}
+CheckBox {
+		Checked {FALSE}
+		Text {HTTP}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {128 8 56 24}
+		Name {CheckBox_4}
+		Variable {cb_http}
+}
+CheckBox {
+		Checked {FALSE}
+		Text {TAR}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {16 32 56 24}
+		Name {CheckBox_5}
+		Variable {cb_tar}
+}
+CheckBox {
+		Checked {FALSE}
+		Text {INFO}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {72 32 56 24}
+		Name {CheckBox_6}
+		Variable {cb_info}
+}
+CheckBox {
+		Checked {FALSE}
+		Text {MAN}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {128 32 56 24}
+		Name {CheckBox_7}
+		Variable {cb_man}
+}
+ListBox {
+		DragSelect {TRUE}
+		AutoScroll {TRUE}
+		ScrollBar {FALSE}
+		AutoScrollBar {TRUE}
+		BottomScrollBar {FALSE}
+		AutoBottomScrollBar {TRUE}
+		SmoothScrolling {TRUE}
+		Style {51}
+		LineWidth {2}
+		Rect {8 56 128 120}
+		Name {ListBox_1}
+		Variable {l_inside}
+}
+PushButton {
+		ToggleButton {FALSE}
+		Default {FALSE}
+		AutoDefault {FALSE}
+		Text {<-}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {144 88 48 32}
+		Name {PushButton_1}
+		Variable {b_ins}
+}
+PushButton {
+		ToggleButton {FALSE}
+		Default {FALSE}
+		AutoDefault {FALSE}
+		Text {->}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {144 120 48 32}
+		Name {PushButton_2}
+		Variable {b_rem}
+}
+ListBox {
+		DragSelect {TRUE}
+		AutoScroll {TRUE}
+		ScrollBar {FALSE}
+		AutoScrollBar {TRUE}
+		BottomScrollBar {FALSE}
+		AutoBottomScrollBar {TRUE}
+		SmoothScrolling {TRUE}
+		Style {51}
+		LineWidth {2}
+		Rect {200 56 128 120}
+		Name {ListBox_2}
+		Variable {l_outside}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {192 24 136 24}
+		Name {LineEdit_4}
+		Variable {i_pattern}
+}
+Label {
+		Text {Binary Pattern:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {192 8 100 16}
+		Name {Label_4}
+}}

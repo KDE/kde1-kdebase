@@ -1,0 +1,18 @@
+/* XPM */
+static char * mini_letter_xpm[] = {
+"14 10 5 1",
+" 	c #842084200000",
+".	c #C630C6300000",
+"X	c #FFFFFFFFFFFF",
+"o	c #000000000000",
+"O	c #FFFFFFFF0000",
+"              ",
+" .XXXXXXXXXX.o",
+" X OOOOOOOO .o",
+" XO OOOOOO O.o",
+" XOO OOOO OO.o",
+" XOO. OO .OO.o",
+" XO.OO  OO.O.o",
+" X.OOOOOOOO..o",
+" ............o",
+" ooooooooooooo"};

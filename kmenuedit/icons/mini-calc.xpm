@@ -1,0 +1,22 @@
+/* XPM */
+static char * mini-calc_xpm[] = {
+"16 14 5 1",
+" 	c None",
+".	c gray50",
+"X	c White",
+"o	c Black",
+"O	c gray85",
+" .............. ",
+".XXXXXXXXXXXXXo ",
+".XOOoooooooooOo ",
+".XOOoXXXXXXX.Oo ",
+".XOO.........Oo ",
+".XOOOOOOOOOOOOo ",
+".X.oO.oO.oO.oOo ",
+".XooOooOooOooOo ",
+".X.oO.oO.oO.oOo ",
+".XooOooOooOooOo ",
+".X.oO.oO.oO.oOo ",
+".XooOooOooOooOo ",
+".OOOOOOOOOOOOOo ",
+" ooooooooooooo  "};

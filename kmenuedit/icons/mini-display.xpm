@@ -1,0 +1,23 @@
+/* XPM */
+static char * mini-display_xpm[] = {
+"16 14 6 1",
+" 	c None",
+".	c gray50",
+"X	c white",
+"o	c black",
+"O	c blue",
+"+	c gray85",
+"  ............  ",
+" .XXXXXXXXXXXXo ",
+" .Xooooooooo.Xo ",
+" .XoOOOOOOOO.Xo ",
+" .XoOXOOOOOO.Xo ",
+" .XoOOOOOOOO.Xo ",
+" .XoOOOOOOOO.Xo ",
+" .XoOOOOOOOO.Xo ",
+" .XoOOOOOOOO.Xo ",
+" .Xo.........Xo ",
+" .XXXXXXXXXXXXo ",
+"  oooooooooooo  ",
+"    .XXXX+.o    ",
+"  oooooooooooo  "};

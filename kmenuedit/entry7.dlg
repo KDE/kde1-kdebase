@@ -1,0 +1,30 @@
+DlgEdit:v1.2:Dialog:
+Dialog {
+	ClassHeader {entry7.h}
+	ClassSource {entry7.cpp}
+	ClassName {entry7}
+	DataHeader {entry7Data.h}
+	DataSource {entry7Data.cpp}
+	DataName {entry7Data}
+	WindowBaseClass {QWidget}
+}
+WidgetLayout {
+		Rect {5 102 336 184}
+		Grid {8}
+
+Label {
+		Text {URL:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {16 16 40 24}
+		Name {Label_10}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {24 40 296 24}
+		Name {LineEdit_9}
+		Variable {i_url}
+}}

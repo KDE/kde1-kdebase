@@ -1,0 +1,21 @@
+/* XPM */
+static char * mini-clock_xpm[] = {
+"16 14 4 1",
+" 	c None",
+".	c Black",
+"X	c White",
+"o	c gray85",
+"      .....     ",
+"    ..XXXXX..   ",
+"   .oXXX.XXXo.  ",
+"   .XXXX.XXXX.  ",
+"  .XXXXX.XXXXX. ",
+"  .XXXXX.XXXXX. ",
+"  .XXXX..XXXXX. ",
+"  .XXXXX..XXXX. ",
+"  .XXXXX.X.XXX. ",
+"   .XXXXXXXXX.  ",
+"   .oXXXXXXXo.  ",
+"    ..XXXXX..   ",
+"      .....     ",
+"                "};

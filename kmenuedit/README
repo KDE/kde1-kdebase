@@ -1,0 +1,43 @@
+
+
+kmenudit version 0.2.1
+----------------------
+(C) 1997 Christoph Neerfeld (Christoph.Neerfeld@mail.bonn.netsurf.de)
+You may distribute kmenuedit under the terms of the GNU General Public License.
+
+Kmenuedit is a program to manage a directory hierarchy of kdelnk-files. Currently
+these directories are $HOME/Personal and $KDEDIR/apps.
+
+The idea behind this program is the following: The menus for $KDEDIR/apps used in 
+kpanel and ktaskbar might get quite large and I don't want to move through the whole
+hierarchy every time I want to execute a program. So I'd like to put often used 
+entries in my $HOME/Personal folder. This is possible with kfm, too, but it is 
+not very handy and not obvious to the average user.
+
+With this program I think it is quite easy to build your own personal menu in kpanel
+and ktaskbar.
+
+This is the first version, so many things are still missing.
+
+You will need libqt-1.2, libkde-970806 (with the new KIconLoader).
+
+Features:
+	- drag and drop between menus
+	- drop of kdelnk-files from kfm onto a menu
+	- cut, copy and paste of menu entries
+	- editing of kdelnk-file
+	- you may edit $KDEDIR/apps if you have sufficient permissions
+
+Bugs:
+	- don't drop a menu entry on a kvt window, the kvt will dump core
+	  (Well I think this is a bug of kvt ;-) )
+
+TODO:
+	- a lot of things, but tell me your suggestions
+
+Install:
+	see INSTALL for details
+
+If you find bugs or have suggestions, send me an email
+
+Christoph.Neerfeld@bonn.netsurf.de

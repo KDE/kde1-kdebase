@@ -1,0 +1,51 @@
+DlgEdit:v1.2:Dialog:
+Dialog {
+	ClassHeader {IconPathDialog.h}
+	ClassSource {IconPathDialog.cpp}
+	ClassName {IconPathDialog}
+	DataHeader {IconPathDialogData.h}
+	DataSource {IconPathDialogData.cpp}
+	DataName {IconPathDialogData}
+	WindowBaseClass {QDialog}
+	IsModal {TRUE}
+}
+WidgetLayout {
+		Rect {5 102 400 176}
+		Grid {8}
+
+Label {
+		Text {IconPath is not set in your kderc file.}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {16 16 224 24}
+		Name {Label_1}
+		Font {"helvetica" 12 63 0 0 0 0 0 0}
+}
+Label {
+		Text {I suggest the following entry:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {16 48 184 24}
+		Name {Label_2}
+		Font {"helvetica" 12 63 0 0 0 0 0 0}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {16 80 360 24}
+		Name {LineEdit_1}
+		Variable {le_icon_path}
+}
+PushButton {
+		ToggleButton {FALSE}
+		Default {FALSE}
+		AutoDefault {FALSE}
+		Text {Ok}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {144 128 96 24}
+		Name {PushButton_1}
+		Variable {b_ok}
+}}

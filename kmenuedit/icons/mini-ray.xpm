@@ -1,0 +1,21 @@
+/* XPM */
+static char * mini-ray_xpm[] = {
+"16 14 4 1",
+" 	c None",
+".	c black",
+"X	c yellow",
+"o	c gray50",
+"     .........  ",
+"     .XXXXXX.o  ",
+"    .XXXXXX.o   ",
+"    .XXXXX.o    ",
+"   .XXXXX.o     ",
+"   .XXXX.....   ",
+"  .XXXXXXXX.o   ",
+"  .....XXX.o    ",
+"   oo.XXX.o     ",
+"     .XX.o      ",
+"    .XX.o       ",
+"    .X.o        ",
+"   .X.o         ",
+"   ..o          "};

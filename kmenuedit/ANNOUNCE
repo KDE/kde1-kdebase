@@ -1,0 +1,53 @@
+Hi !
+
+I have just uploaded a new version of kmenuedit to ftp.kde.org.
+I think it will move to /pub/kde/unstable/apps/utils.
+
+
+What is kmenuedit
+-----------------
+
+Kmenuedit is a program to manage a directory hierarchy of kdelnk-files. Currently
+these directories are $HOME/Personal and $KDEDIR/apps.
+
+The idea behind this program is the following: The menus for $KDEDIR/apps used in 
+kpanel and ktaskbar might get quite large and I don't want to move through the whole
+hierarchy every time I want to execute a program. So I'd like to put often used 
+entries in my $HOME/Personal folder. This is possible with kfm, too, but it is 
+not very handy and not obvious to the average user.
+
+With this program I think it is quite easy to build your own personal menu in kpanel
+and ktaskbar.
+
+This is the first version, so many things are still missing.
+
+(Please note: mini-icons and moving the position of entries inside a menu are not
+ supported by kpanel, but this will change soon :-) ).
+
+New in this version
+-------------------
+
+- compiles with kdelibs-970806
+- uses mimetypes as kfm II does
+
+Regards.
+
+        Chris.
+
+
+Here is the lsm:
+
+Begin3
+Title: kmenuedit
+Version: 0.2.1
+Entered-date: 12 Aug 1997
+Description: edits the ktaskbar and kpanel menu
+Keywords: KDE, Qt, X11
+Author: <Christoph.Neerfeld@bonn.netsurf.de> (Christoph Neerfeld)
+Maintained-by: <Christoph.Neerfeld@bonn.netsurf.de> (Christoph Neerfeld)
+Primary-site: ftp://ftp.kde.org/pub/kde/unstable/apps/utils
+Alternate-site:
+Original-site:
+Platform: Linux, needs Qt by Troll Tech Inc.
+Copying-policy: GPL
+End

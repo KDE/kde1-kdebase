@@ -1,0 +1,149 @@
+DlgEdit:v1.2:Dialog:
+Dialog {
+	ClassHeader {entry1.h}
+	ClassSource {entry1.cpp}
+	ClassName {entry1}
+	DataHeader {entry1Data.h}
+	DataSource {entry1Data.cpp}
+	DataName {entry1Data}
+	WindowBaseClass {QWidget}
+}
+WidgetLayout {
+		Rect {5 102 368 472}
+		Grid {8}
+
+ComboBox {
+		Style {Motif1x}
+		SizeLimit {10}
+		Policy {AtBottom}
+		AutoResize {TRUE}
+		Item {Application}
+		Item {Submenu}
+		Item {Separator}
+		Item {Fvwm Command}
+		Item {Filetype}
+		Item {Device}
+		Rect {72 8 100 24}
+		Name {ComboBox_1}
+		Variable {c_type}
+}
+Label {
+		Text {Type:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {32 8 40 24}
+		Name {Label_1}
+}
+Label {
+		Text {Name:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {32 40 40 24}
+		Name {Label_2}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {72 40 208 24}
+		Name {LineEdit_1}
+		Variable {i_name}
+}
+Frame {
+		Rect {16 200 336 216}
+		Name {Frame_1}
+		Variable {f_sub_diag}
+}
+PushButton {
+		ToggleButton {FALSE}
+		Default {FALSE}
+		AutoDefault {FALSE}
+		Text {Ok}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {56 432 80 24}
+		Name {PushButton_1}
+		Variable {b_ok}
+}
+PushButton {
+		ToggleButton {FALSE}
+		Default {FALSE}
+		AutoDefault {FALSE}
+		Text {Cancel}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {240 432 80 24}
+		Name {PushButton_2}
+		Variable {b_cancel}
+}
+Label {
+		Text {Mini Icon:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {16 136 56 24}
+		Name {Label_3}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {72 136 208 24}
+		Name {LineEdit_2}
+		Variable {i_pixmap}
+}
+PushButton {
+		ToggleButton {FALSE}
+		Default {FALSE}
+		AutoDefault {FALSE}
+		Text {}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {296 136 24 24}
+		Name {PushButton_3}
+		Variable {b_pixmap}
+}
+Label {
+		Text {Icon:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {40 72 32 24}
+		Name {Label_4}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {72 72 208 24}
+		Name {LineEdit_3}
+		Variable {i_big_pixmap}
+}
+PushButton {
+		ToggleButton {FALSE}
+		Default {FALSE}
+		AutoDefault {FALSE}
+		Text {}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {296 72 56 48}
+		Name {PushButton_4}
+		Variable {b_big_pixmap}
+}
+Label {
+		Text {Comment:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {16 168 56 24}
+		Name {Label_5}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {72 168 208 24}
+		Name {LineEdit_4}
+		Variable {i_comment}
+}}

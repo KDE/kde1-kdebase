@@ -1,0 +1,98 @@
+DlgEdit:v1.2:Dialog:
+Dialog {
+	ClassHeader {entry4.h}
+	ClassSource {entry4.cpp}
+	ClassName {entry4}
+	DataHeader {entry4Data.h}
+	DataSource {entry4Data.cpp}
+	DataName {entry4Data}
+	WindowBaseClass {QWidget}
+}
+WidgetLayout {
+		Rect {5 102 336 184}
+		Grid {8}
+
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {88 16 176 24}
+		Name {LineEdit_5}
+		Variable {i_device}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {88 48 176 24}
+		Name {LineEdit_6}
+		Variable {i_mount}
+}
+CheckBox {
+		Checked {FALSE}
+		Text {Read Only}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {88 144 88 24}
+		Name {CheckBox_8}
+		Variable {cb_read_only}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {88 80 176 24}
+		Name {LineEdit_7}
+		Variable {i_fstype}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {88 112 176 24}
+		Name {LineEdit_8}
+		Variable {i_mount_pix}
+}
+PushButton {
+		ToggleButton {FALSE}
+		Default {FALSE}
+		AutoDefault {FALSE}
+		Text {}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {272 112 56 48}
+		Name {PushButton_3}
+		Variable {b_mount_pix}
+}
+Label {
+		Text {Device:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {40 16 48 24}
+		Name {Label_5}
+}
+Label {
+		Text {Mount Point:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {16 48 72 24}
+		Name {Label_6}
+}
+Label {
+		Text {FS Type:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {32 80 56 24}
+		Name {Label_7}
+}
+Label {
+		Text {Unmount Icon:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {8 112 80 24}
+		Name {Label_8}
+}}
