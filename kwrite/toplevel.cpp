@@ -361,6 +361,8 @@ void TopLevel::setupStatusBar(){
 
 
 void TopLevel::openRecent(int id) {
+	if (!kWrite->canDiscard()) return;
+
   loadURL(recentPopup->text(id));
 }
 

@@ -252,18 +252,22 @@ void KWriteView::getVConfig(VConfig &c) {
 
 void KWriteView::update(VConfig &c) {
 
-  if (cursor.x == c.cursor.x && cursor.y == c.cursor.y) return;
-  exposeCursor = true;
+// still exposeCursor and deselectAll(), even if no net cursor movement
+//  if (cursor.x == c.cursor.x && cursor.y == c.cursor.y) return;
+  bool moot = (cursor.x == c.cursor.x && cursor.y == c.cursor.y);
 
-  kWriteDoc->unmarkFound();
-  
-  if (cursorOn) {
-    tagLines(c.cursor.y,c.cursor.y);
-    cursorOn = false;
+  if (! moot) {
+    exposeCursor = true;
+    kWriteDoc->unmarkFound();
+    if (cursorOn) {
+      tagLines(c.cursor.y,c.cursor.y);
+      cursorOn = false;
+    }
   }
 
   if (c.flags & cfMark) {
-    kWriteDoc->selectTo(c.cursor,cursor,c.flags);
+    if (! moot)
+      kWriteDoc->selectTo(c.cursor,cursor,c.flags);
   } else {
     if (!(c.flags & cfPersistent)) kWriteDoc->deselectAll();
   }
