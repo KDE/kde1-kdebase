@@ -3,7 +3,7 @@
 # based on the sample debian/rules file for GNU hello by Ian Jackson.
 
 build:
-	$(checkdir)
+	dh_testdir
 ## prefix is useless and leads to problems, since configure looks for
 ## $prefix/include only, if it's given
 	( CFLAGS="-O2 -g -Wall -DUTMP_SUPPORT -DUTMP='\"/var/run/utmp\"'" \
@@ -18,7 +18,7 @@ build:
 	touch build
 
 clean:
-	$(checkdir)
+	dh_testdir
 	-rm -f build
 	-make distclean
 	-rm -f `find . -name "*~"`
@@ -33,8 +33,9 @@ binary-indep:	checkroot build
 # made here.
 
 binary-arch:	checkroot build
-	$(checkdir)
-	-rm -rf debian/tmp
+	dh_testdir
+	dh_testroot
+	dh_clean -k
 	make install prefix=`pwd`/debian/tmp/usr
 	-mv debian/tmp/etc/kde/kdmrc \
 			debian/tmp/etc/kde/kdmrc.in
@@ -65,22 +66,21 @@ binary-arch:	checkroot build
 	chmod 2755 debian/tmp/usr/X11R6/bin/*kss 
 	chmod 2755 debian/tmp/usr/X11R6/bin/klock
 	chmod 4755 debian/tmp/usr/X11R6/bin/kvt
-	debstd -m
-	dpkg-gencontrol
-	chown -R root.root debian/tmp
-	chmod -R go=rX debian/tmp
-	dpkg --build debian/tmp ..
-
-define checkdir
-	test -f debian/rules
-endef
+	dh_movefiles
+	dh_installdocs
+	dh_installchangelogs
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_suidregister
+	dh_installdeb
+	dh_shlbdeps
+	dh_gencontrol	
+	dh_md5sums
+	dh_builddeb
 
 # Below here is fairly generic really
 
 binary:		binary-indep binary-arch
-
-checkroot:
-	$(checkdir)
-	test root = "`whoami`"
 
 .PHONY: binary binary-arch binary-indep clean checkroot
