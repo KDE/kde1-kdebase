@@ -1,0 +1,21 @@
+/* XPM */
+static char * closed_xpm[] = {
+"15 13 5 1",
+" 	c None",
+".	c #808080",
+"X	c #d7a679",
+"o	c white",
+"O	c black",
+"        .....  ",
+"       .XXXXX. ",
+".............. ",
+".oooooooooooo.O",
+".oXXXXXXXXXXX.O",
+".oXXXXXXXXXXX.O",
+".oXXXXXXXXXXX.O",
+".oXXXXXXXXXXX.O",
+".oXXXXXXXXXXX.O",
+".oXXXXXXXXXXX.O",
+".oXXXXXXXXXXX.O",
+"..............O",
+" OOOOOOOOOOOOOO"};
