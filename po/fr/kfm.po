@@ -664,15 +664,15 @@ msgstr "Autres"
 
 #: kfmprops.cpp:468
 msgid "Set UID"
-msgstr "Entrer l'UID"
+msgstr "Bit SUID"
 
 #: kfmprops.cpp:469
 msgid "Set GID"
-msgstr "Entrer le GID"
+msgstr "Bit SGID"
 
 #: kfmprops.cpp:470
 msgid "Sticky"
-msgstr "Cloué"
+msgstr "Sticky bit"
 
 #: kfmprops.cpp:488
 msgid "Ownership"
