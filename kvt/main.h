@@ -73,7 +73,6 @@ private:
   QWidget *rxvt;
   // weird flags
   Bool setting_to_vt_window;
-  KLocale trans;
   Bool keyboard_secured;
   
   // options
@@ -96,7 +95,6 @@ public:
   OptionDialog(QWidget *parent, const char *name );
 
 private:
-  KLocale trans;
 };
 
 

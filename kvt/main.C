@@ -217,16 +217,16 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
   : QDialog( parent, name, TRUE )
 {
   QLabel *label_color, *label_class;
-  label_class = new QLabel(trans.translate("Add characters to word class"), 
+  label_class = new QLabel(klocale->translate("Add characters to word class"), 
 			   this);
   chars = new QLineEdit(this);
 
-  label_color = new QLabel(trans.translate("choose type of color-mode"), this);
+  label_color = new QLabel(klocale->translate("choose type of color-mode"), this);
   colormode = new QComboBox(this);
   QPushButton *ok, *cancel;
-  ok = new QPushButton( trans.translate("Ok"), this );
+  ok = new QPushButton( klocale->translate("Ok"), this );
   connect( ok, SIGNAL(clicked()), SLOT(accept()) );
-  cancel = new QPushButton( trans.translate("Cancel"), this );
+  cancel = new QPushButton( klocale->translate("Cancel"), this );
   connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
 
   QBoxLayout *geom1, *geom2;
@@ -354,26 +354,26 @@ kVt::kVt( QWidget *parent, const char *name )
 
     m_file = new QPopupMenu;
     CHECK_PTR( m_file );
-    m_file->insertItem( trans.translate("&New Terminal"));
+    m_file->insertItem( klocale->translate("&New Terminal"));
     m_file->insertSeparator();
-    m_file->insertItem( trans.translate("E&xit") ,  this, SLOT(quit()) );
+    m_file->insertItem( klocale->translate("E&xit") ,  this, SLOT(quit()) );
     connect(m_file, SIGNAL(activated(int)), SLOT(file_menu_activated(int)));
 
     m_scrollbar = new QPopupMenu;
     CHECK_PTR( m_scrollbar );
-    m_scrollbar->insertItem( trans.translate("&Hide"));
-    m_scrollbar->insertItem( trans.translate("&Left"));
-    m_scrollbar->insertItem( trans.translate("&Right"));
+    m_scrollbar->insertItem( klocale->translate("&Hide"));
+    m_scrollbar->insertItem( klocale->translate("&Left"));
+    m_scrollbar->insertItem( klocale->translate("&Right"));
     connect(m_scrollbar, SIGNAL(activated(int)), SLOT(scrollbar_menu_activated(int)));
 
     m_size = new QPopupMenu;
     CHECK_PTR( m_size );
-    m_size->insertItem( trans.translate("&Normal"));
-    m_size->insertItem( trans.translate("&Tiny"));
-    m_size->insertItem( trans.translate("&Small"));
-    m_size->insertItem( trans.translate("&Medium"));
-    m_size->insertItem( trans.translate("&Large"));
-    m_size->insertItem( trans.translate("&Huge"));
+    m_size->insertItem( klocale->translate("&Normal"));
+    m_size->insertItem( klocale->translate("&Tiny"));
+    m_size->insertItem( klocale->translate("&Small"));
+    m_size->insertItem( klocale->translate("&Medium"));
+    m_size->insertItem( klocale->translate("&Large"));
+    m_size->insertItem( klocale->translate("&Huge"));
     connect(m_size, SIGNAL(activated(int)), SLOT(size_menu_activated(int)));
 
     m_dimen = new QPopupMenu;
@@ -385,29 +385,29 @@ kVt::kVt( QWidget *parent, const char *name )
     
     m_color = new QPopupMenu;
     CHECK_PTR( m_color );
-    m_color->insertItem( trans.translate("&black/white"));
-    m_color->insertItem( trans.translate("&white/black"));
-    m_color->insertItem( trans.translate("&green/black"));
-    m_color->insertItem( trans.translate("black/light&yellow"));
-    m_color->insertItem( trans.translate("Linu&x Console"));
+    m_color->insertItem( klocale->translate("&black/white"));
+    m_color->insertItem( klocale->translate("&white/black"));
+    m_color->insertItem( klocale->translate("&green/black"));
+    m_color->insertItem( klocale->translate("black/light&yellow"));
+    m_color->insertItem( klocale->translate("Linu&x Console"));
     connect(m_color, SIGNAL(activated(int)), SLOT(color_menu_activated(int)));
     
     
     m_options = new QPopupMenu;
     CHECK_PTR( m_options );
     if (menubar_visible)
-      m_options->insertItem( trans.translate("Hide &Menubar") );
+      m_options->insertItem( klocale->translate("Hide &Menubar") );
     else
-      m_options->insertItem( trans.translate("Show &Menubar") );
-    m_options->insertItem( trans.translate("Secure &keyboard"));
+      m_options->insertItem( klocale->translate("Show &Menubar") );
+    m_options->insertItem( klocale->translate("Secure &keyboard"));
     m_options->insertSeparator();
-    m_options->insertItem( trans.translate("Scroll&bar"), m_scrollbar);
-    m_options->insertItem( trans.translate("&Font size"), m_size);
-    m_options->insertItem( trans.translate("&Color"), m_color);
-    m_options->insertItem( trans.translate("&Size"), m_dimen);
-    m_options->insertItem( trans.translate("Terminal...") );
+    m_options->insertItem( klocale->translate("Scroll&bar"), m_scrollbar);
+    m_options->insertItem( klocale->translate("&Font size"), m_size);
+    m_options->insertItem( klocale->translate("&Color"), m_color);
+    m_options->insertItem( klocale->translate("&Size"), m_dimen);
+    m_options->insertItem( klocale->translate("Terminal...") );
     m_options->insertSeparator();
-    m_options->insertItem( trans.translate("Save &Options"));
+    m_options->insertItem( klocale->translate("Save &Options"));
 
     m_options->installEventFilter( this );
 
@@ -416,18 +416,18 @@ kVt::kVt( QWidget *parent, const char *name )
 
     m_help = new QPopupMenu;
     CHECK_PTR( m_help );
-    m_help->insertItem(trans.translate("&About..."));
-    m_help->insertItem(trans.translate("&Help"));
+    m_help->insertItem(klocale->translate("&About..."));
+    m_help->insertItem(klocale->translate("&Help"));
     connect(m_help, SIGNAL(activated(int)), SLOT(help_menu_activated(int)));
 
     menubar = new KMenuBar( this );
     CHECK_PTR( menubar );
     connect(menubar, SIGNAL (moved(menuPosition)),
 	    SLOT (menubarMoved()));
-    menubar->insertItem( trans.translate("&File"), m_file );
-    menubar->insertItem( trans.translate("&Options"), m_options);
+    menubar->insertItem( klocale->translate("&File"), m_file );
+    menubar->insertItem( klocale->translate("&Options"), m_options);
     menubar->insertSeparator();
-    menubar->insertItem( trans.translate("&Help"), m_help);
+    menubar->insertItem( klocale->translate("&Help"), m_help);
 
     if (!menubar_visible)
       menubar->hide();
@@ -457,7 +457,7 @@ kVt::kVt( QWidget *parent, const char *name )
 void kVt::setMenubar(bool b){
   if (!b){
     menubar->hide();
-    m_options->changeItem(trans.translate("Show &Menubar"), 0);
+    m_options->changeItem(klocale->translate("Show &Menubar"), 0);
   }
   menubar_visible = b;
 }
@@ -466,7 +466,7 @@ void kVt::setMenubar(bool b){
 void kVt::setScrollbar(bool b){
   if (!b){
     scrollbar->hide();
-    m_scrollbar->changeItem(trans.translate("&Show"), 0);
+    m_scrollbar->changeItem(klocale->translate("&Show"), 0);
     scrollbar_visible = b;
   }
 }
@@ -583,7 +583,7 @@ void kVt::options_menu_activated( int item){
       menubar->hide();
       if (menubar->menuBarPos() != KMenuBar::Floating)
 	resize(width(), height()-menubar->height());
-      m_options->changeItem(trans.translate("Show &Menubar"), item);
+      m_options->changeItem(klocale->translate("Show &Menubar"), item);
     }
     else {
       // show 
@@ -591,17 +591,17 @@ void kVt::options_menu_activated( int item){
       menubar->show();
       if (menubar->menuBarPos() != KMenuBar::Floating)
 	resize(width(), height()+menubar->height());
-      m_options->changeItem(trans.translate("Hide &Menubar"), item);
+      m_options->changeItem(klocale->translate("Hide &Menubar"), item);
     }
     break;
   case 1:
     keyboard_secured = !keyboard_secured;
     if (keyboard_secured){
-      m_options->changeItem(trans.translate("Unsecure &keyboard"), item);
+      m_options->changeItem(klocale->translate("Unsecure &keyboard"), item);
       extract_colors(fg_string, "red");
     }
     else {
-      m_options->changeItem(trans.translate("Secure &keyboard"), item);
+      m_options->changeItem(klocale->translate("Secure &keyboard"), item);
       extract_colors(fg_string, bg_string);
     }
     scr_secure(); // also calls XClearwindow and scr_refresh
@@ -659,14 +659,14 @@ void kVt::scrollbar_menu_activated( int item){
       scrollbar_visible = FALSE;
       scrollbar->hide();
       resize(width()-16, height());
-      m_scrollbar->changeItem(trans.translate("&Show"), item);
+      m_scrollbar->changeItem(klocale->translate("&Show"), item);
     }
     else {
       // show 
       scrollbar_visible = TRUE;
       scrollbar->show();
       resize(width()+16, height());
-      m_scrollbar->changeItem(trans.translate("&Hide"), item);
+      m_scrollbar->changeItem(klocale->translate("&Hide"), item);
     }
     break;
     
@@ -736,8 +736,8 @@ void kVt::color_menu_activated( int item){
     XClearWindow(display,vt_win);
     scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
   }else{
-    QMessageBox::message( trans.translate("Hint"), 
-			  trans.translate("New color settings will be displayed\nwhen the keyboard is unsecured.") );
+    QMessageBox::message( klocale->translate("Hint"), 
+			  klocale->translate("New color settings will be displayed\nwhen the keyboard is unsecured.") );
   }
 }
 
@@ -757,7 +757,7 @@ void kVt::help_menu_activated(int item){
   QString ver = KVT_VERSION;
   switch (item){
   case 0:
-    QMessageBox::message( trans.translate("About kvt"), ver + trans.translate("\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08"));
+    QMessageBox::message( klocale->translate("About kvt"), ver + klocale->translate("\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08"));
     break;
   case 1:
     myapp->invokeHTMLHelp("kvt.html", ""); 
@@ -886,7 +886,6 @@ int main(int argc, char **argv)
   // create the QT Application
   MyApp a( argc, argv, "kvt" );
   myapp = &a;
-  KLocale trans;
 
   //  a.setStyle(WindowsStyle);
   kvt = new kVt;
@@ -920,7 +919,7 @@ int main(int argc, char **argv)
   if (!init_display(argc, argv)) {
     fprintf(stderr, KVT_VERSION);
     fprintf(stderr, "\n\n");
-    fprintf(stderr, trans.translate(
+    fprintf(stderr, klocale->translate(
 	    "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 	    "Copyright(C) 1997 M G Berberich\n"
 	    "Terminal emulation for the KDE Desktop Environment\n"
@@ -950,7 +949,7 @@ int main(int argc, char **argv)
 	    "-pageup <keysym>	use hot key alt-keysym to scroll up through the buffer\n"
 	    "-pagedown <keysym>	use hot key alt-keysym to scroll down through buffer\n"));
 #ifdef GREEK_KBD
-    fprintf(stderr, trans.translate(
+    fprintf(stderr, klocale->translate(
 	    "-grk9		greek kbd = ELOT 928 (default)\n"
 	    "-grk4		greek kbd = IBM 437\n"));
 #endif
@@ -967,7 +966,7 @@ int main(int argc, char **argv)
 
   kvt->show();
 
-  m_optiondialog = new OptionDialog(kvt, trans.translate("Terminal Options"));
+  m_optiondialog = new OptionDialog(kvt, klocale->translate("Terminal Options"));
 
   return a.exec();
 }
