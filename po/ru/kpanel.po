@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-11-13 01:15+0100\n"
+"POT-Creation-Date: 1998-11-14 01:18+0100\n"
 "PO-Revision-Date: 1998-11-07 01:59+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -130,38 +130,38 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Невозможно поместить это как кнопку на панель!"
 
-#: pfilemenu.C:390
+#: pfilemenu.C:389
 msgid "(empty folder)"
 msgstr "(пустая папка)"
 
-#: pfilemenu.C:447
+#: pfilemenu.C:446
 msgid "(Too Many Files)"
 msgstr "(Слишком много файлов)"
 
-#: pfilemenu.C:456
+#: pfilemenu.C:455
 msgid "(Access Denied)"
 msgstr "(Доступ запрещен)"
 
-#: pfilemenu.C:459
+#: pfilemenu.C:458
 msgid "(Unreadable)"
 msgstr "(Нечитабельный)"
 
-#: pfilemenu.C:466
+#: pfilemenu.C:465
 msgid "Open Folder"
 msgstr "Открыть папку"
 
-#: pfilemenu.C:712
+#: pfilemenu.C:715
 msgid "Global:"
 msgstr "Глобальные:"
 
-#: pfilemenu.C:731
+#: pfilemenu.C:736
 msgid "Local:"
 msgstr "Локальные:"
 
-#: pfilemenu.C:749
+#: pfilemenu.C:756
 msgid "Recent:"
 msgstr "Недавние:"
 
-#: pfilemenu.C:795
+#: pfilemenu.C:804
 msgid "Options..."
 msgstr "Опции..."

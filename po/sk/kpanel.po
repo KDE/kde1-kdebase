@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1998-11-13 01:15+0100\n"
+"POT-Creation-Date: 1998-11-14 01:18+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -130,38 +130,38 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Nemô¾em da» toto ako tlaèítko na panel!"
 
-#: pfilemenu.C:390
+#: pfilemenu.C:389
 msgid "(empty folder)"
 msgstr "(prázdny prieèinok)"
 
-#: pfilemenu.C:447
+#: pfilemenu.C:446
 msgid "(Too Many Files)"
 msgstr "(priveµa súborov)"
 
-#: pfilemenu.C:456
+#: pfilemenu.C:455
 msgid "(Access Denied)"
 msgstr "(prístup zamietnutý)"
 
-#: pfilemenu.C:459
+#: pfilemenu.C:458
 msgid "(Unreadable)"
 msgstr "(neèitateµné)"
 
-#: pfilemenu.C:466
+#: pfilemenu.C:465
 msgid "Open Folder"
 msgstr "Otvori» prieèinok"
 
-#: pfilemenu.C:712
+#: pfilemenu.C:715
 msgid "Global:"
 msgstr "Globálne:"
 
-#: pfilemenu.C:731
+#: pfilemenu.C:736
 msgid "Local:"
 msgstr "Lokálne:"
 
-#: pfilemenu.C:749
+#: pfilemenu.C:756
 msgid "Recent:"
 msgstr "Nedávne:"
 
-#: pfilemenu.C:795
+#: pfilemenu.C:804
 msgid "Options..."
 msgstr "Vlastnosti..."

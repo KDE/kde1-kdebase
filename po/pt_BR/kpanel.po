@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-11-13 01:15+0100\n"
+"POT-Creation-Date: 1998-11-14 01:18+0100\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
@@ -121,39 +121,39 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Não é possivel adicionar isto ao painel como botão!"
 
-#: pfilemenu.C:390
+#: pfilemenu.C:389
 msgid "(empty folder)"
 msgstr "(pasta vazia)"
 
-#: pfilemenu.C:447
+#: pfilemenu.C:446
 msgid "(Too Many Files)"
 msgstr "(Arquivos demais)"
 
-#: pfilemenu.C:456
+#: pfilemenu.C:455
 msgid "(Access Denied)"
 msgstr "(Acesso negado)"
 
-#: pfilemenu.C:459
+#: pfilemenu.C:458
 msgid "(Unreadable)"
 msgstr "(Ilegível)"
 
-#: pfilemenu.C:466
+#: pfilemenu.C:465
 msgid "Open Folder"
 msgstr "Abrir Pasta"
 
-#: pfilemenu.C:712
+#: pfilemenu.C:715
 msgid "Global:"
 msgstr ""
 
-#: pfilemenu.C:731
+#: pfilemenu.C:736
 msgid "Local:"
 msgstr ""
 
-#: pfilemenu.C:749
+#: pfilemenu.C:756
 msgid "Recent:"
 msgstr ""
 
-#: pfilemenu.C:795
+#: pfilemenu.C:804
 msgid "Options..."
 msgstr ""
 

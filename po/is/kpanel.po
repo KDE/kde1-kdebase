@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-11-13 01:15+0100\n"
+"POT-Creation-Date: 1998-11-14 01:18+0100\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -124,39 +124,39 @@ msgstr ""
 "Ekki er hægt að setja þennan\n"
 "hnapp á spjaldið!"
 
-#: pfilemenu.C:390
+#: pfilemenu.C:389
 msgid "(empty folder)"
 msgstr "(tóm mappa)"
 
-#: pfilemenu.C:447
+#: pfilemenu.C:446
 msgid "(Too Many Files)"
 msgstr "(Of margar skrár)"
 
-#: pfilemenu.C:456
+#: pfilemenu.C:455
 msgid "(Access Denied)"
 msgstr "(Aðgangi hafnað)"
 
-#: pfilemenu.C:459
+#: pfilemenu.C:458
 msgid "(Unreadable)"
 msgstr "(Ekki læsilegt)"
 
-#: pfilemenu.C:466
+#: pfilemenu.C:465
 msgid "Open Folder"
 msgstr "Opna möppu"
 
-#: pfilemenu.C:712
+#: pfilemenu.C:715
 msgid "Global:"
 msgstr ""
 
-#: pfilemenu.C:731
+#: pfilemenu.C:736
 msgid "Local:"
 msgstr ""
 
-#: pfilemenu.C:749
+#: pfilemenu.C:756
 msgid "Recent:"
 msgstr ""
 
-#: pfilemenu.C:795
+#: pfilemenu.C:804
 msgid "Options..."
 msgstr ""
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-13 01:15+0100\n"
+"POT-Creation-Date: 1998-11-14 01:18+0100\n"
 "PO-Revision-Date: 1998-05-20 23:55\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN  <LL@li.org>\n"
@@ -129,38 +129,38 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "No es pot posar un botó amb això damunt el panell!"
 
-#: pfilemenu.C:390
+#: pfilemenu.C:389
 msgid "(empty folder)"
 msgstr ""
 
-#: pfilemenu.C:447
+#: pfilemenu.C:446
 msgid "(Too Many Files)"
 msgstr ""
 
-#: pfilemenu.C:456
+#: pfilemenu.C:455
 msgid "(Access Denied)"
 msgstr ""
 
-#: pfilemenu.C:459
+#: pfilemenu.C:458
 msgid "(Unreadable)"
 msgstr ""
 
-#: pfilemenu.C:466
+#: pfilemenu.C:465
 msgid "Open Folder"
 msgstr ""
 
-#: pfilemenu.C:712
+#: pfilemenu.C:715
 msgid "Global:"
 msgstr ""
 
-#: pfilemenu.C:731
+#: pfilemenu.C:736
 msgid "Local:"
 msgstr ""
 
-#: pfilemenu.C:749
+#: pfilemenu.C:756
 msgid "Recent:"
 msgstr ""
 
-#: pfilemenu.C:795
+#: pfilemenu.C:804
 msgid "Options..."
 msgstr ""

@@ -1,7 +1,7 @@
 # John Zero <johnzero@telnet.hu>, 1997
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-14 01:18+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -52,23 +52,23 @@ msgstr "Mehet!"
 msgid "Shutdown..."
 msgstr "Leállítás..."
 
-#: kgreeter.cpp:477
+#: kgreeter.cpp:479
 msgid "Logins not available right now."
 msgstr ""
 
-#: kgreeter.cpp:518
+#: kgreeter.cpp:520
 msgid "login_getcapstr() failed."
 msgstr ""
 
-#: kgreeter.cpp:572 kgreeter.cpp:599
+#: kgreeter.cpp:574 kgreeter.cpp:601
 msgid "Sorry -- your account has expired."
 msgstr ""
 
-#: kgreeter.cpp:577 kgreeter.cpp:604
+#: kgreeter.cpp:579 kgreeter.cpp:606
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr ""
 
-#: kgreeter.cpp:631
+#: kgreeter.cpp:633
 msgid "Home directory not available"
 msgstr ""

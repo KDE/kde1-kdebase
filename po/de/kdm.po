@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm VERSION\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-14 01:18+0100\n"
 "PO-Revision-Date: 1997-09-14 13:53 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German / KDE\n"
@@ -54,23 +54,23 @@ msgstr "Los!"
 msgid "Shutdown..."
 msgstr "Beenden"
 
-#: kgreeter.cpp:477
+#: kgreeter.cpp:479
 msgid "Logins not available right now."
 msgstr "Benutzernamen derzeicht nicht verfügbar."
 
-#: kgreeter.cpp:518
+#: kgreeter.cpp:520
 msgid "login_getcapstr() failed."
 msgstr ""
 
-#: kgreeter.cpp:572 kgreeter.cpp:599
+#: kgreeter.cpp:574 kgreeter.cpp:601
 msgid "Sorry -- your account has expired."
 msgstr "Sorry -- Ihr Zugang ist abgelaufen."
 
-#: kgreeter.cpp:577 kgreeter.cpp:604
+#: kgreeter.cpp:579 kgreeter.cpp:606
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Warnung: Ihr Zugang läuft am %s aus"
 
-#: kgreeter.cpp:631
+#: kgreeter.cpp:633
 msgid "Home directory not available"
 msgstr "Heimat-Verzeichnis nicht verfügbar"
