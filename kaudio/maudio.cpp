@@ -1,3 +1,5 @@
+// Version info: 0.60
+
 #include <unistd.h>
 #include <stdlib.h>
 #include <errno.h>
@@ -29,6 +31,7 @@ AudioSample	*ASample;
 AudioDev	*ADev;
 
 int		BUFFSIZE;
+int		MaudioDevnum=-1;
 
 /* If you encounter looped output when pausing, it is a bug
  * in OSS. Call maudio with "-oss_bugs 1" then.
@@ -58,12 +61,22 @@ int main(char argc, char **argv)
   int	bytes_read, ret, ret2;
 
 
-  char  textDevDSP[]="/dev/dsp";
+  char  textDevDSP[]="/dev/dsp ";
   char  *PtrFname;
   int	ReleaseDelay=1;
   bool	retgrab;
 
   ma_init(argc, argv);
+
+  if ( MaudioDevnum > 10 || MaudioDevnum<0 ) {
+    // Illegal device number: Use default DSP
+    textDevDSP[strlen(textDevDSP)-1] = 0;  // Yields "/dev/dsp"
+    MaudioDevnum = -1;
+  } 
+  else {
+    // Yields "/dev/dspX", with X in [0..9].
+    textDevDSP[strlen(textDevDSP)-1] = char('0'+(unsigned char)MaudioDevnum);
+  }
 
   ADev = new AudioDev(textDevDSP, O_WRONLY, 0 /* O_NONBLOCK */);
   ADev->setBugs(bugflags);	// OSS bug workaround flags :-(
@@ -142,7 +155,7 @@ int main(char argc, char **argv)
 	  cerr << "Stopping Media ... 1";
 #endif
 
-// OK, this i the right way! Never sync or reset while the device is open.
+// OK, this is the right way! Never sync or reset while the device is open.
 // Flushing is now solved by emitting "Zero Data". This is the way to go
 // for maudio2 anyhow.
 /*	  if(SoftStop)
@@ -328,7 +341,8 @@ void ma_init(char argc, char **argv)
 	  bugflags = atoi(argv[i+1]);
 	  cerr << "Playing with OSS Bug workaround! Flags= " << bugflags << '\n';
 	}
-
+      else if ( (strcmp (argv[i],"-devnum") == 0) && (i+1<argc) )
+        MaudioDevnum = atoi(argv[i+1]);
     }
 
   if (!IsSlave)

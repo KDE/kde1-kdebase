@@ -1,7 +1,7 @@
 // THIS IS DAMNED HACKED. PLEASE DO NOT LOOK AT THE CODE, PLEASE //
 
 /*
-   Copyright (c) 1997 Christian Esken (chris@magicon.prima.ruhr.de)
+   Copyright (c) 1997 Christian Esken (esken@kde.org)
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -97,7 +97,7 @@ int initMediatool(char *Cid)
 }
 
 
-int main ( int, char** )
+int main ( int argc , char **argv )
 {
   char		NotStarted[]="Player not started\n";
   char		*tmpadr;
@@ -108,8 +108,15 @@ int main ( int, char** )
   char* Opts[10];
   char MaudioText[]="maudio";
   char MediaText[]="-media";
+  char DevnumText[]="-devnum";
   char PidRead[100];
+  char DevnumArg[100];
 
+
+  if ( argc > 1 )
+    sprintf(DevnumArg, "%s", argv[1]);
+  else
+    sprintf(DevnumArg, "#" ); // Illegal Dev-Number => Default device
 
   // Create full path of ~/.kaudioserver, then delete the communication id
   // file
@@ -133,7 +140,7 @@ int main ( int, char** )
     fatalexit(NotStarted);
 
   if (ret ==1 ) {
-    printf("Using old audio server with talk id %s.\n", PidRead);
+    printf("Using old audio server with talk id %s\n", PidRead);
     exit (0);
   }
 
@@ -155,7 +162,14 @@ int main ( int, char** )
   Opts[0]=MaudioText;
   Opts[1]=(char*)MediaText;
   Opts[2]=(char*)ServerId;
-  Opts[3]=(char*)NULL;
+  if (DevnumArg[0] == '#')
+    Opts[3]=(char*)NULL;  // Default Device
+  else {
+    // Custom device
+    Opts[3]=(char*)DevnumText;
+    Opts[4]=(char*)DevnumArg;
+    Opts[5]=(char*)NULL;
+  }
 
   int forkret=fork();
   if (forkret==0) {

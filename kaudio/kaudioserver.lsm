@@ -1,0 +1,16 @@
+
+Begin3
+Title:          kaudioserver
+Version:        0.91
+Entered-date:   27JUL97
+Description:    Mediatool compliant digital audio server for KDE.
+                This is needed for all KDE applications that output
+                sound, for example kreversi.
+Keywords:       media kmedia sound audio Linux X11 Qt KDE
+Author:         Christian Esken <esken@kde.org>
+Maintained-by:  Christian Esken <esken@kde.org>
+Primary-site:   http://www.kde.org
+Alternate-site: http://wallace.ping.de/~chris
+Platform:       Linux and possibly other Unices
+Copying-policy: GPL
+End

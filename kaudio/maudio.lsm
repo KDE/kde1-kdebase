@@ -1,0 +1,15 @@
+
+Begin3
+Title:          maudio
+Version:        0.60
+Entered-date:   19MAY97
+Description:    Mediatool compliant audio player
+Keywords:       media kmedia tracker sidplay playmidi sound Linux X11 Qt KDE
+Author:         Christian Esken <esken@kde.org>
+Maintained-by:  Christian Esken <esken@kde.org>
+Primary-site:   http://www.kde.org
+Alternate-site: http://wallace.ping.de/~chris
+Original-site:  http://www.prima.ruhr.de/home/magicon/mediatool.html
+Platform:       Linux and possibly other Unices
+Copying-policy: GPL
+End
