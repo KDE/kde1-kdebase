@@ -1452,15 +1452,11 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
     {
 	int id;
 
-        /* Commented out. Left click does it. Why have it on right click menu ?. David.
-	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_CD), 
-				    view, SLOT( slotPopupCd() ) );
-        */
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), 
-				    view, SLOT( slotPopupNewView() ) );
+				    view, SLOT( slotNewView() ) );
 	popupMenu->insertSeparator();    
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_TRASH), 
-				    view, SLOT( slotPopupEmptyTrashBin() ) );
+				    view, SLOT( slotEmptyTrashBin() ) );
     } 
     else if ( isdir )
     {
@@ -1485,29 +1481,22 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 	
           popupMenu->insertSeparator();  
         }
-
-        /* Commented out. Left click does it. Why have it on right click menu ?. David.
-        if (!_current_dir) {
-            id = popupMenu->insertItem( klocale->getAlias(ID_STRING_CD), view, 
-                                        SLOT( slotPopupCd() ) );
-        }
-        */
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), 
-				    view, SLOT( slotPopupNewView() ) );
+				    view, SLOT( slotNewView() ) );
 	popupMenu->insertSeparator();    
 	if ( KIOServer::supports( _urls, KIO_Read ) )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_COPY ), 
-					view, SLOT( slotPopupCopy() ) );
+					view, SLOT( slotCopy() ) );
 	if ( KIOServer::supports( _urls, KIO_Write ) && KfmView::clipboard->count() != 0 )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_PASTE ), 
-					view, SLOT( slotPopupPaste() ) );
+					view, SLOT( slotPaste() ) );
 	if ( KIOServer::supports( _urls, KIO_Move ) &&
              !KIOServer::isTrash ( viewURL.directory() ) && !_current_dir )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_MOVE_TO_TRASH ),  
-					view, SLOT( slotPopupTrash() ) );
+					view, SLOT( slotTrash() ) );
 	if ( KIOServer::supports( _urls, KIO_Delete ) && !_current_dir )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_DELETE ),  
-					view, SLOT( slotPopupDelete() ) );
+					view, SLOT( slotDelete() ) );
     }
     else
     {
@@ -1515,28 +1504,27 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
         if (bHttp) {
             /* Should be for http URLs (HTML pages) only ... */
             id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), 
-                                        view, SLOT( slotPopupNewView() ) );
+                                        view, SLOT( slotNewView() ) );
         }
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN_WITH), 
-				    view, SLOT( slotPopupOpenWith() ) );
+				    view, SLOT( slotOpenWith() ) );
 	popupMenu->insertSeparator();    
 	if ( KIOServer::supports( _urls, KIO_Read ) )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_COPY ), 
-					view, SLOT( slotPopupCopy() ) );
+					view, SLOT( slotCopy() ) );
 	if ( KIOServer::supports( _urls, KIO_Move )  &&
              !KIOServer::isTrash ( viewURL.directory() ) && !_current_dir )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_MOVE_TO_TRASH ),  
-					view, SLOT( slotPopupTrash() ) );
+					view, SLOT( slotTrash() ) );
 	if ( KIOServer::supports( _urls, KIO_Delete ) && !_current_dir )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_DELETE ),  
-					view, SLOT( slotPopupDelete() ) );
+					view, SLOT( slotDelete() ) );
     }
 
     popupMenu->insertItem( klocale->getAlias(ID_STRING_ADD_TO_BOOMARKS),
-			   view, SLOT( slotPopupBookmarks() ) );
+			   view, SLOT( slotBookmarks() ) );
 
     menuNew->setPopupFiles( _urls );
-    view->setPopupFiles( _urls );
     popupFiles.copy( _urls );
 
     QStrList bindings;
@@ -1614,7 +1602,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
         }
         //--------------------------------------------------------------------
 	popupMenu->insertSeparator();
-        popupMenu->insertItem( klocale->getAlias(ID_STRING_PROP), view, SLOT( slotPopupProperties() ) );
+        popupMenu->insertItem( klocale->getAlias(ID_STRING_PROP), view, SLOT( slotProperties() ) );
     }
     
     // Show the menu

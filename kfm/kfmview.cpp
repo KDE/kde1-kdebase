@@ -97,6 +97,7 @@ KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KfmView *_par
     dropZone = 0L;
     popupMenu = 0L;
     
+    popupMenuEvent = false;
     stackLock = false;
 
     // ignoreMouseRelease = false; // Stephan: Just guessed. It was undefined
@@ -509,23 +510,45 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 
 }
 
+void KfmView::copySelection()
+{
+	// clear the internal clipboard first.
+    clipboard->clear();
+
+    // Is there any text selected ?	
+    if ( getActiveView()->isTextSelected() )
+    {
+        QString txt;
+		getActiveView()->getSelectedText ( txt );		
+        if (!txt.isEmpty())
+		{			
+            clipboard->append(txt);
+			KApplication::clipboard()->setText( txt );
+		}
+	}
+	// If not what about URL(s) ?	
+	else
+	{
+		getActiveView()->getSelected( (*clipboard) );
+		// if user clicked on the background w/o selecting anything else.	
+		if (clipboard->isEmpty() && popupMenuEvent )
+		{
+			clipboard->append ( getURL() );
+			KApplication::clipboard()->setText( getURL() );
+    }
+		else
+			// Always copy the last selected URL into system clipboard ...
+			KApplication::clipboard()->setText( clipboard->last() );
+	}
+}
+
 void KfmView::slotCopy()
 {
-    clipboard->clear();
-    // Are there URLs selected (-> directly into the clipboard) ?
-    view->getSelected( (*clipboard) );
+	copySelection ();
+}
 
-    if (clipboard->isEmpty()) // first test, since selecting URLs selects text
-    { // no URLs, get selected text
-        // Is there selected text ?
-        QString txt;
-        view->getSelectedText ( txt );
-        if (!txt.isEmpty())
-            clipboard->append(txt);
-    }
-    // Problem if one selects some text AND a link in a html page :
-    // there is text AND a URL selected. What do we put in the clipboard ?
-    // Currently we put the URL...
+void KfmView::slotCut()
+{
 }
 
 void KfmView::slotTrash()
@@ -597,12 +620,21 @@ void KfmView::slotPaste()
 
 void KfmView::slotPopupMenu( QStrList &_urls, const QPoint &_point, bool _current_dir )
 {
+	// Popup menu generated this Event! (Dawit A.)
+	popupMenuEvent = true;
     // Show the popup Menu for the given URLs
+	debug ( "popup state enabled" );
     manager->openPopupMenu( _urls, _point, _current_dir );
 }
 
-void KfmView::slotPopupOpenWith()
+void KfmView::slotOpenWith()
 {
+    QStrList popupFiles = new QStrList();
+    getActiveView()->getSelected ( popupFiles ); // get selected URL(s)
+    if ( popupFiles.isEmpty() && popupMenuEvent )
+{
+		popupFiles.append ( getURL() );
+    }
     OpenWithDlg l( klocale->translate("Open With:"), "", this, true );
     if ( l.exec() )
     {
@@ -614,7 +646,6 @@ void KfmView::slotPopupOpenWith()
 	  bind->runBinding( s );
 	return;
       }
-      
       QString pattern = l.getText();
       if ( pattern.length() == 0 )
 	return;
@@ -622,8 +653,7 @@ void KfmView::slotPopupOpenWith()
     else
       return;
     
-    printf("KfmView::slotPopupOpenWith starts openWithOldApplication(%s)\n",
-       l.getText());
+    printf("KfmView::slotPopupOpenWith starts openWithOldApplication(%s)\n", l.getText());
     KURL u(popupFiles.first());
     if (u.isLocalFile())
     {
@@ -635,8 +665,14 @@ void KfmView::slotPopupOpenWith()
     else  openWithOldApplication( l.getText(), popupFiles );
 }              
 
-void KfmView::slotPopupProperties()
+void KfmView::slotProperties()
 {
+	QStrList popupFiles = new QStrList();
+	getActiveView()->getSelected ( popupFiles );
+	if ( popupFiles.isEmpty() && popupMenuEvent )
+	{
+		popupFiles.append ( getURL() );
+	}
     if ( popupFiles.count() != 1 )
     {
 	warning(klocale->translate("ERROR: Can not open properties for multiple files"));
@@ -720,14 +756,20 @@ void KfmView::slotSaveLocalProperties()
 }
 //----------------------------------------------------------------------------
 
-void KfmView::slotPopupBookmarks()
+void KfmView::slotBookmarks()
 {
     char *s;
+    QStrList popupFiles = new QStrList();
+    getActiveView()->getSelected ( popupFiles ); // get the selected URL(s)
+    if ( popupFiles.isEmpty() && popupMenuEvent )
+    {
+       popupFiles.append ( getURL() );
+    }
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
 	gui->addBookmark( s, s );
 }
 
-void KfmView::slotPopupEmptyTrashBin()
+void KfmView::slotEmptyTrashBin()
 {
     QString d = KFMPaths::TrashPath();
     QStrList trash;
@@ -764,126 +806,16 @@ void KfmView::slotPopupEmptyTrashBin()
     job->del( trash );
 }
 
-void KfmView::slotPopupCopy()
+void KfmView::slotNewView()
 {
-    clipboard->clear();
-    char *s;
-    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
-	clipboard->append( s );
-    QApplication::clipboard()->setText(popupFiles.first()); // system clipboard
-
-    // DEBUG
-    /* for( s = clipboard->first(); s != 0L; s = clipboard->next() )
-      printf("CLIPBOARD: %s\n",s); */
-}
-
-void KfmView::slotPopupPaste()
-{
-    if ( popupFiles.count() != 1 )
-    {
-      QMessageBox::warning( 0, klocale->translate("KFM Error"), 
-			    klocale->translate("Can not paste into multiple directories") );
-      if(KRootWidget::pKRootWidget)
-	KRootWidget::pKRootWidget->unselectAllIcons();
-      
-      return;
-    }
-    
-    // Check whether we drop a directory on itself or one of its children
-    int nested = 0;
-    char *s;
-    for ( s = clipboard->first(); s != 0L; s = clipboard->next() )
-    {
-      int j;
-      if ( ( j = testNestedURLs( s, manager->getURL() ) ) )
-	if ( j == -1 || ( j > nested && nested != -1 ) )
-	  nested = j;
-    }
-    
-    if ( nested == -1 )
-    {
-	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
-			      klocale->translate("ERROR: Malformed URL") );
-	if(KRootWidget::pKRootWidget)
-	  KRootWidget::pKRootWidget->unselectAllIcons();
-	return;
-    }
-    if ( nested == 2 )
-    {
-	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
-			      klocale->translate("ERROR: You dropped a URL over itself") );
-	if(KRootWidget::pKRootWidget)
-	  KRootWidget::pKRootWidget->unselectAllIcons();
-	return;
-    }
-    if ( nested == 1 )
-    {
-	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
-			      klocale->translate("ERROR: You dropped a directory over one of its children") );
-	if(KRootWidget::pKRootWidget)
-	  KRootWidget::pKRootWidget->unselectAllIcons();
-	return;
-    }
-
-    KIOJob * job = new KIOJob;
-    job->copy( (*clipboard), popupFiles.first() );
-    if(KRootWidget::pKRootWidget)
-      KRootWidget::pKRootWidget->unselectAllIcons();
-}
-
-void KfmView::slotPopupTrash()
-{
-    // This function will emit a signal that causes us to redisplay the
-    // contents of our directory if neccessary.
-    KIOJob * job = new KIOJob;
-    
-    QString dest = "file:" + KFMPaths::TrashPath();
- 
-    job->setOverWriteExistingFiles( TRUE );
-    job->move( popupFiles, dest );
-}
-
-void KfmView::slotPopupDelete()
-{
-    // Is the user really sure ?
-    bool ok = !QMessageBox::warning( 0, klocale->translate("KFM Warning"), 
-				  klocale->translate("Do you really want to delete the selected file(s)?\n\nThere is no way to restore them."), 
-				  klocale->translate("Yes"), 
-				  klocale->translate("No") );
-    if ( ok )
-    {
-	// Store the decoded URLs here.
-	QStrList list;
 	char *s;
+    QStrList popupFiles = new QStrList();
+    getActiveView()->getSelected ( popupFiles ); // get the selected URL(s)
 	for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
 	{
-	    list.append( s );
-	}
-
-	KIOJob * job = new KIOJob;	
-	job->del( list );
-    }
-}
-
-void KfmView::slotPopupNewView()
-{
-    char *s;
-    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
-    {
 	KfmGui *m = new KfmGui( 0L, 0L, s );
 	m->show();
     }
-}
-
-void KfmView::slotPopupCd()
-{
-    if ( popupFiles.count() != 1 )
-    {
-	warning(klocale->translate("ERROR: Can not change to multiple directories"));
-	return;
-    }
-    
-    openURL( popupFiles.first() );
 }
 
 const char * KfmView::getURL()
@@ -1191,11 +1123,6 @@ void KfmView::slotURLSelected( const char *_url, int _button, const char *_targe
 	openURL( _url );
 }
 
-void KfmView::setPopupFiles( QStrList &_files )
-{
-    popupFiles.copy( _files );
-}
-
 void KfmView::slotOnURL( const char *_url )
 {
     if ( _url == 0L )
@@ -1379,10 +1306,13 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 {
     rectStart = false;
     selectedURL = "";
+	popupMenuEvent = false;
     
     // Select by drawing a rectangle
-    if ( _url == 0L && _mouse->button() == LeftButton && !manager->isHTML() )
+    if ( _url == 0L && _mouse->button() == LeftButton )
     {
+        // Do not do it on native HTML pages (Dawit A.)
+        if ( !manager->isHTML() ) return false;
 	select( 0L, false );
 	rectStart = true;            // Say it is start of drag
 	rectX1 = _mouse->pos().x();   // get start position
@@ -1391,7 +1321,6 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 	rectY2 = rectY1;
 	if ( !dPainter )
 	    dPainter = new QPainter;
-
 	return true;
     }
     // Select a URL with Ctrl Button
@@ -1400,7 +1329,7 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
     {   
 	selectByURL( 0L, _url, !_isselected );
 	selectedURL = _url;
-    getKHTMLWidget()->setMarker( _url );
+	getKHTMLWidget()->setMarker( _url );
 	// ignoreMouseRelease = true;
 	return true;
     }
@@ -1445,14 +1374,12 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
     else if ( _url == 0L && _mouse->button() == RightButton )
     {      
 	QPoint p = mapToGlobal( _mouse->pos() );
-	
-	select( 0L, false );
+	// select( 0L, false );  Why are we deselecting URL's on a right click ??? (Dawit A.)
 	QStrList list;
 	list.append( manager->getURL() );
 	slotPopupMenu( list, p, true );
 	return true;
     }
-    
     return false;
 }
 

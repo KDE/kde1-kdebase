@@ -606,6 +606,7 @@ void KfmGui::initView()
     connect( view, SIGNAL( setTitle(const char *)), this, SLOT( slotTitle(const char *)) );
     connect( view, SIGNAL( historyUpdate( bool, bool ) ), this, SLOT( slotUpdateHistory( bool, bool ) ) );
     connect( view, SIGNAL( newURL( const char * ) ), this, SLOT( slotNewURL( const char * ) ) );
+    connect( view, SIGNAL( textSelected( KHTMLView *, bool) ), this, SLOT( slotTextSelected( KHTMLView *, bool) ) );
     connect( view, SIGNAL( documentStarted( KHTMLView * ) ), 
 	     this, SLOT( slotAddWaitingWidget( KHTMLView * ) ) );
     connect( view, SIGNAL( documentDone( KHTMLView * ) ), 
