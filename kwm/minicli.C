@@ -43,6 +43,20 @@ void execute(const char* cmd){
       tmp += cmd;
       cmd = tmp.data();
   }
+  // Looks like a KDEHelp thing ?
+  else if ( strstr( cmd, "man:" ) != 0L || cmd[0] == '#' )
+  {
+      tmp = "kdehelp \"";
+      if ( cmd[0] == '#' )
+      {
+	  tmp += "man:";
+	  tmp += cmd + 1;
+      }
+      else
+	  tmp += cmd;
+      tmp += "\"";
+      cmd = tmp.data();
+  }
   // Looks like an URL ?
   else if ( strstr( cmd, "://" ) != 0L )
   {

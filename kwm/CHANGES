@@ -9,6 +9,14 @@ and some code went in from David Hogan's 9wm, a smart and small
 windowmanager written in plain C. There are of course also strong
 influences from my experiences with the former kwm.
 
+Changes by Torben:
+	- minicli does handle URLs now like http://....
+	- minicli handles URLs like "www.xxx" or "ftp.xxxx"
+	- minicli handles dirctories like "/home/weis"
+	- minicli has tab completion ( use TAB and Ctrl+D )
+	- minicli supports the URL man:
+	- minicli understand #kill, this will search the
+	          man page for kill and is a shortcut for man:kill
 
 In 0.10:
 --------
