@@ -1,9 +1,16 @@
-1999-01-03  David Faure  <faure@kde.org>
+1999-01-04  David Faure  <faure@kde.org>
 
-	* kioslave/tar.cpp: Fixed tar protocol support. Looks like the tar 
-	output has changed. There are 2 items for the date, not 4 anymore.
-	(This is with GNU tar 1.12) Which tar has 4 items ? Old GNU tar or 
-	non-GNU tars ? Testing the tar version might be necessary...
+	* kfmgui.cpp: Fixed Tree View being initialized even if not shown.
+	This speeds up A LOT navigation in kfm !
+	
+	* kfmserver.cpp: Applied patch from Andreas Pour for better magic
+	file creation. (Removes annoying dialog box at startup).
+
+	* kioslave/tar.cpp: Fixed tar protocol support. Uses sscanf
+	instead of strtok. Should work with GNU tar and non-GNU tar, which 
+	have a different date format.
+	
+1999-01-03  David Faure  <faure@kde.org>
 
 	* kfmgui.cpp: Argh, another late bug. When entering a directory in
 	a window, all other windows had out-of-date history menus (and

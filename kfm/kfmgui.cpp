@@ -616,7 +616,7 @@ void KfmGui::updateView()
 {
     view->slotUpdateView();
     //  update tree view   Sep 5 rjakob
-    if (bTreeViewInitialized && pkfm->isTreeViewFollowMode())
+    if (bTreeView && pkfm->isTreeViewFollowMode())
         treeView->slotshowDirectory(toolbarURL->getLinedText(TOOLBAR_URL_ID));
 }
 
@@ -642,7 +642,7 @@ void KfmGui::handleViewMenu(bool has_upURL)
 
 void KfmGui::slotReloadTree()
 {
-    if ( bTreeViewInitialized )
+    if ( bTreeView )
 	treeView->update();
 }
 
@@ -754,7 +754,7 @@ void KfmGui::slotURLEntered()
 	view->openURL( url.data() );             
         //  update tree view Sep 5 rjakob
         if (url.left(5)=="file:")
-    	    if (bTreeViewInitialized && pkfm->isTreeViewFollowMode())
+    	    if (bTreeView && pkfm->isTreeViewFollowMode())
 		treeView->slotshowDirectory(url.data()+5);
     }
     // view->openURL( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
@@ -767,7 +767,7 @@ void KfmGui::setToolbarURL( const char *_url )
     toolbarURL->setLinedText( TOOLBAR_URL_ID, url.data() );
     //  update tree view Sep 5 rjakob
     if (url.left(5)=="file:")
-      if (bTreeViewInitialized && pkfm->isTreeViewFollowMode())
+      if (bTreeView && pkfm->isTreeViewFollowMode())
          treeView->slotshowDirectory(url.data()+5);
 
 }
@@ -850,12 +850,6 @@ void KfmGui::slotPrint()
 
 void KfmGui::slotPannerChanged()
 {
-    if ( !bTreeViewInitialized )
-    {
-        bTreeViewInitialized = TRUE;
-	treeView->fill();
-    }
-
     if ( panner->getSeparator() == 0 )
     {
       mview->setItemChecked( mview->idAt( 1 ), false );
@@ -863,8 +857,16 @@ void KfmGui::slotPannerChanged()
     }
     else
     {
-      mview->setItemChecked( mview->idAt( 1 ), true );
-      bTreeView = true;
+        if ( !bTreeViewInitialized )
+        {
+            bTreeViewInitialized = TRUE;
+            treeView->fill();
+        }
+        if (pkfm->isTreeViewFollowMode())
+            treeView->slotshowDirectory(toolbarURL->getLinedText(TOOLBAR_URL_ID));
+
+        mview->setItemChecked( mview->idAt( 1 ), true );
+        bTreeView = true;
     }
     
     resizeEvent( 0L );
@@ -1245,7 +1247,7 @@ void KfmGui::slotShowDot()
     mview->setItemChecked( mview->idAt( 0 ), showDot );
     showDotLocal = showDot; //force local mode too. (sven)
     view->slotUpdateView();
-    if ( bTreeViewInitialized )
+    if ( bTreeView )
 	treeView->update();
 }
 
@@ -1260,22 +1262,9 @@ void KfmGui::slotShowSchnauzer()
 void KfmGui::slotShowTreeView()
 {
     bTreeView = !bTreeView;
-    mview->setItemChecked( mview->idAt( 1 ), bTreeView );
-
-    if ( bTreeView )
-    {
-        if ( !bTreeViewInitialized )
-        {
-            bTreeViewInitialized = true;
-            treeView->fill();  
-        }
-        //  update tree view   Sep 5 rjakob
-        if (pkfm->isTreeViewFollowMode())
-            treeView->slotshowDirectory(toolbarURL->getLinedText(TOOLBAR_URL_ID));
-	panner->setSeparator( 30 );
-    }
-    else
-    	panner->setSeparator( 0 );
+    
+    panner->setSeparator( bTreeView ? 30 : 0 );
+    // all is done by slotPannerChanged when called by setSeparator
 }
 
 void KfmGui::slotOpenLocation( )
@@ -1662,8 +1651,7 @@ void KfmGui::readProperties(int number)
 }
 
 
-// What an idiot I am! Nobody calls this function!!! I can do with it
-// whatever I want! (sven)
+// ReadPropertiesInternal calls this function
 void KfmGui::readProperties( KConfig* config )
 {
 
