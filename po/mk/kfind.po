@@ -1,0 +1,333 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Macedonian <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: iso-8859-5\n"
+
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "Direktoriumi"
+
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr "Ne mozzam da go otvoram ili prochitam direktoriumot"
+
+#: kfindtop.cpp:118
+#, c-format
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
+"Special thanks to Stephan Kulow\n"
+"<coolo@kde.org>"
+msgstr ""
+
+#: kfindtop.cpp:136
+msgid "&Open"
+msgstr "&Otvori"
+
+#: kfindtop.cpp:138
+msgid "&Add to archive"
+msgstr "&Vnesi vo arhiva"
+
+#: kfindtop.cpp:143
+msgid "&Properties"
+msgstr "O&sobini"
+
+#: kfindtop.cpp:146
+msgid "Open Containing &Folder"
+msgstr "Otvori go Sodrzzinskiot &Direktorium"
+
+#: kfindtop.cpp:149
+msgid "&Save Search"
+msgstr "&Zapamti go prebaruvanjeto"
+
+#: kfindtop.cpp:161
+msgid "&Cut"
+msgstr "&Presechi"
+
+#: kfindtop.cpp:166
+msgid "&Select All"
+
+msgstr "&Izberi Se"
+
+#: kfindtop.cpp:168
+msgid "&Invert Selection"
+msgstr "Pro&meni ja Selekcijata"
+
+#: kfindtop.cpp:179
+msgid "&Preferences ..."
+msgstr "Moi &Baranja ..."
+
+#: kfindtop.cpp:183
+msgid "Kfind &help"
+msgstr "Kfind Pomos&h"
+
+#: kfindtop.cpp:186
+msgid "About &Qt"
+msgstr "Okolu &Qt"
+
+#: kfindtop.cpp:206
+msgid "Start Search"
+msgstr "Pochni so Prebaruvanje"
+
+#: kfindtop.cpp:211
+msgid "New Search"
+msgstr "Novo Prebaruvanje"
+
+#: kfindtop.cpp:216
+msgid "Stop Search"
+msgstr "Zapri go Prebaruvanjeto"
+
+#: kfindtop.cpp:229
+msgid "Add to archive"
+msgstr "Vnesi vo Arhiva"
+
+#: kfindtop.cpp:239
+msgid "Properties"
+msgstr "Osobini"
+
+#: kfindtop.cpp:244
+msgid "Open Containing Folder"
+msgstr "Otvori go Sodrzzinskiot Direktorium"
+
+#: kfindtop.cpp:249
+msgid "Save Search Results"
+msgstr "Zapamti gi rezultatite od Prebaruvanjeto"
+
+#: kftabdlg.cpp:48
+msgid "&Named:"
+msgstr "&Nasloven:"
+
+#: kftabdlg.cpp:51
+msgid "&Look in:"
+msgstr "&Baraj vo:"
+
+#: kftabdlg.cpp:54
+msgid "&Browse ..."
+msgstr "&Listaj ..."
+
+#: kftabdlg.cpp:66
+msgid "Include &subfolders"
+msgstr "Vkluchi gi i poddi&rektoriumite"
+
+#: kftabdlg.cpp:96
+msgid " Name& Location "
+msgstr "Ime i Lokacija"
+
+#: kftabdlg.cpp:108
+msgid "and"
+msgstr "i"
+
+#: kftabdlg.cpp:109
+msgid "month(s)"
+msgstr "mesec(i)"
+
+#: kftabdlg.cpp:110
+msgid "day(s)"
+msgstr "den(ovi)"
+
+#: kftabdlg.cpp:116
+msgid "&All files"
+msgstr "Si&te documenti"
+
+#: kftabdlg.cpp:117
+msgid "Find all files created or &modified:"
+msgstr "Pronajdi gi site documenti koi se sozdadeni ili pro&meneti:"
+
+#: kftabdlg.cpp:118
+msgid "&between"
+msgstr "&megju"
+
+#: kftabdlg.cpp:119
+msgid "during the previou&s "
+msgstr "za vreme na pret&hodniot(te)"
+
+#: kftabdlg.cpp:120
+msgid "&during the previous "
+msgstr "za &vreme na prethodniot"
+
+#: kftabdlg.cpp:168
+msgid " Date Modified "
+msgstr "Den na Promena"
+
+#: kftabdlg.cpp:174
+msgid "Of &type:"
+msgstr "Od &tip:"
+
+#: kftabdlg.cpp:176
+msgid "&Containing Text:"
+msgstr "&Shto go sodrzzi sledniot tekst:"
+
+#: kftabdlg.cpp:179
+msgid "&Size is:"
+msgstr "&Golemina:"
+
+#: kftabdlg.cpp:202
+msgid "All Files and Folders"
+msgstr "Site Documenti i Direktoriumi"
+
+#: kftabdlg.cpp:210
+msgid "At Least"
+msgstr "Vo najlosh sluchaj"
+
+#: kftabdlg.cpp:211
+msgid "At Most"
+msgstr "Vo najdobar sluchaj"
+
+#: kftabdlg.cpp:218
+msgid " Advanced "
+msgstr "Napreden "
+
+#: kftabdlg.cpp:390
+msgid "The date is not valid!!"
+msgstr "Datumot ne e korekten!!"
+
+#: kftabdlg.cpp:402
+msgid "The month(s) value isn't valid!!"
+msgstr "Mesecot(cite) ne se korektni!!"
+
+#: kftabdlg.cpp:413
+msgid "The day(s) value isn't valid!!"
+msgstr "Den(ovite) ne se korektni!!"
+
+#: kftabdlg.cpp:430
+msgid "The value in size isn't valid number!!"
+msgstr "Vrednosta ne e korektna - greshen broj!!"
+
+#: kfoptions.cpp:54
+msgid "Preferences"
+msgstr "Moi Baranja"
+
+#: kfoptions.cpp:76
+msgid "File format:"
+msgstr "Format na Dokumentot"
+
+#: kfoptions.cpp:78
+msgid "Save results to file:"
+msgstr "Zapishi gi rezultatite vo dokument:"
+
+#: kfoptions.cpp:81
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "Zapisi gi rezultatite vo dokument ~/.kfind-results.html"
+
+#: kfoptions.cpp:83
+msgid "Browse"
+msgstr "Listaj"
+
+#: kfoptions.cpp:96
+msgid "Plain Text"
+msgstr "Obichen Tekst"
+
+#: kfoptions.cpp:125
+msgid "Saving"
+msgstr "Zapishuvanje"
+
+#: kfoptions.cpp:132
+msgid "Create Archive:"
+msgstr "Sozdadi Arhiva:"
+
+#: kfoptions.cpp:134
+msgid "Add to Archive:"
+msgstr "Dodadi vo Arhivata:"
+
+#: kfoptions.cpp:138
+msgid "Patterns:"
+msgstr "Mustra:"
+
+#: kfoptions.cpp:141
+msgid "Add New"
+msgstr "Dodadi Nov:"
+
+#: kfoptions.cpp:182
+msgid "Archivers"
+msgstr "Arhivari"
+
+#: kfwin.cpp:78 kfwin.cpp:105
+#, c-format
+msgid "%d file(s) found"
+msgstr "%d dociment(i) se pronajdeni"
+
+#: kfwin.cpp:143
+msgid "It wasn't possible to save results!"
+msgstr "Ne mozze da se zapishat rezultatite!"
+
+#: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
+msgid "KFind Results File"
+msgstr "KFind Document so Rezultatite"
+
+#: kfwin.cpp:180
+msgid "Results were saved to file\n"
+msgstr "Rezultatite se zapishani vo document\n"
+
+#: kfwin.cpp:195
+#, c-format
+msgid ""
+"Do you really want to delete file:\n"
+"%s"
+msgstr ""
+"Dali navistina sakate da go izbrisite dokumentot:\n"
+"%s"
+
+#: kfwin.cpp:197
+msgid "Delete File"
+msgstr "Izbrishi go Dokumentot"
+
+#: kfwin.cpp:210
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr ""
+"Nemate dozvola\n"
+" za da go izbrishite ovoj document"
+
+#: kfwin.cpp:216
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+"Ne e mozzno da se izbrishe\n"
+"izbraniot dokument"
+
+#: kfwin.cpp:234
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr ""
+"Nemate dozvola\n"
+"za da go izbrishite ovoj direktorium"
+
+#: kfwin.cpp:239
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+"Opredeleniot direktorium\n"
+"ne e prazen!"
+
+#: kfwin.cpp:244
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr ""
+"Ne e mozzno da se izbrishe\n"
+"izbraniot direktorium"
+
+#: kfwin.cpp:336
+msgid "Couldn't recognize archive type!"
+msgstr "Ne mozzam da go prepoznaam tipot na arhivata!"
+
+#: kfwin.cpp:395
+msgid "Error while creating child process!"
+msgstr "Greshka pri sozdavanjeto na noviot proces!"
