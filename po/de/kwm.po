@@ -14,7 +14,7 @@ msgstr ""
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: Probleme beim Initialisieren; gebe auf \n"
+msgstr "kwm: Probleme beim Initialisieren; gebe auf\n"
 
 #: main.C:464
 msgid ""
@@ -28,6 +28,15 @@ msgid ""
 "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
 "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
 msgstr ""
+"Sie wollen ein anderes Fenster aktivieren. Leider haben Sie einen der\n"
+"klassischen Fokus-Behandlungen gewählt, in denen dies nicht möglich ist.\n"
+"Diese Style sind nicht implementiert, um Sinn zu machen, sondern um fuer \n"
+"Kompatiblität zu sorgen. Schliesslich sollen auch Benutzer sich mit dem \n"
+"K Desktop Environment wohl fühlen, die schon länger UNIX benutzen ;-)\n"
+"\n"
+"Falls sie jedoch diese Funktionalität wünschen, wählen sie eine der\n"
+"empfohlenen Fokus-Behandlungen wie Fokuswechsel durch Klicken oder \n"
+"der Maus folgendem Fokus."
 
 #: main.C:491
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -118,9 +127,8 @@ msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Ein paar Pixmaps sind ungültig: Shape-Modus ausgeschaltet\n"
 
 #: main.C:1043
-#, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Ein paar Pixmaps sind ungültig: Shape-Modus ausgeschaltet\n"
+msgstr "Ein paar Pixmaps sind ungültig: Gimmick-Modus ausgeschaltet\n"
 
 #: main.C:1281
 msgid "*** No Tasks ***"
@@ -132,7 +140,7 @@ msgstr "Kommando:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "Oops!"
 
 #: logout.C:36 taskmgr.C:107
 msgid "Logout"
