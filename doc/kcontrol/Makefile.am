@@ -1,6 +1,6 @@
 
 SUBDIRS = kcmbell kcmdisplay kcminfo kcminput kcmkeys kcmkfm kcmkpanel \
-	kcmkwm kcmlocale kcmsamba kcmsyssound kcmthememgr
+	kcmkwm kcmlocale kcmsamba kcmsyssound kthememgr
 
 data_DATA = index.html index-1.html index-2.html logotp3.gif
 
