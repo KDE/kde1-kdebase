@@ -1364,6 +1364,9 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
     // please note that this code is strongly related to
     // root.cpp: void KRootWidget::openPopupMenu( ... )
 
+
+    bool bHttp = true;
+
     // Check wether all URLs are correct
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
@@ -1376,6 +1379,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 	    QMessageBox::warning( 0, klocale->translate("KFM Error"), tmp );
 	    return;
 	}
+        if (strcmp(u.protocol(),"http")) bHttp = false; // not HTTP
     }
     
     popupMenu->clear();
@@ -1460,6 +1464,11 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
     else
     {
 	int id;
+        if (bHttp) {
+            /* Should be for http URLs (HTML pages) only ... */
+            id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), 
+                                        view, SLOT( slotPopupNewView() ) );
+        }
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN_WITH), 
 				    view, SLOT( slotPopupOpenWith() ) );
 	popupMenu->insertSeparator();    
