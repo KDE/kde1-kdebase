@@ -31,13 +31,13 @@ msgstr "&My¹ka"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr ""
+msgstr "&Roz¹írené"
 
 #: main.cpp:86
-#, fuzzy
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
-msgstr "Pou¾itie: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
+msgstr ""
+"Pou¾itie: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -89,12 +89,11 @@ msgstr "Pravá strana titulku je plná... zakazujem 'minimalizaèné' tlaèítko\n"
 
 #: titlebar.cpp:924
 msgid "Title Alignment"
-msgstr ""
+msgstr "Zarovnanie titulku"
 
 #: titlebar.cpp:933
-#, fuzzy
 msgid "Middle"
-msgstr "Stredné tlaèítko"
+msgstr "Stred"
 
 #: titlebar.cpp:954
 msgid "Shaded Vertically"
@@ -153,15 +152,16 @@ msgid "ms"
 msgstr "ms"
 
 #: titlebar.cpp:1304
-#, fuzzy
 msgid "Window manager setup - ERROR"
-msgstr "Vlastnosti správcu okien"
+msgstr "Vlastnosti správcu okien - CHYBA"
 
 #: titlebar.cpp:1305
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
+"Nastala chyba pri ukladaní\n"
+"pixmáp titulku! Prosím skontrolujte právomoci."
 
 #: windows.cpp:66
 msgid "Windows"
