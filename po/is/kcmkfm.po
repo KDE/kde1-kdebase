@@ -14,7 +14,7 @@ msgstr "&Letur"
 
 #: main.cpp:63
 msgid "&Color"
-msgstr "L&itur"
+msgstr "L&itir"
 
 #: main.cpp:65
 msgid "&Other"
@@ -53,7 +53,7 @@ msgstr "Stillingar KFM"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr "Litlir"
+msgstr "Lítið"
 
 #: htmlopts.cpp:69
 msgid "Medium"
@@ -61,7 +61,7 @@ msgstr "Miðlungs"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr "Stórir"
+msgstr "Stórt"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
@@ -97,7 +97,7 @@ msgstr "Litur skoðaðra tengla:"
 
 #: htmlopts.cpp:378
 msgid "Change cursor over link."
-msgstr "Breyta bendi yfir tenlum."
+msgstr "Breyta bendi yfir tenglum."
 
 #: htmlopts.cpp:384
 msgid "Underline links"
@@ -109,7 +109,7 @@ msgstr "Nota alltaf mína liti"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr "&Leyfa stillingar á hverja slóð"
+msgstr "&Leyfa stillingar á hverri slóð"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"

@@ -122,7 +122,7 @@ msgstr "cd"
 
 #: main.C:378
 msgid "Sessions"
-msgstr "Setur"
+msgstr "Seta"
 
 #: main.C:517
 #, c-format

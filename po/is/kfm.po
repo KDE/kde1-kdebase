@@ -62,11 +62,11 @@ msgstr "For&rit"
 
 #: kfmgui.cpp:277
 msgid "Global Mime Types"
-msgstr "Víðvær MIME tög"
+msgstr "Altæk MIME tög"
 
 #: kfmgui.cpp:279
 msgid "Global Applications"
-msgstr "Víðvær forrit"
+msgstr "Altæk forrit"
 
 #: kfmgui.cpp:287
 msgid "Show Hi&dden Files"

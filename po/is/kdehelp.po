@@ -42,7 +42,7 @@ msgstr "Áfram"
 
 #: helpwin.cpp:1346
 msgid "Open this Link"
-msgstr "Opna þessa tengingu"
+msgstr "Opna þennan tengil"
 
 #: helpwin.cpp:1347
 msgid "Add Bookmark"
@@ -92,7 +92,7 @@ msgstr "Venjulegt letur"
 
 #: options.cpp:67
 msgid "Fixed Font"
-msgstr "Fast letur"
+msgstr "Jafnbreitt letur"
 
 #: options.cpp:206
 msgid "Background Color:"
@@ -100,15 +100,15 @@ msgstr "Bakgrunnslitur:"
 
 #: options.cpp:214
 msgid "Normal Text Color:"
-msgstr "Venjulegur textalitur:"
+msgstr "Litur venjulegs texta:"
 
 #: options.cpp:222
 msgid "URL Link Color:"
-msgstr "Tengingalitur:"
+msgstr "Litur tengla:"
 
 #: options.cpp:230
 msgid "Followed Link Color:"
-msgstr "Litur skoðaðra tenginga:"
+msgstr "Litur skoðaðra tengla:"
 
 #: options.cpp:238
 msgid "Underline links"
@@ -199,7 +199,7 @@ msgstr "CGI: Vefslóðin (URL) \"%s\" er gölluð\n"
 
 #: mainwidget.cpp:132
 msgid "&New Help Window"
-msgstr "&Nýr hjálpargluggi"
+msgstr "Nýr hjálpar&gluggi"
 
 #: mainwidget.cpp:135
 msgid "&Open File..."
