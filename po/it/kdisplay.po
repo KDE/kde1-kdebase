@@ -293,7 +293,7 @@ msgstr "&Richiedi Password"
 
 #: scrnsave.cpp:273
 msgid "Show &password as stars"
-msgstr ""
+msgstr "Mostra &password con asterischi"
 
 #: scrnsave.cpp:281
 msgid "Priority"
@@ -336,9 +336,8 @@ msgid "Panel clock font"
 msgstr "Caratteri dell'orologio del Pannello"
 
 #: general.cpp:298
-#, fuzzy
 msgid "Sample text"
-msgstr "Testo Scelta"
+msgstr "Testo si esempio"
 
 #: general.cpp:306
 msgid ""
@@ -346,6 +345,9 @@ msgid ""
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
+"LA VELOCE VOLPE MARRONE SALTO' SUL CANE PIGRO\n"
+"la veloce volpe marrone salto' sul cane pigro\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 
 #: main.cpp:62
 msgid "&Fonts etc."
@@ -385,7 +387,7 @@ msgstr "Testo selezionato"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
-msgstr ""
+msgstr "&Tipofaccia"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
@@ -397,11 +399,11 @@ msgstr "&Italico"
 
 #: fontchooser.cpp:125
 msgid "&Size"
-msgstr ""
+msgstr "&Dimensione"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr ""
+msgstr "&Set Caratteri"
 
 #: fontchooser.cpp:262
 msgid "default"
@@ -411,23 +413,3 @@ msgstr "default"
 msgid "any"
 msgstr "qualsiasi"
 
-#~ msgid "&Remove"
-#~ msgstr "&Rimuovi"
-
-#~ msgid "Default"
-#~ msgstr "Default"
-
-#~ msgid "Window title font"
-#~ msgstr "Caratteri Titolo Finestra"
-
-#~ msgid "Blen&d"
-#~ msgstr "&Sfumatura"
-
-#~ msgid "kwmcom: communication with kwm failed\n"
-#~ msgstr "kwmcom: comunicazione con kwm fallita\n"
-
-#~ msgid "Lock"
-#~ msgstr "Blocca"
-
-#~ msgid "General"
-#~ msgstr "Generale"

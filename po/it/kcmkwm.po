@@ -27,7 +27,7 @@ msgstr "&Desktop"
 
 #: main.cpp:74
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr ""
+msgstr "utilizzo: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
@@ -165,13 +165,12 @@ msgid "Window resize"
 msgstr "Ridimensionamento &finestre"
 
 #: windows.cpp:90
-#, fuzzy
 msgid "Animation:"
-msgstr "Animazione Titolo"
+msgstr "Animazione:"
 
 #: windows.cpp:92
 msgid "Fast"
-msgstr ""
+msgstr "Veloce"
 
 #: windows.cpp:98
 msgid "Placement policy"
@@ -282,11 +281,3 @@ msgstr ""
 "Zona Attiva della Finestra\n"
 "\t(Pixel)"
 
-#~ msgid "With animation"
-#~ msgstr "Con Animazione"
-
-#~ msgid "Move"
-#~ msgstr "Muovi"
-
-#~ msgid "Restore"
-#~ msgstr "Ripristina"
