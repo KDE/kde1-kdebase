@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-01-23 23:19+0100\n"
-"PO-Revision-Date: 1998-01-19 23:42 CET\n"
+"PO-Revision-Date: 1998-01-25 00:20 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -1189,11 +1189,8 @@ msgid "Overwrite All"
 msgstr "Ecraser tout"
 
 #: krenamewin.cpp:52
-#, fuzzy
 msgid "You try to overwrite"
-msgstr ""
-"Ne peut remplacer\n"
-"%s"
+msgstr "Vous essayez d'écraser"
 
 #: krenamewin.cpp:63
 msgid "already exists. Overwrite with"
