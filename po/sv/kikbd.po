@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: 1998-12-29 22:19+01:00\n"
 "Last-Translator: Karl Backström <backstrom@kde.org>\n"
 "Language-Team: Sv <LL@li.org>\n"
@@ -98,87 +98,97 @@ msgstr "KeyMap: Förstår inte tangentkoden \"%s\"."
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: tangentkoden \"%s\" är utanför gränsen."
 
-#: kikbdconf.cpp:95
+#: kikbdconf.cpp:97
 msgid "Global"
 msgstr "Globala"
 
-#: kikbdconf.cpp:95
+#: kikbdconf.cpp:97
 msgid "Window"
 msgstr "Fönster"
 
-#: kikbdconf.cpp:95
+#: kikbdconf.cpp:97
 msgid "Class"
 msgstr "Klass"
 
-#: kikbdconf.cpp:98 kikbdconf.cpp:110
+#: kikbdconf.cpp:100 kikbdconf.cpp:112
 msgid "(None)"
 msgstr "(Ingen)"
 
-#: kikbdconf.cpp:99 kikbdconf.cpp:111
+#: kikbdconf.cpp:101 kikbdconf.cpp:113
 msgid "Right Alt"
 msgstr "Höger alt"
 
-#: kikbdconf.cpp:100 kikbdconf.cpp:112
+#: kikbdconf.cpp:102 kikbdconf.cpp:114
 msgid "Right Control"
 msgstr "Höger control"
 
-#: kikbdconf.cpp:101
+#: kikbdconf.cpp:103
 msgid "Rights (Alt+Shift)"
 msgstr "Höger (Alt+Shift)"
 
-#: kikbdconf.cpp:102
+#: kikbdconf.cpp:104
 msgid "Rights (Ctrl+Alt)"
 msgstr "Höger (Ctrl+Alt)"
 
-#: kikbdconf.cpp:103
+#: kikbdconf.cpp:105
 msgid "Rights (Ctrl+Shift)"
 msgstr "Höger (Ctrl+Shift)"
 
-#: kikbdconf.cpp:104
+#: kikbdconf.cpp:106
 msgid "Lefts  (Alt+Shift)"
 msgstr "Vänster (Alt+Shift)"
 
-#: kikbdconf.cpp:105
+#: kikbdconf.cpp:107
 msgid "Lefts  (Ctrl+Alt)"
 msgstr "Vänster (Ctrl+Alt)"
 
-#: kikbdconf.cpp:106
+#: kikbdconf.cpp:108
 msgid "Lefts  (Ctrl+Shift)"
 msgstr "Vänster (Ctrl+Shift)"
 
-#: kikbdconf.cpp:107
+#: kikbdconf.cpp:109
 msgid "Both Shift's (Shift+Shift)"
 msgstr "Båda shiftknapparna (Shift+Shift)"
 
-#: kikbdconf.cpp:113
+#: kikbdconf.cpp:115
+#, fuzzy
+msgid "Right Meta"
+msgstr "Höger alt"
+
+#: kikbdconf.cpp:116
 msgid "Left  Alt"
 msgstr "Vänster alt"
 
-#: kikbdconf.cpp:114
+#: kikbdconf.cpp:117
 msgid "Left  Control"
 msgstr "Vänster control"
 
-#: kikbdconf.cpp:117
+#: kikbdconf.cpp:118
+#, fuzzy
+msgid "Left  Meta"
+msgstr "Vänster alt"
+
+#: kikbdconf.cpp:121
 msgid "Top Left"
 msgstr "Övre vänstra"
 
-#: kikbdconf.cpp:118
+#: kikbdconf.cpp:122
 msgid "Top Right"
 msgstr "Övre högra"
 
-#: kikbdconf.cpp:119
+#: kikbdconf.cpp:123
 msgid "Bottom Left"
 msgstr "Nedre vänstra"
 
-#: kikbdconf.cpp:120
+#: kikbdconf.cpp:124
 msgid "Bottom Right"
 msgstr "Nedre högra"
 
-#: kikbdconf.cpp:147
+#: kikbdconf.cpp:151
 msgid "X default codes"
 msgstr "X standard koder"
 
-#: kikbdconf.cpp:204
+#: kikbdconf.cpp:208
 #, c-format
 msgid ""
 "%s\n"
@@ -187,11 +197,11 @@ msgstr ""
 "%s\n"
 "Vill du påbörja konfigurationen?"
 
-#: kikbdconf.cpp:212
+#: kikbdconf.cpp:216
 msgid "Your configuration is empty. Install system default."
 msgstr "Din konfiguration är tom. Installerar systemstandard."
 
-#: kikbdconf.cpp:218
+#: kikbdconf.cpp:222
 #, fuzzy
 msgid ""
 "Configuration file you have has older format than expected.\n"
@@ -200,7 +210,7 @@ msgstr ""
 "Konfigurationsfilen är av ett äldre format än väntat.\n"
 "Några av inställningarna kanske inte stämmer."
 
-#: kikbdconf.cpp:226
+#: kikbdconf.cpp:230
 #, fuzzy
 msgid ""
 "Configuration file you have has newer format than expected.\n"
@@ -209,83 +219,83 @@ msgstr ""
 "Konfigurationsfilen är av ett nyare format än väntat.\n"
 "Några av inställningarna kanske inte stämmer."
 
-#: kikbdconf.cpp:353
+#: kikbdconf.cpp:357
 msgid "unknown"
 msgstr "okänd"
 
-#: kikbdconf.cpp:357
+#: kikbdconf.cpp:361
 msgid "default"
 msgstr "standard"
 
-#: kikbdconf.cpp:383
+#: kikbdconf.cpp:387
 msgid "Author:  Not specified"
 msgstr "Författare: Ingen angiven"
 
-#: kikbdconf.cpp:385
+#: kikbdconf.cpp:389
 msgid "Author"
 msgstr "Författare"
 
-#: kikbdconf.cpp:391
+#: kikbdconf.cpp:395
 msgid "Description:  "
 msgstr "Beskrivning:  "
 
-#: kikbdconf.cpp:394
+#: kikbdconf.cpp:398
 msgid "Source:  "
 msgstr "Källa:  "
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:399
 msgid "no file"
 msgstr "ingen fil"
 
-#: kikbdconf.cpp:396
+#: kikbdconf.cpp:400
 msgid "user file"
 msgstr "användar-fil"
 
-#: kikbdconf.cpp:397
+#: kikbdconf.cpp:401
 msgid "system file"
 msgstr "system-fil"
 
-#: kikbdconf.cpp:402
+#: kikbdconf.cpp:406
 msgid "Statistic:  "
 msgstr "Statestik:"
 
-#: kikbdconf.cpp:405
+#: kikbdconf.cpp:409
 msgid "symbols"
 msgstr "symboler"
 
-#: kikbdconf.cpp:408
+#: kikbdconf.cpp:412
 msgid "codes"
 msgstr "koder"
 
-#: kikbdconf.cpp:411
+#: kikbdconf.cpp:415
 msgid "alternative symbols"
 msgstr "alternativa symboler"
 
-#: kikbdconf.cpp:418
+#: kikbdconf.cpp:422
 msgid "language"
 msgstr "tangentbord"
 
-#: kikbdconf.cpp:419
+#: kikbdconf.cpp:423
 msgid "charset"
 msgstr "teckenuppsättning"
 
-#: kikbdconf.cpp:457
+#: kikbdconf.cpp:461
 msgid "International keyboard ERROR"
 msgstr "Internationellt tangentbords FEL"
 
-#: kikbdconf.cpp:473
+#: kikbdconf.cpp:477
 msgid "International keyboard warning"
 msgstr "Internationellt tangentbords varning"
 
-#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
+#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
 msgid "International keyboard question"
 msgstr "Internationellt tangentbords fråga"
 
-#: kikbdconf.cpp:487
+#: kikbdconf.cpp:491
 msgid "Configure"
 msgstr "Inställningar"
 
-#: kikbdconf.cpp:497
+#: kikbdconf.cpp:501
 msgid ""
 "\n"
 "Do you want to continue?"

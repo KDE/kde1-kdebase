@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kibd\n"
-"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: 1998-11-05 07:50+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <flidr@kky.zcu.cz>\n"
@@ -95,87 +95,97 @@ msgstr "KeyMap: nerozumím kódu klávesy \"%s\"."
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: kód klávesy \"%s\" je mimo rozsah."
 
-#: kikbdconf.cpp:95
+#: kikbdconf.cpp:97
 msgid "Global"
 msgstr "Globální"
 
-#: kikbdconf.cpp:95
+#: kikbdconf.cpp:97
 msgid "Window"
 msgstr "Okno"
 
-#: kikbdconf.cpp:95
+#: kikbdconf.cpp:97
 msgid "Class"
 msgstr "Tøída"
 
-#: kikbdconf.cpp:98 kikbdconf.cpp:110
+#: kikbdconf.cpp:100 kikbdconf.cpp:112
 msgid "(None)"
 msgstr "(®ádné)"
 
-#: kikbdconf.cpp:99 kikbdconf.cpp:111
+#: kikbdconf.cpp:101 kikbdconf.cpp:113
 msgid "Right Alt"
 msgstr "Pravý Alt"
 
-#: kikbdconf.cpp:100 kikbdconf.cpp:112
+#: kikbdconf.cpp:102 kikbdconf.cpp:114
 msgid "Right Control"
 msgstr "Pravý Control"
 
-#: kikbdconf.cpp:101
+#: kikbdconf.cpp:103
 msgid "Rights (Alt+Shift)"
 msgstr "Pravé (Alt+Shift)"
 
-#: kikbdconf.cpp:102
+#: kikbdconf.cpp:104
 msgid "Rights (Ctrl+Alt)"
 msgstr "Pravé (Crtl+Alt)"
 
-#: kikbdconf.cpp:103
+#: kikbdconf.cpp:105
 msgid "Rights (Ctrl+Shift)"
 msgstr "Pravé (Crtl+Shift)"
 
-#: kikbdconf.cpp:104
+#: kikbdconf.cpp:106
 msgid "Lefts  (Alt+Shift)"
 msgstr "Levé (Alt+Shift)"
 
-#: kikbdconf.cpp:105
+#: kikbdconf.cpp:107
 msgid "Lefts  (Ctrl+Alt)"
 msgstr "Levé (Crtl+Alt)"
 
-#: kikbdconf.cpp:106
+#: kikbdconf.cpp:108
 msgid "Lefts  (Ctrl+Shift)"
 msgstr "Levé (Crtl+Shift)"
 
-#: kikbdconf.cpp:107
+#: kikbdconf.cpp:109
 msgid "Both Shift's (Shift+Shift)"
 msgstr "Oba pøepínaèe (Shift+Shift)"
 
-#: kikbdconf.cpp:113
+#: kikbdconf.cpp:115
+#, fuzzy
+msgid "Right Meta"
+msgstr "Pravý Alt"
+
+#: kikbdconf.cpp:116
 msgid "Left  Alt"
 msgstr "Levý Alt"
 
-#: kikbdconf.cpp:114
+#: kikbdconf.cpp:117
 msgid "Left  Control"
 msgstr "Levý Control"
 
-#: kikbdconf.cpp:117
+#: kikbdconf.cpp:118
+#, fuzzy
+msgid "Left  Meta"
+msgstr "Levý Alt"
+
+#: kikbdconf.cpp:121
 msgid "Top Left"
 msgstr "Vleho nahoøe"
 
-#: kikbdconf.cpp:118
+#: kikbdconf.cpp:122
 msgid "Top Right"
 msgstr "Vpravo nahoøe"
 
-#: kikbdconf.cpp:119
+#: kikbdconf.cpp:123
 msgid "Bottom Left"
 msgstr "Vlevo dole"
 
-#: kikbdconf.cpp:120
+#: kikbdconf.cpp:124
 msgid "Bottom Right"
 msgstr "Vpravo dole"
 
-#: kikbdconf.cpp:147
+#: kikbdconf.cpp:151
 msgid "X default codes"
 msgstr "Implicitní X kódy"
 
-#: kikbdconf.cpp:204
+#: kikbdconf.cpp:208
 #, c-format
 msgid ""
 "%s\n"
@@ -184,11 +194,11 @@ msgstr ""
 "%s\n"
 "Chcete spustit konfiguraci?"
 
-#: kikbdconf.cpp:212
+#: kikbdconf.cpp:216
 msgid "Your configuration is empty. Install system default."
 msgstr "Va¹e konfigurace je prázdná. Nainstalujte standardní natavení."
 
-#: kikbdconf.cpp:218
+#: kikbdconf.cpp:222
 #, fuzzy
 msgid ""
 "Configuration file you have has older format than expected.\n"
@@ -197,7 +207,7 @@ msgstr ""
 "Konfiguraèní soubor má sta¹í formát ne¾ je oèekáváno.\n"
 "Nìkterá nastavení nejsou správná."
 
-#: kikbdconf.cpp:226
+#: kikbdconf.cpp:230
 #, fuzzy
 msgid ""
 "Configuration file you have has newer format than expected.\n"
@@ -206,83 +216,83 @@ msgstr ""
 "Konfiguraèní soubor má novìj¹í formát ne¾ je oèekáváno.\n"
 "Nìkterá nastavení nejsou správná."
 
-#: kikbdconf.cpp:353
+#: kikbdconf.cpp:357
 msgid "unknown"
 msgstr "neznámý"
 
-#: kikbdconf.cpp:357
+#: kikbdconf.cpp:361
 msgid "default"
 msgstr "implicitní"
 
-#: kikbdconf.cpp:383
+#: kikbdconf.cpp:387
 msgid "Author:  Not specified"
 msgstr "Autor: neuveden"
 
-#: kikbdconf.cpp:385
+#: kikbdconf.cpp:389
 msgid "Author"
 msgstr "Autor"
 
-#: kikbdconf.cpp:391
+#: kikbdconf.cpp:395
 msgid "Description:  "
 msgstr "Popis:  "
 
-#: kikbdconf.cpp:394
+#: kikbdconf.cpp:398
 msgid "Source:  "
 msgstr "Zdroj:  "
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:399
 msgid "no file"
 msgstr "¾ádný soubor"
 
-#: kikbdconf.cpp:396
+#: kikbdconf.cpp:400
 msgid "user file"
 msgstr "u¾ivatelský soubor"
 
-#: kikbdconf.cpp:397
+#: kikbdconf.cpp:401
 msgid "system file"
 msgstr "systémový soubor"
 
-#: kikbdconf.cpp:402
+#: kikbdconf.cpp:406
 msgid "Statistic:  "
 msgstr "Statistika:  "
 
-#: kikbdconf.cpp:405
+#: kikbdconf.cpp:409
 msgid "symbols"
 msgstr "symboly"
 
-#: kikbdconf.cpp:408
+#: kikbdconf.cpp:412
 msgid "codes"
 msgstr "kódy"
 
-#: kikbdconf.cpp:411
+#: kikbdconf.cpp:415
 msgid "alternative symbols"
 msgstr "alternativní symboly"
 
-#: kikbdconf.cpp:418
+#: kikbdconf.cpp:422
 msgid "language"
 msgstr "jazyk"
 
-#: kikbdconf.cpp:419
+#: kikbdconf.cpp:423
 msgid "charset"
 msgstr "znaková sada"
 
-#: kikbdconf.cpp:457
+#: kikbdconf.cpp:461
 msgid "International keyboard ERROR"
 msgstr "Chyba mezinárodní klávesnice"
 
-#: kikbdconf.cpp:473
+#: kikbdconf.cpp:477
 msgid "International keyboard warning"
 msgstr "Warování mezinárodní klávesnice"
 
-#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
+#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
 msgid "International keyboard question"
 msgstr "Dotaz mezinárodní klávesnice"
 
-#: kikbdconf.cpp:487
+#: kikbdconf.cpp:491
 msgid "Configure"
 msgstr "Nastavit"
 
-#: kikbdconf.cpp:497
+#: kikbdconf.cpp:501
 msgid ""
 "\n"
 "Do you want to continue?"

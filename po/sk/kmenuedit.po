@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 0.2.3\n"
-"POT-Creation-Date: 1999-01-13 01:13+0100\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -37,7 +37,7 @@ msgstr ""
 "\n"
 "Prajete si ulo¾i» va¹e zmeny ?"
 
-#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
+#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "PRÁZDNE"
 
@@ -77,7 +77,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Oddeµovaè"
 
-#: confmenu.cpp:103 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
 msgstr "Otvori»/ Zavrie»"
 
@@ -93,7 +93,7 @@ msgstr "Zvoµte menu pre posunutie"
 msgid "New"
 msgstr "Nová"
 
-#: confmenu.cpp:177 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:318
 msgid "Warning !"
 msgstr "Pozor !"
 
@@ -113,11 +113,11 @@ msgstr ""
 "U¾ existuje kdelnk súbor s takýmto menom. \n"
 "Prosím zvoµte iné meno súboru."
 
-#: confmenu.cpp:317
+#: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Zmena typu tejto polo¾ky vyma¾e v¹etky menu pod òou."
 
-#: confmenu.cpp:338 confmenu.cpp:935
+#: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
 msgstr "¾iadny príkaz"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1999-01-13 01:13+0100\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: 1997-12-29 16:29+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -29,7 +29,7 @@ msgstr ""
 "\n"
 "Sollen die Änderungen gespeichert werden?"
 
-#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
+#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "LEER"
 
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Trennlinie"
 
-#: confmenu.cpp:103 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
 msgstr "Öffnen / Schliessen"
 
@@ -85,7 +85,7 @@ msgstr "Zu verschiebendes Menü auswählen"
 msgid "New"
 msgstr "Neu"
 
-#: confmenu.cpp:177 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:318
 msgid "Warning !"
 msgstr "Warnung !"
 
@@ -105,11 +105,11 @@ msgstr ""
 "Eine kdelnk-Datei mit diesem Namen existiert schon. \n"
 "Wählen Sie einen anderen Dateiname."
 
-#: confmenu.cpp:317
+#: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Ändern des Typs für diesen Button wird alle Untermenüs löschen"
 
-#: confmenu.cpp:338 confmenu.cpp:935
+#: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
 msgstr "kein Kommando"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-01-13 01:13+0100\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -32,7 +32,7 @@ msgstr ""
 "\n"
 "要保存你作的改变吗 ?"
 
-#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
+#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "空"
 
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Separator"
 msgstr "分隔线"
 
-#: confmenu.cpp:103 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
 msgstr "打开/关闭"
 
@@ -88,7 +88,7 @@ msgstr ""
 msgid "New"
 msgstr ""
 
-#: confmenu.cpp:177 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:318
 msgid "Warning !"
 msgstr "警告 !"
 
@@ -108,11 +108,11 @@ msgstr ""
 "存在相同名字的 kdelnk 文件\n"
 "请选择另外的文件名."
 
-#: confmenu.cpp:317
+#: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "改变这个按钮的类型会去掉它的所有子菜单"
 
-#: confmenu.cpp:338 confmenu.cpp:935
+#: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
 msgstr "没有命令"
 

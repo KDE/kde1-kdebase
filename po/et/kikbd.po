@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,87 +99,97 @@ msgstr "Klahvitabel: ei saa aru klahvi koodist \"%s\"."
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "Klahvitabel: klahvi kood \"%s\" on piirkonnast väljas"
 
-#: kikbdconf.cpp:95
+#: kikbdconf.cpp:97
 msgid "Global"
 msgstr "Globaalne"
 
-#: kikbdconf.cpp:95
+#: kikbdconf.cpp:97
 msgid "Window"
 msgstr "Aken"
 
-#: kikbdconf.cpp:95
+#: kikbdconf.cpp:97
 msgid "Class"
 msgstr "Klass"
 
-#: kikbdconf.cpp:98 kikbdconf.cpp:110
+#: kikbdconf.cpp:100 kikbdconf.cpp:112
 msgid "(None)"
 msgstr "(puudub)"
 
-#: kikbdconf.cpp:99 kikbdconf.cpp:111
+#: kikbdconf.cpp:101 kikbdconf.cpp:113
 msgid "Right Alt"
 msgstr "Parem Alt"
 
-#: kikbdconf.cpp:100 kikbdconf.cpp:112
+#: kikbdconf.cpp:102 kikbdconf.cpp:114
 msgid "Right Control"
 msgstr "Parem Control"
 
-#: kikbdconf.cpp:101
+#: kikbdconf.cpp:103
 msgid "Rights (Alt+Shift)"
 msgstr "Paremad (Alt+Shift)"
 
-#: kikbdconf.cpp:102
+#: kikbdconf.cpp:104
 msgid "Rights (Ctrl+Alt)"
 msgstr "Paremad (Ctrl+Alt)"
 
-#: kikbdconf.cpp:103
+#: kikbdconf.cpp:105
 msgid "Rights (Ctrl+Shift)"
 msgstr "Paremad (Ctrl+Shift)"
 
-#: kikbdconf.cpp:104
+#: kikbdconf.cpp:106
 msgid "Lefts  (Alt+Shift)"
 msgstr "Vasakud (Alt+Shift)"
 
-#: kikbdconf.cpp:105
+#: kikbdconf.cpp:107
 msgid "Lefts  (Ctrl+Alt)"
 msgstr "Vasakud (Ctrl+Alt)"
 
-#: kikbdconf.cpp:106
+#: kikbdconf.cpp:108
 msgid "Lefts  (Ctrl+Shift)"
 msgstr "Vasakud (Ctrl+Shift)"
 
-#: kikbdconf.cpp:107
+#: kikbdconf.cpp:109
 msgid "Both Shift's (Shift+Shift)"
 msgstr "Mõlemad Shift'id (Shift+Shift)"
 
-#: kikbdconf.cpp:113
+#: kikbdconf.cpp:115
+#, fuzzy
+msgid "Right Meta"
+msgstr "Parem Alt"
+
+#: kikbdconf.cpp:116
 msgid "Left  Alt"
 msgstr "Vasak Alt"
 
-#: kikbdconf.cpp:114
+#: kikbdconf.cpp:117
 msgid "Left  Control"
 msgstr "Vasak Control"
 
-#: kikbdconf.cpp:117
+#: kikbdconf.cpp:118
+#, fuzzy
+msgid "Left  Meta"
+msgstr "Vasak Alt"
+
+#: kikbdconf.cpp:121
 msgid "Top Left"
 msgstr "Üleval vasakul"
 
-#: kikbdconf.cpp:118
+#: kikbdconf.cpp:122
 msgid "Top Right"
 msgstr "Üleval paremal"
 
-#: kikbdconf.cpp:119
+#: kikbdconf.cpp:123
 msgid "Bottom Left"
 msgstr "All vasakul"
 
-#: kikbdconf.cpp:120
+#: kikbdconf.cpp:124
 msgid "Bottom Right"
 msgstr "All paremal"
 
-#: kikbdconf.cpp:147
+#: kikbdconf.cpp:151
 msgid "X default codes"
 msgstr "X'i vaikimisi koodid"
 
-#: kikbdconf.cpp:204
+#: kikbdconf.cpp:208
 #, c-format
 msgid ""
 "%s\n"
@@ -188,11 +198,11 @@ msgstr ""
 "%s\n"
 "Soovid sa konfigureerimise käivitada?"
 
-#: kikbdconf.cpp:212
+#: kikbdconf.cpp:216
 msgid "Your configuration is empty. Install system default."
 msgstr "Su konfiguratsioon on tühi. Installeeri süsteemi vaikeväärtused."
 
-#: kikbdconf.cpp:218
+#: kikbdconf.cpp:222
 #, fuzzy
 msgid ""
 "Configuration file you have has older format than expected.\n"
@@ -201,7 +211,7 @@ msgstr ""
 "Koniguratsioonifail on vanemas formaadis kui oli oodatud.\n"
 "Mõned seadistused võivad olla ebakorrektsed."
 
-#: kikbdconf.cpp:226
+#: kikbdconf.cpp:230
 #, fuzzy
 msgid ""
 "Configuration file you have has newer format than expected.\n"
@@ -210,83 +220,83 @@ msgstr ""
 "Konfiguratsioonifail on uuemas formmadis kui oli oodatud.\n"
 "Mõned seadistused võivad olla ebakorrektsed."
 
-#: kikbdconf.cpp:353
+#: kikbdconf.cpp:357
 msgid "unknown"
 msgstr "tundmatu"
 
-#: kikbdconf.cpp:357
+#: kikbdconf.cpp:361
 msgid "default"
 msgstr "vaikimisi"
 
-#: kikbdconf.cpp:383
+#: kikbdconf.cpp:387
 msgid "Author:  Not specified"
 msgstr "Autor:  Ei ole määratud"
 
-#: kikbdconf.cpp:385
+#: kikbdconf.cpp:389
 msgid "Author"
 msgstr "Autor"
 
-#: kikbdconf.cpp:391
+#: kikbdconf.cpp:395
 msgid "Description:  "
 msgstr "Kirjeldus:  "
 
-#: kikbdconf.cpp:394
+#: kikbdconf.cpp:398
 msgid "Source:  "
 msgstr "Allikas:  "
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:399
 msgid "no file"
 msgstr "faili pole"
 
-#: kikbdconf.cpp:396
+#: kikbdconf.cpp:400
 msgid "user file"
 msgstr "kasutaja fail"
 
-#: kikbdconf.cpp:397
+#: kikbdconf.cpp:401
 msgid "system file"
 msgstr "süsteemne fail"
 
-#: kikbdconf.cpp:402
+#: kikbdconf.cpp:406
 msgid "Statistic:  "
 msgstr "Statistika:  "
 
-#: kikbdconf.cpp:405
+#: kikbdconf.cpp:409
 msgid "symbols"
 msgstr "sümbolid"
 
-#: kikbdconf.cpp:408
+#: kikbdconf.cpp:412
 msgid "codes"
 msgstr "koodid"
 
-#: kikbdconf.cpp:411
+#: kikbdconf.cpp:415
 msgid "alternative symbols"
 msgstr "alternatiivsed sümbolid"
 
-#: kikbdconf.cpp:418
+#: kikbdconf.cpp:422
 msgid "language"
 msgstr "keel"
 
-#: kikbdconf.cpp:419
+#: kikbdconf.cpp:423
 msgid "charset"
 msgstr "kooditabel"
 
-#: kikbdconf.cpp:457
+#: kikbdconf.cpp:461
 msgid "International keyboard ERROR"
 msgstr "Rahvusvahelise klaviatuuri VIGA"
 
-#: kikbdconf.cpp:473
+#: kikbdconf.cpp:477
 msgid "International keyboard warning"
 msgstr "Rahvusvahelise klaviatuuri hoiatus"
 
-#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
+#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
 msgid "International keyboard question"
 msgstr "Rahvusvahelise klaviatuuri küsimus"
 
-#: kikbdconf.cpp:487
+#: kikbdconf.cpp:491
 msgid "Configure"
 msgstr "Konfigureeri"
 
-#: kikbdconf.cpp:497
+#: kikbdconf.cpp:501
 msgid ""
 "\n"
 "Do you want to continue?"

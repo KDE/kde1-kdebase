@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-13 01:13+0100\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: 1998-10-20 00:20+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
@@ -32,7 +32,7 @@ msgstr ""
 "\n"
 "Viltu vista breytingar?"
 
-#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
+#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "TÓMT"
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Strik"
 
-#: confmenu.cpp:103 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
 msgstr "Opna/Loka"
 
@@ -89,7 +89,7 @@ msgstr "Veldu möppu til að færa"
 msgid "New"
 msgstr "Nýtt"
 
-#: confmenu.cpp:177 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:318
 msgid "Warning !"
 msgstr "Aðvörun!"
 
@@ -109,11 +109,11 @@ msgstr ""
 "Nú þegar er til kdelnk skrá með þessu nafni.\n"
 "Veldu annað nafn."
 
-#: confmenu.cpp:317
+#: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Ef þú breytir tagi þessa takka hverfa allar undirvalmyndir hans"
 
-#: confmenu.cpp:338 confmenu.cpp:935
+#: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
 msgstr "engin skipun"
 

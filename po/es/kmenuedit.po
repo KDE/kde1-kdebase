@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-13 01:13+0100\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: 1998-12-28 9:30+0100\n"
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -34,7 +34,7 @@ msgstr ""
 "\n"
 "¿Desea guardar los cambios?"
 
-#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
+#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "VACIO"
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Separador"
 
-#: confmenu.cpp:103 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
 msgstr "Abrir/ Cerrar"
 
@@ -90,7 +90,7 @@ msgstr "Seleccionar menú a mover"
 msgid "New"
 msgstr "Nuevo"
 
-#: confmenu.cpp:177 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:318
 msgid "Warning !"
 msgstr "¡ Atención !"
 
@@ -110,11 +110,11 @@ msgstr ""
 "Ya existe un archivo de tipo kdelnk con ese nombre. \n"
 "Por favor elija otro nombre de archivo."
 
-#: confmenu.cpp:317
+#: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "El cambio de tipo de este botón borrará todos los submenús del mismo"
 
-#: confmenu.cpp:338 confmenu.cpp:935
+#: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
 msgstr "no existe el comando"
 

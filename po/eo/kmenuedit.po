@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 1.0pre2\n"
-"POT-Creation-Date: 1999-01-13 01:13+0100\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: 1998-07-17 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 "\n"
 "Æu vi volas sekurigi viajn þanøojn?"
 
-#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
+#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "MALPLENA"
 
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Dividilo"
 
-#: confmenu.cpp:103 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
 msgstr "Malfermu/Fermu"
 
@@ -94,7 +94,7 @@ msgstr ""
 msgid "New"
 msgstr ""
 
-#: confmenu.cpp:177 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:318
 msgid "Warning !"
 msgstr "Averto!"
 
@@ -114,11 +114,11 @@ msgstr ""
 "Kdelnk-dosiero kun tiu nomo jam ekzistas.\n"
 "Bonvolu indiki alian dosiernomon."
 
-#: confmenu.cpp:317
+#: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Þanøo de la tipo de tiu butono forigos æiujn viajn submenuojn"
 
-#: confmenu.cpp:338 confmenu.cpp:935
+#: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
 msgstr "neniu komando"
 

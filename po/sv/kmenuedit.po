@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1999-01-13 01:13+0100\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: 1998-12-19 18:17+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -36,7 +36,7 @@ msgstr ""
 "\n"
 "Vill du spara dina ändringar ?"
 
-#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
+#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "TOM"
 
@@ -76,7 +76,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Avdelare"
 
-#: confmenu.cpp:103 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
 msgstr "Öppna/ Stäng"
 
@@ -92,7 +92,7 @@ msgstr "Välj meny att flytta"
 msgid "New"
 msgstr "Ny"
 
-#: confmenu.cpp:177 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:318
 msgid "Warning !"
 msgstr "Varning !"
 
@@ -113,12 +113,12 @@ msgstr ""
 "En kdelnk-fil med det här namnet finns redan.\n"
 "Vänligen, välj ett annat namn."
 
-#: confmenu.cpp:317
+#: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr ""
 "Om du ändrar typ på den här knappen kommer alla dess undermenyer försvinna"
 
-#: confmenu.cpp:338 confmenu.cpp:935
+#: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
 msgstr "inget kommando"
 

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-13 01:13+0100\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -36,7 +36,7 @@ msgstr ""
 "\n"
 "Da li ¾elite spremiti promjene ?"
 
-#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
+#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "PRAZNO"
 
@@ -76,7 +76,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Razdjeljnik"
 
-#: confmenu.cpp:103 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
 msgstr "Otvori/ Zatvori"
 
@@ -92,7 +92,7 @@ msgstr ""
 msgid "New"
 msgstr "Novi"
 
-#: confmenu.cpp:177 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:318
 msgid "Warning !"
 msgstr "Upozorenje !"
 
@@ -112,11 +112,11 @@ msgstr ""
 "Kdelnk-datoteka s tim imenom veæ postoji. \n"
 "Odaberite drugo ime za datoteku."
 
-#: confmenu.cpp:317
+#: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Promjena uloge ovog gumba obrisat' æe sve njegove podizbornike"
 
-#: confmenu.cpp:338 confmenu.cpp:935
+#: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
 msgstr "bez naredbe"
 

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1999-01-13 01:13+0100\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: 1998-01-05 20:56+0200\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
@@ -32,7 +32,7 @@ msgid ""
 "Do you want to save your changes ?"
 msgstr "Θέλετε να αποθηκέυσετε τις αλλαγές"
 
-#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
+#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "ΚΕΝΟ"
 
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Διαχωριστής"
 
-#: confmenu.cpp:103 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
 msgstr "¶νοιγμα/ Κλείσμο"
 
@@ -88,7 +88,7 @@ msgstr ""
 msgid "New"
 msgstr ""
 
-#: confmenu.cpp:177 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:318
 msgid "Warning !"
 msgstr "Προσοχή !"
 
@@ -108,12 +108,12 @@ msgstr ""
 "Ένα αρχείο του KDE με αυτό το όνομα υπάρχει ήδη. \n"
 "Παρακαλώ επιλέξτε ένα νέο όνομα."
 
-#: confmenu.cpp:317
+#: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr ""
 "Αλλάζοντας τον τύπο αυτού του κουμπιού θα διαγραφούν όλοι οι υποκαταλόγοι του"
 
-#: confmenu.cpp:338 confmenu.cpp:935
+#: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
 msgstr "Όχι εντολή"
 
