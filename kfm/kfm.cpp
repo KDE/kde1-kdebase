@@ -209,9 +209,7 @@ void Kfm::setUpDest (QString *url)
 
   // Fix: If url contains global mime/apps path, repair it to
   // point to local variant; create all needed dirs too.
-  // before you use: think twice; check if user is a root - it is not
-  // checked here;
-  // If user is not root but can somehow write to globals
+  // If user is a root or can somehow write to globals
   // (whole KDE installed in his home dir), also do nothing.
 
   // Most of code is from kfmprops.cpp (= tested good).
@@ -222,6 +220,8 @@ void Kfm::setUpDest (QString *url)
 #define GLOBALAPPS kapp->kde_appsdir().data()
 #define LOCALAPPS (kapp->localkdedir() + "/share/applnk").data()
 
+  if (KfmGui::sumode)
+    return;
   
   QString tryPath;
   tryPath = url->data(); // copy (hope deep)
