@@ -5,14 +5,13 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-10-09 13:00+0200\n"
+"Project-Id-Version: kfm\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Language-Team: czech <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: iso-8859-2\n"
 
 #: kfmgui.cpp:254 kfmgui.cpp:1081
 msgid "KFM"
@@ -343,13 +342,13 @@ msgstr "Varování KFM"
 
 #: kfmtree.cpp:335 kfmview.cpp:316 kfmview.cpp:492 root.cpp:845
 msgid ""
-"Do you really want to delete the files?\n"
+"Do you really want to delete the selected file(s)?\n"
 "\n"
-"There is no way to restore them"
+"There is no way to restore them."
 msgstr ""
-"Chcete opravdu smazat tyto soubory?\n"
+"Opravdu chcete smazat tyto soubory?\n"
 "\n"
-"Neexistuje zpùsob jak je obnovit"
+"Neexistuje zpùsob jak je obnovit!"
 
 #: kfmexec.cpp:233 kfmman.cpp:706 kfmview.cpp:338
 msgid "Open With:"
