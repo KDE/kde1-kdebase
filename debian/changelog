@@ -1,14 +1,8 @@
-kdebase (2:980318-1) unstable; urgency=low
+kdebase (2:980312-2) frozen; urgency=low
 
-  * new upstream version
+  * new compile cycle with qt-1.33 and libstd++-2.8
 
- -- Stephan Kulow <coolo@kde.org>  Wed, 18 Mar 1998 23:28:31 +0100
-
-kdebase (2:980317-1) unstable; urgency=low
-
-  * new upstream version
-
- -- Stephan Kulow <coolo@kde.org>  Wed, 18 Mar 1998 01:48:43 +0100
+ -- Stephan Kulow <coolo@kde.org>  Tue, 24 Mar 1998 19:07:00 +0100
 
 kdebase (2:980312-1) experimental; urgency=low
 
