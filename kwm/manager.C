@@ -1050,7 +1050,8 @@ void Manager::getWindowTrans(Client* c){
 
 
 void Manager::switchDesktop(int new_desktop){
-  if (new_desktop == current_desktop)
+  if (new_desktop == current_desktop 
+      || new_desktop < 1 || new_desktop > number_of_desktops)
     return;
   
   if (current() && !current()->isSticky())

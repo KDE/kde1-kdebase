@@ -105,10 +105,13 @@ Answer: Yes it is. You simple have to go through kwm.h/kwm.C from
     Alt-Esc / Control-Esc :  "Current Session"-manager with logout-button
     Alt-Tab / Alt-Shift-Tab : Traverse the windows of the current desktop
     Ctrl-Tab / Ctrl-Shift-Tab : Traverse the virtual desktops
+                                (can be switched of in kwmrc)
 
     Alt-F2 : Execute command
     Alt-F3 : window operation popup
     Alt-F4 : Close window
+
+    Ctrl-F[1..8] : switch to virtual desktop
 
     Ctrl-Alt-Esc: Destroy window mode (cursor becomes a pirate)
    
@@ -162,4 +165,5 @@ Answer: Yes it is. You simple have to go through kwm.h/kwm.C from
     TitlebarLook=shaded, plain
     TitleAnimation=50 (milliseconds)
     ResizeAnimation=on, off
+    ControlTab=on, off
 	

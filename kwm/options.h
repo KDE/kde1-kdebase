@@ -49,6 +49,7 @@ struct kwmOptions {
   int MaximizeOnlyVertically;
   int TitleAnimation;
   int AutoRaise;
+  int ControlTab;
 
   BUTTON_FUNCTIONS buttons[6];
 };

@@ -414,6 +414,16 @@ MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KAppli
   grabKey(XK_Tab, Mod1Mask | ShiftMask);
   grabKey(XK_Tab, ControlMask);
   grabKey(XK_Tab, ControlMask | ShiftMask);
+
+  grabKey(XK_F1, ControlMask);
+  grabKey(XK_F2, ControlMask);
+  grabKey(XK_F3, ControlMask);
+  grabKey(XK_F4, ControlMask);
+  grabKey(XK_F5, ControlMask);
+  grabKey(XK_F6, ControlMask);
+  grabKey(XK_F7, ControlMask);
+  grabKey(XK_F8, ControlMask);
+
   
   readConfiguration();
 
@@ -571,6 +581,16 @@ void MyApp::readConfiguration(){
   else{
     config->writeEntry("ResizeAnimation", "on");
     options.ResizeAnimation = 1;
+  }
+
+  key = config->readEntry("ControlTab");
+  if( key == "on")
+    options.ControlTab = 1;
+  else if( key == "off")
+    options.ControlTab = 0;
+  else{
+    config->writeEntry("ControlTab", "on");
+    options.ControlTab = 1;
   }
 
   key = config->readEntry("MaximizeOnlyVertically");
@@ -830,6 +850,10 @@ bool MyApp::handleKeyPress(XKeyEvent key){
 	( km == (ControlMask | ShiftMask)
 	  || km == (ControlMask)
 	  )){
+      if (!options.ControlTab){
+	freeKeyboard(True);
+	return True;
+      }
       if (!control_grab){
 	XGrabKeyboard(qt_xdisplay(),
 		      qt_xrootwin(), False,
@@ -892,6 +916,54 @@ bool MyApp::handleKeyPress(XKeyEvent key){
       manager->current()->closeClicked();
     return False;
   }    
+
+  if( (kc == XK_F1)  && (km == ControlMask) ){
+    freeKeyboard(False);
+    manager->switchDesktop(1);
+    return False;
+  }
+  if( (kc == XK_F1)  && (km == ControlMask) ){
+    freeKeyboard(False);
+    manager->switchDesktop(1);
+    return False;
+  }
+  if( (kc == XK_F2)  && (km == ControlMask) ){
+    freeKeyboard(False);
+    manager->switchDesktop(2);
+    return False;
+  }
+  if( (kc == XK_F3)  && (km == ControlMask) ){
+    freeKeyboard(False);
+    manager->switchDesktop(3);
+    return False;
+  }
+  if( (kc == XK_F4)  && (km == ControlMask) ){
+    freeKeyboard(False);
+    manager->switchDesktop(4);
+    return False;
+  }
+  if( (kc == XK_F5)  && (km == ControlMask) ){
+    freeKeyboard(False);
+    manager->switchDesktop(5);
+    return False;
+  }
+  if( (kc == XK_F6)  && (km == ControlMask) ){
+    freeKeyboard(False);
+    manager->switchDesktop(6);
+    return False;
+  }
+  if( (kc == XK_F7)  && (km == ControlMask) ){
+    freeKeyboard(False);
+    manager->switchDesktop(7);
+    return False;
+  }
+  if( (kc == XK_F8)  && (km == ControlMask) ){
+    freeKeyboard(False);
+    manager->switchDesktop(8);
+    return False;
+  }
+
+
   
   if( (kc == XK_Escape)  && (km == Mod1Mask | ControlMask) ){
     freeKeyboard(False);
