@@ -25,7 +25,7 @@ placed there by default or by the user.
 The <bf>Location</bf> buttons select which
 side of the screen the Panel is attached to. Choices
 are: <bf> top</bf>,
-<bf> left side</bf>, or <bf> bottom</bf>.
+<bf> left side</bf>, <bf> bottom</bf>, or <bf>right side</bf>.
 <item>
 The <bf>Taskbar</bf> displays a list of running applications.
 It can be 
@@ -49,26 +49,90 @@ Tooltips are small descriptive hints that appear
 after a short delay when the mouse pointer is over
 a button on the Panel or an entry in the Application Starter
 list.  If you enable Tooltips, you can use the slider
-to set the delay before they appear.
-<item>
-<bf>Personal First</bf>:  
-Choosing this option makes your custom entries in the user
-section of the Application Starter the
-<em>primary  entries </em> on the menu.
-(The default makes the KDE application entries primary).
-<item> <bf>Auto Hide Panel</bf>: With this choice
-the Panel is normally hidden, but reappears when you
-touch the side of the screen where the Panel is hidden
-with the mouse pointer.
-<item> <bf>Auto Hide Taskbar</bf>: 
-This choice similarly auto-hides the Taskbar. It also
-reappears when the side of the screen where it is hidden is 
-touched
-by the mouse pointer.
-<item>
-The <bf> Clock</bf> may be configured for either
-<bf>24 hour</bf> or <bf>12 hour (AM/PM) </bf> styles.
+to set the <bf>delay</bf> before they appear.
 </itemize>
+
+``<bf>Visuals</bf>'' means settings that allow the Panel and Taskbar
+dynamic ``autohide'' feature to be controlled:
+<itemize>
+<item>
+If <bf>Auto Hide Panel</bf> is selected, the Panel will ``hide''
+below the bottom edge of the screen, until this edge is touched
+with the mouse pointer.  It will then reappear, and if the mouse 
+pointer is removed, it will ``hide'' again after a delay set by the
+<bf>Delay</bf> slider; the speed at which the Panel moves into and
+out of the hidden position is set by the <bf>Speed</bf> slider
+on the right.   This feature allows the panel to be available 
+when needed, without otherwise obscuring a region of the visible
+screen.
+
+<item>
+If <bf>Auto Hide Taskbar</bf> is selected, the Taskbar will
+behave in a similar fashion: it ``hides'' behind the edge of the screen along
+which it has been placed, and reappears when its hiding place is touched with
+the mouse pointer. The delay before it hides again, and the speed with which
+it moves into and out of hiding, are set with the 
+<bf>Delay</bf> and <bf>Speed</bf> slider controls.
+
+<item>
+The Panel (but not the Taskbar) has a second feature that allows it to
+be moved out of the visible region of the screen.  If one of the two
+arrows at each end of the Panel is clicked on, the Panel  disappears by
+moving parallel to the edge of the screen in the direction of
+this arrow, until only the other arrow is visible;
+the Panel will only be restored when the second arrow is clicked on.
+If <bf>Animate Show/Hide</bf> is selected, this motion takes place
+smoothly, with a <bf>Speed</bf> that is controlled by the slider
+control; otherwise, the disappearance/reappearance of the Panel
+is instantaneous.  
+</itemize>
+
+
+<bf>Other</bf> options control the placement of the user's personal
+entries in the  Application Starter menu that appears
+when the big <bf>K</bf> button is selected.
+The default configuration places the system's KDE applications
+as the first entries in the Application Starter menu, followed by a
+``Personal'' menu containing the  entries which are personal to
+the user (and set in the user's own <tt>~/.kde/share/applnk/</tt>
+directory).  
+
+<itemize>
+<item> 
+Selecting <bf>Menu Personal Menu Entries First</bf> places the user's
+entries first in the Application Starter Menu, followed by a ``default''
+menu which contains the system's KDE applications.
+</itemize>
+
+The default placement of the items in the user's Personal Menu
+Entries is to list individual application entries in
+<tt>~/.kde/share/applnk/</tt> first, followed by a list of Menu Folders
+in which collections  of application entries can be placed (e.g.,
+those created when the user runs the <bf>Appfinder</bf> in the
+System menu).
+<itemize>
+Selecting <bf>Menu Folders First</bf> causes the folders in the
+user's Personal Menu Entries to be shown first, before those individual
+entries in the user's Personal Menu  which are not in folders.
+</itemize>
+
+<bf>Panel clock format</bf>.
+The panel displays the current time and date.   By default, the time is
+in 24 hour time format.  Other posible selections are:
+<itemize>
+<item>
+<bf>Clock shows time in AM/PM format.</bf>
+
+<item>
+<bf>Clock shows time in Internet beats.</bf>
+</itemize>
+<em>``Internet time''</em> is  a new ``universal'' time format promoted by 
+the Swatch watch company,
+where the 24 hour day is divided into 1000 ``beats'', measured from
+midnight  UTC+1 (GMT+1), so noon UTC+1 is written as
+``@500'' Internet time.
+(@000 means midnight, winter time,  at Biel, Switzerland, the location of
+the company headquarters,).
 
 <sect>Configuring Virtual Desktops
 <p>
@@ -90,5 +154,7 @@ Virtual Desktop buttons on the Panel.  (Choose them
 wide enough to accomodate the text with which
 you labeled them.)
 </article>
+
+
 
 
