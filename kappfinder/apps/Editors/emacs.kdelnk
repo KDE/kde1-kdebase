@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=Emacs
+MiniIcon=
+Protocols=
+MimeType=
+Comment=Emacs
+Name[de]=Emacs
+Exec=emacs
+Icon=emacs.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

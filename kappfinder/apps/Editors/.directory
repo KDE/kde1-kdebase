@@ -1,0 +1,6 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Editors
+MiniIcon=
+SortOrder=emacs.kdelnk,xedit.kdelnk,xemacs.kdelnk
+Icon=kedit.xpm

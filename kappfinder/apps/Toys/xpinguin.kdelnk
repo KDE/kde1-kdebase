@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=Tux
+MiniIcon=sample.xpm
+Protocols=
+MimeType=
+Comment=Tux, the Linux mascot
+Comment[de]=Tux, das Linux Maskottchen
+Exec=xpinguin
+Icon=pinguin.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

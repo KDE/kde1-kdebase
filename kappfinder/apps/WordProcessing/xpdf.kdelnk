@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=X PDF
+MiniIcon=
+Protocols=
+MimeType=
+Comment=PDF Viewer
+Comment[de]=PDF Betrachter
+Exec=xpdf
+Icon=gv.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

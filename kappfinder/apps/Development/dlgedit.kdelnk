@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=DlgEdit
+MiniIcon=
+Protocols=
+MimeType=
+Comment=Qt Dialog Editor
+Comment[de]=Qt Dialog Editor
+Exec=dlgedit
+Icon=kcmkwm.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

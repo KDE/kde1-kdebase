@@ -1,0 +1,7 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=ddd
+Type=Application
+Comment=Data Display Debugger
+Comment[de]=DD Debugger
+Name=DDD

@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Comment=The lyx text processor
+MiniIcon=
+Protocols=
+MimeType=
+Comment[de]=Das lyx Textprogramm
+Name=Lyx
+Exec=lyx
+Icon=lyx.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

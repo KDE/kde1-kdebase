@@ -1,0 +1,7 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=netscape
+Icon=netscape.xpm
+Type=Application
+Name=Netscape
+Comment=Netscape Navigator

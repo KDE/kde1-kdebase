@@ -1,0 +1,6 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Development
+MiniIcon=library.xpm
+SortOrder=dlgedit.kdelnk
+Icon=library.xpm

@@ -1,0 +1,8 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=xdvi
+Icon=kdvi.xpm
+Type=Application
+Name=X DVI
+Comment[de]=DVI Betrachter
+Comment=DVI Viewer

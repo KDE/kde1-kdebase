@@ -1,0 +1,15 @@
+# KDE Config File
+[KDE Desktop Entry]
+SwallowTitle=xclock
+SwallowExec=xclock -padding 0
+BinaryPattern=
+MimeType=
+Name=xclock
+Exec=xclock
+Icon=kclock.xpm
+TerminalOptions=
+Path=
+Type=Application
+Comment=The X clock
+Comment[de]=Die X Uhr
+Terminal=0

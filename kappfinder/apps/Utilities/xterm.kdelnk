@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=X Terminal
+MiniIcon=
+Protocols=
+MimeType=
+Comment=X Terminal
+Name[de]=X Terminal
+Exec=xterm
+Icon=kvt.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

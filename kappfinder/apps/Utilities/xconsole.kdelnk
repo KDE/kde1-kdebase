@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=X Console
+MiniIcon=mini-sh.xpm
+Protocols=
+MimeType=
+Comment=X Console viewer
+Comment[de]=X Konsole
+Exec=xconsole
+Icon=UNIX.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

@@ -1,0 +1,6 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Word Processing
+MiniIcon=
+SortOrder=gv.kdelnk,lyx.kdelnk,xpdf.kdelnk
+Icon=emacs.xpm

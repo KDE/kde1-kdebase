@@ -1,0 +1,6 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Toys
+MiniIcon=sample.xpm
+SortOrder=xeyes.kdelnk,xpinguin.kdelnk
+Icon=pinguin.xpm

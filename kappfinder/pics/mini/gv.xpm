@@ -1,0 +1,20 @@
+/* XPM */
+static char * mini_gv_xpm[] = {
+"16 14 3 1",
+" 	c None",
+".	c #000000000000",
+"X	c #FFFFFFFFFFFF",
+"     ....       ",
+"    .XXXX.      ",
+"   .XXXXXX.     ",
+"   .XXXXXX.     ",
+"  ..X.XX.X...   ",
+" .XXX.XX.X.XX.  ",
+" .XXXXXXXXXXX.  ",
+"  .XXXXXXXXX.   ",
+"   .XXXXXXX.    ",
+"   .XXXXXXX.    ",
+"   .XXXXXXX.    ",
+"  .XXXXXXXXX.   ",
+" .XXX.XXX.XXX.  ",
+"  ....X...X..   "};

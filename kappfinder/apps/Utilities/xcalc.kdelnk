@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=X Calc
+MiniIcon=
+Protocols=
+MimeType=
+Comment=X Calculator
+Comment[de]=X Taschenrechner
+Exec=xcalc
+Icon=xcalc.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

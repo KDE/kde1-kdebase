@@ -1,0 +1,7 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=xftp
+Icon=xftp.xpm
+Type=Application
+Name=X FTP Client
+Name[de]=X FTP Programm

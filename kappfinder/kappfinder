@@ -1,0 +1,107 @@
+#!/bin/sh 
+
+#
+# KAppFinder
+# 
+# This scripts installes the kdelnk files in the hierarchy under 
+#
+# apps
+#
+# if the executable in each kdelnk file is installed on the system.
+# If necessary, the icons in 
+#
+# pics   and   pics/mini
+#
+# are installed, too.
+#
+#
+# written by Matthias Hoelzer (hoelzer@physik.uni-wuerzburg.de)
+#
+
+
+# test the arguments
+if [ $# -ne 1 ]; then
+  echo "usage: $0 \$KDEDIR"
+  exit 1
+fi
+if [ ! -d $1 ]; then
+  echo "the path $1 is not valid!"
+  exit 1
+fi
+
+
+# iterate over all kdelnk files
+for file in `find apps -name "*.kdelnk"` 
+do
+  # extract name of the executable
+  filename=`grep "^Exec=" $file | sed "s/Exec= *//" | sed "s/ .*//"`
+  echo "Looking for $filename: \t\c"
+
+  # test if this executable is installed (in path!)
+  executable=`which $filename`
+  if [ -x $executable ]; then
+
+    echo "found in $executable"
+
+    # create the directory
+    pathname=`echo $file | sed "s/\/[^\/]*kdelnk$//"`    
+    mkdir -m 755 -p $1/share/applnk/$pathname
+
+    # copy the kdelnk file
+    cp $file $1/share/applnk/$pathname
+
+    # copy the icon file
+    picname=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
+    if [ -f pics/$picname ]; then
+      cp pics/$picname $1/share/icons
+    fi
+
+    # copy the mini icon file
+    minipic=`grep "^MiniIcon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
+    if [ ! "$minifile" ]; then
+      minipic=$picname
+    fi
+    if [ -f pics/mini/$minipic ]; then
+      cp pics/mini/$minipic $1/share/icons/mini
+    fi
+
+  else  
+    echo "not found"
+  fi
+done
+
+
+# now decorate the directories
+for file in `find apps -name ".directory"` 
+do
+
+  # copy the .directory file
+  cp $file $1/share/applnk/$file 2>/dev/null
+  
+  # break, if the file was not installed
+  if [ ! -f $1/share/applnk/$file ]; then
+    break
+  fi
+
+  # copy the icon
+  picname=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
+  if [ -f pics/$picname ]; then
+    cp pics/$picname $1/share/icons
+  fi
+
+  # copy the mini icon file
+  minipic=`grep "^MiniIcon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
+  if [ ! "$minifile" ]; then
+    minipic=$picname
+  fi
+  if [ -f pics/mini/$minipic ]; then
+    cp pics/mini/$minipic $1/share/icons/mini
+  fi
+
+done
+
+
+# exit with success
+# NB: if some subdirectory is not installed, copying the .directory file
+#     fails, but this is no error
+exit 0

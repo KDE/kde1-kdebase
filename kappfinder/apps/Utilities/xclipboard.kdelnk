@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=X Clipboard
+MiniIcon=mini-zoom.xpm
+Protocols=
+MimeType=
+Comment=X Clipboard viewer
+Comment[de]=X Zwischenablage
+Exec=xclipboard
+Icon=kfind.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=X Eyes
+MiniIcon=
+Protocols=
+MimeType=
+Comment=X Eyes
+Name[de]=X Augen
+Exec=xeyes
+Icon=xeyes.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=X osview
+MiniIcon=log.xpm
+Protocols=
+MimeType=
+Comment=System Monitor
+Comment[de]=Systemmonitor
+Exec=xosview
+Icon=Information.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

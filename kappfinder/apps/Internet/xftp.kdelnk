@@ -1,0 +1,17 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=X FTP
+MiniIcon=www.xpm
+Protocols=
+MimeType=
+Comment=X FTP Client
+Comment[de]=X FTP Klient
+Name[de]=X FTP
+Exec=xftp
+Icon=www.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=X Editor
+MiniIcon=
+Protocols=
+MimeType=
+Comment=X Editor
+Name[de]=X Editor
+Exec=xedit
+Icon=edit.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0
