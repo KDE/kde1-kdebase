@@ -132,7 +132,7 @@ msgstr "Sesjoner"
 #: main.C:471
 #, c-format
 msgid "(%d columns x %d lines)"
-msgstr ""
+msgstr "(%d kolonner x %d linjer)"
 
 #: main.C:501
 #, c-format

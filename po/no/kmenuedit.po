@@ -87,11 +87,11 @@ msgstr "! Beskyttet knapp !"
 
 #: confmenu.cpp:116
 msgid "Select item for moving"
-msgstr ""
+msgstr "Velg oppføring for flytting"
 
 #: confmenu.cpp:117
 msgid "Select menu for moving"
-msgstr ""
+msgstr "Velg meny for flytting"
 
 #: confmenu.cpp:119
 msgid "New"

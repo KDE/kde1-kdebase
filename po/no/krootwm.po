@@ -60,7 +60,7 @@ msgstr "Hjelp om skrivebord"
 
 #: krootwm.C:249
 msgid "About KDE..."
-msgstr ""
+msgstr "Om KDE..."
 
 #: krootwm.C:264 krootwm.C:291 krootwm.C:696 krootwm.C:704
 msgid "New"
@@ -72,11 +72,11 @@ msgstr "Bokmerker"
 
 #: krootwm.C:293
 msgid "Desk"
-msgstr ""
+msgstr "Skrivebord"
 
 #: krootwm.C:294
 msgid "Windows"
-msgstr ""
+msgstr "Vinduer"
 
 #: krootwm.C:323
 msgid "Edit Bookmarks"
