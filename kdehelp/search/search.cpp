@@ -8,6 +8,7 @@
 
 #include <stdlib.h>
 #include <qstring.h>
+#include <kapp.h>
 #include "mansrch.h"
 #include "htmlsrch.h"
 

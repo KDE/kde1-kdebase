@@ -183,9 +183,9 @@ bool searchHTML( const char *search, ostream &stream )
 		query[i] = strtok( NULL, " " );
 	}
 
-	char *kdedir = kapp->kdedir().data();
+	QString kdedir = kapp->kdedir().copy();
 
-	if ( i && kdedir )
+	if ( i && !kdedir.isEmpty() )
 	{
 		MatchList list;
 

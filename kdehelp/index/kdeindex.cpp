@@ -143,8 +143,10 @@ int processDir( const char *dirName, QTextStream &stream )
 	return TRUE;
 }
 
-int main()
+int main( int argc, char **argv )
 {
+	KApplication a( argc, argv );
+
 	QString home = getenv( "HOME" );
 
 	QTextStream stream( stdout, IO_WriteOnly );
