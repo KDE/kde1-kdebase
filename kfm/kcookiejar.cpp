@@ -382,7 +382,7 @@ KCookiePtr KCookieJar::makeCookies(const char *_url,
                                    const char *cookie_headers)
 {
     KCookiePtr cookieChain = 0;
-    KCookiePtr lastCookie;
+    KCookiePtr lastCookie = 0;
     const char *cookieStr = cookie_headers;
     QString Name;
     QString Value;

@@ -1107,12 +1107,17 @@ void KfmView::slotOnURL( const char *_url )
     else
     {
         QString com;
-
-	KMimeType *typ = KMimeType::findType( _url );      
+        QString surl =  _url;
+        // Delete a trailing '/', for KURL::filename() and for lstat
+        surl.detach();
+        if ( surl.right(1) == "/" )
+            surl.truncate( surl.length() - 1 );
+                   
+	KMimeType *typ = KMimeType::findType( _url );
 	if ( typ )
 	    com = typ->getComment( _url );
 
-        KURL url (_url);
+        KURL url (surl);
 	if ( url.isMalformed() )
         {
 	  gui->slotSetStatusBar( _url );
@@ -1170,6 +1175,11 @@ void KfmView::slotOnURL( const char *_url )
 	     text += "  ";
 	     text += com.data();
 	  }
+	  else if ( S_ISDIR( buff.st_mode ) )
+          {
+	      text += "/  ";
+	      text += com.data();
+          }
 	  else
 	  {
 	      text += "  ";
