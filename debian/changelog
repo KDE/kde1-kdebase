@@ -1,3 +1,9 @@
+kdebase (4:1.1-19990306-2) unstable; urgency=low
+
+  * fixing some "lintian" problems
+
+ -- Stephan Kulow <coolo@kde.org>  Sat, 13 Mar 1999 11:18:33 +0100
+
 kdebase (4:1.1-19990306-1) unstable; urgency=low
 
   * new upstream version out of CVS (many translation updates and some

@@ -64,7 +64,7 @@ binary-arch: checkroot build
 	cp debian/debian.kdelnk \
 	      debian/tmp/usr/share/applnk/debian_menu/.directory
 	chmod +x debian/tmp/etc/init.d/kdm debian/tmp/usr/sbin/switchdm 
-	dh_undocumented `cat debian/man-pages`
+	dh_undocumented 
 	dh_installdocs
 	dh_installmenu
 	dh_installchangelogs

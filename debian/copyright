@@ -7,11 +7,8 @@ It was downloaded from ftp.kde.org
 
 Copyright:
 
-The kde WWW Page has a statement, that all files are licenced under gpl.
-But this package has not copyright notes or licences in all files, or in
-global location, so the situation is unclear.
-
-Some files are taken from GIFLIB.
+All programs are either under the GPL or the Artistic License (namely
+kpanel, kwm, konsole, kstart).
 
 kdm is based on xdm :
 Copyright (c) 1990  X Consortium
@@ -109,7 +106,7 @@ From: "J.D.Bovey" <J.D.Bovey@ukc.ac.uk>
      I'm asking that because I see your copyright is not respected :
      rxvt can be found on cdroms which are sold, etc ... so theese
      people are breaking your copyright ... but rxvt is such a good
-     program I'd like it to spread even more throught X users ... what
+     program I'd like it to spread even more through X users ... what
      GPL can allow !
 
      GPL would be quite the same than your actual copyright, it only
