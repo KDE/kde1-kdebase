@@ -38,8 +38,9 @@ void autostart()
 	if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 &&
 	     ep->d_name[0] != '.' && strcmp( ep->d_name, "index.html" ) != 0 )
 	{
-	    QString u2 = url.data();
-	    u2 += ep->d_name;
+	    QString u2 (ep->d_name);
+	    KURL::encodeURL(u2); // in case of '/' in the name (#619)
+	    u2 = url + u2;
 	    
 	    KFMExec *e = new KFMExec();
 	    e->openURL( u2 );
