@@ -9,5 +9,5 @@ DocPath=kfm/index.html
 Comment=The KDE file manager
 Comment[de]=Der KDE Datei Manager
 Comment[pl]=KDE Menedzer plikow
-Icon=folder.xpm
+Icon=kfm.xpm
 
