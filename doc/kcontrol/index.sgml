@@ -35,20 +35,21 @@ help button.
 <p>
 
 <itemize>
-<item> <htmlurl url="bell/bell-1.html" name="Bell configuration">
-<item> <htmlurl url="info/info-1.html" name="Memory inforation">
-<item> <htmlurl url="info/info-2.html" name="Processor information">
-<item> <htmlurl url="input/input-1.html" name="Keyboard configuration">
-<item> <htmlurl url="input/input-2.html" name="Mouse configuration">
-<item> <htmlurl url="kwm/kwm-1.html" name="Titlebar button configuration">
-<item> <htmlurl url="kwm/kwm-2.html" name="Titlebar configuration">
-<item> <htmlurl url="kwm/kwm-3.html" name="Window configuration">
-<item> <htmlurl url="locale/locale-1.html" name="Language setting">
-<item> <htmlurl url="syssound/syssound.html" name="System sound selection">
-<item> <htmlurl url="kdisplay/kdisplay-3.html" name="Background configuration">
-<item> <htmlurl url="kdisplay/kdisplay-4.html" name="Screen Saver configuration">
-<item> <htmlurl url="kdisplay/kdisplay-5.html" name="Color Scheme configuration">
-<item> <htmlurl url="kdisplay/kdisplay-6.html" name="Style configuration">
+<item> <htmlurl url="bell/bell-1.html" name="Bell Configuration">
+<item> <htmlurl url="info/info-1.html" name="Memory Inforation">
+<item> <htmlurl url="info/info-2.html" name="Processor Information">
+<item> <htmlurl url="input/input-1.html" name="Keyboard Configuration">
+<item> <htmlurl url="input/input-2.html" name="Mouse Configuration">
+<item> <htmlurl url="kwm/kwm-1.html" name="Titlebar Button Configuration">
+<item> <htmlurl url="kwm/kwm-2.html" name="Titlebar Configuration">
+<item> <htmlurl url="kwm/kwm-3.html" name="Window Configuration">
+<item> <htmlurl url="locale/locale-1.html" name="Language Setting">
+<item> <htmlurl url="syssound/syssound.html" name="System Sound Selection">
+<item> <htmlurl url="kpanel/kpanel.html" name="Panel and Taskbar Configuration">
+<item> <htmlurl url="kdisplay/kdisplay-3.html" name="Background Configuration">
+<item> <htmlurl url="kdisplay/kdisplay-4.html" name="Screen Saver Configuration">
+<item> <htmlurl url="kdisplay/kdisplay-5.html" name="Color Scheme Configuration">
+<item> <htmlurl url="kdisplay/kdisplay-6.html" name="Style Configuration">
 </itemize>
 
 </article>
