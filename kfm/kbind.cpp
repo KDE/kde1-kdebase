@@ -440,11 +440,11 @@ void KMimeBind::initApplications( const char * _path )
 			if ( t == 0 )
 			    QMessageBox::message( klocale->translate("ERROR"), 
 						  klocale->translate("Could not find mime type\n") + bind + "\n" + klocale->translate("in ") + file );
-			
-			t->append( new KMimeBind( app.data(), exec.data(), allowdefault,
-						  prots[0].data(),
-						  prots[1].data(), prots[2].data(),
-						  prots[3].data(), prots[4].data() ) );
+			else
+			    t->append( new KMimeBind( app.data(), exec.data(), allowdefault,
+						      prots[0].data(),
+						      prots[1].data(), prots[2].data(),
+						      prots[3].data(), prots[4].data() ) );
 		    }
 		    
 		    pos2++;

@@ -212,11 +212,12 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 	debugT("It is for shure a FILE\n");
 	// A HACK
 	// We must support plugin protocols here!
-	// Do we try to open a tar file?
+	// Do we try to open a tar file? We try to figure this
+	// out by looking at the extension only.
 	KMimeType *typ = KMimeType::findType( _url );
 	printf("Type: '%s'\n",typ->getMimeType());
 	
-	if ( strcmp( typ->getMimeType(), "application/tar" ) == 0L )
+	if ( strcmp( typ->getMimeType(), "application/x-tar" ) == 0L )
 	{
 	    // We change the destination on the fly
 	    tryURL = _url;

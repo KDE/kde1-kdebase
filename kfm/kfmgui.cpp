@@ -248,69 +248,69 @@ void KfmGui::initMenu()
 
     QPopupMenu *file = new QPopupMenu;
     CHECK_PTR( file );
-    file->insertItem( klocale->translate("New"), menuNew );
+    file->insertItem( klocale->translate("&New"), menuNew );
     file->insertSeparator();
-    file->insertItem( klocale->translate("New Window"), 
+    file->insertItem( klocale->translate("&New Window"), 
 		      this, SLOT(slotNewWindow()), ALT+Key_N );
     file->insertSeparator();
-    file->insertItem( klocale->translate("Run"), 
+    file->insertItem( klocale->translate("&Run"), 
 		      this, SLOT(slotRun()), ALT+Key_R );
-    file->insertItem( klocale->translate("Open Terminal"), 
+    file->insertItem( klocale->translate("Open &Terminal"), 
 		      this, SLOT(slotTerminal()), ALT+Key_E );
     file->insertSeparator();
-    file->insertItem( klocale->translate("Open Location"),
+    file->insertItem( klocale->translate("&Open Location"),
 		      this, SLOT(slotOpenLocation()), ALT+Key_L );
     file->insertSeparator();
-    file->insertItem( klocale->translate("Print..."), 
+    file->insertItem( klocale->translate("&Print..."), 
 		      this, SLOT(slotPrint()), ALT+Key_P );
     file->insertSeparator();        
-    file->insertItem( klocale->translate("Close"), 
+    file->insertItem( klocale->translate("&Close"), 
 		      this, SLOT(slotClose()), ALT+Key_C );
-    file->insertItem( klocale->translate("Quit"),  
+    file->insertItem( klocale->translate("&Quit"),  
 		      this, SLOT(slotQuit()), ALT+Key_Q );
 
     QPopupMenu *edit = new QPopupMenu;
     CHECK_PTR( edit );
-    edit->insertItem( klocale->translate("Copy"), this, 
+    edit->insertItem( klocale->translate("&Copy"), this, 
 		      SLOT(slotCopy()), CTRL+Key_C );
-    edit->insertItem( klocale->translate("Paste"), this, 
+    edit->insertItem( klocale->translate("&Paste"), this, 
 		      SLOT(slotPaste()), CTRL+Key_V );
-    edit->insertItem( klocale->translate("Move to Trash"), 
+    edit->insertItem( klocale->translate("&Move to Trash"), 
 		      this, SLOT(slotTrash()),  ALT+Key_T );
-    edit->insertItem( klocale->translate("Delete"), this, 
+    edit->insertItem( klocale->translate("&Delete"), this, 
 		      SLOT(slotDelete()) );
     edit->insertSeparator();
-    edit->insertItem( klocale->translate("Select"), this, 
+    edit->insertItem( klocale->translate("&Select"), this, 
 		      SLOT(slotSelect()), CTRL+Key_S );
 
     mview = new QPopupMenu;
     CHECK_PTR( mview );
     mview->setCheckable(true);
-    mview->insertItem( klocale->translate("Show Dot Files"),
+    mview->insertItem( klocale->translate("Show &Dot Files"),
 		       this, SLOT(slotShowDot()), ALT+Key_D );
-    mview->insertItem( klocale->translate("Show Tree"), 
+    mview->insertItem( klocale->translate("Show Tr&ee"), 
 		       this, SLOT(slotShowTreeView()) );
-    mview->insertItem( klocale->translate("Visual Schnauzer"),
+    mview->insertItem( klocale->translate("&Visual Schnauzer"),
 		       this, SLOT(slotShowSchnauzer()) );
-    mview->insertItem( klocale->translate("HTML View"),
+    mview->insertItem( klocale->translate("&HTML View"),
 		       this, SLOT(slotViewHTML()), ALT+Key_H );
     mview->insertSeparator();
-    mview->insertItem( klocale->translate("Icon View"),
+    mview->insertItem( klocale->translate("&Icon View"),
 		       this, SLOT(slotIconView()), ALT+Key_I );
-    mview->insertItem( klocale->translate("Text View"),
+    mview->insertItem( klocale->translate("&Text View"),
 		       this, SLOT(slotTextView()) );
-    mview->insertItem( klocale->translate("Long View"),
+    mview->insertItem( klocale->translate("&Long View"),
 		       this, SLOT(slotLongView()), ALT+Key_O );
     mview->insertSeparator();
-    mview->insertItem( klocale->translate("Save Settings"),
+    mview->insertItem( klocale->translate("&Save Settings"),
 		       this, SLOT(slotSaveSettings()) );
+    /* mview->insertSeparator();
+    mview->insertItem( klocale->translate("Split &window"),
+		       this, SLOT(slotSplitWindow()) ); */
     mview->insertSeparator();
-    mview->insertItem( klocale->translate("Split window"),
-		       this, SLOT(slotSplitWindow()) );
-    mview->insertSeparator();
-    mview->insertItem( klocale->translate("Reload Document"),
+    mview->insertItem( klocale->translate("&Reload Document"),
 		       view, SLOT(slotReload()), ALT+Key_R );
-    mview->insertItem( klocale->translate("Rescan bindings"),
+    mview->insertItem( klocale->translate("Rescan &bindings"),
 		       this, SLOT(slotRescanBindings()) );
     
     mview->setItemChecked( mview->idAt( 0 ), showDot );
@@ -336,7 +336,7 @@ void KfmGui::initMenu()
 
     QPopupMenu *tool = new QPopupMenu;
     CHECK_PTR( tool );
-    tool->insertItem( klocale->translate("Find"), this, 
+    tool->insertItem( klocale->translate("&Find"), this, 
 		      SLOT(slotToolFind()), ALT+Key_S );
 
     bookmarkMenu = new QPopupMenu;
@@ -345,25 +345,25 @@ void KfmGui::initMenu()
 	     this, SLOT( slotBookmarksChanged() ) );
     QString p = getenv( "HOME" );
     QString bmFile = p + "/.kfm.bookmarks.html";
-    bookmarkMenu->insertItem( klocale->translate("Add Bookmark"), 
+    bookmarkMenu->insertItem( klocale->translate("&Add Bookmark"), 
 			      this, SLOT(slotAddBookmark()) );
     bookmarkManager.read( bmFile );
     
     QPopupMenu *help = new QPopupMenu;
     CHECK_PTR( help );
-    help->insertItem( klocale->translate("About"), this, SLOT(slotAbout()) );
-    help->insertItem( klocale->translate("How can I ..."), 
+    help->insertItem( klocale->translate("&About"), this, SLOT(slotAbout()) );
+    help->insertItem( klocale->translate("&How can I ..."), 
 		      this, SLOT(slotHelp()) );
 
     menu = new KMenuBar( this );
     CHECK_PTR( menu );
-    menu->insertItem( klocale->translate("File"), file );
-    menu->insertItem( klocale->translate("Edit"), edit );
-    menu->insertItem( klocale->translate("View"), mview );
-    menu->insertItem( klocale->translate("Bookmarks"), bookmarkMenu );
-    menu->insertItem( klocale->translate("Tool"), tool );
+    menu->insertItem( klocale->translate("&File"), file );
+    menu->insertItem( klocale->translate("&Edit"), edit );
+    menu->insertItem( klocale->translate("&View"), mview );
+    menu->insertItem( klocale->translate("&Bookmarks"), bookmarkMenu );
+    menu->insertItem( klocale->translate("&Tool"), tool );
     menu->insertSeparator();
-    menu->insertItem( klocale->translate("Help"), help );
+    menu->insertItem( klocale->translate("&Help"), help );
     menu->show();
     
     setMenu( menu );
