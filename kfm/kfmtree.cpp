@@ -23,6 +23,7 @@
 #include "kfmdlg.h"
 #include "kintlist.h"
 
+
 KFMDirTree::KFMDirTree( QWidget *_parent, KfmGui *_gui ) : KFinder( _parent )
 {
     connect( KIOServer::getKIOServer(), SIGNAL( notify( const char * ) ), this,
@@ -32,6 +33,8 @@ KFMDirTree::KFMDirTree( QWidget *_parent, KfmGui *_gui ) : KFinder( _parent )
     popupMenu = new QPopupMenu();
 
     menuNew = new KNewMenu();
+   
+    lastSelectedItem = 0L;
 }
 
 KFMDirTree::~KFMDirTree()
@@ -51,6 +54,7 @@ void KFMDirTree::fill()
     item = new KFMDirTreeItem( this, QDir::homeDirPath(), FALSE );
     node.append( item );
     item = new KFMDirTreeItem( this, desktop, FALSE );
+    slotSelectItem( item );
     node.append( item );
 
     changeTree( &node );
@@ -109,6 +113,7 @@ void KFMDirTree::slotshowDirectory(const char *_url )
 		    break;  // break the for() loop
 		    }
                 setBranchVisible( kfmitem );
+		slotSelectItem( kfmitem ); 
                 finderWin->setAutoUpdate( true );
     	        finderWin->repaint();
 	        return;
@@ -172,6 +177,10 @@ void KFMDirTree::update()
     openList.setAutoDelete( FALSE);
     itemList( openList );
 
+    // remebmer the currently selected Item
+    QString curSelectedURL;
+    int curSelectedLevel = 0;
+
     // Find all open items
     QStrList openURLList;
     QDict<KIntList> openURLLevelDict;
@@ -181,9 +190,9 @@ void KFMDirTree::update()
 
     for ( item = openList.first(); item != 0L; item = openList.next() )
     {
-	if ( item->isOpen() )
+	kfmitem = (KFMDirTreeItem*)item;
+	if ( kfmitem->isOpen() )
 	{
-	    kfmitem = (KFMDirTreeItem*)item;
 	    // Ignore opened directories that start with "." if
 	    // the user does not want to see the dot files.
 	    if ( *kfmitem->getURL() != '.' || show_dots ) {
@@ -201,10 +210,16 @@ void KFMDirTree::update()
                 levelList->append( level );
             }
 	}
+        if( kfmitem->isSelected() )
+	{
+	  curSelectedURL = kfmitem->getURL();
+	  curSelectedLevel = kfmitem->getLevel();
+	}
     }
 
     // Clean the tree
     node.clear();
+    slotSelectItem( 0L );
     // Fill the tree with level 0
     fill();
     
@@ -237,6 +252,9 @@ void KFMDirTree::update()
                 else
                   debug("kfmtree.cpp: should never happen!!!");
 	    }
+            if( curSelectedURL == kfmitem->getURL() && 
+                curSelectedLevel == kfmitem->getLevel() )
+              slotSelectItem( kfmitem );
 	}
     }
 
@@ -491,12 +509,24 @@ void KFMDirTree::emitUrlSelected( const char *_url, int _button )
     emit urlSelected( _url, _button );
 }
 
+void KFMDirTree::slotSelectItem( KFMDirTreeItem* item )
+{
+  if( lastSelectedItem )
+    lastSelectedItem->setSelected( false );
+
+    lastSelectedItem = item;
+
+  if( item )
+    lastSelectedItem->setSelected( true );
+}
+
 KFMDirTreeItem::KFMDirTreeItem( KFMDirTree *_finder, const char *_url, bool _isfile  ) : KFinderItem( _finder )
 {
     dirTree = _finder;
     
     bFilled = FALSE;
     bIsFile = _isfile;
+    bIsSelected = false;
     
     QString tmp = _url;
     if ( tmp.right(1) == "/" && tmp != "/" && tmp.right(2) != ":/" )
@@ -524,13 +554,28 @@ KFMDirTreeItem::KFMDirTreeItem( KFMDirTree *_finder, const char *_url, bool _isf
     // Find the correct icon
     QString pixmapFile(KMimeType::getPixmapFileStatic( url, TRUE ) );
     // Is the icon cached ?
-    pixmap = KMimeType::pixmapCache->find( pixmapFile );
+    folder_normal = KMimeType::pixmapCache->find( pixmapFile );
     // If not => create a new icon
-    if ( pixmap == 0L )
+    if ( folder_normal == 0L )
     {
-	pixmap = new QPixmap();
-	pixmap->load( pixmapFile );
-	KMimeType::pixmapCache->insert( pixmapFile, pixmap );
+	folder_normal = new QPixmap();
+	folder_normal->load( pixmapFile );
+	KMimeType::pixmapCache->insert( pixmapFile, folder_normal );
+    }    
+    pixmap = folder_normal;
+
+    QString folder_openedFile( KApplication::kde_icondir() );
+    if( folder_openedFile.right(1) != "/" )
+      folder_openedFile.append("/");
+    folder_openedFile.append("mini/folder_open.xpm");
+
+    folder_opened = KMimeType::pixmapCache->find( folder_openedFile );
+    // If not => create a new icon
+    if ( folder_opened == 0L )
+    {
+	folder_opened = new QPixmap();
+	folder_opened->load( folder_openedFile );
+	KMimeType::pixmapCache->insert( folder_openedFile , folder_opened );
     }    
 }
 
@@ -595,6 +640,7 @@ void KFMDirTreeItem::pressed( QMouseEvent *_ev, const QPoint &_globalPoint  )
     if ( _ev->pos().x() >= x + PIXMAP_WIDTH + 4 )
     {
 	dirTree->emitUrlSelected( url, _ev->button() );
+        dirTree->slotSelectItem( this );
 	return;
     }
 
@@ -663,6 +709,20 @@ void KFMDirTreeItem::setOpen( bool _open )
     }
     
     bFilled = TRUE;    
+}
+
+void KFMDirTreeItem::setSelected( bool enable )
+{
+  bIsSelected = enable;
+  if( enable )
+    pixmap = folder_opened;
+  else
+    pixmap = folder_normal;
+}
+
+bool KFMDirTreeItem::isSelected( void )
+{
+  return bIsSelected;
 }
 
 void KFMDirTreeItem::dropEvent( QStrList &_urls, const QPoint &_point )

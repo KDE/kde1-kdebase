@@ -47,12 +47,12 @@ public slots:
     void slotDirectoryChanged( const char *_url );
     void slotshowDirectory( const char *_url );
     
+    void slotSelectItem( KFMDirTreeItem* item );
 protected:
     void emitUrlSelected( const char *_url, int _button );
 
     void openPopupMenu( const char *_url, const QPoint &_point );
     void openDropMenu( const char *_dest, QStrList &_urls, const QPoint &_p );
-
 
 
     QString popupDir;
@@ -68,6 +68,8 @@ protected:
      * selected menu item.
      */
     KNewMenu *menuNew;
+
+    KFMDirTreeItem* lastSelectedItem;
 };
 
 class KFMDirTreeItem : public KFinderItem
@@ -85,6 +87,8 @@ public:
 
     virtual int width() const;
     
+    void setSelected( bool enable );
+    bool isSelected( void );
 protected:
     virtual void pressed( QMouseEvent *_ev, const QPoint &_globalPoint );
     virtual void dropEvent( QStrList &urls, const QPoint &_point );
@@ -94,11 +98,15 @@ protected:
      * the @ref KMimeType::pixmapCache.
      */
     QPixmap *pixmap;
+    QPixmap *folder_normal;
+    QPixmap *folder_opened;
+
     QString name;
     QString url;
     bool bFilled;
     bool bIsFile;
     KFMDirTree *dirTree;
+    bool bIsSelected;
 };
 
 #endif
