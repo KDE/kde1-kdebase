@@ -43,7 +43,6 @@
 #include <kwm.h> // for sendKWMCommand. David.
 
 #define FIRSTFILEMENUITEM 100
-#define GOMENUITEM 120
 
 bool KfmGui::sumode = false;
 bool KfmGui::rooticons = true;
@@ -341,8 +340,8 @@ void KfmGui::initMenu()
 
     mgo = new QPopupMenu;
     CHECK_PTR( mgo );
-    connect( mgo, SIGNAL(aboutToShow()), this, SLOT(slotUpdateHistoryMenu()) );
-    // slotUpdateHistory(false,false); doesn't fill the history menu anymore
+    slotUpdateHistoryMenu(); // we have to create it on the first time, for the
+    // key bindings to work. It does the connect, so we don't it here. David.
     
     mcache = new QPopupMenu;
     CHECK_PTR( mcache );
@@ -440,7 +439,7 @@ klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin J
     menu->insertItem( klocale->translate("&File"), mfile );
     menu->insertItem( klocale->translate("&Edit"), edit );
     menu->insertItem( klocale->translate("&View"), mview );
-    menu->insertItem( klocale->translate("&Go"), mgo, GOMENUITEM );
+    menu->insertItem( klocale->translate("&Go"), mgo );
     menu->insertItem( klocale->translate("&Bookmarks"), bookmarkMenu );
     menu->insertItem( klocale->translate("&Cache"), mcache );
     menu->insertItem( klocale->translate("&Options"), moptions );
@@ -1087,9 +1086,6 @@ void KfmGui::slotStop()
 
 void KfmGui::slotUpdateHistoryMenu( )
 {
-    // Workaround for shortcuts disappearing from menu - part 1
-    menu->removeItem( GOMENUITEM );
-
     // Store current state of Up, Back & Forward menu items
     static bool itemsEnabled[3];
     for (int i=0; i<3; i++) itemsEnabled[i] = mgo->isItemEnabled( mgo->idAt( i ) );
@@ -1122,8 +1118,6 @@ void KfmGui::slotUpdateHistoryMenu( )
     }
     // Enable or disable Up, Back & Forward menu items
     for (int i=0; i<3; i++) mgo->setItemEnabled( mgo->idAt( i ), itemsEnabled[i] );
-    // Workaround for shortcuts disappearing from menu - part 2
-    menu->insertItem( klocale->translate("&Go"), mgo, GOMENUITEM, 3 /* after view menu */ );
 }
 
 void KfmGui::slotUpdateHistory( bool _back, bool _forward )
