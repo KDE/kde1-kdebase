@@ -50,7 +50,6 @@ KFMServer::KFMServer() : KfmIpcServer()
 void KFMServer::slotAccept( KSocket * _sock )
 {
     KfmIpc * i = new KFMClient( _sock, this );
-    connect( i, SIGNAL( authorized( KFMClient * ) ), this, SLOT( slotAuthorized( KFMClient * ) ) );
     emit newClient( i );
 }
 
@@ -58,7 +57,6 @@ void KFMServer::slotAccept( KSocket * _sock )
 
 void KFMServer::slotSelectRootIcons( int _x, int _y, int _w, int _h, bool _add )
 {
-  printf("SELECTING Icons\n");
   if ( !_add )
     root->unselectAllIcons();
   QRect r( _x, _y, _w, _h );
@@ -67,7 +65,6 @@ void KFMServer::slotSelectRootIcons( int _x, int _y, int _w, int _h, bool _add )
 
 void KFMServer::slotSortDesktop()
 {
-    debugT("JOB: sortDesktop\n");
     KRootWidget::getKRootWidget()->sortIcons();
 }
 
@@ -274,14 +271,16 @@ void KFMClient::slotAuth( const char *_password )
     }
 
     bAuth = true;
+    connect( this, SIGNAL( list( const char* ) ),
+	     this, SLOT( slotList( const char* ) ) );
     connect( this, SIGNAL( copy( const char*, const char* ) ),
 	     this, SLOT( slotCopy( const char*, const char* ) ) );
     connect( this, SIGNAL( move( const char*, const char* ) ), 
 	     this, SLOT( slotMove( const char*, const char* ) ) );
     connect( this, SIGNAL( copyClient( const char*, const char* ) ),
-	     server, SLOT( slotCopyClient( const char*, const char* ) ) );
+	     server, SLOT( slotCopyClients( const char*, const char* ) ) );
     connect( this, SIGNAL( moveClient( const char*, const char* ) ), 
-	     server, SLOT( slotMoveClient( const char*, const char* ) ) );
+	     server, SLOT( slotMoveClients( const char*, const char* ) ) );
     connect( this, SIGNAL( refreshDesktop() ), server, SLOT( slotRefreshDesktop() ) );
     connect( this, SIGNAL( openURL( const char* ) ), server, SLOT( slotOpenURL( const char *) ) );    
     connect( this, SIGNAL( refreshDirectory( const char* ) ), server, SLOT( slotRefreshDirectory( const char *) ) );    
@@ -351,9 +350,32 @@ void KFMClient::slotMove( const char *_src_urls, const char *_dest_url )
     job->move( urlList, dest.data() );
 }
 
+void KFMClient::slotList( const char *_url )
+{
+  KIOJob *job = new KIOJob();
+  
+  connect( job, SIGNAL( newDirEntry( int, KIODirectoryEntry* ) ),
+	   this, SLOT( newDirEntry( int, KIODirectoryEntry* ) ) );
+  connect( job, SIGNAL( error( int, const char* ) ),
+	   this, SLOT( slotError( int, const char* ) ) );
+  connect( job, SIGNAL( finished( int ) ), this, SLOT( finished( int ) ) );
+  job->list( _url );
+}
+
+void KFMClient::slotError( int _kioerror, const char *_text )
+{
+  KfmIpc::error( _kioerror, _text );
+}
+
+void KFMClient::newDirEntry( int, KIODirectoryEntry * _entry )
+{
+  KfmIpc::dirEntry( _entry->getName(), _entry->getAccess(), _entry->getOwner(),
+		    _entry->getGroup(), _entry->getCreationDate(), _entry->getSize() );
+}
+
 void KFMClient::finished( int )
 {
-    KfmIpc::finished();
+  KfmIpc::finished();
 }
 
 #include "kfmserver.moc"

@@ -38,6 +38,10 @@ signals:
 private:
 	void parse_openProperties( char *_data, int _len );
 signals:
+	void list(const char* _url);
+private:
+	void parse_list( char *_data, int _len );
+signals:
 	void exec(const char* _url, const char* _binding);
 private:
 	void parse_exec( char *_data, int _len );
@@ -71,6 +75,10 @@ private:
 	void parse_selectRootIcons( char *_data, int _len );
 public slots:
 	void finished();
+public slots:
+	void error(int _kerror, const char* _text);
+public slots:
+	void dirEntry(const char* _name, const char* _access, const char* _owner, const char* _group, const char* _date, int _size);
 
 public slots:
    void closeEvent( KSocket* );

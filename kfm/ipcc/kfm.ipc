@@ -5,6 +5,7 @@ slots:
    void refreshDirectory( string _url );
    void openURL( string _url );
    void openProperties( string _url );
+   void list( string _url );
    void exec( string _url, string _binding );
    void copy( string _src, string _dest );
    void move( string _src, string _dest );
@@ -15,3 +16,5 @@ slots:
    void selectRootIcons( int _x, int _y, int _w, int _h, bool _add );
 signals:
    void finished();
+   void error( int _kerror, string _text );
+   void dirEntry( string _name, string _access, string _owner, string _group, string _date, int _size );

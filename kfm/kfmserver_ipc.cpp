@@ -125,6 +125,7 @@ void KfmIpc::parse( char *_data, int _len )
 	if ( strcmp( name, "refreshDirectory" ) == 0 ) { parse_refreshDirectory( _data, _len ); } else
 	if ( strcmp( name, "openURL" ) == 0 ) { parse_openURL( _data, _len ); } else
 	if ( strcmp( name, "openProperties" ) == 0 ) { parse_openProperties( _data, _len ); } else
+	if ( strcmp( name, "list" ) == 0 ) { parse_list( _data, _len ); } else
 	if ( strcmp( name, "exec" ) == 0 ) { parse_exec( _data, _len ); } else
 	if ( strcmp( name, "copy" ) == 0 ) { parse_copy( _data, _len ); } else
 	if ( strcmp( name, "move" ) == 0 ) { parse_move( _data, _len ); } else

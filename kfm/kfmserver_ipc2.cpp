@@ -48,6 +48,18 @@ void KfmIpc::parse_openProperties( char *_data, int _len )
 	free( (void*)_url );
 }
 
+void KfmIpc::parse_list( char *_data, int _len )
+{
+	int pos = 0;
+
+	// Parsing string
+	const char* _url;
+	_url = read_string( _data, pos, _len );
+	// Calling function
+	emit list( _url );
+	free( (void*)_url );
+}
+
 void KfmIpc::parse_exec( char *_data, int _len )
 {
 	int pos = 0;
@@ -177,5 +189,37 @@ void KfmIpc::finished()
 	len += len_string("finished");
 	write_int( data_sock->socket(), len );
 	write_string( data_sock->socket(), "finished" );
+}
+
+void KfmIpc::error(int _kerror, const char* _text)
+{
+	int len = 0;
+	len += len_int( _kerror );
+	len += len_string( _text );
+	len += len_string("error");
+	write_int( data_sock->socket(), len );
+	write_string( data_sock->socket(), "error" );
+	write_int( data_sock->socket(), _kerror );
+	write_string( data_sock->socket(), _text );
+}
+
+void KfmIpc::dirEntry(const char* _name, const char* _access, const char* _owner, const char* _group, const char* _date, int _size)
+{
+	int len = 0;
+	len += len_string( _name );
+	len += len_string( _access );
+	len += len_string( _owner );
+	len += len_string( _group );
+	len += len_string( _date );
+	len += len_int( _size );
+	len += len_string("dirEntry");
+	write_int( data_sock->socket(), len );
+	write_string( data_sock->socket(), "dirEntry" );
+	write_string( data_sock->socket(), _name );
+	write_string( data_sock->socket(), _access );
+	write_string( data_sock->socket(), _owner );
+	write_string( data_sock->socket(), _group );
+	write_string( data_sock->socket(), _date );
+	write_int( data_sock->socket(), _size );
 }
 

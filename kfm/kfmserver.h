@@ -39,9 +39,12 @@ public slots:
     void slotAuth( const char *_password );
     void slotCopy( const char *_src_url, const char * _dest_url );
     void slotMove( const char *_src_urls, const char * _dest_url );
+    void slotList( const char *_url );
     /// A hack. I dont want to break compatibility yet
     void finished( int _id );
-        
+    void newDirEntry( int _id, KIODirectoryEntry * _entry );
+    void slotError( int _error, const char *_text );
+
 protected:
     KIOJob *job;
     bool bAuth;
