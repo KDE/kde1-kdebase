@@ -22,9 +22,11 @@ messages:
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
+	$(mkinstalldirs) $(kde_icondir)
 	$(INSTALL_DATA) $(srcdir)/mini-kcontrol.xpm $(kde_minidir)/kcontrol.xpm
-	$(INSTALL_DATA) $(srcdir)/large-kcontrol.xpm $(kde_minidir)/../large/kcontrol.xpm
+	$(INSTALL_DATA) $(srcdir)/large-kcontrol.xpm $(kde_icondir)/large/kcontrol.xpm
 
 uninstall-local:
+	rm -f $(kde_icondir)/large/kcontrol.xpm
 	rm -f $(kde_minidir)/kcontrol.xpm
 
