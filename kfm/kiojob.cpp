@@ -1081,7 +1081,7 @@ void KIOJob::fatalError( int _kioerror, const char* _error, int )
 		KURL u( _error );
 		ksprintf(&msg, i18n("Could not login for\n%s\nPerhaps wrong password"), u.host());
 		// Remove the password from the dict, since it seems to be wrong.
-		if ( u.user() != 0L && u.user()[0] != 0 && u.passwd() != 0L && u.passwd()[0] != 0 )
+		if ( u.user() != 0L && u.user()[0] != 0 && u.host() != 0L && u.host()[0] != 0 )
 		{
 		    QString tmp;
 		    ksprintf(&tmp, "%s@%s", u.user(), u.host());
