@@ -2000,7 +2000,7 @@ void Client::toggleShade(){
 
   shaded = !shaded;
   if (isShaded()){
-    manager->raiseSoundEvent("Window Shape Up");
+    manager->raiseSoundEvent("Window Shade Up");
     if (isActive())
       manager->focusToNull();
     XUnmapWindow(qt_xdisplay(), window);
@@ -2009,7 +2009,7 @@ void Client::toggleShade(){
     state = NormalState;
   }
   else {
-    manager->raiseSoundEvent("Window Shape Down");
+    manager->raiseSoundEvent("Window Shade Down");
     XMapWindow(qt_xdisplay(),window);
     manager->setWindowState(this, NormalState);
     if (isActive())

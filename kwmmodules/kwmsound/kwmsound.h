@@ -1,6 +1,8 @@
 /* 
    This file is part of the KDE system sound package
 
+   $Id$
+
    Copyright (C) 1997 Christian Czezatke (e9025461@student.tuwien.ac.at)
                  1998 Bernd Johannes Wuebben <wuebben@kde.org>
    
@@ -19,6 +21,9 @@
    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
    Boston, MA 02111-1307, USA.
 
+ 
+  $Log$
+  
 */
 
   
