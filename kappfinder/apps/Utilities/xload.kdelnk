@@ -12,6 +12,7 @@ Name[is_IS]=X álagsmælir
 Name[es]=X Load
 Name[pl]=X Load
 Name[no]=X-last
+Name[fi]=X-kuorma
 Comment=X load monitor
 Comment[is_IS]=xload:  X forrit sem mælir álagið á tölvuna
 Comment[es]=Monitor de carga para X

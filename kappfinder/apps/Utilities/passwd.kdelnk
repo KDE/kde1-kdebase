@@ -8,6 +8,7 @@ Comment[es]=Cambia su contraseña
 Comment[no]=Bytter passordet ditt
 Comment[pt_BR]=Muda sua senha
 Comment[sk]=Zmení va¹e heslo
+Comment[fi]=Vaihtaa salasanasi
 Type=Application
 Terminal=1
 Name[es]=Contraseña

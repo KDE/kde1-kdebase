@@ -10,6 +10,7 @@ Name=X Clock
 Name[es]=X Clock
 Name[no]=X-klokke
 Name[pl]=X Clock
+Name[fi]=X-kello
 Exec=xclock
 Icon=kclock.xpm
 TerminalOptions=
