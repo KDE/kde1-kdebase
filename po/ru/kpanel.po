@@ -159,7 +159,7 @@ msgstr "Открыть папку"
 
 #: pfilemenu.C:483
 msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr ""
+msgstr "Открыть эту папку (+Shift: Запустить терминал здесь)"
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"

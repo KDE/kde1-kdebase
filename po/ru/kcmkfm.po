@@ -111,7 +111,7 @@ msgstr "Подчеркивать ссылки."
 
 #: htmlopts.cpp:390
 msgid "Always use my colors"
-msgstr ""
+msgstr "Всегда использовать мои цвета"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"

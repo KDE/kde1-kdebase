@@ -144,7 +144,7 @@ msgstr "Подчеркивать ссылки"
 
 #: options.cpp:246
 msgid "Always use my colors"
-msgstr ""
+msgstr "Всегда использовать мои цвета"
 
 #
 #: options.cpp:334

@@ -452,7 +452,6 @@ msgid "The mime type config file "
 msgstr "Конфигурационный файл типа mime "
 
 #: kbind.cpp:304
-#, fuzzy
 msgid "does not contain a MimeType=... entry"
 msgstr "не содержит поля MimeType=..."
 
@@ -968,17 +967,15 @@ msgstr "Работаю..."
 
 #: kfmman.cpp:1631
 msgid "Copy here"
-msgstr ""
+msgstr "Скопировать сюда"
 
 #: kfmman.cpp:1636
-#, fuzzy
 msgid "Move here"
-msgstr "Переместить"
+msgstr "Переместить сюда"
 
 #: kfmman.cpp:1640
-#, fuzzy
 msgid "Link here"
-msgstr "Ссылка"
+msgstr "Создать ссылку сюда"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
