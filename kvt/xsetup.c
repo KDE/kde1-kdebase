@@ -15,6 +15,12 @@
  * As usual, the author accepts no responsibility for anything, nor does
  * he guarantee anything whatsoever.
  */
+
+/* LICENSE changed: all authors including but not limited to John Bovey
+ * aggreed to distribute their code under the terms of the GPL
+ */
+
+
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>

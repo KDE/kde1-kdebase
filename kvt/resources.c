@@ -11,7 +11,6 @@
 #include "command.h"
 #include "xsetup.h"
 #include "screen.h"
-#include "sbar.h"
 #include "debug.h"
 
 /* Stephan: a little bit hardcoded :) */

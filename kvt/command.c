@@ -16,6 +16,10 @@
  * he guarantee anything whatsoever.
  */
 
+/* LICENSE changed: all authors including but not limited to John Bovey
+ * aggreed to distribute their code under the terms of the GPL
+ */
+
 #include <stdarg.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
@@ -74,7 +78,6 @@
 #include "command.h"
 #include "screen.h"
 #include "xsetup.h"
-#include "sbar.h"
 
 #if defined(VDISCRD) && !defined(VDISCARD)
 #define	VDISCARD	VDISCRD
@@ -216,10 +219,10 @@ unsigned char mask = 0xff;
 static void catch_child(int);
 static void catch_sig(int);
 int run_command(unsigned char *,unsigned char **);
-static unsigned char *lookup_key(XEvent *,int *);
+static unsigned char *lookup_key(XEvent *,int *, unsigned char);
 static unsigned char get_com_char(int);
 /* get to handle.   Matthias */ 
-void handle_X_event(XEvent event);
+void handle_X_event(XEvent event, unsigned char);
 void process_string(int);
 #ifdef PRINT_PIPE
 void process_print_pipe(void);
@@ -590,8 +593,9 @@ void init_command(unsigned char *command,unsigned char **argv)
 }
 
 /*  Convert the keypress event into a string.
+    Matthias: trick: used the composed character from Qt if usefull
  */
-static unsigned char *lookup_key(XEvent *ev,int *pcount)
+static unsigned char *lookup_key(XEvent *ev,int *pcount, unsigned char qt_c)
 {
   KeySym keysym;
   static XComposeStatus compose = {NULL,0};
@@ -600,8 +604,15 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount)
   unsigned char *s, *c;
   int meta;
 
-  count = XLookupString(&ev->xkey,kbuf,KBUFSIZE-1,&keysym,&compose);
+  count = XLookupString(&ev->xkey,kbuf,KBUFSIZE-1,&keysym,&compose); 
+ 
+  if (count <= 1 && qt_c != '\0'){
+    kbuf[0] = qt_c;
+    count = 1;
+  }
+
   kbuf[count] = (unsigned char)0;
+
   meta = ev->xkey.state & Mod1Mask;
   s = NULL;
   /* no longer needed. (Matthias) */
@@ -663,23 +674,26 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount)
   else switch(keysym)
     {
       /* introduced BackSpace and Delete mapping (Matthias) */ 
-    case XK_BackSpace:
+    case XK_BackSpace :
       /* \010 = ^H (BS)  */
       /* \177 = ^? (Del) */
       strcpy(kbuf, BackspaceSendsControlH ? "\010" : "\177");
       count = 1;
       break;
-    case XK_Delete:
+    case XK_Delete :
+    case XK_KP_Delete :
       strcpy(kbuf,"\033[3~");
       count = 4;
       break;
 
       
     case XK_Up :
+    case XK_KP_Up :
       strcpy(kbuf,(app_cur_keys ? "\033OA" : "\033[A"));
       count = strlen(kbuf);
       break;
     case XK_Down :
+    case XK_KP_Down :
       strcpy(kbuf,app_cur_keys ? "\033OB" : "\033[B");
       count = strlen(kbuf);
       break;
@@ -765,12 +779,14 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount)
       break;
       /* changed home and end to more modern values (Matthias) */ 
     case XK_Home :
-      strcpy(kbuf,"\033[7~");
-      count = 4;
+    case XK_KP_Home :
+      strcpy(kbuf,"\033[H");
+      count = 3;
       break;
     case XK_End :
-      strcpy(kbuf,"\033[8~");
-      count = 4;
+    case XK_KP_End :
+      strcpy(kbuf,"\033[F");
+      count = 3;
       break;
     case XK_F1 :
       strcpy(kbuf,"\033[11~");
@@ -828,13 +844,13 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount)
       strcpy(kbuf,"\033[26~");
       count = 5;
       break;
-    case XK_Help:
-    case XK_F15:
+    case XK_Help :
+    case XK_F15 :
       strcpy(kbuf,"\033[28~");
       count = 5;
       break;
-    case XK_Menu:
-    case XK_F16:
+    case XK_Menu :
+    case XK_F16 :
       strcpy(kbuf,"\033[29~");
       count = 5;
       break;
@@ -859,6 +875,7 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount)
       count = 4;
       break;
     case XK_Insert :
+    case XK_KP_Insert :
       strcpy(kbuf,"\033[2~");
       count = 4;
       break;
@@ -871,10 +888,12 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount)
       count = 4;
       break;
     case XK_Prior :
+    case XK_KP_Prior :
       strcpy(kbuf,"\033[5~");
       count = 4;
       break;
-    case XK_Next:
+    case XK_Next :
+    case XK_KP_Next :
       strcpy(kbuf,"\033[6~");
       count = 4;
       break;
@@ -884,6 +903,7 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount)
         count = greek_xlat(kbuf, count);
 #endif                
     }
+  
   *pcount = count;
 
   /* if meta is pressed, precede message with ESC */
@@ -1055,7 +1075,7 @@ static unsigned char  get_com_char(int flags)
  **************************************************************************/
 
 /* get to handle.   Matthias */ 
-void handle_X_event(XEvent event)
+void handle_X_event(XEvent event, unsigned char qt_c)
 {
   /* no longer needed. Matthias */ 
 /*   XEvent event; */
@@ -1076,7 +1096,7 @@ void handle_X_event(XEvent event)
   switch(event.type)
     {
     case KeyPress:
-      s = lookup_key(&event,&count);
+      s = lookup_key(&event,&count, qt_c);
       send_string(s,count);
       return;
     case ClientMessage:

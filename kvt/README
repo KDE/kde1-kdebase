@@ -1,32 +1,21 @@
-This is the new test-release of kvt, the KDE xterm replacement.
+This is the new release of kvt, the KDE terminal emulation
 
-Version kvt-0.12 (based on rxvt-2.08)
-
-
-There are a lot of improvements in this kvt compared to kvt-0.11.
-Mainly improvements of the core terminal emulation, not of the GUI.
-kvt should be a quite reasonabl xterm-color now :)
-
-If you have problems with the default "TERM=xterm-color" setting on
-your system, have a look at ./etc/README
+Version kvt-0.17.3 (based on rxvt-2.08)
 
 
-Also new is the command line option "-no_scrollbar".
-See ChangeLog for details concerning the changes.
+Bugreports / Suggestions / Patches / if-you-want-to-maintain-it to
+	
+   Matthias Ettrich  (ettrich@kde.de)
+   M G Berberich (berberic@fmi.uni-passau.de)
 
-Please note the popmenu on the right mouse button!
-(when you miss the menubar ;-) 
 
+In fact, I have enough other free code to maintain and Mr. Berberic
+has very few time.
 
-Please see also TODO.kvt.
+So, if you like to maintain kvt, just drop us a note.
+
 
 Greets,
 
- Matthias 
- (ettrich@informatik.uni-tuebingen.de)
-
----------------------------------------------------------------------------
-Irix 6.3. SGI O2 R1000
-    To compile kvt on a SGI O2 R10000 running Irix 6.3 with gcc I had to
-    edit the Makefile: deleting /usr/include from the include-path
-    does the trick
+  Matthias 
+  (ettrich@kde.org>

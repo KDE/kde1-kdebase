@@ -12,6 +12,10 @@
  * he guarantee anything whatsoever.
  */
 
+/* LICENSE changed: all authors including but not limited to John Bovey
+ * aggreed to distribute their code under the terms of the GPL
+ */
+
 /* @(#)xsetup.h	1.1 14/7/92 (UKC) */
 
 #ifndef XSETUP_H

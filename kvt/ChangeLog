@@ -1,34 +1,29 @@
+since kvt-0.17:
 
+	
 since kvt-0.16:
+  - modifications and enhancements to keyboard handling: now kvt is quite 
+    compatible with a decent xterm (which itself is very vt-220 like).
+    This includes control sequences, numpad  and dead-key support. (Matthias)
+  - cleaned up the distribution. Also added LICENSE.readme (Matthias)
   - uses kapp's help menu (Matthias)
-	
   - enabled "-caption" (Matthias)
-
   - session management (Matthias)
-
   - re-arranged help menu (Matthias)
-	
   - added user-configurable backspace (^H/^?)
     (Jeroen van der Most <jvdmost@wi.leidenuniv.nl>)
-
   - bugfixed in DnD handling
-
   - added localisation of messages
-
   - bugfixes in color handling
-
   - added option `-linux' to set up a linux-console conformal kvt.
     made underline possible in linux-color-mode.
-	
   - bugfixes in color handling
-
   - added a "Linux Console" color-entry.
-
   - Now kvt searches a list of TERM-entries and takes the first
     (`best') available.  This should minimize problems with
     unincomplete or antiquated terminfo/termcap databases. (This is
     based on curses.)
-
+	No loner true! Why? Where has this patch gone?! (Matthias)
   - added a linux-console compatible color-mode (M G Berberich)
 
 since kvt-0.15:

@@ -41,7 +41,7 @@
 extern "C" {
 extern void *safemalloc(int, const char *identifier);
 extern void get_token();
-extern void handle_X_event(XEvent event);
+extern void handle_X_event(XEvent event, unsigned char);
 extern void screen_refresh();
 extern void extract_colors( char *fg_string, char *bg_string);
 extern void clean_exit(int);
@@ -195,7 +195,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
   if (ev->xany.type == FocusIn || ev->xany.type == FocusOut){
     if (ev->xany.window == kvt->winId())
       {
-	handle_X_event(*ev);
+	handle_X_event(*ev, 0);
 	screen_refresh();
       }
     return FALSE;
@@ -208,7 +208,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
        ev->xany.window == vt_win){
 
     if (ev->xany.type != MotionNotify || motion_allowed){
-      handle_X_event(*ev);
+      handle_X_event(*ev, 0);
       screen_refresh();
     }
     if (ev->xany.type == ButtonPress
@@ -888,7 +888,7 @@ bool kVt::eventFilter( QObject *obj, QEvent * ev){
     case Event_KeyPress: case Event_KeyRelease:
       {
 	// well... aehh... but this works ;-)
-	handle_X_event(stored_xevent_for_keys);
+	handle_X_event(stored_xevent_for_keys, ((QKeyEvent*)ev)->ascii());
       }
     }
   }

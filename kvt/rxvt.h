@@ -5,6 +5,10 @@
  *  unaltered copy of this message (including the copyright).
  */
 
+/* LICENSE changed: all authors including but not limited to John Bovey
+ * aggreed to distribute their code under the terms of the GPL
+ */
+
 #ifndef RXVT_H
 #define RXVT_H
 
