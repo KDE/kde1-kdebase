@@ -133,6 +133,7 @@ static const char* backspace_name[] = {
 
 int o_argc;
 char ** o_argv;
+char command_line[2048];
 
 void kvt_set_fontnum(char *s_arg){
   int i;
@@ -573,6 +574,7 @@ void kVt::saveOptions(KConfig* kvtconfig){
     kvtconfig->writeEntry("kmenubar", "bottom");
   else
     kvtconfig->writeEntry("kmenubar", "top");
+  kvtconfig->writeEntry("command_line", command_line);
 
   kvtconfig->sync();
 }
@@ -1027,6 +1029,16 @@ int main(int argc, char **argv)
   }
   o_argv[i2]=NULL;
 
+  // replace "-caption" with "-T" 
+  for (i=0; i<argc; i++) {
+    if (QString("-caption")==argv[i]){
+      argv[i][1]='T';
+      argv[i][2]='\0';
+    }
+  }
+  
+
+
   // cut off the command arguments for the terminal command and set com_arg
   int commands = -1;
   int com_argc = -1;
@@ -1040,7 +1052,17 @@ int main(int argc, char **argv)
       argv[i] = NULL;
     }
   }
-
+  for(i=1; i<argc; i++) {
+    strcat(command_line," ");
+    strcat(command_line,argv[i]);
+  }
+  if(com_argc > 0) {
+    strcat(command_line," -e");
+    for(i=0; i<com_argc; i++) {
+      strcat(command_line," ");
+      strcat(command_line,com_argv[i]);
+    }
+  }
   // create the QT Application
   MyApp a( argc, argv, "kvt" );
   myapp = &a;
@@ -1054,6 +1076,71 @@ int main(int argc, char **argv)
   KConfig* sessionconfig = a.getConfig();
   if (a.isRestored()){
     sessionconfig = a.getSessionConfig();
+    // restore all command line arguments like "-sl 1000 -caption Hallo -e ...." 
+    {
+      QString entry;
+      sessionconfig->setGroup("kvt");
+      entry = sessionconfig->readEntry("command_line");
+      
+      char *sp;
+      char *spe;
+      char exec_s[2048];
+      int exec_found = 0;
+
+      argc = 0;
+      argv = new char*[100];
+      argv[argc] = NULL;
+
+      if(!entry.isEmpty())
+	strcpy(exec_s, (const char*)entry);
+      else
+        strcpy(exec_s, command_line);
+
+      sp = spe = exec_s;
+              
+      while(*spe && !exec_found) 
+      {
+        while(*spe && *spe != ' ') spe++;
+        if(spe > sp )
+        {
+          if(*spe == ' ')
+            *spe++ = 0;
+          if(!strcmp(sp, "-e"))
+            exec_found = 1; 
+          else
+          {               
+            argv[argc++]=strdup(sp);
+            argv[argc] = NULL;
+            sp = spe;
+          }
+        }
+      }    
+        
+      // execute ? -------------------------------------
+
+      if(exec_found)
+      {       
+        com_argv = new char*[100];
+        com_argc = 0;
+        com_argv[com_argc] = NULL;
+        while(*spe) 
+        {
+          while(*spe && *spe == ' ') spe++;
+          sp = spe;
+          while(*spe && *spe != ' ') spe++;
+          if(spe > sp )
+          {
+            if(*spe == ' ')
+              *spe++ = 0;
+            com_argv[com_argc++]=strdup(sp); 
+            sp = spe;
+          }
+          com_argv[com_argc]=NULL;
+        } 
+        if(!com_argc)
+          delete com_argv;
+      }
+    }
   }
 
   kvt = new kVt(sessionconfig);

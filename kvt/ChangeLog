@@ -1,5 +1,8 @@
-since kvt-0.18:
+since kvt-0.18.1
+  - save command line parameters into kvtrc (Jens Jahny)
+  - restore process with all command line parameters (Jens Jahny)
 
+since kvt-0.18:
   - Custom Colors (Bernd Wuebben)	
   - mouse selection more xterm-like	
   - alpha patches (Uwe Thiem)
