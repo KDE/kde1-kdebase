@@ -19,21 +19,24 @@ kfm_SOURCES =	\
 	kioserver_ipc2.cpp kfmipc.cpp root.cpp kfmman.cpp kiojob.cpp \
 	kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp xview.cpp \
 	krenamewin.cpp passworddialog.cpp kURLcompletion.cpp debug.cpp kfm.cpp \
-	kfmpaths.cpp kfmjob.cpp kfmexec.cpp kmimemagic.cpp kfinder.cpp utils.cpp
+	kfmpaths.cpp kfmjob.cpp kfmexec.cpp kmimemagic.cpp kfinder.cpp utils.cpp \
+	useragentdlg.cpp
 
 noinst_HEADERS =  \
 	kfmgui.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h \
 	kfmprops.h kfmserver_ipc.h kioserver.h kioserver_ipc.h kfmipc.h \
 	kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kfmtree.h \
 	xview.h krenamewin.h passworddialog.h kURLcompletion.h utils.h kfm.h \
-	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h kfinder.h
+	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h kfinder.h	\
+	useragentdlg.h
 
 BUILT_SOURCES =	\
 	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc \
 	kfmprops.moc kfmserver_ipc.moc kfmserver.moc kioserver.moc \
 	kioserver_ipc.moc kfmman.moc kiojob.moc kmsgwin.moc htmlcache.moc \
 	kfmtree.moc krenamewin.moc passworddialog.moc kURLcompletion.moc \
-	kfmjob.moc kfmexec.moc cgi.moc kbind.moc kfinder.moc kfm.moc
+	kfmjob.moc kfmexec.moc cgi.moc kbind.moc kfinder.moc kfm.moc	\
+	useragentdlg.moc
 
 CLEANFILES = $(BUILT_SOURCES)
 
@@ -133,6 +136,10 @@ kfinder.moc: kfinder.h
 kfm.cpp:kfm.moc
 kfm.moc: kfm.h
 	$(MOC) kfm.h -o kfm.moc
+     
+useragentdlg.cpp:useragentdlg.moc
+useragentdlg.moc: useragentdlg.h
+	$(MOC) useragentdlg.h -o useragentdlg.moc
      
 SUBDIRS = kfmwarn client kioslave pics Desktop kfmexec
 

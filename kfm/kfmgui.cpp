@@ -29,6 +29,7 @@
 #include "kbind.h"
 #include "config-kfm.h"
 #include "utils.h"
+#include "useragentdlg.h"
 
 #include <klocale.h>
 
@@ -402,6 +403,8 @@ void KfmGui::initMenu()
     moptions->insertSeparator();
     moptions->insertItem( klocale->translate("Sa&ve Settings"),
 			  this, SLOT(slotSaveSettings()) );
+	moptions->insertItem( klocale->translate("Configure Browser"),
+						  this, SLOT(slotConfigureBrowser()));
 
     moptions->setItemChecked( moptions->idAt( 0 ), showMenubar );
     moptions->setItemChecked( moptions->idAt( 1 ), showStatusbar );
@@ -1312,6 +1315,59 @@ void KfmGui::slotSaveSettings()
 
   config->sync();
 }
+
+
+void KfmGui::slotConfigureBrowser()
+{
+  UserAgentDialog dlg;
+  QStrList strlist( true );
+
+  // read entries from config file
+  KConfig* config = kapp->getConfig();
+  QString oldgroup = config->group();
+  config->setGroup( "Browser Settings/UserAgent" );
+  int entries = config->readNumEntry( "EntriesCount", 0 );
+  for( int i = 0; i < entries; i++ )
+	{
+	  QString key;
+	  key.sprintf( "Entry%d", i );
+	  strlist.append( config->readEntry( key, "" ) );
+	}
+  // if there was no entry at all, we set at least a default
+  if( entries == 0 )
+	strlist.append( "*:Konqueror/1.0" );
+
+  // transmit data to dialog
+  dlg.setData( &strlist );
+
+  // show the dialog
+  int ret = dlg.exec();
+  if( ret == QDialog::Accepted )
+	{
+	  // write back the entries
+	  strlist = dlg.data();
+	  if( strlist.count() )
+		{
+		  config->writeEntry( "EntriesCount", strlist.count() );
+		  for( uint i = 0; i < strlist.count(); i++ )
+			{
+			  QString key;
+			  key.sprintf( "Entry%d", i );
+			  config->writeEntry( key, strlist.at( i ) );
+			}
+		}
+	  else
+		{
+		  // everything deleted -> write at least the Konqueror entry
+		  config->writeEntry( "EntriesCount", 1 );
+		  config->writeEntry( "Entry1", "*:Konqueror/1.0" );
+		}
+	}
+
+  // restore the group
+  config->setGroup( oldgroup );
+}
+
 
 void KfmGui::slotViewFrameSource()
 {

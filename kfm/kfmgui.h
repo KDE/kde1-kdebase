@@ -382,6 +382,11 @@ public slots:
      */
     void slotSaveSettings();
 
+  /**
+	* Configure the built-in browser
+	*/
+  void slotConfigureBrowser();
+
 protected slots:    
     void slotAnimatedLogoTimeout();
 
