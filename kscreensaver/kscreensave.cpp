@@ -13,15 +13,15 @@
 
 #include "kscreensave.h"
 
-void kForceLocker()
+int sendSignal()
 {
 	QString buffer(getenv("HOME"));
 
-	buffer.append("/.kss.pid.");
+	buffer.append("/.kss-install.pid.");
         char ksshostname[200];
         gethostname(ksshostname, 200);
         buffer.append(ksshostname);
-
+	int r = -1;
 	FILE *fp;
 
 	if ( (fp = fopen( buffer, "r" ) ) != NULL )
@@ -33,25 +33,43 @@ void kForceLocker()
 		fclose( fp );
 
                 // But only kill it if the pid isn't -1!
-                if (pid > 0)
-                  kill( pid, SIGUSR1 );
+                if (pid > 0) {
+                  if( kill( pid, SIGUSR1 ) == 0 )
+			  r = 0;
+		}
 	}
-	else
-	{
-            buffer = QString(KApplication::kde_bindir().data());
-	    buffer.append("/kblankscrn.kss");
-	    
-	    if ( fork() == 0 )
-		{
-		    execlp( buffer, buffer, "-test", "-lock", 0 );
 
-                    // if we make it here then try again using default path
-		    execlp("kblankscrn.kss","kblankscrn.kss","-test","-lock",0);
+	return r;
+}
+
+void kForceLocker()
+{
+	if( sendSignal() != 0 )
+	{
+		KConfig *kdisplayConfig = new KConfig( kapp->kde_configdir() + "/kdisplayrc",
+		                                       kapp->localconfigdir() + "/kdisplayrc" );
+		kdisplayConfig->setGroup("ScreenSaver");
+		bool allowRoot = kdisplayConfig->readBoolEntry( "allowRoot", false );
+		delete kdisplayConfig;
+		char *root = "-allow-root";
+		if( !allowRoot )
+			root = 0;
+
+		// either no saver is running or an old pidFile was not removed
+		QString buffer = QString(KApplication::kde_bindir().data());
+		buffer.append("/kblankscrn.kss");
+	    
+		if ( fork() == 0 )
+		{
+			execlp( buffer, buffer, "-install", "-delay", "0", "-lock", root, 0 );
+
+			// if we make it here then try again using default path
+			execlp("kblankscrn.kss","kblankscrn.kss", "-install", "-delay", "0", "-lock", root, 0);
 		    
-                    // uh oh - failed
-		    fprintf( stderr, "Could not invoke kblankscrn.kss in $PATH or"
-                             " %s/bin\n" , KApplication::kde_bindir().data());
-		    exit (1);
+			// uh oh - failed
+			fprintf( stderr, "Could not invoke kblankscrn.kss in $PATH or"
+			         " %s/bin\n" , KApplication::kde_bindir().data());
+			exit (1);
 		}
 	}
 }

@@ -15,6 +15,8 @@
 #include <unistd.h>
 #include <signal.h>
 #include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 #include <qapp.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
@@ -41,6 +43,7 @@ extern void initPasswd();
 int mode = MODE_NONE, lock = FALSE, passOk = FALSE;
 bool canGetPasswd = true;
 static int lockOnce = FALSE;
+static int only1Time = 0;
 static int xs_timeout, xs_interval, xs_prefer_blanking, xs_allow_exposures;
 static QString pidFile;
 static KPasswordDlg *passDlg = NULL;
@@ -181,7 +184,7 @@ void releaseInput()
 
 QWidget *createSaverWindow()
 {
-QWidget *w;
+	QWidget *w;
 
 	// WStyle_Customize sets override_redirect
 	w = new QWidget( NULL, "", WStyle_Customize );
@@ -211,13 +214,71 @@ void destroySaverWindow( QWidget *w )
 	delete w;
 }
 
+//----------------------------------------------------------------------------
+
+QString lockName(QString s)
+{
+	// note that changes in the pidFile name have also to be done
+	// in kdebase/kcontrol/display/scrnsave.cpp
+	QString name = getenv( "HOME" );
+	name += "/.kss-" + s + ".pid.";
+	char ksshostname[200];
+	gethostname(ksshostname, 200);
+	name += ksshostname;
+	return name;
+}
+
+int getLock(QString type)
+{
+	QString lockFile = lockName(type);
+	int pid = -1;
+
+	FILE *fp;
+	if ( (fp = fopen( lockFile, "r" ) ) != NULL )
+	{
+		fscanf( fp, "%d", &pid );
+		fclose( fp );
+	}
+
+	return pid;
+}
+
+void killProcess(int pid)
+{
+	if ( pid != getpid() && pid > 1 )
+	{
+		if( kill( pid, SIGTERM ) == 0 ) 
+			sleep(1);
+	}
+}
+
+void setLock(QString type)
+{
+	FILE *fp;
+	pidFile = lockName(type);
+	int pid = getLock( type );
+
+	killProcess( pid );
+
+	if ( (fp = fopen( pidFile, "w" ) ) != NULL )
+	{
+		// on some systems, it's long one some in, so a cast may help
+		fprintf( fp, "%ld\n", static_cast<long>(getpid()) );
+		fclose( fp );
+	}
+}
+
+//----------------------------------------------------------------------------
+
 int main( int argc, char *argv[] )
 {
+	// drop root privileges temporarily
+	seteuid(getuid());
+
 	Window saveWin = 0;
 	int timeout = 600;
 	ProgramName = argv[0];
 	ssApp a( argc, argv );
-
 	glocale = new KLocale("klock");
 
 	if ( argc == 1 )
@@ -225,13 +286,13 @@ int main( int argc, char *argv[] )
 
 	enum parameter_code { 
 	    install, setup, preview, inroot, test, delay, 
-	    arg_lock, corners, descr, arg_nice, help, allow_root, 
+	    arg_lock, corners, descr, arg_nice, help, allow_root,
 	    unknown
 	} parameter;
 	
 	char *strings[] = { 
 	    "-install", "-setup", "-preview", "-inroot", "-test", "-delay", 
-	    "-lock", "-corners", "-desc", "-nice", "--help", "-allow-root", 
+	    "-lock", "-corners", "-desc", "-nice", "--help", "-allow-root",
 	    0
 	};
 
@@ -266,7 +327,9 @@ int main( int argc, char *argv[] )
 		    break;
 		case delay:
 		    timeout = atoi( argv[++i] ) * 60;
-		    if ( timeout < 60 )
+		    if( timeout == 0 )
+			only1Time = 1;
+		    else if( timeout < 60 )
 			timeout = 60;
 		    break;
 		case arg_lock:
@@ -301,58 +364,39 @@ int main( int argc, char *argv[] )
 	    i++;
 	}
 
+	// regain root privileges
+	seteuid(0);
 	initPasswd();
-	// drop root privileges before we do anything important
+	// ... and drop them again before doing anything important
 	setuid(getuid());
 
-
+	catchSignals();
 	if ( mode == MODE_INSTALL )
 	{
-	    if (!canGetPasswd) {
-		
-		QString tmp = glocale->translate("Your system uses shadow passwords!\n"
-						 "Please contact your system administrator.\n\n"
-			     "Tell him, that you need suid for the screensavers!");
-		
-		KMsgBox::message(NULL, 
+		if (!canGetPasswd) {
+			QString tmp = glocale->translate(
+			              "Warning: You won't be able to lock the screen!\n\n"
+			              "Your system uses shadow passwords.\n"
+			              "Please contact your system administrator,\n"
+			              "tell him, that you need suid for the screensavers!");
+			KMsgBox::message(NULL, 
 				 glocale->translate("Shadow Passwords"), 
-				 tmp);
-	    }
-	    pidFile = getenv( "HOME" );
-	    pidFile += "/.kss.pid.";
-            char ksshostname[200];
-            gethostname(ksshostname, 200);
-            pidFile += ksshostname;
-
-	    FILE *fp;
-	    if ( (fp = fopen( pidFile, "r" ) ) != NULL )
-		{
-			int pid;
-			fscanf( fp, "%d", &pid );
-			fclose( fp );
-			if ( pid != getpid() && pid > 1 )
-			{
-				kill( pid, SIGTERM );
-				sleep( 1 );
-			}
+				 tmp, KMsgBox::EXCLAMATION);
 		}
-		if ( (fp = fopen( pidFile, "w" ) ) != NULL )
-		{
-		    // on some systems, it's long one some in, so a cast may help
-			fprintf( fp, "%ld\n", static_cast<long>(getpid()) );
-			fclose( fp );
-		}
+		setLock("install");
 
-		catchSignals();
 		XGetScreenSaver( qt_xdisplay(), &xs_timeout, &xs_interval,
 				&xs_prefer_blanking, &xs_allow_exposures );
 		XSetScreenSaver( qt_xdisplay(), 0, xs_interval, xs_prefer_blanking,
 				xs_allow_exposures );
-
+			
 		while ( 1 )
 		{
 			if ( waitTimeout( timeout ) == FORCE_LOCK )
 				lockOnce = TRUE;
+
+			// if another saver is in test-mode, kill it
+			killProcess(getLock("test"));
 
 			saverWidget = createSaverWindow();
 
@@ -373,10 +417,19 @@ int main( int argc, char *argv[] )
 			destroySaverWindow( saverWidget );
 
 			lockOnce = FALSE;
+			if( only1Time ) 
+				break;
 		}
 	}
 	else if ( mode == MODE_TEST )
 	{
+		if( lock ) {
+			fprintf(stderr, glocale->translate(
+	                        "\nplease don't use -test together with -lock.\n"
+			        "use klock instead.\n\n") );
+			exit(1);
+		}
+		setLock("test");
 		saverWidget = createSaverWindow();
 		saverWidget->setFixedSize( QApplication::desktop()->width(),
 				 QApplication::desktop()->height() );
@@ -396,8 +449,10 @@ int main( int argc, char *argv[] )
 	}
 	else if ( mode == MODE_PREVIEW )
 	{
+		char mode[32];
+		sprintf(mode, "preview%ld", (unsigned long) saveWin);
+		setLock(mode);
 		startScreenSaver( saveWin );
-
 		a.exec();
 	}
 	else if ( mode == MODE_SETUP )
@@ -407,6 +462,7 @@ int main( int argc, char *argv[] )
 	else
 		usage( argv[0] );
 
+	remove( pidFile );
 	return 0;
 }
 
@@ -464,21 +520,21 @@ static void lockNow( int )
 
 static void cleanup( int id )
 {
-    if ( mode == MODE_INSTALL )
+	remove( pidFile );
+	if ( mode == MODE_INSTALL )
 	{
-	    remove( pidFile );
-	    if (id != SIGPIPE)
-		XSetScreenSaver( qt_xdisplay(), xs_timeout, xs_interval,
-				 xs_prefer_blanking, xs_allow_exposures );
+		if (id != SIGPIPE)
+			XSetScreenSaver( qt_xdisplay(), xs_timeout, xs_interval,
+			                 xs_prefer_blanking, xs_allow_exposures );
 	}
-    exit(1);
+	exit(1);
 }
 
 void usage( char *name )
 {
 	printf( glocale->translate(
 	   "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"\
-	   "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"), name );
+	   "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"), name ); 
 	printf( glocale->translate(
 	"  -corners xxxx     Placing cursor in corner performs action:\n"\
 	"                     x = i  no action (ignore)\n"\
@@ -490,6 +546,7 @@ void usage( char *name )
 	"  -desc             Print the screen saver's description to stdout\n"\
 	"  -install          Install screen saver\n"\
 	"  -lock             Require password to stop screen saver\n"\
+	"  -allow-root       Accept root password to unlock\n"\
 	"  -nice num         Run with specified nice value\n\n"\
 	"  -preview wid      Run in the specified XWindow\n"\
 	"  -inroot           Run in the root window\n"\
