@@ -48,7 +48,7 @@ KLocaleApplication::KLocaleApplication(int &argc, char **argv, const char *name)
     {
       if (!pages || pages->contains("language"))
         addPage(locale = new KLocaleConfig(dialog, "locale"), 
-		klocale->translate("&Locale"), "locale.html");
+		klocale->translate("&Locale"), "locale-1.html");
 
       if (locale)
         dialog->show();
