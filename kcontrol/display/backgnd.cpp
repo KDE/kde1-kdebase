@@ -15,17 +15,18 @@
 
 #include <stdlib.h>
 
-#include <qgrpbox.h>
+#include <qgroupbox.h>
 #include <qlabel.h>
 #include <qpixmap.h>
 #include <qdir.h>
-#include <qradiobt.h>
-#include <qchkbox.h>
+#include <qradiobutton.h>
+#include <qcheckbox.h>
+#include <qstring.h>
 #include <qpainter.h>
 #include <qlayout.h>
-#include <qmsgbox.h>
+#include <qmessagebox.h>
 #include <qfileinfo.h>
-#include <qlcdnum.h>
+#include <qlcdnumber.h>
 
 #include <kfiledialog.h>
 #include <kapp.h>
@@ -789,14 +790,16 @@ void KBackground::showSettings()
   randomButton->setChecked( randomMode );
 
   //CT 30Nov1998 - make sure all comes up rightly
-  randomSetupButton->setEnabled(randomMode);
   wpCombo->setEnabled(!randomMode);
   browseButton->setEnabled(!randomMode);
   //CT
   
-  //AL 31Dic1998 - wpModeCombo should be disabled when in randomMode
-  wpModeCombo->setEnabled(!randomMode);
-  //AL
+  // wpModeCombo should be disabled when in randomMode, but only when there
+  // is not random setup dialog opened
+  if ( !rnddlg ) {
+    wpModeCombo->setEnabled(!randomMode);
+    randomSetupButton->setEnabled(randomMode);
+  }
 
   setMonitor();
 }
@@ -1287,6 +1290,9 @@ void KBackground::slotSetupRandom()
 
 void KBackground::slotToggleRandom()
 {
+  if ( rnddlg )
+    rnddlg->done( QDialog::Accepted );
+
   randomMode = !randomMode;
   changed = true;
   randomSetupButton->setEnabled(randomButton->isChecked());
@@ -1991,8 +1997,6 @@ void KRandomDlg::done( int r )
     return;
   }
 
-  hide();
-  
   kb->interactive = false;
   for ( int i = 0; i < (int)listBox->count(); i++ ) {
     kb->random = i;
@@ -2017,6 +2021,8 @@ void KRandomDlg::done( int r )
   picturesConfig.writeEntry( "UseDir", dirCheckBox->isChecked() );
   picturesConfig.writeEntry( "Directory", dirLined->text() );
 
+  hide();
+  
   setResult(Accepted);
 
   kb->rnddlg = 0L;
