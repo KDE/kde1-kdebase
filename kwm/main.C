@@ -1840,12 +1840,15 @@ bool MyApp::buttonPressEventFilter( XEvent * ev)
 	    }
 	}
  	// unfreeze the passive grab which is active currently
-	if (no_replay )
-	    XAllowEvents(qt_xdisplay(), SyncPointer, CurrentTime);
-	else
-	    XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
-	XUngrabPointer(qt_xdisplay(), CurrentTime);
-	XSync(qt_xdisplay(), false);
+	if (no_replay ) {
+	    // wait for the button release, do not ungrab.
+	  XAllowEvents(qt_xdisplay(), SyncPointer, CurrentTime);
+	}
+	else {
+	  XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
+	  XUngrabPointer(qt_xdisplay(), CurrentTime);
+	  XSync(qt_xdisplay(), false);
+	}
 	return true;
     }
     else {

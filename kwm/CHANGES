@@ -10,8 +10,12 @@ originally based on David Hogan's 9wm (a smart and small windowmanager
 written in plain C).
 
 
-Current is 0.14. No Changes and no patchlevels yet :-)
+Current is 0.14.1 
 
+In 0.14:
+-------
+patchlevel 1:
+        - fixed event passing: release no longer repeated to application
 
 In 0.13:
 --------
