@@ -190,6 +190,8 @@ msgstr ""
 "Copyright(C) 1997 M G Berberich\n"
 "Skjáhermir fyrir KDE-skjáumhverfið unnið úr rxvt-2.08\n"
 "eftir Robert Nation.\n"
+"\n"
+"Íslensk þýðing: Logi Ragnarsson <logir@imf.au.dk>\n"
 
 #: main.C:1478
 msgid "Permitted arguments are:\n"

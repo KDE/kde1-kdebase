@@ -55,6 +55,8 @@ msgstr ""
 "Höfundarréttur 1997\n"
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
+"\n"
+"Þýðing: Logi <logir@hi.is>\n"
 
 #: kfontmanager.cpp:215
 msgid ""

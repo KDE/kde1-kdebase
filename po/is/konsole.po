@@ -1,5 +1,5 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Logi Ragnarsson <logi@hi.is>
+# Logi Ragnarsson <logir@hi.is>
 #
 msgid ""
 msgstr ""
@@ -153,6 +153,7 @@ msgstr ""
 "%s, útgáfa %s - X-skjáhermir\n"
 "\n"
 "Höfundarréttur (c) 1998 Lars Doelle <lars.doelle@on-line.de>\n"
+"Íslensk þýðing: Logi Ragnarsson <logir@hi.is>\n"
 "\n"
 "Þetta forrit er frjáls hugbúnaður samkvæmt ákvæðum\n"
 "\"Artistic License\" og ENGIN ÁBYRGÐ er tekin á virkni\n"

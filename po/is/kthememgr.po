@@ -8,7 +8,7 @@ msgstr ""
 "POT-Creation-Date: 1999-09-04 21:05+0200\n"
 "PO-Revision-Date: 1999-09-05 01:30+0000\n"
 "Last-Translator: Bjarni R. Einarsson <bre@netverjar.is>\n"
-"Language-Team: is <is@li.org>\n"
+"Language-Team: is <kde-isl@mmedia.is>\n"
 
 #: theme.cpp:164
 msgid "Mappings file theme.mappings not found."
@@ -377,10 +377,9 @@ msgstr ""
 "\n"
 "Höfundarréttur (C) 1998, \n"
 "%s\n"
-"Bjarni <bre@netverjar.is>\n"
-"íslenskaði\n"
+"Gnu Public License (GPL)\n"
 "\n"
-"Gnu Public License (GPL)"
+"Þýðing: Bjarni <bre@mmedia.is>"
 
 #: about.cpp:109 about.cpp:122
 msgid "Unknown"
