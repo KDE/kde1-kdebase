@@ -5,6 +5,10 @@
 
 #include <stdio.h>
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include "kioslave_ipc.h"
 
 int ftpOpen( const char *host);

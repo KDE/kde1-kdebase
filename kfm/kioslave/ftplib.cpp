@@ -254,7 +254,7 @@ int ftplib_debug = 2;
 	struct sockaddr_in in;
     } sin;
     struct linger lng = { 0, 0 };
-    int l;
+    ksize_t l;
     char buf[64];
     int on=1;
 
@@ -372,7 +372,7 @@ int ftpMkdir( const char *path )
 {
     int sData;
     struct sockaddr addr;
-    int l;
+    ksize_t l;
     fd_set mask;
 
     FD_ZERO(&mask);
