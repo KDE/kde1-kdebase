@@ -163,7 +163,7 @@ extern int refresh_type;
 /*  Terminal mode structures.
  */
 static struct termios ttmode;
-#ifndef FREEBSD
+#ifndef __FreeBSD__
 #ifndef CINTR
 #ifndef _POSIX_VDISABLE
 #define _POSIX_VDISABLE 0
@@ -399,7 +399,7 @@ static void catch_sig(int sig)
       }
 
       /* init of termios structure		*/
-#ifdef FREEBSD
+#ifdef __FreeBSD__
       ioctl(0,TIOCGETA,(char *)&ttmode);
 #else
 #   ifdef HPUX
@@ -467,7 +467,7 @@ static void catch_sig(int sig)
 
       if(mask == 0x7f)
 	ttmode.c_cflag = B9600 | PARENB | CS7 | CREAD;
-#ifdef FREEBSD
+#ifdef __FREEBSD__
       ioctl(0,TIOCSETA,(char *)&ttmode);
 #else
 #   ifdef HPUX
