@@ -772,9 +772,7 @@ void Client::mousePressEvent( QMouseEvent *ev ){
 }
 
 void Client::mouseReleaseEvent( QMouseEvent* /* ev */){
-    debug("mouseReleaseEvent");
   if (dragging_state == dragging_runs) {
-      debug("dragging runs");
       dragging_state = dragging_nope;
       releaseMouse();
       return;

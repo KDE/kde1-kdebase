@@ -421,6 +421,7 @@ private:
 
   Atom kwm_command;
   Atom kwm_do_not_manage;
+  Atom kwm_keep_on_top;
   Atom kwm_activate_window;
   Atom kwm_maximize_window;
 
@@ -468,6 +469,12 @@ private:
   // dock_module about the change. If w is no dock window it does
   // nothing.
   void removeDockWindow(Window w);
+  // the list of external unmanaged toplevels that wants to stay on top
+  QList <Window> top_windows;
+  // adds a top window
+  void addTopWindow(Window w);
+  // removes a top window
+  void removeTopWindow(Window w);
   Atom kwm_module;
   Atom module_init;
   Atom module_initialized;

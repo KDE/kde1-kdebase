@@ -102,6 +102,7 @@ Manager::Manager(): QObject(){
 
   kwm_command = XInternAtom(qt_xdisplay(), "KWM_COMMAND", False);
   kwm_do_not_manage = XInternAtom(qt_xdisplay(), "KWM_DO_NOT_MANAGE", False);
+  kwm_keep_on_top = XInternAtom(qt_xdisplay(), "KWM_KEEP_ON_TOP", False);
   kwm_activate_window = XInternAtom(qt_xdisplay(), "KWM_ACTIVATE_WINDOW", False);
   kwm_maximize_window = XInternAtom(qt_xdisplay(), "KWM_MAXIMIZE_WINDOW", False);
 
@@ -483,9 +484,10 @@ void Manager::destroyNotify(XDestroyWindowEvent *e){
     Client *c;
     // the window is maybe a module communication or docking window?
     // In this case removeModule and removeDockWindow will remove all
-    // references. Otherwise they do nothing.
+    // references. Otherwise they do nothing. Sames is true for top windows.
     removeModule(e->window);
     removeDockWindow(e->window);
+    removeTopWindow(e->window);
     c = getClient(e->window);
     if (c == 0 || c->window != e->window){
         return;
@@ -642,6 +644,13 @@ void Manager::clientMessage(XEvent*  ev){
       addModule(w);
     else
       removeModule(w);
+  }
+
+  if (e->message_type == kwm_keep_on_top){
+      // a (probably unmanaged) window wants to stay on top. Might be
+      // kpanel, for instance.
+    Window w = (Window) e->data.l[0];
+    addTopWindow(w);
   }
 
   if ( e->message_type == kwm_window_region_changed) {
@@ -2297,7 +2306,8 @@ void Manager::raiseClient(Client* c){
 
 
   // stays on top windows
-  if (!c->isStaysOnTop() && !c->mainClient()->isStaysOnTop()) {
+  bool ignore_stays_on_top_windows = c->isStaysOnTop() ||  c->mainClient()->isStaysOnTop();
+  if (!ignore_stays_on_top_windows) {
       for (c = clients_sorted.first(); c ; c = clients_sorted.next()){
 	  if ( c->isStaysOnTop() && !tmp.contains( c ))
 	      tmp.append( c );
@@ -2312,13 +2322,20 @@ void Manager::raiseClient(Client* c){
     sendToModules(module_win_raise, c);
   }
   // X Semantics are somewhat cryptic
-  Window* new_stack = new Window[tmp.count()+1];
+  Window* new_stack = new Window[tmp.count()+1 + top_windows.count()];
   int i = 0;
   // take care about the gimmick: this should be always on top!
   if (options.GimmickMode && tmp.first() == current() && Client::gimmickWindow() != None){
     new_stack[i]=Client::gimmickWindow();
     i++;
   }
+  
+  // top windows (such as the panel) are always taken into account
+  for (Window* w = top_windows.last(); w; w = top_windows.prev() ) {
+      new_stack[i] = *w;
+      i++;
+  }
+  
   for (c=tmp.last();c;c=tmp.prev()){
     new_stack[i] = c->winId();
     i++;
@@ -3835,6 +3852,41 @@ void Manager::removeDockWindow(Window w){
       delete dw;
       if (dock_module != None)
 	sendClientMessage(dock_module, module_dockwin_remove, (long) w);
+      break;
+    }
+  }
+}
+
+// adds a top window
+void Manager::addTopWindow(Window w)
+{
+    debug("add top window");
+  bool already_there = False;
+  Window* w2;
+  for (w2=top_windows.first(); w2; w2=top_windows.next()){
+    already_there = already_there || *w2 == w;
+  }
+
+  if (!already_there) {
+    Window *wp = new Window;
+    *wp = w;
+    top_windows.append(wp);
+
+    XSelectInput(qt_xdisplay(), w,
+		 StructureNotifyMask
+		 );
+  }
+}
+ 
+// removes a top window
+void Manager::removeTopWindow(Window w)
+{
+  Window *tw;
+  for (tw=top_windows.first(); tw; tw=top_windows.next()){
+    if (*tw == w){
+	debug("remove top window");
+      top_windows.remove();
+      delete tw;
       break;
     }
   }
