@@ -1199,11 +1199,13 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 	       SLOT( slotDropEvent( KDNDDropZone *) ) );
 
      }
-     if (pmi->getComment().isEmpty())
-       QToolTip::add(entries[nbuttons-1].button,
-		     klocale->translate("No comment available"));
-     else
+     if (!pmi->getComment().isEmpty())
        QToolTip::add(entries[nbuttons-1].button, pmi->getComment());
+     // PI: no useless comments
+     // else
+     //    QToolTip::add(entries[nbuttons-1].button,
+     //	      klocale->translate("No comment available"));
+
 
    }
    else {
