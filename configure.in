@@ -191,7 +191,6 @@ AC_OUTPUT(Makefile \
 	doc/kvt/Makefile \
 	doc/kwm/Makefile \
 	kappfinder/Makefile \
-	kappfinder/Makefile \
 	kappfinder/apps/Development/Makefile \
 	kappfinder/apps/Editors/Makefile \
 	kappfinder/apps/Graphics/Makefile \
