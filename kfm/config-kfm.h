@@ -62,4 +62,4 @@ void debugC( const char *msg , ...);
 #define DEFAULT_TERMINAL "konsole"
 
 // Default UserAgent string (e.g. *:Konqueror/1.1)
-#define DEFAULT_USERAGENT_STRING "*:Konqueror/" "KDE_VERSION_MAJOR" "." "KDE_VERSION_MINOR"
+#define DEFAULT_USERAGENT_STRING QString("*:Konqueror/")+('0'+KDE_VERSION_MAJOR)+"."+('0'+KDE_VERSION_MINOR)
