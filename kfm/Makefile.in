@@ -84,8 +84,8 @@ install: all
 	$(INSTALL) ./kioslave/kioslave $(BINDIR)
 	$(INSTALL) ./client/kfmclient $(BINDIR)
 	$(INSTALL_SHELL) ./unpack $(BINDIR)
-	(cd doc && make install)
-	(cd pics && make install)
+	(cd doc &&  $(MAKE) install)
+	(cd pics && $(MAKE) install)
 	$(INSTALL_DIR) $(LIBDIR)/kfm/config
 	$(INSTALL_DATA) config/kfmrc $(LIBDIR)/kfm/config
 	$(INSTALL_DATA) config/desktop $(LIBDIR)/kfm/config

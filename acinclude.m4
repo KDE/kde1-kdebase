@@ -128,7 +128,7 @@ ac_qt_includes=$qt_incdir
 
 qt_libdirs="/usr/lib/qt/lib /usr/local/qt/lib /usr/lib/qt /usr/lib $x_libraries $QTLIB"
 test -n "$QTDIR" && qt_libdirs="$QTDIR/lib $QTDIR $qt_libdirs"
-AC_FIND_FILE(libqt.so libqt.a libqt.sl, $qt_libdirs, qt_libdir)
+AC_FIND_FILE(libqt.so libqt.so.1.2 libqt.a libqt.sl, $qt_libdirs, qt_libdir)
 ac_qt_libraries=$qt_libdir
 
 ac_cxxflags_safe=$CXXFLAGS
