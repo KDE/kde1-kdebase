@@ -1,5 +1,5 @@
 [KCM Locale]
-Languages=C,ca,cs,da,de,el,en_UK,en,es,fi,fr,hr,hu,is,it,nl,no,pl,pt,ro,ru,sk,sv,zh_CN.GB2312,zh_TW.Big5,pt_BR,eo,mk
+Languages=C,ca,cs,da,de,el,en_UK,en,es,fi,fr,hr,hu,is,it,nl,no,pl,pt,ro,ru,sk,sv,zh_CN.GB2312,zh_TW.Big5,pt_BR,eo,mk,ko,tr
 
 [ca]
 Name=Catalan
@@ -348,3 +348,10 @@ Name[ro]=Esperanto
 Name=Macedonian
 Name[de]=Mazedonisch
 
+[ko]
+Name=Korean
+Name[de]=Koreanisch
+
+[tr]
+Name=Turkish
+Name[de]=Türkisch
