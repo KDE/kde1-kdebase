@@ -1,0 +1,286 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-12-28 13:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kdm-appear.cpp:66
+msgid "Appearance"
+msgstr "Vzhled"
+
+#: kdm-appear.cpp:69
+msgid "Greeting string:"
+msgstr "Uvítací text:"
+
+#: kdm-appear.cpp:77
+msgid "KDM logo:"
+msgstr "Logo KDM:"
+
+#: kdm-appear.cpp:104 kdm-users.cpp:139
+msgid "Click or drop an image here"
+msgstr "Klikni zde nebo sem upus» obrázek"
+
+#: kdm-appear.cpp:109
+msgid "GUI Style:"
+msgstr "GUI styl:"
+
+#: kdm-appear.cpp:115
+msgid "Motif"
+msgstr "Motif"
+
+#: kdm-appear.cpp:116
+msgid "Windows"
+msgstr "Windows"
+
+#: kdm-appear.cpp:135 kdm-appear.cpp:219 kdm-users.cpp:244
+msgid ""
+"There was an error loading the image:\n"
+">"
+msgstr ""
+"Nastala chyba pøi nahrávání obrázku:\n"
+">"
+
+#: kdm-appear.cpp:137 kdm-appear.cpp:156 kdm-users.cpp:164
+msgid "<"
+msgstr "<"
+
+#: kdm-appear.cpp:138 kdm-appear.cpp:157 kdm-appear.cpp:222 kdm-users.cpp:165
+#: kdm-users.cpp:247
+msgid "ERROR"
+msgstr "CHYBA"
+
+#: kdm-appear.cpp:154 kdm-users.cpp:162
+msgid ""
+"There was an error saving the image:\n"
+">"
+msgstr "Nastala chyba pøi ukládání obrázku:\\n"
+
+#: kdm-appear.cpp:187 kdm-users.cpp:195
+msgid "Sorry, but \n"
+msgstr "Je mi líto, ale\n"
+
+#: kdm-appear.cpp:189 kdm-users.cpp:197
+msgid ""
+"\n"
+"does not seem to be an image file"
+msgstr ""
+"\n"
+"není obrázek"
+
+#: kdm-appear.cpp:190 kdm-users.cpp:198
+msgid ""
+"\n"
+"Please use files with these extensions\n"
+msgstr ""
+"\n"
+"Prosím pou¾ívejte souboru s tìmito pøíponami\n"
+
+#: kdm-appear.cpp:192 kdm-users.cpp:200
+msgid "Improper File Extension"
+msgstr "Nesprávná koncovka souboru"
+
+#: kdm-appear.cpp:221 kdm-users.cpp:246
+msgid ""
+"<\n"
+"It will not be saved..."
+msgstr ""
+"<\n"
+"nebude ulo¾eno ..."
+
+#: kdm-bgnd.cpp:67
+msgid "Color"
+msgstr "Barva"
+
+#: kdm-bgnd.cpp:75
+msgid "Wallpaper"
+msgstr "Tapeta"
+
+#: kdm-bgnd.cpp:110
+msgid "Tiled"
+msgstr "Vydlá¾dit"
+
+#: kdm-bgnd.cpp:114
+msgid "Centred"
+msgstr "Centrovanì"
+
+#: kdm-bgnd.cpp:118
+msgid "Scaled"
+msgstr "Zvìt¹enì"
+
+#: kdm-bgnd.cpp:124
+msgid "Browse..."
+msgstr "Listuj..."
+
+#: kdm-font.cpp:48
+msgid "Select fonts"
+msgstr "Vybìr fontù"
+
+#: kdm-font.cpp:51
+msgid "Change font"
+msgstr "Zmìò font"
+
+#: kdm-font.cpp:59
+msgid "Greeting"
+msgstr "Uvítání"
+
+#: kdm-font.cpp:60
+msgid "Fail"
+msgstr "Selhání"
+
+#: kdm-font.cpp:61
+msgid "Standard"
+msgstr "Standardní"
+
+#: kdm-font.cpp:62
+msgid "Example:"
+msgstr "Ukázka:"
+
+#: kdm-sess.cpp:51
+msgid "Allow to shutdown:"
+msgstr "Povolení k shutdownu:"
+
+#: kdm-sess.cpp:58
+msgid "None"
+msgstr "Nikomu"
+
+#: kdm-sess.cpp:59
+msgid "All"
+msgstr "V¹em"
+
+#: kdm-sess.cpp:60
+msgid "Root Only"
+msgstr "Pouze root"
+
+#: kdm-sess.cpp:61
+msgid "Console Only"
+msgstr "Pouze z konzole"
+
+#: kdm-sess.cpp:65
+msgid "Commands"
+msgstr "Pøíkazy"
+
+#: kdm-sess.cpp:67
+msgid "Shutdown"
+msgstr ""
+
+#: kdm-sess.cpp:75
+msgid "Restart"
+msgstr "Restart"
+
+#: kdm-sess.cpp:86
+msgid "Session types"
+msgstr "Typy sezení"
+
+#: kdm-sess.cpp:89
+msgid "New type"
+msgstr "Nový typ"
+
+#: kdm-sess.cpp:99
+msgid "Available types"
+msgstr "Dostupné typy"
+
+#: kdm-sess.cpp:108
+msgid "Remove"
+msgstr "Odstranit"
+
+#: kdm-sess.cpp:113
+msgid "Add"
+msgstr "Pøidat"
+
+#: kdm-users.cpp:49
+msgid "All users"
+msgstr "V¹ichni u¾ivatelé"
+
+#: kdm-users.cpp:51
+msgid "Selected users"
+msgstr "Vybraní u¾ivatelé"
+
+#: kdm-users.cpp:53
+msgid "No-show users"
+msgstr "Vyjmutí u¾ivatelé"
+
+#: kdm-users.cpp:80
+msgid ""
+"Show only\n"
+"selected users"
+msgstr ""
+"Ukazovat pouze\n"
+"vybrané u¾ivatele"
+
+#: kdm-users.cpp:87
+msgid ""
+"Show all users\n"
+" but no-show users"
+msgstr ""
+"Ukazovat v¹echny\n"
+"kromì vyjmutých"
+
+#: kdm-users.cpp:97
+msgid "Show users"
+msgstr "Ukázat u¾ivatele"
+
+#: kdm-users.cpp:103
+msgid "Sort users"
+msgstr "Setøídit u¾ivatele"
+
+#: kdm-users.cpp:150 kdm-users.cpp:219
+msgid "No user selected"
+msgstr "Není vybrán ¾ádný u¾ivatel"
+
+#: kdm-users.cpp:151 kdm-users.cpp:220
+msgid "Save image as default image?"
+msgstr "Ulo¾ obrázek jako implicitní?"
+
+#: main.cpp:117
+msgid "Sorry, but you don't have read/write\n"
+msgstr "Je mi líto, ale nemáte pøístupová\n"
+
+#: main.cpp:118
+msgid "permission to the KDM setup file."
+msgstr "ke ètení/zápidu ko konfiguraèního souboru"
+
+#: main.cpp:119
+msgid "Missing privileges"
+msgstr "Chybí privilegia"
+
+#: 
+msgid "Apply"
+msgstr "Pou¾ít"
+
+#: 
+msgid "Cancel"
+msgstr "Zru¹it"
+
+#:
+msgid "Help"
+msgstr "Nápovìda"
+
+#:
+msgid "&Appearance"
+msgstr "&Vzhled"
+
+#:
+msgid "&Fonts"
+msgstr "&Fonty"
+
+#:
+msgid "&Background"
+msgstr "&Pozadí"
+
+#:
+msgid "&Users"
+msgstr "&U¾ivatelé"
+
+#:
+msgid "&Sessions"
+msgstr "&Sezení"
