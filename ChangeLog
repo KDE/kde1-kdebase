@@ -1,3 +1,12 @@
+Sat Feb  7 10:56:00 1998  Stephan Kulow  <coolo@kde.org>
+
+	* libtool.m4.in: updated to latest libtool 1.0i
+
+Fri Feb  6 21:26:51 1998  Stephan Kulow  <coolo@kde.org>
+
+	* acinclude.m4.in: added a AC_PROVIDE for AC_PROG_CC and
+	AC_PROG_CPP to KDE_CHECK_COMPILERS
+
 Thu Feb  5 16:27:47 1998  Stephan Kulow  <coolo@kde.org>
 
 	* acinclude.m4.in: put $QTDIR/bin before /usr/bin in the path to
