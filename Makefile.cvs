@@ -1,0 +1,15 @@
+all: 
+	@echo "This Makefile is only for the CVS repository"
+	@echo "I will delete it before making the distribution"
+	@echo ""
+	aclocal 
+	autoheader
+	automake
+	autoconf
+
+dist:
+	aclocal 
+	autoheader
+	automake --foreign --include-deps
+	autoconf
+
