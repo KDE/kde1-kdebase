@@ -1,26 +1,25 @@
 
 //
-// KDE Display background setup module
+// KPixmap
 //
-// Copyright (c)  Martin R. Jones 1996
+// Copyright (c)  Mark Donohoe 1998
 //
-// Gradient fill added by Mark Donohoe 1997
-//
-// Converted to a kcc module by Matthias Hoelzer 1997
+// Pattern fill by Stephan Kulow 1998
 //
 
-#include <qgrpbox.h>
-#include <qlabel.h>
 #include <qpixmap.h>
-#include <qfiledlg.h>
-#include <qradiobt.h>
 #include <qpainter.h>
-#include <qlayout.h>
-#include <kapp.h>
-#include <stdlib.h>
 #include <qimage.h>
+#include <qbitmap.h>
+#include <qcolor.h>
+
+#include <kapp.h>
+#include <dither.h>
 
 #include "kpixmap.h"
+
+// Fast diffuse dither to 3x3x3 color cube
+// Based on Qt's image conversion functions
 
 static bool kdither_32_to_8( const QImage *src, QImage *dst )
 {
@@ -28,10 +27,14 @@ static bool kdither_32_to_8( const QImage *src, QImage *dst )
     uchar  *b;
     int	    y;
 	
+	//printf("kconvert_32_to_8\n");
+	
     if ( !dst->create(src->width(), src->height(), 8, 256) ) {
+		printf("kconvert - Destination not valid\n");
 		return FALSE;
 	}
 
+	printf("kconvert32_to8 - Will quantize this image \n");
     int ncols = 256;
 
     static uint bm[16][16];
@@ -62,8 +65,6 @@ static bool kdither_32_to_8( const QImage *src, QImage *dst )
 
     dst->setNumColors( ncols );
 
-    // quantization needed
-
 #define MAX_R 2
 #define MAX_G 2
 #define MAX_B 2
@@ -79,37 +80,93 @@ static bool kdither_32_to_8( const QImage *src, QImage *dst )
 		}	
 
 	int sw = src->width();
+	int* line1[3];
+	int* line2[3];
+	int* pv[3];
 
-#define DITHER(p,d,m) ((uchar) ((((256 * (m) + (m) + 1)) * (p) + (d)) / 65536 ))
+	line1[0] = new int[src->width()];
+	line2[0] = new int[src->width()];
+	line1[1] = new int[src->width()];
+	line2[1] = new int[src->width()];
+	line1[2] = new int[src->width()];
+	line2[2] = new int[src->width()];
+	pv[0] = new int[sw];
+	pv[1] = new int[sw];
+	pv[2] = new int[sw];
 
 	for ( y=0; y < src->height(); y++ ) {
 	    p = (QRgb *)src->scanLine(y);
 	    b = dst->scanLine(y);
-	    QRgb *end = p + sw;
+		int endian = (QImage::systemByteOrder() == QImage::BigEndian);
+		int x;
+		uchar* q = src->scanLine(y);
+		uchar* q2 = src->scanLine(y+1 < src->height() ? y + 1 : 0);
+		for (int chan = 0; chan < 3; chan++) {
+		    b = dst->scanLine(y);
+		    int *l1 = (y&1) ? line2[chan] : line1[chan];
+		    int *l2 = (y&1) ? line1[chan] : line2[chan];
+		    if ( y == 0 ) {
+			for (int i=0; i<sw; i++)
+			    l1[i] = q[i*4+chan+endian];
+		    }
+		    if ( y+1 < src->height() ) {
+			for (int i=0; i<sw; i++)
+			    l2[i] = q2[i*4+chan+endian];
+		    }
+		    // Bi-directional error diffusion
+		    if ( y&1 ) {
+			for (x=0; x<sw; x++) {
+			    int pix = QMAX(QMIN(2, (l1[x] * 2 + 128)/ 255), 0);
+			    int err = l1[x] - pix * 255 / 2;
+			    pv[chan][x] = pix;
 
-	    // perform quantization
-		int x = 0;
-		while ( p < end ) {
-		    uint d = bm[y&15][x&15];
+			    // Spread the error around...
+			    if ( x+1<sw ) {
+				l1[x+1] += (err*7)>>4;
+				l2[x+1] += err>>4;
+			    }
+			    l2[x]+=(err*5)>>4;
+			    if (x>1) 
+				l2[x-1]+=(err*3)>>4;
+			}
+		    } else {
+			for (x=sw; x-->0; ) {
+			    int pix = QMAX(QMIN(2, (l1[x] * 2 + 128)/ 255), 0);
+			    int err = l1[x] - pix * 255 / 2;
+			    pv[chan][x] = pix;
 
-		    rc = qRed( *p );
-		    gc = qGreen( *p );
-		    bc = qBlue( *p );
-
-		    *b++ =
-			INDEXOF(
-			    DITHER(rc, d, MAX_R),
-			    DITHER(gc, d, MAX_G),
-			    DITHER(bc, d, MAX_B)
-			);
-
-		    p++;
-		    x++;
+			    // Spread the error around...
+			    if ( x > 0 ) {
+				l1[x-1] += (err*7)>>4;
+				l2[x-1] += err>>4;
+			    }
+			    l2[x]+=(err*5)>>4;
+			    if (x+1 < sw) 
+				l2[x+1]+=(err*3)>>4;
+			}
+		    }
+		}
+		if (endian) {
+		    for (x=0; x<sw; x++) {
+			*b++ = INDEXOF(pv[2][x],pv[1][x],pv[0][x]);
+		    }
+		} else {
+		    for (x=0; x<sw; x++) {
+			*b++ = INDEXOF(pv[0][x],pv[1][x],pv[2][x]);
+		    }
 		}
 	}
-	
-#undef DITHER
 
+	delete line1[0];
+	delete line2[0];
+	delete line1[1];
+	delete line2[1];
+	delete line1[2];
+	delete line2[2];
+	delete pv[0];
+	delete pv[1];
+	delete pv[2];
+	
 #undef MAX_R
 #undef MAX_G
 #undef MAX_B
@@ -118,90 +175,109 @@ static bool kdither_32_to_8( const QImage *src, QImage *dst )
     return TRUE;
 }
 
-//----------------------------------------------------------------------------
-
-void KPixmap::gradientFill( QColor color1, QColor color2, bool upDown )
-{
-	QPixmap cropped_pm;
-    int y_size, steps;;
-	float ratio;
-	QColor col;
-	uint *p, rgbcol;
-
-    if ( upDown )
-    	y_size=height();
+void KPixmap::gradientFill( QColor ca, QColor cb, bool upDown, int ncols )
+{				
+	QPixmap pmCrop;
+	QColor cRow;
+    int ySize;
+    int rca, gca, bca;
+    int rDiff, gDiff, bDiff;
+    float rat;
+    uint *p;
+    uint rgbRow;
+	
+	
+	if( upDown )
+    	ySize = height();
     else
-    	y_size=width();
-        
-    cropped_pm.resize( 40, y_size );
- 
- 	QImage image(40, y_size, 32);
-	
-	int red1 = color1.red();
-	int green1 = color1.green();
-	int blue1 = color1.blue();
-	
-	int red_dif = color2.red()-color1.red();
-	int green_dif = color2.green()-color1.green();
-	int blue_dif = color2.blue()-color1.blue();
-
-	for ( int s = y_size-1; s > 0; s-- )
-	{
-		p = (uint *) image.scanLine( y_size - s - 1 );
-		ratio = 1.0 * s / y_size;
-		
-		col.setRgb( red1 + (int) ( red_dif*ratio ) ,
-					green1 + (int) ( green_dif*ratio ),
-					blue1 + (int) ( blue_dif*ratio )	);
-		
-		rgbcol = col.rgb();
-		
-		for( int h = 0; h < 40; h++ ) {
-			*p = rgbcol;
+    	ySize = width();
+    
+    pmCrop.resize( 30, ySize );
+    QImage image( 30, ySize, 32 );
+    
+    rca = ca.red();
+    gca = ca.green();
+    bca = ca.blue();
+    rDiff = cb.red() - ca.red();
+    gDiff = cb.green() - ca.green();
+    bDiff = cb.blue() - ca.blue();
+    
+    for ( int y = ySize - 1; y > 0; y-- ) {
+	    p = (uint *) image.scanLine( ySize - y - 1 );
+	    rat = 1.0 * y / ySize;
+	    
+		cRow.setRgb( rca + (int) ( rDiff * rat ),
+						gca + (int) ( gDiff * rat ), 
+						bca + (int) ( bDiff * rat ) );
+	    
+		rgbRow = cRow.rgb();
+	    
+	    for( int x = 0; x < 30; x++ ) {
+			*p = rgbRow;
 			p++;
-		}
+	    }
 	}
-		
+	
 	if ( QColor::numBitPlanes() == 8 ) {
-		QImage tImage( image.width(), image.height(), 8, 256 );
-		kdither_32_to_8( &image, &tImage );
-		cropped_pm.convertFromImage( tImage );
-	} else
-		cropped_pm.convertFromImage( image );
+	
+		if ( ncols < 2 || ncols > 256 ) ncols = 3;
+
+		QColor *dPal = new QColor[ncols];
+		for ( int i=0; i<ncols; i++) {
+			dPal[i].setRgb ( rca + rDiff * i / ( ncols - 1 ),
+								gca + gDiff * i / ( ncols - 1 ),
+								bca + bDiff * i / ( ncols - 1 ) );
+		}
+
+		kFSDither dither( dPal, ncols );
+		QImage dImage = dither.dither( image );
+		pmCrop.convertFromImage( dImage );
 		
+		delete [] dPal;	
+		
+	} else 
+		pmCrop.convertFromImage( image );
 	
-	if ( upDown )
-		steps = width() / 20 + 1;
+	// Copy the cropped pixmap into the KPixmap.
+	// Extract only a central column from the cropped pixmap
+	// to avoid edge effects.
+	
+	int s;
+	int sSize = 20;
+	int sOffset = 5;
+	
+	if( upDown )
+	    s = width() / sSize + 1;
 	else
-		steps = height() / 20 + 1;
+	    s = height() / sSize + 1;
 	
-	QPainter painter;
-	painter.begin( this );
+	QPainter paint;
+	paint.begin( this );
 	
 	if ( upDown )	
-		for( int s=0; s<steps; s++ )
-			painter.drawPixmap( 20*s, 0, cropped_pm, 10, 0, 20, y_size );
+	    for( int i=0; i<s; i++ )
+			paint.drawPixmap( sSize*i, 0, pmCrop, sOffset, 0 , sSize, ySize );
 	else {
-		QWMatrix matrix;
-        matrix.translate( (float) width() - 1.0, 0.0  );
-       	matrix.rotate( 90.0 );
-       	painter.setWorldMatrix( matrix );
-       	for ( int s=0; s<steps; s++ )
-			painter.drawPixmap( 20*s, 0, cropped_pm, 10, 0, 20, y_size );
-    }
-    
-	painter.end();
+	    QWMatrix matrix;
+	    matrix.translate( (float) width() - 1.0, 0.0 );
+	    matrix.rotate( 90.0 );
+	    paint.setWorldMatrix( matrix );
+	    for( int i=0; i<s; i++)
+			paint.drawPixmap( sSize*i, 0, pmCrop, sOffset, 0 , sSize, ySize );
+	}
+	
+	paint.end();
 }
 
-void KPixmap::patternFill( QColor color1, QColor color2, uint pattern[8] )
+void KPixmap::patternFill( QColor ca, QColor cb, uint pattern[8] )
 {
     QPixmap tile( 8, 8 );
-    tile.fill( color2 );
+    tile.fill( cb );
 	
     QPainter pt;
     pt.begin( &tile );
-    pt.setBackgroundColor( color2 );
-    pt.setPen( color1 );
+    pt.setBackgroundColor( cb );
+    pt.setPen( ca );
     
     for ( int y = 0; y < 8; y++ ) {
 		uint v = pattern[y];
@@ -308,7 +384,6 @@ bool KPixmap::convertFromImage( const QImage &img, int conversion_flags  )
 			}
 		}
 		
-	
 		QImage  image = img.convertDepth(32);
 		
 		QImage tImage( image.width(), image.height(), 8, 256 );

@@ -1,4 +1,3 @@
-//-----------------------------------------------------------------------------
 //
 // KPixmap
 //
@@ -21,16 +20,16 @@ public:
 	KPixmap() {};
 	~KPixmap() {};
     
-	void gradientFill( QColor color1, QColor color2, bool upDown = TRUE );
-	void patternFill( QColor color1, QColor color2, uint pattern[8] );
+	void gradientFill( QColor ca, QColor cb, bool upDown = TRUE, int ncols = 3 );
+	void patternFill( QColor ca, QColor cb, uint pattern[8] );
 			
 	bool convertFromImage( const QImage &img, int conversion_flags );
-	bool convertFromImage( const QImage &img, ColorMode mode=WebColor );
+	bool convertFromImage( const QImage &img, ColorMode mode = WebColor );
 	
 	
 	bool load( const char *fileName, const char *format, int conversion_flags );
-	bool load( const char *fileName, const char *format=0,
-		ColorMode mode=WebColor );
+	bool load( const char *fileName, const char *format = 0,
+		ColorMode mode = WebColor );
 		
 	bool checkColorTable(const QImage &image);	
 };
