@@ -7,11 +7,11 @@ msgstr ""
 "Files: main.C\n"
 
 #: main.C:220
-msgid "_add_character"
+msgid "Add characters to word class"
 msgstr "Zeichen zur Wortklasse hinzufügen"
 
 #: main.C:224
-msgid "_choose colormode"
+msgid "choose type of color-mode"
 msgstr "Modus der Farbdarstellung"
 
 #: main.C:228
@@ -151,7 +151,9 @@ msgid "Hint"
 msgstr "Hinweis"
 
 #: main.C:740
-msgid "_new color secure"
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
 msgstr ""
 "Die neuen Farbeinstellungen werden sichtbar\n"
 "sobald die Tastatur entsperrt ist."
@@ -161,7 +163,14 @@ msgid "About kvt"
 msgstr "Über kvt"
 
 #: main.C:760
-msgid "_copyright"
+msgid ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08"
 msgstr ""
 "\n"
 "\n"
