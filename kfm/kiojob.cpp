@@ -1012,12 +1012,12 @@ void KIOJob::del()
 	    if ( S_ISLNK( lbuff.st_mode ) )
 	    {
 		// No recursion here!
-                // This is a symlink. If it points to a directory, it has a '/' 
-                // appended, which we have to remove
+                // This is a symlink. If it points to a directory, it may have
+                // a '/' appended, which we have to remove
                 if ( S_ISDIR( buff.st_mode ) )
                 {
                     char * e = p + strlen(p) - 1;
-                    *e='\0';
+                    if (*e=='/') *e='\0';
                 }
 	    }
 	    else if ( S_ISDIR( buff.st_mode ) )
