@@ -896,14 +896,14 @@ void MyApp::readConfiguration(){
 
     //CT 23Sep1998 - fixed the name of the shaped borders pixmaps to become
     //   consistent with the buttons pixmaps definition technique
-    *(options.shapePixmapTop) = getIconLoader()	->loadIcon("top.xpm");
-    *(options.shapePixmapBottom) = getIconLoader()->loadIcon("bottom.xpm");
-    *(options.shapePixmapLeft) = getIconLoader()->loadIcon("left.xpm");
-    *(options.shapePixmapRight) = getIconLoader()->loadIcon("right.xpm");
-    *(options.shapePixmapTopLeft) = getIconLoader()->loadIcon("topleft.xpm");
-    *(options.shapePixmapTopRight) = getIconLoader()->loadIcon("topright.xpm");
-    *(options.shapePixmapBottomLeft) = getIconLoader()->loadIcon("bottomleft.xpm");
-    *(options.shapePixmapBottomRight) = getIconLoader()->loadIcon("bottomright.xpm");
+    *(options.shapePixmapTop) = getIconLoader()	->loadIcon("wm_top.xpm");
+    *(options.shapePixmapBottom) = getIconLoader()->loadIcon("wm_bottom.xpm");
+    *(options.shapePixmapLeft) = getIconLoader()->loadIcon("wm_left.xpm");
+    *(options.shapePixmapRight) = getIconLoader()->loadIcon("wm_right.xpm");
+    *(options.shapePixmapTopLeft) = getIconLoader()->loadIcon("wm_topleft.xpm");
+    *(options.shapePixmapTopRight) = getIconLoader()->loadIcon("wm_topright.xpm");
+    *(options.shapePixmapBottomLeft) = getIconLoader()->loadIcon("wm_bottomleft.xpm");
+    *(options.shapePixmapBottomRight) = getIconLoader()->loadIcon("wm_bottomright.xpm");
 
 
     if (

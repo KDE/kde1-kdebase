@@ -14,6 +14,9 @@ In 0.12:
 patchlevel 3:
         - honours KWM_WIN_ICON_GEOMETRY for iconify/deiconify animation
         - shaped window decorations faster and less flickering
+        - border pixmaps fixed names got all a 'wm_' prefix. Name conflicts
+		were reported. Sorry for all inconvenient.
+
 
 patchlevel 2:
         - improved shaped window handling
