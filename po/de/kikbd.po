@@ -26,7 +26,7 @@ msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
-"X codes \"%s\" Datei existiert nicht.\n"
+"X Codes \"%s\" Datei existiert nicht.\n"
 "Benutze X Standard codes."
 
 #: kikbd.cpp:313
@@ -83,7 +83,7 @@ msgid ""
 msgstr ""
 "Symbol \"%s\" nicht gefunden.\n"
 "Vielleicht passen Ihre Standard X Codes nicht.\n"
-"Sie können die X codes unter \"Erweitert\"\n"
+"Sie können die X Codes unter \"Erweitert\"\n"
 "im Konfigurationsprogramm voreinstellen."
 
 #: keymap.cpp:233
