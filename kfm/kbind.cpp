@@ -1780,7 +1780,7 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     while ( ( i = exec.find( "%i" ) ) != -1 )
       exec.replace( i, 2, icon.data());
     if (!miniicon.isEmpty())
-      icon.prepend("-miniicon ");
+      miniicon.prepend("-miniicon ");
     while ( ( i = exec.find( "%m" ) ) != -1 )
       exec.replace( i, 2, miniicon.data());
     
