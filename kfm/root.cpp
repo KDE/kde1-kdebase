@@ -1127,23 +1127,26 @@ void KRootIcon::initToolTip()
 
 void KRootIcon::initFilename() 
 {
-    int pos = url.findRev( "/" );
-    file = url.mid( pos + 1, url.length() );
+    // first calculate the default
+    file = url.mid( url.findRev( "/" ) + 1, url.length() );
     if ( file.find( ".kdelnk" ) == ((int)file.length()) - 7 )
 	file = file.left( file.length() - 7 );
     file.detach();
 
     // the following code is taken out of kbind.cpp, where nearly 
     // the same is run before this.
-    // I didn't wanted to introduce new member functions, so it exists
+    // I didn't want to introduce new member functions, so it exists
     // twice
     QString decoded = url;
     KURL::decodeURL( decoded );
     
     QString n = decoded.data() + 5;
-    n += "/.directory";
 
-    QFile f( n.data() );
+    QDir dir(n); // no static method available
+    if (dir.exists()) // a directoy
+	n += "/.directory";
+    
+    QFile f( n );
     if ( !f.open( IO_ReadOnly ) )
 	return;
     f.close();
