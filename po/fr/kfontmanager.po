@@ -163,7 +163,7 @@ msgstr "italique"
 
 #: kfontexplorer.cpp:326
 msgid "Dolor Ipse"
-msgstr ""
+msgstr "L'élève a dépassé le Maître"
 
 #: kfontexplorer.cpp:430
 msgid "Bold"
