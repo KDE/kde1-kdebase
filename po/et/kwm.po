@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Hasso C. Tepper <heathcliff@iname.com>, 1999.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.C:68
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr "kwm: näib, et aknahaldur on juba käivitatud. kwm ei käivitunud\n"
+
+
+#: main.C:82
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "kwm: viga initsialiseerimisel; katkestamine\n"
+
+#: main.C:485
+msgid "Preparing session ... "
+msgstr "Seansi ette valmistamine ... "
+
+#: main.C:509
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: main.C:516
+msgid "Usage: "
+msgstr "Kasutusviis: "
+
+#: main.C:527
+msgid "&Maximize"
+msgstr "&Maksimeeri"
+
+#: main.C:528
+msgid "&Restore"
+msgstr "&Taasta"
+
+#: main.C:529
+msgid "&Iconify"
+msgstr "&Ikooni"
+
+#: main.C:530
+msgid "&DeIconify"
+msgstr "&Desikooni"
+
+#: main.C:531
+msgid "&Sticky"
+msgstr "&Kleepuv"
+
+#: main.C:532
+msgid "&UnSticky"
+msgstr "&Mittekleepuv"
+
+#: main.C:533
+msgid "Mo&ve"
+msgstr "&Liiguta"
+
+#: main.C:534
+msgid "Resi&ze"
+msgstr "Muuda &suurust"
+
+#: main.C:536
+msgid "&To desktop"
+msgstr "&Töölauale"
+
+#: main.C:538
+msgid "&Onto current desktop"
+msgstr "&Käesolevale töölauale"
+
+#: main.C:578
+msgid "One"
+msgstr "Üks"
+
+#: main.C:581
+msgid "Two"
+msgstr "Kaks"
+
+#: main.C:584
+msgid "Three"
+msgstr "Kolm"
+
+#: main.C:587
+msgid "Four"
+msgstr "Neli"
+
+#: main.C:590
+msgid "Five"
+msgstr "Viis"
+
+#: main.C:593
+msgid "Six"
+msgstr "Kuus"
+
+#: main.C:596
+msgid "Seven"
+msgstr "Seitse"
+
+#: main.C:599
+msgid "Eight"
+msgstr "Kaheksa"
+
+#: main.C:613
+msgid "Unnamed Desktop"
+msgstr "Nimetu töölaud"
+
+#: main.C:1040
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr "Mõned pikselrastrid ei ole kehtivad: ShapeMode keelatud\n"
+
+#: main.C:1152
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr "Mõned pikselrastrid ei ole kehtivad: GimmickMode keelatud\n"
+
+#: main.C:1477
+msgid "*** No Tasks ***"
+msgstr "*** Tegumeid pole ***"
+
+#: minicli.C:122
+msgid "Command:"
+msgstr "Käsk:"
+
+#: warning.C:36
+msgid "Ooops!"
+msgstr "Uups!"
+
+#: logout.C:36 taskmgr.C:108
+msgid "Logout"
+msgstr "Välja logimine"
+
+#: logout.C:46
+msgid "Session prepared for logout"
+msgstr "Seanss ette valmistatud välja logimiseks"
+
+#: logout.C:52
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+"Järgnevad rakendused sisaldavad salvestamata andmeid,\n"
+"mis ei ole taastatavad järgmistes seanssides."
+
+#: logout.C:63
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+"Järgnevaid rakendusi ei saa taastada järgmises seansis, vaid ainult\n"
+"uuesti käivitada. Tee kindlaks, et nad ei sisaldaks tähtsat salveastamata\n"
+"informatsiooni."
+
+#: logout.C:74
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+"Järgnevad rakendused ei ole X11-teadlikud ja nii ei saa neid taastada järgmises\n"
+"seansis. Tee kindlaks, et nad ei sisaldaks tähtsat salvestamata informatsiooni."
+
+#: taskmgr.C:107
+msgid "Switch to"
+msgstr "Lülita"
+
+#: taskmgr.C:121
+msgid "Current session"
+msgstr "Käesolev seanss"

@@ -1,0 +1,200 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Hasso C. Tepper <heathcliff@iname.com>, 1999.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:53
+msgid "&Sound"
+msgstr "&Heli"
+
+#: main.cpp:80
+msgid "System Sounds"
+msgstr "Süsteemsed helid"
+
+#: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
+msgid "(none)"
+msgstr "(puudub)"
+
+#: syssound.cpp:147
+msgid "Change to Desktop 1"
+msgstr "Minek töölauale 1"
+
+#: syssound.cpp:148
+msgid "Change to Desktop 2"
+msgstr "Minek töölauale 2"
+
+#: syssound.cpp:149
+msgid "Change to Desktop 3"
+msgstr "Minek töölauale 3"
+
+#: syssound.cpp:150
+msgid "Change to Desktop 4"
+msgstr "Minek töölauale 4"
+
+#: syssound.cpp:151
+msgid "Change to Desktop 5"
+msgstr "Minek töölauale 5"
+
+#: syssound.cpp:152
+msgid "Change to Desktop 6"
+msgstr "Minek töölauale 6"
+
+#: syssound.cpp:153
+msgid "Change to Desktop 7"
+msgstr "Minek töölauale 7"
+
+#: syssound.cpp:154
+msgid "Change to Desktop 8"
+msgstr "Minek töölauale 8"
+
+#: syssound.cpp:156
+msgid "Activate Window"
+msgstr "Akna aktiviseerimine"
+
+#: syssound.cpp:157
+msgid "Open new window"
+msgstr "Uue akna avamine"
+
+#: syssound.cpp:158
+msgid "Close Window"
+msgstr "Akna sulgemine"
+
+#: syssound.cpp:159
+msgid "Startup"
+msgstr "Alglaadimine"
+
+#: syssound.cpp:161
+msgid "Window Shade Up"
+msgstr "Akna üles toomine"
+
+#: syssound.cpp:162
+msgid "Window Shade Down"
+msgstr "Akna alla varjumine"
+
+#: syssound.cpp:163
+msgid "Window Iconify"
+msgstr "Akna ikoonimine"
+
+#: syssound.cpp:164
+msgid "Window DeIconify"
+msgstr "Akna desikoonimine"
+
+#: syssound.cpp:165
+msgid "Window Maximize"
+msgstr "Akna maksimeerimine"
+
+#: syssound.cpp:166
+msgid "Window UnMaximize"
+msgstr "Akna Demaksimeerimine"
+
+#: syssound.cpp:167
+msgid "Window Sticky"
+msgstr "Aken kleepuvaks"
+
+#: syssound.cpp:168
+msgid "Window UnSticky"
+msgstr "Aken mittekleepuvaks"
+
+#: syssound.cpp:169
+msgid "Window Trans New"
+msgstr "Window Trans New"
+
+#: syssound.cpp:170
+msgid "Window Trans Delete"
+msgstr "Window Trans Delete"
+
+#: syssound.cpp:171
+msgid "Logout"
+msgstr "Välja logimine"
+
+#: syssound.cpp:172
+msgid "Logout Message"
+msgstr "Väljalogimise teade"
+
+#: syssound.cpp:173
+msgid "Window Move Start"
+msgstr "Akna liigutamise algus"
+
+#: syssound.cpp:174
+msgid "Window Move End"
+msgstr "Akna liigutamise lõpp"
+
+#: syssound.cpp:175
+msgid "Window Resize Start"
+msgstr "Akna suuruse muutmise algus"
+
+#: syssound.cpp:176
+msgid "Window Resize End"
+msgstr "Akna suuruse muutmise lõpp"
+
+#: syssound.cpp:198
+msgid "e&nable system sounds"
+msgstr "&luba süsteemseid helisid"
+
+#: syssound.cpp:203
+msgid "&Test"
+msgstr "&Test"
+
+#: syssound.cpp:207
+msgid "&Events:"
+msgstr "&Sündmused"
+
+#: syssound.cpp:211
+msgid "&Sounds:"
+msgstr "&Helid:"
+
+#: syssound.cpp:216
+msgid "Additional WAV files can be dropped onto the sound list."
+msgstr "WAV-failide lisamiseks kukuta need helide nimekirja."
+
+#: syssound.cpp:456
+msgid "Unsupported URL"
+msgstr "Toetuseta aadress"
+
+#: syssound.cpp:458
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE System Sound "
+"Module"
+msgstr ""
+"Vabandust, seda tüüpi URL ei ole toetatud KDE süsteemse helimooduli "
+"poolt"
+
+#: syssound.cpp:468
+#, c-format
+msgid ""
+"Sorry, but \n"
+"%s\n"
+"does not seem to be a WAV--file."
+msgstr ""
+"Vabandust, aga\n"
+"%s\n"
+"ei paista olevat WAV-fail."
+
+#: syssound.cpp:471
+msgid "Improper File Extension"
+msgstr "Ebatäpne faili laiend"
+
+#: syssound.cpp:482
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"is already in the list"
+msgstr ""
+"Fail\n"
+"%s\n"
+"on juba nimekirjas"
+
+#: syssound.cpp:486
+msgid "File Already in List"
+msgstr "Fail on juba nimekirjas"

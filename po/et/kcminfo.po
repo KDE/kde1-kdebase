@@ -1,0 +1,229 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Hasso C. Tepper <heathcliff@iname.com>, 1999.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-12-12 15:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: info.cpp:50
+#, c-format
+msgid "screen #%d"
+msgstr "ekraan #%d"
+
+#: info.cpp:52
+#, c-format
+msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
+msgstr "  mõõtmed	          : %dx%d pixelit (%dx%d mm)\n"
+
+#: info.cpp:56
+#, c-format
+msgid "  resolution          : %dx%d dots per inch\n"
+msgstr "  resolutsioon	      : %dx%d punkti tollile\n"
+
+#: info.cpp:61
+#, c-format
+msgid "  depths (%d)          : "
+msgstr "  sügavus (%d)	       : "
+
+#: info.cpp:85
+#, c-format
+msgid "name of display       : %s"
+msgstr "kuva nimi	          : %s"
+
+#: info.cpp:87
+#, c-format
+msgid "version number        : %i.%i"
+msgstr "versiooni number      : %i.%i"
+
+#: info.cpp:89
+#, c-format
+msgid "vendor string         : %s"
+msgstr "tootja string         : %s"
+
+#: info.cpp:91
+#, c-format
+msgid "vendor release number : %i"
+msgstr "tootja väljalaske nr. : %i"
+
+#: info.cpp:93
+#, c-format
+msgid "default screen number : %i"
+msgstr "vaikimisi ekraani nr. : %i"
+
+#: info.cpp:95
+#, c-format
+msgid "number of screens     : %i"
+msgstr "ekraanide arv         : %i"
+
+#: info.cpp:179
+msgid ""
+"No Information available\n"
+" or\n"
+"this system is not yet supported :-("
+msgstr ""
+"Informatsiooni pole\n"
+" või\n"
+"pole see süsteem veel toetatud :-("
+
+#: info_fbsd.cpp:73
+#, c-format
+msgid "%s, unknown speed"
+msgstr "%s, kiirus teadmata"
+
+#: info_fbsd.cpp:75
+#, c-format
+msgid "%s running at %s MHz"
+msgstr "%s jookseb sagedusel %s MHz"
+
+#: info_fbsd.cpp:213
+msgid "Ahh couldn't open fstab!"
+msgstr "Faili fstab ei ole võimalik avada"
+
+#: info_fbsd.cpp:220 info_fbsd.cpp:221
+msgid "Device"
+msgstr "Seade"
+
+#: info_fbsd.cpp:223 info_fbsd.cpp:224
+msgid "Mount Point"
+msgstr "Ühenduspunkt"
+
+#: info_fbsd.cpp:226 info_fbsd.cpp:227
+msgid "FS Type"
+msgstr "FS tüüp"
+
+#: info_fbsd.cpp:229 info_fbsd.cpp:230
+msgid "Mount Options"
+msgstr "Ühendamise valikud"
+
+#: info_hpux.cpp:54
+msgid "unknown CPU type"
+msgstr "tundmatu protsessori tüüp"
+
+#: info_hpux.cpp:62
+msgid "unavailable"
+msgstr "kättesaamatu"
+
+#: info_hpux.cpp:67
+msgid "Number of active processor(s)= "
+msgstr "Aktiivsete protsessorite arv = "
+
+#: info_linux.cpp:99
+msgid "Value"
+msgstr "Väärtus"
+
+#: info_linux.cpp:114
+msgid "DMA-Channel"
+msgstr "DMA kanal"
+
+#: info_linux.cpp:115 info_linux.cpp:128
+msgid "used by"
+msgstr "kasutab"
+
+#: info_linux.cpp:127
+msgid "I/O-Range"
+msgstr "I/O piirkond"
+
+#: main.cpp:79
+msgid "&Memory"
+msgstr "&Mälu"
+
+#: main.cpp:82
+msgid "&Processor"
+msgstr "&Protsessor"
+
+#: main.cpp:85
+msgid "&Interrupts"
+msgstr "&Katkestused"
+
+#: main.cpp:88
+msgid "DMA-C&hannels"
+msgstr "&DMA kanalid"
+
+#: main.cpp:91
+msgid "&IO-Ports"
+msgstr "&IO pordid"
+
+#: main.cpp:94
+msgid "PCI-&Bus"
+msgstr "PCI sii&n"
+
+#: main.cpp:97
+msgid "S&ound"
+msgstr "&Heli"
+
+#: main.cpp:100
+msgid "&Devices"
+msgstr "&Seadmed"
+
+#: main.cpp:103
+msgid "S&CSI"
+msgstr "S&CSI"
+
+#: main.cpp:106
+msgid "P&artitions"
+msgstr "P&artitsioonid"
+
+#: main.cpp:109
+msgid "&X-Server"
+msgstr "&X server"
+
+#: main.cpp:120
+msgid ""
+"usage: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
+msgstr ""
+"kasutusviis: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
+
+#: main.cpp:148
+msgid "System Information"
+msgstr "Süsteemne informatsioon"
+
+#: memory.cpp:15
+msgid "Total memory"
+msgstr "Mälu kokku"
+
+#: memory.cpp:25
+msgid "Free memory"
+msgstr "Vaba mälu"
+
+#: memory.cpp:33
+msgid "Shared memory"
+msgstr "Jagatud mälu"
+
+#: memory.cpp:41
+msgid "Buffer memory"
+msgstr "Puhverdusmälu"
+
+#: memory.cpp:49
+msgid "Swap memory"
+msgstr "Saalemälu"
+
+#: memory.cpp:57
+msgid "Free swap memory"
+msgstr "Vaba saalemälu"
+
+#: memory.cpp:78
+#, c-format
+msgid "%10ld bytes  = %8.2f MB"
+msgstr "%10ld baiti  = %8.2f MB"
+
+#: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
+#: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
+msgid "Not available"
+msgstr "Pole saadaval"
+
+#: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
+#: memory_sgi.cpp:30
+msgid "Not Available"
+msgstr "Pole saadaval"

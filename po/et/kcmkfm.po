@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Hasso C. Tepper <heathcliff@iname.com>, 1999.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:61
+msgid "&Font"
+msgstr "&Font"
+
+#: main.cpp:63
+msgid "&Color"
+msgstr "&Värv"
+
+#: main.cpp:65
+msgid "&Other"
+msgstr "&Muud"
+
+#: main.cpp:68
+msgid "&Proxy"
+msgstr "&Proxy"
+
+#: main.cpp:70
+msgid "&HTTP"
+msgstr "&HTTP"
+
+#: main.cpp:73
+msgid "User &Agent"
+msgstr "Kasutaja &agent"
+
+#: main.cpp:76
+msgid "Coo&kies"
+msgstr "&Küpsised"
+
+#: main.cpp:80
+msgid "&Desktop Icons"
+msgstr "&Töölaua ikoonid"
+
+#: main.cpp:89
+#, c-format
+msgid ""
+"usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+msgstr ""
+"kasutusviis: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+
+#: main.cpp:178
+msgid "KFM Configuration"
+msgstr "KFM konfiguratsioon"
+
+#: htmlopts.cpp:64
+msgid "Small"
+msgstr "Väike"
+
+#: htmlopts.cpp:69
+msgid "Medium"
+msgstr "Keskmine"
+
+#: htmlopts.cpp:74
+msgid "Large"
+msgstr "Suur"
+
+#: htmlopts.cpp:83
+msgid "Standard Font"
+msgstr "Standardne font"
+
+#: htmlopts.cpp:97
+msgid "Fixed Font"
+msgstr "Fikseeritud font"
+
+#: htmlopts.cpp:114
+msgid "Default Charset"
+msgstr "Vaikimisi kooditabel"
+
+#: htmlopts.cpp:122 htmlopts.cpp:276
+msgid "Use language charset"
+msgstr "Kasuta keele kooditabelit"
+
+#: htmlopts.cpp:329
+msgid "Background Color:"
+msgstr "Tausta värv:"
+
+#: htmlopts.cpp:341
+msgid "Normal Text Color:"
+msgstr "Normaalse teksti värv:"
+
+#: htmlopts.cpp:353
+msgid "URL Link Color:"
+msgstr "URL lingi värv:"
+
+#: htmlopts.cpp:365
+msgid "Followed Link Color:"
+msgstr "Külastatud lingi värv:"
+
+#: htmlopts.cpp:377
+msgid "Change cursor over link."
+msgstr "Muuda kursorit lingil olles."
+
+#: htmlopts.cpp:383
+msgid "Underline links"
+msgstr "Kriipsuta lingid alla"
+
+#: miscopts.cpp:25
+msgid "&Allow per-URL settings"
+msgstr "&Luba seadistusi URL'i kohta"
+
+#: miscopts.cpp:33
+msgid "Tree &view follows navigation"
+msgstr "&Puu vaade jälgib navigeerimist"
+
+#: miscopts.cpp:43
+msgid "Terminal"
+msgstr "Terminal"
+
+#: kproxydlg.cpp:50
+msgid "Don't forget to save your settings!"
+msgstr "Ära unusta salvestada oma seadistusi!"
+
+#: kproxydlg.cpp:58
+msgid "Use proxy"
+msgstr "Kasuta proxy't"
+
+#: kproxydlg.cpp:67
+msgid "HTTP Proxy:"
+msgstr "HTTP proxy:"
+
+#: kproxydlg.cpp:82 kproxydlg.cpp:113
+msgid "Port:"
+msgstr "Port:"
+
+#: kproxydlg.cpp:98
+msgid "FTP Proxy:"
+msgstr "FTP proxy:"
+
+#: kproxydlg.cpp:128
+msgid "No Proxy for:"
+msgstr "Ära kasuta proxy't:"
+
+#: khttpoptdlg.cpp:38
+msgid "Accept languages:"
+msgstr "Aktsepteeri keeli:"
+
+#: khttpoptdlg.cpp:52
+msgid "Accept character sets:"
+msgstr "Aktsepteeri kooditabeleid:"
+
+#: khttpoptdlg.cpp:65
+msgid "Assume HTML"
+msgstr "Oleta HTML'i"
+
+#: useragentdlg.cpp:45
+msgid "On server:"
+msgstr "Serveris:"
+
+#: useragentdlg.cpp:67
+msgid "login as:"
+msgstr "logi sisse kui:"
+
+#: useragentdlg.cpp:87
+msgid "&Add"
+msgstr "&Lisa"
+
+#: useragentdlg.cpp:107
+msgid "Known bindings:"
+msgstr "Tuntud seosed:"
+
+#: kcookiesdlg.cpp:49
+msgid "&Enable Cookies"
+msgstr "Lu&ba küpsiseid"
+
+#: kcookiesdlg.cpp:56
+msgid "Default accept policy"
+msgstr "Vaikimisi aktsepteerimise poliitika"
+
+#: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
+msgid "Accept"
+msgstr "Aktsepteeri"
+
+#: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
+msgid "Ask"
+msgstr "Küsi"
+
+#: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
+msgid "Reject"
+msgstr "Keeldu"
+
+#: kcookiesdlg.cpp:90
+msgid "Domain specific settings:"
+msgstr "Domeenispetsiifilised seadistused:"
+
+#: kcookiesdlg.cpp:97
+msgid "Change domain accept policy"
+msgstr "Muuda domeeni aktsepteerimise poliitikat"
+
+#: kcookiesdlg.cpp:239
+msgid "You must enter a domain first !"
+msgstr "Esmalt pead sa sisestama domeeni!"
+
+#: rootopts.cpp:73
+msgid "Horizontal Root Grid Spacing:"
+msgstr "Ikoonide vahe horisontaalsuunas:"
+
+#: rootopts.cpp:84
+msgid "Vertical Root Grid Spacing:"
+msgstr "Ikoonide vahe vertikaalsuunas:"
+
+#: rootopts.cpp:95
+msgid "&Transparent Text for Desktop Icons."
+msgstr "&Läbipaistev text töölaua ikoonidel."
+
+#: rootopts.cpp:106
+msgid "Icon foreground color:"
+msgstr "Ikooni esiplaani värv"
+
+#: rootopts.cpp:118
+msgid "Icon background color:"
+msgstr "Ikooni tausta värv"
+
+#: rootopts.cpp:131
+msgid "Show &Hidden Files on Desktop"
+msgstr "Näita töölaual &peidetud faile"
+

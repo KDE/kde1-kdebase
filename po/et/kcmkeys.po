@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Hasso C. Tepper <heathcliff@iname.com>, 1999.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:72
+msgid "&Standard shortcuts"
+msgstr "&Standardsed kiirklahvid"
+
+#: main.cpp:80
+msgid "&Global shortcuts"
+msgstr "&Globaalsed kiirklahvid"
+
+#: main.cpp:88
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
+msgstr "kasutusviis: kcmkeys [-init | {standard,global}]\n"
+
+#: main.cpp:132
+msgid "Key binding settings"
+msgstr "Klahviseoste seadistused"
+
+#: keyconfig.cpp:106
+msgid "Current scheme"
+msgstr "Käesolev skeem"
+
+#: keyconfig.cpp:108
+msgid "KDE default"
+msgstr "KDE vaikeväärtused"
+
+#: keyconfig.cpp:115
+msgid "&Key scheme"
+msgstr "&Klahvide skeem"
+
+#: keyconfig.cpp:126
+msgid "&Add ..."
+msgstr "&Lisa ..."
+
+#: keyconfig.cpp:148
+msgid "&Save changes"
+msgstr "&Salvesta muudatused"
+
+#: keyconfig.cpp:211
+msgid "Error removing scheme"
+msgstr "Viga skeemi eemaldamisel"
+
+#: keyconfig.cpp:212
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+"Seda klahviskeemi ei saa eemaldada.\n"
+"Võibolla pole sul õigust teha muudatusi selles\n" 
+"failisüsteemis, kus hoitakse klahviskeemi."
+
+#: keyconfig.cpp:343
+msgid "Naming conflict"
+msgstr "Konflikt nimetamisel"
+
+#: keyconfig.cpp:344
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+"Palun vali uuele klahviskeemile kordumatu\n"
+"nimi. Sisestatud nimi juba eksisteerib\n" 
+"klahviskeemide nimekirjas."
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "Lisa klahviskeem"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"Sisesta nimi uue klahviskeemi jaoks,\n"
+"mis lisatakse sinu personaalsesse nimekirja.\n"
+"\n"
+"Klahvid, mida praegu kasutatakse eelvaatlusel\n"
+"kopeeritakse alustuseks sellesse skeemi."
+
+#: ../../kwm/kwmbindings.cpp:1
+msgid "Task manager"
+msgstr "Tegumi haldur"
+
+#: ../../kwm/kwmbindings.cpp:2
+msgid "Kill window mode"
+msgstr "Väljumine akende reziimist"
+
+#: ../../kwm/kwmbindings.cpp:3
+msgid "Execute command"
+msgstr "Käsu käivitamine"
+
+#: ../../kwm/kwmbindings.cpp:4
+msgid "Window operations menu"
+msgstr "Aknaoperatsiooni menüü"
+
+#: ../../kwm/kwmbindings.cpp:5
+msgid "Pop-up system menu"
+msgstr "Süsteemne hüpikmenüü"
+
+#: ../../kwm/kwmbindings.cpp:7
+msgid "Window raise"
+msgstr "Akna tõstmine"
+
+#: ../../kwm/kwmbindings.cpp:8
+msgid "Window lower"
+msgstr "Akna langetamine"
+
+#: ../../kwm/kwmbindings.cpp:9
+msgid "Window close"
+msgstr "Akna sulgemine"
+
+#: ../../kwm/kwmbindings.cpp:10
+msgid "Window iconify"
+msgstr "Akna ikoonimine"
+
+#: ../../kwm/kwmbindings.cpp:11
+msgid "Window resize"
+msgstr "Akna suuruse muutmine"
+
+#: ../../kwm/kwmbindings.cpp:12
+msgid "Window move"
+msgstr "Akna liigutamine"
+
+#: ../../kwm/kwmbindings.cpp:13
+msgid "Window toggle sticky"
+msgstr "Akna kleepuvuse lülitamine"
+
+#: ../../kwm/kwmbindings.cpp:15
+msgid "Switch to desktop 1"
+msgstr "Lülitumine töölauale 1"
+
+#: ../../kwm/kwmbindings.cpp:16
+msgid "Switch to desktop 2"
+msgstr "Lülitumine töölauale 2"
+
+#: ../../kwm/kwmbindings.cpp:17
+msgid "Switch to desktop 3"
+msgstr "Lülitumine töölauale 3"
+
+#: ../../kwm/kwmbindings.cpp:18
+msgid "Switch to desktop 4"
+msgstr "Lülitumine töölauale 4"
+
+#: ../../kwm/kwmbindings.cpp:19
+msgid "Switch to desktop 5"
+msgstr "Lülitumine töölauale 5"
+
+#: ../../kwm/kwmbindings.cpp:20
+msgid "Switch to desktop 6"
+msgstr "Lülitumine töölauale 6"
+
+#: ../../kwm/kwmbindings.cpp:21
+msgid "Switch to desktop 7"
+msgstr "Lülitumine töölauale 7"
+
+#: ../../kwm/kwmbindings.cpp:22
+msgid "Switch to desktop 8"
+msgstr "Lülitumine töölauale 8"
+
+#: ../../kwm/kwmbindings.cpp:24
+msgid "Switch one desktop to the right"
+msgstr "Lülitumine üks töölaud paremale"
+
+#: ../../kwm/kwmbindings.cpp:25
+msgid "Switch one desktop to the left"
+msgstr "Lülitumine üks töölaud vasakule"
+
+#: ../../kwm/kwmbindings.cpp:26
+msgid "Switch one desktop up"
+msgstr "Lülitumine üks töölaud üles"
+
+#: ../../kwm/kwmbindings.cpp:27
+msgid "Switch one desktop down"
+msgstr "Lülitumine üks töölaud alla"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Uus"
+
+#: stdbindings.cpp:7
+msgid "Next"
+msgstr "Järgmine"
+
+#: stdbindings.cpp:8
+msgid "Prior"
+msgstr "Eelmine"
+
+#: stdbindings.cpp:13
+msgid "Find"
+msgstr "Leia"
+
+#: stdbindings.cpp:16
+msgid "Home"
+msgstr "Kodu"
+
+#: stdbindings.cpp:17
+msgid "End"
+msgstr "Lõpp"

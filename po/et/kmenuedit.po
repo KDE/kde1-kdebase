@@ -1,0 +1,267 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Hasso C. Tepper <heathcliff@iname.com>, 1999.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kmenuedit.cpp:68
+msgid "Change &Menuname"
+msgstr "Muuda &menüü nime"
+
+#: kmenuedit.cpp:69
+msgid "Reload &Filetypes"
+msgstr "Laadi &failitüübid uuesti"
+
+#: kmenuedit.cpp:76
+msgid "by"
+msgstr "by"
+
+#: kmenuedit.cpp:175 kmenuedit.cpp:200
+msgid "Changes not saved !"
+msgstr "Muudatused pole salvestatud !"
+
+#: kmenuedit.cpp:176 kmenuedit.cpp:201
+msgid ""
+"\n"
+"Do you want to save your changes ?"
+msgstr ""
+"\n"
+"Soovid sa muudatused salvestada ?"
+
+#: confmenu.cpp:337 confmenu.cpp:929 kmenuedit.cpp:260
+msgid "EMPTY"
+msgstr "TÜHI"
+
+#: kmenuedit.cpp:339
+msgid "Reload Menus"
+msgstr "Laadi menüüd uuesti"
+
+#: kmenuedit.cpp:340
+msgid ""
+"Reloading the menus will discard all changes.\n"
+"Are you sure you want to reload ?"
+msgstr ""
+"Menüüde uuesti laadimine tühistab kõik muudatused.\n"
+"Oled sa kindel, et sa soovid uuesti laadida?"
+
+#: button.cpp:209 main.cpp:79 main.cpp:92
+msgid "KMenuedit"
+msgstr "KMenuedit"
+
+#: main.cpp:80
+msgid ""
+"The directory for your personal menu does not exist.\n"
+" Do you want to create it now ?"
+msgstr ""
+"Kataloogi sinu personaalse menüü jaoks ei eksisteeri.\n"
+"Soovid sa praegu selle luua ?"
+
+#: main.cpp:93
+msgid ""
+"Unable to create directory for personal menu.\n"
+" Select Ok to exit KMenuedit."
+msgstr ""
+"Kataloogi su personaalse menüü jaoks pole võimalik luua.\n"
+"Programmist väljumiseks vali OK."
+
+#: confmenu.cpp:91 entrydialog.cpp:52
+msgid "Separator"
+msgstr "Eraldaja"
+
+#: confmenu.cpp:103 confmenu.cpp:333
+msgid "Open/ Close"
+msgstr "Ava/ Sulge"
+
+#: confmenu.cpp:117
+msgid "Select item for moving"
+msgstr "Vali element, mida liigutada"
+
+#: confmenu.cpp:118
+msgid "Select menu for moving"
+msgstr "Vali menüü, mida liigutada"
+
+#: confmenu.cpp:120
+msgid "New"
+msgstr "Uus"
+
+#: confmenu.cpp:177 confmenu.cpp:316
+msgid "Warning !"
+msgstr "Hoiatus !"
+
+#: confmenu.cpp:178
+msgid "If you delete this button you will lose all of its submenus"
+msgstr "Selle nupu kustutamisega kaotad sa kõik selle alammenüüd"
+
+#: confmenu.cpp:297
+msgid "Wrong filename"
+msgstr "Vale failinimi"
+
+#: confmenu.cpp:298
+msgid ""
+"A kdelnk-file with this name does already exist. \n"
+"Please choose another filename."
+msgstr ""
+"Kdelnk fail sellise nimega eksisteerib juba. \n"
+"Palun vali teine failinimi."
+
+#: confmenu.cpp:317
+msgid "Changing the type of this button will delete all of its submenus"
+msgstr "Selle nupu tüübi muutmisega kaotad sa kõik selle alammenüüd"
+
+#: confmenu.cpp:338 confmenu.cpp:930
+msgid "no command"
+msgstr "käsk puudub"
+
+#: button.cpp:210
+msgid ""
+"Sorry ! You have to save your changes\n"
+"before you can drop this item on another window."
+msgstr ""
+"Vabandust! Enne pead sa salvestama muudatused\n"
+"kui tahad elemente lohistada teise aknasse."
+
+#: DesktopPathDialogData.cpp:37
+msgid "Path for KDE Desktop Entries is not set."
+msgstr "Tee KDE töölaua kirjete jaoks on seadmata."
+
+#: DesktopPathDialogData.cpp:49
+msgid "I suggest the following entries:"
+msgstr "Ma soovitan järgmiseid kirjeid:"
+
+#: DesktopPathDialogData.cpp:55
+msgid "Path:"
+msgstr "Tee:"
+
+#: DesktopPathDialogData.cpp:68
+msgid "PersonalPath:"
+msgstr "Personaalne tee:"
+
+#: entrydialog.cpp:53
+msgid "Submenu"
+msgstr "Alammenüü"
+
+#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:536
+#: entrydialog.cpp:541
+msgid "Application"
+msgstr "Rakendus"
+
+#: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
+msgid "Swallow"
+msgstr "Neel"
+
+#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
+msgid "Link"
+msgstr "Link"
+
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
+msgid "Device"
+msgstr "Seade"
+
+#: entrydialog.cpp:63
+msgid "Type:"
+msgstr "Tüüp:"
+
+#: entrydialog.cpp:69
+msgid "File Name:"
+msgstr "Faili nimi:"
+
+#: entrydialog.cpp:82
+msgid "Name:"
+msgstr "Nimi:"
+
+#: entrydialog.cpp:95
+msgid "Mini Icon:"
+msgstr "Miniikoon:"
+
+#: entrydialog.cpp:127
+msgid "Icon:"
+msgstr "Ikoon:"
+
+#: entrydialog.cpp:133
+msgid "Comment:"
+msgstr "Kommentaar:"
+
+#: entrydialog.cpp:165 entrydialog.cpp:535
+msgid "Execute"
+msgstr "Käivita"
+
+#: entrydialog.cpp:186
+msgid "Execute:"
+msgstr "Käivita:"
+
+#: entrydialog.cpp:192
+msgid "Working Directory:"
+msgstr "Töökataloog:"
+
+#: entrydialog.cpp:205
+msgid "Run in terminal"
+msgstr "Käivita terminalil"
+
+#: entrydialog.cpp:211
+msgid "Terminal Options:"
+msgstr "Terminali valikud:"
+
+#: entrydialog.cpp:292
+msgid "Binary Pattern:"
+msgstr "Binaarne muster:"
+
+#: entrydialog.cpp:300
+msgid "Application to swallow:"
+msgstr "Neelatav rakendus:"
+
+#: entrydialog.cpp:306
+msgid "Title of application:"
+msgstr "Rakenduse tiitel:"
+
+#: entrydialog.cpp:312
+msgid "Application to execute on button press:"
+msgstr "Nupule vajutamisel käivitada rakendus:"
+
+#: entrydialog.cpp:342
+msgid "URL:"
+msgstr "URL:"
+
+#: entrydialog.cpp:391
+msgid "Read Only"
+msgstr "Ainult lugemiseks"
+
+#: entrydialog.cpp:397
+msgid "Device:"
+msgstr "Seade:"
+
+#: entrydialog.cpp:403
+msgid "Mount Point:"
+msgstr "Ühenduspunkt:"
+
+#: entrydialog.cpp:409
+msgid "FS Type:"
+msgstr "FS tüüp:"
+
+#: entrydialog.cpp:415
+msgid "Unmount Icon:"
+msgstr "Lahti ühendatud ikoon:"
+
+#: MenuNameDialog.cpp:21
+msgid "Change Menunames"
+msgstr "Muuda menüü nimesid"
+
+#: MenuNameDialogData.cpp:31
+msgid "Change the name of the menus as displayed in kpanel"
+msgstr "Muuda menüüde nimesid, nagu neid näidatakse paneelil"
+
+#: MenuNameDialogData.cpp:36
+msgid "Personal:"
+msgstr "Personaalne:"
+
+#: MenuNameDialogData.cpp:41
+msgid "Default:"
+msgstr "Vaikimisi:"
