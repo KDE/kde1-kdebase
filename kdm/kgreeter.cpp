@@ -482,7 +482,8 @@ KGreeter::restrict_nologin()
      char *file;
      /* Note that <file> will be "" if there is no nologin capability */
      if ((file = login_getcapstr(lc, "nologin", "", NULL)) == NULL) {
-       QMessageBox::critical(NULL, NULL, i18n("bah"), i18n("&OK"));
+       QMessageBox::critical(NULL, NULL, i18n("login_getcapstr() failed.",
+	 i18n("&OK"));
        return true;
      }
 #endif
