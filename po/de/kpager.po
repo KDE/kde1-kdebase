@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-12-15 07:34+0100\n"
-"PO-Revision-Date: 1999-03-27 21:25+MET\n"
+"PO-Revision-Date: 1999-04-24 22:25+MET\n"
 "Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +11,7 @@ msgstr ""
 
 #: kpager.cpp:72
 msgid "Toggle Global Desktop"
-msgstr "Allgemeine Arbeitsfläche ein/aus"
+msgstr "Globale Arbeitsfläche ein/aus"
 
 #: kpager.cpp:74
 msgid "Toggle Menubar"
@@ -27,11 +27,11 @@ msgstr "Nach links verschieben"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
-msgstr "Allgemeine Arbeitsfläche a&usblenden"
+msgstr "Globale Arbeitsfläche a&usblenden"
 
 #: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
 msgid "Show &Global Desktop"
-msgstr "Allgemeine Arbeitsfläche &anzeigen"
+msgstr "Globale Arbeitsfläche &anzeigen"
 
 #: kpager.cpp:97 kpager.cpp:380
 msgid "Hide &Menubar"
@@ -39,11 +39,11 @@ msgstr "Menüleiste a&usblenden"
 
 #: kpager.cpp:101 kpager.cpp:386
 msgid "&2 Rows"
-msgstr "&2zeilig"
+msgstr "&Zweizeilig"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
-msgstr "Arbeitsfläche mit &einfachem Klick ändern"
+msgstr "Arbeitsfläche mit &Einfachklick ändern"
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
 msgid "Hide Desktop &Names"
@@ -104,7 +104,7 @@ msgstr "&Menüleiste anzeigen"
 
 #: kpager.cpp:389
 msgid "One Click change Desktop"
-msgstr "Arbeitsfläche mit einem Klick ändern"
+msgstr "Arbeitsfläche mit Einfachklick ändern"
 
 #: kpager.cpp:446
 msgid "&Maximize"
