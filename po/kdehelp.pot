@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"POT-Creation-Date: 1999-02-02 01:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Open URL"
 msgstr ""
 
-#: helpwin.cpp:459 info.cpp:288
+#: helpwin.cpp:459 info.cpp:290
 msgid "Cannot open: "
 msgstr ""
 
@@ -58,16 +58,16 @@ msgstr ""
 msgid "Open in new Window"
 msgstr ""
 
-#: info.cpp:97 info.cpp:615
+#: info.cpp:97 info.cpp:617
 msgid "Error in info file"
 msgstr ""
 
-#: info.cpp:1258
+#: info.cpp:1260
 #, c-format
 msgid "Node not found: %s"
 msgstr ""
 
-#: info.cpp:1403
+#: info.cpp:1405
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr ""
