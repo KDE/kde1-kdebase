@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"PO-Revision-Date: 1998-05-25 17:10+0800\n"
+"Last-Translator: Karl Backström <karl_b@geocities.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:53
+msgid "&Sound"
+msgstr "&Ljud"
+
+#: main.cpp:80
+msgid "System Sounds"
+msgstr "Systemljud"
+
+#: syssound.cpp:147
+msgid "Change to Desktop 1"
+msgstr "Byt till Skrivbord 1"
+
+#: syssound.cpp:148
+msgid "Change to Desktop 2"
+msgstr "Byt till Skrivbord 2"
+
+#: syssound.cpp:149
+msgid "Change to Desktop 3"
+msgstr "Byt till Skrivbord 3"
+
+#: syssound.cpp:150
+msgid "Change to Desktop 4"
+msgstr "Byt till Skrivbord 4"
+
+#: syssound.cpp:151
+msgid "Change to Desktop 5"
+msgstr "Byt till Skrivbord 5"
+
+#: syssound.cpp:152
+msgid "Change to Desktop 6"
+msgstr "Byt till Skrivbord 6"
+
+#: syssound.cpp:153
+msgid "Change to Desktop 7"
+msgstr "Byt till Skrivbord 7"
+
+#: syssound.cpp:154
+msgid "Change to Desktop 8"
+msgstr "Bytt till Skrivbord 8"
+
+#: syssound.cpp:156
+msgid "Activate Window"
+msgstr "Aktivera fönster"
+
+#: syssound.cpp:157
+msgid "Open new window"
+msgstr "Öppna nytt fönster"
+
+#: syssound.cpp:158
+msgid "Close Window"
+msgstr "Stäng fönster"
+
+#: syssound.cpp:159
+msgid "Startup"
+msgstr "Uppstartning"
+
+#: syssound.cpp:161
+msgid "Window Shade Up"
+msgstr ""
+
+#: syssound.cpp:162
+msgid "Window Shade Down"
+msgstr ""
+
+#: syssound.cpp:163
+msgid "Window Iconify"
+msgstr "Fönster ikonifirerat"
+
+#: syssound.cpp:164
+msgid "Window DeIconify"
+msgstr "Fönster dikonifierat"
+
+#: syssound.cpp:165
+msgid "Window Maximize"
+msgstr "Fönster Maximerat"
+
+#: syssound.cpp:166
+msgid "Window UnMaximize"
+msgstr "Fönster Omaxifierat"
+
+#: syssound.cpp:167
+msgid "Window Sticky"
+msgstr "Klistrigt Fönster"
+
+#: syssound.cpp:168
+msgid "Window UnSticky"
+msgstr "Oklistrit Fönster"
+
+#: syssound.cpp:169
+msgid "Window Trans New"
+msgstr ""
+
+#: syssound.cpp:170
+msgid "Window Trans Delete"
+msgstr ""
+
+#: syssound.cpp:171
+msgid "Logout"
+msgstr "Avslutning"
+
+#: syssound.cpp:172
+msgid "Logout Message"
+msgstr "Avslutnings meddelande"
+
+#: syssound.cpp:173
+msgid "Window Move Start"
+msgstr "Fönster förflyttning Start"
+
+#: syssound.cpp:174
+msgid "Window Move End"
+msgstr "Fönster förflyttning Slut"
+
+#: syssound.cpp:175
+msgid "Window Resize Start"
+msgstr "Storleksändring av fönster Start"
+
+#: syssound.cpp:176
+msgid "Window Resize End"
+msgstr "Storleksändring av fönster Slut"
+
+#: syssound.cpp:198
+msgid "e&nable system sounds"
+msgstr "&aktivera systemljud"
+
+#: syssound.cpp:203
+msgid "&Test"
+msgstr "&Testa"
+
+#: syssound.cpp:207
+msgid "&Events:"
+msgstr "&Händelse:"
+
+#: syssound.cpp:211
+msgid "&Sounds:"
+msgstr "&Ljud:"
+
+#: syssound.cpp:216
+msgid "Additional WAV files can be dropped onto the sound list."
+msgstr "Ytterligare WAV filer kan släppas över ljudlistan."
+
+#: syssound.cpp:456
+msgid "Unsupported URL"
+msgstr ""
+
+#: syssound.cpp:458
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE System Sound "
+"Module"
+msgstr ""
+"Tyvärr, denna typ av URL är för närvarande oanvändbar med KDEs Systemljuds "
+"modul"
+
+#: syssound.cpp:468
+#, c-format
+msgid ""
+"Sorry, but \n"
+"%s\n"
+"does not seem to be a WAV--file."
+msgstr ""
+"Tyvärr, men \n"
+"%s\n"
+"verkar inte vara en WAV-fil."
+
+#: syssound.cpp:471
+msgid "Improper File Extension"
+msgstr "Felaktig filändelse"
+
+#: syssound.cpp:482
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"is already in the list"
+msgstr ""
+"Filen\n"
+"%s\n"
+"finns redan i listan"
+
+#: syssound.cpp:486
+msgid "File Already in List"
+msgstr "Filen finns redan i listan"
