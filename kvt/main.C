@@ -913,16 +913,23 @@ void kVt::onDrop( KDNDDropZone* _zone )
 {
   QStrList strlist;
   KURL *url;
-  char *str;
+  QString str = "";
+  int file_count = 0;
+  char *p;
 
   strlist = _zone->getURLList();
   if (strlist.count()){
-    url = new KURL( strlist.first() );
-    str = url->path();
-    send_string((unsigned char *)str, strlen(str));
-    delete url;
+    p = strlist.first();
+    while(p != 0) {
+      url = new KURL( p );
+      if(file_count++ > 0)
+	str += " ";
+      str += url->path();
+      delete url;
+      p = strlist.next();
+    }
+    send_string((unsigned char *)str.data(), str.length());
   }
-  return;
 }
 
 void kVt::menubarMoved(){
