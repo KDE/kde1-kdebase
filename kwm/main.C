@@ -281,13 +281,12 @@ static void showTask(){
   while (!ktask->do_grabbing());
 }
 
-
-static QRect stringToRect(QString s){
+QRect &stringToRect(QString s, QRect *q){
   int x = 0;
   int y = 0;
   int w = 0;
   int h = 0;
-
+  
   int a;
   a = s.find('+', 0);
   if (a>0){
@@ -299,14 +298,14 @@ static QRect stringToRect(QString s){
     y = s.left(a).toInt();
     s = s.remove(0, a+1);
   }
-  a = s.find('+', 0);
+ a = s.find('+', 0);
   if (a>0){
     w = s.left(a).toInt();
     s = s.remove(0, a+1);
   }
   h = s.toInt();
-
-  return QRect(x, y, w, h);
+  q->setRect(x, y, w, h); 
+  return *q;
 }
 
 static QString rectToString(QRect r){
@@ -484,7 +483,8 @@ MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KAppli
     a.append("Region");
     b = config->readEntry(a);
     if (!b.isEmpty()){
-      QRect r = stringToRect(b);
+      QRect g;  
+      QRect r = stringToRect(b, &g);
       if (r.isEmpty())
 	r = QApplication::desktop()->geometry();
       KWM::setWindowRegion(i, r);
