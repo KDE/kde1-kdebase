@@ -7,7 +7,6 @@
 #include <klocale.h>
 #include <kapp.h>
 #include <kbuttonbox.h>
-#include <kkeydialog.h>
 #include "khttpoptdlg.h"
 
 
@@ -255,11 +254,11 @@ static void splitDomainAdvice(const char *configStr,
 
 void KHTTPOptions::removeDomain(const char *domain)
 {
-    const char *configStr = 0L;
+    const char *configStr = domainConfig.first();
     QString searchFor(domain);
     searchFor += ":";
     
-    for( configStr = domainConfig.first();
+    for( ;
          configStr != 0;
          configStr = domainConfig.next())
     {
