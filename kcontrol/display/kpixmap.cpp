@@ -412,13 +412,17 @@ bool KPixmap::convertFromImage( const QImage &img, int conversion_flags  )
 		}
 		
 		QBitmap mask;
-		bool isMask = mask.convertFromImage( img.createAlphaMask() );
-		
+		bool isMask = false;
+
 		QImage  image = img.convertDepth(32);
-		image.setAlphaBuffer( true );
-		
 		QImage tImage( image.width(), image.height(), 8, 256 );
-		tImage.setAlphaBuffer( true );
+		
+		if( img.hasAlphaBuffer() ) {
+			image.setAlphaBuffer( true );
+			tImage.setAlphaBuffer( true );
+			isMask = mask.convertFromImage( img.createAlphaMask() );
+		}
+		
 		kdither_32_to_8( &image, &tImage );
 		
 		if( QPixmap::convertFromImage( tImage ) ) {
