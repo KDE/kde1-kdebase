@@ -11,6 +11,7 @@
 #include <qmsgbox.h>
 
 #include <kapp.h>
+#include <kwm.h>
 
 #include "root.h"
 #include "kfmprops.h"
@@ -18,10 +19,6 @@
 #include "kfmpaths.h"
 #include "kfmexec.h"
 #include <config-kfm.h>
-
-#include <X11/Xlib.h>
-#include <X11/Xutil.h>
-#include <X11/Xos.h>
 
 #include <string.h>
 
@@ -404,14 +401,14 @@ QPoint KRootWidget::findLayout( const char *_url )
 
 QPoint KRootWidget::findFreePlace( int _width, int _height )
 {
-    int dwidth = XDisplayWidth( KApplication::getKApplication()->getDisplay(), 0 );
-    int dheight = XDisplayHeight( KApplication::getKApplication()->getDisplay(), 0 );
-
+  // Matthias
+  // use the window area to layout the icons
+    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
     KRootIcon *icon;
 
-    for ( int x = 0; x <= dwidth - ROOT_GRID_WIDTH; x += ROOT_GRID_WIDTH )
+    for ( int x = area.x(); x <= area.width() - ROOT_GRID_WIDTH; x += ROOT_GRID_WIDTH )
     {
-	for ( int y = 80; y <= dheight - ROOT_GRID_HEIGHT; y += ROOT_GRID_HEIGHT )
+	for ( int y = area.y(); y <= area.height() - ROOT_GRID_HEIGHT; y += ROOT_GRID_HEIGHT )
 	{	
 	    bool isOK = true;
 	    
@@ -432,18 +429,22 @@ QPoint KRootWidget::findFreePlace( int _width, int _height )
 		return QPoint( x + ( ROOT_GRID_WIDTH - _width ) / 2, y );
 	}
     }
-
+    
     return QPoint( 0, 0 );
 }
 
 void KRootWidget::sortIcons()
 {
+  // Matthias
+  // use the window area to layout the icons
+    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
     KRootIcon *icon;
 
     for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
 	if ( ( icon->x() - ( ROOT_GRID_WIDTH - icon->QWidget::width() ) / 2 )  % ROOT_GRID_WIDTH != 0 ||
-	     icon->y() % ROOT_GRID_HEIGHT != 0 )
-	    icon->move( -200, -200 );
+	     icon->y() % ROOT_GRID_HEIGHT != 0 || 
+	     !area.contains(icon->geometry()))
+	  icon->move( -200, -200 );
 	
     QListIterator<KRootIcon> it( icon_list );    
     for ( ; it.current(); ++it )
@@ -924,6 +925,10 @@ KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
     setGeometry( _x - pixmapXOffset, _y, width, height );
     show();
     lower();
+
+    // Matthias
+    // keep root icons lowered
+    KWM::setDecoration(winId(), 1024);
 }
 
 void KRootIcon::initToolTip()
