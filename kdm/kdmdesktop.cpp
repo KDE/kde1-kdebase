@@ -34,6 +34,7 @@ public:
      bool bgpictile;
      bool bgpiccenter;
      bool fancybg;
+     bool have_bg_pic;
      QColor bgcolor;
 protected:
      KConfig*       kc;
@@ -43,17 +44,24 @@ DesktopConfig::DesktopConfig()
 {
      kc = kapp->getConfig();
      QString _bgcolor;
+     have_bg_pic = false;
      kc->setGroup( "KDMDESKTOP");
 
      fancybg  = false;
      if( kc->hasKey( "BackgroundPicture")) {
 	  bgpic = kc->readEntry( "BackgroundPicture");
-	  bgpictile = kc->readNumEntry( "BackgroundPictureTile");
-	  bgpiccenter = kc->readNumEntry( "BackgroundPictureCenter");
-     } else
-	  bgpic = 0L;  
+	  bgpictile = (bool) kc->readNumEntry( "BackgroundPictureTile",0);
+	  bgpiccenter = (bool) kc->readNumEntry( "BackgroundPictureCenter",0);
+	  if(bgpic.isEmpty())
+	    have_bg_pic = false;
+	  else
+	    have_bg_pic = true;
+	    
+     } else{
+	  have_bg_pic = false;
+     }
      if( kc->hasKey("FancyBackground")) {
-	  fancybg          = kc->readNumEntry("FancyBackground");
+	  fancybg          = (bool) kc->readNumEntry("FancyBackground",0);
      } 
      _bgcolor  = kc->readEntry( "BackgroundColor");
      if( !_bgcolor.isNull())
@@ -214,7 +222,7 @@ int main(int argc, char **argv)
      
      if( dc->fancybg)
 	  do_fancy_background();
-     else if( dc->bgpic != 0L)
+     else if( dc->have_bg_pic )
 	  do_picture_background( dc);
      else
 	  do_normal_background( dc);
