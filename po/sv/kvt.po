@@ -1,15 +1,21 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
+"Project-Id-Version: kvt\n"
 "POT-Creation-Date: 1998-11-12 01:17+0100\n"
-"Content-Type: text/plain; charset=\n"
-"Date: 1997-08-23 15:45:33+0200\n"
-"From: M G Berberich <berberic@thingol>\n"
-"Xgettext-Options: --keyword=translate\n"
-"Files: main.C\n"
+"PO-Revision-Date: 1998-11-14 18:28+01:00\n"
+"Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
+"Language-Team: Swedish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
 
 #: main.C:424
 msgid "choose type of color-mode"
-msgstr "välj färguppsättning"
+msgstr "Välj typ av färgläge"
 
 #: main.C:430
 msgid "Add characters to word class"
@@ -21,7 +27,7 @@ msgstr "Backspace skickar"
 
 #: main.C:442
 msgid "Cursor key set"
-msgstr ""
+msgstr "Markörtangenter"
 
 #: main.C:611
 msgid "&New Terminal"
@@ -73,27 +79,27 @@ msgstr "&vit/svart"
 
 #: main.C:644
 msgid "&green/black"
-msgstr "gr&ön/svart"
+msgstr "&grön/svart"
 
 #: main.C:645
 msgid "black/light&yellow"
-msgstr "svart/ljus&gul"
+msgstr "svart/&ljusgul"
 
 #: main.C:646
 msgid "Linu&x Console"
-msgstr "Linu&x-konsoll"
+msgstr "Linux-&konsol"
 
 #: main.C:655
 msgid "&Custom Colors"
-msgstr "&Färg"
+msgstr "&Egna färger"
 
 #: main.C:663 main.C:950
 msgid "Hide &Menubar"
-msgstr "&Göm meny"
+msgstr "&Göm menyrad"
 
 #: main.C:665 main.C:872 main.C:942
 msgid "Show &Menubar"
-msgstr "&Visa meny"
+msgstr "&Visa menyrad"
 
 #: main.C:666 main.C:960
 msgid "Secure &keyboard"
@@ -121,18 +127,17 @@ msgstr "Terminal..."
 
 #: main.C:673
 msgid "Font..."
-msgstr ""
+msgstr "Typsnitt..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "&Använd snabbtangenter"
 
 #: main.C:677
 msgid "Save &Options"
-msgstr "Spara inställningar"
+msgstr "Spara &inställningar"
 
 #: main.C:686
-#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -147,17 +152,18 @@ msgstr ""
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "\n"
 "Terminalemulering för KDE Desktop Environment\n"
 "baserad på Robert Nations rxvt-2.08"
 
 #: main.C:881 main.C:1017
 msgid "&Show"
-msgstr "Visa"
+msgstr "&Visa"
 
 #: main.C:956
 msgid "Unsecure &keyboard"
-msgstr "Lås upp tangentbord"
+msgstr "&Lås upp tangentbord"
 
 #: main.C:967
 msgid "Terminal Options"
@@ -172,11 +178,10 @@ msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
-"Nya färginställningar kommer att \n"
-"användas när tangentbordet låses upp."
+"Nya färginställningar kommer att\n"
+"visas när tangentbordet låses upp."
 
 #: main.C:1435
-#, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -184,90 +189,94 @@ msgid ""
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
 msgstr ""
-"\n"
-"\n"
-"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
-"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
-"\n"
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
 "Terminalemulering för KDE Desktop Environment\n"
-"baserad på Robert Nations rxvt-2.08"
+"baserad på Robert Nations rxvt-2.08\n"
+"\n"
 
 #: main.C:1439
 msgid "Permitted arguments are:\n"
-msgstr ""
+msgstr "Tillåtna argument är:\n"
 
 #: main.C:1440
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
+"-e <kommando> <arg> ...   kör kommando med argumenten arg\n"
+"                          OBS: detta måste vara det sista argumentet till kvt\n"
 
 #: main.C:1441
 msgid "-display <name>           specify the display (server)\n"
-msgstr ""
+msgstr "-display <namn>           ange bildskräm (server)\n"
 
 #: main.C:1442
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr ""
+msgstr "-vt_geometry <spec>       initial storlek på vt-fönstret\n"
 
 #: main.C:1443
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr ""
+msgstr "-print-pipe <namn>        ange rör för vt100-skrivare\n"
 
 #: main.C:1444
 msgid "-vt_bg <colour>           background color\n"
-msgstr ""
+msgstr "-vt_bg <färg>             bakgrundsfärg\n"
 
 #: main.C:1445
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr ""
+msgstr "-vt_fg <färg>             förgrundsfärg\n"
 
 #: main.C:1446
 msgid "-vt_font <fontname>       normal font\n"
-msgstr ""
+msgstr "-vt_font <typsnittsnamn>  normalt typsnitt\n"
 
 #: main.C:1447
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr ""
+msgstr "-no_font_hack             stäng av fix för typsnittsbug i Qt\n"
 
 #: main.C:1448
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr ""
+msgstr "-vt_size <storlek>        tiny, small, normal, large, huge\n"
 
 #: main.C:1449
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr ""
+msgstr "-linux                    ställ in kvt att likna en linux-konsol\n"
 
 #: main.C:1450
 msgid "-no_menubar               hide the menubar\n"
-msgstr ""
+msgstr "-no_menubar               göm menyraden\n"
 
 #: main.C:1451
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr ""
+msgstr "-no_scrollbar             göm rullningslisten\n"
 
 #: main.C:1452
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
+"-T <text>                 text i fönstrets namnlist\n"
+"                          (Föråldrad. Använd -caption i stället)\n"
 
 #: main.C:1454
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr ""
+msgstr "-tn <TERM>                Terminaltyp. Standard är xterm.\n"
 
 #: main.C:1455
 msgid "-C                        Capture system console message\n"
-msgstr ""
+msgstr "-C                        Fånga meddelanden till systemkonsolen\n"
 
 #: main.C:1456
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr ""
+msgstr "-n <text>                 namn i ikon eller ikonfönster\n"
 
 #: main.C:1457
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
+"-7                        kör i 7-bitarsläge\n"
+"-8                        kör i 8-bitarsläge\n"
 
 #: main.C:1459
 msgid ""
@@ -275,16 +284,22 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
+"-ls                       starta kvt:s skal som ett inloggningsskal\n"
+"-ls-                      starta ej kvt:s skal som inloggningsskal (standard)\n"
 
 #: main.C:1461
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
+"-meta <arg>               ange hur Meta-tangenten hanteras:\n"
+"                          ESCAPE - skicka escape-tecken som prefix\n"
+"                          8THBIT - sätt bit 8\n"
+"                          ignore - ignorera\n"
 
 #: main.C:1462
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr ""
+msgstr "-sl <antal>               spara antal rader i scrollback-bufferten\n"
 
 #: main.C:1463
 msgid ""
@@ -293,94 +308,13 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
+"-pageup <keysym>          använd snabbtangent alt-keysym för att scrolla upp\n"
+"-pagedown <keysym>        använd snabbtangent alt-keysym för att scrolla ner\n"
 
 #: main.C:1467
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
 msgstr ""
-
-#, fuzzy
-#~ msgid ""
-#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
-#~ "Copyright(C) 1997 M G Berberich\n"
-#~ "Terminal emulation for the KDE Desktop Environment\n"
-#~ "based on Robert Nation's rxvt-2.08\n"
-#~ "\n"
-#~ "Permitted arguments are:\n"
-#~ "-e <command> <arg> ...\texecute command with ars - must be last argument\n"
-#~ "-display <name>\tspecify the display (server)\n"
-#~ "-vt_geometry <spec>\tthe initial vt window geometry\n"
-#~ "-print-pipe <name>\tspecify pipe for vt100 printer\n"
-#~ "-vt_bg <colour>\t\tbackground color\n"
-#~ "-vt_fg <colour>\t\tforeground color\n"
-#~ "-vt_font <fontname>\tnormal font\n"
-#~ "-vt_size <size>     \ttiny, small, normal, large, huge\n"
-#~ "-linux\t\t\tset up kvt to mimic linux-console\n"
-#~ "-no_menubar\t\thide the menubar\n"
-#~ "-no_scrollbar\t\thide the scrollbar\n"
-#~ "-T <text>\t\ttext in window titlebar \n"
-#~ "                   (Obsolete. Use -caption instead)\n"
-#~ "-tn <TERM>\t\tTerminal type. Default is xterm.\n"
-#~ "-C\t\t\tCapture system console message\n"
-#~ "-n <text>\t\tname in icon or icon window\n"
-#~ "-7\t\t        run in 7 bit mode\n"
-#~ "-8\t\t\trun in 8 bit mode\n"
-#~ "-ls\t\t\tinitiate kvt's shell as a login shell\n"
-#~ "-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
-#~ "-meta <arg>\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-#~ "-sl <number>\t\tsave number lines in scroll-back buffer\n"
-#~ "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
-#~ "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
-#~ msgstr ""
-#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
-#~ "Copyright(C) 1997 M G Berberich\n"
-#~ "Terminalemulering för KDE Desktop Environment\n"
-#~ "baserad på Robert Nations rxvt-2.08\n"
-#~ "\n"
-#~ "Tillåtna argument är:\n"
-#~ "-e <kommando> <arg> ...\texekvera kommando med ars - måste vara sista "
-#~ "argumentet\n"
-#~ "-display <namn>\tspecifiera displayen (server)\n"
-#~ "-vt_geometry <spec>\tden initiala fönstergeometrin\n"
-#~ "-print-pipe <namn>\tspecifiera pipe för vt100-printer\n"
-#~ "-vt_bg <färg>\t\tbakgrundsfärgen\n"
-#~ "-vt_fg <färg>\t\tförgrundsfärgen\n"
-#~ "-vt_font <fontnamn>\tnormal font\n"
-#~ "-vt_size <strolek>\ttiny, small, normal, large, huge\n"
-#~ "-linux\t\t\tstarta kvt för att imitera linux-konsollen\n"
-#~ "-no_menubar\t\tgöm menyn\n"
-#~ "-no_scrollbar\t\tgöm rullningslisten\n"
-#~ "-T <text>\t\ttext i namnlisten \n"
-#~ "                   (Föråldrad. Använd -caption i stället)\n"
-#~ "-tn <TERM>\t\tTerminaltyp. Standardinställningen är xterm.\n"
-#~ "-C\t\t\tFånga meddelanden till systemkonsollen\n"
-#~ "-n <text>\t\tnamn på ikon eller ikonfönster\n"
-#~ "-7\t\t        kör i 7-bitars-läge\n"
-#~ "-8\t\t\tkör i 8-bitars-läge\n"
-#~ "-ls\t\t\tstarta kvts shell som login-shell\n"
-#~ "-ls-\t\t\tstarta kvts shell som normal shell (standard)\n"
-#~ "-meta\t\t\tBehandla meta med ESCAPE-prefix, 8:e biten satt eller igonrera\n"
-#~ "-sl <nummer>\t\tspara <nummer> rader i scroll-back-buffern\n"
-#~ "-pageup <keysym>\tanvänd snabbtangentne alt-keysym för att skrolla upp genom "
-#~ "buffern\n"
-#~ "-pagedown <keysym>\tanvänd snabbtangentne alt-keysym för att skrolla ner "
-#~ "genom buffern\n"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Cancel"
-#~ msgstr "Avbryt"
-
-#~ msgid "&Help"
-#~ msgstr "&Hjälp"
-
-#~ msgid "&File"
-#~ msgstr "&Arkiv"
-
-#~ msgid "&Options"
-#~ msgstr "&Inställningar"
-
-#~ msgid "&About kvt..."
-#~ msgstr "&Om kvt..."
+"-grk9\t\tgrekiskt tangentbord = ELOT 928 (standard)\n"
+"-grk4\t\tgrekiskt tangentbord = IBM 437\n"
