@@ -383,8 +383,10 @@ KGreeter::load_wm()
 	  f.close();
 	  
 	  for (int i = 0; i < sessionargBox->count(); i++)
-	       if (strcmp(sessionargBox->text(i), s) == 0)
+	       if (strcmp(sessionargBox->text(i), s) == 0) {
 		    wm = i;
+		    break;
+	       }
      }
      sessionargBox->setCurrentItem(wm);
 }
