@@ -30,6 +30,7 @@
 #include <kwm.h>
 
 #include <X11/Xutil.h>
+#include <X11/keysym.h>
 #include <X11/cursorfont.h>
 #include <X11/Xos.h>
 
@@ -876,6 +877,16 @@ bool Client::fixedSize(){
 
 
 void Client::setactive(bool on){
+  static int NumLockMask = 0;
+  if (!NumLockMask){
+    XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
+    int i;
+    for (i=0; i<8; i++){
+      if (xmk->modifiermap[xmk->max_keypermod * i] == 
+	  XKeysymToKeycode(qt_xdisplay(), XK_Num_Lock))
+	NumLockMask = (1<<i); 
+    }
+  }
   if (is_active && !on && myapp->operations->isVisible())
     myapp->operations->hide();
 
@@ -886,6 +897,12 @@ void Client::setactive(bool on){
   if (is_active){
     XUngrabButton(qt_xdisplay(), AnyButton, AnyModifier, window);
     XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask, window, True, ButtonPressMask, 
+		GrabModeSync, GrabModeAsync, None, normal_cursor );
+    XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask | LockMask, window, True, ButtonPressMask, 
+		GrabModeSync, GrabModeAsync, None, normal_cursor );
+    XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask | NumLockMask, window, True, ButtonPressMask, 
+		GrabModeSync, GrabModeAsync, None, normal_cursor );
+    XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask | LockMask | NumLockMask, window, True, ButtonPressMask, 
 		GrabModeSync, GrabModeAsync, None, normal_cursor );
   }
   else if (state == NormalState) {
@@ -1319,11 +1336,21 @@ void Client::simple_move(){
   old_cursor_pos = mapFromGlobal(QCursor::pos());
   dragging_state = dragging_enabled;
   do_resize = 0;
+  XChangeActivePointerGrab( qt_xdisplay(), 
+			    ButtonPressMask | ButtonReleaseMask |
+			    PointerMotionMask |
+			    EnterWindowMask | LeaveWindowMask,
+			    sizeAllCursor.handle(), 0);
   mouseMoveEvent(NULL);
 }
 
 void Client::simple_resize(){
   grabMouse();
+  XChangeActivePointerGrab( qt_xdisplay(), 
+			    ButtonPressMask | ButtonReleaseMask |
+			    PointerMotionMask |
+			    EnterWindowMask | LeaveWindowMask,
+			    bottom_right_cursor, 0);
   // correct positioning
   old_cursor_pos = mapFromGlobal(QCursor::pos());
   dragging_state = dragging_enabled;

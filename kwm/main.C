@@ -1020,8 +1020,9 @@ bool MyApp::x11EventFilter( XEvent * ev){
       Client *c = manager->getClient(ev->xbutton.window);
       if (c && ev->xbutton.window == c->window){
 	if ((ev->xbutton.state & Mod1Mask) == Mod1Mask){
-	  if  (ev->xbutton.button == Button1)
+	  if  (ev->xbutton.button == Button1){
 	    c->simple_move();
+	  }
 	  else if (ev->xbutton.button == Button2)
 	    manager->raiseClient(c);
 	  else c->simple_resize();
