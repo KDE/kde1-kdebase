@@ -71,3 +71,7 @@
 0.10: added HAVE_SQRTL
 	added HAVE_CRYPT_H
 	updated kfind
+	updated kfm to kfm-0.8.1
+	re-introduced automake to kdebase
+	bugfixes for the configure.in
+
