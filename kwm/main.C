@@ -554,6 +554,8 @@ void MyApp::readConfiguration(){
   QString key;
   int i;
   
+  killTimers();
+
   config = getKApplication()->getConfig();
   config->setGroup( "General" );
 
@@ -657,10 +659,9 @@ void MyApp::readConfiguration(){
     options.TitleAnimation = 50;
     config->writeEntry("TitleAnimation", options.TitleAnimation);
   }
+
   if (options.TitleAnimation)
       startTimer(options.TitleAnimation);
-  else
-    killTimers();
 
   if (config->hasKey("AutoRaise")){
     options.AutoRaise = config->readNumEntry("AutoRaise");
