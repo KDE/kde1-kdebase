@@ -20,6 +20,8 @@ In 0.10:
        - fix for FocusFollowMouse
        - animation a bit faster
        - small fix for resize/move with the mouse 
+       - works together with newest kfm to keep the root icons 
+         lowered
 
   patchlevel 16:
        - fix for "move" via keyboard (pointer warp)

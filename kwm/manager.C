@@ -1041,17 +1041,36 @@ void Manager::lowerClient(Client* c){
   clients_sorted.removeRef(c);
   clients_sorted.insert(0,c);
   sendToModules(module_win_lower, c->window);
-  XLowerWindow(qt_xdisplay(), c->winId());
-//   Client* cc;
-//   for (cc = clients_sorted.last(); cc; cc = clients_sorted.prev()){
-//     if (cc->decoration_not_allowed)
-//       tmp.append(cc);
-//   }
-//   for (cc = tmp.first(); cc; cc = tmp.next()){
-//     XLowerWindow(qt_xdisplay(), cc->winId());
-//     clients_sorted.removeRef(cc);
-//     clients_sorted.insert(0,cc);
-//   }
+
+  // also lower the root icons
+  unsigned int i, nwins;
+  Window dw1, dw2, *wins;
+  XQueryTree(qt_xdisplay(), qt_xrootwin(), &dw1, &dw2, &wins, &nwins);
+
+  // X Semantics are somewhat cryptic
+  Window* new_stack = new Window[nwins+1];
+  unsigned int n = 0;
+  new_stack[n++] = c->winId();
+
+  for (i = 0; i < nwins; i++) {
+    if (!getClient(wins[i])){
+      if (KWM::getDecoration(wins[i]) == 1024){
+	QRect r = KWM::geometry(wins[i]);
+	if (c->geometry.contains(r) || c->geometry.intersects(r)){
+	  XUnmapWindow(qt_xdisplay(), wins[i]);
+	  new_stack[n++] = wins[i];
+	}
+      }
+    }
+  }
+
+  XLowerWindow(qt_xdisplay(), new_stack[0]);
+  XRestackWindows(qt_xdisplay(), new_stack, n);
+  for (i=1; i<n; i++)
+    XMapWindow(qt_xdisplay(), new_stack[i]);
+
+  delete [] new_stack;
+  XFree((void *) wins);   
 }
 
 void Manager::closeClient(Client* c){
