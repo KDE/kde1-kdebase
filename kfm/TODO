@@ -9,9 +9,10 @@ TODO List
 * Configuration dialog for PROXY
 * FTP Proxy
 - Too many kioslaves on pages with many pictures
-* Deleting of the cached data
-* getting RAE files which contain spaces in their name are a problem.
 - Opening the properties of a VERY large file causes very long delays
 - Are tar directories really cached ? Does not look so yet.
-* Changing from icon view to long view causes a reload.
 - Writing directories in minicli does not cause KFM to open it.
+- Downloading files from ftp.troll.no does not work
+  ( perhaps why they dont want to see a password )
+- http://www.rhein-main.net looks broken
+

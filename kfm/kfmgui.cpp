@@ -1055,6 +1055,8 @@ void KfmGui::slotShowDot()
     showDot = !showDot;
     mview->setItemChecked( mview->idAt( 0 ), showDot );
     view->slotUpdateView();
+    if ( bTreeViewInitialized )
+	treeView->update();
 }
 
 void KfmGui::slotShowSchnauzer()

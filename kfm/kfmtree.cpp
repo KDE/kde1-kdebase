@@ -28,42 +28,6 @@ KFMDirTree::KFMDirTree( QWidget *_parent, KfmGui *_gui ) : KFinder( _parent )
 
 void KFMDirTree::fill()
 {
-    /* DIR *dp = 0L;
-    struct dirent *ep;
-    struct stat buff;
-
-    dp = 0L;
-    dp = opendir( "/" );
-    if ( dp == 0L )
-    {
-	warning( "Could not enter directory /" );
-	return;
-    } */
-
-    /*
-    QStrList sort_list;
-    QString home( getenv( "HOME" ) );
-    
-    while ( ( ep = readdir( dp ) ) != 0L )
-    {
-	QString name( ep->d_name );
-
-	if ( name != "." && name != ".." )
-	{
-	    stat( name, &buff );
-	    
-	    if ( S_ISDIR( buff.st_mode ) )
-		sort_list.append( ep->d_name );
-	}
-    }
-    closedir( dp );
-
-    const char *s;
-    for ( s = sort_list.first(); s != 0L; sort_list.next() )
-    KFMDirTreeItem *item = new KFMDirTreeItem( this, name, FALSE );
-    node.append( item );
-    */
-
     QString home( getenv( "HOME" ) );
     if ( home.right(1) != "/" )
 	home += "/";
@@ -109,7 +73,9 @@ void KFMDirTree::update()
 {
     int ypos, xpos;
     finderWin->offsets( xpos, ypos );
-        
+
+    bool show_dots = gui->isShowDot();
+    
     // Get a list of all visisble items
     QList<KFinderItem> openList;
     openList.setAutoDelete( FALSE);
@@ -124,7 +90,10 @@ void KFMDirTree::update()
 	if ( item->isOpen() )
 	{
 	    kfmitem = (KFMDirTreeItem*)item;
-	    openURLList.append( kfmitem->getURL() );
+	    // Ignore opened directories that start with "." if
+	    // the user does not want to see the dot files.
+	    if ( *kfmitem->getURL() != '.' || show_dots )
+		openURLList.append( kfmitem->getURL() );
 	}
     }
 
@@ -516,6 +485,8 @@ void KFMDirTreeItem::setOpen( bool _open )
 	return;
     }
     
+    bool show_dots = dirTree->getGui()->isShowDot();
+    
     QStrList sort_list;
 
     while ( ( ep = readdir( dp ) ) != 0L )
@@ -523,7 +494,8 @@ void KFMDirTreeItem::setOpen( bool _open )
 	QString name(ep->d_name);
 	if ( name != "." && name != ".." )
 	{
-	    sort_list.inSort( ep->d_name );
+	    if ( *ep->d_name != '.' || show_dots )
+		sort_list.inSort( ep->d_name );
 	}
     }
     

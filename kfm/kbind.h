@@ -3,7 +3,6 @@
 
 class KMimeType;
 class KMimeBind;
-// kalle class KFMConfig;
 
 #include <qstring.h>
 #include <qlist.h>
@@ -30,20 +29,6 @@ extern KMimeType *SocketType;
 extern KMimeType *CDevType;
 extern KMimeType *BDevType;   
 
-// A Hack, since KConfig has no constructor taking only a filename
-/*
-class KFMConfig : public KConfig
-{
-public:
-    KFMConfig( QFile *, QTextStream* );
-    ~KFMConfig();
-    
-protected:
-    QTextStream *pstream;
-    QFile *f;
-};
-*/
-
 /**
  * @short The application bindings.
  *
@@ -63,7 +48,7 @@ public:
      * only support 'file'. While the WWW Browser will use '%u', the graphics program
      * will use '%f'.
      */
-    KMimeBind( const char *_name, const char *_cmd, bool _allowdefault );
+    KMimeBind( const char *_name, const char *_cmd, const char *_pixmap, bool _allowdefault );
     virtual ~KMimeBind() {}
     
     /**
@@ -75,6 +60,12 @@ public:
      */
     const char* getCmd() { return (const char*)cmd; }
 
+    /**
+     * @return a pointer to the pixmap for this application.
+     *         The pointer is at no time 0L, but the pixmap may be empty.
+     */
+    QPixmap* getPixmap( bool _mini );
+    
     /**
      * @return TRUE if this application is allowed as default app.
      *         The default app is started if the user clicks on a
@@ -165,15 +156,14 @@ public:
      */
     static void initApplications( const char *_path );
 
-	/*
-	 * hack to get static classes up and running even with C++-Compilers/
-	 * Systems where a constructor of a class element declared static
+    /*
+     * hack to get static classes up and running even with C++-Compilers/
+     * Systems where a constructor of a class element declared static
      * would never get called (Aix, Alpha,...). In the next versions these
      * elements should disappear.
-	 */
-	static void InitStatic() {
-		appList = new QStrList;
-	}    
+     */
+    static void InitStatic();
+
 protected:
     /**
      * The programs name.
@@ -183,14 +173,17 @@ protected:
      * The command string.
      */
     QString cmd;
-
+    QString pixmapFile;
+    QString miniPixmapFile;
+    QPixmap *pixmap;
+    
     /**
      * List of all registered applications.
      *
      * @see #appendApplication
      */
     static QStrList *appList;
-
+    
     /**
      * @see #IsAllowedAsDefault
      */
@@ -420,7 +413,7 @@ public:
      * with the name.
      *
      */
-    static void getBindings( QStrList &_list, const char *_url, int _isdir );
+    static void getBindings( QStrList &_list, QList<QPixmap> &_pixlist, const char *_url, int _isdir );
     /**
      * This function runs the given binding with the URL.
      */
@@ -466,7 +459,6 @@ public:
      *         First the local path is tried, if that has no success, we try
      *         the global path.
      */
-    // static const char* getIconPath() { return icon_path; }
     static const char* getIconPath( const char *_icon, bool _mini = false );
 
     static const char* getDefaultPixmap() { return "unknown.xpm"; }
@@ -500,6 +492,14 @@ public:
     {
 	return magic->findBufferType( _sample, _len );
     }
+
+    /*
+     * hack to get static classes up and running even with C++-Compilers/
+     * Systems where a constructor of a class element declared static
+     * would never get called (Aix, Alpha,...). In the next versions these
+     * elements should disappear.
+     */
+    static void InitStatic();
 
 protected:    
     /**

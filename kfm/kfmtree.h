@@ -20,6 +20,8 @@ public:
 
     void fill();
     void update();
+
+    KfmGui* getGui() { return gui; }
     
 signals:
     void urlSelected( const char *_url, int _button );

@@ -146,14 +146,7 @@ void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
     popupMenu->clear();
     // store the mouse position. (Matthias)
     popupMenuPosition = QCursor::pos();   
-    
-    QStrList bindings;
-    bindings.setAutoDelete( true );
-    QStrList bindings2;
-    bindings2.setAutoDelete( true );
-    
-    // char buffer[ 1024 ];
-    
+        
     bool isdir = KIOServer::isDir( _urls );
     bool istrash = KIOServer::isTrash( _urls );
     
@@ -214,39 +207,61 @@ void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
     }
     
     popupFiles.copy( _urls );
-    
+
+    QStrList bindings;
+    QStrList bindings2;
+    QStrList bindings3;
+    QList<QPixmap> pixlist;
+    QList<QPixmap> pixlist2;
+    QList<QPixmap> pixlist3;
+
     // Get all bindings matching all files.
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
     {
 	// If this is the first file in the list, assume that all bindings are ok
 	if ( s == _urls.getFirst() )
 	{
-	    KMimeType::getBindings( bindings, s, isdir );
+	    KMimeType::getBindings( bindings, pixlist, s, isdir );
 	}
 	// Take only bindings, matching all files.
 	else
 	{
-	    KMimeType::getBindings( bindings2, s, isdir );
+	    KMimeType::getBindings( bindings2, pixlist2, s, isdir );
 	    char *b;
+	    QPixmap *p = pixlist.first();
 	    // Look thru all bindings we have so far
 	    for ( b = bindings.first(); b != 0L; b = bindings.next() )
+	    {
 		// Does the binding match this file, too ?
-		if ( bindings2.find( b ) == -1 )
-		    // If not, delete the binding
-		    bindings.removeRef( b );
+		if ( bindings2.find( b ) != -1 )
+		{
+		    // Keep these entries
+		    bindings3.append( b );
+		    pixlist3.append( p );
+		}
+		p = pixlist.next();
+	    }
+	    pixlist = pixlist3;
+	    bindings = bindings3;
 	}
     }
-	
+    
+    // Add all bindings to the menu
     if ( !bindings.isEmpty() )
     {
 	popupMenu->insertSeparator();
 
 	char *str;
+	QPixmap *p = pixlist.first();
 	for ( str = bindings.first(); str != 0L; str = bindings.next() )
 	{
-	    popupMenu->insertItem( str );
+	    if ( p != 0L && !p->isNull() )
+		popupMenu->insertItem( *p, str );
+	    else
+		popupMenu->insertItem( str );
+	    p = pixlist.next();
 	}
-    }
+    }    
 
     if ( _urls.count() == 1 )
     {

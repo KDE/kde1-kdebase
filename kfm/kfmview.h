@@ -203,8 +203,11 @@ public slots:
      * just call @ref #manager to do this.
      *
      * @param _point is already in global coordinates.
+     * @param _current_dir inidcates that we want to open the context menu
+     *                     for the current directory. In this case we dont want
+     *                     to offer 'delete' for example.
      */
-    void slotPopupMenu( QStrList & _urls, const QPoint &_point );
+    void slotPopupMenu( QStrList & _urls, const QPoint &_point, bool _current_dir = false );
 
     /**
      * The user selected 'Copy' in the context sensitive popup menu.

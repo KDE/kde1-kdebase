@@ -46,7 +46,7 @@ int KSlave::WaitIO(long sec, long usec)
     
     select( in + out + err + 1, &rfds, &wfds, NULL, &tv );
     
-    if( FD_ISSET( in, &wfds ) )  rc |= IN;
+    if( in != -1 && FD_ISSET( in, &wfds ) )  rc |= IN;
     if( FD_ISSET( out, &rfds ) ) rc |= OUT;
     if( FD_ISSET( err, &rfds ) ) rc |= ERR;
 

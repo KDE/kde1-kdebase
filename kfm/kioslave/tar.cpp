@@ -46,12 +46,11 @@ int KProtocolTAR::Open( KURL *url, int mode )
 {
     if( mode & READ )
     {
-	char *path = url->path();		// extracting /xxx from a tarfile
+	const char *path = url->path();	// extracting /xxx from a tarfile
 	while( *path == '/' ) path++;	// containing the file xxx won't work
-	// QString Command;
-	// Command.sprintf( "tar -%%sOxf - %s", path );
-	QString Command( "tar -%sOxf - " );
-	Command +=  path;
+	QString Command( "tar -%sOxf - \"" );
+	Command += path;
+	Command += "\"";
 	return( AttachTAR( Command ) );
     }
     return FAIL;

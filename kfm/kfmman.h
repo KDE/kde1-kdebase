@@ -28,8 +28,13 @@ public:
     virtual bool openURL( const char *_url, bool _refresh = FALSE );
     /**
      * The user pressed the right mouse button over _url at point _p.
+     *
+     * @param _point is already in global coordinates.
+     * @param _current_dir inidcates that we want to open the context menu
+     *                     for the current directory. In this case we dont want
+     *                     to offer 'delete' for example.
      */
-    virtual void openPopupMenu( QStrList & _url, const QPoint &_p );
+    virtual void openPopupMenu( QStrList & _url, const QPoint &_p, bool _current_dir = false );
     /**
      * The user dropped the URLs _source over the URL _url at the point _p.
      * 

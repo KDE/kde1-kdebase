@@ -138,17 +138,4 @@ int testNestedURLs( const char *_src, const char *_dest )
     return 0;
 }
 
-QString& operator<<( QString& _str, int _v )
-{
-    QString tmp;
-    tmp.setNum( _v );
-    _str += tmp.data();
-    return _str;
-}
-
-QString& operator<<( QString& _str, const char* _v )
-{
-    _str += _v;
-    return _str;
-}
 

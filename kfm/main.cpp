@@ -80,6 +80,7 @@ void InitStaticMembers()
      * elements should disappear.
      */
     KMimeBind::InitStatic();
+    KMimeType::InitStatic();
     HTMLCache::InitStatic();
     KfmGui::InitStatic();
     KfmView::InitStatic();
@@ -88,8 +89,6 @@ void InitStaticMembers()
 
 int main( int argc, char ** argv )
 {
-	InitStaticMembers();
-
     testDir2( "/.kde" );
     testDir2( "/.kde/share" );    
     testDir2( "/.kde/share/config" );
@@ -126,6 +125,8 @@ int main( int argc, char ** argv )
 	fclose( f2 );
 
     KApplication a( argc, argv, "kfm" );
+
+    InitStaticMembers();
     
     // Stephan: I must find a better place for this somewhen
     KFMPaths::initPaths();

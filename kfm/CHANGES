@@ -62,21 +62,26 @@
  - Overview of files in cache is available now, in fact you can use kfm
    as a very cool offline browser now.
  - FTP can handle files with spaces and has no problems with UNIX file system links any more.
- - HTTP Header files "Host:" does now conatain the port number is a special
+ - HTTP Header files "Host:" does now contain the port number is a special
    one is given.
  - You can enter directories in minicli now and KFM will open it
  - if untrusted pages ( http etc. ) contain links to the local file system,
    then a warning is displayed and the action is rejected.
 
-
 15/12/97 David McCanney
-
-A few small changes to kfm
 
  - Changed 'exit.xpm' to 'stop.xpm' in the menubar.  This was confusing some people
    (like me...)
  - Changed Help->Help... to Help->Help
  - Altered the Quit and Delete dialogs so the buttons go [Yes] [No] rather than
-
    [No] [Yes]  Everyone can stop moaning now :-p
 
+17.12.97 Torben
+
+ - Fixed bug in kioslave that caused tar:/ not to work on Alphas.
+ - Now you can no longer delete the current directory. The entry is not any longer
+   in the popup menu when you click on the background of a kfm window with the
+   right mouse button
+ - Popup menus do have pixmaps for the applications now. That looks really cool :-)
+ - TreeView shows/hides dot files now
+ - Clearing the cache works now

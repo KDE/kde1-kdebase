@@ -54,14 +54,19 @@ QStrList *KMimeBind::appList;
 QDict<QString>* KMimeType::iconDict = 0L;
 QDict<QString>* KMimeType::miniIconDict = 0L;
 
-/***************************************************************
- *
- * KMimeType
- *
- ***************************************************************/
+QPixmap* emptyPixmap = 0L;
 
-KMimeType::KMimeType( const char *_mime_type, const char *_pixmap )
+void KMimeBind::InitStatic()
 {
+    appList = new QStrList;
+    if ( emptyPixmap == 0L )
+	emptyPixmap = new QPixmap();
+}
+
+void KMimeType::InitStatic()
+{
+    if ( emptyPixmap == 0L )
+	emptyPixmap = new QPixmap();
     if ( pixmapCache == 0L )
 	pixmapCache = new QPixmapCache;
     if ( globalIconPath == 0L )
@@ -90,7 +95,16 @@ KMimeType::KMimeType( const char *_mime_type, const char *_pixmap )
 	iconDict = new QDict<QString>;
     if ( miniIconDict == 0L )
 	miniIconDict = new QDict<QString>;
-    
+}    
+
+/***************************************************************
+ *
+ * KMimeType
+ *
+ ***************************************************************/
+
+KMimeType::KMimeType( const char *_mime_type, const char *_pixmap )
+{
     bApplicationPattern = false;
     
     mimeType = _mime_type;
@@ -639,7 +653,7 @@ KMimeType* KMimeType::findType( const char *_url )
 /**
  * TODO: Some of this code belonks in KDELnkMimeType and others.
  */
-void KMimeType::getBindings( QStrList &_list, const char *_url, int _isdir )
+void KMimeType::getBindings( QStrList &_list, QList<QPixmap> &_pixlist, const char *_url, int _isdir )
 {
     KURL u( _url );
     if ( u.isMalformed() )
@@ -649,7 +663,7 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, int _isdir )
     QString tmp;
     
     // Try to read the file as a [KDE Desktop Entry]
-    KConfig *config = KMimeBind::openKConfig( _url ); // kalle
+    KConfig *config = KMimeBind::openKConfig( _url );
     
     if ( config != 0L )
     {
@@ -688,18 +702,21 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, int _isdir )
 			    s += " ";
 			    s += (const char*)start;
 			    _list.append( s.data() );   
+			    _pixlist.append( emptyPixmap );
 			}
 		    }			
 
 		    // Add default mount binding
 		    QString s( klocale->translate( "Mount" ) );
 		    _list.append( s.data() );   
+		    _pixlist.append( emptyPixmap );
 		}
 		else
 		{
 		    QString s( klocale->translate( "Unmount" ) );
 		    s.detach();
 		    _list.append( s.data() );
+		    _pixlist.append( emptyPixmap );
 		}
 	    }
 	}
@@ -718,27 +735,6 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, int _isdir )
 	delete config;
     }
 
-    // If it is a link, get the name the link is pointing to
-    /* if ( strcmp( u.protocol(), "file" ) == 0 )
-    {
-	struct stat lbuff;
-	lstat( u.path(), &lbuff );
-	if ( S_ISLNK( lbuff.st_mode ) )
-	{
-	    QDir d( u.path() );
-	    QString x = d.canonicalPath();
-	    if ( !x.isNull() )
-	    {
-		tmp = x.data();
-		tmp.detach();
-		_url = tmp.data();
-		// debugT("$$$$$$$$$ Changed to '%s'\n",_url);
-		KURL u2( _url );
-		u = u2;
-	    }
-	}
-    } */
-
     // A directory named dir.html for example does not have a binding to
     // netscape or arena => we check for directories first.
     // Are we really shure that it is a directory? In cases like
@@ -748,9 +744,8 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, int _isdir )
 	KMimeBind *bind;
 	for ( bind = folderType->firstBinding(); bind != 0L; bind = folderType->nextBinding() )
 	{
-	    // Does the application support the protocol ?
-	    // if ( bind->supportsProtocol( u.protocol() ) )
 	    _list.append( bind->getProgram() );
+	    _pixlist.append( bind->getPixmap( true ) );
 	}
     }
     // usual files
@@ -764,18 +759,17 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, int _isdir )
 	KMimeBind *bind;
 	for ( bind = typ->firstBinding(); bind != 0L; bind = typ->nextBinding() )
 	{
-	    // if ( bind->supportsProtocol( u.protocol() ) )
 	    _list.append( bind->getProgram() );
+	    _pixlist.append( bind->getPixmap( true ) );
 	}
-
+	
 	// Add all default bindings if we did not already do it
 	if ( typ != defaultType )
 	{
 	    for ( bind = defaultType->firstBinding(); bind != 0L; bind = defaultType->nextBinding() )
 	    {
-		// Does the application support the protocol ?
-	      // if ( bind->supportsProtocol( u.protocol() ) )
 	      _list.append( bind->getProgram() );
+	      _pixlist.append( bind->getPixmap( true ) );
 	    }
 	}
     }
@@ -1013,15 +1007,56 @@ QString KDELnkMimeType::getComment( const char *_url )
  *
  ***************************************************************/
 
-KMimeBind::KMimeBind( const char *_prg, const char *_cmd, bool _allowdefault )
+KMimeBind::KMimeBind( const char *_prg, const char *_cmd, const char *_icon, bool _allowdefault )
 {
     allowDefault = _allowdefault;
     
     program = _prg;
     program.detach();
   
+    if ( _icon != 0L && *_icon != 0 )
+    {
+	pixmapFile = KMimeType::getIconPath( _icon );
+	miniPixmapFile = KMimeType::getIconPath( _icon, true );
+    }
+    
+    pixmap = 0L;
+    
     cmd = _cmd;
     cmd.detach();    
+}
+
+QPixmap* KMimeBind::getPixmap( bool _mini )
+{
+    if ( pixmap )
+	return pixmap;
+
+    if ( _mini && miniPixmapFile.isEmpty() )
+	return emptyPixmap;
+    if ( !_mini && pixmapFile.isEmpty() )
+	return emptyPixmap;
+    
+    if ( _mini )
+	pixmap = KMimeType::pixmapCache->find( miniPixmapFile );
+    else
+	pixmap = KMimeType::pixmapCache->find( pixmapFile );
+
+    if ( pixmap == 0L )
+    {
+	pixmap = new QPixmap;
+	if ( _mini )
+	{
+	     pixmap->load( miniPixmapFile );
+	     KMimeType::pixmapCache->insert( miniPixmapFile, pixmap );
+	}
+	else
+	{
+	     pixmap->load( pixmapFile );
+	     KMimeType::pixmapCache->insert( pixmapFile, pixmap );
+	}
+    }
+    
+    return pixmap;
 }
 
 void KMimeBind::initApplications( const char * _path )
@@ -1079,7 +1114,7 @@ void KMimeBind::initApplications( const char * _path )
 			allowdefault = false;
 		    
 		    // Define an icon for the program file perhaps ?
-		    if ( !app_icon.isNull() && !app_pattern.isNull() )
+		    if ( !app_icon.isEmpty() && !app_pattern.isEmpty() )
 		    {
 			KMimeType *t;
 			types->append( t = new KMimeType( name.data(), app_icon.data() ) );
@@ -1106,16 +1141,16 @@ void KMimeBind::initApplications( const char * _path )
 			// Bind this application to all files/directories
 			if ( strcasecmp( bind.data(), "all" ) == 0 )
 			{
-			    defaultType->append( new KMimeBind( name.data(), exec.data(), allowdefault ) );
-			    folderType->append( new KMimeBind( name.data(), exec.data(), allowdefault ) );
+			    defaultType->append( new KMimeBind( name.data(), exec.data(), app_icon, allowdefault ) );
+			    folderType->append( new KMimeBind( name.data(), exec.data(), app_icon, allowdefault ) );
 			}
 			else if ( strcasecmp( bind.data(), "alldirs" ) == 0 )
 			{
-			    folderType->append( new KMimeBind( name.data(), exec.data(), allowdefault ) );
+			    folderType->append( new KMimeBind( name.data(), exec.data(), app_icon, allowdefault ) );
 			}
 			else if ( strcasecmp( bind.data(), "allfiles" ) == 0 )
 			{
-			    defaultType->append( new KMimeBind( name.data(), exec.data(), allowdefault ) );
+			    defaultType->append( new KMimeBind( name.data(), exec.data(), app_icon, allowdefault ) );
 			}
 			// Bind this application to a mime type
 			else
@@ -1126,7 +1161,7 @@ void KMimeBind::initApplications( const char * _path )
 						      klocale->translate("Could not find mime type\n") + bind + "\n" + klocale->translate("in ") + file );
 			    else
 			    {
-				t->append( new KMimeBind( name.data(), exec.data(), allowdefault ) );
+				t->append( new KMimeBind( name.data(), exec.data(), app_icon, allowdefault ) );
 			    }
 			}
 			

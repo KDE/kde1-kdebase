@@ -854,7 +854,7 @@ void KFMManager::slotPopupActivated( int _id )
     }
 }
 
-void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
+void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _current_dir )
 {
     // Check wether all URLs are correct
     char *s;
@@ -875,14 +875,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
     popupMenu->clear();
     // store the mouse position. (Matthias)
     popupMenuPosition = QCursor::pos();       
-    
-    QStrList bindings;
-    bindings.setAutoDelete( true );
-    QStrList bindings2;
-    bindings2.setAutoDelete( true );
-    
-    // char buffer[ 1024 ];
-    
+        
     int isdir = KIOServer::isDir( _urls );
     
     if ( KIOServer::isTrash( _urls ) )
@@ -913,10 +906,10 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
 	if ( KIOServer::supports( _urls, KIO_Write ) && KfmView::clipboard->count() != 0 )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_PASTE ), 
 					view, SLOT( slotPopupPaste() ) );
-	if ( KIOServer::supports( _urls, KIO_Move ) )
+	if ( KIOServer::supports( _urls, KIO_Move ) && !_current_dir )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_MOVE_TO_TRASH ),  
 					view, SLOT( slotPopupTrash() ) );
-	if ( KIOServer::supports( _urls, KIO_Delete ) )
+	if ( KIOServer::supports( _urls, KIO_Delete ) && !_current_dir )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_DELETE ),  
 					view, SLOT( slotPopupDelete() ) );
     }
@@ -929,10 +922,10 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
 	if ( KIOServer::supports( _urls, KIO_Read ) )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_COPY ), 
 					view, SLOT( slotPopupCopy() ) );
-	if ( KIOServer::supports( _urls, KIO_Move ) )
+	if ( KIOServer::supports( _urls, KIO_Move ) && !_current_dir )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_MOVE_TO_TRASH ),  
 					view, SLOT( slotPopupTrash() ) );
-	if ( KIOServer::supports( _urls, KIO_Delete ) )
+	if ( KIOServer::supports( _urls, KIO_Delete ) && !_current_dir )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_DELETE ),  
 					view, SLOT( slotPopupDelete() ) );
     }
@@ -942,26 +935,42 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
 
     view->setPopupFiles( _urls );
     popupFiles.copy( _urls );
-    
+
+    QStrList bindings;
+    QStrList bindings2;
+    QStrList bindings3;
+    QList<QPixmap> pixlist;
+    QList<QPixmap> pixlist2;
+    QList<QPixmap> pixlist3;
+
     // Get all bindings matching all files.
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
     {
 	// If this is the first file in the list, assume that all bindings are ok
 	if ( s == _urls.getFirst() )
 	{
-	    KMimeType::getBindings( bindings, s, isdir );
+	    KMimeType::getBindings( bindings, pixlist, s, isdir );
 	}
 	// Take only bindings, matching all files.
 	else
 	{
-	    KMimeType::getBindings( bindings2, s, isdir );
+	    KMimeType::getBindings( bindings2, pixlist2, s, isdir );
 	    char *b;
+	    QPixmap *p = pixlist.first();
 	    // Look thru all bindings we have so far
 	    for ( b = bindings.first(); b != 0L; b = bindings.next() )
+	    {
 		// Does the binding match this file, too ?
-		if ( bindings2.find( b ) == -1 )
-		    // If not, delete the binding
-		    bindings.removeRef( b );
+		if ( bindings2.find( b ) != -1 )
+		{
+		    // Keep these entries
+		    bindings3.append( b );
+		    pixlist3.append( p );
+		}
+		p = pixlist.next();
+	    }
+	    pixlist = pixlist3;
+	    bindings = bindings3;
 	}
     }
     
@@ -971,9 +980,14 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
 	popupMenu->insertSeparator();
 
 	char *str;
+	QPixmap *p = pixlist.first();
 	for ( str = bindings.first(); str != 0L; str = bindings.next() )
 	{
-	    popupMenu->insertItem( str );
+	    if ( p != 0L && !p->isNull() )
+		popupMenu->insertItem( *p, str );
+	    else
+		popupMenu->insertItem( str );
+	    p = pixlist.next();
 	}
     }
 

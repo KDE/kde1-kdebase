@@ -37,7 +37,4 @@ QString displayName();
  */
 int testNestedURLs( const char *_src, const char *_dest );
 
-QString& operator<<( QString&, int );
-QString& operator<<( QString&, const char* );
-
 #endif

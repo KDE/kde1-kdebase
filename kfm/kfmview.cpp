@@ -353,10 +353,10 @@ void KfmView::slotPaste()
     job->copy( (*clipboard), manager->getURL().data() );
 }
 
-void KfmView::slotPopupMenu( QStrList &_urls, const QPoint &_point )
+void KfmView::slotPopupMenu( QStrList &_urls, const QPoint &_point, bool _current_dir )
 {
     // Show the popup Menu for the given URLs
-    manager->openPopupMenu( _urls, _point );
+    manager->openPopupMenu( _urls, _point, _current_dir );
 }
 
 void KfmView::slotPopupOpenWith()
@@ -832,7 +832,7 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 	select( 0L, false );
 	QStrList list;
 	list.append( manager->getURL() );
-	slotPopupMenu( list, p );
+	slotPopupMenu( list, p, true );
 	return true;
     }
     
