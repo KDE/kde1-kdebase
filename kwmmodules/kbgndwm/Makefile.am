@@ -7,8 +7,7 @@ LDADD   = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(LI
 
 bin_PROGRAMS	= kbgndwm
 kbgndwm_SOURCES = main.cpp kbgndwm.cpp bg.cpp jpeg.cpp
-BUILTSOURCES =	kbgndwm.moc
-DISTCLEANFILES = $(BUILTSOURCES)
+DISTCLEANFILES = kbgndwm.moc bg.moc
 noinst_HEADERS = kbgndwm.h bg.h version.h
 
 kbgndwm.cpp: kbgndwm.moc
