@@ -55,23 +55,23 @@ KfmApplication::KfmApplication(int &argc, char **argv, const char *name)
   if ( runGUI() )
   {
     if (!pages || pages->contains("font"))
-      addPage( m_pFontOptions = new KFontOptions( dialog, "font" ), i18n("&Font"), "" );
+      addPage( m_pFontOptions = new KFontOptions( dialog, "font" ), i18n("&Font"), "kfm-1.html" );
     if (!pages || pages->contains("color"))
-      addPage( m_pColorOptions = new KColorOptions( dialog, "color"), i18n("&Color"), "" );
+      addPage( m_pColorOptions = new KColorOptions( dialog, "color"), i18n("&Color"), "kfm-2.html" );
     if (!pages || pages->contains("misc"))
-      addPage( m_pMiscOptions = new KMiscOptions( dialog, "misc"), i18n("&Other"), "" );
+      addPage( m_pMiscOptions = new KMiscOptions( dialog, "misc"), i18n("&Other"), "kfm-3.html" );
 
     if (!pages || pages->contains("proxy"))
-      addPage( m_pProxyOptions = new KProxyOptions( dialog, "proxy" ), i18n("&Proxy"), "" );
+      addPage( m_pProxyOptions = new KProxyOptions( dialog, "proxy" ), i18n("&Proxy"), "kfm-4.html" );
     if (!pages || pages->contains("http"))
-      addPage( m_pHTTPOptions = new KHTTPOptions( dialog, "http"), i18n("&HTTP"), "" );
+      addPage( m_pHTTPOptions = new KHTTPOptions( dialog, "http"), i18n("&HTTP"), "kfm-5.html" );
     if (!pages || pages->contains("useragent"))
       addPage( m_pUserAgentOptions = new UserAgentOptions( dialog, "useragent"),
-               i18n("User &Agent"), "" );
+               i18n("User &Agent"), "kfm-6.html" );
 
     if (!pages || pages->contains("icons"))
       addPage( m_pRootOptions = new KRootOptions( dialog, "icons" ),
-               i18n("&Desktop Icons"), "" );
+               i18n("&Desktop Icons"), "kfm-7.html" );
     if ( m_pFontOptions || m_pColorOptions || m_pMiscOptions
          || m_pProxyOptions || m_pHTTPOptions || m_pUserAgentOptions
          || m_pRootOptions)
