@@ -1,3 +1,14 @@
+1998-12-14  David Faure  <faure@kde.org>
+
+	* Sven Radej added fusion of global & local mimetypes (same for applications) :
+	"Whenever you open global or local mimelnk dir, first local and then global
+	mimelink dir is scanned and all items are shown like they are in your local
+	dir; duplicated entries from global dir are discarded. You can try to delete
+	or move to trash any of them; if they are your local copy they will be
+	deleted, (although you will continue to see global one). If they are not your
+	local copy normal error is issued (Cannot move, bla, bly permission denied).
+	This works for mime *and* applnk directories."
+
 1998-12-13  Waldo Bastian  <bastian@kde.org>
 
         * Created popup window asking the user what to do with incoming

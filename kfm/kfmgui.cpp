@@ -968,8 +968,8 @@ void KfmGui::slotFile()
 
   QString url = "file:";
   url.append(KFMPaths::TrashPath());
-  debug("url:   %s",view->getURL() );
-  debug("trash: %s",url.data());
+  //debug("url:   %s",view->getURL() );
+  //debug("trash: %s",url.data());
   if( view->getURL() == url ) 
     mfile->insertItem( klocale->getAlias(ID_STRING_TRASH), 
 	        	   view, SLOT( slotPopupEmptyTrashBin() ) );
