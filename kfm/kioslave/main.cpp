@@ -68,7 +68,10 @@ void KIOSlave::ProcessError(KProtocol *prot, const char *srcurl)
 
     // fprintf( stderr, "KIOSlave-ERROR (%s): %s; %s\n",srcurl,message.data(),
     // strerror(SysError));
-    ipc->fatalError(KError, srcurl, SysError);
+    if (KError == KIO_ERROR_MalformedURL) // send malformed URL
+      ipc->fatalError(KError, message, SysError);
+    else
+      ipc->fatalError(KError, srcurl, SysError); // send src URL
 }
 
 KIOSlave::KIOSlave( char * _path )

@@ -653,10 +653,18 @@ int KProtocolHTTP::ProcessHeader()
 		Close();
 		KURL u( url );
 		KURL u2( u, buffer + 10 );
-		emit redirection( u2.url() );
-//		return Open( &u2, currentMode );
-		bytesleft = 0;
-		return (SUCCESS);
+		if (!u2.isMalformed())
+		{
+		  emit redirection( u2.url() );
+//		  return Open( &u2, currentMode );
+		  bytesleft = 0;
+		  return (SUCCESS);
+		}
+		else
+		{
+		  Error(KIO_ERROR_MalformedURL, buffer+10, 0);
+		  return FAIL;
+		}
 	    }
 	    
 	}
