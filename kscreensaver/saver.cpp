@@ -4,12 +4,15 @@
 #include <qapp.h>
 #include <X11/Xlib.h>
 #include <qbitmap.h>
-#include <kapp.h>
+#include <main.h>  // ssApp
+#include <kapp.h>  // for kde_bindir()
 #include <kcharsets.h>
+#include <kprocess.h>
 #include <qpushbt.h>
 #include <qlined.h>
 #include <qframe.h>
 #include <qkeycode.h>
+#include "config.h"
 #include "saver.h"
 
 #include "saver.moc"
@@ -17,6 +20,7 @@
 #define MAX_PASSWORD_LENGTH	20
 
 extern KLocale *glocale;
+extern ssApp *globalKapp;
 
 int checkPasswd(char *);
 
@@ -133,10 +137,38 @@ void KPasswordDlg::keyPressed( QKeyEvent *e )
 	}
 }
 
+
 int KPasswordDlg::tryPassword()
 {
+#if defined HAVE_ETCPASSWD || defined HAVE_SHADOW || defined HAVE_PAM
+	KProcess chkpass;
+	QString kcp_binName = KApplication::kde_bindir();
+	kcp_binName += "/kcheckpass";
+	chkpass << kcp_binName;
+	bool ret = chkpass.start(KProcess::DontCare, KProcess::Stdin);
+	if (ret == false)
+	  return 2;
+        chkpass.writeStdin(password.data(),password.length()); // write Password to stdin
+	chkpass.closeStdin();                // eof
+
+	int timeout = 10;
+	while ( timeout != 0 ) {
+	  if (! chkpass.isRunning() )
+	    break;
+	  else {
+	    globalKapp->processEvents();
+	    timeout--;
+	    sleep(1);
+	  }
+	}
+	if ( chkpass.normalExit() && (chkpass.exitStatus() == 0) )
+	  return 1;
+	else
+	  return 0;
+#else
 	int e = checkPasswd(password.data());
 	return e;
+#endif
 }
 
 void KPasswordDlg::timeout()

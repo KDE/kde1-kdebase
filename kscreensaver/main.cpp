@@ -60,6 +60,7 @@ static void cleanup( int );
 void catchSignals();
 void usage( char *name );
 
+ssApp *globalKapp;
 
 //----------------------------------------------------------------------------
 
@@ -281,6 +282,7 @@ int main( int argc, char *argv[] )
 	int timeout = 600;
 	ProgramName = argv[0];
 	ssApp a( argc, argv );
+        globalKapp = &a;
 	glocale = new KLocale("klock");
 
 	if ( argc == 1 )
@@ -390,7 +392,7 @@ int main( int argc, char *argv[] )
 		XGetScreenSaver( qt_xdisplay(), &xs_timeout, &xs_interval,
 				&xs_prefer_blanking, &xs_allow_exposures );
 		XSetScreenSaver( qt_xdisplay(), 0, xs_interval, xs_prefer_blanking,
-				xs_allow_exposures );
+			xs_allow_exposures );
 			
 		while ( 1 )
 		{

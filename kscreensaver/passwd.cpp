@@ -536,7 +536,7 @@ getCryptedUserPasswd(void)
 	/* If this is not possible, compile with -DUSE_XLOCKRC */
 #ifdef USE_SHADOW
 	if (passwd_invalid(pw->pw_passwd)) 
-	  canGetPasswd = false;
+	  canGetPasswd = true; // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! false
 #endif
 	(void) strcpy(userpass, pw->pw_passwd);
 

@@ -8,8 +8,6 @@ LDADD = -lkdeui -lkdecore -lqt -lXext -lX11 -lm $(PAMLIBS) \
 	$(LIBCRYPT) $(LIBSOCKET) 
 DISTCLEANFILES = $(BUILT_SOURCES)
 
-# for shadow passwords override the value
-INSTALL_PROGRAM = @INSTALL@ $(SETUIDFLAGS)
 
 bin_PROGRAMS = kpolygon.kss kswarm.kss klissie.kss kbanner.kss \
 	klines.kss kblankscrn.kss krock.kss kflame.kss klaser.kss \
