@@ -1,0 +1,185 @@
+# KTranslator Generated File
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Marcell Lengyel <miketkf@yahoo.com>, 1999.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.9.8\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"PO-Revision-Date: Tue Mar 9 1999 09:08:15+0100\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.4.0"
+
+#: main.C:304
+msgid "&Normal"
+msgstr "&Normál"
+
+#: main.C:307
+msgid "&Small"
+msgstr "Kic&si"
+
+#: main.C:308
+msgid "&Medium"
+msgstr "&Közepes"
+
+#: main.C:309
+msgid "&Large"
+msgstr "&Nagy"
+
+#: main.C:310
+msgid "&Huge"
+msgstr "Ó&riás"
+
+#: main.C:312
+msgid "&Linux"
+msgstr "&Linux"
+
+#: main.C:313
+msgid "Linux (small)"
+msgstr "Linux (kicsi)"
+
+#: main.C:316
+msgid "&More ..."
+msgstr "E&gyebek..."
+
+#: main.C:322
+msgid "&Hide"
+msgstr "&Elrejt"
+
+#: main.C:323
+msgid "&Left"
+msgstr "&Bal"
+
+#: main.C:324
+msgid "&Right"
+msgstr "&Jobb"
+
+#: main.C:329
+msgid "40x15 (&small)"
+msgstr "40x15 (kic&si)"
+
+#: main.C:330
+msgid "80x24 (&vt100)"
+msgstr "80x24 (&vt100)"
+
+#: main.C:331
+msgid "80x25 (&ibmpc)"
+msgstr "80x25 (&ibmpc)"
+
+#: main.C:332
+msgid "80x40 (&xterm)"
+msgstr "80x40 (&xterm)"
+
+#: main.C:333
+msgid "80x52 (ibmv&ga)"
+msgstr "80x52 (ibmv&ga)"
+
+#: main.C:342
+msgid "&Menubar"
+msgstr "&Menüsor"
+
+#: main.C:343
+msgid "&Frame"
+msgstr "&Keret"
+
+#: main.C:344
+msgid "Scroll&bar"
+msgstr "Gör&dítõsáv"
+
+#: main.C:346
+msgid "BS sends &DEL"
+msgstr "BackSpace &DEL-t küld"
+
+#: main.C:348
+msgid "&Font"
+msgstr "&Betûtípus"
+
+#: main.C:349
+msgid "&Size"
+msgstr "&Méret"
+
+#: main.C:350
+msgid "&Schema"
+msgstr "&Séma"
+
+#: main.C:352
+msgid "&Save options"
+msgstr "&Beállítások mentése"
+
+#: main.C:356
+msgid "&About ..."
+msgstr "&Névjegy..."
+
+#: main.C:357
+msgid "&User's Manual ..."
+msgstr "&Felhasználói kézikönyv..."
+
+#: main.C:358
+msgid "&Technical Reference ..."
+msgstr "&Mûszaki leírás..."
+
+#: main.C:362
+msgid "cd"
+msgstr "cd"
+
+#: main.C:375
+msgid "Sessions"
+msgstr "Session-ök"
+
+#: main.C:527
+#, c-format
+msgid ""
+"Font `%s' not found.\n"
+"Check README.linux.console for help."
+msgstr ""
+"A '%s' betûtípus nem található.\n"
+"Segítségként olvasd el a README.linux.console-t."
+
+#: main.C:647
+#, c-format
+msgid "About %s"
+msgstr "%s-ról"
+
+#: main.C:649
+#, c-format
+msgid ""
+"%s version %s - an X terminal\n"
+"\n"
+"Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"This program is free software under the\n"
+"terms of the Artistic License and comes\n"
+"WITHOUT ANY WARRANTY.\n"
+"See `LICENSE.readme´ for details."
+msgstr ""
+"%s %s verzió - X terminál\n"
+"\n"
+"Szerzõi jogok: 1998 Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"Ez a program szabad szoftver, és az\n"
+"Artistic License vonatkozik rá, de nem\n"
+"garanciális!\n"
+"A LICENSE.readme-ben további részleteket találsz."
+""
+
+#: main.C:776
+#, c-format
+msgid "`%s' terminated abnormally."
+msgstr "'%s' nem normálisan lépett ki."
+
+#: main.C:779
+msgid ""
+"\n"
+"Return code = "
+msgstr ""
+"\n"
+"Visszatérési érték = "
+
+#: main.C:976
+msgid "Welcome to the console"
+msgstr "Üdvözöllek a konzolban"

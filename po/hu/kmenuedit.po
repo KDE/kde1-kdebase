@@ -1,0 +1,269 @@
+# KTranslator Generated File
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Marcell Lengyel <miketkf@yahoo.com>, 1999.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"PO-Revision-Date: Tue Mar 9 1999 08:45:12+0100\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.4.0"
+
+#: kmenuedit.cpp:69
+msgid "Change &Menuname"
+msgstr "&Menünév megváltoztatás"
+
+#: kmenuedit.cpp:70
+msgid "Reload &Filetypes"
+msgstr "&Fájtípusok újratöltése"
+
+#: kmenuedit.cpp:77
+msgid "by"
+msgstr "által"
+
+#: kmenuedit.cpp:179 kmenuedit.cpp:204
+msgid "Changes not saved !"
+msgstr "A változtatások nem lettek elmentve!"
+
+#: kmenuedit.cpp:180 kmenuedit.cpp:205
+msgid ""
+"\n"
+"Do you want to save your changes ?"
+msgstr ""
+"\n"
+"El akarod menteni a változtatásokat?"
+
+#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
+msgid "EMPTY"
+msgstr "ÜRES"
+
+#: kmenuedit.cpp:343
+msgid "Reload Menus"
+msgstr "Menük újratöltése"
+
+#: kmenuedit.cpp:344
+msgid ""
+"Reloading the menus will discard all changes.\n"
+"Are you sure you want to reload ?"
+msgstr ""
+"A menük újratöltésével elvesznek az eddigi változtatások.\n"
+"Biztosan újra akarod tölteni?"
+
+#: button.cpp:209 main.cpp:79 main.cpp:92
+msgid "KMenuedit"
+msgstr "KMenüszerkesztõ"
+
+#: main.cpp:80
+msgid ""
+"The directory for your personal menu does not exist.\n"
+" Do you want to create it now ?"
+msgstr ""
+"A személyes menüdhöz tartozó könyvtár nem létezik.\n"
+"Létre szeretnéd hozni?"
+
+#: main.cpp:93
+msgid ""
+"Unable to create directory for personal menu.\n"
+" Select Ok to exit KMenuedit."
+msgstr ""
+"Nem hozható létre a személyes menüd könyvtára.\n"
+"Válaszd az Ok gombot a kilépéshez."
+
+#: confmenu.cpp:91 entrydialog.cpp:60
+msgid "Separator"
+msgstr "Elválasztó"
+
+#: confmenu.cpp:103 confmenu.cpp:335
+msgid "Open/ Close"
+msgstr "Megnyit/Bezár"
+
+#: confmenu.cpp:117
+msgid "Select item for moving"
+msgstr "Elem kiválasztása mozgatáshoz"
+
+#: confmenu.cpp:118
+msgid "Select menu for moving"
+msgstr "Menü kiválasztása mozgatáshoz"
+
+#: confmenu.cpp:120
+msgid "New"
+msgstr "Új"
+
+#: confmenu.cpp:177 confmenu.cpp:318
+msgid "Warning !"
+msgstr "Figyelmeztetés!"
+
+#: confmenu.cpp:178
+msgid "If you delete this button you will lose all of its submenus"
+msgstr "Ha kitörlöd ezt a gombot, akkor elvesztesz vele minden almenüt!"
+
+#: confmenu.cpp:297
+msgid "Wrong filename"
+msgstr "Hibás fájlnév"
+
+#: confmenu.cpp:298
+msgid ""
+"A kdelnk-file with this name does already exist. \n"
+"Please choose another filename."
+msgstr ""
+"Egy kdelnk-fájl ezzel a névvel már létezik.\n"
+"Kérlek válassz valami más nevet."
+
+#: confmenu.cpp:319
+msgid "Changing the type of this button will delete all of its submenus"
+msgstr "A gomb típusának megváltoztatása törli az összes almenüjét."
+
+#: confmenu.cpp:340 confmenu.cpp:940
+msgid "no command"
+msgstr "parancs nélkül"
+
+#: button.cpp:210
+msgid ""
+"Sorry ! You have to save your changes\n"
+"before you can drop this item on another window."
+msgstr ""
+"Sajnálom! Mielõtt rádobod ezt az elemet egy\n"
+"másik ablakra, el kell mentened a változtatásokat."
+
+#: DesktopPathDialogData.cpp:37
+msgid "Path for KDE Desktop Entries is not set."
+msgstr "Nincs megadva az elérési út a KDE Asztal bejegyzésekhez."
+
+#: DesktopPathDialogData.cpp:49
+msgid "I suggest the following entries:"
+msgstr "A következõ bejegyzéseket javaslom:"
+
+#: DesktopPathDialogData.cpp:55
+msgid "Path:"
+msgstr "Elérés:"
+
+#: DesktopPathDialogData.cpp:68
+msgid "PersonalPath:"
+msgstr "Személyes elérés:"
+
+#: entrydialog.cpp:61
+msgid "Submenu"
+msgstr "Almenü"
+
+#: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
+#: entrydialog.cpp:544
+msgid "Application"
+msgstr "Alkalmazás"
+
+#: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
+msgid "Swallow"
+msgstr "Benyelés"
+
+#: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
+msgid "Link"
+msgstr "Lánc"
+
+#: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
+msgid "Device"
+msgstr "Eszköz"
+
+#: entrydialog.cpp:72
+msgid "Type:"
+msgstr "Típus:"
+
+#: entrydialog.cpp:79
+msgid "File Name:"
+msgstr "Fájl név:"
+
+#: entrydialog.cpp:94
+msgid "Name:"
+msgstr "Név:"
+
+#: entrydialog.cpp:109
+msgid "Icon:"
+msgstr "Ikon:"
+
+#: entrydialog.cpp:141
+msgid "Mini Icon:"
+msgstr "Mini ikon:"
+
+#: entrydialog.cpp:149
+msgid "Comment:"
+msgstr "Megjegyzés:"
+
+#: entrydialog.cpp:196 entrydialog.cpp:538
+msgid "Execute"
+msgstr "Végrehajtás"
+
+#: entrydialog.cpp:222
+msgid "Execute:"
+msgstr "Végrehajtás:"
+
+#: entrydialog.cpp:228
+msgid "Working Directory:"
+msgstr "Munkakönyvtár:"
+
+#: entrydialog.cpp:241
+msgid "Run in terminal"
+msgstr "Futtatás terminálban"
+
+#: entrydialog.cpp:245
+msgid "Terminal Options:"
+msgstr "Terminál kapcsolók:"
+
+#: entrydialog.cpp:310
+msgid "Binary Pattern:"
+msgstr "Bináris minta:"
+
+#: entrydialog.cpp:325
+msgid "Application to swallow:"
+msgstr "Benyelendõ alkalmazás:"
+
+#: entrydialog.cpp:331
+msgid "Title of application:"
+msgstr "Alkalmazás címe:"
+
+#: entrydialog.cpp:337
+msgid "Application to execute on button press:"
+msgstr "Gombnyomáskor futtatandó alkalmazás:"
+
+#: entrydialog.cpp:367
+msgid "URL:"
+msgstr "URL:"
+
+#: entrydialog.cpp:415
+msgid "Read Only"
+msgstr "Csak olvasható"
+
+#: entrydialog.cpp:420
+msgid "Device:"
+msgstr "Eszköz:"
+
+#: entrydialog.cpp:425
+msgid "Mount Point:"
+msgstr "Mountolási pont:"
+
+#: entrydialog.cpp:430
+msgid "FS Type:"
+msgstr "FR típusa:"
+
+#: entrydialog.cpp:435
+msgid "Unmount Icon:"
+msgstr "Unmountoló ikon:"
+
+#: MenuNameDialog.cpp:21
+msgid "Change Menunames"
+msgstr "Menü nevek megváltoztatása"
+
+#: MenuNameDialogData.cpp:31
+msgid "Change the name of the menus as displayed in kpanel"
+msgstr "A kpanelben megjelenõ menü nevek megváltoztatása"
+
+#: MenuNameDialogData.cpp:36
+msgid "Personal:"
+msgstr "Személyes:"
+
+#: MenuNameDialogData.cpp:41
+msgid "Default:"
+msgstr "Alapértelmezett:"
