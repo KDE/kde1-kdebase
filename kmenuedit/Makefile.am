@@ -32,10 +32,11 @@ kde_icon_DATA = kmenuedit.xpm
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) $(srcdir)/mini-kmenuedit.xpm $(kde_minidir)/kmenuedit.xpm
-	$(mkinstalldirs) $(kde_minidir)/../large
-	$(INSTALL_DATA) $(srcdir)/large-kmenuedit.xpm $(kde_minidir)/../large/kmenuedit.xpm
+	$(mkinstalldirs) $(kde_icondir)/large
+	$(INSTALL_DATA) $(srcdir)/large-kmenuedit.xpm $(kde_icondir)/large/kmenuedit.xpm
 
 uninstall-local:
+	rm -f $(kde_icondir)/kmenueedit.xpm
 	rm -f $(kde_minidir)/kmenuedit.xpm
 
 messages:
