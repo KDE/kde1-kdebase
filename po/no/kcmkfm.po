@@ -167,32 +167,31 @@ msgstr "Anta HTML"
 
 #: khttpoptdlg.cpp:84
 msgid "Disable Cookies"
-msgstr ""
+msgstr "Slå av cookier"
 
 #: khttpoptdlg.cpp:91
-#, fuzzy
 msgid "Default accept policy"
-msgstr "Standard tegnsett"
+msgstr "Standard godtagningspolitikk"
 
 #: khttpoptdlg.cpp:100 khttpoptdlg.cpp:148
 msgid "Accept"
-msgstr ""
+msgstr "Godta"
 
 #: khttpoptdlg.cpp:105 khttpoptdlg.cpp:153
 msgid "Ask"
-msgstr ""
+msgstr "Spørr"
 
 #: khttpoptdlg.cpp:110 khttpoptdlg.cpp:158
 msgid "Reject"
-msgstr ""
+msgstr "Forkast"
 
 #: khttpoptdlg.cpp:123
 msgid "Domain specific settings:"
-msgstr ""
+msgstr "Domene-spesifikke innstillinger:"
 
 #: khttpoptdlg.cpp:130
 msgid "Change domain accept policy"
-msgstr ""
+msgstr "Endre politikk for godtatte domener"
 
 # useragentdlg.cpp:20
 #: useragentdlg.cpp:45

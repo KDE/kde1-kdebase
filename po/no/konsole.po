@@ -158,9 +158,3 @@ msgstr ""
 #: main.C:908
 msgid "Welcome to the console"
 msgstr "Velkommen til konsollet"
-
-#~ msgid "New"
-#~ msgstr "Ny"
-
-#~ msgid "(%d columns x %d lines)"
-#~ msgstr "(%d kolonner x %d linjer)"

@@ -188,7 +188,7 @@ msgstr ""
 
 #: kikbdconf.cpp:212
 msgid "Your configuration is empty. Install system default."
-msgstr "Din konfigurasjon er tom. Installer system standard."
+msgstr "Konfigurasjon din er tom. Installer systemstandard."
 
 #: kikbdconf.cpp:218
 msgid ""

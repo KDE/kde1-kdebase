@@ -31,7 +31,7 @@ msgstr "Avslutte og starte på nytt"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr "Omstart X-tjener"
+msgstr "Start X-tjener på nytt"
 
 #: kgreeter.cpp:222
 msgid "Login:"
