@@ -8,60 +8,59 @@ msgstr ""
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr ""
+msgstr "tela #%d"
 
 #: info.cpp:52
 #, c-format
-msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr ""
+msgid  "  dimensions          : %dx%d pixels (%dx%d mm)\n"
+msgstr "  dimensões           : %dx%d pixels (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
-msgid "  resolution          : %dx%d dots per inch\n"
-msgstr ""
+msgid  "  resolution          : %dx%d dots per inch\n"
+msgstr "  resolução           : %dx%d pontos por polegada\n"
 
 #: info.cpp:61
 #, c-format
-msgid "  depths (%d)          : "
-msgstr ""
+msgid  "  depths (%d)          : "
+msgstr "  profundidades (%d)   : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr ""
+msgstr "nome do display       : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr ""
+msgstr "número de versão      : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr ""
+msgstr "texto do fabricante   : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr ""
+msgstr "número de liberação   : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr ""
+msgstr "número da tela padrão : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr ""
+msgstr "número de telas       : %i"
 
 #: info.cpp:179
-#, fuzzy
 msgid ""
 "No Information available\n"
 " or\n"
 "this system is not yet supported :-("
-msgstr "Este sistema ainda não é suportado :-("
+msgstr "Nenhuma informação disponível\n ou\neste sistema ainda não é suportado :-("
 
 #: info_fbsd.cpp:73
 #, c-format
@@ -75,55 +74,51 @@ msgstr "%s rodando em %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr ""
+msgstr "Ahh não pude abrir fstab !"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
-#, fuzzy
 msgid "Device"
-msgstr "&Dispositivos"
+msgstr "Dispositivo"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr ""
+msgstr "Ponto de montagem"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr ""
+msgstr "Tipo de FS"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr ""
+msgstr "Opções de Montagem"
 
 #: info_hpux.cpp:54
-#, fuzzy
 msgid "unknown CPU type"
-msgstr "%s, velocidade desconhecida"
+msgstr "tipo desconhecido de CPU"
 
 #: info_hpux.cpp:62
-#, fuzzy
 msgid "unavailable"
-msgstr "Não disponível"
+msgstr "não disponível"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr ""
+msgstr "Número de processadores ativos= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr ""
+msgstr "Valor"
 
 #: info_linux.cpp:114
-#, fuzzy
 msgid "DMA-Channel"
-msgstr "&Canais DMA"
+msgstr "Canal DMA"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr ""
+msgstr "utilizado por"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr ""
+msgstr "Faixa E/S"
 
 #: main.cpp:79
 msgid "&Memory"

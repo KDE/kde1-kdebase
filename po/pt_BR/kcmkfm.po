@@ -120,16 +120,15 @@ msgstr "Usar proxy"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
-msgstr ""
+msgstr "Proxy HTTP:"
 
 #: kproxydlg.cpp:82 kproxydlg.cpp:113
 msgid "Port:"
-msgstr ""
+msgstr "Porta:"
 
 #: kproxydlg.cpp:98
-#, fuzzy
 msgid "FTP Proxy:"
-msgstr "&Proxy"
+msgstr "Proxy FTP:"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"

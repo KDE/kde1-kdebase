@@ -1411,7 +1411,8 @@ msgstr "ERRO: Não existe o modelo '%s'"
 msgid ""
 "Source file doesn't exist anymore ! \n"
 "Use \"Rescan Bindings\" in View menu to update the menu"
-msgstr ""
+msgstr "Arquivo-fonte não existe mais ! \n"
+       "Use \"Rever Dependências\" no menu Ver para atualizar o menu"
 
 #: popup.cpp:113 popup.cpp:120
 msgid "New "
