@@ -27,6 +27,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+#include <qdir.h>
 #include <qlayout.h> //CT 21Oct1998
 #include <kmsgbox.h> 
 #include <kmsgbox.h>
@@ -1204,44 +1205,53 @@ void KTitlebarAppearance::SaveSettings( void )
 
   //CT 18Oct1998 - save the pixmaps
   if (t == TITLEBAR_PIXMAP ) {
+    QString kwmdir = kapp->localkdedir() + "/share/apps/kwm";
+    QString kwmpicsdir = kwmdir + "/pics";
+
+    QDir dir("/");
+    if( !dir.exists( (const char *)kwmdir ) )
+        dir.mkdir( (const char *)kwmdir );
+    if( !dir.exists( (const char *)kwmpicsdir ) )
+        dir.mkdir( (const char *)kwmpicsdir );
+
     //first, a backup
-    sPixmapActive = kapp->localkdedir() +
-      "/share/apps/kwm/pics/oldactivetitlebar.xpm";
-    
-    if (!pixmapActiveOld.isNull())
+    sPixmapActive   = kwmpicsdir + "/oldactivetitlebar.xpm";
+    sPixmapInactive = kwmpicsdir + "/oldinactivetitlebar.xpm";   
+ 
+    if (!pixmapActiveOld.isNull()) {
+      QFile( (const char *)sPixmapActive ).remove();
       pixmapActiveOld.save(sPixmapActive,"XPM");
+      iconLoader->flush( "oldactivetitlebar.xpm" );
+    }
 
-    sPixmapInactive = kapp->localkdedir() +
-      "/share/apps/kwm/pics/oldinactivetitlebar.xpm";
-
-    if (!pixmapInactiveOld.isNull())
+    if (!pixmapInactiveOld.isNull()) {
+      QFile( (const char *)sPixmapInactive ).remove();
       pixmapInactiveOld.save(sPixmapInactive,"XPM");
+      iconLoader->flush( "oldinactivetitlebar" );
+    }
 
     //then, the save
-    sPixmapActive = kapp->localkdedir() +
-      "/share/apps/kwm/pics/activetitlebar.xpm";
-    sPixmapInactive = kapp->localkdedir() +
-      "/share/apps/kwm/pics/inactivetitlebar.xpm";
+    sPixmapActive   = kwmpicsdir + "/activetitlebar.xpm";
+    sPixmapInactive = kwmpicsdir + "/inactivetitlebar.xpm";
 
-    //CT FIXME lazy!!! Uuuugly
-    system((const char *) ("rm " + sPixmapActive + " " + sPixmapInactive));
-
-    bool a_saved, i_saved;
-    if (!pixmapActive.isNull())
+    bool a_saved = true, i_saved = true;
+    if (!pixmapActive.isNull()) {
+      QFile( (const char *)sPixmapActive ).remove();
       a_saved = pixmapActive.save(sPixmapActive,"XPM");
-    else 
-      a_saved = FALSE;
+      iconLoader->flush( "activetitlebar.xpm" );
+    }
 
-    if (!pixmapInactive.isNull())
+    if (!pixmapInactive.isNull()) {
+      QFile( (const char *)sPixmapInactive ).remove();
       i_saved = pixmapInactive.save(sPixmapInactive,"XPM");
-    else
-      i_saved = FALSE;
+      iconLoader->flush( "inactivetitlebar.xpm" );
+    }
 
     //and a little check
     if ( !( a_saved && i_saved ) ) {
-      QMessageBox::critical(this, "Window manager setup - ERROR",
-			    "There was an error while saving\n"
-			    "the titlebar pixmaps! Please check permissions.");
+      QMessageBox::critical(this, i18n("Window manager setup - ERROR"),
+			    i18n("There was an error while saving\n"
+			    "the titlebar pixmaps! Please check permissions.") );
     }
   }
   //CT
