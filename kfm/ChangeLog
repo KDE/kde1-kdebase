@@ -2,6 +2,7 @@
 
 	* passworddialog.cpp : Added layout management
 	* More patches from Michael Reiher concerning the tree view
+	* .directory for ~/Desktop, copied at kfm startup (Michael Reiher)
 
 1998-12-20  David Faure  <faure@kde.org>
 

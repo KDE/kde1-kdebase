@@ -200,6 +200,7 @@ int main( int argc, char ** argv )
     
     // Test for directories
     testDir( KFMPaths::DesktopPath(), TRUE );
+    copyDirectoryFile("directory.desktop", KFMPaths::DesktopPath());
     testDir( KFMPaths::TrashPath() );
     copyDirectoryFile("directory.trash", KFMPaths::TrashPath());
     testDir( KFMPaths::TemplatesPath() );

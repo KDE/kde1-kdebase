@@ -67,6 +67,7 @@ void KFMDirTree::slotshowDirectory(const char *_url )
     QString tmp2;
     bool found;
     int loops;
+    bool urlBelowBasePath = false;
 
     int ypos, xpos, myindex;
     finderWin->offsets( xpos, ypos );
@@ -86,15 +87,42 @@ void KFMDirTree::slotshowDirectory(const char *_url )
         tmp.truncate(tmp.length() - 1);
     loops=0;
 
-    // debug("slotshowDirectory(%s)\n",tmp.data());
-
     int comparelength=tmp.length();
+
+    if( lastSelectedItem )
+    {
+      QString basePath(lastSelectedItem->getURL());
+      if( basePath.right(1) == "/" )
+        basePath.truncate(basePath.length() - 1);
+      int curLevel = lastSelectedItem->getLevel();
+      int truncPos;
+      // truncate curLevel levels from the url
+      for( truncPos = basePath.length(); (truncPos >= 0) && curLevel; truncPos--)
+	if( (basePath[truncPos] == '/') && !(--curLevel))
+	  break;
+    
+      // now we get the path of the top most item of the subtree the contains
+      // the currently selecteditem
+      // the three subtrees are Root, My Home and Desktop
+      basePath.truncate( truncPos );
+      // check if the url is in the same subtree as the currently selected item
+      urlBelowBasePath = basePath == tmp.left(basePath.length());
+    }
+
     while(1) {
 
         myindex=0;
 
         found=false;
-        for ( item = first(); item != 0L; item = next() ) {
+
+	// if url is in the same subtree just skip the preceding subtrees
+	// just to speed it up a little
+        if( urlBelowBasePath )
+	  for ( item = first(); item != lastSelectedItem; item = next() );
+	else
+	  item = first();
+
+        for ( ; item != 0L; item = next() ) {
             kfmitem = (KFMDirTreeItem*)item;
             myindex++;
 
@@ -639,8 +667,8 @@ void KFMDirTreeItem::pressed( QMouseEvent *_ev, const QPoint &_globalPoint  )
     int x = ( PIXMAP_WIDTH + 6 ) * level;
     if ( _ev->pos().x() >= x + PIXMAP_WIDTH + 4 )
     {
-	dirTree->emitUrlSelected( url, _ev->button() );
         dirTree->slotSelectItem( this );
+	dirTree->emitUrlSelected( url, _ev->button() );
 	return;
     }
 
