@@ -28,3 +28,8 @@ extern "C"
 int gethostname (char *Name, int Namelen);
 #endif  
 
+#ifndef HAVE_FUNC_SETENV
+#define HAVE_FUNC_SETENV
+int setenv(const char *name, const char *value, int overwrite);
+int unsetenv(const char *name);
+#endif
