@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-06-16 13:56+0200\n"
+"POT-Creation-Date: 1998-06-18 22:21+0200\n"
 "PO-Revision-Date: 1998-01-18 00:14 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -25,124 +25,103 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: erreur pendant l'initialisation ; abandon\n"
 
-#: main.C:474
-msgid ""
-"You want to switch to another window. Unfortunately you have selected \n"
-"one of the classic focus policies which do not allow this.  These policies "
-"are \n"
-"included not because they make sense, but for compatibility reasons. Well, \n"
-"even old hand unix users should feel comfortable with the K Desktop "
-"Environment ;-)\n"
-"\n"
-"Anyway, if you prefer modern windowmanagement, please choose one of the \n"
-"recommended focus policies like ClickToFocus or FocusFollowMouse instead."
-msgstr ""
-"Vous désirez changer de fenêtre, soit. Malheureusement, vous avez sélectionné\n"
-"un de ces systèmes de focus classiques qui ne permettent pas cette manoeuvre.\n"
-"Ces systèmes sont inclus non pas parcequ'ils sont utiles, mais seulement pour\n"
-"des raisons de compatibilité. Par contre, même les utilisateurs UNIX ayant\n"
-"de la bouteille devraient trouver le K Desktop Environment pratique ;-)\n"
-"\n"
-"Quoi qu'il en soit, si vous préférez le multifenêtrage moderne, veuillez\n"
-"choisir un des systèmes de focus recommandés, comme ClickToFocus ou FocusFollowMouse."
-
-#: main.C:492
+#: main.C:470
 msgid "Preparing session ... "
 msgstr "Préparation de la session..."
 
-#: main.C:511
+#: main.C:489
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:518
+#: main.C:496
 msgid "Usage: "
 msgstr "Utilisation : "
 
-#: main.C:529
+#: main.C:507
 msgid "&Maximize"
 msgstr "&Maximiser"
 
-#: main.C:530
+#: main.C:508
 msgid "&Restore"
 msgstr "&Restaurer"
 
-#: main.C:531
+#: main.C:509
 msgid "&Iconify"
 msgstr "&Icônifier"
 
-#: main.C:532
+#: main.C:510
 msgid "&DeIconify"
 msgstr "&Déicônifier"
 
-#: main.C:533
+#: main.C:511
 msgid "&Sticky"
 msgstr "&Clouer"
 
-#: main.C:534
+#: main.C:512
 msgid "&UnSticky"
 msgstr "Déc&louer"
 
-#: main.C:535
+#: main.C:513
 msgid "Mo&ve"
 msgstr "Dé&placer"
 
-#: main.C:536
+#: main.C:514
 msgid "Resi&ze"
 msgstr "Redi&mensionner"
 
-#: main.C:538
+#: main.C:516
 msgid "&To desktop"
 msgstr "&Vers le bureau"
 
-#: main.C:540
+#: main.C:518
 msgid "&Onto current desktop"
 msgstr "&Sur le bureau actuel"
 
-#: main.C:593
+#: main.C:571
 msgid "One"
 msgstr "Premier"
 
-#: main.C:596
+#: main.C:574
 msgid "Two"
 msgstr "Second"
 
-#: main.C:599
+#: main.C:577
 msgid "Three"
 msgstr "Troisième"
 
-#: main.C:602
+#: main.C:580
 msgid "Four"
 msgstr "Quatrième"
 
-#: main.C:605
+#: main.C:583
 msgid "Five"
 msgstr "Cinquième"
 
-#: main.C:608
+#: main.C:586
 msgid "Six"
 msgstr "Sixième"
 
-#: main.C:611
+#: main.C:589
 msgid "Seven"
 msgstr "Septième"
 
-#: main.C:614
+#: main.C:592
 msgid "Eight"
 msgstr "Huitième"
 
-#: main.C:628
+#: main.C:606
 msgid "Unnamed Desktop"
 msgstr "Bureau sans nom"
 
-#: main.C:962
+#: main.C:942
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Quelques pixmaps ne sont pas valides: ShapeMode désactivé\n"
 
-#: main.C:1074
+#: main.C:1054
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Quelques pixmaps ne sont pas valides: GimmickMode désactivé\n"
 
-#: main.C:1307
+#: main.C:1311
 msgid "*** No Tasks ***"
 msgstr "*** Aucune tâche ***"
 
@@ -195,3 +174,27 @@ msgstr "Aller vers"
 #: taskmgr.C:121
 msgid "Current session"
 msgstr "Session courante"
+
+#~ msgid ""
+#~ "You want to switch to another window. Unfortunately you have selected \n"
+#~ "one of the classic focus policies which do not allow this.  These policies "
+#~ "are \n"
+#~ "included not because they make sense, but for compatibility reasons. Well, \n"
+#~ "even old hand unix users should feel comfortable with the K Desktop "
+#~ "Environment ;-)\n"
+#~ "\n"
+#~ "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
+#~ "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
+#~ msgstr ""
+#~ "Vous désirez changer de fenêtre, soit. Malheureusement, vous avez "
+#~ "sélectionné\n"
+#~ "un de ces systèmes de focus classiques qui ne permettent pas cette "
+#~ "manoeuvre.\n"
+#~ "Ces systèmes sont inclus non pas parcequ'ils sont utiles, mais seulement "
+#~ "pour\n"
+#~ "des raisons de compatibilité. Par contre, même les utilisateurs UNIX ayant\n"
+#~ "de la bouteille devraient trouver le K Desktop Environment pratique ;-)\n"
+#~ "\n"
+#~ "Quoi qu'il en soit, si vous préférez le multifenêtrage moderne, veuillez\n"
+#~ "choisir un des systèmes de focus recommandés, comme ClickToFocus ou "
+#~ "FocusFollowMouse."

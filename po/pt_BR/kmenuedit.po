@@ -1,12 +1,9 @@
 msgid ""
-msgstr "Project-Id-Version: kuser\n"
-       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
-       "PO-Revision-Date: 1998-03-23 00:00+0100\n"
-       "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
-
-#: kmenuedit.cpp:62
-msgid "&Reload"
-msgstr "&Recarregar"
+msgstr ""
+"Project-Id-Version: kuser\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"PO-Revision-Date: 1998-03-23 00:00+0100\n"
+"Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
 #: kmenuedit.cpp:68
 msgid "Change &Menuname"
@@ -29,8 +26,8 @@ msgid ""
 "\n"
 "Do you want to save your changes ?"
 msgstr ""
-       "\n"
-       "Quer gravar as suas modificações ?"
+"\n"
+"Quer gravar as suas modificações ?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
@@ -44,26 +41,29 @@ msgstr "Recarregar Menus"
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
-msgstr "Ao recarregar os menus todas as modificações.serão perdidas.\n"
-       "Tem certeza que quer recarregar ?"
+msgstr ""
+"Ao recarregar os menus todas as modificações.serão perdidas.\n"
+"Tem certeza que quer recarregar ?"
 
-#: button.cpp:209 main.cpp:77 main.cpp:90
+#: button.cpp:209 main.cpp:78 main.cpp:91
 msgid "KMenuedit"
 msgstr "KMenuedit"
 
-#: main.cpp:78
+#: main.cpp:79
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
-msgstr "O diretório para o seu menu personalizado não existe.\n"
-       " Quer criá-lo agora?"
+msgstr ""
+"O diretório para o seu menu personalizado não existe.\n"
+" Quer criá-lo agora?"
 
-#: main.cpp:91
+#: main.cpp:92
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
-msgstr "Não é possível criar diretório para menu personalizado.\n"
-       " Selecione Ok para sair do KMenuedit."
+msgstr ""
+"Não é possível criar diretório para menu personalizado.\n"
+" Selecione Ok para sair do KMenuedit."
 
 #: confmenu.cpp:90 entrydialog.cpp:52
 msgid "Separator"
@@ -93,8 +93,9 @@ msgstr "Nome de arquivo errado"
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
-msgstr "Um arquivo kdelnk com este nome já existe. \n"
-       "Por favor escolha outro nome."
+msgstr ""
+"Um arquivo kdelnk com este nome já existe. \n"
+"Por favor escolha outro nome."
 
 #: confmenu.cpp:301
 msgid "Changing the type of this button will delete all of its submenus"
@@ -108,8 +109,9 @@ msgstr "sem comando"
 msgid ""
 "Sorry ! You have to save your changes\n"
 "before you can drop this item on another window."
-msgstr "Desculpe! É necessário gravar as alterações\n"
-       "antes de poder colocar este item em outra janela."
+msgstr ""
+"Desculpe! É necessário gravar as alterações\n"
+"antes de poder colocar este item em outra janela."
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
@@ -239,3 +241,6 @@ msgstr "Pessoal:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Padrão:"
+
+#~ msgid "&Reload"
+#~ msgstr "&Recarregar"

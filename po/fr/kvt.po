@@ -198,8 +198,8 @@ msgstr "Les arguments reconnus sont :\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <commande> <arg>... exécute 'commande' avec les paramètres 'arg' ; '-'"
-"s'il est présent doit absolument être le dernier paramètre.\n"
+"-e <commande> <arg>... exécute 'commande' avec les paramètres 'arg' ; "
+"'-'s'il est présent doit absolument être le dernier paramètre.\n"
 
 #: main.C:1328
 msgid "-display <name>           specify the display (server)\n"
@@ -228,7 +228,8 @@ msgstr "-vt_font <fontname>       police normale\n"
 
 #: main.C:1334
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr "-no_font_hack             désactive la correction du bogue des polices Qt\n"
+msgstr ""
+"-no_font_hack             désactive la correction du bogue des polices Qt\n"
 
 #: main.C:1335
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"

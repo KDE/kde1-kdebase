@@ -1,8 +1,9 @@
 msgid ""
-msgstr "Project-Id-Version: kuser\n"
-       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
-       "PO-Revision-Date: 1998-03-23 00:00+0100\n"
-       "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+msgstr ""
+"Project-Id-Version: kuser\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"PO-Revision-Date: 1998-03-23 00:00+0100\n"
+"Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
 #: main.cpp:53
 msgid "&Sound"
@@ -153,8 +154,8 @@ msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-       "Desculpe, este tipo de URL não é atualmente suportada pelo Módulo de "
-       "Sons de Sistema do KDE"
+"Desculpe, este tipo de URL não é atualmente suportada pelo Módulo de Sons de "
+"Sistema do KDE"
 
 #: syssound.cpp:468
 #, c-format
@@ -163,9 +164,9 @@ msgid ""
 "%s\n"
 "does not seem to be a WAV--file."
 msgstr ""
-       "Desculpe, mas \n"
-       "%s\n"
-       "não parece ser um arquivo WAV."
+"Desculpe, mas \n"
+"%s\n"
+"não parece ser um arquivo WAV."
 
 #: syssound.cpp:471
 msgid "Improper File Extension"
@@ -177,9 +178,10 @@ msgid ""
 "The file\n"
 "%s\n"
 "is already in the list"
-msgstr "O arquivo\n"
-       "%s\n"
-       "já pertence à lista"
+msgstr ""
+"O arquivo\n"
+"%s\n"
+"já pertence à lista"
 
 #: syssound.cpp:486
 msgid "File Already in List"

@@ -343,7 +343,7 @@ msgid ""
 msgstr ""
 "Franz jagt mit einem verwahrlosten Taxi quer durch Bayern\n"
 "FRANZ JAGT MIT EINEM VERWAHRLOSTEN TAXI QUER DURCH BAYERN\n"
-"0 1 2 3 4 5 6 7 8 9   ! \" \043 $ % ^ & * ( )"
+"0 1 2 3 4 5 6 7 8 9   ! \" # $ % ^ & * ( )"
 
 #: main.cpp:62
 msgid "&Fonts etc."

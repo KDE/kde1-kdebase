@@ -220,7 +220,8 @@ msgstr "-vt_font <nome da fonte>   fonte normal\n"
 
 #: main.C:1334
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr "-no_font_hack             desligar o \"arranjo\" do bug das fontes de Qt\n"
+msgstr ""
+"-no_font_hack             desligar o \"arranjo\" do bug das fontes de Qt\n"
 
 #: main.C:1335
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
@@ -228,7 +229,8 @@ msgstr "-vt_size <tamanho>        tiny, small, normal, large, huge\n"
 
 #: main.C:1336
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux                    configura o kvt para imitar a consola de linux\n"
+msgstr ""
+"-linux                    configura o kvt para imitar a consola de linux\n"
 
 #: main.C:1337
 msgid "-no_menubar               hide the menubar\n"
@@ -286,7 +288,8 @@ msgstr ""
 #: main.C:1349
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr ""
-"-sl <número>              número de linhas gravadas no buffer de scroll-back\n"
+"-sl <número>              número de linhas gravadas no buffer de "
+"scroll-back\n"
 
 #: main.C:1350
 msgid ""

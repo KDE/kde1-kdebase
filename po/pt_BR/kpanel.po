@@ -1,50 +1,43 @@
 msgid ""
-msgstr "Project-Id-Version: kuser\n"
-       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
-       "PO-Revision-Date: 1998-03-23 00:00+0100\n"
-       "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
-
-#: kpanel.C:213
-msgid "Move"
-msgstr "Mover"
-
-#: kpanel.C:216
-msgid "Properties"
-msgstr "Propriedades"
+msgstr ""
+"Project-Id-Version: kuser\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"PO-Revision-Date: 1998-03-23 00:00+0100\n"
+"Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
 #: kpanel.C:253
 msgid "Go!"
 msgstr "Ir!"
 
-#: kpanel.C:256 tools.C:800
+#: kpanel.C:256 tools.C:787
 msgid "Where do you want to go tomorrow?"
 msgstr "Onde você quer ir amanhã?"
 
-#: kpanel.C:329
+#: kpanel.C:330
 msgid "No info available"
 msgstr "Nenhuma informação disponível"
 
-#: kpanel.C:368 props.C:156 props.C:157
+#: kpanel.C:369 props.C:156 props.C:157
 msgid "Logout"
 msgstr "Sair"
 
-#: kpanel.C:376 props.C:155
+#: kpanel.C:377 props.C:155
 msgid "Lock screen"
 msgstr "Travar tela"
 
-#: kpanel.C:385
+#: kpanel.C:386
 msgid "Hide the panel"
 msgstr "Esconder o painel"
 
-#: kpanel.C:395
+#: kpanel.C:396
 msgid "Show the panel"
 msgstr "Mostrar o painel"
 
-#: kpanel.C:1104 tools.C:616
+#: kpanel.C:1105 tools.C:616
 msgid "No comment available"
 msgstr "Nenhum comentário disponivel"
 
-#: kpanel.C:1113 tools.C:809
+#: kpanel.C:1114 tools.C:796
 msgid "Windowlist"
 msgstr "Lista de Janelas"
 
@@ -64,7 +57,7 @@ msgstr "Adicionar lista de janelas"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Adicionar lista de janelas ao painel"
 
-#: events.C:714 props.C:142
+#: events.C:722 props.C:142
 msgid "Configure"
 msgstr "Configurar"
 
@@ -80,7 +73,7 @@ msgstr "Editar Menus"
 msgid "Add or remove applications in the menu structure "
 msgstr "Adicionar ou remover aplicações ao menu"
 
-#: events.C:716 props.C:148
+#: events.C:724 props.C:148
 msgid "Restart"
 msgstr "Reinicializar"
 
@@ -96,14 +89,20 @@ msgstr "Painel"
 msgid "Lock Screen"
 msgstr "Travar Tela"
 
-#: props.C:309
+#: props.C:310
 msgid "The menu editor is not installed."
 msgstr "O editor de menus não está instalado."
 
-#: events.C:752 props.C:310
+#: events.C:760 props.C:311
 msgid "Oops!"
 msgstr "Ooops!"
 
-#: events.C:751
+#: events.C:759
 msgid "Cannot put this as button onto the panel!"
 msgstr "Não é possivel adicionar isto ao painel como botão!"
+
+#~ msgid "Move"
+#~ msgstr "Mover"
+
+#~ msgid "Properties"
+#~ msgstr "Propriedades"

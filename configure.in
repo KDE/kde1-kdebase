@@ -306,13 +306,14 @@ AC_OUTPUT(Makefile \
 	po/mk/Makefile \
 	po/pl/Makefile \
 	po/pt/Makefile \
+	po/pt_BR/Makefile \
 	po/ro/Makefile \
 	po/ru/Makefile \
 	po/sk/Makefile \
 	po/sl/Makefile \
 	po/sv/Makefile \
-	po/zh_TW_Big5/Makefile \
-	po/zh_GB2312/Makefile \
+	po/zh_TW.Big5/Makefile \
+	po/zh_CN.GB2312/Makefile \
 	po/en_UK/Makefile )
 
 AC_OUTPUT_COMMANDS(

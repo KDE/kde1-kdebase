@@ -1,8 +1,9 @@
 msgid ""
-msgstr "Project-Id-Version: kuser\n"
-       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
-       "PO-Revision-Date: 1998-03-23 00:00+0100\n"
-       "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+msgstr ""
+"Project-Id-Version: kuser\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"PO-Revision-Date: 1998-03-23 00:00+0100\n"
+"Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
 #: main.cpp:59
 msgid "&Windows"
@@ -47,179 +48,201 @@ msgstr "Menu"
 #: titlebar.cpp:463
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "O lado esquerdo da barra de titulo está cheio... desativando o "
-       "botão Maximizar\n"
+msgstr ""
+"O lado esquerdo da barra de titulo está cheio... desativando o botão "
+"Maximizar\n"
 
 #: titlebar.cpp:496
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "O lado direito da barra de título está cheio... desativando o botão "
-       "Maximizar\n"
+msgstr ""
+"O lado direito da barra de título está cheio... desativando o botão "
+"Maximizar\n"
 
 #: titlebar.cpp:536
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "O lado esquerdo da barra de titulo está cheio... desativando o "
-       "botão Minimizar\n"
+msgstr ""
+"O lado esquerdo da barra de titulo está cheio... desativando o botão "
+"Minimizar\n"
 
 #: titlebar.cpp:569
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "O lado direito da barra de título está cheio... desativando o botão "
-       "Minimizar\n"
+msgstr ""
+"O lado direito da barra de título está cheio... desativando o botão "
+"Minimizar\n"
 
-#: titlebar.cpp:925
+#: titlebar.cpp:926
 msgid "Titlebar appearance"
 msgstr "Aparência da barra de título"
 
-#: titlebar.cpp:927
-msgid "Shaded"
-msgstr "Sombreada"
+#: titlebar.cpp:928
+#, fuzzy
+msgid "Shaded Vertically"
+msgstr "Maximizar verticalmente"
 
 #: titlebar.cpp:930
+msgid "Shaded Horizontally"
+msgstr ""
+
+#: titlebar.cpp:934
 msgid "Plain"
 msgstr "Normal"
 
-#: titlebar.cpp:933 titlebar.cpp:953
+#: titlebar.cpp:937 titlebar.cpp:958
 msgid "Pixmap"
 msgstr "Imagem"
 
-#: titlebar.cpp:940
+#: titlebar.cpp:944
 msgid "Title Animation"
 msgstr "Animação do título"
 
-#: desktop.cpp:91 titlebar.cpp:943
+#: desktop.cpp:91 titlebar.cpp:947
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:964
+#: titlebar.cpp:969
 msgid "&Active pixmap"
 msgstr "Imagem &ativa"
 
-#: titlebar.cpp:966
+#: titlebar.cpp:971
 msgid "&Inactive pixmap"
 msgstr "Imagem &inativa"
 
-#: titlebar.cpp:982
+#: titlebar.cpp:987
 msgid "Mouse action"
 msgstr "Ação do mouse"
 
-#: titlebar.cpp:984
+#: titlebar.cpp:989
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
-       "Duplo click com botão esquerdo\n"
-       "   na barra de título faz:"
+"Duplo click com botão esquerdo\n"
+"   na barra de título faz:"
 
-#: titlebar.cpp:988
+#: titlebar.cpp:993
 msgid "(Un)Maximize"
 msgstr "(Des)Maximizar"
 
-#: titlebar.cpp:989
-msgid "Move"
-msgstr "Mover"
-
-#: titlebar.cpp:990
+#: titlebar.cpp:995
 msgid "(Un)Shade"
 msgstr "(Des)Sombrear"
 
-#: titlebar.cpp:991
+#: titlebar.cpp:996
 msgid "Iconify"
 msgstr "Iconificar"
 
-#: titlebar.cpp:992
+#: titlebar.cpp:997
 msgid "(Un)Sticky"
 msgstr "(Des)Pregar"
 
-#: titlebar.cpp:993
+#: titlebar.cpp:998
 msgid "Resize"
 msgstr "Mudar Tamanho"
 
-#: titlebar.cpp:994
-msgid "Restore"
-msgstr "Restaurar"
-
-#: titlebar.cpp:995
+#: titlebar.cpp:1000
 msgid "Operations Menu"
 msgstr "Menu de Operações"
 
-#: windows.cpp:74
+#: windows.cpp:84
 msgid "Window movement"
 msgstr "Movimentação das Janelas"
 
-#: windows.cpp:75
+#: windows.cpp:85
 msgid "Transparent"
 msgstr "Transparente"
 
-#: windows.cpp:76
+#: windows.cpp:86 windows.cpp:95
 msgid "Opaque"
 msgstr "Opaca"
 
-#: windows.cpp:79
-msgid "Resize Animation"
-msgstr "Animação de Tamanho"
+#: windows.cpp:89
+#, fuzzy
+msgid "Window resize"
+msgstr "&Janelas"
 
-#: windows.cpp:84
+#: windows.cpp:90
+#, fuzzy
+msgid "Animation:"
+msgstr "Animação do título"
+
+#: windows.cpp:92
+msgid "Fast"
+msgstr ""
+
+#: windows.cpp:98
 msgid "Placement policy"
 msgstr "Política de Posicionamento"
 
-#: windows.cpp:86
+#: windows.cpp:100
 msgid "Smart"
 msgstr "Inteligente"
 
-#: windows.cpp:88
+#: windows.cpp:102
 msgid "Cascade"
 msgstr "Cascata"
 
-#: windows.cpp:90
+#: windows.cpp:104
 msgid "Interactive"
 msgstr "Interactivo"
 
-#: windows.cpp:92
+#: windows.cpp:106
 msgid "Random"
 msgstr "Aleatório"
 
-#: windows.cpp:94
+#: windows.cpp:108
 msgid "Manual"
 msgstr "Manual"
 
-#: windows.cpp:101
+#: windows.cpp:115
 msgid "Allowed Overlap:"
 msgstr "Sobreposição:"
 
-#: windows.cpp:108
+#: windows.cpp:122
 msgid "Maximize Style"
 msgstr "Estilo de Maximização"
 
-#: windows.cpp:109
+#: windows.cpp:123
 msgid "Maximize fully"
 msgstr "Maximizar totalmente"
 
-#: windows.cpp:110
+#: windows.cpp:124
 msgid "Maximize vertically"
 msgstr "Maximizar verticalmente"
 
-#: windows.cpp:113
+#: windows.cpp:127
 msgid "Focus Policy"
 msgstr "Política de Foco"
 
-#: windows.cpp:114
+#: windows.cpp:129
 msgid "Click to focus"
 msgstr "Clicar para obter foco"
 
-#: windows.cpp:115
+#: windows.cpp:131
 msgid "Focus follows mouse"
 msgstr "Foco segue o mouse"
 
-#: windows.cpp:120
+#: windows.cpp:133
+#, fuzzy
+msgid "Classic focus follows mouse"
+msgstr "Foco segue o mouse"
+
+#: windows.cpp:135
+#, fuzzy
+msgid "Classic sloppy focus"
+msgstr "Clicar para obter foco"
+
+#: windows.cpp:144
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
-msgstr "Demora do início automático\n"
-       "(<100 desativa)"
+msgstr ""
+"Demora do início automático\n"
+"(<100 desativa)"
 
-#: windows.cpp:123
+#: windows.cpp:147
 msgid "miliseconds"
 msgstr "milissegundos"
 
@@ -248,13 +271,25 @@ msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-       "Zona de Snap da Borda:\n"
-       "       (pixels)"
+"Zona de Snap da Borda:\n"
+"       (pixels)"
 
 #: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-       "Zona de Snap da Janela:\n"
-       "       (pixels)"
+"Zona de Snap da Janela:\n"
+"       (pixels)"
+
+#~ msgid "Shaded"
+#~ msgstr "Sombreada"
+
+#~ msgid "Move"
+#~ msgstr "Mover"
+
+#~ msgid "Restore"
+#~ msgstr "Restaurar"
+
+#~ msgid "Resize Animation"
+#~ msgstr "Animação de Tamanho"

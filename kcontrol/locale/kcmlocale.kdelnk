@@ -1,5 +1,5 @@
 [KCM Locale]
-Languages=C,ca,cs,da,de,el,en_UK,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sk,sv,zh_GB2312,zh_TW_Big5,
+Languages=C,ca,cs,da,de,el,en_UK,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sk,sv,zh_CN.GB2312,zh_TW.Big5,pt_BR
 
 [ca]
 Name=Catalan
@@ -211,14 +211,16 @@ Name=Slovak
 Name[de]=Slovakisch
 Name[no]=Slovakisk
 
-[zh_TW_Big5]
-Name=Traditional Chinese
+[zh_TW.Big5]
+Name=Chinese
 Name[de]=Chinesisch
 Name[no]=Kinetisk
 Name[zh]=BIG5 ¤¤¤å
 
-[zh_GB2312]
+[zh_CN.GB2312]
 Name=Simplified Chinese
 Name[de]=Vereinfachtes Chinesisch
 Name[no]=Forenklet kinesisk
 
+[pt_BR]
+Name=Brazil portuguese

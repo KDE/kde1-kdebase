@@ -1,117 +1,132 @@
 msgid ""
-msgstr "Project-Id-Version: kuser\n"
-       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
-       "PO-Revision-Date: 1998-03-23 00:00+0100\n"
-       "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+msgstr ""
+"Project-Id-Version: kuser\n"
+"POT-Creation-Date: 1998-06-18 22:21+0200\n"
+"PO-Revision-Date: 1998-03-23 00:00+0100\n"
+"Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
-#: main.C:67
+#: main.C:68
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr "kwm: parece que já está rodando outro gerenciador de janelas. kwm não "
-       "inicializou.\n"
+msgstr ""
+"kwm: parece que já está rodando outro gerenciador de janelas. kwm não "
+"inicializou.\n"
 
-#: main.C:81
+#: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: ocorreu uma falha durante a inicialização; abortando\n"
 
-#: main.C:449
+#: main.C:470
+msgid "Preparing session ... "
+msgstr ""
+
+#: main.C:489
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:456
+#: main.C:496
 msgid "Usage: "
 msgstr "Utilização: "
 
-#: main.C:467
+#: main.C:507
 msgid "&Maximize"
 msgstr "&Maximizar"
 
-#: main.C:468
+#: main.C:508
 msgid "&Restore"
 msgstr "&Restaurar"
 
-#: main.C:469
+#: main.C:509
 msgid "&Iconify"
 msgstr "Criar &Ícone"
 
-#: main.C:470
+#: main.C:510
 msgid "&DeIconify"
 msgstr "R&etirar Ícone"
 
-#: main.C:471
+#: main.C:511
 msgid "&Sticky"
 msgstr "&Pregar"
 
-#: main.C:472
+#: main.C:512
 msgid "&UnSticky"
 msgstr "Des&Pregar"
 
-#: main.C:473
+#: main.C:513
 msgid "Mo&ve"
 msgstr "Mo&ver"
 
-#: main.C:474
+#: main.C:514
 msgid "Resi&ze"
 msgstr "Alterar &Tamanho"
 
-#: main.C:476
+#: main.C:516
 msgid "&To desktop"
 msgstr "Para o &ambiente de trabalho"
 
-#: main.C:478
+#: main.C:518
 msgid "&Onto current desktop"
 msgstr "Para &o ambiente de trabalho atual"
 
-#: main.C:531
+#: main.C:571
 msgid "One"
 msgstr "Um"
 
-#: main.C:534
+#: main.C:574
 msgid "Two"
 msgstr "Dois"
 
-#: main.C:537
+#: main.C:577
 msgid "Three"
 msgstr "Três"
 
-#: main.C:540
+#: main.C:580
 msgid "Four"
 msgstr "Quatro"
 
-#: main.C:543
+#: main.C:583
 msgid "Five"
 msgstr "Cinco"
 
-#: main.C:546
+#: main.C:586
 msgid "Six"
 msgstr "Seis"
 
-#: main.C:549
+#: main.C:589
 msgid "Seven"
 msgstr "Sete"
 
-#: main.C:552
+#: main.C:592
 msgid "Eight"
 msgstr "Oito"
 
-#: main.C:566
+#: main.C:606
 msgid "Unnamed Desktop"
 msgstr "Tela sem nome"
 
-#: main.C:875
+#: main.C:942
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Algumas imagens não são válidas: ShapeMode desativado\n"
 
-#: main.C:1193
+#: main.C:1054
+#, fuzzy
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr "Algumas imagens não são válidas: ShapeMode desativado\n"
+
+#: main.C:1311
 msgid "*** No Tasks ***"
 msgstr "*** Nenhuma Tarefa ***"
 
-#: minicli.C:115
+#: minicli.C:116
 msgid "Command:"
 msgstr "Comando:"
 
-#: logout.C:36 taskmgr.C:107
+#: warning.C:36
+msgid "Ooops!"
+msgstr ""
+
+#: logout.C:36 taskmgr.C:108
 msgid "Logout"
 msgstr "Sair"
 
@@ -123,31 +138,33 @@ msgstr "Sessão pronta para desligar"
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
-msgstr "As seguintes aplicações contêm dados que não foram gravados e que\n"
-       "não serão recuperados na sua próxima sessão."
+msgstr ""
+"As seguintes aplicações contêm dados que não foram gravados e que\n"
+"não serão recuperados na sua próxima sessão."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
-msgstr "As seguintes aplicações não poderão ser restauradas na sua próxima "
-       "sessão,\n"
-       "apenas reinicializadas, certifique-se de que não contêm dados "
-       "importantes para gravar"
+msgstr ""
+"As seguintes aplicações não poderão ser restauradas na sua próxima sessão,\n"
+"apenas reinicializadas, certifique-se de que não contêm dados importantes "
+"para gravar"
 
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
-msgstr "As seguintes aplicações não reconhecem o X11 e por isso não podem "
-       "ser restauradas\n"
-       "na sua próxima sessão. Certifique-se de que não contêm dados "
-       "importantes para gravar."
+msgstr ""
+"As seguintes aplicações não reconhecem o X11 e por isso não podem ser "
+"restauradas\n"
+"na sua próxima sessão. Certifique-se de que não contêm dados importantes "
+"para gravar."
 
-#: taskmgr.C:106
+#: taskmgr.C:107
 msgid "Switch to"
 msgstr "Mudar para"
 
-#: taskmgr.C:120
+#: taskmgr.C:121
 msgid "Current session"
 msgstr "Sessão atual"
