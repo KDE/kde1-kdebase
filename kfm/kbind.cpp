@@ -754,7 +754,7 @@ void KMimeType::getBindings( QStrList &_list, QList<QPixmap> &_pixlist, const ch
 	KMimeBind *bind;
 	for ( bind = folderType->firstBinding(); bind != 0L; bind = folderType->nextBinding() )
 	{
-	    _list.append( bind->getProgram() );
+	    _list.append( bind->getName() );
 	    _pixlist.append( bind->getPixmap( true ) );
 	}
     }
@@ -771,7 +771,7 @@ void KMimeType::getBindings( QStrList &_list, QList<QPixmap> &_pixlist, const ch
 	KMimeBind *bind;
 	for ( bind = typ->firstBinding(); bind != 0L; bind = typ->nextBinding() )
 	{
-	    _list.append( bind->getProgram() );
+	    _list.append( bind->getName() );
 	    _pixlist.append( bind->getPixmap( true ) );
 	}
 	
@@ -780,19 +780,20 @@ void KMimeType::getBindings( QStrList &_list, QList<QPixmap> &_pixlist, const ch
 	{
 	    for ( bind = defaultType->firstBinding(); bind != 0L; bind = defaultType->nextBinding() )
 	    {
-	      _list.append( bind->getProgram() );
+	      _list.append( bind->getName() );
 	      _pixlist.append( bind->getPixmap( true ) );
 	    }
 	}
     }
 }
 
-KMimeBind* KMimeType::findBinding( const char *_name )
+KMimeBind* KMimeType::findBinding( const char *_kdelnkName )
 {
+    /* Find a binding by its kdelnk name */
     KMimeBind *b;
     for ( b = bindings.first(); b != 0L; b = bindings.next() )
     {
-	if ( strcmp( _name, b->getProgram() ) == 0L )
+	if ( strcmp( _kdelnkName, b->getKdelnkName() ) == 0L )
 	    return b;
     }
     
@@ -1050,25 +1051,16 @@ QString KDELnkMimeType::getComment( const char *_url )
  *
  ***************************************************************/
 
-KMimeBind::KMimeBind( const char *_prg, const char *_cmd, const char *_icon, bool _allowdefault )
+KMimeBind::KMimeBind( const char * _kdelnkName, const char *_name, const char *_cmd, const char *_icon, bool _allowdefault ) :
+    name(_name), kdelnkName(_kdelnkName), cmd(_cmd), pixmap(0L), allowDefault(_allowdefault)
 {
     appendBinding( this );
-  
-    allowDefault = _allowdefault;
-    
-    program = _prg;
-    program.detach();
   
     if ( _icon != 0L && *_icon != 0 )
     {
 	pixmapFile = KMimeType::getIconPath( _icon );
 	miniPixmapFile = KMimeType::getIconPath( _icon, true );
     }
-    
-    pixmap = 0L;
-    
-    cmd = _cmd;
-    cmd.detach();    
 }
 
 QListIterator<KMimeBind> KMimeBind::bindingIterator()
@@ -1081,7 +1073,7 @@ KMimeBind* KMimeBind::findByName( const char *_name )
   QListIterator<KMimeBind> it = KMimeBind::bindingIterator();
   for ( ; it.current() != 0L; ++it )
   {
-    if ( strcmp( it.current()->getProgram(), _name ) == 0 )
+    if ( strcmp( it.current()->getName(), _name ) == 0 )
       return it.current();
   }
 
@@ -1196,16 +1188,16 @@ void KMimeBind::initApplications( const char * _path )
 			// Bind this application to all files/directories
 			if ( strcasecmp( bind.data(), "all" ) == 0 )
 			{
-			    defaultType->append( new KMimeBind( name.data(), exec.data(), app_icon, allowdefault ) );
-			    folderType->append( new KMimeBind( name.data(), exec.data(), app_icon, allowdefault ) );
+			    defaultType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault ) );
+			    folderType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault ) );
 			}
 			else if ( strcasecmp( bind.data(), "alldirs" ) == 0 )
 			{
-			    folderType->append( new KMimeBind( name.data(), exec.data(), app_icon, allowdefault ) );
+			    folderType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault ) );
 			}
 			else if ( strcasecmp( bind.data(), "allfiles" ) == 0 )
 			{
-			    defaultType->append( new KMimeBind( name.data(), exec.data(), app_icon, allowdefault ) );
+			    defaultType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault ) );
 			}
 			// Bind this application to a mime type
 			else
@@ -1216,7 +1208,7 @@ void KMimeBind::initApplications( const char * _path )
 						      i18n("Could not find mime type\n") + bind + "\n" + i18n("in ") + file );
 			    else
 			    {
-				t->append( new KMimeBind( name.data(), exec.data(), app_icon, allowdefault ) );
+				t->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault ) );
 			    }
 			}
 			
@@ -1319,8 +1311,8 @@ bool KMimeBind::runBinding( const char *_url )
 
     while ( ( pos = cmd.find( "%c" ) ) != -1 )
     {
-	if ( !program.isEmpty() )
-	    cmd.replace( pos, 2, program.data() );
+	if ( !name.isEmpty() )
+	    cmd.replace( pos, 2, name.data() );
 	else
 	{	
 	    QString s = _url;
@@ -1583,14 +1575,14 @@ bool KMimeType::runBinding( const char *_url, const char *_binding )
     for ( bind = firstBinding(); bind != 0L; bind = nextBinding() )
     {
 	// Is it the one we want ?
-	if ( strcmp( bind->getProgram(), _binding ) == 0 )
+	if ( strcmp( bind->getName(), _binding ) == 0 )
 	    return bind->runBinding( _url );
     }
     // Repeat the loop for default bindings before we say we have none. rjakob
     for ( bind = defaultType->firstBinding(); bind != 0L; bind = defaultType->nextBinding() )
     {
 	// Is it the one we want ?
-	if ( strcmp( bind->getProgram(), _binding ) == 0 )
+	if ( strcmp( bind->getName(), _binding ) == 0 )
 	    return bind->runBinding( _url );
     }
 

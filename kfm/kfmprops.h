@@ -368,13 +368,8 @@ protected:
     QLineEdit *mimeEdit;
     KIconLoaderButton *iconBox;
     QComboBox *appBox;
+    QStrList kdelnklist; // holds the kdelnk names for the combobox items
 
-    QString commentStr;
-    QString patternStr;
-    QString iconStr;
-    QString appStr;
-    QString mimeStr;
-  
     QPixmap pixmap;
     QString pixmapFile;
 };

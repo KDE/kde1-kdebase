@@ -1818,11 +1818,11 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
 
     KConfig config( _props->getKURL()->path() );
     config.setGroup( "KDE Desktop Entry" );
-    patternStr = config.readEntry( "Patterns" );
-    appStr = config.readEntry( "DefaultApp" );
-    iconStr = config.readEntry( "Icon" );
-    commentStr = config.readEntry( "Comment" );
-    mimeStr = config.readEntry( "MimeType" );
+    QString patternStr = config.readEntry( "Patterns" );
+    QString appStr = config.readEntry( "DefaultApp" );
+    QString iconStr = config.readEntry( "Icon" );
+    QString commentStr = config.readEntry( "Comment" );
+    QString mimeStr = config.readEntry( "MimeType" );
 
     if ( !patternStr.isEmpty() )
 	patternEdit->setText( patternStr.data() );
@@ -1839,23 +1839,25 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     QStrList applist;
     QString currApp;
     appBox->insertItem( klocale->translate("<none>") );
+    kdelnklist.append( "" ); // empty item
     QListIterator<KMimeBind> it = KMimeBind::bindingIterator();
     for ( ; it.current() != 0L; ++it )
     {
-	currApp = it.current()->getProgram();
+	currApp = it.current()->getName();
 
 	// list every app only once
 	if ( applist.find( currApp ) == -1 ) { 
 	    appBox->insertItem( currApp );
 	    applist.append( currApp );
+            kdelnklist.append( it.current()->getKdelnkName());
+            //debug( "kdelnkname: %s\n",it.current()->getKdelnkName() );
 	}
     }
     
-    // Set the default app
-    int index = applist.find( appStr );
-    if ( index != -1 )
- 	index++;
-    else
+    // Set the default app (DefaultApp=... is the kdelnk name)
+    int index = kdelnklist.find( appStr );
+    //debug ("appStr = %s\n\n",appStr.data());
+    if ( index == -1 )
 	index = 0;
     appBox->setCurrentItem( index );
 }
@@ -1917,8 +1919,8 @@ void BindingPropsPage::applyChanges()
 // --- Sven's editable global settings changes start ---
     QDir lDir (kapp->localkdedir() + "/share/mimelnk/"); // I know it exists
 
-    debug (path.data());
-    debug (kapp->kde_mimedir().data());
+    //debug (path.data());
+    //debug (kapp->kde_mimedir().data());
 // --- Sven's editable global settings changes end ---
     
     if ( !f.open( IO_ReadWrite ) )
@@ -2054,13 +2056,7 @@ void BindingPropsPage::applyChanges()
     config.writeEntry( "Comment", commentEdit->text(), true, false, true );
     config.writeEntry( "MimeType", mimeEdit->text() );
     config.writeEntry( "Icon", iconBox->icon() );
-
-    // item 0 in appBox is reserved for <none>
-    if ( appBox->currentItem() == 0 )
-	appStr = "";
-    else
-	appStr = appBox->text( appBox->currentItem() );
-    config.writeEntry( "DefaultApp", appStr );
+    config.writeEntry( "DefaultApp", kdelnklist.at( appBox->currentItem() ) );
 
     config.sync();
 

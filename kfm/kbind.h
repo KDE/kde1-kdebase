@@ -41,25 +41,33 @@ class KMimeBind
 {
 public:
     /**
-     * Creates a FileBinding with the name as 1st parameter. The 2nd
-     * parameter is the command line. You may use '%f' as a wildcard for the path
-     * (makes only sense for the protocol 'file') or '%u' for the URL of a file.
-     * The last 3 parameters conatain one or more supported protocols. A Web Browser
-     * will for example support 'file', 'http', 'ftp' while a graphics program will
-     * only support 'file'. While the WWW Browser will use '%u', the graphics program
-     * will use '%f'.
+     * Creates a FileBinding
+     * @param _kdelnkName the name of the application kdelnk
+     * @param _name the name (contents of the Name= field, possibly translated).
+     * @param _cmd the command line. You may use '%f' as a wildcard for the path
+     *   (makes only sense for the protocol 'file') or '%u' for the URL of a file.
+     *   The last 3 parameters contain one or more supported protocols. A Web Browser
+     *   will for example support 'file', 'http', 'ftp' while a graphics program will
+     *   only support 'file'. While the WWW Browser will use '%u', the graphics program
+     *   will use '%f'.
+     * @param _pixmap the pixmap defined by Icon= in the app. kdelnk
+     * @param _allowdefault whether this can be a default binding (see AllowDefault= field)
      */
-    KMimeBind( const char *_name, const char *_cmd, const char *_pixmap, bool _allowdefault );
+    KMimeBind( const char *_kdelnkName, const char *_name, const char *_cmd, const char *_pixmap, bool _allowdefault );
     virtual ~KMimeBind() {}
     
     /**
-     * @return the programs name
+     * @return the program's name (as defined in the app. kdelnk)
      */
-    const char* getProgram() { return (const char*)program; }
+    const char* getName() { return (const char*)name; }
     /**
      * @eturn the command string.
      */
     const char* getCmd() { return (const char*)cmd; }
+    /**
+     * @return the app. kdelnk's name
+     */
+    const char* getKdelnkName() { return (const char*)kdelnkName; }
 
     /**
      * @return a pointer to the pixmap for this application.
@@ -160,9 +168,13 @@ public:
 
 protected:
     /**
-     * The programs name.
+     * The (possibly translated) name, as set by the 'Name=' field.
      */
-    QString program;
+    QString name;
+    /**
+     * The name of the application kdelnk
+     */
+    QString kdelnkName;
     /**
      * The command string.
      */
@@ -219,7 +231,7 @@ public:
      * Set the default bindings name. If the user just clicks on a document then
      * we try to execute the default binding ( read: application ).
      *
-     * @param _b is the name of a *.kdelnk file in the $KDEDIR/apps tree. '_b' does NOT
+     * @param _b is the name of a *.kdelnk file in the $KDEDIR/applnk tree. '_b' does NOT
      *           include the ".kdelnk" suffix.
      */
     virtual void setDefaultBinding( const char *_b ) { defaultBinding = _b; defaultBinding.detach(); }
@@ -231,10 +243,9 @@ public:
     virtual QStrList& getPattern() { return pattern; }
 
     /**
-     * The mime type in the file '$KDEDIR/MimeTypes/text+html.kdelnk' for
-     * example is called 'text/html'. The '+' in the filename is becomes
-     * a '/' and the suffix ".kdelnk" is deleted. That is what this function
-     * returns
+     * The mime type in the file '$KDEDIR/mimelnk/text/html.kdelnk' for
+     * example is called 'text/html'. The suffix ".kdelnk" is deleted.
+     * That is what this function returns
      *
      * @return the name of this mime type. This name may be used by an application
      *         to define the kind of data it works on. An example is "text/html".
@@ -354,9 +365,9 @@ public:
     virtual KMimeBind* nextBinding() { return bindings.next(); }
 
     /**
-     * Find a binding by its name.
+     * Find a binding by its kdelnk name.
      */
-    virtual KMimeBind* findBinding( const char *_filename );
+    virtual KMimeBind* findBinding( const char *_kdelnkName );
 
     /**
      * @return TRUE if we dont know anything about the file and have
@@ -381,7 +392,7 @@ public:
     
     /**
      * Finds a mime type by its name
-     * The file type in the file '$KDEDIR/MimeTypes/text+html.kdelnk' for
+     * The file type in the file '$KDEDIR/mimelnk/text/html.kdelnk' for
      * example is called 'text/html'.
      */
     static KMimeType *findByName( const char *_name );
@@ -436,7 +447,7 @@ public:
     static void init();
     
     /**
-     * Scan the $KDEDIR/MimeTypes directory for the mime types
+     * Scan the $KDEDIR/mimelnk directory for the mime types
      */
     static void initMimeTypes( const char *_path );
 
