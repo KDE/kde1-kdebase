@@ -1,0 +1,260 @@
+msgid ""
+msgstr ""
+"Date: 1997-08-26 14:27:08+0200\n"
+"From: M G Berberich <berberic@thingol>\n"
+"Content-Type: text/plain; charset=\n"
+"Xgettext-Options: --keyword=translate\n"
+"Files: main.C\n"
+
+#: main.C:220
+msgid "Add characters to word class"
+msgstr "Dodaj znakove klasi"
+
+#: main.C:224
+msgid "choose type of color-mode"
+msgstr "biraj vrstu obojenosti"
+
+#: main.C:227
+msgid "Ok"
+msgstr "U redu"
+
+#: main.C:229
+msgid "Cancel"
+msgstr "Odustani"
+
+#: main.C:357
+msgid "&New Terminal"
+msgstr "&Novi terminal"
+
+#: main.C:359
+msgid "E&xit"
+msgstr "&Zavr¹i"
+
+#: main.C:364 main.C:669
+msgid "&Hide"
+msgstr "&Sakrij"
+
+#: main.C:365
+msgid "&Left"
+msgstr "&Lijevo"
+
+#: main.C:366
+msgid "&Right"
+msgstr "&Desno"
+
+#: main.C:371
+msgid "&Normal"
+msgstr "&Normalan"
+
+#: main.C:372
+msgid "&Tiny"
+msgstr "&Minijaturan"
+
+#: main.C:373
+msgid "&Small"
+msgstr "Ma&li"
+
+#: main.C:374
+msgid "&Medium"
+msgstr "&Srednji"
+
+#: main.C:375
+msgid "&Large"
+msgstr "&Veliki"
+
+#: main.C:376
+msgid "&Huge"
+msgstr "&Ogromni"
+
+#: main.C:388
+msgid "&black/white"
+msgstr "&crno/bijelo"
+
+#: main.C:389
+msgid "&white/black"
+msgstr "&bijelo/crno"
+
+#: main.C:390
+msgid "&green/black"
+msgstr "&zeleno/crno"
+
+#: main.C:391
+msgid "black/light&yellow"
+msgstr "c&rno/svijetlo¾uto"
+
+#: main.C:392
+msgid "Linu&x Console"
+msgstr "Linu&x konzola"
+
+#: main.C:399 main.C:594
+msgid "Hide &Menubar"
+msgstr "Sakrij &Izbornik"
+
+#: main.C:401 main.C:460 main.C:586
+msgid "Show &Menubar"
+msgstr "Poka¾i &Izbornik"
+
+#: main.C:402 main.C:604
+msgid "Secure &keyboard"
+msgstr "Osiguraj &tipkovnicu"
+
+#: main.C:404
+msgid "Scroll&bar"
+msgstr "&Kliznik"
+
+#: main.C:405
+msgid "&Font size"
+msgstr "&Velièina fonta"
+
+#: main.C:406
+msgid "&Color"
+msgstr "&Boja"
+
+#: main.C:407
+msgid "&Size"
+msgstr "&Velièina"
+
+#: main.C:408
+msgid "Terminal..."
+msgstr "Terminal..."
+
+#: main.C:410
+msgid "Save &Options"
+msgstr "&Snimi Opcije"
+
+#: main.C:419
+msgid "&About..."
+msgstr "&O programu..."
+
+#: main.C:420 main.C:430
+msgid "&Help"
+msgstr "&Pomoæ"
+
+#: main.C:427
+msgid "&File"
+msgstr "&Datoteka"
+
+#: main.C:428
+msgid "&Options"
+msgstr "P&ode¹avanja"
+
+#: main.C:469 main.C:662
+msgid "&Show"
+msgstr "Pri&ka¾i"
+
+#: main.C:600
+msgid "Unsecure &keyboard"
+msgstr "Iskljuè&i osiguranje"
+
+#: main.C:739
+msgid "Hint"
+msgstr "Trik"
+
+#: main.C:740
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
+msgstr ""
+"Novi izbor boja bit æe prikazan\n"
+"kad se iskljuèi osiguranje tipkovnice."
+#: main.C:760
+msgid "About kvt"
+msgstr "O programu kvt"
+
+#: main.C:760
+msgid ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08"
+msgstr ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Emulacija terminala za KDE\n"
+"raðena po rxvt-2.08 Roberta Nationa."
+
+
+
+#: main.C:922
+msgid ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08\n"
+"\n"
+"Permitted arguments are:\n"
+"-e <command> <arg> ...\texecute command with ars - must be last argument\n"
+"-display <name>\tspecify the display (server)\n"
+"-vt_geometry <spec>\tthe initial vt window geometry\n"
+"-print-pipe <name>\tspecify pipe for vt100 printer\n"
+"-vt_bg <colour>\t\tbackground color\n"
+"-vt_fg <colour>\t\tforeground color\n"
+"-vt_font <fontname>\tnormal font\n"
+"-vt_size <size>     \ttiny, small, normal, large, huge\n"
+"-linux\t\t\tset up kvt to mimic linux-console\n"
+"-no_menubar\t\thide the menubar\n"
+"-no_scrollbar\t\thide the scrollbar\n"
+"-T <text>\t\ttext in window titlebar\n"
+"-tn <TERM>\t\tTerminal type. Default is xterm.\n"
+"-C\t\t\tCapture system console message\n"
+"-n <text>\t\tname in icon or icon window\n"
+"-7\t\t        run in 7 bit mode\n"
+"-8\t\t\trun in 8 bit mode\n"
+"-ls\t\t\tinitiate kvt's shell as a login shell\n"
+"-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
+"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-sl <number>\t\tsave number lines in scroll-back buffer\n"
+"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
+"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
+msgstr ""
+
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"  
+"Copyright(C) 1997 M G Berberich\n"  
+"Terminal emulation for the KDE Desktop Environment\n"  
+"based on Robert Nation's rxvt-2.08\n"  
+"\n" 
+"Permitted arguments are:\n" 
+"-e <command> <arg> ...\texecute command with ars - must be last argument\n" 
+"-display <name>\tspecify the display (server)\n" 
+"-vt_geometry <spec>\tthe initial vt window geometry\n" 
+"-print-pipe <name>\tspecify pipe for vt100 printer\n"
+"-vt_bg <colour>\t\tbackground color\n" 
+"-vt_fg <colour>\t\tforeground color\n" 
+"-vt_font <fontname>\tnormal font\n" 
+"-vt_size <size> \ttiny, small, normal, large, huge\n" 
+"-linux\t\t\tset up kvt to mimic linux-console\n" 
+"-no_menubar\t\thide the menubar\n" 
+"-no_scrollbar\t\thide the scrollbar\n" 
+"-T <text>\t\ttext in window titlebar\n" 
+"-tn <TERM>\t\tTerminal type. Default is xterm.\n"                               
+"-C\t\t\tCapture system console message\n"  
+"-n <text>\t\tname in icon or icon window\n" 
+"-7\t\t run in 7 bit mode\n" "-8\t\t\trun in 8 bit mode\n" 
+"-ls\t\t\tinitiate kvt's shell as a login shell\n"  
+"-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n" 
+"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n" 
+"-sl <number>\t\tsave number lines in scroll-back buffer\n" 
+"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n" 
+"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"        
+
+
+
+
+
+#: main.C:954
+msgid ""
+"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"
+msgstr ""
+"-grk9\t\greek kbd = ELOT 928 (default)\n"
+"-grk4\t\greek kbd = IBM 437\n"
+
+#: main.C:970
+msgid "Terminal Options"
+msgstr "Pode¹avanja terminala"

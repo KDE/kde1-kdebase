@@ -1,0 +1,256 @@
+#: main.cpp:53
+msgid "KDE Display Configuration"
+msgstr "KDE pode¹avanje prikaza"
+
+#: main.cpp:130
+#, c-format
+msgid ""
+"Usage: %s -init|-setup\n"
+"\n"
+msgstr ""
+"Upotreba: %s -init|-setup\n"
+"\n"
+
+#: main.cpp:131
+msgid "  -init               apply current settings to the display\n"
+msgstr " -init               pridru¾i trenutne  postavke prikazu\n"
+
+#: main.cpp:132
+msgid "  -setup              setup the display\n"
+msgstr "  -setup              podesi prikaz\n"
+
+#: backgnd.cpp:140 colorscm.cpp:293
+msgid "Background"
+msgstr "Pozadina"
+
+#: backgnd.cpp:165
+msgid "Color"
+msgstr "Boja"
+
+#: backgnd.cpp:185
+msgid "Flat"
+msgstr "Jednakomjerno"
+
+#: backgnd.cpp:189
+msgid "Gradient"
+msgstr "S prijelazom"
+
+#: backgnd.cpp:202
+msgid "Portrait"
+msgstr "Uspravno"
+
+#: backgnd.cpp:206
+msgid "Landscape"
+msgstr "Polo¾eno"
+
+#: backgnd.cpp:224
+msgid "Wallpaper"
+msgstr "Pozadinska slika"
+
+#: backgnd.cpp:257
+msgid "Tiled"
+msgstr "Ponavljana"
+
+#: backgnd.cpp:261
+msgid "Centred"
+msgstr "Centrirana"
+
+#: backgnd.cpp:265
+msgid "Scaled"
+msgstr "Razvuèena"
+
+#: backgnd.cpp:272
+msgid "Browse..."
+msgstr "Potra¾i..."
+
+#: scrnsave.cpp:45
+msgid "Ignore"
+msgstr "Ignoriraj"
+
+#: scrnsave.cpp:47
+msgid "Lock"
+msgstr "Zakljuèan"
+
+#: scrnsave.cpp:103 scrnsave.cpp:161
+msgid "Screen Saver"
+msgstr "Za¹tita zaslona"
+
+#: scrnsave.cpp:182
+msgid "Setup..."
+msgstr "Podesi..."
+
+#: scrnsave.cpp:186
+msgid "Test"
+msgstr "Isku¹aj"
+
+#: scrnsave.cpp:194
+msgid "Settings"
+msgstr "Pode¹enja"
+
+#: scrnsave.cpp:197
+msgid "Wait:"
+msgstr "Èekaj:"
+
+#: scrnsave.cpp:208
+msgid "min"
+msgstr "min"
+
+#: scrnsave.cpp:211
+msgid "Requires Password"
+msgstr "Zahtjeva lozinku"
+
+#: scrnsave.cpp:216
+msgid "Priority:"
+msgstr "Prioritet:"
+
+#: colorscm.cpp:326 scrnsave.cpp:219
+msgid "High"
+msgstr "Visok"
+
+#: colorscm.cpp:322 scrnsave.cpp:222
+msgid "Low"
+msgstr "Nizak"
+
+#: colorscm.cpp:139 colorscm.cpp:140
+msgid "Inactive window"
+msgstr "Neaktivan prozor"
+
+#: colorscm.cpp:155 colorscm.cpp:156
+msgid "Active window"
+msgstr "Aktivan prozor"
+
+#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:298
+msgid "Window text"
+msgstr "Tekst u prozoru"
+
+#: colorscm.cpp:209
+msgid "Disabled"
+msgstr "Neva¾eæi"
+
+#: colorscm.cpp:216 colorscm.cpp:217
+msgid "Selected"
+msgstr "Izabran"
+
+#: colorscm.cpp:252 colorscm.cpp:262
+msgid "Color Scheme"
+msgstr "Raspored boja"
+
+#: colorscm.cpp:276
+msgid "Remove"
+msgstr "Obri¹i"
+
+#: colorscm.cpp:284
+msgid "Widget color"
+msgstr "Boja widgeta"
+
+#: colorscm.cpp:289
+msgid "Inactive title bar"
+msgstr "Naslov neaktivnog prozora"
+
+#: colorscm.cpp:290
+msgid "Inactive title text"
+msgstr "Tekst neaktivnog prozora"
+
+#: colorscm.cpp:291
+msgid "Active title bar"
+msgstr "Naslov aktivnog prozora"
+
+#: colorscm.cpp:292
+msgid "Active title text"
+msgstr "Tekst aktivnog prozora"
+
+#: colorscm.cpp:294
+msgid "Text"
+msgstr "Tekst"
+
+#: colorscm.cpp:295
+msgid "Select background"
+msgstr "Boja izabranog"
+
+#: colorscm.cpp:296
+msgid "Select text"
+msgstr "Boja teksta izabranog"
+
+#: colorscm.cpp:297
+msgid "Window background"
+msgstr "Boja pozadine prozora"
+
+#: colorscm.cpp:309
+msgid "Contrast"
+msgstr "Kontrast"
+
+#: colorscm.cpp:341
+msgid "Save scheme"
+msgstr "Snimi raspored"
+
+#: colorscm.cpp:372 colorscm.cpp:380
+msgid "You have chosen a name used by a supplied color scheme"
+msgstr "Birali ste ime koje se veæ koristi"
+
+#: colorscm.cpp:463
+msgid "KDE Default"
+msgstr "KDE Uobièajeno"
+
+#: colorscm.cpp:687
+msgid "Display Setup"
+msgstr "Pode¹avanje prikaza"
+
+#: colorscm.cpp:688
+msgid ""
+"No desktop color schemes were found.\n"
+"Do you want to install the default color schemes now ?"
+msgstr ""
+"Nisam na¹ao rasporede boja.\n"
+"®elite li sad instalirati uobièajene rasporede?"
+
+#: savescm.cpp:26
+msgid "Name"
+msgstr "Ime"
+
+#: general.cpp:55
+msgid "General"
+msgstr "Uobièajen"
+
+#: general.cpp:59
+msgid "Widget style"
+msgstr "Stil widgeta"
+
+#: general.cpp:64
+msgid "Motif"
+msgstr "Motif"
+
+#: general.cpp:65
+msgid "Windows 95"
+msgstr "Windows 95"
+
+#: general.cpp:74
+msgid "Fonts"
+msgstr "Fontovi"
+
+#: general.cpp:79
+msgid "General font"
+msgstr "Uobièajeni font"
+
+#: general.cpp:104
+msgid "Sample"
+msgstr "Primjer"
+
+#: general.cpp:110
+msgid "Small"
+msgstr "Mali"
+
+#: general.cpp:114
+msgid "Medium"
+msgstr "Srednji"
+
+#: general.cpp:118
+msgid "Large"
+msgstr "Veliki"
+
+#: general.cpp:135
+msgid "Italic"
+msgstr "Nako¹en"
+
+#: kwmcom.cpp:80 kwmcom.cpp:107
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "kwmcom: ne mogu komunicirati s kwm\n"
