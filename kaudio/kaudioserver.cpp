@@ -289,7 +289,7 @@ int main ( int argc , char **argv )
   fprintf(KMServerPidHandle,"%i\n",IhdrChunk->ref);
   fclose(KMServerPidHandle);
 
-  printf("Starting audio server with talk id %i.\n", IhdrChunk->ref);
+  //printf("Starting audio server with talk id %i.\n", IhdrChunk->ref);
 
   sprintf(ServerId,"%i", IhdrChunk->ref);
 

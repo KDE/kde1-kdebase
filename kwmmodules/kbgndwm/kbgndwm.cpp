@@ -127,17 +127,17 @@ void KBGndManager::desktopChange( int d )
 {
   if ( oneDesktopMode )
     {
-      debug( "One desktop mode");
+      //debug( "One desktop mode");
       return;
     }
 
   d = KWM::currentDesktop() - 1;
 
-  debug( "Changing to desktop %d", d+1 );
+  //debug( "Changing to desktop %d", d+1 );
 
   if ( desktops[current].getName() == desktops[d].getName() )
     {
-      debug( "Desktops identical" );
+      //debug( "Desktops identical" );
       current = d;
       return;
     }
@@ -156,7 +156,7 @@ void KBGndManager::commandReceived( QString com )
 {
   if ( com == "kbgwm_reconfigure" )
     {
-      debug( "Got background reload event" );
+      //debug( "Got background reload event" );
 
       QString oldName = desktops[current].getName();
 
