@@ -6,8 +6,8 @@ DE_GMFILES = de_kfind.gmo de_kdehelp.gmo de_kdisplay.gmo de_kvt.gmo
 CZ_POFILES = cz_kfind.po
 CZ_GMFILES = cz_kfind.gmo
 
-ES_POFILES = es_kdehelp.po
-ES_GMFILES = es_kdehelp.gmo
+ES_POFILES = es_kdehelp.po es_kdisplay.po es_kfind.po es_kvt.po
+ES_GMFILES = es_kdehelp.gmo es_kdisplay.gmo es_kfind.gmo es_kvt.gmo
 
 SV_POFILES = sv_kdehelp.po  sv_kdisplay.po
 SV_GMFILES = sv_kdehelp.gmo sv_kdisplay.gmo
