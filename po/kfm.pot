@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-27 01:14+0100\n"
+"POT-Creation-Date: 1999-01-28 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -237,13 +237,13 @@ msgstr ""
 msgid "Could not load icon\n"
 msgstr ""
 
-#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:311
+#: bookmark.cpp:296 htmlcache.cpp:350 htmlcache.cpp:379 kbind.cpp:311
 #: kbind.cpp:390 kbind.cpp:442 kbind.cpp:1652 kbind.cpp:1660 kbind.cpp:1678
 #: kbind.cpp:1697 kbind.cpp:1756 kbind.cpp:1768 kbind.cpp:1795 kbind.cpp:1816
 #: kbind.cpp:1836 kbind.cpp:1848 kbind.cpp:1864 kbind.cpp:1999 kbind.cpp:2011
 #: kbind.cpp:2056 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
-#: kfmgui.cpp:547 kfmgui.cpp:757 kfmman.cpp:370 kfmman.cpp:1425
-#: kfmman.cpp:1653 kfmman.cpp:1699 kfmprops.cpp:380 kfmprops.cpp:648
+#: kfmgui.cpp:547 kfmgui.cpp:757 kfmman.cpp:370 kfmman.cpp:1420
+#: kfmman.cpp:1648 kfmman.cpp:1694 kfmprops.cpp:380 kfmprops.cpp:648
 #: kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092 kfmprops.cpp:1223
 #: kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240 kfmserver.cpp:45
 #: kfmserver.cpp:218 kfmserver.cpp:298 kfmserver.cpp:313 kfmserver.cpp:360
@@ -265,71 +265,71 @@ msgstr ""
 msgid "Location:"
 msgstr ""
 
-#: kfmexec.cpp:62 kfmgui.cpp:756 kfmman.cpp:1424
+#: kfmexec.cpp:62 kfmgui.cpp:756 kfmman.cpp:1419
 msgid "Malformed URL\n"
 msgstr ""
 
-#: kfmgui.cpp:943
+#: kfmgui.cpp:945
 msgid "Select files:"
 msgstr ""
 
-#: kfmgui.cpp:1011
+#: kfmgui.cpp:1013
 msgid "Find Complete"
 msgstr ""
 
-#: kfmgui.cpp:1012
+#: kfmgui.cpp:1014
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: kfmgui.cpp:1030
+#: kfmgui.cpp:1032
 msgid "&Edit Bookmarks..."
 msgstr ""
 
-#: kfmgui.cpp:1040
+#: kfmgui.cpp:1042
 msgid "&Add Bookmark"
 msgstr ""
 
-#: kfmgui.cpp:1076 kfmman.cpp:1464 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1078 kfmman.cpp:1459 kfmtree.cpp:389 root.cpp:285
 msgid "&New"
 msgstr ""
 
-#: kfmgui.cpp:1098
+#: kfmgui.cpp:1100
 msgid "&Up"
 msgstr ""
 
-#: kfmgui.cpp:1100
+#: kfmgui.cpp:1102
 msgid "&Back"
 msgstr ""
 
-#: kfmgui.cpp:1102
+#: kfmgui.cpp:1104
 msgid "&Forward"
 msgstr ""
 
-#: kfmgui.cpp:1104
+#: kfmgui.cpp:1106
 msgid "&Home"
 msgstr ""
 
-#: kfmgui.cpp:1171 kfmgui.cpp:1339 kfmjob.cpp:36 kfmman.cpp:252
+#: kfmgui.cpp:1175 kfmgui.cpp:1343 kfmjob.cpp:36 kfmman.cpp:252
 #: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:786
 #: kiojob.cpp:88 root.cpp:1244
 msgid "ERROR: Malformed URL"
 msgstr ""
 
-#: kfmgui.cpp:1293 kfmserver.cpp:245
+#: kfmgui.cpp:1297 kfmserver.cpp:245
 msgid "Open Location:"
 msgstr ""
 
-#: kfmgui.cpp:1350
+#: kfmgui.cpp:1354
 msgid "KFM Confirm"
 msgstr ""
 
-#: kfmgui.cpp:1351
+#: kfmgui.cpp:1355
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
 msgstr ""
 
-#: kfmgui.cpp:1478
+#: kfmgui.cpp:1485
 msgid "Document: Done"
 msgstr ""
 
@@ -361,7 +361,7 @@ msgstr ""
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr ""
 
-#: kfmexec.cpp:300 kfmman.cpp:1212 kfmview.cpp:587 root.cpp:1131
+#: kfmexec.cpp:300 kfmman.cpp:1207 kfmview.cpp:587 root.cpp:1131
 msgid "Open With:"
 msgstr ""
 
@@ -548,11 +548,11 @@ msgstr ""
 msgid "Open with"
 msgstr ""
 
-#: kfmman.cpp:1691 kfmtree.cpp:333 main.cpp:275
+#: kfmman.cpp:1686 kfmtree.cpp:333 main.cpp:275
 msgid "Move"
 msgstr ""
 
-#: kfmman.cpp:1695 kfmtree.cpp:337 main.cpp:277
+#: kfmman.cpp:1690 kfmtree.cpp:337 main.cpp:277
 msgid "Link"
 msgstr ""
 
@@ -869,11 +869,11 @@ msgstr ""
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr ""
 
-#: kfmman.cpp:1677 root.cpp:992 root.cpp:1012
+#: kfmman.cpp:1672 root.cpp:992 root.cpp:1012
 msgid "ERROR: Can not accept drop"
 msgstr ""
 
-#: kfmman.cpp:1654 kfmman.cpp:1700 kfmtree.cpp:342 root.cpp:1862 root.cpp:1887
+#: kfmman.cpp:1649 kfmman.cpp:1695 kfmtree.cpp:342 root.cpp:1862 root.cpp:1887
 msgid "Dont know what to do."
 msgstr ""
 
@@ -1165,13 +1165,13 @@ msgstr ""
 msgid "Segmentation fault in io subprocess"
 msgstr ""
 
-#: htmlcache.cpp:339
+#: htmlcache.cpp:351
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
 msgstr ""
 
-#: htmlcache.cpp:368
+#: htmlcache.cpp:380
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"
