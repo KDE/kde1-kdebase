@@ -26,6 +26,7 @@ Name[hu]=Kuka
 Name[hr]=Kanta za smeæe
 Name[zh_CN.GB2312]=·ÏÖ½Â¨
 Name[ro]=Coºul de Gunoi
+Name[ca]=Paperera
 Comment=This folder contains files to be deleted
 Comment[de]=Dieses Verzeichnis enthält die zu löschenden Dateien
 Comment[no]=Inneholder data som er slettet
@@ -45,4 +46,6 @@ Comment[pt_BR]=Esta pasta contém arquivos desnecessários
 Comment[ru]=üÔÏÔ ËÁÔÁÌÏÇ ÓÏÄÅÒÖÉÔ ÆÁÊÌÙ, ËÏÔÏÒÙÅ ÂÕÄÕÔ ÕÄÁÌÅÎÙ
 Comment[hr]=Ovaj direktorij sadr¾i datoteke koje treba obrisati
 Comment[zh_CN.GB2312]=Õâ¸öÎÄ¼ş¼Ğ·ÅÓĞÒª±»É¾³ıµÄÎÄ¼ş
-Comment[ro]=Acest director conşine fiºierele care vor fi ºterse.
+Comment[ro]=Acest director conşine fiºierele care vor fi ºterse.P
+Comment[ca]=Aquesta carpeta conté els fitxers que s'esborraran
+

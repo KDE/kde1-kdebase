@@ -26,6 +26,7 @@ Name[hu]=Saját könyvtár
 Name[hr]=Poèetni direktorij
 Name[zh_CN.GB2312]=Ê¹ÓÃÕßÖ÷Ä¿Â¼
 Name[ro]=Director implicit
+Name[ca]=Directori llar
 Comment=This folder contains all your personal files.
 Comment[no]=Denne katalogen inneholder alle dine personlige filer.
 Comment[de]=Dieses Verzeichnis enthält alle Ihre persönlichen Dateien.
@@ -46,3 +47,5 @@ Comment[hu]=Ez a könyvtár tartalmazza a személyes file-aidat.
 Comment[hr]=Ovaj direktorij sadr¾i sve va¹e osobne datoteke
 Comment[zh_CN.GB2312]=Õâ¸öÎÄ¼ş¼Ğ°üº¬ÄãµÄËùÓĞ¸öÈËÎÄ¼ş
 Comment[ro]=Directorul implicit al utilizatorului (home dir).
+Comment[ca]=Aquest directori conté els seus fitxers personals
+
