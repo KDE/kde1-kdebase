@@ -5,14 +5,14 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kfm\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1997-12-15 12:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
-"Language-Team: czech <LL@li.org>\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
-"Content-Transfer-Encoding: iso-8859-2\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
 
 #: kfmgui.cpp:254
 msgid "KFM"
@@ -275,7 +275,7 @@ msgid ""
 "%s"
 msgstr ""
 "Není mo¾né nahrát ikonu\n"
-"\r%s"
+"%s"
 
 #: kbind.cpp:291 kbind.cpp:364 kbind.cpp:417 kbind.cpp:1466 kbind.cpp:1474
 #: kbind.cpp:1492 kbind.cpp:1509 kbind.cpp:1570 kbind.cpp:1582 kbind.cpp:1609

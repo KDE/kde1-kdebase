@@ -1,9 +1,12 @@
-# Polish translation of KDE kfind
-# Version 0.1.2
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
-
-msgid "About &Qt"
-msgstr "Informacje o &Qt"
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=\n"
+"Date: 1997-10-01 16:40:07+0200\n"
+"From: root <flidr@CyberGate.zcu.cz>\n"
+"Xgettext-Options: -s -C -ktranslate\n"
+"Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp "
+"kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp "
+"mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
 
 #: kftabdlg.cpp:214
 msgid " Advanced "
@@ -24,6 +27,13 @@ msgstr "%d plik(ów) znaleziono"
 #: kfindtop.cpp:185
 msgid "&About"
 msgstr "&Informacje o KFind"
+
+# Polish translation of KDE kfind
+# Version 0.1.2
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+#: kfindtop.cpp:186
+msgid "About &Qt"
+msgstr "Informacje o &Qt"
 
 #: kfindtop.cpp:137
 msgid "&Add to archive"
@@ -157,7 +167,8 @@ msgstr "Najwy¿ej"
 msgid "Browse"
 msgstr "Przegl±daj"
 
-#: kfdird.cpp:48 kfoptions.cpp:53 kfwin.cpp:144 kfwin.cpp:198 kfwin.cpp:213 kfwin.cpp:220 kfwin.cpp:242 kfwin.cpp:249 kfwin.cpp:255
+#: kfdird.cpp:48 kfoptions.cpp:53 kfwin.cpp:144 kfwin.cpp:198 kfwin.cpp:213
+#: kfwin.cpp:220 kfwin.cpp:242 kfwin.cpp:249 kfwin.cpp:255
 msgid "Cancel"
 msgstr "A&nuluj"
 
@@ -193,7 +204,8 @@ msgstr ""
 "Czy na pewno chcesz skasowaæ plik:\n"
 "%s"
 
-#: kfwin.cpp:140 kfwin.cpp:178 kfwin.cpp:209 kfwin.cpp:216 kfwin.cpp:238 kfwin.cpp:245 kfwin.cpp:251 kfwin.cpp:348
+#: kfwin.cpp:140 kfwin.cpp:178 kfwin.cpp:209 kfwin.cpp:216 kfwin.cpp:238
+#: kfwin.cpp:245 kfwin.cpp:251 kfwin.cpp:348
 msgid "Error"
 msgstr "B³±d"
 
@@ -225,7 +237,6 @@ msgstr ""
 "Nie mo¿na skasowaæ\n"
 "zaznaczonego katalogu"
 
-
 #: kfwin.cpp:217
 msgid ""
 "It isn't possible to delete\n"
@@ -242,14 +253,14 @@ msgstr "Nie mo¿na zachowaæ wyników!"
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
-"Miroslav Fl\355dr <flidr@kky.zcu.cz>\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "\n"
 "Special thanks to Stephan Kulow\n"
 "<coolo@kde.org>"
 msgstr ""
 "KFind %s\n"
 "Nak³adka na program find\n"
-"Miroslav Fl\355dr <flidr@kky.zcu.cz>\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "\n"
 "Specjalne podziêkowania dla Stephana Kulow'a\n"
 "<coolo@kde.org>\n"
@@ -269,7 +280,9 @@ msgstr "&Pomoc"
 msgid "New Search"
 msgstr "Nowe szukanie"
 
-#: kfdird.cpp:47 kfoptions.cpp:52 kfwin.cpp:143 kfwin.cpp:181 kfwin.cpp:197 kfwin.cpp:212 kfwin.cpp:219 kfwin.cpp:241 kfwin.cpp:248 kfwin.cpp:254 kfwin.cpp:350
+#: kfdird.cpp:47 kfoptions.cpp:52 kfwin.cpp:143 kfwin.cpp:181 kfwin.cpp:197
+#: kfwin.cpp:212 kfwin.cpp:219 kfwin.cpp:241 kfwin.cpp:248 kfwin.cpp:254
+#: kfwin.cpp:350
 msgid "OK"
 msgstr "O&K"
 

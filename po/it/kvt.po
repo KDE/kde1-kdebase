@@ -3,12 +3,11 @@
 #           Lucien Nocera <lnocera@limpet.cis.upenn.edu> and
 #           Marco Spolaore <gemini@sctrade.it>.
 # v 0.1 -- 15/10/97
-
 msgid ""
 msgstr ""
+"Content-Type: text/plain; charset=\n"
 "Date: 1997-08-26 14:27:08+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
-"Content-Type: text/plain; charset=\n"
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
 
@@ -164,7 +163,6 @@ msgstr ""
 "I colori impostati saranno effettivi\n"
 "quando la tastiera sara resa insicura."
 
-
 #: main.C:760
 msgid "About kvt"
 msgstr "Info su kvt"
@@ -186,7 +184,6 @@ msgstr ""
 "\n"
 "Emulazione di un Terminale per il l'ambiente del KDE Desktop\n"
 "basato sul programma rxvt-2.08 di Robert Nation"
-
 
 #: main.C:922
 msgid ""
@@ -226,7 +223,8 @@ msgstr ""
 "basato sul programma rxvt-2.08 di Robert Nation\n"
 "\n"
 "Possibili Argomenti sono:\n"
-"-e <command> <arg> ...\tesecuta il comando con ars - deve essere l'ultimo argomento\n"
+"-e <command> <arg> ...\tesecuta il comando con ars - deve essere l'ultimo "
+"argomento\n"
 "-display <name>\tspecifica il display (server)\n"
 "-vt_geometry <spec>\tla geometria della finestra vt iniziale\n"
 "-print-pipe <name>\tspecifica il pipe per il vt100 printer\n"
@@ -244,11 +242,14 @@ msgstr ""
 "-7\t\t        funzioni in modo 7 bit\n"
 "-8\t\t\tfunziona in modo 8 bit\n"
 "-ls\t\t\tinizia lo shell del kvt come un login shell\n"
-"-ls-\t\t\tinizia lo shell del kvt come un non-login shell (questo é il default)\n"
+"-ls-\t\t\tinizia lo shell del kvt come un non-login shell (questo é il "
+"default)\n"
 "-meta\t\t\tmaneggia Meta con il prefisso ESCAPE, 8THBIT impostato, o ignora\n"
 "-sl <number>\t\tsalva il numero delle linee nel scroll-back buffer\n"
-"-pageup <keysym>\tutilizza la hot key alt-keysym per compiere uno scroll verso su del buffer\n"
-"-pagedown <keysym>\tutilizza la hot key alt-keysym per compiere uno scroll verso giù del buffer\n"
+"-pageup <keysym>\tutilizza la hot key alt-keysym per compiere uno scroll "
+"verso su del buffer\n"
+"-pagedown <keysym>\tutilizza la hot key alt-keysym per compiere uno scroll "
+"verso giù del buffer\n"
 
 #: main.C:954
 msgid ""
@@ -257,7 +258,6 @@ msgid ""
 msgstr ""
 "-grk9\t\tgreek kbd = ELOT 928 (questo é il default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
-
 
 #: main.C:970
 msgid "Terminal Options"

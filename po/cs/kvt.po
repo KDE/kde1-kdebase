@@ -231,6 +231,6 @@ msgstr ""
 msgid "Terminal Options"
 msgstr "Nastavení terminálu"
 
-#: ???
-msgid "The backspace key will send a"
-msgstr "Backspace bude posílán jako"
+# ???
+#~ msgid "The backspace key will send a"
+#~ msgstr "Backspace bude posílán jako"

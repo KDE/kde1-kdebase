@@ -279,7 +279,7 @@ msgid ""
 "%s"
 msgstr ""
 "Não foi possivel carregar o icon\n"
-"\r%s"
+"%s"
 
 #: kbind.cpp:291 kbind.cpp:364 kbind.cpp:417 kbind.cpp:1466 kbind.cpp:1474
 #: kbind.cpp:1492 kbind.cpp:1509 kbind.cpp:1570 kbind.cpp:1582 kbind.cpp:1609
@@ -704,7 +704,7 @@ msgid ""
 "Perhaps access denied."
 msgstr ""
 "Não foi possivel mudar as permissões\n"
-"\rTalvez acesso negado."
+"Talvez acesso negado."
 
 #: kfmprops.cpp:625
 #, c-format
@@ -723,7 +723,7 @@ msgid ""
 "Perhaps access denied."
 msgstr ""
 "Não foi possivel modificar o dono/grupo\n"
-"\rPossivelmente acesso negado."
+"Possivelmente acesso negado."
 
 #: kfmprops.cpp:673
 msgid "Execute"
@@ -985,7 +985,7 @@ msgid ""
 "%s"
 msgstr ""
 "Não foi possivel aceder á directoria\n"
-"\r%s"
+"%s"
 
 #: kiojob.cpp:684
 #, fuzzy, c-format
@@ -996,10 +996,10 @@ msgid ""
 "Perhaps access denied"
 msgstr ""
 "Não foi possivel mover a directoria\n"
-"\r%s\n"
-"\r%s\n"
-"\rpara '%s'\n"
-"\rTalvez tenha o acesso negado"
+"%s\n"
+"%s\n"
+"para '%s'\n"
+"Talvez tenha o acesso negado"
 
 #: kiojob.cpp:994 kiojob.cpp:1002 kiojob.cpp:1008 kiojob.cpp:1015
 #: kiojob.cpp:1023 kiojob.cpp:1031 kiojob.cpp:1039 kiojob.cpp:1047
@@ -1173,7 +1173,7 @@ msgid ""
 "%s"
 msgstr ""
 "Não foi possivel apara a directoria\n"
-"\r%s"
+"%s"
 
 #: kiojob.cpp:1557
 #, c-format
@@ -1313,9 +1313,6 @@ msgstr ""
 #~ msgid "Too many protocols in file\n"
 #~ msgstr "Demasiados protocolos no ficheiro\n"
 
-#~ msgid "Could not find mime type\r\n"
-#~ msgstr "Nao foi possivel encontrar o tipo mime\r\n"
-
 #~ msgid "ERROR: You must first mount the device. Use the right mouse button"
 #~ msgstr "ERRO: Primeiro precisa de montar o dispositivo. Use o botão direito"
 
@@ -1342,13 +1339,6 @@ msgstr ""
 
 #~ msgid "ERROR: Malformed URL '%s'"
 #~ msgstr "ERRO: URL incorrecto '%s'"
-
-#~ msgid ""
-#~ "Could not make directory\n"
-#~ "\r%s"
-#~ msgstr ""
-#~ "Não foi possivel criar a directoria\n"
-#~ "\r%s"
 
 #~ msgid ""
 #~ " does not exist\n"

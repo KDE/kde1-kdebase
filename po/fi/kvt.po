@@ -2,7 +2,6 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 
@@ -10,13 +9,9 @@ msgstr ""
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-
-
-
 #: main.C:220
 msgid "Add characters to word class"
 msgstr ""
-
 
 #: main.C:224
 msgid "choose type of color-mode"

@@ -3,7 +3,6 @@
 #           Lucien Nocera <lnocera@limpet.cis.upenn.edu> and
 #           Marco Spolaore <gemini@sctrade.it>.
 # v 0.1 -- 15/10/97
- 
 #: main.cpp:53
 msgid "KDE Font Manager"
 msgstr "KDE Caratteri e Codifiche"
@@ -56,7 +55,6 @@ msgstr ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
-
 #: kfontmanager.cpp:212 kfontmanager.cpp:283 kfontmanager.cpp:288
 msgid "Sorry"
 msgstr "Mi dispiace"
@@ -68,7 +66,6 @@ msgid ""
 msgstr ""
 "La variabile d'ambiente HOME\n"
 "non é impostata\n"
-
 
 #: kfontmanager.cpp:283
 msgid ""
@@ -88,7 +85,6 @@ msgstr ""
 "non può essere scritta\n"
 "Impossibile salvare la lista di Caratteri utilizzata da KDE."
 
-
 #: kfontlist.cpp:65
 msgid ""
 "kfontmanager Version 0.1\n"
@@ -100,4 +96,3 @@ msgstr ""
 "Copyright 1997\n"
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
-

@@ -91,4 +91,3 @@ msgstr ""
 "Copyright 1997\n"
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
-

@@ -1,22 +1,10 @@
-# Polish translation of KDE kvt
-# Version 0.1.4
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
-
-msgid "The backspace key will send a"
-msgstr "Klawisz backspace <- wysy³a"
-
-msgid "&Contents"
-msgstr "&Spis tre¶ci"
-
-msgid "&About Qt..."
-msgstr "Qt - &informacje"
-
-msgid "About "
-msgstr "Informacje o "
-
-msgid "About KDE"
-msgstr "&Informacje o KDE..."
-
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=\n"
+"Date: 1997-08-26 14:27:08+0200\n"
+"From: M G Berberich <berberic@thingol>\n"
+"Xgettext-Options: --keyword=translate\n"
+"Files: main.C\n"
 
 #: main.C:220
 msgid "Add characters to word class"
@@ -229,10 +217,10 @@ msgstr ""
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "Polskie t³umaczenie (C) 1997 Piotr Roszatycki (dexter@fnet.com.pl)\n"
 "Emulacja terminala dla ¦rodowiska Graficznego KDE\n"
-"oparta o rxvt-2.08 Roberta Nation'a"
-"\n"
+"oparta o rxvt-2.08 Roberta Nation'a\n"
 "Dozwolone argumenty:\n"
-"-e <polecenie> <arg> ...  wywo³anie polecenia z arg. - musi byæ ostatnim arg.\n"
+"-e <polecenie> <arg> ...  wywo³anie polecenia z arg. - musi byæ ostatnim "
+"arg.\n"
 "-display <nazwa>          okre¶la ekran (serwer)\n"
 "-vt_geometry <wymiar>     okre¶la wymiary okna\n"
 "-print-pipe <nazwa>       okre¶la potok dla druku vt100\n"
@@ -257,7 +245,6 @@ msgstr ""
 "-pageup <klawisz>         kombinacja Alt-klawisz przesuwa bufor w górê\n"
 "-pagedown <klawisz>       kombinacja Alt-klawisz przesuwa buforu w dó³\n"
 
-
 #: main.C:954
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
@@ -269,3 +256,21 @@ msgstr ""
 #: main.C:970
 msgid "Terminal Options"
 msgstr "Opcje terminala"
+
+# Polish translation of KDE kvt
+# Version 0.1.4
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+#~ msgid "The backspace key will send a"
+#~ msgstr "Klawisz backspace <- wysy³a"
+
+#~ msgid "&Contents"
+#~ msgstr "&Spis tre¶ci"
+
+#~ msgid "&About Qt..."
+#~ msgstr "Qt - &informacje"
+
+#~ msgid "About "
+#~ msgstr "Informacje o "
+
+#~ msgid "About KDE"
+#~ msgstr "&Informacje o KDE..."

@@ -1,4 +1,3 @@
-
 #: banner.cpp:56
 msgid "Banner"
 msgstr "Cartel"
@@ -7,46 +6,23 @@ msgstr "Cartel"
 msgid "Font"
 msgstr "Fuente"
 
-#: banner.cpp:83
-msgid "Family:"
-msgstr "Familia:"
-
-#: banner.cpp:99
-msgid "Size:"
-msgstr "Tamaño:"
-
 #: banner.cpp:116 blankscrn.cpp:65
 msgid "Color:"
 msgstr "Color:"
-
-#: banner.cpp:126
-msgid "Bold"
-msgstr "Negrita"
 
 #: banner.cpp:131
 msgid "Italic"
 msgstr "Itálica"
 
-#: banner.cpp:136 polygon.cpp:101
+#: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
+#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1017 polygon.cpp:101
+#: rock.cpp:543 slip.cpp:366 swarm.cpp:330
 msgid "Speed:"
 msgstr "Velocidad:"
 
 #: banner.cpp:146
 msgid "Message:"
 msgstr "Mensaje:"
-
-#: banner.cpp:161 polygon.cpp:117
-msgid "About"
-msgstr "Acerca de"
-
-#: banner.cpp:165 banner.cpp:317 blankscrn.cpp:81 polygon.cpp:121
-#: polygon.cpp:213
-msgid "Ok"
-msgstr "Ok"
-
-#: banner.cpp:169 blankscrn.cpp:85 polygon.cpp:125
-msgid "Cancel"
-msgstr "Cancelar"
 
 #: banner.cpp:315
 msgid "About Banner"
@@ -72,6 +48,28 @@ msgstr "¡KDE es estupendo!"
 msgid "Bat"
 msgstr "Murciélago"
 
+#: bat.cpp:532
+msgid "Setup KBat"
+msgstr ""
+
+#: bat.cpp:548
+msgid "Number of bats:"
+msgstr ""
+
+#: bat.cpp:636
+#, fuzzy
+msgid "About Bat"
+msgstr "Acerca de Banner"
+
+#: bat.cpp:637
+msgid ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+
 #: blankscrn.cpp:49
 msgid "Blank Screen"
 msgstr "Pantalla en blanco"
@@ -80,7 +78,61 @@ msgstr "Pantalla en blanco"
 msgid "Setup kblankscrn"
 msgstr "Configurar kblankscrn"
 
-#: blob.cpp:559
+#: blob.cpp:58
+msgid "Random Linear"
+msgstr ""
+
+#: blob.cpp:59
+msgid "Horizonal Sine"
+msgstr ""
+
+#: blob.cpp:60
+msgid "Circular Bounce"
+msgstr ""
+
+#: blob.cpp:61
+msgid "Polar Coordinates"
+msgstr ""
+
+#: blob.cpp:62
+msgid "Random"
+msgstr ""
+
+#: blob.cpp:67
+msgid "Sorry. This screensaver needs a color display"
+msgstr ""
+
+#: blob.cpp:444
+msgid "Setup Blob Saver"
+msgstr ""
+
+#: blob.cpp:447
+msgid "Frame Show sec."
+msgstr ""
+
+#: blob.cpp:455
+msgid "Algorithm"
+msgstr ""
+
+#: blob.cpp:535
+#, fuzzy
+msgid "About Blob"
+msgstr "Acerca de Polygon"
+
+#: blob.cpp:536
+#, fuzzy
+msgid ""
+"Blobsaver Version 0.1\n"
+"\n"
+"written by Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+msgstr ""
+"Banner Versión 0.1\n"
+"\n"
+"escrito por Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: blob.cpp:571
 msgid "Blobs"
 msgstr "Blobs"
 
@@ -88,25 +140,176 @@ msgstr "Blobs"
 msgid "Flame"
 msgstr "Llama"
 
+#: flame.cpp:390
+msgid "Setup KFlame"
+msgstr ""
+
+#: flame.cpp:406
+msgid "Max Levels:"
+msgstr ""
+
+#: flame.cpp:416
+msgid "Num Points:"
+msgstr ""
+
+#: flame.cpp:521
+#, fuzzy
+msgid "About Flame"
+msgstr "Acerca de Banner"
+
+#: flame.cpp:522
+msgid ""
+"Flame Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+
 #: forest.cpp:200
 msgid "Forest"
 msgstr "Forestal"
+
+#: forest.cpp:272
+#, fuzzy
+msgid "Setup KForest"
+msgstr "Forestal"
+
+#: forest.cpp:288
+msgid "Num of Trees:"
+msgstr ""
+
+#: forest.cpp:375
+#, fuzzy
+msgid "About Forest"
+msgstr "Forestal"
+
+#: forest.cpp:376
+msgid ""
+"Forest\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
 
 #: hop.cpp:221
 msgid "Hop"
 msgstr "Hop"
 
+#: hop.cpp:306
+msgid "Setup KHop"
+msgstr ""
+
+#: hop.cpp:322
+msgid "Samecolor Pixels:"
+msgstr ""
+
+#: hop.cpp:332 lissie.cpp:346
+msgid "Cycles:"
+msgstr ""
+
+#: hop.cpp:437
+#, fuzzy
+msgid "About Hop"
+msgstr "Acerca de"
+
+#: hop.cpp:438
+msgid ""
+"Hop Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+
 #: laser.cpp:327
 msgid "Laser"
 msgstr "Láser"
+
+#: laser.cpp:387
+#, fuzzy
+msgid "Setup KLaser"
+msgstr "Configurar kblankscrn"
+
+#: laser.cpp:462
+#, fuzzy
+msgid "About Laser"
+msgstr "Acerca de Banner"
+
+#: laser.cpp:463
+msgid ""
+"Laser Version 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
 
 #: lines.cpp:110
 msgid "Lines"
 msgstr "Líneas"
 
+#: lines.cpp:128
+#, fuzzy
+msgid "Setup klines"
+msgstr "Configurar kblankscrn"
+
+#: lines.cpp:130 polygon.cpp:81
+msgid "Length:"
+msgstr "Longitud:"
+
+#: lines.cpp:150
+msgid "Beginning:"
+msgstr ""
+
+#: lines.cpp:159
+msgid "Middle:"
+msgstr ""
+
+#: lines.cpp:168
+msgid "End:"
+msgstr ""
+
+#: lines.cpp:259
+#, fuzzy
+msgid "About Lines"
+msgstr "Acerca de Banner"
+
+#: lines.cpp:260
+msgid ""
+"Lines Version 0.1.1\n"
+"\n"
+"written by Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+msgstr ""
+
 #: lissie.cpp:234
 msgid "Lissie"
 msgstr "Lissie"
+
+#: lissie.cpp:320
+#, fuzzy
+msgid "Setup KLissie"
+msgstr "Lissie"
+
+#: lissie.cpp:336
+msgid "Num of Lissies:"
+msgstr ""
+
+#: lissie.cpp:451
+#, fuzzy
+msgid "About Lissie"
+msgstr "Lissie"
+
+#: lissie.cpp:452
+msgid ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
 
 #: main.cpp:263
 msgid "Shadow Passwords"
@@ -128,7 +331,6 @@ msgid ""
 msgstr ""
 "Uso: %s -install|-setup|-test|-desc|-preview wid\n"
 "     [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
- 
 
 #: main.cpp:423
 msgid ""
@@ -164,9 +366,34 @@ msgstr ""
 "  -setup            Configurar el salvapantallas\n"
 "  -test             Ejecutar el salvapantallas inmediatamente\n"
 
-#: morph3d.cpp:936
+#: morph3d.cpp:836
+msgid "GL can not render with root visual\n"
+msgstr ""
+
+#: morph3d.cpp:937
 msgid "Morph3D (GL)"
 msgstr "Morph3D (GL)"
+
+#: morph3d.cpp:1011
+msgid "Setup KMorph3d"
+msgstr ""
+
+#: morph3d.cpp:1027
+msgid "Object Type:"
+msgstr ""
+
+#: morph3d.cpp:1115
+msgid "About Morph3D"
+msgstr ""
+
+#: morph3d.cpp:1116
+msgid ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
 
 #: polygon.cpp:58
 msgid "Polygons"
@@ -175,10 +402,6 @@ msgstr "Polygons"
 #: polygon.cpp:79
 msgid "Setup kpolygon"
 msgstr "Configurar kpolygon"
-
-#: polygon.cpp:81
-msgid "Length:"
-msgstr "Longitud:"
 
 #: polygon.cpp:91
 msgid "Vertices:"
@@ -204,14 +427,134 @@ msgstr ""
 msgid "Pyro"
 msgstr "Pyro"
 
+#: pyro.cpp:511
+#, fuzzy
+msgid "Setup KPyro"
+msgstr "Configurar kpolygon"
+
+#: pyro.cpp:517 rock.cpp:553
+msgid "Number:"
+msgstr ""
+
+#: pyro.cpp:527
+msgid "Cloud"
+msgstr ""
+
+#: pyro.cpp:608
+#, fuzzy
+msgid "About Pyro"
+msgstr "Acerca de Polygon"
+
+#: pyro.cpp:609
+msgid ""
+"Pyro Version 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+
 #: rock.cpp:429
 msgid "Rock"
 msgstr "Roca"
+
+#: rock.cpp:537
+#, fuzzy
+msgid "Setup krock"
+msgstr "Configurar kpolygon"
+
+#: rock.cpp:563
+msgid "Move"
+msgstr ""
+
+#: rock.cpp:568
+msgid "Rotate"
+msgstr ""
+
+#: rock.cpp:686
+#, fuzzy
+msgid "About Rock"
+msgstr "Acerca de"
+
+#: rock.cpp:687
+msgid ""
+"Rock Version 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+
+#: saver.cpp:50 saver.cpp:173
+#, fuzzy
+msgid "Enter Password"
+msgstr "Contraseñas ocultas"
+
+#: saver.cpp:80
+#, fuzzy
+msgid "Failed"
+msgstr "Familia:"
 
 #: slip.cpp:287
 msgid "Slip"
 msgstr "Slip"
 
+#: slip.cpp:360
+msgid "Setup KSlip"
+msgstr ""
+
+#: slip.cpp:376
+msgid "Batchcount:"
+msgstr ""
+
+#: slip.cpp:464
+#, fuzzy
+msgid "About Slip"
+msgstr "Acerca de"
+
+#: slip.cpp:465
+msgid ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+
 #: swarm.cpp:252
 msgid "Swarm"
 msgstr "Swarm"
+
+#: swarm.cpp:324
+msgid "Setup KSwarm"
+msgstr ""
+
+#: swarm.cpp:340
+msgid "Number of Bees:"
+msgstr ""
+
+#: swarm.cpp:427
+#, fuzzy
+msgid "About Swarm"
+msgstr "Acerca de Banner"
+
+#: swarm.cpp:428
+msgid ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+
+#~ msgid "Size:"
+#~ msgstr "Tamaño:"
+
+#~ msgid "Bold"
+#~ msgstr "Negrita"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"

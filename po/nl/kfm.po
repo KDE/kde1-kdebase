@@ -1335,10 +1335,6 @@ msgstr ""
 #~ msgid "Too many protocols in file\n"
 #~ msgstr "Te veel protocollen in bestand\n"
 
-#, fuzzy
-#~ msgid "Could not find mime type\r\n"
-#~ msgstr "Kan mimetype niet vinden\n"
-
 # FIXME 
 #~ msgid "ERROR: You must first mount the device. Use the right mouse button"
 #~ msgstr ""
@@ -1352,14 +1348,6 @@ msgstr ""
 
 #~ msgid "ERROR: Malformed URL '%s'"
 #~ msgstr "Fout: Misvormd URL '%s'"
-
-#, fuzzy
-#~ msgid ""
-#~ "Could not make directory\n"
-#~ "\r%s"
-#~ msgstr ""
-#~ "Kan map niet maken:\n"
-#~ "%s"
 
 #~ msgid ""
 #~ " does not exist\n"

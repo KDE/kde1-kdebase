@@ -22,7 +22,7 @@ msgstr " Änderungsdatum "
 
 #: kftabdlg.cpp:94
 #, fuzzy
-msgid " Name&Location "
+msgid " Name& Location "
 msgstr " Name& Pfad "
 
 #: kfwin.cpp:104

@@ -1,7 +1,6 @@
 # Polish translation of KDE klock
 # Version 0.1.0
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
-
 #: banner.cpp:56
 msgid "Banner"
 msgstr "Baner"
@@ -380,7 +379,8 @@ msgstr ""
 "                     x = s  wygaszenie ekranu\n"
 "                     x = l  zablokowanie ekranu\n"
 "                    kolejno¶æ: góra-lewo, góra-prawo, dó³-lewo, dó³-prawo\n"
-"  -delay num        Okre¶la czas, po jakim uruchamiany jest wygaszacz ekranu\n"
+"  -delay num        Okre¶la czas, po jakim uruchamiany jest wygaszacz "
+"ekranu\n"
 "                     (domy¶lnie 10min)\n"
 "  -desc             Wyrzuca opis danego wygaszacza ekranu na stdout\n"
 "  -install          Instaluje wygaszacz ekranu\n"
@@ -442,8 +442,9 @@ msgid "About Polygon"
 msgstr "Informacje"
 
 #: polygon.cpp:210
+#, fuzzy
 msgid ""
-"Polygon wersja 0.1\n"
+"Polygon Version 0.1\n"
 "\n"
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"

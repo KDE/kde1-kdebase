@@ -74,7 +74,6 @@ msgstr ""
 "\n"
 "Transposto para o kscreensave por Emanuel Pirker."
 
-
 #: blankscrn.cpp:49
 msgid "Blank Screen"
 msgstr "Ecran Limpo"
@@ -376,7 +375,8 @@ msgstr ""
 "                     x = i  nenhuma acção (ignorar)\n"
 "                     x = s  proteger ecran\n"
 "                     x = l  trancar ecran\n"
-"                    ordem: topo-esquerdo, topo-direito, fundo-esquerdo, fundo-direito\n"
+"                    ordem: topo-esquerdo, topo-direito, fundo-esquerdo, "
+"fundo-direito\n"
 "  -delay num        Quantidade de tempo parado antes de começar a\n"
 "                     protecção do ecran  (default 10min)\n"
 "  -desc             Imprime a descrição para o stdout\n"
@@ -585,4 +585,3 @@ msgstr ""
 "Copyright (c) 1991 por Patrick J. Naughton\n"
 "\n"
 "Transposto para kscreensave por Emanuel Pirker."
-

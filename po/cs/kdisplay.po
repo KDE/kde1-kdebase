@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-08-27 15:03+0200\n"
+"POT-Creation-Date: 1997-12-14 20:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,128 +14,73 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:53
-msgid "KDE Display Configuration"
-msgstr "KDE konfigurace obrazovky"
+#: backgnd.cpp:204 backgnd.cpp:239
+#, fuzzy
+msgid "Desktop"
+msgstr "Název plochy"
 
-#: main.cpp:130
-#, c-format
-msgid ""
-"Usage: %s -init|-setup\n"
-"\n"
+#: backgnd.cpp:249
+msgid "Rename..."
 msgstr ""
-"Pou¾ití: %s -init|-setup\n"
-"\n"
 
-#: main.cpp:131
-msgid "  -init               apply current settings to the display\n"
-msgstr "  -init               aplikuj souèasné nastavení\n"
-
-#: main.cpp:132
-msgid "  -setup              setup the display\n"
-msgstr "  -setup              zmìò nastavení\n"
-
-#: backgnd.cpp:140 colorscm.cpp:293
-msgid "Background"
-msgstr "Pozadí"
-
-#: backgnd.cpp:165
+#: backgnd.cpp:255
 msgid "Color"
 msgstr "Barva"
 
-#: backgnd.cpp:185
+#: backgnd.cpp:273
 msgid "Flat"
 msgstr "Plocha"
 
-#: backgnd.cpp:189
+#: backgnd.cpp:277
 msgid "Gradient"
 msgstr "Pøechod"
 
-#: backgnd.cpp:202
+#: backgnd.cpp:287
 msgid "Portrait"
 msgstr "Na vý¹ku"
 
-#: backgnd.cpp:206
+#: backgnd.cpp:291
 msgid "Landscape"
 msgstr "Na ¹íøku"
 
-#: backgnd.cpp:224
+#: backgnd.cpp:298
 msgid "Wallpaper"
 msgstr "Tapeta"
 
-#: backgnd.cpp:257
+#: backgnd.cpp:331
 msgid "Tiled"
 msgstr "Vydlá¾dit"
 
-#: backgnd.cpp:261
+#: backgnd.cpp:335
 msgid "Centred"
 msgstr "Centrovanì"
 
-#: backgnd.cpp:265
+#: backgnd.cpp:339
 msgid "Scaled"
 msgstr "Zvìt¹enì"
 
-#: backgnd.cpp:272
+#: backgnd.cpp:345
 msgid "Browse..."
 msgstr "Listuj.."
 
-#: scrnsave.cpp:45
-msgid "Ignore"
-msgstr "Ignoruj"
+#: backgnd.cpp:489
+#, fuzzy
+msgid "Default"
+msgstr "KDE implicitní"
 
-#: scrnsave.cpp:47
-msgid "Lock"
-msgstr "Zámek"
+#: backgnd.cpp:821
+msgid "Desktop Title"
+msgstr "Název plochy"
 
-#: scrnsave.cpp:103 scrnsave.cpp:161
-msgid "Screen Saver"
-msgstr "©etøiè obrazovky"
-
-#: scrnsave.cpp:182
-msgid "Setup..."
-msgstr "Nastav.."
-
-#: scrnsave.cpp:186
-msgid "Test"
-msgstr "Test"
-
-#: scrnsave.cpp:194
-msgid "Settings"
-msgstr "Nastavení"
-
-#: scrnsave.cpp:197
-msgid "Wait:"
-msgstr "èekej:"
-
-#: scrnsave.cpp:208
-msgid "min"
-msgstr "min"
-
-#: scrnsave.cpp:211
-msgid "Requires Password"
-msgstr "Vy¾aduje heslo"
-
-#: scrnsave.cpp:216
-msgid "Priority:"
-msgstr "Priorita:"
-
-#: colorscm.cpp:326 scrnsave.cpp:219
-msgid "max"
-msgstr "max"
-
-#: colorscm.cpp:322 scrnsave.cpp:222
-msgid "min"
-msgstr "min"
-
-#: colorscm.cpp:139 colorscm.cpp:140
+#: colorscm.cpp:142 colorscm.cpp:143
 msgid "Inactive window"
 msgstr "Neaktivní okno"
 
-#: colorscm.cpp:155 colorscm.cpp:156
+#: colorscm.cpp:158 colorscm.cpp:159
 msgid "Active window"
 msgstr "Aktivní okno"
 
-#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:298
+#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
 msgid "Window text"
 msgstr "Text v oknì"
 
@@ -147,77 +92,83 @@ msgstr "Vypnuté"
 msgid "Selected"
 msgstr "Vybrané"
 
-#: colorscm.cpp:252 colorscm.cpp:262
+#: colorscm.cpp:252 colorscm.cpp:264
 msgid "Color Scheme"
 msgstr "Barevné schéma"
 
-#: colorscm.cpp:276
+#: colorscm.cpp:278
 msgid "Remove"
 msgstr "Odstraò"
 
-#: colorscm.cpp:284
+#: colorscm.cpp:286
 msgid "Widget color"
 msgstr "Barva widgetu"
 
-#: colorscm.cpp:289
+#: colorscm.cpp:291
 msgid "Inactive title bar"
 msgstr "Neaktivní titulek"
 
-#: colorscm.cpp:290
+#: colorscm.cpp:292
 msgid "Inactive title text"
 msgstr "Text neaktivního titulku"
 
-#: colorscm.cpp:291
+#: colorscm.cpp:293
 msgid "Active title bar"
 msgstr "Aktivní titulek"
 
-#: colorscm.cpp:292
+#: colorscm.cpp:294
 msgid "Active title text"
 msgstr "Text aktivního titulku"
 
-#: colorscm.cpp:294
+#: colorscm.cpp:295
+msgid "Background"
+msgstr "Pozadí"
+
+#: colorscm.cpp:296
 msgid "Text"
 msgstr "Text"
 
-#: colorscm.cpp:295
+#: colorscm.cpp:297
 msgid "Select background"
 msgstr "Vyber Pozadí"
 
-#: colorscm.cpp:296
+#: colorscm.cpp:298
 msgid "Select text"
 msgstr "Vyber text"
 
-#: colorscm.cpp:297
+#: colorscm.cpp:299
 msgid "Window background"
 msgstr "Pozadí okna"
 
-#: colorscm.cpp:309
+#: colorscm.cpp:311
 msgid "Contrast"
 msgstr "Kontrast"
 
-msgid "High"
-msgstr "Velký"
-
+#: colorscm.cpp:324 scrnsave.cpp:224
 msgid "Low"
 msgstr "Malý"
 
-#: colorscm.cpp:341
+#: colorscm.cpp:328 scrnsave.cpp:221
+msgid "High"
+msgstr "Velký"
+
+#: colorscm.cpp:343
 msgid "Save scheme"
 msgstr "Ulo¾ schému"
 
-#: colorscm.cpp:372 colorscm.cpp:380
+#: colorscm.cpp:374 colorscm.cpp:382
 msgid "You have chosen a name used by a supplied color scheme"
 msgstr "Vybral jste jméno pou¾ité u dodaného barevného schématu"
 
-#: colorscm.cpp:463
+#: colorscm.cpp:467
 msgid "KDE Default"
 msgstr "KDE implicitní"
 
-#: colorscm.cpp:687
+#: colorscm.cpp:693
 msgid "Display Setup"
 msgstr "Nastavení obrazovky"
 
-#: colorscm.cpp:688
+#: colorscm.cpp:694
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
@@ -225,62 +176,144 @@ msgstr ""
 "Nebyly nalezeny ¾ádná barevná schémata.\n"
 "Chcete nainstalovat implicitni barevné schéma?"
 
+#: kwmcom.cpp:78 kwmcom.cpp:105
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "kwmcom: komunikace s kwm probìhla neúspì¹nì\n"
+
 #: savescm.cpp:26
 msgid "Name"
 msgstr "Jméno"
 
-#: general.cpp:55
+#: scrnsave.cpp:47
+msgid "Ignore"
+msgstr "Ignoruj"
+
+#: scrnsave.cpp:49
+msgid "Lock"
+msgstr "Zámek"
+
+#: scrnsave.cpp:107 scrnsave.cpp:163
+msgid "Screen Saver"
+msgstr "©etøiè obrazovky"
+
+#: scrnsave.cpp:184
+msgid "Setup..."
+msgstr "Nastav.."
+
+#: scrnsave.cpp:188
+msgid "Test"
+msgstr "Test"
+
+#: scrnsave.cpp:196
+msgid "Settings"
+msgstr "Nastavení"
+
+#: scrnsave.cpp:199
+msgid "Wait:"
+msgstr "èekej:"
+
+#: scrnsave.cpp:210
+msgid "min"
+msgstr "min"
+
+#: scrnsave.cpp:213
+msgid "Requires Password"
+msgstr "Vy¾aduje heslo"
+
+#: scrnsave.cpp:218
+msgid "Priority:"
+msgstr "Priorita:"
+
+#: general.cpp:80
 msgid "General"
 msgstr "Obecné"
 
-#: general.cpp:59
+#: general.cpp:84
 msgid "Widget style"
 msgstr "Styl widgetù"
 
-#: general.cpp:64
+#: general.cpp:89
 msgid "Motif"
 msgstr "Motif"
 
-#: general.cpp:65
+#: general.cpp:90
 msgid "Windows 95"
 msgstr "Windows 95"
 
-#: general.cpp:74
+#: general.cpp:99
 msgid "Fonts"
 msgstr "Znakové sady"
 
-#: general.cpp:79
+#: general.cpp:104
 msgid "General font"
 msgstr "Obecná znaková sada"
 
-#: general.cpp:104
+#: general.cpp:129
 msgid "Sample"
 msgstr "Vzorek"
 
-#: general.cpp:110
+#: general.cpp:135
 msgid "Small"
 msgstr "Malé"
 
-#: general.cpp:114
+#: general.cpp:139
 msgid "Medium"
 msgstr "Støední"
 
-#: general.cpp:118
+#: general.cpp:143
 msgid "Large"
 msgstr "Velké"
 
-#: general.cpp:135
+#: general.cpp:160
 msgid "Italic"
 msgstr "Polo¾ené"
 
-msgid "Bold"
-msgstr "Tuèné"
+#: general.cpp:170
+msgid "Charset:"
+msgstr ""
 
-#: kwmcom.cpp:80 kwmcom.cpp:107
-msgid "kwmcom: communication with kwm failed\n"
-msgstr "kwmcom: komunikace s kwm probìhla neúspì¹nì\n"
+#: main.cpp:61
+#, fuzzy
+msgid "&Background"
+msgstr "Pozadí"
 
-msgid "Desktop Title"
-msgstr "Název plochy"
+#: main.cpp:64
+#, fuzzy
+msgid "&Colors"
+msgstr "Barva"
 
+#: main.cpp:67
+#, fuzzy
+msgid "&Screensaver"
+msgstr "©etøiè obrazovky"
 
+#: main.cpp:70
+msgid "&Style"
+msgstr ""
+
+#: main.cpp:105
+#, fuzzy
+msgid "Display settings"
+msgstr "Nastavení obrazovky"
+
+#~ msgid "KDE Display Configuration"
+#~ msgstr "KDE konfigurace obrazovky"
+
+#~ msgid ""
+#~ "Usage: %s -init|-setup\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Pou¾ití: %s -init|-setup\n"
+#~ "\n"
+
+#~ msgid "  -init               apply current settings to the display\n"
+#~ msgstr "  -init               aplikuj souèasné nastavení\n"
+
+#~ msgid "  -setup              setup the display\n"
+#~ msgstr "  -setup              zmìò nastavení\n"
+
+#~ msgid "max"
+#~ msgstr "max"
+
+#~ msgid "Bold"
+#~ msgstr "Tuèné"

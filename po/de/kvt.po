@@ -1,25 +1,10 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
-
-#~ msgid ""
-#~ msgstr ""
-#~ "Content-Type: text/plain; charset=\n"
-#~ "Date: 1997-08-23 15:45:33+0200\n"
-#~ "From: M G Berberich <berberic@thingol>\n"
-#~ "Xgettext-Options: --keyword=translate\n"
-#~ "Files: main.C\n"
+"Content-Type: text/plain; charset=\n"
+"Date: 1997-08-23 15:45:33+0200\n"
+"From: M G Berberich <berberic@thingol>\n"
+"Xgettext-Options: --keyword=translate\n"
+"Files: main.C\n"
 
 #: main.C:220
 msgid "Add characters to word class"
@@ -233,8 +218,10 @@ msgstr ""
 "basierend auf Robert Nations rxvt-2.08\n"
 "\n"
 "Zulässige Parameter:\n"
-"-e <Kommando> <Arg> ...\tKommando mit Argumenten ausführen - muß letzter Parameter sein\n"
-"-display <name>\t\tName des Rechners, auf dem das Terminal-Fenster erscheint\n"
+"-e <Kommando> <Arg> ...\tKommando mit Argumenten ausführen - muß letzter "
+"Parameter sein\n"
+"-display <name>\t\tName des Rechners, auf dem das Terminal-Fenster "
+"erscheint\n"
 "-vt_geometry <Größe>\tAnfängliche Fenstergröße\n"
 "-print-pipe <Name>\t???\n"
 "-vt_bg <Farbe>\t\tHintergrundfarbe\n"

@@ -1,10 +1,12 @@
 msgid ""
 msgstr ""
+"Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
-"Content-Type: text/plain; charset=\n"
 "Xgettext-Options: -s -C -ktranslate\n"
-"Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
+"Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp "
+"kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp "
+"mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
 
 #: kftabdlg.cpp:214
 msgid " Advanced "
@@ -24,6 +26,11 @@ msgstr "%d datoteka naðeno"
 
 #: kfindtop.cpp:185
 msgid "&About"
+msgstr "&O programu"
+
+#: kfindtop.cpp:186
+#, fuzzy
+msgid "About &Qt"
 msgstr "&O programu"
 
 #: kfindtop.cpp:137
@@ -158,7 +165,8 @@ msgstr "Najvi¹e"
 msgid "Browse"
 msgstr "Potra¾i"
 
-#: kfdird.cpp:48 kfoptions.cpp:53 kfwin.cpp:144 kfwin.cpp:198 kfwin.cpp:213 kfwin.cpp:220 kfwin.cpp:242 kfwin.cpp:249 kfwin.cpp:255
+#: kfdird.cpp:48 kfoptions.cpp:53 kfwin.cpp:144 kfwin.cpp:198 kfwin.cpp:213
+#: kfwin.cpp:220 kfwin.cpp:242 kfwin.cpp:249 kfwin.cpp:255
 msgid "Cancel"
 msgstr "Odustani"
 
@@ -194,7 +202,8 @@ msgstr ""
 "®elite li  zbilja obrisati datoteku:\n"
 "%s"
 
-#: kfwin.cpp:140 kfwin.cpp:178 kfwin.cpp:209 kfwin.cpp:216 kfwin.cpp:238 kfwin.cpp:245 kfwin.cpp:251 kfwin.cpp:348
+#: kfwin.cpp:140 kfwin.cpp:178 kfwin.cpp:209 kfwin.cpp:216 kfwin.cpp:238
+#: kfwin.cpp:245 kfwin.cpp:251 kfwin.cpp:348
 msgid "Error"
 msgstr "Gre¹ka"
 
@@ -222,15 +231,13 @@ msgstr "Ukljuèi &poddirektorije"
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
-msgstr ""
-"Ne mogu obrisati birani direktorij"
+msgstr "Ne mogu obrisati birani direktorij"
 
 #: kfwin.cpp:217
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
-msgstr ""
-"Ne mogu obrisati biranu datoteku"
+msgstr "Ne mogu obrisati biranu datoteku"
 
 #: kfwin.cpp:141
 msgid "It wasn't possible to save results!"
@@ -240,18 +247,17 @@ msgstr "Nisam mogao snimiti rezultate!"
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
-"Miroslav Fl\355dr <flidr@kky.zcu.cz>\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "\n"
 "Special thanks to Stephan Kulow\n"
 "<coolo@kde.org>"
 msgstr ""
 "KFind %s\n"
 "Suèelje za program find\n"
-"Miroslav Fl\355dr <flidr@kky.zcu.cz>\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "\n"
 "Posebna zahvala Stephanu Kulowu\n"
 "<ycoolo@kde.org>"
-
 
 #: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
 msgid "KFind Results File"
@@ -265,7 +271,9 @@ msgstr "Kfind &pomoæ"
 msgid "New Search"
 msgstr "Novo pretra¾ivanje"
 
-#: kfdird.cpp:47 kfoptions.cpp:52 kfwin.cpp:143 kfwin.cpp:181 kfwin.cpp:197 kfwin.cpp:212 kfwin.cpp:219 kfwin.cpp:241 kfwin.cpp:248 kfwin.cpp:254 kfwin.cpp:350
+#: kfdird.cpp:47 kfoptions.cpp:52 kfwin.cpp:143 kfwin.cpp:181 kfwin.cpp:197
+#: kfwin.cpp:212 kfwin.cpp:219 kfwin.cpp:241 kfwin.cpp:248 kfwin.cpp:254
+#: kfwin.cpp:350
 msgid "OK"
 msgstr "U redu"
 

@@ -1255,9 +1255,6 @@ msgstr ""
 #~ msgid "&How can I ..."
 #~ msgstr "&Hogyan lehet..."
 
-#~ msgid "Could not find mime type\r\n"
-#~ msgstr "Nem található MIME típus\r\n"
-
 #~ msgid "ERROR: You must first mount the device. Use the right mouse button"
 #~ msgstr ""
 #~ "HIBA: Elõször mount-olni kell a meghajtót.  Használja a jobb egérgombot"

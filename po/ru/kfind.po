@@ -1,249 +1,174 @@
-#: kfdird.cpp:46
-msgid "Directories:"
-msgstr "Подкаталоги:"
-
-#: kfdird.cpp:167 kfdird.cpp:192 kfdird.cpp:210
-msgid "Sorry"
-msgstr "Извините"
-
-#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
-msgid "Cannot open or read directory."
-msgstr "Не возможно открыть или прочитать подкаталог."
-
-#: kfindtop.cpp:110
-#, c-format
+# Локализация к kfind.
+# Copyright (C) 1997 Free Software Foundation, Inc.
+# Denis Y. Pershin <dyp@siblug.org>, 1997.
+#
 msgid ""
-"KFind %s\n"
-"Frontend to find utility\n"
-"Miroslav FlМdr <flidr@kky.zcu.cz>"
 msgstr ""
-"KFind %s\n"
-"Фронтенд к утилите find\n"
-"Мирослав Флидр <flidr@kky.zcu.cz>"
+"Project-Id-Version: kfind 0.3.2\n"
+"POT-Creation-Date: 1997-08-26 12:45+0200\n"
+"PO-Revision-Date: 1997-09-05 03:06+0600\n"
+"Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
-#: kfindtop.cpp:123
-msgid "&File"
-msgstr "Файл"
-
-#: kfindtop.cpp:124
-msgid "&Edit"
-msgstr "Редактировать"
-
-#: kfindtop.cpp:125
-msgid "&Options"
-msgstr "Опции"
-
-#: kfindtop.cpp:127
-msgid "&Help"
-msgstr "Помощь"
-
-#: kfindtop.cpp:132 kfindtop.cpp:216
-msgid "Add to archive"
-msgstr "Добавить в архив"
-
-#: kfindtop.cpp:135 kfindtop.cpp:221
-msgid "Delete"
-msgstr "Удалить"
-
-#: kfindtop.cpp:137 kfindtop.cpp:226
-msgid "Properties"
-msgstr "Свойства"
-
-#: kfindtop.cpp:140 kfindtop.cpp:231
-msgid "Open Containing Folder"
-msgstr "Открыть папку, в которой содержится файл"
-
-#: kfindtop.cpp:143
-msgid "Save Search"
-msgstr "Сохранить поиск"
-
-#: kfindtop.cpp:152
-msgid "Undo"
-msgstr "Откат"
-
-#: kfindtop.cpp:155
-msgid "Cut"
-msgstr "Вырезать"
-
-#: kfindtop.cpp:157
-msgid "Copy"
-msgstr "Копировать"
-
-#: kfindtop.cpp:160
-msgid "Select All"
-msgstr "Выделить все"
-
-#: kfindtop.cpp:162
-msgid "Invert Selection"
-msgstr "Инвертировать выделение"
-
-#: kfindtop.cpp:173
-msgid "Preferences ..."
-msgstr "Установки..."
-
-#: kfindtop.cpp:177
-msgid "Kfind help"
-msgstr "Помощь Kfind"
-
-#: kfindtop.cpp:193
-msgid "Start Search"
-msgstr "Начать поиск"
-
-#: kfindtop.cpp:198
-msgid "New Search"
-msgstr "Новый поиск"
-
-#: kfindtop.cpp:203
-msgid "Stop Search"
-msgstr "Остановить поиск"
-
-#: kfindtop.cpp:236
-msgid "Save Search Results"
-msgstr "Сохранить результаты поиска"
-
-#: kfoptions.cpp:54
-msgid "Preferences"
-msgstr "Установки"
-
-#: kfoptions.cpp:70
-msgid "File format:"
-msgstr "Формат файла:"
-
-#: kfoptions.cpp:72
-msgid "Save results to file:"
-msgstr "Сохранить результат в файл:"
-
-#: kfoptions.cpp:75
-msgid "Save results to file ~/.kfind-results.html"
-msgstr "Сохранить результат в файл ~/.kfind-results.html"
-
-#: kfoptions.cpp:77
-msgid "Browse"
-msgstr "Просмотр"
-
-#: kfoptions.cpp:90
-msgid "Plain Text"
-msgstr "Текст"
-
-#: kfoptions.cpp:119
-msgid "Saving"
-msgstr "Сохранение"
-
-#: kfoptions.cpp:125
-msgid "Type Description:"
-msgstr "Описание типа:"
-
-#: kfoptions.cpp:126
-msgid "Icon:"
-msgstr "Пиктограмма:"
-
-#: kfoptions.cpp:127 kfoptions.cpp:193
-msgid "Patterns:"
-msgstr "Маски:"
-
-#: kfoptions.cpp:128
-msgid "Default Application:"
-msgstr "Приложение по умолчанию:"
-
-#: kfoptions.cpp:134 kfoptions.cpp:196
-msgid "Add New"
-msgstr "Добавить новое"
-
-#: kfoptions.cpp:135 kfoptions.cpp:197
-msgid "Remove"
-msgstr "Удалить"
-
-#: kfoptions.cpp:181
-msgid "Filetypes"
-msgstr "Типы файлов"
-
-#: kfoptions.cpp:187
-msgid "Create Archive:"
-msgstr "Создать архив:"
-
-#: kfoptions.cpp:189
-msgid "Add to Archive:"
-msgstr "Добавить в архив:"
-
-#: kfoptions.cpp:235
-msgid "Archivers"
-msgstr "Архиваторы"
-
-#: kftabdlg.cpp:47
-msgid "&Named:"
-msgstr "Имя:"
-
-#: kftabdlg.cpp:49
-msgid "&Look in:"
-msgstr "Искать в:"
-
-#: kftabdlg.cpp:52
-msgid "&Browse ..."
-msgstr "Просмотр ..."
-
-#: kftabdlg.cpp:64
-msgid "Include &subfolders"
-msgstr "Рекурсивно"
-
-#: kftabdlg.cpp:94
-msgid " Name&Location "
-msgstr " Имя Расположение "
-
-#: kftabdlg.cpp:106
-msgid "and"
-msgstr "и"
-
-#: kftabdlg.cpp:107
-msgid "month(s)"
-msgstr "месяц(ы)"
-
-#: kftabdlg.cpp:108
-msgid "day(s)"
-msgstr "день(дни)"
-
-#: kftabdlg.cpp:114
-msgid "&All files"
-msgstr "Все файлы"
-
-#: kftabdlg.cpp:115
-msgid "Find all files created or &modified:"
-msgstr "Найти все файлы, созданные или измененные:"
-
-#: kftabdlg.cpp:116
-msgid "&between"
-msgstr "между"
-
-#: kftabdlg.cpp:117
-msgid "during the previou&s "
-msgstr "в течении предыдущих "
-
-#: kftabdlg.cpp:118
-msgid "&during the previous "
-msgstr "в течении предыдущих"
+#: kftabdlg.cpp:214
+msgid " Advanced "
+msgstr " Расширенный "
 
 #: kftabdlg.cpp:166
 msgid " Date Modified "
 msgstr " Дата изменения "
 
-#: kftabdlg.cpp:171
-msgid "Of &type:"
-msgstr "Типа:"
+#: kftabdlg.cpp:94
+#, fuzzy
+msgid " Name& Location "
+msgstr " Имя Расположение "
+
+#: kfwin.cpp:104
+msgid "%d file(s) found"
+msgstr "найдено %d файлов"
+
+#: kfindtop.cpp:185
+msgid "&About"
+msgstr ""
+
+#: kfindtop.cpp:186
+msgid "About &Qt"
+msgstr ""
+
+#: kfindtop.cpp:137
+#, fuzzy
+msgid "&Add to archive"
+msgstr "Добавить в архив"
+
+#: kftabdlg.cpp:114
+msgid "&All files"
+msgstr "Все файлы"
+
+#: kftabdlg.cpp:52
+msgid "&Browse ..."
+msgstr "Просмотр ..."
 
 #: kftabdlg.cpp:173
 msgid "&Containing Text:"
 msgstr "Содержит текст:"
 
+#: kfindtop.cpp:162
+#, fuzzy
+msgid "&Copy"
+msgstr "Копировать"
+
+#: kfindtop.cpp:160
+#, fuzzy
+msgid "&Cut"
+msgstr "Вырезать"
+
+#: kfindtop.cpp:140
+#, fuzzy
+msgid "&Delete"
+msgstr "Удалить"
+
+#: kfindtop.cpp:189
+msgid "&Edit"
+msgstr "Редактировать"
+
+#: kfindtop.cpp:188
+msgid "&File"
+msgstr "Файл"
+
+#: kfindtop.cpp:192
+msgid "&Help"
+msgstr "Помощь"
+
+#: kfindtop.cpp:167
+#, fuzzy
+msgid "&Invert Selection"
+msgstr "Инвертировать выделение"
+
+#: kftabdlg.cpp:49
+msgid "&Look in:"
+msgstr "Искать в:"
+
+#: kftabdlg.cpp:47
+msgid "&Named:"
+msgstr "Имя:"
+
+#: kfindtop.cpp:135
+#, fuzzy
+msgid "&Open"
+msgstr "Опции"
+
+#: kfindtop.cpp:190
+msgid "&Options"
+msgstr "Опции"
+
+#: kfindtop.cpp:178
+#, fuzzy
+msgid "&Preferences ..."
+msgstr "Установки..."
+
+#: kfindtop.cpp:142
+#, fuzzy
+msgid "&Properties"
+msgstr "Свойства"
+
+#: kfindtop.cpp:151
+#, fuzzy
+msgid "&Quit"
+msgstr "Редактировать"
+
+#: kfindtop.cpp:148
+#, fuzzy
+msgid "&Save Search"
+msgstr "Сохранить поиск"
+
+#: kfindtop.cpp:165
+#, fuzzy
+msgid "&Select All"
+msgstr "Выделить все"
+
 #: kftabdlg.cpp:175
 msgid "&Size is:"
 msgstr "Размер:"
+
+#: kfindtop.cpp:157
+#, fuzzy
+msgid "&Undo"
+msgstr "Откат"
+
+#: kftabdlg.cpp:116
+msgid "&between"
+msgstr "между"
+
+#: kftabdlg.cpp:118
+msgid "&during the previous "
+msgstr "в течении предыдущих"
+
+#: kftabdlg.cpp:205
+msgid "(none)"
+msgstr "(нет)"
+
+#: kfoptions.cpp:202
+msgid "Add New"
+msgstr "Добавить новое"
+
+#: kfoptions.cpp:195
+msgid "Add to Archive:"
+msgstr "Добавить в архив:"
+
+#: kfindtop.cpp:226
+msgid "Add to archive"
+msgstr "Добавить в архив"
 
 #: kftabdlg.cpp:198
 msgid "All Files and Folders"
 msgstr "Все файлы и папки"
 
-#: kftabdlg.cpp:205
-msgid "(none)"
-msgstr "(нет)"
+#: kfoptions.cpp:243
+msgid "Archivers"
+msgstr "Архиваторы"
 
 #: kftabdlg.cpp:206
 msgid "At Least"
@@ -253,45 +178,40 @@ msgstr "Не менее"
 msgid "At Most"
 msgstr "Не более"
 
-#: kftabdlg.cpp:214
-msgid " Advanced "
-msgstr " Расширенный "
+#: kfoptions.cpp:83
+msgid "Browse"
+msgstr "Просмотр"
 
-#: kftabdlg.cpp:377
-msgid "The date is not valid!!"
-msgstr "Дата не верна!!"
+#: kfdird.cpp:48 kfoptions.cpp:53 kfwin.cpp:144 kfwin.cpp:198 kfwin.cpp:213
+#: kfwin.cpp:220 kfwin.cpp:242 kfwin.cpp:249 kfwin.cpp:255
+msgid "Cancel"
+msgstr ""
 
-#: kftabdlg.cpp:389
-msgid "The month(s) value isn't valid!!"
-msgstr "Значение месяца не верно!!"
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr "Не возможно открыть или прочитать подкаталог."
 
-#: kftabdlg.cpp:400
-msgid "The day(s) value isn't valid!!"
-msgstr "Значения дня не верно!!"
+#: kfwin.cpp:349
+msgid "Couldn't recognize archive type!"
+msgstr "Не могу распознать тип архива!"
 
-#: kftabdlg.cpp:417
-msgid "The value in size isn't valid number!!"
-msgstr "Значение размера - не число!!"
+#: kfoptions.cpp:193
+msgid "Create Archive:"
+msgstr "Создать архив:"
 
-#: kfwin.cpp:99
-#, c-format
-msgid "%d file(s) found"
-msgstr "найдено %d файлов"
+#: kfindtop.cpp:231
+msgid "Delete"
+msgstr "Удалить"
 
-#: kfwin.cpp:136
-msgid "It wasn't possible to save results!"
-msgstr "Невозможно сохранить результат!"
+#: kfwin.cpp:196
+msgid "Delete File"
+msgstr "Удалить файл"
 
-#: kfwin.cpp:146 kfwin.cpp:148 kfwin.cpp:150
-msgid "KFind Results File"
-msgstr "Файл результатов KFind"
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "Подкаталоги:"
 
-#: kfwin.cpp:174
-msgid "Results were saved to file\n"
-msgstr "Результаты были записаны в файл\n"
-
-#: kfwin.cpp:189
-#, c-format
+#: kfwin.cpp:194
 msgid ""
 "Do you really want to delete file:\n"
 "%s"
@@ -299,43 +219,33 @@ msgstr ""
 "Вы действительно хотите удалить файл:\n"
 "%s"
 
-#: kfwin.cpp:191
-msgid "Delete File"
-msgstr "Удалить файл"
-
-#: kfwin.cpp:205
-msgid ""
-"You have no permission\n"
-" to delete this file"
+#: kfwin.cpp:140 kfwin.cpp:178 kfwin.cpp:209 kfwin.cpp:216 kfwin.cpp:238
+#: kfwin.cpp:245 kfwin.cpp:251 kfwin.cpp:348
+msgid "Error"
 msgstr ""
-"Вы не имеете права\n"
-" удалить этот файл"
 
-#: kfwin.cpp:212
-msgid ""
-"It isn't possible to delete\n"
-"selected file"
-msgstr ""
-"Невозможно удалить\n"
-"выделенный файл"
+#: kfwin.cpp:410
+msgid "Error while creating child process!"
+msgstr "Ошибка создания процесса!"
 
-#: kfwin.cpp:234
-msgid ""
-"You have no permission\n"
-" to delete this directory"
-msgstr ""
-"Вы не имеете права\n"
-" удалить этот подкаталог"
+#: kfoptions.cpp:76
+msgid "File format:"
+msgstr "Формат файла:"
 
-#: kfwin.cpp:241
-msgid ""
-"Specified directory\n"
-"is not empty!"
-msgstr ""
-"Указанный подкаталог\n"
-"не пуст!"
+#: kftabdlg.cpp:115
+msgid "Find all files created or &modified:"
+msgstr "Найти все файлы, созданные или измененные:"
 
-#: kfwin.cpp:247
+#: kfindtop.cpp:252
+#, fuzzy
+msgid "Help"
+msgstr "Помощь"
+
+#: kftabdlg.cpp:64
+msgid "Include &subfolders"
+msgstr "Рекурсивно"
+
+#: kfwin.cpp:252
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -343,25 +253,188 @@ msgstr ""
 "Невозможно удалить\n"
 "выделенный подкаталог"
 
-#: kfwin.cpp:340
-msgid "Couldn't recognize archive type!"
-msgstr "Не могу распознать тип архива!"
+#: kfwin.cpp:217
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+"Невозможно удалить\n"
+"выделенный файл"
 
-#: kfwin.cpp:401
-msgid "Error while creating child process!"
-msgstr "Ошибка создания процесса!"
+#: kfwin.cpp:141
+msgid "It wasn't possible to save results!"
+msgstr "Невозможно сохранить результат!"
 
-# Локализация к kfind.
-# Copyright (C) 1997 Free Software Foundation, Inc.
-# Denis Y. Pershin <dyp@siblug.org>, 1997.
-#
-#~ msgid ""
-#~ msgstr ""
-#~ "Project-Id-Version: kfind 0.3.2\n"
-#~ "POT-Creation-Date: 1997-08-26 12:45+0200\n"
-#~ "PO-Revision-Date: 1997-09-05 03:06+0600\n"
-#~ "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
-#~ "Language-Team: Russian <ru@li.org>\n"
-#~ "MIME-Version: 1.0\n"
-#~ "Content-Type: text/plain; charset=koi8-r\n"
-#~ "Content-Transfer-Encoding: 8-bit\n"
+#: kfindtop.cpp:122
+#, fuzzy
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav FlМdr <flidr@kky.zcu.cz>\n"
+"\n"
+"Special thanks to Stephan Kulow\n"
+"<coolo@kde.org>"
+msgstr ""
+"KFind %s\n"
+"Фронтенд к утилите find\n"
+"Мирослав Флидр <flidr@kky.zcu.cz>"
+
+#: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
+msgid "KFind Results File"
+msgstr "Файл результатов KFind"
+
+#: kfindtop.cpp:182
+#, fuzzy
+msgid "Kfind &help"
+msgstr "Помощь Kfind"
+
+#: kfindtop.cpp:208
+msgid "New Search"
+msgstr "Новый поиск"
+
+#: kfdird.cpp:47 kfoptions.cpp:52 kfwin.cpp:143 kfwin.cpp:181 kfwin.cpp:197
+#: kfwin.cpp:212 kfwin.cpp:219 kfwin.cpp:241 kfwin.cpp:248 kfwin.cpp:254
+#: kfwin.cpp:350
+msgid "OK"
+msgstr ""
+
+#: kftabdlg.cpp:171
+msgid "Of &type:"
+msgstr "Типа:"
+
+#: kfindtop.cpp:221
+msgid "Open"
+msgstr ""
+
+#: kfindtop.cpp:145
+#, fuzzy
+msgid "Open Containing &Folder"
+msgstr "Открыть папку, в которой содержится файл"
+
+#: kfindtop.cpp:241
+msgid "Open Containing Folder"
+msgstr "Открыть папку, в которой содержится файл"
+
+#: kfoptions.cpp:199
+msgid "Patterns:"
+msgstr "Маски:"
+
+#: kfoptions.cpp:96
+msgid "Plain Text"
+msgstr "Текст"
+
+#: kfoptions.cpp:54
+msgid "Preferences"
+msgstr "Установки"
+
+#: kfindtop.cpp:236
+msgid "Properties"
+msgstr "Свойства"
+
+#: kfindtop.cpp:257
+msgid "Quit"
+msgstr ""
+
+#: kfoptions.cpp:204
+msgid "Remove"
+msgstr "Удалить"
+
+#: kfwin.cpp:179
+msgid "Results were saved to file\n"
+msgstr "Результаты были записаны в файл\n"
+
+#: kfindtop.cpp:246
+msgid "Save Search Results"
+msgstr "Сохранить результаты поиска"
+
+#: kfoptions.cpp:81
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "Сохранить результат в файл ~/.kfind-results.html"
+
+#: kfoptions.cpp:78
+msgid "Save results to file:"
+msgstr "Сохранить результат в файл:"
+
+#: kfoptions.cpp:125
+msgid "Saving"
+msgstr "Сохранение"
+
+#: kfdird.cpp:167 kfdird.cpp:192 kfdird.cpp:210
+msgid "Sorry"
+msgstr "Извините"
+
+#: kfwin.cpp:246
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+"Указанный подкаталог\n"
+"не пуст!"
+
+#: kfindtop.cpp:203
+msgid "Start Search"
+msgstr "Начать поиск"
+
+#: kfindtop.cpp:213
+msgid "Stop Search"
+msgstr "Остановить поиск"
+
+#: kftabdlg.cpp:384
+msgid "The date is not valid!!"
+msgstr "Дата не верна!!"
+
+#: kftabdlg.cpp:407
+msgid "The day(s) value isn't valid!!"
+msgstr "Значения дня не верно!!"
+
+#: kftabdlg.cpp:396
+msgid "The month(s) value isn't valid!!"
+msgstr "Значение месяца не верно!!"
+
+#: kftabdlg.cpp:424
+msgid "The value in size isn't valid number!!"
+msgstr "Значение размера - не число!!"
+
+#: kfwin.cpp:239
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr ""
+"Вы не имеете права\n"
+" удалить этот подкаталог"
+
+#: kfwin.cpp:210
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr ""
+"Вы не имеете права\n"
+" удалить этот файл"
+
+#: kftabdlg.cpp:106
+msgid "and"
+msgstr "и"
+
+#: kftabdlg.cpp:108
+msgid "day(s)"
+msgstr "день(дни)"
+
+#: kftabdlg.cpp:117
+msgid "during the previou&s "
+msgstr "в течении предыдущих "
+
+#: kftabdlg.cpp:107
+msgid "month(s)"
+msgstr "месяц(ы)"
+
+#~ msgid "Type Description:"
+#~ msgstr "Описание типа:"
+
+#~ msgid "Icon:"
+#~ msgstr "Пиктограмма:"
+
+#~ msgid "Default Application:"
+#~ msgstr "Приложение по умолчанию:"
+
+#~ msgid "Filetypes"
+#~ msgstr "Типы файлов"

@@ -1325,10 +1325,6 @@ msgstr ""
 #~ msgid "Too many protocols in file\n"
 #~ msgstr "För många protokoll i fil\n"
 
-#, fuzzy
-#~ msgid "Could not find mime type\r\n"
-#~ msgstr "Kunde inte hitta mime-typen\n"
-
 #~ msgid "ERROR: You must first mount the device. Use the right mouse button"
 #~ msgstr "FEL: Du måste montera enheten först. Använd rätt musknapp"
 
@@ -1337,14 +1333,6 @@ msgstr ""
 
 #~ msgid "ERROR: Malformed URL '%s'"
 #~ msgstr "FEL: URLen '%s' är ogiltlig"
-
-#, fuzzy
-#~ msgid ""
-#~ "Could not make directory\n"
-#~ "\r%s"
-#~ msgstr ""
-#~ "Kunde inte skapa katalogen\n"
-#~ "%s"
 
 #~ msgid ""
 #~ " does not exist\n"

@@ -267,7 +267,7 @@ msgid ""
 "%s"
 msgstr ""
 "Nie mogê za³adowaæ ikony\n"
-"\r%s"
+"%s"
 
 #: kbind.cpp:291 kbind.cpp:364 kbind.cpp:417 kbind.cpp:1466 kbind.cpp:1474
 #: kbind.cpp:1492 kbind.cpp:1509 kbind.cpp:1570 kbind.cpp:1582 kbind.cpp:1609
@@ -977,7 +977,7 @@ msgid ""
 "%s"
 msgstr ""
 "Brak dostêpu do katalogu\n"
-"\r%s"
+"%s"
 
 #: kiojob.cpp:684
 #, c-format
@@ -1164,7 +1164,7 @@ msgid ""
 "%s"
 msgstr ""
 "Nie mo¿na skasowaæ katalogu\n"
-"\r%s"
+"%s"
 
 #: kiojob.cpp:1557
 #, c-format
