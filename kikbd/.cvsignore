@@ -1,6 +1,7 @@
 Makefile
 Makefile.in
 kikbd
+kcmikbd
 *.moc.cpp
 *.moc.h
 
