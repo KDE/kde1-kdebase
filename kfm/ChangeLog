@@ -1,4 +1,11 @@
-    
+Thu Mar  5 21:32:33 1998  Bernd Johannes Wuebben  <wuebben@math.cornell.edu>
+
+	* several fixes and improvements. Moved a lot of constants to 
+	  config-kfm.h 
+	* removed the old CHANGES file and replaced it with this standard 
+	  format ChangeLog file. Please use emacs/xemacs Meta-x add-change-log-entry
+	  to add entries to this log file. Thanks.
+
 03/05/98 Bernd
   - saves the kfmgui sizes on 'save settings'
   - colors of the treeview are now in sync with the colors 
