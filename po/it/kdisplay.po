@@ -1,0 +1,256 @@
+
+#: main.cpp:53
+msgid "KDE Display Configuration"
+msgstr "Configurazione Schermo KDE"
+
+#: main.cpp:130
+#, c-format
+msgid ""
+"Usage: %s -init|-setup\n"
+"\n"
+msgstr ""
+"Utilizzo: %s -init|-setup\n"
+"\n"
+#: main.cpp:131
+msgid "  -init               apply current settings to the display\n"
+msgstr "  -init               applica i settaggi salvati al display\n"
+
+#: main.cpp:132
+msgid "  -setup              setup the display\n"
+msgstr "  -setup              configura il display\n"
+
+#: backgnd.cpp:140 colorscm.cpp:293
+msgid "Background"
+msgstr "Sfondo"
+
+#: backgnd.cpp:165
+msgid "Color"
+msgstr "Colore"
+
+#: backgnd.cpp:185
+msgid "Flat"
+msgstr "Tinta unita"
+
+#: backgnd.cpp:189
+msgid "Gradient"
+msgstr "Sfumatura"
+
+#: backgnd.cpp:202
+msgid "Portrait"
+msgstr "Verticale"
+
+#: backgnd.cpp:206
+msgid "Landscape"
+msgstr "Orizzontale"
+
+#: backgnd.cpp:224
+msgid "Wallpaper"
+msgstr "Sfondo"
+
+#: backgnd.cpp:257
+msgid "Tiled"
+msgstr "Ripetuto"
+
+#: backgnd.cpp:261
+msgid "Centred"
+msgstr "Centrato"
+
+#: backgnd.cpp:265
+msgid "Scaled"
+msgstr "In scala"
+
+#: backgnd.cpp:272
+msgid "Browse..."
+msgstr "Sfoglia..."
+
+#: scrnsave.cpp:45
+msgid "Ignore"
+msgstr "Ignora"
+
+#: scrnsave.cpp:47
+msgid "Lock"
+msgstr "Blocca"
+
+#: scrnsave.cpp:103 scrnsave.cpp:161
+msgid "Screen Saver"
+msgstr "Salva Schermo"
+
+#: scrnsave.cpp:182
+msgid "Setup..."
+msgstr "Imposta..."
+
+#: scrnsave.cpp:186
+msgid "Test"
+msgstr "Test"
+
+#: scrnsave.cpp:194
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: scrnsave.cpp:197
+msgid "Wait:"
+msgstr "Aspetta:"
+
+#: scrnsave.cpp:208
+msgid "min"
+msgstr "min"
+
+#: scrnsave.cpp:211
+msgid "Requires Password"
+msgstr "Richiedi Password"
+
+#: scrnsave.cpp:216
+msgid "Priority:"
+msgstr "Priorita':"
+
+#: colorscm.cpp:326 scrnsave.cpp:219
+msgid "High"
+msgstr "Max"
+
+#: colorscm.cpp:322 scrnsave.cpp:222
+msgid "Low"
+msgstr "Min"
+
+#: colorscm.cpp:139 colorscm.cpp:140
+msgid "Inactive window"
+msgstr "Finestra Inattiva"
+
+#: colorscm.cpp:155 colorscm.cpp:156
+msgid "Active window"
+msgstr "Finestra Attiva"
+
+#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:298
+msgid "Window text"
+msgstr "Testo finestra"
+
+#: colorscm.cpp:209
+msgid "Disabled"
+msgstr "Disabilitato"
+
+#: colorscm.cpp:216 colorscm.cpp:217
+msgid "Selected"
+msgstr "Selezionato"
+
+#: colorscm.cpp:252 colorscm.cpp:262
+msgid "Color Scheme"
+msgstr "Schema colori"
+
+#: colorscm.cpp:276
+msgid "Remove"
+msgstr "Rimuovi"
+
+#: colorscm.cpp:284
+msgid "Widget color"
+msgstr "Colore Widget"
+
+#: colorscm.cpp:289
+msgid "Inactive title bar"
+msgstr "Barra Titolo inattiva"
+
+#: colorscm.cpp:290
+msgid "Inactive title text"
+msgstr "Testo Titolo inattivo"
+
+#: colorscm.cpp:291
+msgid "Active title bar"
+msgstr "Barra Titolo attiva"
+
+#: colorscm.cpp:292
+msgid "Active title text"
+msgstr "Testo Titolo attivo"
+
+#: colorscm.cpp:294
+msgid "Text"
+msgstr "Testo"
+
+#: colorscm.cpp:295
+msgid "Select background"
+msgstr "Sfondo scelta"
+
+#: colorscm.cpp:296
+msgid "Select text"
+msgstr "Testo Scelta"
+
+#: colorscm.cpp:297
+msgid "Window background"
+msgstr "Sfondo finestra"
+
+#: colorscm.cpp:309
+msgid "Contrast"
+msgstr "Contrasto"
+
+#: colorscm.cpp:341
+msgid "Save scheme"
+msgstr "Salva schema"
+
+#: colorscm.cpp:372 colorscm.cpp:380
+msgid "You have chosen a name used by a supplied color scheme"
+msgstr "Hai scelto il nome di uno schema di colori predefinito"
+
+#: colorscm.cpp:463
+msgid "KDE Default"
+msgstr ""
+
+#: colorscm.cpp:687
+msgid "Display Setup"
+msgstr "Configurazione Schermo"
+
+#: colorscm.cpp:688
+msgid ""
+"No desktop color schemes were found.\n"
+"Do you want to install the default color schemes now ?"
+msgstr ""
+"Non sono stati trovati schemi dei colori.\"
+"Vuoi installare quello di default ora ?"
+#: savescm.cpp:26
+msgid "Name"
+msgstr "Nome"
+
+#: general.cpp:55
+msgid "General"
+msgstr "Generali"
+
+#: general.cpp:59
+msgid "Widget style"
+msgstr "Stile Widget"
+
+#: general.cpp:64
+msgid "Motif"
+msgstr "Motif"
+
+#: general.cpp:65
+msgid "Windows 95"
+msgstr "Windows 95"
+
+#: general.cpp:74
+msgid "Fonts"
+msgstr "Caratteri"
+
+#: general.cpp:79
+msgid "General font"
+msgstr "Caratteri generali"
+
+#: general.cpp:104
+msgid "Sample"
+msgstr "Esempio"
+
+#: general.cpp:110
+msgid "Small"
+msgstr "Piccoli"
+
+#: general.cpp:114
+msgid "Medium"
+msgstr "Medi"
+
+#: general.cpp:118
+msgid "Large"
+msgstr "Grandi"
+
+#: general.cpp:135
+msgid "Italic"
+msgstr "Italici"
+
+#: kwmcom.cpp:80 kwmcom.cpp:107
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "kwmcom: comunicazione con kwm fallita\n"
+
