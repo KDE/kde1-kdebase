@@ -138,20 +138,20 @@ KBlobSaver::KBlobSaver
 
 	// init algorithm space
 	strcpy(Algs[0].Name, alg_str[0]);
-	Algs[0].Init = KBlobSaver::lnSetup;
-	Algs[0].NextFrame = KBlobSaver::lnNextFrame;
+	Algs[0].Init = &KBlobSaver::lnSetup;
+	Algs[0].NextFrame = &KBlobSaver::lnNextFrame;
 
 	strcpy(Algs[1].Name, alg_str[1]);
-	Algs[1].Init = KBlobSaver::hsSetup;
-	Algs[1].NextFrame = KBlobSaver::hsNextFrame;
+	Algs[1].Init = &KBlobSaver::hsSetup;
+	Algs[1].NextFrame = &KBlobSaver::hsNextFrame;
 
 	strcpy(Algs[2].Name, alg_str[2]);
-	Algs[2].Init = KBlobSaver::cbSetup;
-	Algs[2].NextFrame = KBlobSaver::cbNextFrame;
+	Algs[2].Init = &KBlobSaver::cbSetup;
+	Algs[2].NextFrame = &KBlobSaver::cbNextFrame;
 
 	strcpy(Algs[3].Name, alg_str[3]);
-	Algs[3].Init = KBlobSaver::pcSetup;
-	Algs[3].NextFrame = KBlobSaver::pcNextFrame;
+	Algs[3].Init = &KBlobSaver::pcSetup;
+	Algs[3].NextFrame = &KBlobSaver::pcNextFrame;
 
 	// get setup from kde registry
 	readSettings();
