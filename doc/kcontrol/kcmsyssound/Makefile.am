@@ -1,3 +1,8 @@
+# add here all files
+data_DATA = syssound.html syssound-1.html logotp3.gif
 
-# add here all the languages, you have docu for
-SUBDIRS = de no en
+datadir = $(kde_htmldir)/en/kcontrol/kcmsyssound
+
+EXTRA_DIST = $(data_DATA) syssound.nif syssound.sgml
+
+
