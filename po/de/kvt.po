@@ -1,12 +1,13 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-03-04 18:41+0100\n"
-"PO-Revision-Date: 1999-03-29 21:40+MET\n"
-"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"PO-Revision-Date: 1999-04-05 11:40+MET\n"
+"Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
+
 "Date: 1997-08-23 15:45:33+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
 "Xgettext-Options: --keyword=translate\n"
@@ -34,7 +35,7 @@ msgstr "&Neues Terminal"
 
 #: main.C:620 main.C:1043
 msgid "&Hide"
-msgstr "&Unsichtbar"
+msgstr "&Ausblenden"
 
 #: main.C:621
 msgid "&Left"
@@ -94,11 +95,11 @@ msgstr "&Eigene Farben"
 
 #: main.C:665 main.C:969
 msgid "Hide &Menubar"
-msgstr "&Menüleiste unsichtbar"
+msgstr "&Menüleiste ausblenden"
 
 #: main.C:667 main.C:888 main.C:960
 msgid "Show &Menubar"
-msgstr "&Menüleiste anzeigen"
+msgstr "M&enüleiste anzeigen"
 
 #: main.C:668 main.C:979
 msgid "Secure &keyboard"
@@ -272,7 +273,7 @@ msgstr "-C                        Meldungen für die Systemkonsole anzeigen\n"
 
 #: main.C:1495
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr "-n <text>                 Text für Icon\n"
+msgstr "-n <text>                 Text für Symbol\n"
 
 #: main.C:1496
 msgid ""

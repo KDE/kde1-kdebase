@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay \n"
-"POT-Creation-Date: 1999-03-21 01:19+0100\n"
-"PO-Revision-Date: 1999-03-28 9:10+MET\n"
-"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"POT-Creation-Date: 1999-02-06 01:16+0100\n"
+"PO-Revision-Date: 1999-04-04 9:10+MET\n"
+"Translator: Carsten Pfeiffer <pfeiffer@kde.org>\n"
+"Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Carsten Pfeiffer <pfeiffer@kde.org>\n"
 
 #: backgnd.cpp:54
 msgid "Enter new desktop name"
@@ -40,7 +40,7 @@ msgstr "&Zwei Farben"
 
 #: backgnd.cpp:287
 msgid "Set&up ..."
-msgstr "&Einstellungen..."
+msgstr "&Einrichtung..."
 
 #: backgnd.cpp:296
 msgid "Wallpaper"
@@ -104,7 +104,7 @@ msgstr "&Zufällig"
 
 #: backgnd.cpp:408
 msgid "Setu&p..."
-msgstr "&Einstellungen..."
+msgstr "&Einrichtung..."
 
 #: backgnd.cpp:418
 msgid "&Dock into the panel"
@@ -190,7 +190,7 @@ msgstr "Kopfsteinpflaster"
 
 #: backgnd.cpp:1708
 msgid "Random mode setup"
-msgstr "Einstellung für Zufalls-Modus"
+msgstr "Einrichtung des Zufalls-Modus"
 
 #: backgnd.cpp:1714
 msgid "Pick files from &directory"
@@ -376,7 +376,7 @@ msgstr "Kein Bildschirmschoner"
 
 #: scrnsave.cpp:209
 msgid "&Setup ..."
-msgstr "&Einstellungen..."
+msgstr "&Einrichtung..."
 
 #: scrnsave.cpp:217
 msgid "&Test"
@@ -388,7 +388,7 @@ msgstr "Einstellungen"
 
 #: scrnsave.cpp:250
 msgid "&Wait for"
-msgstr "&Warten auf"
+msgstr "&Wartezeit"
 
 #: scrnsave.cpp:260
 msgid "min."
@@ -434,31 +434,31 @@ msgstr "&Menüleiste am oberen Bildschirmrand wie MacOS"
 msgid "&Apply fonts and colors to non-KDE apps"
 msgstr "&Farben und Fonts auch für Nicht-KDE-Anwendungen verwenden"
 
-#: general.cpp:529
+#: general.cpp:530
 msgid "General font"
 msgstr "Standardschrift"
 
-#: general.cpp:534
+#: general.cpp:535
 msgid "Fixed font"
 msgstr "Schrift fester Breite"
 
-#: general.cpp:540
+#: general.cpp:541
 msgid "Window title font"
 msgstr "Schriftart für Fenstertext"
 
-#: general.cpp:545
+#: general.cpp:546
 msgid "Panel button font"
 msgstr "Schrift auf Kontroll-Leiste"
 
-#: general.cpp:550
+#: general.cpp:551
 msgid "Panel clock font"
 msgstr "Schrift für Uhr auf Kontroll-Leiste"
 
-#: general.cpp:580
+#: general.cpp:581
 msgid "Sample text"
-msgstr "Beispiel-Text"
+msgstr "Beispieltext"
 
-#: general.cpp:588
+#: general.cpp:589
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
@@ -504,7 +504,7 @@ msgstr "Fenster im Vordergrund"
 
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 msgid "Selected text"
-msgstr "Auswahl-Text"
+msgstr "Ausgewählter Text"
 
 #: widgetcanvas.cpp:212
 msgid "New"

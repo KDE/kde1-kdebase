@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1999-01-28 01:15+0100\n"
-"PO-Revision-Date: 1999-03-28 16:05+MET\n"
-"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"PO-Revision-Date: 1999-04-05 11:05+MET\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
+"Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Stephan Kulow <coolo@kde.org>\n"
 
 #: main.cpp:64
 msgid "&Panel"
@@ -96,11 +96,11 @@ msgstr "&Breite"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "Menü-Hilfen"
+msgstr "Menü-Kurztips"
 
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "&Menü-Hilfen anzeigen"
+msgstr "&Menü-Kurztips anzeigen"
 
 #: options.cpp:84
 msgid "De&lay:"

@@ -6,13 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys VERSION\n"
 "POT-Creation-Date: 1999-01-08 01:16+0100\n"
-"PO-Revision-Date: 1999-03-28 14:50+MET\n"
-"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"PO-Revision-Date: 1999-04-04 14:50+MET\n"
+"Translator: Gregor Zumstein <zumstein@ssd.ethz.ch>\n"
+"Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Gregor Zumstein <zumstein@ssd.ethz.ch>\n"
 
 #: main.cpp:72
 msgid "&Standard shortcuts"
@@ -36,7 +36,7 @@ msgstr "Aktuelle Einstellungen"
 
 #: keyconfig.cpp:108
 msgid "KDE default"
-msgstr "KDE-Voreinstellung"
+msgstr "KDE-Standard"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"

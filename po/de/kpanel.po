@@ -5,14 +5,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1999-04-02 01:15+0200\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: 1999-02-03 19:30+MET\n"
-"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"Translator: Christian Kirsch <ck@held.mind.de>\n"
+"Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Christian Kirsch <ck@held.mind.de>\n"
 
 #: kpanel.C:292
 msgid "&Move"
@@ -26,35 +26,43 @@ msgstr "&Eigenschaften"
 msgid "Go!"
 msgstr "Start!"
 
-#: kpanel.C:415
+#: kpanel.C:341 tools.C:901
+msgid "Where do you want to go tomorrow?"
+msgstr "Where do you want to go tomorrow?"
+
+#: kpanel.C:416
 msgid "No info available"
 msgstr "Keine Informationen verfügbar"
 
-#: kpanel.C:454 props.C:207 props.C:208
+#: kpanel.C:455 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Abmelden"
 
-#: kpanel.C:462 props.C:206
+#: kpanel.C:463 props.C:206
 msgid "Lock screen"
 msgstr "Bildschirm sperren"
 
-#: kpanel.C:471 kpanel.C:480
+#: kpanel.C:472 kpanel.C:481
 msgid "Hide the panel"
-msgstr "Kontroll-Leiste nicht anzeigen"
+msgstr "Kontroll-Leiste ausblenden"
 
-#: kpanel.C:490 kpanel.C:502
+#: kpanel.C:491 kpanel.C:503
 msgid "Show the panel"
 msgstr "Kontroll-Leiste anzeigen"
 
-#: kpanel.C:1066
+#: kpanel.C:1067
 msgid "Iconify other &windows"
 msgstr "Andere Fenster ver&kleinern"
 
-#: kpanel.C:1214 tools.C:909
+#: kpanel.C:1204
+msgid "No comment available"
+msgstr "Keine Erklärung verfügbar"
+
+#: kpanel.C:1213 tools.C:910
 msgid "Windowlist"
 msgstr "Fensterliste"
 
-#: kpanel.C:1222 props.C:197
+#: kpanel.C:1221 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Schnell durch das Dateisystem navigieren"
 
@@ -64,7 +72,7 @@ msgstr "Anwendung hinzufügen"
 
 #: props.C:169
 msgid "Add an application or a submenu onto the panel"
-msgstr "Programm oder Untermenü zu Kontroll-Leiste hinzufügen"
+msgstr "Programm oder Menü zu Kontroll-Leiste hinzufügen"
 
 #: props.C:175
 msgid "Add Disk Navigator"
@@ -82,13 +90,13 @@ msgstr "Fensterliste hinzufügen"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Menü für Fensterliste zu Kontroll-Leiste hinzufügen"
 
-#: events.C:855 props.C:183
+#: events.C:851 props.C:183
 msgid "Configure"
 msgstr "Konfigurieren"
 
 #: props.C:185
 msgid "Configure panel"
-msgstr "Kontroll-Leiste konfigurieren"
+msgstr "Kontroll-Leiste einrichten"
 
 #: props.C:186
 msgid "Edit Menus"
@@ -98,13 +106,13 @@ msgstr "Menü bearbeiten"
 msgid "Add or remove applications in the menu structure "
 msgstr "Anwendungen in der Menü-Struktur hinzufügen oder löschen "
 
-#: events.C:857 props.C:189
+#: events.C:853 props.C:189
 msgid "Restart"
 msgstr "Neu starten"
 
 #: props.C:191
 msgid "Restart panel"
-msgstr "Kontroll-Leiste erneuern"
+msgstr "Kontroll-Leiste neu laden"
 
 #: props.C:194
 msgid "Disk Navigator"
@@ -122,7 +130,7 @@ msgstr "Bildschirm sperren"
 msgid "The menu editor is not installed."
 msgstr "Der Menü-Editor ist nicht installiert."
 
-#: events.C:912 props.C:452
+#: events.C:908 props.C:452
 msgid "Oops!"
 msgstr "Hoppla!"
 
@@ -134,11 +142,11 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr "KDisk-Navigator"
 
-#: events.C:911
+#: events.C:907
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kann dies nicht als Button auf die Kontroll-Leiste legen!"
 
@@ -197,9 +205,3 @@ msgstr "Optionen..."
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
 msgstr "Disk-Navigator personalisieren"
-
-#~ msgid "Where do you want to go tomorrow?"
-#~ msgstr "Where do you want to go tomorrow?"
-
-#~ msgid "No comment available"
-#~ msgstr "Keine Erklärung verfügbar"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-12-15 07:34+0100\n"
 "PO-Revision-Date: 1999-03-27 21:25+MET\n"
-"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
@@ -27,7 +27,7 @@ msgstr "Nach links verschieben"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
-msgstr "Allgemeine Arbeitsfläche &nicht anzeigen"
+msgstr "Allgemeine Arbeitsfläche a&usblenden"
 
 #: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
 msgid "Show &Global Desktop"
@@ -35,7 +35,7 @@ msgstr "Allgemeine Arbeitsfläche &anzeigen"
 
 #: kpager.cpp:97 kpager.cpp:380
 msgid "Hide &Menubar"
-msgstr "Menüleiste n&icht anzeigen"
+msgstr "Menüleiste a&usblenden"
 
 #: kpager.cpp:101 kpager.cpp:386
 msgid "&2 Rows"
@@ -43,11 +43,11 @@ msgstr "&2zeilig"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
-msgstr "Arbeitsfläche mit &einem Klick ändern"
+msgstr "Arbeitsfläche mit &einfachem Klick ändern"
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
 msgid "Hide Desktop &Names"
-msgstr "Namen der Arbeitsflächen ni&cht anzeigen"
+msgstr "Namen der Arbeitsflächen aus&blenden"
 
 #: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
 msgid "Show Desktop &Names"
@@ -59,7 +59,7 @@ msgstr "Schlicht"
 
 #: kpager.cpp:118 kpager.cpp:404
 msgid "Icon"
-msgstr "Icon"
+msgstr "Symbol"
 
 #: kpager.cpp:121 kpager.cpp:406
 msgid "Pixmap"
