@@ -13,7 +13,7 @@ INSTALL = @INSTALL@ $(SETUIDFLAGS)
 bin_PROGRAMS = kpolygon.kss kswarm.kss klissie.kss kbanner.kss \
 	klines.kss kblankscrn.kss krock.kss kflame.kss klaser.kss \
 	kpyro.kss khop.kss $(XPM_SAVERS) $(GL_SAVERS) kslip.kss \
-	kforest.kss klock
+	kforest.kss klock kblob.kss
 
 EXTRA_PROGRAMS = kbat.kss kmorph3d.kss
 
@@ -64,6 +64,9 @@ flame.cpp: flame.moc
 kforest_kss_SOURCES = $(BASE_SRCS) forest.cpp
 forest.cpp: forest.moc
 
+kblob_kss_SOURCES = $(BASE_SRCS) blob.cpp
+blob.cpp: blob.moc
+
 kmorph3d_kss_SOURCES = $(BASE_SRCS) morph3d.cpp
 kmorph3d_kss_LDADD = $(LDADD) @GLLIB@
 morph3d.cpp: morph3d.moc
@@ -74,11 +77,11 @@ klock_SOURCES = klock.cpp kscreensave.cpp
 BUILT_SOURCES = main.moc saver.moc polygon.moc banner.moc\
 		blankscrn.moc rock.moc flame.moc lines.moc laser.moc\
 		pyro.moc hop.moc forest.moc swarm.moc bat.moc slip.moc\
-		lissie.moc morph3d.moc
+		lissie.moc morph3d.moc blob.moc
 noinst_HEADERS = saver.h polygon.h banner.h\
 		blankscrn.h kscreensave.h xlock.h rock.h flame.h lines.h\
 		laser.h pyro.h hop.h forest.h swarm.h bat.h slip.h\
-		lissie.h
+		lissie.h blob.h
 
 ########## Meta objects ##########
 
@@ -129,6 +132,9 @@ slip.moc: slip.h
 
 lissie.moc: lissie.h
 	$(MOC) lissie.h -o lissie.moc
+
+blob.moc: blob.h
+	$(MOC) blob.h -o blob.moc
 
 morph3d.moc: morph3d.h
 	$(MOC) morph3d.h -o morph3d.moc
