@@ -58,8 +58,9 @@ int main( int argc, char **argv )
 	temp2 = config->readEntry("PersonalPath");
       else
 	{
-	  temp2 = QDir::homeDirPath();
-	  temp2 += "/.kde/share/applnk";
+	  //temp2 = QDir::homeDirPath();
+	  //temp2 += "/.kde/share/applnk";
+          temp2 = KApplication::localkdedir() + "/share/applnk";
 	}
        DesktopPathDialog *desktop_dialog = new DesktopPathDialog( temp1, temp2 );
        desktop_dialog->exec();
@@ -98,9 +99,11 @@ int main( int argc, char **argv )
   QStrList icon_sel_list;
   QStrList icon_sel_list2;
   icon_sel_list.append(KApplication::kde_icondir());
-  icon_sel_list.append(QDir::homeDirPath()+"/.kde/share/icons");
+  //icon_sel_list.append(QDir::homeDirPath()+"/.kde/share/icons");
+  icon_sel_list.append(KApplication::localkdedir()+"/share/icons");
   icon_sel_list2.append(KApplication::kde_icondir() + "/mini");
-  icon_sel_list2.append(QDir::homeDirPath()+"/.kde/share/icons/mini");
+  //icon_sel_list2.append(QDir::homeDirPath()+"/.kde/share/icons/mini");
+  icon_sel_list2.append(KApplication::localkdedir()+"/share/icons/mini");
   global_pix_sel->setDir(&icon_sel_list);
   global_pix_sel2->setDir(&icon_sel_list2);
 

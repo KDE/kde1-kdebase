@@ -148,7 +148,7 @@ KMenuEdit::KMenuEdit( const char *name )
   p.setY( y );
   glob_menu_data->popupConfig( p, f_move, FALSE );
 
-  setMinimumSize(400, 200);
+  setMinimumSize(640, 480);
   int width, height;
   width  = config->readNumEntry("Width");
   height = config->readNumEntry("Height");
