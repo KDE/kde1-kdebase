@@ -2,24 +2,24 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kpanel\n"
 "POT-Creation-Date: 1998-11-30 01:10+0100\n"
-"PO-Revision-Date: 1998-07-09 14:50+02:00\n"
-"Last-Translator: Anders Bengtsson <d96-abe@nada.kth.se>\n"
+"PO-Revision-Date: 1998-12-01 22:18+01:00\n"
+"Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
 
 #: kpanel.C:273
 msgid "&Move"
-msgstr ""
+msgstr "&Flytta"
 
 #: kpanel.C:276
 msgid "&Properties"
-msgstr ""
+msgstr "&Egenskaper"
 
 #: kpanel.C:313
 msgid "Go!"
@@ -27,7 +27,7 @@ msgstr "Starta!"
 
 #: kpanel.C:316 tools.C:832
 msgid "Where do you want to go tomorrow?"
-msgstr "Vart vill du gå i morgon?"
+msgstr "Vart vill du gå imorgon?"
 
 #: kpanel.C:391
 msgid "No info available"
@@ -79,7 +79,7 @@ msgstr "Konfigurera"
 
 #: props.C:152
 msgid "Configure panel"
-msgstr "Konfigurera panel"
+msgstr "Konfigurera panelen"
 
 #: props.C:153
 msgid "Edit Menus"
@@ -95,15 +95,15 @@ msgstr "Starta om"
 
 #: props.C:158
 msgid "Restart panel"
-msgstr "Starta om panel"
+msgstr "Starta om panelen"
 
 #: props.C:161
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Disknavigator"
 
 #: props.C:164
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Navigera snabbt genom filsystemet"
 
 #: props.C:170
 msgid "Panel"
@@ -115,11 +115,11 @@ msgstr "Lås skärmen"
 
 #: props.C:401
 msgid "The menu editor is not installed."
-msgstr ""
+msgstr "Menyeditorn är inte installerad."
 
 #: events.C:820 props.C:402
 msgid "Oops!"
-msgstr "Oops!"
+msgstr "Hoppsan!"
 
 #: tools.C:618
 msgid ""
@@ -129,56 +129,56 @@ msgstr ""
 
 #: events.C:819
 msgid "Cannot put this as button onto the panel!"
-msgstr "Kan inte lägga in det här som knapp i panelen!"
+msgstr "Kan inte lägga in det här som en knapp i panelen!"
 
 #: pfilemenu.C:415
 msgid "(empty folder)"
-msgstr ""
+msgstr "(tom katalog)"
 
 #: pfilemenu.C:470
 msgid "Open Folder"
-msgstr ""
+msgstr "Öppna katalogen"
 
 #: pfilemenu.C:481
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(För många filer)"
 
 #: pfilemenu.C:490
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(Åtkomst nekas)"
 
 #: pfilemenu.C:493
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(Oläsbar)"
 
 #: pfilemenu.C:742
 msgid "Shared:"
-msgstr ""
+msgstr "Delade:"
 
 #: pfilemenu.C:744
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Poster som delas av alla användare"
 
 #: pfilemenu.C:763
 msgid "Personal:"
-msgstr ""
+msgstr "Personliga:"
 
 #: pfilemenu.C:765
 msgid "Personal entries"
-msgstr ""
+msgstr "Personliga poster"
 
 #: pfilemenu.C:783
 msgid "Recent:"
-msgstr ""
+msgstr "Senaste:"
 
 #: pfilemenu.C:785
 msgid "Recent entries"
-msgstr ""
+msgstr "Senaste poster"
 
 #: pfilemenu.C:831
 msgid "Options..."
-msgstr ""
+msgstr "Inställningar..."
 
 #: pfilemenu.C:833
 msgid "Customize Disk Navigator"
-msgstr ""
+msgstr "Anpassa disknavigatorn"
