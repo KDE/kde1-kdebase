@@ -1,0 +1,269 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 1.0\n"
+"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"PO-Revision-Date: 1998-06-29 11:00+0200\n"
+"Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
+"Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ISO 8859-9\n"
+
+#: main.cpp:87
+msgid "&Appearance"
+msgstr "&Görünüm"
+
+#: main.cpp:95
+msgid "&Background"
+msgstr "%Arkaplan"
+
+#: main.cpp:98
+msgid "&Users"
+msgstr "&Kullanýcýlar"
+
+#: main.cpp:101
+msgid "&Sessions"
+msgstr "&Oturumlar"
+
+#: main.cpp:106
+msgid ""
+"usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+msgstr ""
+"kullaným: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+
+#: main.cpp:145
+msgid "KDM Configuration"
+msgstr "KDM Ayarlama"
+
+#: main.cpp:155
+msgid ""
+"Sorry, but you don't have read/write\n"
+"permission to the KDM setup file."
+msgstr ""
+"Üzgünüm, fakat KDM ayar dosyasýný \n"
+"okuma/yazma hakkýna sahip deðilsiniz."
+
+#: main.cpp:157
+msgid "Missing privileges"
+msgstr "Eksik tanýmlamalar"
+
+#: kdm-appear.cpp:70
+msgid "Greeting string:"
+msgstr "Karþýlama mesajý:"
+
+#: kdm-appear.cpp:78
+msgid "KDM logo:"
+msgstr "KDM logosu:"
+
+#: kdm-appear.cpp:105 kdm-users.cpp:135
+msgid "Click or drop an image here"
+msgstr "Bir görüntü týklayýn ya da býrakýn"
+
+#: kdm-appear.cpp:110
+msgid "GUI Style:"
+msgstr "GUI türü:"
+
+#: kdm-appear.cpp:116
+msgid "Motif"
+msgstr "Motif"
+
+#: kdm-appear.cpp:117
+msgid "Windows"
+msgstr "Pencereler"
+
+#: kdm-appear.cpp:128
+msgid "Language"
+msgstr "Dil"
+
+#: kdm-appear.cpp:131
+msgid "Language:"
+msgstr "Dil:"
+
+#: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
+msgid ""
+"There was an error loading the image:\n"
+">"
+msgstr ""
+"Görüntü yüklenirken hata oluþtu:\n"
+">"
+
+#: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
+msgid "<"
+msgstr "<"
+
+#: kdm-appear.cpp:170 kdm-appear.cpp:189 kdm-appear.cpp:254 kdm-users.cpp:197
+#: kdm-users.cpp:279
+msgid "ERROR"
+msgstr "HATA"
+
+#: kdm-appear.cpp:186 kdm-users.cpp:194
+msgid ""
+"There was an error saving the image:\n"
+">"
+msgstr ""
+"Görüntü kaydedilirken hata oluþtu:\n"
+">"
+
+#: kdm-appear.cpp:219 kdm-users.cpp:227
+msgid "Sorry, but \n"
+msgstr "Üzgünüm, fakat \n"
+
+#: kdm-appear.cpp:221 kdm-users.cpp:229
+msgid ""
+"\n"
+"does not seem to be an image file"
+msgstr ""
+"\n"
+"bir resim dosyasý gibi görünmüyor"
+
+#: kdm-appear.cpp:222 kdm-users.cpp:230
+msgid ""
+"\n"
+"Please use files with these extensions\n"
+msgstr ""
+"\n"
+"Lütfen þu uzantýlý dosyalarý kullanýnýz\n"
+
+#: kdm-appear.cpp:224 kdm-users.cpp:232
+msgid "Improper File Extension"
+msgstr "Geçersiz Dosya Uzantýsý"
+
+#: kdm-appear.cpp:253 kdm-users.cpp:278
+msgid ""
+"<\n"
+"It will not be saved..."
+msgstr ""
+"<\n"
+"Kaydedilmeyecek..."
+
+#: kdm-font.cpp:48
+msgid "Select fonts"
+msgstr "Yazý tipini seçiniz"
+
+#: kdm-font.cpp:50
+msgid "Change font"
+msgstr "Yazý tipi deðiþtir"
+
+#: kdm-font.cpp:55
+msgid "Greeting"
+msgstr "Karþýlama"
+
+#: kdm-font.cpp:56
+msgid "Fail"
+msgstr "Baþarýsýz"
+
+#: kdm-font.cpp:57
+msgid "Standard"
+msgstr "Standart"
+
+#: kdm-font.cpp:59
+msgid "Example:"
+msgstr "Örnek:"
+
+#: kdm-bgnd.cpp:66
+msgid "Color"
+msgstr "Renk"
+
+#: kdm-bgnd.cpp:74
+msgid "Wallpaper"
+msgstr "Duvar Kaðýdý"
+
+#: kdm-bgnd.cpp:108
+msgid "Tiled"
+msgstr "Döþe"
+
+#: kdm-bgnd.cpp:112
+msgid "Centred"
+msgstr "Ortala"
+
+#: kdm-bgnd.cpp:116
+msgid "Scaled"
+msgstr "Ölçülü"
+
+#: kdm-users.cpp:48
+msgid "All users"
+msgstr "Bütün kullanýcýlar"
+
+#: kdm-users.cpp:50
+msgid "Selected users"
+msgstr "Seçilmiþ kullanýcýlar"
+
+#: kdm-users.cpp:52
+msgid "No-show users"
+msgstr "Gösterilmeyen kullanýcýlar"
+
+#: kdm-users.cpp:79
+msgid ""
+"Show only\n"
+"selected users"
+msgstr ""
+"Yanlýzca seçilen\n"
+"kullanýcýlarý göster"
+
+#: kdm-users.cpp:86
+msgid ""
+"Show all users\n"
+" but no-show users"
+msgstr ""
+"Gösterilmeyenler hariç\n"
+"bütün kullanýcýlarý seç"
+
+#: kdm-users.cpp:97
+msgid "Show users"
+msgstr "Kullanýcýlarý göster"
+
+#: kdm-users.cpp:103
+msgid "Sort users"
+msgstr "Kullanýcýlarý sýrala"
+
+#: kdm-users.cpp:182 kdm-users.cpp:251
+msgid "No user selected"
+msgstr "Seçilmiþ kullanýcý yok"
+
+#: kdm-users.cpp:183 kdm-users.cpp:252
+msgid "Save image as default image?"
+msgstr "Görüntüyü öntanýmlý görüntü olarak kayýt edeyim mi?"
+
+#: kdm-sess.cpp:55
+msgid "All"
+msgstr "Hepsi"
+
+#: kdm-sess.cpp:56
+msgid "Root Only"
+msgstr "Yetkili Kullanýcý Yanlýzca"
+
+#: kdm-sess.cpp:57
+msgid "Console Only"
+msgstr "Yanlýzca Konsol"
+
+#: kdm-sess.cpp:61
+msgid "Commands"
+msgstr "Komutlar"
+
+#: kdm-sess.cpp:62
+msgid "Shutdown"
+msgstr "Kapat"
+
+#: kdm-sess.cpp:67
+msgid "Restart"
+msgstr "Yeniden Baþlat"
+
+#: kdm-sess.cpp:73
+msgid "Session types"
+msgstr "Oturum Türleri"
+
+#: kdm-sess.cpp:75
+msgid "New type"
+msgstr "Yeni Tür"
+
+#: kdm-sess.cpp:83
+msgid "Available types"
+msgstr "Mümkün türler"
+
+#: klangcombo.cpp:133
+msgid "without name!"
+msgstr "Adsýz!"

@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 1.0\n"
+"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"PO-Revision-Date: 1998-06-29 11:00+0200\n"
+"Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
+"Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ISO 8859-9\n"
+
+#: main.cpp:52
+msgid "&Locale"
+msgstr "&Locale"
+
+#: main.cpp:58
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "Kullaným: kcmlocal [-init | dil]\n"
+
+#: main.cpp:86
+msgid "Locale settings"
+msgstr "Locale Ayarlarý"
+
+#: locale.cpp:45
+msgid "Language"
+msgstr "Dil"
+
+#: locale.cpp:55
+msgid "First"
+msgstr "Ýlk"
+
+#: locale.cpp:65
+msgid "Second"
+msgstr "Ýkinci"
+
+#: locale.cpp:75
+msgid "Third"
+msgstr "Üçüncü"
+
+#: locale.cpp:115
+msgid "without name!"
+msgstr "ismi olmaksýzýn!"
+
+#: locale.cpp:181
+msgid "Applying language settings"
+msgstr "Dil ayarlarý uygulanýyor"
+
+#: locale.cpp:182
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr ""
+"Deðiþtirilen dil ayarlarý yalnýzca yeni baþaltýlan programlarda\n"
+"etkili olacaktýr. Tüm yazýlýmlarý etkilemek için oturumu kapatmanýz gerek."

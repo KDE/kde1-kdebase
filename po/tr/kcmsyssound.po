@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 1.0\n"
+"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"PO-Revision-Date: 1998-06-29 11:00+0200\n"
+"Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
+"Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ISO 8859-9\n"
+
+#: main.cpp:53
+msgid "&Sound"
+msgstr "&Ses"
+
+#: main.cpp:80
+msgid "System Sounds"
+msgstr "Sistem Sesleri"
+
+#: syssound.cpp:147
+msgid "Change to Desktop 1"
+msgstr "Masaüstü 1'e geçiþ"
+
+#: syssound.cpp:148
+msgid "Change to Desktop 2"
+msgstr "Masaüstü 2'e geçiþ"
+
+#: syssound.cpp:149
+msgid "Change to Desktop 3"
+msgstr "Masaüstü 3'e geçiþ"
+
+#: syssound.cpp:150
+msgid "Change to Desktop 4"
+msgstr "Masaüstü 4'e geçiþ"
+
+#: syssound.cpp:151
+msgid "Change to Desktop 5"
+msgstr "Masaüstü 5'e geçiþ"
+
+#: syssound.cpp:152
+msgid "Change to Desktop 6"
+msgstr "Masaüstü 6'e geçiþ"
+
+#: syssound.cpp:153
+msgid "Change to Desktop 7"
+msgstr "Masaüstü 7'e geçiþ"
+
+#: syssound.cpp:154
+msgid "Change to Desktop 8"
+msgstr "Masaüstü 8'e geçiþ"
+
+#: syssound.cpp:156
+msgid "Activate Window"
+msgstr "Aktif Pencere"
+
+#: syssound.cpp:157
+msgid "Open new window"
+msgstr "Yeni Pencere Aç"
+
+#: syssound.cpp:158
+msgid "Close Window"
+msgstr "Pencere Kapa"
+
+#: syssound.cpp:159
+msgid "Startup"
+msgstr "Baþlangýç"
+
+#: syssound.cpp:161
+msgid "Window Shade Up"
+msgstr "Pencere Büyütme"
+
+#: syssound.cpp:162
+msgid "Window Shade Down"
+msgstr "Pencere Küçültme"
+
+#: syssound.cpp:163
+msgid "Window Iconify"
+msgstr "Simge Durumuna Küçültme"
+
+#: syssound.cpp:164
+msgid "Window DeIconify"
+msgstr "Simge Durmundan Çýkarma"
+
+#: syssound.cpp:165
+msgid "Window Maximize"
+msgstr "Tam Ekran"
+
+#: syssound.cpp:166
+msgid "Window UnMaximize"
+msgstr "Eski Boyut"
+
+#: syssound.cpp:167
+msgid "Window Sticky"
+msgstr "Yapýþkan Pencere"
+
+#: syssound.cpp:168
+msgid "Window UnSticky"
+msgstr "Serbest Pencere"
+
+#: syssound.cpp:169
+msgid "Window Trans New"
+msgstr "Yeni Saydam Pencere"
+
+#: syssound.cpp:170
+msgid "Window Trans Delete"
+msgstr "Saydam Pencere Sil"
+
+#: syssound.cpp:171
+msgid "Logout"
+msgstr "Çýkýþ"
+
+#: syssound.cpp:172
+msgid "Logout Message"
+msgstr "Çýkýþ Mesajý"
+
+#: syssound.cpp:173
+msgid "Window Move Start"
+msgstr "Pencere Yürüt Baþlangýcý"
+
+#: syssound.cpp:174
+msgid "Window Move End"
+msgstr "Pencere Yürüt Sonu"
+
+#: syssound.cpp:175
+msgid "Window Resize Start"
+msgstr "Pencere Boyutlandýr Baþlangýcý"
+
+#: syssound.cpp:176
+msgid "Window Resize End"
+msgstr "Pencere Boyutlandýr Bitiþi"
+
+#: syssound.cpp:198
+msgid "e&nable system sounds"
+msgstr "Sistem Seslerini &Aç"
+
+#: syssound.cpp:203
+msgid "&Test"
+msgstr "&Test"
+
+#: syssound.cpp:207
+msgid "&Events:"
+msgstr "&Durumlar:"
+
+#: syssound.cpp:211
+msgid "&Sounds:"
+msgstr "&Sesler:"
+
+#: syssound.cpp:216
+msgid "Additional WAV files can be dropped onto the sound list."
+msgstr "Ek WAV dosyalarý sesler kýsmýna býrakýlabilir"
+
+#: syssound.cpp:456
+msgid "Unsupported URL"
+msgstr "Desketlenmeyen URL"
+
+#: syssound.cpp:458
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE System Sound "
+"Module"
+msgstr ""
+"Üzgünüm, bu tür URL'ler KDE Sistem Sesleri Modülü tarafýndan "
+"henüz desteklenmemektedir."
+
+#: syssound.cpp:468
+#, c-format
+msgid ""
+"Sorry, but \n"
+"%s\n"
+"does not seem to be a WAV--file."
+msgstr ""
+"Üzgünüm, fakat \n"
+"%s\n"
+"bir WAV dosyasý gibi görünmüyor."
+
+#: syssound.cpp:471
+msgid "Improper File Extension"
+msgstr "Yanlýþ Dosya Uzantýsý"
+
+#: syssound.cpp:482
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"is already in the list"
+msgstr ""
+"%s\n"
+"dosyasý zaten\n"
+"listede var."
+
+#: syssound.cpp:486
+msgid "File Already in List"
+msgstr "Dosya Zaten Listede Bulunuyor"

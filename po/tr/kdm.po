@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 1.0\n"
+"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"PO-Revision-Date: 1998-06-29 11:00+0200\n"
+"Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
+"Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ISO 8859-9\n"
+
+#: kdmshutdown.cpp:159
+msgid "Shutdown or restart?"
+msgstr "Kapat yada yeniden baþlat?"
+
+#: kdmshutdown.cpp:175
+msgid "Shutdown"
+msgstr "Kapat"
+
+#: kdmshutdown.cpp:189
+msgid "Shutdown and restart"
+msgstr "Kapat ve yeniden baþlat"
+
+#: kdmshutdown.cpp:198
+msgid "Exit kdm"
+msgstr "KDM çýkýþ"
+
+#: kgreeter.cpp:139
+msgid "Login:"
+msgstr "Kullanýcý:"
+
+#: kgreeter.cpp:151
+msgid "Password:"
+msgstr "Parola:"
+
+#: kgreeter.cpp:191
+msgid "Login failed!"
+msgstr "Giriþ baþarýsýz!"
+
+#: kgreeter.cpp:197
+msgid "Session Type:"
+msgstr "Oturum Türü:"
+
+#: kgreeter.cpp:213
+msgid "Go!"
+msgstr "Git!"
+
+#: kgreeter.cpp:229
+msgid "Shutdown..."
+msgstr "Kapat..."

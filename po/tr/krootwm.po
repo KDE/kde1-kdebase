@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 1.0\n"
+"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"PO-Revision-Date: 1998-06-29 11:00+0200\n"
+"Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
+"Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ISO 8859-9\n"
+
+#: krootwm.C:120 krootwm.C:587
+msgid "Folder"
+msgstr "Dizin"
+
+#: krootwm.C:150
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "HATA: '%s' geçicisi yok!"
+
+#: krootwm.C:183
+msgid "Help on desktop"
+msgstr "Masaüstünde yardým"
+
+#: krootwm.C:184
+msgid "Execute command"
+msgstr "Komutu çalýþtýr"
+
+#: krootwm.C:185
+msgid "Display properties"
+msgstr "Seçenekleri göster"
+
+#: krootwm.C:186
+msgid "Refresh desktop"
+msgstr "Masaüstünü yenile"
+
+#: krootwm.C:188
+msgid "Unclutter windows"
+msgstr "Serbest Pencereler"
+
+#: krootwm.C:189
+msgid "Cascade windows"
+msgstr "Pencereleri basamakla"
+
+#: krootwm.C:190
+msgid "Arrange icons"
+msgstr "Simgeleri diz"
+
+#: krootwm.C:192
+msgid "Lock screen"
+msgstr "Ekraný kilitle"
+
+#: krootwm.C:193
+msgid "Logout"
+msgstr "Çýkýþ"
+
+#: krootwm.C:607
+msgid "Could not create folder"
+msgstr "Dizin yaratýlamýyor"
+
+#: krootwm.C:666
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Telif Hakký (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: krootwm.C:670
+msgid "Usage:"
+msgstr "Kullaným:"
