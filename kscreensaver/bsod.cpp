@@ -1122,7 +1122,8 @@ config->writeEntry("Mac.foreground", config->readEntry("Mac.foreground", "PaleTu
 config->writeEntry("Mac.background", config->readEntry("Mac.background", "Black"));
 config->writeEntry("SCO.font", config->readEntry("SCO.font", "-*-courier-bold-r-*-*-*-120-*-*-m-*-*-*"));
 config->writeEntry("SCO.font2", config->readEntry("SCO.font2", "-*-courier-bold-r-*-*-*-140-*-*-m-*-*-*"));
-config->writeEntry("SCO.foreground", config->readEntry("SCO.foreground", "White"));
+config->writeEntry("SCO.foreground", config->readEntry("SCO.foreground",
+"White"));
 config->writeEntry("SCO.background", config->readEntry("SCO.background", "Black"));
 config->writeEntry("Atari.foreground", config->readEntry("Atari.foreground", "Black"));
 config->writeEntry("Atari.background", config->readEntry("Atari.background", "White"));
@@ -1142,7 +1143,11 @@ config->sync();
 BSODSaver::BSODSaver (Drawable d)
  : kScreenSaver(d)
 {
+#ifdef __FreeBSD__
+	srandomdev();
+#else
 	srandom(time(0));
+#endif
 	timer = new QTimer(this);
 	readSettings();
 	timer->start(delay);
