@@ -67,6 +67,14 @@ void KDMFontWidget::setupPage(QWidget *p)
       fontlabel->setFrameStyle(QFrame::WinPanel|QFrame::Sunken);
       fontlabel->adjustSize();
       slotSetFont(0);
+
+      group->adjustSize();
+      group->setMinimumSize(group->size());
+
+      QBoxLayout *main = new QVBoxLayout(this, 10);
+      main->addWidget(group);
+      main->addStretch(1);
+      main->activate();
 }
 
 void KDMFontWidget::applySettings()

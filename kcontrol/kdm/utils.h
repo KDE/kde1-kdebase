@@ -36,6 +36,7 @@
 #include <qfileinf.h>
 #include <qlabel.h>
 #include <qgrpbox.h>
+#include <qlayout.h>
 
 #include <kapp.h>
 #include <kcontrol.h>

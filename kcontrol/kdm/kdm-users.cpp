@@ -45,30 +45,29 @@ KDMUsersWidget::KDMUsersWidget(QWidget *parent, const char *name, bool init)
 
 void KDMUsersWidget::setupPage(QWidget *)
 {
-      QLabel *label;
-      label = new QLabel(klocale->translate("All users"), this);
-      label->move( 10, 20 );
-      label = new QLabel(klocale->translate("Selected users"), this);
-      label->move( 170, 20 );
-      label = new QLabel(klocale->translate("No-show users"), this);
-      label->move( 170, 190 );
+      QLabel *a_label = new QLabel(klocale->translate("All users"), this);
+      a_label->setFixedSize(a_label->sizeHint());
+      QLabel *s_label = new QLabel(klocale->translate("Selected users"), this);
+      s_label->setFixedSize(s_label->sizeHint());
+      QLabel *n_label = new QLabel(klocale->translate("No-show users"), this);
+      n_label->setFixedSize(n_label->sizeHint());
 
       QPushButton *all_to_no, *all_to_usr, *no_to_all, *usr_to_all;
 
       all_to_usr = new QPushButton( ">>", this );
-      all_to_usr->setGeometry( 135, 50, 30, 30);
+      all_to_usr->setFixedSize(30, 30);
       connect( all_to_usr, SIGNAL( clicked() ), SLOT( slotAllToUsr() ) );
 
       usr_to_all = new QPushButton( "<<", this );
-      usr_to_all->setGeometry( 135, 135, 30, 30);
+      usr_to_all->setFixedSize(30, 30);
       connect( usr_to_all, SIGNAL( clicked() ), SLOT( slotUsrToAll() ) );
 
       all_to_no  = new QPushButton( ">>", this );
-      all_to_no->setGeometry( 135, 215, 30, 30);
+      all_to_no->setFixedSize(30, 30);
       connect( all_to_no, SIGNAL( clicked() ), SLOT( slotAllToNo() ) );
 
       no_to_all = new QPushButton( "<<", this );
-      no_to_all->setGeometry( 135, 320, 30, 30);
+      no_to_all->setFixedSize(30, 30);
       connect( no_to_all, SIGNAL( clicked() ), SLOT( slotNoToAll() ) );
 
       QRadioButton *rb;
@@ -89,7 +88,8 @@ void KDMUsersWidget::setupPage(QWidget *)
       if(showallusers)
         rb->setChecked(true);
       usrGroup->insert( rb, 1 );
-      usrGroup->setGeometry( 300, 160, 160, 90);
+      usrGroup->adjustSize();
+      usrGroup->setMinimumSize(usrGroup->size());
       connect( usrGroup, SIGNAL( clicked( int ) ), SLOT( slotUserShowMode( int ) ) );
 
       shwGroup = new QButtonGroup( this );
@@ -101,23 +101,21 @@ void KDMUsersWidget::setupPage(QWidget *)
       connect( cbusrshw, SIGNAL( toggled( bool ) ), SLOT( slotUserShow( bool ) ) );
       cbusrsrt = new QCheckBox(
          klocale->translate("Sort users"), shwGroup);
-      cbusrsrt->setGeometry( 10, 50, 120, 25 );
+      cbusrsrt->setGeometry( 10, 40, 120, 25 );
       if(sortusers)
         cbusrsrt->setChecked(true);
       connect( cbusrsrt, SIGNAL( toggled( bool ) ), SLOT( slotUserSort( bool ) ) );
       shwGroup->insert( cbusrshw, 0);
       shwGroup->insert( cbusrsrt, 1);
-      shwGroup->setGeometry( 300, 270, 160, 80);
+      shwGroup->adjustSize();
+      shwGroup->setMinimumSize(shwGroup->size());
 
       alluserlb = new QListBox(this);
       alluserlb->insertStrList(&allusers);
-      alluserlb->setGeometry(10, 50, 120, 300);
       userlb = new QListBox(this);
       userlb->insertStrList(&users);
-      userlb->setGeometry(170, 50, 120, 135);
       nouserlb = new QListBox(this);
       nouserlb->insertStrList(&no_users);
-      nouserlb->setGeometry(170, 215, 120, 135);
 
       connect( userlb, SIGNAL( highlighted( int ) ),
                     SLOT( slotUserSelected( int ) ) );
@@ -127,19 +125,52 @@ void KDMUsersWidget::setupPage(QWidget *)
                     SLOT( slotUserSelected( int ) ) );
 
       userlabel = new QLabel( this );
-      userlabel->setGeometry(300, 50, 160, 25);
+      userlabel->setMinimumSize(160, 25);
 
       userbutton = new KIconLoaderButton(iconloader, this);
       userbutton->setIcon("default.xpm");
-      userbutton->move(300, 80);
-      userbutton->setMaximumSize(80, 80);
+      userbutton->setFixedSize(80, 80);
       connect(userbutton, SIGNAL(iconChanged(const char*)),
               SLOT(slotUserPixChanged(const char*)));
-      userbutton->adjustSize();
       QToolTip::add(userbutton, klocale->translate("Click or drop an image here"));
       userpixdrop = new KDNDDropZone(userbutton, DndURL);
       connect(userpixdrop, SIGNAL(dropAction(KDNDDropZone*)),
               SLOT(slotPixDropped(KDNDDropZone*)));
+
+      QBoxLayout *main = new QHBoxLayout( this, 10 );
+      QBoxLayout *box1 = new QVBoxLayout();
+      QBoxLayout *box2 = new QVBoxLayout();
+      QBoxLayout *box3 = new QVBoxLayout();
+      QBoxLayout *box4 = new QVBoxLayout();
+
+      main->addLayout(box1);
+      main->addLayout(box2);
+      main->addLayout(box3);
+      main->addLayout(box4);
+
+      box1->addWidget(a_label);
+      box1->addWidget(alluserlb);
+
+      box2->addStretch(1);
+      box2->addWidget(all_to_usr);
+      box2->addStretch(1);
+      box2->addWidget(usr_to_all);
+      box2->addStretch(1);
+      box2->addWidget(all_to_no);
+      box2->addStretch(1);
+      box2->addWidget(no_to_all);
+
+      box3->addWidget(s_label);
+      box3->addWidget(userlb);
+      box3->addWidget(n_label);
+      box3->addWidget(nouserlb);
+
+      box4->addWidget(userlabel, 5, AlignLeft);
+      box4->addWidget(userbutton, 5, AlignLeft);
+      box4->addWidget(usrGroup, 5, AlignLeft);
+      box4->addWidget(shwGroup, 5, AlignLeft);
+
+      main->activate();
 }
 
 void KDMUsersWidget::slotUserPixChanged(const char*)
@@ -315,6 +346,8 @@ void KDMUsersWidget::slotUserSelected(int)
   // Get the listbox with the focus
   // If this is not a listbox we segfault :-(
   QWidget *w = kapp->focusWidget();
+  if(!w)               // Had to add this otherwise I can't find the listbox
+    w = focusWidget(); // when the app is swallowed in kcontrol.
 
   // Maybe this is enough?
   if(w->isA("QListBox"))

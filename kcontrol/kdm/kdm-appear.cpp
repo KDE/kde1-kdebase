@@ -1,5 +1,5 @@
 /* This file is part of the KDE Display Manager Configuration package
-    Copyright (C) 1997 Thomas Tanghus (tanghus@earthling.net)
+    Copyright (C) 1997-1998 Thomas Tanghus (tanghus@earthling.net)
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public
@@ -89,7 +89,7 @@ void KDMAppearanceWidget::setupPage(QWidget *pw)
       if(!p.load(logopath.data()))
       {
         logobutton->setIcon("kdelogo.xpm");
-        debug("Error loading %s", logopath.data());
+        //debug("Error loading %s", logopath.data());
       }
       else
       {
@@ -119,6 +119,14 @@ void KDMAppearanceWidget::setupPage(QWidget *pw)
         guicombo->setCurrentItem(1);
       else
         guicombo->setCurrentItem(0);
+
+      group->adjustSize();
+      group->setMinimumSize(group->size());
+
+      QBoxLayout *main = new QVBoxLayout(this, 10);
+      main->addWidget(group);
+      main->addStretch(1);
+      main->activate();
 }
 
 void KDMAppearanceWidget::slotLogoPixTextChanged()
