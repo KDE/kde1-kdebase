@@ -2,45 +2,45 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-12-10 00:19+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 1998-01-25 18:31 CET\n"
+"Last-Translator: David Faure <David.Faure@insa-lyon.fr>\n"
+"Language-Team: Français\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain;\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 
 #: main.cpp:58
 msgid "&Font"
-msgstr ""
+msgstr "P&olices"
 
 #: main.cpp:60
 msgid "&Color"
-msgstr ""
+msgstr "&Couleurs"
 
 #: main.cpp:62
 msgid "&Other"
-msgstr ""
+msgstr "&Autres"
 
 #: main.cpp:65
 msgid "&Proxy"
-msgstr ""
+msgstr "&Proxy"
 
 #: main.cpp:67
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: main.cpp:70
 msgid "User &Agent"
-msgstr ""
+msgstr "A&gent utilisateur"
 
 #: main.cpp:74
 msgid "&Desktop Icons"
-msgstr ""
+msgstr "&Icônes du bureau"
 
 #: main.cpp:144
 #, c-format
@@ -49,27 +49,27 @@ msgstr ""
 
 #: main.cpp:227
 msgid "KFM Configuration"
-msgstr ""
+msgstr "Configuration de KFM"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr ""
+msgstr "Petite"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr ""
+msgstr "Moyenne"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr ""
+msgstr "Grosse"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
-msgstr ""
+msgstr "Police par défaut"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr ""
+msgstr "Police de taille fixe"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
@@ -81,92 +81,93 @@ msgstr ""
 
 #: htmlopts.cpp:329
 msgid "Background Color:"
-msgstr ""
+msgstr "Couleur de fond :"
 
 #: htmlopts.cpp:341
 msgid "Normal Text Color:"
-msgstr ""
+msgstr "Couleur du texte normal :"
 
 #: htmlopts.cpp:353
 msgid "URL Link Color:"
-msgstr ""
+msgstr "Couleur des URL :"
 
 #: htmlopts.cpp:365
 msgid "Followed Link Color:"
-msgstr ""
+msgstr "Couleur des URL suivies :"
 
 #: htmlopts.cpp:377
 msgid "Change cursor over link."
-msgstr ""
+msgstr "Changer le curseur au-dessus d'un lien."
 
 #: htmlopts.cpp:383
 msgid "Underline links"
-msgstr ""
+msgstr "Souligner les liens"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr ""
+msgstr "Permettre la sauvegarde des paramètres pour chaque URL"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr ""
+msgstr "La vue arborescente suit la navigation"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "N'oubliez pas d'enregistrer vos options !"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr ""
+msgstr "Utiliser le proxy"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
-msgstr ""
+msgstr "Pas de proxy pour :"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr ""
+msgstr "Accepter les langues :"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Accepter les tables de caractères :"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr ""
+msgstr "Considérer comme du HTML"
 
 #: useragentdlg.cpp:43
 msgid "On server:"
-msgstr ""
+msgstr "Sur le serveur :"
 
 #: useragentdlg.cpp:65
 msgid "login as:"
-msgstr ""
+msgstr "Connexion en tant que :"
 
 #: useragentdlg.cpp:85
 msgid "&Add"
-msgstr ""
+msgstr "&Ajouter"
 
 #: useragentdlg.cpp:105
 msgid "Known bindings:"
-msgstr ""
+msgstr "Liaisons connues :"
 
 #: rootopts.cpp:71
 msgid "Horizontal Root Grid Spacing:"
-msgstr ""
+msgstr "Espacement de la grille horizontale du bureau :"
 
 #: rootopts.cpp:83
 msgid "Vertical Root Grid Spacing:"
-msgstr ""
+msgstr "Espacement de la grille verticale du bureau :"
 
 #: rootopts.cpp:94
 msgid "&Transparent Text for Root Icons."
-msgstr ""
+msgstr "Texte &transparent pour les icônes du bureau."
 
 #: rootopts.cpp:105
 msgid "Icon foreground color:"
-msgstr ""
+msgstr "Couleur du texte des icônes :"
 
 #: rootopts.cpp:117
 msgid "Icon background color:"
-msgstr ""
+msgstr "Couleur de fond du texte des icônes :"
+
