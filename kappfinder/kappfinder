@@ -78,9 +78,9 @@ do
   # copy the .directory file
   cp $file $1/share/applnk/$file 2>/dev/null
   
-  # break, if the file was not installed
+  # continue, if the file was not installed
   if [ ! -f $1/share/applnk/$file ]; then
-    break
+    continue
   fi
 
   # copy the icon
