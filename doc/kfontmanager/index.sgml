@@ -31,7 +31,7 @@ The neccessity for a Font-Manager arose from the following facts:
 <item>The font-list in kfontdialog used to be hard-coded. This was clearly
 not desirable. 
 <item>Not all fonts that come with the X11 window system are useful. Were
-kfontdialog simply to display all fonts availabe on your X server system,
+kfontdialog simply to display all fonts available on your X server system,
 you would over and over again be confronted with the same list of fonts,
 some of which completely unusable. KFontManger allows you to select which
 fonts you want to be available to KDE applications and in particular to
@@ -56,9 +56,10 @@ at the command-line prompt.
 <p>
 KFontManager will present to you a list of all available fonts on you
 system. You will then use kfontmanger to compose a list of KDE fonts
-by choosing those fonts availabe on you system that you like. This list
-of fonts will then be available to the KDE applications. For example kfontdialog,
-which is used for example in kedit, will then offer exactly those fonts
+by choosing those fonts that you like. Your choice 
+of fonts will then be available to the KDE applications. 
+KFontDialog, which is used in many KDE applications, will then 
+offer exactly those fonts
 you selected. The list of fonts you create using KFontManager will be stored
 in the file ~/.kde/config/kdefonts. Unless you know what you are doing
 you should refrain from manipulating the KDE font file by hand.</P>
