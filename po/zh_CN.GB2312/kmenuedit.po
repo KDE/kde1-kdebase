@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-24 01:15+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -68,35 +68,31 @@ msgstr ""
 "无法建立个人菜单所用的目录.\n"
 "选择 [确定] 离开菜单编辑器."
 
-#: confmenu.cpp:90 entrydialog.cpp:52
+#: confmenu.cpp:91 entrydialog.cpp:52
 msgid "Separator"
 msgstr "分隔线"
 
-#: confmenu.cpp:102 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "打开/关闭"
 
-#: confmenu.cpp:110
-msgid "! PROTECTED Button !"
-msgstr "! 被保护的按钮 !"
-
-#: confmenu.cpp:116
+#: confmenu.cpp:117
 msgid "Select item for moving"
 msgstr ""
 
-#: confmenu.cpp:117
+#: confmenu.cpp:118
 msgid "Select menu for moving"
 msgstr ""
 
-#: confmenu.cpp:119
+#: confmenu.cpp:120
 msgid "New"
 msgstr ""
 
-#: confmenu.cpp:176 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:316
 msgid "Warning !"
 msgstr "警告 !"
 
-#: confmenu.cpp:177
+#: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "如果你删除这个按钮, 将会失去所有的子菜单"
 
@@ -268,6 +264,9 @@ msgstr "个人:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "默认:"
+
+#~ msgid "! PROTECTED Button !"
+#~ msgstr "! 被保护的按钮 !"
 
 #~ msgid "&Reload"
 #~ msgstr "重新载入[&R]"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-12-12 20:00+0200\n"
 "Last-Translator: Montel laurent <montell@club-internet.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,71 +14,47 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:64
+#: main.cpp:72
 msgid "&Standard shortcuts"
 msgstr ""
 
-#: main.cpp:69
+#: main.cpp:80
 msgid "&Global shortcuts"
 msgstr ""
 
-#: main.cpp:76
+#: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
 msgstr "utilisation : kcmkeys [-init | {standard,global}]\n"
 
-#: main.cpp:118
+#: main.cpp:132
 msgid "Key binding settings"
 msgstr ""
 
-#: standard.cpp:53
-msgid "New"
-msgstr "Nouveau"
-
-#: standard.cpp:57
-msgid "Next"
-msgstr "Prochain"
-
-#: standard.cpp:58
-msgid "Prior"
-msgstr ""
-
-#: standard.cpp:63
-msgid "Find"
-msgstr "Chercher"
-
-#: standard.cpp:66
-msgid "Home"
-msgstr ""
-
-#: standard.cpp:67
-msgid "End"
-msgstr "Fin"
-
-#: global.cpp:81
+#: keyconfig.cpp:106
 msgid "Current scheme"
 msgstr ""
 
-#: global.cpp:83
+#: keyconfig.cpp:108
 msgid "KDE default"
 msgstr ""
 
-#: global.cpp:90
+#: keyconfig.cpp:115
 msgid "&Key scheme"
 msgstr "&Raccourci clavier"
 
-#: global.cpp:101
+#: keyconfig.cpp:126
 msgid "&Add ..."
 msgstr "&Ajouter..."
 
-#: global.cpp:123
+#: keyconfig.cpp:148
 msgid "&Save changes"
 msgstr "&Enregistrer les modifications"
 
-#: global.cpp:182
+#: keyconfig.cpp:211
 msgid "Error removing scheme"
 msgstr ""
 
-#: global.cpp:183
+#: keyconfig.cpp:212
 msgid ""
 "This key scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -88,11 +64,11 @@ msgstr ""
 "Peut-être n'avez vous pas la permission de modifier le fichier\n"
 "système ou le raccourci clavier est stocké."
 
-#: global.cpp:314
+#: keyconfig.cpp:343
 msgid "Naming conflict"
 msgstr "Conflit de nom"
 
-#: global.cpp:315
+#: keyconfig.cpp:344
 msgid ""
 "Please choose a unique name for the new key\n"
 "scheme. The one you entered already appears\n"
@@ -209,3 +185,27 @@ msgstr "Commuter d'un bureau vers le haut"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Commuter d'un bureau vers le bas"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Nouveau"
+
+#: stdbindings.cpp:7
+msgid "Next"
+msgstr "Prochain"
+
+#: stdbindings.cpp:8
+msgid "Prior"
+msgstr ""
+
+#: stdbindings.cpp:13
+msgid "Find"
+msgstr "Chercher"
+
+#: stdbindings.cpp:16
+msgid "Home"
+msgstr ""
+
+#: stdbindings.cpp:17
+msgid "End"
+msgstr "Fin"

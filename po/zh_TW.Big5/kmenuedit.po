@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-11-24 01:15+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-04-20 22:58+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -74,35 +74,31 @@ msgstr ""
 "無法在個人選單中造出這個目錄.\n"
 "選擇 [確定] 離開 選單編輯器."
 
-#: confmenu.cpp:90 entrydialog.cpp:52
+#: confmenu.cpp:91 entrydialog.cpp:52
 msgid "Separator"
 msgstr "分隔線"
 
-#: confmenu.cpp:102 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "開啟/關閉"
 
-#: confmenu.cpp:110
-msgid "! PROTECTED Button !"
-msgstr "! 被保護的按鈕 !"
-
-#: confmenu.cpp:116
+#: confmenu.cpp:117
 msgid "Select item for moving"
 msgstr ""
 
-#: confmenu.cpp:117
+#: confmenu.cpp:118
 msgid "Select menu for moving"
 msgstr ""
 
-#: confmenu.cpp:119
+#: confmenu.cpp:120
 msgid "New"
 msgstr ""
 
-#: confmenu.cpp:176 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:316
 msgid "Warning !"
 msgstr "警告 !"
 
-#: confmenu.cpp:177
+#: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "如果你刪除這個按鈕, 將會失去底下所有的子目錄"
 
@@ -274,6 +270,9 @@ msgstr "個人:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "預設:"
+
+#~ msgid "! PROTECTED Button !"
+#~ msgstr "! 被保護的按鈕 !"
 
 #, fuzzy
 #~ msgid "&Reload"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-06-21 00:52+0100\n"
 "Last-Translator: luka steger <luka_steger@hotmail.com>\n"
 "Language-Team: slovenian\n"
@@ -14,83 +14,83 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: iso-8859-2\n"
 
-#: krootwm.C:211 krootwm.C:255
+#: krootwm.C:221 krootwm.C:268
 msgid "Execute command"
 msgstr "Izvr¹i ukaz"
 
-#: krootwm.C:213 krootwm.C:263
+#: krootwm.C:223 krootwm.C:276
 msgid "Lock screen"
 msgstr "Zakleni zaslon"
 
-#: krootwm.C:214 krootwm.C:264
+#: krootwm.C:224 krootwm.C:277
 msgid "Logout"
 msgstr "Izhod"
 
-#: krootwm.C:222 krootwm.C:257
+#: krootwm.C:232 krootwm.C:270
 msgid "Refresh desktop"
 msgstr "Osve¾i namizje"
 
-#: krootwm.C:223 krootwm.C:259
+#: krootwm.C:233 krootwm.C:272
 msgid "Unclutter windows"
 msgstr "Uredi okna"
 
-#: krootwm.C:224 krootwm.C:260
+#: krootwm.C:234 krootwm.C:273
 msgid "Cascade windows"
 msgstr "Stopnièasto uredi okna"
 
-#: krootwm.C:225 krootwm.C:261
+#: krootwm.C:235 krootwm.C:274
 msgid "Arrange icons"
 msgstr "Uredi ikone"
 
-#: krootwm.C:226 krootwm.C:256
+#: krootwm.C:236 krootwm.C:269
 msgid "Display properties"
 msgstr "Lastnosti prikaza"
 
-#: krootwm.C:234 krootwm.C:254
+#: krootwm.C:244 krootwm.C:267
 msgid "Help on desktop"
 msgstr "Pomoè za namizje"
 
-#: krootwm.C:235
+#: krootwm.C:245
 msgid "About KDE..."
 msgstr ""
 
-#: krootwm.C:250 krootwm.C:277 krootwm.C:747 krootwm.C:755
+#: krootwm.C:263 krootwm.C:286 krootwm.C:760 krootwm.C:768
 msgid "New"
 msgstr ""
 
-#: krootwm.C:251 krootwm.C:278
+#: krootwm.C:264 krootwm.C:287
 msgid "Bookmarks"
 msgstr ""
 
-#: krootwm.C:279
+#: krootwm.C:288
 msgid "Desk"
 msgstr ""
 
-#: krootwm.C:280
+#: krootwm.C:289
 msgid "Windows"
 msgstr ""
 
-#: krootwm.C:331
+#: krootwm.C:344
 msgid "Edit Bookmarks"
 msgstr ""
 
-#: krootwm.C:345 krootwm.C:757
+#: krootwm.C:358 krootwm.C:770
 msgid "Folder"
 msgstr "Imenik"
 
-#: krootwm.C:349
+#: krootwm.C:362
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "Napaka: Predloga ne obstaja '%s'"
 
-#: krootwm.C:778
+#: krootwm.C:791
 msgid "Could not create folder"
 msgstr "Ni mi uspelo ustvariti imenika"
 
-#: krootwm.C:846
+#: krootwm.C:859
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Avtorske pravice (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:850
+#: krootwm.C:863
 msgid "Usage:"
 msgstr "Uporaba:"

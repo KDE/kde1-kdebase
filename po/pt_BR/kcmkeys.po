@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,71 +13,47 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:64
+#: main.cpp:72
 msgid "&Standard shortcuts"
 msgstr "&Atalhos padrões"
 
-#: main.cpp:69
+#: main.cpp:80
 msgid "&Global shortcuts"
 msgstr "Atalhos &Globais"
 
-#: main.cpp:76
+#: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
 msgstr "uso: kcmkeys [-init | {standard,global}]\n"
 
-#: main.cpp:118
+#: main.cpp:132
 msgid "Key binding settings"
 msgstr "Configurações de atalhos de teclado"
 
-#: standard.cpp:53
-msgid "New"
-msgstr "Novo"
-
-#: standard.cpp:57
-msgid "Next"
-msgstr "Próximo"
-
-#: standard.cpp:58
-msgid "Prior"
-msgstr "Anterior"
-
-#: standard.cpp:63
-msgid "Find"
-msgstr "Procurar"
-
-#: standard.cpp:66
-msgid "Home"
-msgstr "Home"
-
-#: standard.cpp:67
-msgid "End"
-msgstr "End"
-
-#: global.cpp:81
+#: keyconfig.cpp:106
 msgid "Current scheme"
 msgstr "Esquema corrente"
 
-#: global.cpp:83
+#: keyconfig.cpp:108
 msgid "KDE default"
 msgstr "Padrão do KDE"
 
-#: global.cpp:90
+#: keyconfig.cpp:115
 msgid "&Key scheme"
 msgstr "Esquema de &Teclas"
 
-#: global.cpp:101
+#: keyconfig.cpp:126
 msgid "&Add ..."
 msgstr "&Adicionar ..."
 
-#: global.cpp:123
+#: keyconfig.cpp:148
 msgid "&Save changes"
 msgstr "&Salvar mudanças"
 
-#: global.cpp:182
+#: keyconfig.cpp:211
 msgid "Error removing scheme"
 msgstr "Erro ao remover esquema"
 
-#: global.cpp:183
+#: keyconfig.cpp:212
 msgid ""
 "This key scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -87,11 +63,11 @@ msgstr ""
 "Talvez você não tenha permissão para alterar esse arquivo\n"
 "no sistema onde o esquema está armazenado."
 
-#: global.cpp:314
+#: keyconfig.cpp:343
 msgid "Naming conflict"
 msgstr "Conflito de nome"
 
-#: global.cpp:315
+#: keyconfig.cpp:344
 msgid ""
 "Please choose a unique name for the new key\n"
 "scheme. The one you entered already appears\n"
@@ -214,6 +190,30 @@ msgstr "Mudar para o ambiente acima"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Mudar para o ambiente abaixo"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Novo"
+
+#: stdbindings.cpp:7
+msgid "Next"
+msgstr "Próximo"
+
+#: stdbindings.cpp:8
+msgid "Prior"
+msgstr "Anterior"
+
+#: stdbindings.cpp:13
+msgid "Find"
+msgstr "Procurar"
+
+#: stdbindings.cpp:16
+msgid "Home"
+msgstr "Home"
+
+#: stdbindings.cpp:17
+msgid "End"
+msgstr "End"
 
 #~ msgid "KDE lite"
 #~ msgstr "KDE 'lite'"

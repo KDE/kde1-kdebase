@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkeys\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-09-10 15:15+0200\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -13,71 +13,47 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:64
+#: main.cpp:72
 msgid "&Standard shortcuts"
 msgstr "&Vanlige hurtigtaster"
 
-#: main.cpp:69
+#: main.cpp:80
 msgid "&Global shortcuts"
 msgstr "&Globale hurtigtaster"
 
-#: main.cpp:76
+#: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
 msgstr "bruk: kcmkeys [-init | {standard,global}]\n"
 
-#: main.cpp:118
+#: main.cpp:132
 msgid "Key binding settings"
 msgstr "Tastkoblinginnstillinger"
 
-#: standard.cpp:53
-msgid "New"
-msgstr "Ny"
-
-#: standard.cpp:57
-msgid "Next"
-msgstr "Neste"
-
-#: standard.cpp:58
-msgid "Prior"
-msgstr "Forrige"
-
-#: standard.cpp:63
-msgid "Find"
-msgstr "Finn"
-
-#: standard.cpp:66
-msgid "Home"
-msgstr "Home"
-
-#: standard.cpp:67
-msgid "End"
-msgstr "End"
-
-#: global.cpp:81
+#: keyconfig.cpp:106
 msgid "Current scheme"
 msgstr "Gjeldende valg"
 
-#: global.cpp:83
+#: keyconfig.cpp:108
 msgid "KDE default"
 msgstr "KDE standard"
 
-#: global.cpp:90
+#: keyconfig.cpp:115
 msgid "&Key scheme"
 msgstr "&Tastvalg"
 
-#: global.cpp:101
+#: keyconfig.cpp:126
 msgid "&Add ..."
 msgstr "&Legg til ..."
 
-#: global.cpp:123
+#: keyconfig.cpp:148
 msgid "&Save changes"
 msgstr "&Lagre endringer"
 
-#: global.cpp:182
+#: keyconfig.cpp:211
 msgid "Error removing scheme"
 msgstr "Feil under fjerning av valg"
 
-#: global.cpp:183
+#: keyconfig.cpp:212
 msgid ""
 "This key scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -87,11 +63,11 @@ msgstr ""
 "kanskje du ikke har rettigheter til å endre filsystemet\n"
 "hvor tastvalget er lagret."
 
-#: global.cpp:314
+#: keyconfig.cpp:343
 msgid "Naming conflict"
 msgstr "Navnekonflikt"
 
-#: global.cpp:315
+#: keyconfig.cpp:344
 msgid ""
 "Please choose a unique name for the new key\n"
 "scheme. The one you entered already appears\n"
@@ -213,6 +189,30 @@ msgstr "Bytt ett skrivebord opp"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Bytt ett skrivebord ned"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Ny"
+
+#: stdbindings.cpp:7
+msgid "Next"
+msgstr "Neste"
+
+#: stdbindings.cpp:8
+msgid "Prior"
+msgstr "Forrige"
+
+#: stdbindings.cpp:13
+msgid "Find"
+msgstr "Finn"
+
+#: stdbindings.cpp:16
+msgid "Home"
+msgstr "Home"
+
+#: stdbindings.cpp:17
+msgid "End"
+msgstr "End"
 
 #~ msgid "KDE lite"
 #~ msgstr "KDE enkel"

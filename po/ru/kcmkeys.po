@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-12-10 00:00+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -13,71 +13,47 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:64
+#: main.cpp:72
 msgid "&Standard shortcuts"
 msgstr "Стандартные комбинации"
 
-#: main.cpp:69
+#: main.cpp:80
 msgid "&Global shortcuts"
 msgstr "Глобальные комбинации"
 
-#: main.cpp:76
+#: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
 msgstr "использование: kcmkeys [-init | {standard,global}]\n"
 
-#: main.cpp:118
+#: main.cpp:132
 msgid "Key binding settings"
 msgstr "Настройка назначений клавиш"
 
-#: standard.cpp:53
-msgid "New"
-msgstr "Новое"
-
-#: standard.cpp:57
-msgid "Next"
-msgstr "Следующее"
-
-#: standard.cpp:58
-msgid "Prior"
-msgstr "Предыдущее"
-
-#: standard.cpp:63
-msgid "Find"
-msgstr "Найти"
-
-#: standard.cpp:66
-msgid "Home"
-msgstr "Домашняя директория"
-
-#: standard.cpp:67
-msgid "End"
-msgstr "Конец"
-
-#: global.cpp:81
+#: keyconfig.cpp:106
 msgid "Current scheme"
 msgstr "Текущая схема"
 
-#: global.cpp:83
+#: keyconfig.cpp:108
 msgid "KDE default"
 msgstr "Умолчания KDE"
 
-#: global.cpp:90
+#: keyconfig.cpp:115
 msgid "&Key scheme"
 msgstr "Схема клавиш"
 
-#: global.cpp:101
+#: keyconfig.cpp:126
 msgid "&Add ..."
 msgstr "Добавить..."
 
-#: global.cpp:123
+#: keyconfig.cpp:148
 msgid "&Save changes"
 msgstr "Записать изменения"
 
-#: global.cpp:182
+#: keyconfig.cpp:211
 msgid "Error removing scheme"
 msgstr "Ошибка удаления схемы"
 
-#: global.cpp:183
+#: keyconfig.cpp:212
 msgid ""
 "This key scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -87,11 +63,11 @@ msgstr ""
 "Возможно вы не имеете права изменять файловую систему, \n"
 "где хранится схема клавиш"
 
-#: global.cpp:314
+#: keyconfig.cpp:343
 msgid "Naming conflict"
 msgstr "Конфликт имен"
 
-#: global.cpp:315
+#: keyconfig.cpp:344
 msgid ""
 "Please choose a unique name for the new key\n"
 "scheme. The one you entered already appears\n"
@@ -213,6 +189,30 @@ msgstr "Переключиться на рабочий стол вверх"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Переключиться на рабочий стол вниз"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Новое"
+
+#: stdbindings.cpp:7
+msgid "Next"
+msgstr "Следующее"
+
+#: stdbindings.cpp:8
+msgid "Prior"
+msgstr "Предыдущее"
+
+#: stdbindings.cpp:13
+msgid "Find"
+msgstr "Найти"
+
+#: stdbindings.cpp:16
+msgid "Home"
+msgstr "Домашняя директория"
+
+#: stdbindings.cpp:17
+msgid "End"
+msgstr "Конец"
 
 #~ msgid "KDE lite"
 #~ msgstr "Облегченная KDE"

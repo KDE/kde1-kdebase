@@ -1,88 +1,64 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-11-27 23:13+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 "MIME-Version: 1.0\n"
 
-#: main.cpp:64
+#: main.cpp:72
 msgid "&Standard shortcuts"
 msgstr "Atajos por defecto"
 
-#: main.cpp:69
+#: main.cpp:80
 msgid "&Global shortcuts"
 msgstr "Atajos globales"
 
-#: main.cpp:76
+#: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
 msgstr "modo de uso: kcmkeys [-init | {standard,global}]\n"
 
-#: main.cpp:118
+#: main.cpp:132
 msgid "Key binding settings"
 msgstr ""
 
-#: standard.cpp:53
-msgid "New"
-msgstr "Nuevo"
-
-#: standard.cpp:57
-msgid "Next"
-msgstr "Próximo"
-
-#: standard.cpp:58
-msgid "Prior"
-msgstr "Anterior"
-
-#: standard.cpp:63
-msgid "Find"
-msgstr "Buscar"
-
-#: standard.cpp:66
-msgid "Home"
-msgstr "Pos1"
-
-#: standard.cpp:67
-msgid "End"
-msgstr "Fin"
-
-#: global.cpp:81
+#: keyconfig.cpp:106
 msgid "Current scheme"
 msgstr "Esquema actual"
 
-#: global.cpp:83
+#: keyconfig.cpp:108
 msgid "KDE default"
 msgstr "KDE por defecto"
 
-#: global.cpp:90
+#: keyconfig.cpp:115
 msgid "&Key scheme"
 msgstr "Esquema de teclado"
 
-#: global.cpp:101
+#: keyconfig.cpp:126
 msgid "&Add ..."
 msgstr "&Añadir ..."
 
-#: global.cpp:123
+#: keyconfig.cpp:148
 msgid "&Save changes"
 msgstr "&Guardar cambios"
 
-#: global.cpp:182
+#: keyconfig.cpp:211
 msgid "Error removing scheme"
 msgstr "Error al remover esquema"
 
-#: global.cpp:183
+#: keyconfig.cpp:212
 msgid ""
 "This key scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
 
-#: global.cpp:314
+#: keyconfig.cpp:343
 msgid "Naming conflict"
 msgstr "Conflicto de nombramiento"
 
-#: global.cpp:315
+#: keyconfig.cpp:344
 msgid ""
 "Please choose a unique name for the new key\n"
 "scheme. The one you entered already appears\n"
@@ -197,6 +173,30 @@ msgstr "Cambiar al escritorio de arriba"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Cambiar al escritorio de abajo"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Nuevo"
+
+#: stdbindings.cpp:7
+msgid "Next"
+msgstr "Próximo"
+
+#: stdbindings.cpp:8
+msgid "Prior"
+msgstr "Anterior"
+
+#: stdbindings.cpp:13
+msgid "Find"
+msgstr "Buscar"
+
+#: stdbindings.cpp:16
+msgid "Home"
+msgstr "Pos1"
+
+#: stdbindings.cpp:17
+msgid "End"
+msgstr "Fin"
 
 #~ msgid "KDE lite"
 #~ msgstr "KDE lite"

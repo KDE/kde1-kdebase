@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "Last-Translator: Juraj Bednar <bednar@isternet.sk>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -137,16 +137,44 @@ msgstr ""
 msgid "No Proxy for:"
 msgstr ""
 
-#: khttpoptdlg.cpp:38
+#: khttpoptdlg.cpp:51
 msgid "Accept languages:"
 msgstr ""
 
-#: khttpoptdlg.cpp:52
+#: khttpoptdlg.cpp:65
 msgid "Accept character sets:"
 msgstr ""
 
-#: khttpoptdlg.cpp:65
+#: khttpoptdlg.cpp:78
 msgid "Assume HTML"
+msgstr ""
+
+#: khttpoptdlg.cpp:84
+msgid "Disable Cookies"
+msgstr ""
+
+#: khttpoptdlg.cpp:91
+msgid "Default accept policy"
+msgstr ""
+
+#: khttpoptdlg.cpp:100 khttpoptdlg.cpp:148
+msgid "Accept"
+msgstr ""
+
+#: khttpoptdlg.cpp:105 khttpoptdlg.cpp:153
+msgid "Ask"
+msgstr ""
+
+#: khttpoptdlg.cpp:110 khttpoptdlg.cpp:158
+msgid "Reject"
+msgstr ""
+
+#: khttpoptdlg.cpp:123
+msgid "Domain specific settings:"
+msgstr ""
+
+#: khttpoptdlg.cpp:130
+msgid "Change domain accept policy"
 msgstr ""
 
 #: useragentdlg.cpp:43

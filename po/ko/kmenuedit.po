@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-24 01:15+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,35 +74,31 @@ msgstr ""
 "개인 메뉴 디렉토리를 만들 수 없읍니다.\n"
 " KMenuedit를 끝내려면 OK를 선택하십시오."
 
-#: confmenu.cpp:90 entrydialog.cpp:52
+#: confmenu.cpp:91 entrydialog.cpp:52
 msgid "Separator"
 msgstr "메뉴분리자"
 
-#: confmenu.cpp:102 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "열기/ 닫기"
 
-#: confmenu.cpp:110
-msgid "! PROTECTED Button !"
-msgstr "!고칠 수 없는 단추!"
-
-#: confmenu.cpp:116
+#: confmenu.cpp:117
 msgid "Select item for moving"
 msgstr ""
 
-#: confmenu.cpp:117
+#: confmenu.cpp:118
 msgid "Select menu for moving"
 msgstr ""
 
-#: confmenu.cpp:119
+#: confmenu.cpp:120
 msgid "New"
 msgstr ""
 
-#: confmenu.cpp:176 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:316
 msgid "Warning !"
 msgstr "경고 !"
 
-#: confmenu.cpp:177
+#: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "이 단추를 삭제하면 하위메뉴가 모두 삭제됩니다"
 
@@ -272,3 +268,6 @@ msgstr "사용자지정:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "기본설정:"
+
+#~ msgid "! PROTECTED Button !"
+#~ msgstr "!고칠 수 없는 단추!"

@@ -3,76 +3,52 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-12-10 12:57+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
 
-#: main.cpp:64
+#: main.cpp:72
 msgid "&Standard shortcuts"
 msgstr "&Staðlaðir flýtitakkar"
 
-#: main.cpp:69
+#: main.cpp:80
 msgid "&Global shortcuts"
 msgstr "&Víðværir flýtihnappar"
 
-#: main.cpp:76
+#: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
 msgstr "notkun: kcmkeys [-init | {standard,global}]\n"
 
-#: main.cpp:118
+#: main.cpp:132
 msgid "Key binding settings"
 msgstr "Stillingar takkatenginga"
 
-#: standard.cpp:53
-msgid "New"
-msgstr "Nýtt"
-
-#: standard.cpp:57
-msgid "Next"
-msgstr "Næsta"
-
-#: standard.cpp:58
-msgid "Prior"
-msgstr "Fyrra"
-
-#: standard.cpp:63
-msgid "Find"
-msgstr "Finna"
-
-#: standard.cpp:66
-msgid "Home"
-msgstr "Heim"
-
-#: standard.cpp:67
-msgid "End"
-msgstr "Enda"
-
-#: global.cpp:81
+#: keyconfig.cpp:106
 msgid "Current scheme"
 msgstr "Núverandi stilliskrá"
 
-#: global.cpp:83
+#: keyconfig.cpp:108
 msgid "KDE default"
 msgstr "Sjálfgefið í KDE"
 
-#: global.cpp:90
+#: keyconfig.cpp:115
 msgid "&Key scheme"
 msgstr "&Takkastilliskrá"
 
-#: global.cpp:101
+#: keyconfig.cpp:126
 msgid "&Add ..."
 msgstr "&Bæta við..."
 
-#: global.cpp:123
+#: keyconfig.cpp:148
 msgid "&Save changes"
 msgstr "&Vista breytingar"
 
-#: global.cpp:182
+#: keyconfig.cpp:211
 msgid "Error removing scheme"
 msgstr "Ekki tókst að fjarlægja stilliskrá"
 
-#: global.cpp:183
+#: keyconfig.cpp:212
 msgid ""
 "This key scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -82,11 +58,11 @@ msgstr ""
 "Ef til vill hefur þú ekki skrifréttindi á\n"
 "skráakerfið þar sem stilliskráin er geymd."
 
-#: global.cpp:314
+#: keyconfig.cpp:343
 msgid "Naming conflict"
 msgstr "Nafnaárekstur"
 
-#: global.cpp:315
+#: keyconfig.cpp:344
 msgid ""
 "Please choose a unique name for the new key\n"
 "scheme. The one you entered already appears\n"
@@ -207,6 +183,30 @@ msgstr "Skipta á skjáborð fyrir ofan"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Skipta á skjáborð fyrir neðan"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Nýtt"
+
+#: stdbindings.cpp:7
+msgid "Next"
+msgstr "Næsta"
+
+#: stdbindings.cpp:8
+msgid "Prior"
+msgstr "Fyrra"
+
+#: stdbindings.cpp:13
+msgid "Find"
+msgstr "Finna"
+
+#: stdbindings.cpp:16
+msgid "Home"
+msgstr "Heim"
+
+#: stdbindings.cpp:17
+msgid "End"
+msgstr "Enda"
 
 #~ msgid "KDE lite"
 #~ msgstr "KDE lítið"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-11-27 22:55+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -132,16 +132,44 @@ msgstr ""
 msgid "No Proxy for:"
 msgstr ""
 
-#: khttpoptdlg.cpp:38
+#: khttpoptdlg.cpp:51
 msgid "Accept languages:"
 msgstr ""
 
-#: khttpoptdlg.cpp:52
+#: khttpoptdlg.cpp:65
 msgid "Accept character sets:"
 msgstr ""
 
-#: khttpoptdlg.cpp:65
+#: khttpoptdlg.cpp:78
 msgid "Assume HTML"
+msgstr ""
+
+#: khttpoptdlg.cpp:84
+msgid "Disable Cookies"
+msgstr ""
+
+#: khttpoptdlg.cpp:91
+msgid "Default accept policy"
+msgstr ""
+
+#: khttpoptdlg.cpp:100 khttpoptdlg.cpp:148
+msgid "Accept"
+msgstr ""
+
+#: khttpoptdlg.cpp:105 khttpoptdlg.cpp:153
+msgid "Ask"
+msgstr ""
+
+#: khttpoptdlg.cpp:110 khttpoptdlg.cpp:158
+msgid "Reject"
+msgstr ""
+
+#: khttpoptdlg.cpp:123
+msgid "Domain specific settings:"
+msgstr ""
+
+#: khttpoptdlg.cpp:130
+msgid "Change domain accept policy"
 msgstr ""
 
 #: useragentdlg.cpp:43

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-11-24 01:15+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -65,35 +65,31 @@ msgstr ""
 "Não é possível criar directory para menu personalizado.\n"
 " Seleccione Ok para sair do KMenuedit."
 
-#: confmenu.cpp:90 entrydialog.cpp:52
+#: confmenu.cpp:91 entrydialog.cpp:52
 msgid "Separator"
 msgstr "Separador"
 
-#: confmenu.cpp:102 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "Abrir/ Fechar"
 
-#: confmenu.cpp:110
-msgid "! PROTECTED Button !"
-msgstr "! Botão PROTEGIDO !"
-
-#: confmenu.cpp:116
+#: confmenu.cpp:117
 msgid "Select item for moving"
 msgstr ""
 
-#: confmenu.cpp:117
+#: confmenu.cpp:118
 msgid "Select menu for moving"
 msgstr ""
 
-#: confmenu.cpp:119
+#: confmenu.cpp:120
 msgid "New"
 msgstr "Novo"
 
-#: confmenu.cpp:176 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:316
 msgid "Warning !"
 msgstr "Aviso !"
 
-#: confmenu.cpp:177
+#: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Se apagar este botão vai perder todos os seus submenus"
 
@@ -261,3 +257,6 @@ msgstr "Pessoal:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Por omissão:"
+
+#~ msgid "! PROTECTED Button !"
+#~ msgstr "! Botão PROTEGIDO !"

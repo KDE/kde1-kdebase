@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-01-25 18:31 CET\n"
 "Last-Translator: David Faure <David.Faure@insa-lyon.fr>\n"
 "Language-Team: Français\n"
@@ -140,17 +140,45 @@ msgstr "&Proxy"
 msgid "No Proxy for:"
 msgstr "Pas de proxy pour :"
 
-#: khttpoptdlg.cpp:38
+#: khttpoptdlg.cpp:51
 msgid "Accept languages:"
 msgstr "Accepter les langues :"
 
-#: khttpoptdlg.cpp:52
+#: khttpoptdlg.cpp:65
 msgid "Accept character sets:"
 msgstr "Accepter les tables de caractères :"
 
-#: khttpoptdlg.cpp:65
+#: khttpoptdlg.cpp:78
 msgid "Assume HTML"
 msgstr "Considérer comme du HTML"
+
+#: khttpoptdlg.cpp:84
+msgid "Disable Cookies"
+msgstr ""
+
+#: khttpoptdlg.cpp:91
+msgid "Default accept policy"
+msgstr ""
+
+#: khttpoptdlg.cpp:100 khttpoptdlg.cpp:148
+msgid "Accept"
+msgstr ""
+
+#: khttpoptdlg.cpp:105 khttpoptdlg.cpp:153
+msgid "Ask"
+msgstr ""
+
+#: khttpoptdlg.cpp:110 khttpoptdlg.cpp:158
+msgid "Reject"
+msgstr ""
+
+#: khttpoptdlg.cpp:123
+msgid "Domain specific settings:"
+msgstr ""
+
+#: khttpoptdlg.cpp:130
+msgid "Change domain accept policy"
+msgstr ""
 
 #: useragentdlg.cpp:43
 msgid "On server:"

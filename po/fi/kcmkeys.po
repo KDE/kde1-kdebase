@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKEYS\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,71 +14,47 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:64
+#: main.cpp:72
 msgid "&Standard shortcuts"
 msgstr "&Peruslyhytvalinnat"
 
-#: main.cpp:69
+#: main.cpp:80
 msgid "&Global shortcuts"
 msgstr "&Yleiset lyhytvalinnat"
 
-#: main.cpp:76
+#: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
 msgstr "käyttö: kcmkeys [-init | {standard,global}]\n"
 
-#: main.cpp:118
+#: main.cpp:132
 msgid "Key binding settings"
 msgstr "Näppäinsidosten asetukset"
 
-#: standard.cpp:53
-msgid "New"
-msgstr "Uusi"
-
-#: standard.cpp:57
-msgid "Next"
-msgstr "Seuraava"
-
-#: standard.cpp:58
-msgid "Prior"
-msgstr "Edellinen"
-
-#: standard.cpp:63
-msgid "Find"
-msgstr "Etsi"
-
-#: standard.cpp:66
-msgid "Home"
-msgstr "Alku"
-
-#: standard.cpp:67
-msgid "End"
-msgstr "Loppu"
-
-#: global.cpp:81
+#: keyconfig.cpp:106
 msgid "Current scheme"
 msgstr "Nykyinen teema"
 
-#: global.cpp:83
+#: keyconfig.cpp:108
 msgid "KDE default"
 msgstr "KDE oletus"
 
-#: global.cpp:90
+#: keyconfig.cpp:115
 msgid "&Key scheme"
 msgstr "&Näppäinteema"
 
-#: global.cpp:101
+#: keyconfig.cpp:126
 msgid "&Add ..."
 msgstr "&Lisää ..."
 
-#: global.cpp:123
+#: keyconfig.cpp:148
 msgid "&Save changes"
 msgstr "&Tallenna muutokset"
 
-#: global.cpp:182
+#: keyconfig.cpp:211
 msgid "Error removing scheme"
 msgstr "Virhe teemaa poistettaessa"
 
-#: global.cpp:183
+#: keyconfig.cpp:212
 msgid ""
 "This key scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -88,11 +64,11 @@ msgstr ""
 "Sinulle ei ole mahdollisesti oikeuksia muuttaa tiedostoa\n"
 "johon teema on tallennettu."
 
-#: global.cpp:314
+#: keyconfig.cpp:343
 msgid "Naming conflict"
 msgstr "Nimikonflikti"
 
-#: global.cpp:315
+#: keyconfig.cpp:344
 msgid ""
 "Please choose a unique name for the new key\n"
 "scheme. The one you entered already appears\n"
@@ -214,6 +190,30 @@ msgstr "Siirrä työpöytä ylös"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Siirrä työpöytä alas"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Uusi"
+
+#: stdbindings.cpp:7
+msgid "Next"
+msgstr "Seuraava"
+
+#: stdbindings.cpp:8
+msgid "Prior"
+msgstr "Edellinen"
+
+#: stdbindings.cpp:13
+msgid "Find"
+msgstr "Etsi"
+
+#: stdbindings.cpp:16
+msgid "Home"
+msgstr "Alku"
+
+#: stdbindings.cpp:17
+msgid "End"
+msgstr "Loppu"
 
 #~ msgid "KDE lite"
 #~ msgstr "KDE pieni"

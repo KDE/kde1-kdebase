@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-11-24 01:15+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-03-19 23:20+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -73,35 +73,31 @@ msgstr ""
 "No es pot crear el directori pel menú personal.\n"
 " Trieu Bé per sortir de KMenuedit."
 
-#: confmenu.cpp:90 entrydialog.cpp:52
+#: confmenu.cpp:91 entrydialog.cpp:52
 msgid "Separator"
 msgstr "Separador"
 
-#: confmenu.cpp:102 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "Obrir/ Tancar"
 
-#: confmenu.cpp:110
-msgid "! PROTECTED Button !"
-msgstr "! Botó PROTEGIT !"
-
-#: confmenu.cpp:116
+#: confmenu.cpp:117
 msgid "Select item for moving"
 msgstr ""
 
-#: confmenu.cpp:117
+#: confmenu.cpp:118
 msgid "Select menu for moving"
 msgstr ""
 
-#: confmenu.cpp:119
+#: confmenu.cpp:120
 msgid "New"
 msgstr ""
 
-#: confmenu.cpp:176 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:316
 msgid "Warning !"
 msgstr "Avís !"
 
-#: confmenu.cpp:177
+#: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Si esborreu aquest botó, perdreu tots els seus submenús"
 
@@ -271,6 +267,9 @@ msgstr "Personal:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Omissió:"
+
+#~ msgid "! PROTECTED Button !"
+#~ msgstr "! Botó PROTEGIT !"
 
 #~ msgid "&Reload"
 #~ msgstr "&Refrescar"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 0.2.3\n"
-"POT-Creation-Date: 1998-11-24 01:15+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-12-13 15:29 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -73,35 +73,31 @@ msgstr ""
 "Není mo¾né vytvoøit adresáø pro osobní menu.\n"
 " Zvolte Ok k ukonèení KMenueditu."
 
-#: confmenu.cpp:90 entrydialog.cpp:52
+#: confmenu.cpp:91 entrydialog.cpp:52
 msgid "Separator"
 msgstr "Oddìlovaè"
 
-#: confmenu.cpp:102 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "Otevøít/ Zavøít"
 
-#: confmenu.cpp:110
-msgid "! PROTECTED Button !"
-msgstr "! CHRÁNÌNÉ tlaèítko !"
-
-#: confmenu.cpp:116
+#: confmenu.cpp:117
 msgid "Select item for moving"
 msgstr "Vybrat polo¾ku k pøesunutí"
 
-#: confmenu.cpp:117
+#: confmenu.cpp:118
 msgid "Select menu for moving"
 msgstr "Vybrat menu k pøesunutí"
 
-#: confmenu.cpp:119
+#: confmenu.cpp:120
 msgid "New"
 msgstr "Nový"
 
-#: confmenu.cpp:176 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:316
 msgid "Warning !"
 msgstr "Pozor !"
 
-#: confmenu.cpp:177
+#: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Zru¹ení této polo¾ky vyma¾e v¹echny její submenu"
 
@@ -269,3 +265,6 @@ msgstr "Osobní:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Implicitní:"
+
+#~ msgid "! PROTECTED Button !"
+#~ msgstr "! CHRÁNÌNÉ tlaèítko !"

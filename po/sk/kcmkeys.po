@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKEYS\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-10-20 20:00+0001\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -13,71 +13,47 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: plain\n"
 
-#: main.cpp:64
+#: main.cpp:72
 msgid "&Standard shortcuts"
 msgstr "©tandardné &skratky"
 
-#: main.cpp:69
+#: main.cpp:80
 msgid "&Global shortcuts"
 msgstr "&Globálne skratky"
 
-#: main.cpp:76
+#: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
 msgstr "pou¾itie: kcmkeys [-init | {standard,global}]\n"
 
-#: main.cpp:118
+#: main.cpp:132
 msgid "Key binding settings"
 msgstr "Nastavenie kláves"
 
-#: standard.cpp:53
-msgid "New"
-msgstr "Nová"
-
-#: standard.cpp:57
-msgid "Next"
-msgstr "Ïalej"
-
-#: standard.cpp:58
-msgid "Prior"
-msgstr "Prior"
-
-#: standard.cpp:63
-msgid "Find"
-msgstr "Hµada»"
-
-#: standard.cpp:66
-msgid "Home"
-msgstr "Domov"
-
-#: standard.cpp:67
-msgid "End"
-msgstr "Koniec"
-
-#: global.cpp:81
+#: keyconfig.cpp:106
 msgid "Current scheme"
 msgstr "Súèasná schéma"
 
-#: global.cpp:83
+#: keyconfig.cpp:108
 msgid "KDE default"
 msgstr "KDE ¹tandardná"
 
-#: global.cpp:90
+#: keyconfig.cpp:115
 msgid "&Key scheme"
 msgstr "Schéma &kláves"
 
-#: global.cpp:101
+#: keyconfig.cpp:126
 msgid "&Add ..."
 msgstr "Prid&a»..."
 
-#: global.cpp:123
+#: keyconfig.cpp:148
 msgid "&Save changes"
 msgstr "&Ulo¾i» zmeny"
 
-#: global.cpp:182
+#: keyconfig.cpp:211
 msgid "Error removing scheme"
 msgstr "Chyba pri ru¹ení schémy"
 
-#: global.cpp:183
+#: keyconfig.cpp:212
 msgid ""
 "This key scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -87,11 +63,11 @@ msgstr ""
 "Pravdepodobne nemô¾ete pristupova» k súboru, kde je\n"
 "schéma ulo¾ená."
 
-#: global.cpp:314
+#: keyconfig.cpp:343
 msgid "Naming conflict"
 msgstr "Konflikt mien"
 
-#: global.cpp:315
+#: keyconfig.cpp:344
 msgid ""
 "Please choose a unique name for the new key\n"
 "scheme. The one you entered already appears\n"
@@ -214,6 +190,30 @@ msgstr "Prepnú» o jednu plochu hore"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Prepnú» o jednu plochu dole"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Nová"
+
+#: stdbindings.cpp:7
+msgid "Next"
+msgstr "Ïalej"
+
+#: stdbindings.cpp:8
+msgid "Prior"
+msgstr "Prior"
+
+#: stdbindings.cpp:13
+msgid "Find"
+msgstr "Hµada»"
+
+#: stdbindings.cpp:16
+msgid "Home"
+msgstr "Domov"
+
+#: stdbindings.cpp:17
+msgid "End"
+msgstr "Koniec"
 
 #~ msgid "KDE lite"
 #~ msgstr "KDE lite"

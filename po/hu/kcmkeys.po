@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase 981215\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-12-17 16:23+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -14,71 +14,47 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8869-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: main.cpp:64
+#: main.cpp:72
 msgid "&Standard shortcuts"
 msgstr "&Alapvetõ rövidítések"
 
-#: main.cpp:69
+#: main.cpp:80
 msgid "&Global shortcuts"
 msgstr "&Globális rövidítések"
 
-#: main.cpp:76
+#: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
 msgstr "használat: kcmkeys [-init | {standard,global}]\n"
 
-#: main.cpp:118
+#: main.cpp:132
 msgid "Key binding settings"
 msgstr "Billentyû kötések beállítása"
 
-#: standard.cpp:53
-msgid "New"
-msgstr "Új"
-
-#: standard.cpp:57
-msgid "Next"
-msgstr "Következõ"
-
-#: standard.cpp:58
-msgid "Prior"
-msgstr "Elõzõ"
-
-#: standard.cpp:63
-msgid "Find"
-msgstr "Keresés"
-
-#: standard.cpp:66
-msgid "Home"
-msgstr "Elejére"
-
-#: standard.cpp:67
-msgid "End"
-msgstr "Végére"
-
-#: global.cpp:81
+#: keyconfig.cpp:106
 msgid "Current scheme"
 msgstr "Jelenlegi összeállítás"
 
-#: global.cpp:83
+#: keyconfig.cpp:108
 msgid "KDE default"
 msgstr "KDE alapértelmezett"
 
-#: global.cpp:90
+#: keyconfig.cpp:115
 msgid "&Key scheme"
 msgstr "&Bilentyû kötések"
 
-#: global.cpp:101
+#: keyconfig.cpp:126
 msgid "&Add ..."
 msgstr "Hozzá&adás..."
 
-#: global.cpp:123
+#: keyconfig.cpp:148
 msgid "&Save changes"
 msgstr "Változtatá&sok Mentése"
 
-#: global.cpp:182
+#: keyconfig.cpp:211
 msgid "Error removing scheme"
 msgstr "Hiba az összeállítás törlésekor"
 
-#: global.cpp:183
+#: keyconfig.cpp:212
 msgid ""
 "This key scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -87,11 +63,11 @@ msgstr ""
 "Ez az összeállítás nem távolítható el.\n"
 "Talán nincsen jogosultsága az állomány megváltoztatására"
 
-#: global.cpp:314
+#: keyconfig.cpp:343
 msgid "Naming conflict"
 msgstr "Elnevezési hiba"
 
-#: global.cpp:315
+#: keyconfig.cpp:344
 msgid ""
 "Please choose a unique name for the new key\n"
 "scheme. The one you entered already appears\n"
@@ -212,3 +188,27 @@ msgstr "Egy asztallal feljebb"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Egy asztallal lejjebb"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Új"
+
+#: stdbindings.cpp:7
+msgid "Next"
+msgstr "Következõ"
+
+#: stdbindings.cpp:8
+msgid "Prior"
+msgstr "Elõzõ"
+
+#: stdbindings.cpp:13
+msgid "Find"
+msgstr "Keresés"
+
+#: stdbindings.cpp:16
+msgid "Home"
+msgstr "Elejére"
+
+#: stdbindings.cpp:17
+msgid "End"
+msgstr "Végére"

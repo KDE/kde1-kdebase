@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -153,17 +153,46 @@ msgstr "FTP-proxy:"
 msgid "No Proxy for:"
 msgstr "Ingen proxy for:"
 
-#: khttpoptdlg.cpp:38
+#: khttpoptdlg.cpp:51
 msgid "Accept languages:"
 msgstr "Aksepter språk:"
 
-#: khttpoptdlg.cpp:52
+#: khttpoptdlg.cpp:65
 msgid "Accept character sets:"
 msgstr "Aksepter tegnsett:"
 
-#: khttpoptdlg.cpp:65
+#: khttpoptdlg.cpp:78
 msgid "Assume HTML"
 msgstr "Anta HTML"
+
+#: khttpoptdlg.cpp:84
+msgid "Disable Cookies"
+msgstr ""
+
+#: khttpoptdlg.cpp:91
+#, fuzzy
+msgid "Default accept policy"
+msgstr "Standard tegnsett"
+
+#: khttpoptdlg.cpp:100 khttpoptdlg.cpp:148
+msgid "Accept"
+msgstr ""
+
+#: khttpoptdlg.cpp:105 khttpoptdlg.cpp:153
+msgid "Ask"
+msgstr ""
+
+#: khttpoptdlg.cpp:110 khttpoptdlg.cpp:158
+msgid "Reject"
+msgstr ""
+
+#: khttpoptdlg.cpp:123
+msgid "Domain specific settings:"
+msgstr ""
+
+#: khttpoptdlg.cpp:130
+msgid "Change domain accept policy"
+msgstr ""
 
 # useragentdlg.cpp:20
 #: useragentdlg.cpp:43

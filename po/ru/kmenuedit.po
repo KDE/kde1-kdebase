@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-11-24 01:15+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-12-10 02:08+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -73,35 +73,31 @@ msgstr ""
 "Не могу создать подкаталог для вашего персонального меню.\n"
 "Нажмите ОК, чтобы выйти из KMenuedit."
 
-#: confmenu.cpp:90 entrydialog.cpp:52
+#: confmenu.cpp:91 entrydialog.cpp:52
 msgid "Separator"
 msgstr "Разделитель"
 
-#: confmenu.cpp:102 confmenu.cpp:333
+#: confmenu.cpp:103 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "Открыть/Закрыть"
 
-#: confmenu.cpp:110
-msgid "! PROTECTED Button !"
-msgstr "! ЗАЩИЩЕННАЯ КНОПКА !"
-
-#: confmenu.cpp:116
+#: confmenu.cpp:117
 msgid "Select item for moving"
 msgstr "Выберите пункт для перемещения"
 
-#: confmenu.cpp:117
+#: confmenu.cpp:118
 msgid "Select menu for moving"
 msgstr "Выберите меню для перемещения"
 
-#: confmenu.cpp:119
+#: confmenu.cpp:120
 msgid "New"
 msgstr "Новый"
 
-#: confmenu.cpp:176 confmenu.cpp:316
+#: confmenu.cpp:177 confmenu.cpp:316
 msgid "Warning !"
 msgstr "Внимание !"
 
-#: confmenu.cpp:177
+#: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Если вы удалите эту кнопку, то вы лишитесь всех его подменю"
 
@@ -269,3 +265,6 @@ msgstr "Личные:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "По умолчанию:"
+
+#~ msgid "! PROTECTED Button !"
+#~ msgstr "! ЗАЩИЩЕННАЯ КНОПКА !"
