@@ -483,7 +483,7 @@ msgstr "&Colores"
 
 #: main.cpp:73
 msgid "&Fonts etc."
-msgstr "Fuentes etc."
+msgstr "&Fuentes etc."
 
 #: main.cpp:79
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"

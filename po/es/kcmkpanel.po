@@ -173,7 +173,7 @@ msgstr "Historia"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr "Editar entradas: (pase un folder y cree un enlace)"
+msgstr "Editar entradas: (pase un carpeta y cree un enlace)"
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
@@ -185,7 +185,7 @@ msgstr "Editar &Compartido..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr "Máx. de entradas en folders recientes:"
+msgstr "Máx. de entradas en carpetas recientes:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
@@ -193,7 +193,7 @@ msgstr "Máx. de entradas en archivos recientes:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr "Máx. de archivos en un folder:"
+msgstr "Máx. de archivos en una carpeta:"
 
 #: disknav.cpp:159
 msgid "Show dot files"

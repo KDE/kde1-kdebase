@@ -46,14 +46,12 @@ msgid "&One Click change Desktop"
 msgstr ""
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
-#, fuzzy
 msgid "Hide Desktop &Names"
-msgstr "Ocultar Escritorio &Global"
+msgstr "Ocultar &Nombres de Escritorio"
 
 #: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
-#, fuzzy
 msgid "Show Desktop &Names"
-msgstr "Mostrar Escritorio &Global"
+msgstr "Mostrar &Nombres de Escritorio"
 
 #: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"

@@ -60,7 +60,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1992-1997 por Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Ajustado a kscreensaver por:\n"
+"Portado a kscreensaver por:\n"
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
@@ -163,7 +163,7 @@ msgstr "Lineal al azar"
 
 #: blob.cpp:58
 msgid "Horizonal Sine"
-msgstr "Sino horizontal"
+msgstr "Seno horizontal"
 
 #: blob.cpp:59
 msgid "Circular Bounce"
@@ -533,7 +533,7 @@ msgstr ""
 
 #: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr "GL no puede desplegar en el fondo\n"
+msgstr "GL no puede renderizar en el fondo\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
