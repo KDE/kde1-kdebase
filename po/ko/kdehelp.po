@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,20 +42,20 @@ msgstr ""
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1328
+#: helpwin.cpp:1325
 #, fuzzy
 msgid "Forward"
 msgstr "앞으로(&F)"
 
-#: helpwin.cpp:1349
+#: helpwin.cpp:1346
 msgid "Open this Link"
 msgstr "링크를 열기"
 
-#: helpwin.cpp:1350
+#: helpwin.cpp:1347
 msgid "Add Bookmark"
 msgstr "즐겨찾기 추가"
 
-#: helpwin.cpp:1351
+#: helpwin.cpp:1348
 msgid "Open in new Window"
 msgstr "새 윈도우에 열기"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -10,232 +10,231 @@ msgstr ""
 msgid "Enter new desktop name"
 msgstr "键入新的桌面的名称"
 
-#: backgnd.cpp:110 backgnd.cpp:162
+#: backgnd.cpp:110 backgnd.cpp:163
 msgid "Desktop"
 msgstr "桌面"
 
-#: backgnd.cpp:184
+#: backgnd.cpp:185
 msgid "&Rename ..."
 msgstr "重命名[&R] ..."
 
-#: backgnd.cpp:195
+#: backgnd.cpp:196
 #, fuzzy
 msgid "&Common Background"
 msgstr "背景[&B]"
 
-#: backgnd.cpp:223 colorscm.cpp:82
+#: backgnd.cpp:224 colorscm.cpp:82
 msgid "Colors"
 msgstr "颜色"
 
-#: backgnd.cpp:250
+#: backgnd.cpp:251
 msgid "&One Color"
 msgstr "单色[&C]"
 
 #
-#: backgnd.cpp:267
+#: backgnd.cpp:268
 msgid "&Two Color"
 msgstr "双色[&C]"
 
-#: backgnd.cpp:286
+#: backgnd.cpp:287
 msgid "Set&up ..."
 msgstr "设置[&U] ..."
 
-#: backgnd.cpp:295
+#: backgnd.cpp:296
 msgid "Wallpaper"
 msgstr "墙纸"
 
 #
-#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1222
-#: backgnd.cpp:1379 backgnd.cpp:1917
+#: backgnd.cpp:327 backgnd.cpp:1214 backgnd.cpp:1372 backgnd.cpp:1910
 msgid "No wallpaper"
 msgstr "没有墙纸"
 
-#: backgnd.cpp:359
+#: backgnd.cpp:360
 msgid "&Browse..."
 msgstr "浏览[&B]..."
 
-#: backgnd.cpp:367
+#: backgnd.cpp:368
 msgid "Arrangement:"
 msgstr ""
 
-#: backgnd.cpp:374
+#: backgnd.cpp:375
 #, fuzzy
 msgid "Tiled"
 msgstr "并列[&L]"
 
-#: backgnd.cpp:375
+#: backgnd.cpp:376
 msgid "Mirrored"
 msgstr ""
 
-#: backgnd.cpp:376
+#: backgnd.cpp:377
 #, fuzzy
 msgid "Center Tiled"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:377
+#: backgnd.cpp:378
 #, fuzzy
 msgid "Centred"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:378
+#: backgnd.cpp:379
 #, fuzzy
 msgid "Centred Brick"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:379
+#: backgnd.cpp:380
 #, fuzzy
 msgid "Centred Warp"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:380
+#: backgnd.cpp:381
 #, fuzzy
 msgid "Centred Maxpect"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:381
+#: backgnd.cpp:382
 msgid "Symmetrical Tiled"
 msgstr ""
 
-#: backgnd.cpp:382
+#: backgnd.cpp:383
 msgid "Symmetrical Mirrored"
 msgstr ""
 
-#: backgnd.cpp:383
+#: backgnd.cpp:384
 #, fuzzy
 msgid "Scaled"
 msgstr "比例缩放[&S]"
 
-#: backgnd.cpp:398
+#: backgnd.cpp:399
 msgid "Ra&ndom"
 msgstr ""
 
-#: backgnd.cpp:407
+#: backgnd.cpp:408
 #, fuzzy
 msgid "Setu&p..."
 msgstr "设置[&U] ..."
 
-#: backgnd.cpp:417
+#: backgnd.cpp:418
 msgid "&Dock into the panel"
 msgstr ""
 
-#: backgnd.cpp:442
+#: backgnd.cpp:443
 msgid "Cache size (kB):"
 msgstr ""
 
 #
-#: backgnd.cpp:1346
+#: backgnd.cpp:1339
 msgid "Desktop names"
 msgstr "桌面名称"
 
-#: backgnd.cpp:1391
+#: backgnd.cpp:1384
 #, fuzzy
 msgid "File error"
 msgstr "命名错误"
 
-#: backgnd.cpp:1392
+#: backgnd.cpp:1385
 msgid "Can't load image file"
 msgstr ""
 
-#: backgnd.cpp:1415 backgnd.cpp:1887
+#: backgnd.cpp:1408 backgnd.cpp:1880
 msgid "Unsupported URL"
 msgstr ""
 
-#: backgnd.cpp:1416 backgnd.cpp:1888
+#: backgnd.cpp:1409 backgnd.cpp:1881
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 
-#: backgnd.cpp:1447
+#: backgnd.cpp:1440
 msgid "Two color backgrounds"
 msgstr "两个彩色背景"
 
-#: backgnd.cpp:1484
+#: backgnd.cpp:1477
 msgid "Blend colors from &top to bottom"
 msgstr "从上到下使用混和色"
 
-#: backgnd.cpp:1490
+#: backgnd.cpp:1483
 msgid "Blend colors from &right to left"
 msgstr "从右到左使用混和色"
 
-#: backgnd.cpp:1496
+#: backgnd.cpp:1489
 msgid "Use &pattern"
 msgstr "使用花样[&P]"
 
-#: backgnd.cpp:1523
+#: backgnd.cpp:1516
 msgid "Preview"
 msgstr "预览"
 
-#: backgnd.cpp:1534
+#: backgnd.cpp:1527
 msgid "Pattern &name"
 msgstr "花样名[&N]"
 
-#: backgnd.cpp:1573
+#: backgnd.cpp:1566
 msgid "Current"
 msgstr "当前的"
 
-#: backgnd.cpp:1633
+#: backgnd.cpp:1626
 msgid "Filled"
 msgstr "填充的"
 
-#: backgnd.cpp:1636
+#: backgnd.cpp:1629
 msgid "Fish net"
 msgstr "鱼网"
 
-#: backgnd.cpp:1639
+#: backgnd.cpp:1632
 msgid "Triangles"
 msgstr "三角形"
 
 #
-#: backgnd.cpp:1642
+#: backgnd.cpp:1635
 msgid "Flowers"
 msgstr "花朵"
 
-#: backgnd.cpp:1645
+#: backgnd.cpp:1638
 msgid "Rattan"
 msgstr "藤茎"
 
-#: backgnd.cpp:1648
+#: backgnd.cpp:1641
 msgid "Cobbled Pavement"
 msgstr "卵石路"
 
-#: backgnd.cpp:1714
+#: backgnd.cpp:1707
 msgid "Random mode setup"
 msgstr ""
 
-#: backgnd.cpp:1720
+#: backgnd.cpp:1713
 msgid "Pick files from &directory"
 msgstr ""
 
-#: backgnd.cpp:1734
+#: backgnd.cpp:1727
 #, fuzzy
 msgid "&Browse ..."
 msgstr "浏览[&B]..."
 
-#: backgnd.cpp:1755
+#: backgnd.cpp:1748
 msgid "Timer Delay in seconds :"
 msgstr ""
 
-#: backgnd.cpp:1767
+#: backgnd.cpp:1760
 #, fuzzy
 msgid "In &order"
 msgstr "忽略"
 
-#: backgnd.cpp:1784
+#: backgnd.cpp:1777
 #, fuzzy
 msgid "Desktops :"
 msgstr "桌面"
 
-#: backgnd.cpp:1823
+#: backgnd.cpp:1816
 #, fuzzy
 msgid "&Add"
 msgstr "添加[&A] ..."
 
-#: backgnd.cpp:1994
+#: backgnd.cpp:1988
 #, fuzzy
 msgid "Directory error"
 msgstr "命名错误"
 
-#: backgnd.cpp:1995
+#: backgnd.cpp:1989
 msgid "Selected directory doesn't exists"
 msgstr ""
 
@@ -441,49 +440,49 @@ msgstr "高[&H]"
 msgid "Low"
 msgstr "低"
 
-#: general.cpp:222
+#: general.cpp:221
 msgid "Style"
 msgstr ""
 
-#: general.cpp:230
+#: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "以 Windows 95 的风格来显示控件"
 
-#: general.cpp:246
+#: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr ""
 
-#: general.cpp:260
+#: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
 msgstr ""
 
-#: general.cpp:531
+#: general.cpp:530
 msgid "General font"
 msgstr "一般字体"
 
-#: general.cpp:536
+#: general.cpp:535
 msgid "Fixed font"
 msgstr "等宽字体"
 
 #
-#: general.cpp:542
+#: general.cpp:541
 msgid "Window title font"
 msgstr "窗口标题字体"
 
-#: general.cpp:547
+#: general.cpp:546
 msgid "Panel button font"
 msgstr "面板按钮字体"
 
-#: general.cpp:552
+#: general.cpp:551
 msgid "Panel clock font"
 msgstr "面板时钟字体"
 
-#: general.cpp:582
+#: general.cpp:581
 #, fuzzy
 msgid "Sample text"
 msgstr "选择文字"
 
-#: general.cpp:590
+#: general.cpp:589
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"

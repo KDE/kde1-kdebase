@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-01-13 01:13+0100\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: 1998-12-21 01:59+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -13,55 +13,55 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: kpanel.C:284
+#: kpanel.C:283
 msgid "&Move"
 msgstr "Переместить"
 
-#: kpanel.C:287
+#: kpanel.C:286
 msgid "&Properties"
 msgstr "Настройки"
 
-#: kpanel.C:330
+#: kpanel.C:329
 msgid "Go!"
 msgstr "Вперед!"
 
-#: kpanel.C:333 tools.C:901
+#: kpanel.C:332 tools.C:901
 msgid "Where do you want to go tomorrow?"
 msgstr "Где вы хотите быть завтра?"
 
-#: kpanel.C:408
+#: kpanel.C:407
 msgid "No info available"
 msgstr "Нет информации"
 
-#: kpanel.C:447 props.C:207 props.C:208
+#: kpanel.C:446 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Выйти"
 
-#: kpanel.C:455 props.C:206
+#: kpanel.C:454 props.C:206
 msgid "Lock screen"
 msgstr "Закрыть экран"
 
-#: kpanel.C:464 kpanel.C:473
+#: kpanel.C:463 kpanel.C:472
 msgid "Hide the panel"
 msgstr "Спрятать панель"
 
-#: kpanel.C:483 kpanel.C:495
+#: kpanel.C:482 kpanel.C:494
 msgid "Show the panel"
 msgstr "Показать панель"
 
-#: kpanel.C:1100
+#: kpanel.C:1099
 msgid "Iconify other &windows"
 msgstr "Свернуть другие окна"
 
-#: kpanel.C:1237
+#: kpanel.C:1236
 msgid "No comment available"
 msgstr "Нет комментариев"
 
-#: kpanel.C:1246 tools.C:910
+#: kpanel.C:1245 tools.C:910
 msgid "Windowlist"
 msgstr "Список окон"
 
-#: kpanel.C:1254 props.C:197
+#: kpanel.C:1253 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Быстро перемещаться по файловой системе"
 
@@ -89,7 +89,7 @@ msgstr "Добавить список окон"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Добавить список окон на панель"
 
-#: events.C:827 props.C:183
+#: events.C:832 props.C:183
 msgid "Configure"
 msgstr "Настройка"
 
@@ -105,7 +105,7 @@ msgstr "Редактировать меню"
 msgid "Add or remove applications in the menu structure "
 msgstr "Добавить или удалить приложения из структуры меню "
 
-#: events.C:829 props.C:189
+#: events.C:834 props.C:189
 msgid "Restart"
 msgstr "Перезапустить"
 
@@ -129,7 +129,7 @@ msgstr "Закрыть экран"
 msgid "The menu editor is not installed."
 msgstr "Редактор меню не установлен."
 
-#: events.C:883 props.C:452
+#: events.C:888 props.C:452
 msgid "Oops!"
 msgstr "Оопс!"
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "Исследователь диска"
 
-#: events.C:882
+#: events.C:887
 msgid "Cannot put this as button onto the panel!"
 msgstr "Невозможно поместить это как кнопку на панель!"
 

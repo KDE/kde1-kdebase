@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,19 +41,19 @@ msgstr "Leitud"
 msgid "Continue search from the top of the page?"
 msgstr "Kas jätkata otsimist lehekülje algusest?"
 
-#: helpwin.cpp:1328
+#: helpwin.cpp:1325
 msgid "Forward"
 msgstr "Edasi"
 
-#: helpwin.cpp:1349
+#: helpwin.cpp:1346
 msgid "Open this Link"
 msgstr "Ava see link"
 
-#: helpwin.cpp:1350
+#: helpwin.cpp:1347
 msgid "Add Bookmark"
 msgstr "Lisa järjehoidja"
 
-#: helpwin.cpp:1351
+#: helpwin.cpp:1348
 msgid "Open in new Window"
 msgstr "Ava uues aknas"
 

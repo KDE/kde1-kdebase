@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1999-01-13 01:13+0100\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: 1997-10-25 18:28 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German/KDE\n"
@@ -13,55 +13,55 @@ msgstr ""
 "Content-Type: text/plain; charset=iso_8859_1\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: kpanel.C:284
+#: kpanel.C:283
 msgid "&Move"
 msgstr "&Verschieben"
 
-#: kpanel.C:287
+#: kpanel.C:286
 msgid "&Properties"
 msgstr "&Eigenschaften"
 
-#: kpanel.C:330
+#: kpanel.C:329
 msgid "Go!"
 msgstr "Start!"
 
-#: kpanel.C:333 tools.C:901
+#: kpanel.C:332 tools.C:901
 msgid "Where do you want to go tomorrow?"
 msgstr "Where do you want to go tomorrow?"
 
-#: kpanel.C:408
+#: kpanel.C:407
 msgid "No info available"
 msgstr "Keine Informationen verfügbar"
 
-#: kpanel.C:447 props.C:207 props.C:208
+#: kpanel.C:446 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Abmelden"
 
-#: kpanel.C:455 props.C:206
+#: kpanel.C:454 props.C:206
 msgid "Lock screen"
 msgstr "Bildschirm sperren"
 
-#: kpanel.C:464 kpanel.C:473
+#: kpanel.C:463 kpanel.C:472
 msgid "Hide the panel"
 msgstr "Panel verstecken"
 
-#: kpanel.C:483 kpanel.C:495
+#: kpanel.C:482 kpanel.C:494
 msgid "Show the panel"
 msgstr "Panel zeigen"
 
-#: kpanel.C:1100
+#: kpanel.C:1099
 msgid "Iconify other &windows"
 msgstr ""
 
-#: kpanel.C:1237
+#: kpanel.C:1236
 msgid "No comment available"
 msgstr "Keine Erklärung verfügbar"
 
-#: kpanel.C:1246 tools.C:910
+#: kpanel.C:1245 tools.C:910
 msgid "Windowlist"
 msgstr "Fensterliste"
 
-#: kpanel.C:1254 props.C:197
+#: kpanel.C:1253 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Schnell durch das Dateisystem navigieren"
 
@@ -93,7 +93,7 @@ msgstr "Fensterliste hinzufügen"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Menü für Fensterliste zum Panel hinzufügen"
 
-#: events.C:827 props.C:183
+#: events.C:832 props.C:183
 msgid "Configure"
 msgstr "Konfigurieren"
 
@@ -109,7 +109,7 @@ msgstr "Menu bearbeiten"
 msgid "Add or remove applications in the menu structure "
 msgstr "Anwendungen in der Menu-Struktur hinzufügen oder löschen "
 
-#: events.C:829 props.C:189
+#: events.C:834 props.C:189
 msgid "Restart"
 msgstr "Neu starten"
 
@@ -133,7 +133,7 @@ msgstr "Bildschirm sperren"
 msgid "The menu editor is not installed."
 msgstr "Der Menu-Editor ist nicht installiert."
 
-#: events.C:883 props.C:452
+#: events.C:888 props.C:452
 msgid "Oops!"
 msgstr "Oops!"
 
@@ -150,7 +150,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "Platten-Navigator"
 
-#: events.C:882
+#: events.C:887
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kann dies nicht als Button in das Panel legen!"
 

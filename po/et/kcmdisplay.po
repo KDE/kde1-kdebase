@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,214 +17,213 @@ msgstr ""
 msgid "Enter new desktop name"
 msgstr "Sisesta uus töölaua nimi"
 
-#: backgnd.cpp:110 backgnd.cpp:162
+#: backgnd.cpp:110 backgnd.cpp:163
 msgid "Desktop"
 msgstr "Töölaud"
 
-#: backgnd.cpp:184
+#: backgnd.cpp:185
 msgid "&Rename ..."
 msgstr "&Nimeta ümber ..."
 
-#: backgnd.cpp:195
+#: backgnd.cpp:196
 msgid "&Common Background"
 msgstr "Ühine &taust"
 
-#: backgnd.cpp:223 colorscm.cpp:82
+#: backgnd.cpp:224 colorscm.cpp:82
 msgid "Colors"
 msgstr "Värvid"
 
-#: backgnd.cpp:250
+#: backgnd.cpp:251
 msgid "&One Color"
 msgstr "&Ühevärviline"
 
-#: backgnd.cpp:267
+#: backgnd.cpp:268
 msgid "&Two Color"
 msgstr "&Kahevärviline"
 
-#: backgnd.cpp:286
+#: backgnd.cpp:287
 msgid "Set&up ..."
 msgstr "&Seadistus ..."
 
-#: backgnd.cpp:295
+#: backgnd.cpp:296
 msgid "Wallpaper"
 msgstr "Taustapilt"
 
-#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1222
-#: backgnd.cpp:1379 backgnd.cpp:1917
+#: backgnd.cpp:327 backgnd.cpp:1214 backgnd.cpp:1372 backgnd.cpp:1910
 msgid "No wallpaper"
 msgstr "Taustapilti pole"
 
-#: backgnd.cpp:359
+#: backgnd.cpp:360
 msgid "&Browse..."
 msgstr "&Lehitse..."
 
-#: backgnd.cpp:367
+#: backgnd.cpp:368
 msgid "Arrangement:"
 msgstr "Paigutus:"
 
-#: backgnd.cpp:374
+#: backgnd.cpp:375
 msgid "Tiled"
 msgstr "Paanidena"
 
-#: backgnd.cpp:375
+#: backgnd.cpp:376
 msgid "Mirrored"
 msgstr "Peegeldatud"
 
-#: backgnd.cpp:376
+#: backgnd.cpp:377
 msgid "Center Tiled"
 msgstr "Keskjoondatud paanidena"
 
-#: backgnd.cpp:377
+#: backgnd.cpp:378
 msgid "Centred"
 msgstr "Keskjoondatud"
 
-#: backgnd.cpp:378
+#: backgnd.cpp:379
 msgid "Centred Brick"
 msgstr "Keskjoondatud tellis"
 
-#: backgnd.cpp:379
+#: backgnd.cpp:380
 msgid "Centred Warp"
 msgstr "Keskjoondatud warp"
 
-#: backgnd.cpp:380
+#: backgnd.cpp:381
 msgid "Centred Maxpect"
 msgstr "Keskjoondatud maksimeeritud"
 
-#: backgnd.cpp:381
+#: backgnd.cpp:382
 msgid "Symmetrical Tiled"
 msgstr "Sümmeetriliselt paanidena"
 
-#: backgnd.cpp:382
+#: backgnd.cpp:383
 msgid "Symmetrical Mirrored"
 msgstr "Sümmeetriliselt peegeldatud"
 
-#: backgnd.cpp:383
+#: backgnd.cpp:384
 msgid "Scaled"
 msgstr "Skaleeritud"
 
-#: backgnd.cpp:398
+#: backgnd.cpp:399
 msgid "Ra&ndom"
 msgstr "&Juhuslik"
 
-#: backgnd.cpp:407
+#: backgnd.cpp:408
 msgid "Setu&p..."
 msgstr "Sea&distus..."
 
-#: backgnd.cpp:417
+#: backgnd.cpp:418
 msgid "&Dock into the panel"
 msgstr "&Doki paneelile"
 
-#: backgnd.cpp:442
+#: backgnd.cpp:443
 msgid "Cache size (kB):"
 msgstr "Vahemälu suurus (kB):"
 
-#: backgnd.cpp:1346
+#: backgnd.cpp:1339
 msgid "Desktop names"
 msgstr "Töölaua nimed"
 
-#: backgnd.cpp:1391
+#: backgnd.cpp:1384
 msgid "File error"
 msgstr "Viga failis"
 
-#: backgnd.cpp:1392
+#: backgnd.cpp:1385
 msgid "Can't load image file"
 msgstr "Ei suuda laadida pildifaili"
 
-#: backgnd.cpp:1415 backgnd.cpp:1887
+#: backgnd.cpp:1408 backgnd.cpp:1880
 msgid "Unsupported URL"
 msgstr "Mittetoetatud URL"
 
-#: backgnd.cpp:1416 backgnd.cpp:1888
+#: backgnd.cpp:1409 backgnd.cpp:1881
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 "Vabandust, sellist tüüpi URL'id ei ole KDE ekraanimooduli poolt toetatud"
 
-#: backgnd.cpp:1447
+#: backgnd.cpp:1440
 msgid "Two color backgrounds"
 msgstr "Kahevärviline taust"
 
-#: backgnd.cpp:1484
+#: backgnd.cpp:1477
 msgid "Blend colors from &top to bottom"
 msgstr "Sujuv üleminek &ülevalt alla"
 
-#: backgnd.cpp:1490
+#: backgnd.cpp:1483
 msgid "Blend colors from &right to left"
 msgstr "Sujuv üleminek &paremalt vasakule"
 
-#: backgnd.cpp:1496
+#: backgnd.cpp:1489
 msgid "Use &pattern"
 msgstr "Kasuta &mustrit"
 
-#: backgnd.cpp:1523
+#: backgnd.cpp:1516
 msgid "Preview"
 msgstr "Eelvaatlus"
 
-#: backgnd.cpp:1534
+#: backgnd.cpp:1527
 msgid "Pattern &name"
 msgstr "Mustri &nimi"
 
-#: backgnd.cpp:1573
+#: backgnd.cpp:1566
 msgid "Current"
 msgstr "Käesolev"
 
-#: backgnd.cpp:1633
+#: backgnd.cpp:1626
 msgid "Filled"
 msgstr "Täidetud"
 
-#: backgnd.cpp:1636
+#: backgnd.cpp:1629
 msgid "Fish net"
 msgstr "Kalavõrk"
 
-#: backgnd.cpp:1639
+#: backgnd.cpp:1632
 msgid "Triangles"
 msgstr "Kolmnurgad"
 
-#: backgnd.cpp:1642
+#: backgnd.cpp:1635
 msgid "Flowers"
 msgstr "Lilled"
 
-#: backgnd.cpp:1645
+#: backgnd.cpp:1638
 msgid "Rattan"
 msgstr "Rattanpalm"
 
-#: backgnd.cpp:1648
+#: backgnd.cpp:1641
 msgid "Cobbled Pavement"
 msgstr "Munakivisillutis"
 
-#: backgnd.cpp:1714
+#: backgnd.cpp:1707
 msgid "Random mode setup"
 msgstr "Juhuslik reziimi seadistus"
 
-#: backgnd.cpp:1720
+#: backgnd.cpp:1713
 msgid "Pick files from &directory"
 msgstr "Võta failid &kataloogist"
 
-#: backgnd.cpp:1734
+#: backgnd.cpp:1727
 msgid "&Browse ..."
 msgstr "&Lehitse ..."
 
-#: backgnd.cpp:1755
+#: backgnd.cpp:1748
 msgid "Timer Delay in seconds :"
 msgstr "Taimeri viivitus sekundites :"
 
-#: backgnd.cpp:1767
+#: backgnd.cpp:1760
 msgid "In &order"
 msgstr "&Järjekorras"
 
-#: backgnd.cpp:1784
+#: backgnd.cpp:1777
 msgid "Desktops :"
 msgstr "Töölauad :"
 
-#: backgnd.cpp:1823
+#: backgnd.cpp:1816
 msgid "&Add"
 msgstr "&Lisa"
 
-#: backgnd.cpp:1994
+#: backgnd.cpp:1988
 msgid "Directory error"
 msgstr "Kataloogi viga"
 
-#: backgnd.cpp:1995
+#: backgnd.cpp:1989
 msgid "Selected directory doesn't exists"
 msgstr "Valitud kataloogi ei eksisteeri"
 
@@ -422,48 +421,48 @@ msgstr "&Kõrge"
 msgid "Low"
 msgstr "Madal"
 
-#: general.cpp:222
+#: general.cpp:221
 msgid "Style"
 msgstr ""
 
-#: general.cpp:230
+#: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "&Joonista elemendid Windows 95 stiilis"
 
-#: general.cpp:246
+#: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr "&Menüüriba ekraani ülaservas MacOS'i stiilis"
 
-#: general.cpp:260
+#: general.cpp:259
 #, fuzzy
 msgid "&Apply fonts and colors to non-KDE apps"
 msgstr "&Rakenda stiili mitte-KDE rakendustele"
 
-#: general.cpp:531
+#: general.cpp:530
 msgid "General font"
 msgstr "Üldine font"
 
-#: general.cpp:536
+#: general.cpp:535
 msgid "Fixed font"
 msgstr "Fikseeritud font"
 
-#: general.cpp:542
+#: general.cpp:541
 msgid "Window title font"
 msgstr "Akna tiitli font"
 
-#: general.cpp:547
+#: general.cpp:546
 msgid "Panel button font"
 msgstr "Paneeli nupu font"
 
-#: general.cpp:552
+#: general.cpp:551
 msgid "Panel clock font"
 msgstr "Paneeli kella font"
 
-#: general.cpp:582
+#: general.cpp:581
 msgid "Sample text"
 msgstr "Näidistekst"
 
-#: general.cpp:590
+#: general.cpp:589
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"

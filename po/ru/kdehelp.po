@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.0\n"
-"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: 1998-12-10 02:21+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -47,22 +47,22 @@ msgid "Continue search from the top of the page?"
 msgstr "Продолжить поиск с начала страницы?"
 
 #
-#: helpwin.cpp:1328
+#: helpwin.cpp:1325
 msgid "Forward"
 msgstr "Вперед"
 
 #
-#: helpwin.cpp:1349
+#: helpwin.cpp:1346
 msgid "Open this Link"
 msgstr "Открыть ссылку"
 
 #
-#: helpwin.cpp:1350
+#: helpwin.cpp:1347
 msgid "Add Bookmark"
 msgstr "Добавить закладку"
 
 #
-#: helpwin.cpp:1351
+#: helpwin.cpp:1348
 msgid "Open in new Window"
 msgstr "Открыть новое окно"
 

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -40,19 +40,19 @@ msgstr "Pretraga zavr¹ena"
 msgid "Continue search from the top of the page?"
 msgstr "Nastavi pretragu s vrha stranice?"
 
-#: helpwin.cpp:1328
+#: helpwin.cpp:1325
 msgid "Forward"
 msgstr "Naprijed"
 
-#: helpwin.cpp:1349
+#: helpwin.cpp:1346
 msgid "Open this Link"
 msgstr "Otvori ovu vezu"
 
-#: helpwin.cpp:1350
+#: helpwin.cpp:1347
 msgid "Add Bookmark"
 msgstr "Dodaj oznaku"
 
-#: helpwin.cpp:1351
+#: helpwin.cpp:1348
 msgid "Open in new Window"
 msgstr "Otvori u novom prozoru"
 

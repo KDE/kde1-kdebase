@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -35,171 +35,171 @@ msgstr "寻找[&F]"
 msgid "&Move to Trash"
 msgstr "移至回收站[&M]"
 
-#: kfmgui.cpp:262
+#: kfmgui.cpp:260
 msgid "&Select"
 msgstr "选择[&S]"
 
-#: kfmgui.cpp:264
+#: kfmgui.cpp:262
 #, fuzzy
 msgid "Select &all"
 msgstr "选择[&S]"
 
-#: kfmgui.cpp:267
+#: kfmgui.cpp:265
 msgid "&Find in page..."
 msgstr ""
 
-#: kfmgui.cpp:269
+#: kfmgui.cpp:267
 msgid "Find &next"
 msgstr ""
 
-#: kfmgui.cpp:272
+#: kfmgui.cpp:270
 #, fuzzy
 msgid "Mime &Types"
 msgstr "Mime 类型"
 
-#: kfmgui.cpp:274
+#: kfmgui.cpp:272
 #, fuzzy
 msgid "App&lications"
 msgstr "应用程序"
 
-#: kfmgui.cpp:280
+#: kfmgui.cpp:278
 msgid "Global Mime Types"
 msgstr "全局 Mime 类型"
 
-#: kfmgui.cpp:282
+#: kfmgui.cpp:280
 msgid "Global Applications"
 msgstr "全局应用程序"
 
-#: kfmgui.cpp:289
+#: kfmgui.cpp:287
 #, fuzzy
 msgid "Show Hi&dden Files"
 msgstr "显示隐藏文件[&D]"
 
-#: kfmgui.cpp:291
+#: kfmgui.cpp:289
 msgid "Show Tr&ee"
 msgstr "显示树状目录[&E]"
 
-#: kfmgui.cpp:293
+#: kfmgui.cpp:291
 msgid "Sho&w Thumbnails"
 msgstr ""
 
-#: kfmgui.cpp:295
+#: kfmgui.cpp:293
 msgid "&HTML View"
 msgstr "&HTML"
 
-#: kfmgui.cpp:298
+#: kfmgui.cpp:296
 msgid "&Icon View"
 msgstr "大图标[&I]"
 
-#: kfmgui.cpp:300
+#: kfmgui.cpp:298
 msgid "&Text View"
 msgstr "文字[&T]"
 
-#: kfmgui.cpp:302
+#: kfmgui.cpp:300
 msgid "&Long View"
 msgstr "详细[&L]"
 
 #
-#: kfmgui.cpp:304
+#: kfmgui.cpp:302
 msgid "&Short View"
 msgstr "简单[&I]"
 
-#: kfmgui.cpp:310
+#: kfmgui.cpp:308
 msgid "Rel&oad Tree"
 msgstr "重新载入目录树[&O]"
 
-#: kfmgui.cpp:312
+#: kfmgui.cpp:310
 msgid "&Reload Document"
 msgstr "重新载入文件[&R]"
 
-#: kfmgui.cpp:314
+#: kfmgui.cpp:312
 #, fuzzy
 msgid "Rescan &Bindings"
 msgstr "重新扫描文件关联[&B]"
 
-#: kfmgui.cpp:317
+#: kfmgui.cpp:315
 msgid "&View Frame Source"
 msgstr "观看页框原内容[&V]"
 
-#: kfmgui.cpp:319
+#: kfmgui.cpp:317
 msgid "View Docu&ment Source"
 msgstr "观看文件内容[&M]"
 
-#: kfmgui.cpp:327
+#: kfmgui.cpp:325
 msgid "Auto"
 msgstr ""
 
-#: kfmgui.cpp:335
+#: kfmgui.cpp:333
 #, fuzzy
 msgid "Document Encodin&g"
 msgstr "文件: 完成"
 
-#: kfmgui.cpp:351
+#: kfmgui.cpp:349
 msgid "Show History"
 msgstr "显示历史列表"
 
-#: kfmgui.cpp:353
+#: kfmgui.cpp:351
 msgid "Show Cache"
 msgstr "显示缓存"
 
-#: kfmgui.cpp:355
+#: kfmgui.cpp:353
 msgid "Clear Cache"
 msgstr "清除缓存"
 
-#: kfmgui.cpp:358
+#: kfmgui.cpp:356
 msgid "Always look in cache"
 msgstr "先在缓存中寻找"
 
-#: kfmgui.cpp:360
+#: kfmgui.cpp:358
 msgid "Never look in cache"
 msgstr "不在缓存中寻找"
 
 #
-#: kfmgui.cpp:362
+#: kfmgui.cpp:360
 msgid "Always save cache"
 msgstr "保存缓存"
 
 #
-#: kfmgui.cpp:364
+#: kfmgui.cpp:362
 msgid "Never save cache"
 msgstr "不保存缓存"
 
-#: kfmgui.cpp:375
+#: kfmgui.cpp:373
 msgid "Show &Menubar"
 msgstr "显示菜单条[&M]"
 
-#: kfmgui.cpp:377
+#: kfmgui.cpp:375
 msgid "Show &Statusbar"
 msgstr "显示状态行[&S]"
 
-#: kfmgui.cpp:379
+#: kfmgui.cpp:377
 msgid "Show &Toolbar"
 msgstr "显示工具条[&T]"
 
-#: kfmgui.cpp:381
+#: kfmgui.cpp:379
 msgid "Show &Location bar"
 msgstr "显示位置条[&L]"
 
-#: kfmgui.cpp:384
+#: kfmgui.cpp:382
 msgid "Sa&ve Settings"
 msgstr "保存设定[&V]"
 
-#: kfmgui.cpp:386
+#: kfmgui.cpp:384
 #, fuzzy
 msgid "Save Settings for this &URL"
 msgstr "保存设定[&V]"
 
-#: kfmgui.cpp:393
+#: kfmgui.cpp:391
 #, fuzzy
 msgid "&Configure File Manager..."
 msgstr "配置浏览器..."
 
-#: kfmgui.cpp:395
+#: kfmgui.cpp:393
 #, fuzzy
 msgid "Configure &Browser..."
 msgstr "配置浏览器..."
 
-#: kfmgui.cpp:431
+#: kfmgui.cpp:429
 #, fuzzy
 msgid ""
 "Author: Torben Weis\n"
@@ -223,32 +223,32 @@ msgstr ""
 "Proxy Manager 由 Lars Hoss 完成\n"
 "Lars.Hoss@munich.netsurf.de"
 
-#: kfmgui.cpp:444 kfmgui.cpp:1121
+#: kfmgui.cpp:442 kfmgui.cpp:1122
 msgid "&Go"
 msgstr ""
 
-#: kfmgui.cpp:445
+#: kfmgui.cpp:443
 msgid "&Bookmarks"
 msgstr "书签[&B]"
 
-#: kfmgui.cpp:446
+#: kfmgui.cpp:444
 msgid "&Cache"
 msgstr "缓存[&C]"
 
-#: kfmgui.cpp:476 main.cpp:282
+#: kfmgui.cpp:474 main.cpp:282
 msgid "Up"
 msgstr "上"
 
-#: kfmgui.cpp:486 main.cpp:284
+#: kfmgui.cpp:484 main.cpp:284
 msgid "Forward"
 msgstr ""
 
-#: kfmgui.cpp:491
+#: kfmgui.cpp:489
 #, fuzzy
 msgid "Home"
 msgstr "我的家"
 
-#: kfmgui.cpp:548
+#: kfmgui.cpp:546
 msgid "Could not load icon\n"
 msgstr "无法载入图标\n"
 
@@ -257,7 +257,7 @@ msgstr "无法载入图标\n"
 #: kbind.cpp:1664 kbind.cpp:1723 kbind.cpp:1735 kbind.cpp:1762 kbind.cpp:1777
 #: kbind.cpp:1797 kbind.cpp:1809 kbind.cpp:1825 kbind.cpp:1960 kbind.cpp:1972
 #: kbind.cpp:2017 kbind.cpp:2059 kfmexec.cpp:63 kfmexec.cpp:115
-#: kfmexec/main.cpp:47 kfmgui.cpp:549 kfmgui.cpp:758 kfmman.cpp:367
+#: kfmexec/main.cpp:47 kfmgui.cpp:547 kfmgui.cpp:757 kfmman.cpp:367
 #: kfmman.cpp:1400 kfmman.cpp:1628 kfmman.cpp:1654 kfmprops.cpp:380
 #: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092
 #: kfmprops.cpp:1223 kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240
@@ -265,9 +265,9 @@ msgstr "无法载入图标\n"
 #: kfmserver.cpp:360 kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:341
 #: kfmtree.cpp:468 kfmtree.cpp:499 kfmtree.cpp:505 kfmtree.cpp:511
 #: kfmview.cpp:436 kfmview.cpp:470 kfmview.cpp:489 kfmview.cpp:558
-#: kfmview.cpp:564 kfmview.cpp:570 kfmview.cpp:680 kfmview.cpp:684
-#: kfmview.cpp:723 kfmview.cpp:749 kfmview.cpp:770 kfmview.cpp:778
-#: kfmview.cpp:786 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
+#: kfmview.cpp:564 kfmview.cpp:570 kfmview.cpp:694 kfmview.cpp:698
+#: kfmview.cpp:737 kfmview.cpp:763 kfmview.cpp:784 kfmview.cpp:792
+#: kfmview.cpp:800 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
 #: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:332 kiojob.cpp:351 kiojob.cpp:566
 #: kiojob.cpp:584 kiojob.cpp:852 kiojob.cpp:873 kiojob.cpp:904 kiojob.cpp:952
 #: kiojob.cpp:1420 kiojob.cpp:1428 kiojob.cpp:1656 krenamewin.cpp:120
@@ -276,73 +276,73 @@ msgstr "无法载入图标\n"
 msgid "KFM Error"
 msgstr "KFM 发生错误"
 
-#: kfmgui.cpp:562
+#: kfmgui.cpp:560
 #, fuzzy
 msgid "Location:"
 msgstr "打开位置:"
 
-#: kfmexec.cpp:62 kfmgui.cpp:757 kfmman.cpp:1399
+#: kfmexec.cpp:62 kfmgui.cpp:756 kfmman.cpp:1399
 msgid "Malformed URL\n"
 msgstr "不正确的 URL\n"
 
-#: kfmgui.cpp:943
+#: kfmgui.cpp:942
 msgid "Select files:"
 msgstr "选择文件:"
 
-#: kfmgui.cpp:1009
+#: kfmgui.cpp:1010
 msgid "Find Complete"
 msgstr ""
 
-#: kfmgui.cpp:1010
+#: kfmgui.cpp:1011
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: kfmgui.cpp:1028
+#: kfmgui.cpp:1029
 msgid "&Edit Bookmarks..."
 msgstr "编辑书签[&E]..."
 
-#: kfmgui.cpp:1038
+#: kfmgui.cpp:1039
 msgid "&Add Bookmark"
 msgstr "加入书签[&A]"
 
-#: kfmgui.cpp:1072 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1073 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
 #, fuzzy
 msgid "&New"
 msgstr "新 "
 
-#: kfmgui.cpp:1097
+#: kfmgui.cpp:1098
 #, fuzzy
 msgid "&Up"
 msgstr "上"
 
-#: kfmgui.cpp:1099
+#: kfmgui.cpp:1100
 msgid "&Back"
 msgstr ""
 
-#: kfmgui.cpp:1101
+#: kfmgui.cpp:1102
 msgid "&Forward"
 msgstr ""
 
-#: kfmgui.cpp:1103
+#: kfmgui.cpp:1104
 #, fuzzy
 msgid "&Home"
 msgstr "我的家"
 
-#: kfmgui.cpp:1172 kfmgui.cpp:1331 kfmjob.cpp:36 kfmman.cpp:250
-#: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:771
+#: kfmgui.cpp:1173 kfmgui.cpp:1332 kfmjob.cpp:36 kfmman.cpp:250
+#: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:785
 #: kiojob.cpp:87 root.cpp:1223
 msgid "ERROR: Malformed URL"
 msgstr "错误: 不正确的 URL"
 
-#: kfmgui.cpp:1285 kfmserver.cpp:245
+#: kfmgui.cpp:1286 kfmserver.cpp:245
 msgid "Open Location:"
 msgstr "打开位置:"
 
-#: kfmgui.cpp:1342
+#: kfmgui.cpp:1343
 msgid "KFM Confirm"
 msgstr "KFM 确认"
 
-#: kfmgui.cpp:1343
+#: kfmgui.cpp:1344
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -350,7 +350,7 @@ msgstr ""
 "确定要离开吗?\n"
 "将会失去重要的桌面功能."
 
-#: kfmgui.cpp:1456
+#: kfmgui.cpp:1471
 msgid "Document: Done"
 msgstr "文件: 完成"
 
@@ -363,12 +363,12 @@ msgstr "错误: 拖放一个 URL 到自己本身"
 msgid "ERROR: Drop over malformed URL"
 msgstr "错误: 拖放到不正确的 URL"
 
-#: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:530 kfmview.cpp:814
+#: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:530 kfmview.cpp:828
 #: kiojob.cpp:653 kiojob.cpp:1026 krenamewin.cpp:20 root.cpp:1266
 msgid "KFM Warning"
 msgstr "KFM 警告"
 
-#: kfmtree.cpp:539 kfmview.cpp:531 kfmview.cpp:815 root.cpp:1267
+#: kfmtree.cpp:539 kfmview.cpp:531 kfmview.cpp:829 root.cpp:1267
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -378,11 +378,11 @@ msgstr ""
 "\n"
 "删除的文件无法还原!"
 
-#: kfmtree.cpp:506 kfmview.cpp:565 kfmview.cpp:779 root.cpp:1229
+#: kfmtree.cpp:506 kfmview.cpp:565 kfmview.cpp:793 root.cpp:1229
 msgid "ERROR: You dropped a URL over itself"
 msgstr "错误: 拖放一个 URL 到自己本身"
 
-#: kfmtree.cpp:512 kfmview.cpp:571 kfmview.cpp:787 root.cpp:1235
+#: kfmtree.cpp:512 kfmview.cpp:571 kfmview.cpp:801 root.cpp:1235
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "错误: 拖放一个目录到它一个子目录上"
 
@@ -394,7 +394,7 @@ msgstr "以...打开:"
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "错误: 无法同时打开多个文件的特性"
 
-#: kfmview.cpp:681
+#: kfmview.cpp:695
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -402,7 +402,7 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmview.cpp:685
+#: kfmview.cpp:699
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -410,23 +410,23 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:469 kfmview.cpp:724 root.cpp:1316
+#: kfmtree.cpp:469 kfmview.cpp:738 root.cpp:1316
 msgid "Could not access Trash Bin"
 msgstr "无法读取回收站"
 
-#: kfmview.cpp:750 root.cpp:1205
+#: kfmview.cpp:764 root.cpp:1205
 msgid "Can not paste into multiple directories"
 msgstr "无法贴入多个目录中"
 
-#: kfmview.cpp:847
+#: kfmview.cpp:861
 msgid "ERROR: Can not change to multiple directories"
 msgstr "错误: 无法同时进入多个目录"
 
-#: kfmview.cpp:1113
+#: kfmview.cpp:1131
 msgid "KFM Security Alert"
 msgstr "KFM 安全警报"
 
-#: kfmview.cpp:1114
+#: kfmview.cpp:1132
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -434,16 +434,16 @@ msgstr ""
 "这个页面不可信任\n"
 "但是它包含一个到你的本地文件系统的链接."
 
-#: kfmview.cpp:1218
+#: kfmview.cpp:1236
 msgid "Symbolic Link"
 msgstr "符号链接"
 
-#: kfmview.cpp:1220
+#: kfmview.cpp:1238
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (链结)"
 
-#: kfmview.cpp:1240
+#: kfmview.cpp:1258
 msgid "bytes"
 msgstr "字节"
 

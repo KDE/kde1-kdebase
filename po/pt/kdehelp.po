@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: 1998-01-26 14:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -37,19 +37,19 @@ msgstr "Procurar Completa"
 msgid "Continue search from the top of the page?"
 msgstr "Continuar buscar do ínicio da página"
 
-#: helpwin.cpp:1328
+#: helpwin.cpp:1325
 msgid "Forward"
 msgstr "Avançar"
 
-#: helpwin.cpp:1349
+#: helpwin.cpp:1346
 msgid "Open this Link"
 msgstr "Abrir este Link"
 
-#: helpwin.cpp:1350
+#: helpwin.cpp:1347
 msgid "Add Bookmark"
 msgstr "Adicionar Favorito"
 
-#: helpwin.cpp:1351
+#: helpwin.cpp:1348
 msgid "Open in new Window"
 msgstr "Abrir numa nova Janela"
 

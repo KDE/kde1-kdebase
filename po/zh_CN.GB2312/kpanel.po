@@ -1,62 +1,62 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-01-13 01:13+0100\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
-#: kpanel.C:284
+#: kpanel.C:283
 #, fuzzy
 msgid "&Move"
 msgstr "移动"
 
-#: kpanel.C:287
+#: kpanel.C:286
 #, fuzzy
 msgid "&Properties"
 msgstr "特性"
 
-#: kpanel.C:330
+#: kpanel.C:329
 msgid "Go!"
 msgstr "开始!"
 
-#: kpanel.C:333 tools.C:901
+#: kpanel.C:332 tools.C:901
 msgid "Where do you want to go tomorrow?"
 msgstr "主菜单"
 
-#: kpanel.C:408
+#: kpanel.C:407
 msgid "No info available"
 msgstr "没有信息"
 
-#: kpanel.C:447 props.C:207 props.C:208
+#: kpanel.C:446 props.C:207 props.C:208
 msgid "Logout"
 msgstr "离线"
 
-#: kpanel.C:455 props.C:206
+#: kpanel.C:454 props.C:206
 msgid "Lock screen"
 msgstr "锁住屏幕"
 
-#: kpanel.C:464 kpanel.C:473
+#: kpanel.C:463 kpanel.C:472
 msgid "Hide the panel"
 msgstr "隐藏面板"
 
-#: kpanel.C:483 kpanel.C:495
+#: kpanel.C:482 kpanel.C:494
 msgid "Show the panel"
 msgstr "显示面板"
 
-#: kpanel.C:1100
+#: kpanel.C:1099
 msgid "Iconify other &windows"
 msgstr ""
 
-#: kpanel.C:1237
+#: kpanel.C:1236
 msgid "No comment available"
 msgstr "没有说明"
 
-#: kpanel.C:1246 tools.C:910
+#: kpanel.C:1245 tools.C:910
 msgid "Windowlist"
 msgstr "窗口列表"
 
-#: kpanel.C:1254 props.C:197
+#: kpanel.C:1253 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
@@ -87,7 +87,7 @@ msgstr "加在窗口列表中"
 msgid "Add a windowlist menu onto the panel"
 msgstr "在窗口面板上新增窗口列表菜单"
 
-#: events.C:827 props.C:183
+#: events.C:832 props.C:183
 msgid "Configure"
 msgstr "配置"
 
@@ -103,7 +103,7 @@ msgstr "编辑菜单项"
 msgid "Add or remove applications in the menu structure "
 msgstr "在菜单结构中增加或去掉应用程序 "
 
-#: events.C:829 props.C:189
+#: events.C:834 props.C:189
 msgid "Restart"
 msgstr "重新开始"
 
@@ -127,7 +127,7 @@ msgstr "锁住屏幕"
 msgid "The menu editor is not installed."
 msgstr "菜单编辑器没有安装."
 
-#: events.C:883 props.C:452
+#: events.C:888 props.C:452
 msgid "Oops!"
 msgstr "错误!"
 
@@ -141,7 +141,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:882
+#: events.C:887
 msgid "Cannot put this as button onto the panel!"
 msgstr "不能把这个对象当作按钮放到面板上!"
 

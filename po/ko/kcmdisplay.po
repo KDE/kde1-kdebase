@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,228 +18,227 @@ msgstr ""
 msgid "Enter new desktop name"
 msgstr "새 데스크탑 이름을 넣으십시오"
 
-#: backgnd.cpp:110 backgnd.cpp:162
+#: backgnd.cpp:110 backgnd.cpp:163
 msgid "Desktop"
 msgstr "데스크탑"
 
-#: backgnd.cpp:184
+#: backgnd.cpp:185
 msgid "&Rename ..."
 msgstr "이름바꾸기(&R)..."
 
-#: backgnd.cpp:195
+#: backgnd.cpp:196
 #, fuzzy
 msgid "&Common Background"
 msgstr "배경(&B)"
 
-#: backgnd.cpp:223 colorscm.cpp:82
+#: backgnd.cpp:224 colorscm.cpp:82
 msgid "Colors"
 msgstr "배경색"
 
-#: backgnd.cpp:250
+#: backgnd.cpp:251
 msgid "&One Color"
 msgstr "한가지색(&O)"
 
-#: backgnd.cpp:267
+#: backgnd.cpp:268
 msgid "&Two Color"
 msgstr "두가지색(&T)"
 
-#: backgnd.cpp:286
+#: backgnd.cpp:287
 msgid "Set&up ..."
 msgstr "설정(&u)..."
 
-#: backgnd.cpp:295
+#: backgnd.cpp:296
 msgid "Wallpaper"
 msgstr "바탕그림"
 
-#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1222
-#: backgnd.cpp:1379 backgnd.cpp:1917
+#: backgnd.cpp:327 backgnd.cpp:1214 backgnd.cpp:1372 backgnd.cpp:1910
 msgid "No wallpaper"
 msgstr "바탕그림 없음"
 
-#: backgnd.cpp:359
+#: backgnd.cpp:360
 msgid "&Browse..."
 msgstr "찾아보기(&B)..."
 
-#: backgnd.cpp:367
+#: backgnd.cpp:368
 msgid "Arrangement:"
 msgstr ""
 
-#: backgnd.cpp:374
+#: backgnd.cpp:375
 #, fuzzy
 msgid "Tiled"
 msgstr "타일식으로(&l)"
 
-#: backgnd.cpp:375
+#: backgnd.cpp:376
 msgid "Mirrored"
 msgstr ""
 
-#: backgnd.cpp:376
+#: backgnd.cpp:377
 #, fuzzy
 msgid "Center Tiled"
 msgstr "중앙(&C)"
 
-#: backgnd.cpp:377
+#: backgnd.cpp:378
 #, fuzzy
 msgid "Centred"
 msgstr "중앙(&C)"
 
-#: backgnd.cpp:378
+#: backgnd.cpp:379
 #, fuzzy
 msgid "Centred Brick"
 msgstr "중앙(&C)"
 
-#: backgnd.cpp:379
+#: backgnd.cpp:380
 #, fuzzy
 msgid "Centred Warp"
 msgstr "중앙(&C)"
 
-#: backgnd.cpp:380
+#: backgnd.cpp:381
 #, fuzzy
 msgid "Centred Maxpect"
 msgstr "중앙(&C)"
 
-#: backgnd.cpp:381
+#: backgnd.cpp:382
 msgid "Symmetrical Tiled"
 msgstr ""
 
-#: backgnd.cpp:382
+#: backgnd.cpp:383
 msgid "Symmetrical Mirrored"
 msgstr ""
 
-#: backgnd.cpp:383
+#: backgnd.cpp:384
 #, fuzzy
 msgid "Scaled"
 msgstr "크기조절(&S)"
 
-#: backgnd.cpp:398
+#: backgnd.cpp:399
 msgid "Ra&ndom"
 msgstr ""
 
-#: backgnd.cpp:407
+#: backgnd.cpp:408
 #, fuzzy
 msgid "Setu&p..."
 msgstr "설정(&u)..."
 
-#: backgnd.cpp:417
+#: backgnd.cpp:418
 msgid "&Dock into the panel"
 msgstr ""
 
-#: backgnd.cpp:442
+#: backgnd.cpp:443
 msgid "Cache size (kB):"
 msgstr ""
 
-#: backgnd.cpp:1346
+#: backgnd.cpp:1339
 msgid "Desktop names"
 msgstr "데스크탑 이름"
 
-#: backgnd.cpp:1391
+#: backgnd.cpp:1384
 #, fuzzy
 msgid "File error"
 msgstr "잘못된 이름"
 
-#: backgnd.cpp:1392
+#: backgnd.cpp:1385
 msgid "Can't load image file"
 msgstr ""
 
-#: backgnd.cpp:1415 backgnd.cpp:1887
+#: backgnd.cpp:1408 backgnd.cpp:1880
 msgid "Unsupported URL"
 msgstr ""
 
-#: backgnd.cpp:1416 backgnd.cpp:1888
+#: backgnd.cpp:1409 backgnd.cpp:1881
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 
-#: backgnd.cpp:1447
+#: backgnd.cpp:1440
 msgid "Two color backgrounds"
 msgstr "배경을 두가지 색으로"
 
-#: backgnd.cpp:1484
+#: backgnd.cpp:1477
 msgid "Blend colors from &top to bottom"
 msgstr "배경 위에서 아래로 점점 변화(&t)"
 
-#: backgnd.cpp:1490
+#: backgnd.cpp:1483
 msgid "Blend colors from &right to left"
 msgstr "배경 오른쪽에서 왼쪽으로 점점 변화(&r)"
 
-#: backgnd.cpp:1496
+#: backgnd.cpp:1489
 msgid "Use &pattern"
 msgstr "패턴 사용(&p)"
 
-#: backgnd.cpp:1523
+#: backgnd.cpp:1516
 msgid "Preview"
 msgstr "미리보기"
 
-#: backgnd.cpp:1534
+#: backgnd.cpp:1527
 msgid "Pattern &name"
 msgstr "패턴 이름(&n)"
 
-#: backgnd.cpp:1573
+#: backgnd.cpp:1566
 msgid "Current"
 msgstr "현재 설정"
 
-#: backgnd.cpp:1633
+#: backgnd.cpp:1626
 msgid "Filled"
 msgstr "채움"
 
-#: backgnd.cpp:1636
+#: backgnd.cpp:1629
 msgid "Fish net"
 msgstr "그물망"
 
-#: backgnd.cpp:1639
+#: backgnd.cpp:1632
 msgid "Triangles"
 msgstr "삼각형"
 
-#: backgnd.cpp:1642
+#: backgnd.cpp:1635
 msgid "Flowers"
 msgstr "꽃무늬"
 
-#: backgnd.cpp:1645
+#: backgnd.cpp:1638
 msgid "Rattan"
 msgstr "등나무"
 
-#: backgnd.cpp:1648
+#: backgnd.cpp:1641
 msgid "Cobbled Pavement"
 msgstr "자갈길"
 
-#: backgnd.cpp:1714
+#: backgnd.cpp:1707
 msgid "Random mode setup"
 msgstr ""
 
-#: backgnd.cpp:1720
+#: backgnd.cpp:1713
 msgid "Pick files from &directory"
 msgstr ""
 
-#: backgnd.cpp:1734
+#: backgnd.cpp:1727
 #, fuzzy
 msgid "&Browse ..."
 msgstr "찾아보기(&B)..."
 
-#: backgnd.cpp:1755
+#: backgnd.cpp:1748
 msgid "Timer Delay in seconds :"
 msgstr ""
 
-#: backgnd.cpp:1767
+#: backgnd.cpp:1760
 #, fuzzy
 msgid "In &order"
 msgstr "무시"
 
-#: backgnd.cpp:1784
+#: backgnd.cpp:1777
 #, fuzzy
 msgid "Desktops :"
 msgstr "데스크탑"
 
-#: backgnd.cpp:1823
+#: backgnd.cpp:1816
 #, fuzzy
 msgid "&Add"
 msgstr "추가(&A)..."
 
-#: backgnd.cpp:1994
+#: backgnd.cpp:1988
 #, fuzzy
 msgid "Directory error"
 msgstr "잘못된 이름"
 
-#: backgnd.cpp:1995
+#: backgnd.cpp:1989
 msgid "Selected directory doesn't exists"
 msgstr ""
 
@@ -437,48 +436,48 @@ msgstr "높음(&H)"
 msgid "Low"
 msgstr "낮음"
 
-#: general.cpp:222
+#: general.cpp:221
 msgid "Style"
 msgstr ""
 
-#: general.cpp:230
+#: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "윈도우 95 스타일로 위젯 그림(&D)"
 
-#: general.cpp:246
+#: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr ""
 
-#: general.cpp:260
+#: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
 msgstr ""
 
-#: general.cpp:531
+#: general.cpp:530
 msgid "General font"
 msgstr "일반 글꼴"
 
-#: general.cpp:536
+#: general.cpp:535
 msgid "Fixed font"
 msgstr "고정폭 글꼴"
 
-#: general.cpp:542
+#: general.cpp:541
 #, fuzzy
 msgid "Window title font"
 msgstr "윈도우 문자"
 
-#: general.cpp:547
+#: general.cpp:546
 msgid "Panel button font"
 msgstr "패널 단추 글꼴"
 
-#: general.cpp:552
+#: general.cpp:551
 msgid "Panel clock font"
 msgstr "패널 시계 글꼴"
 
-#: general.cpp:582
+#: general.cpp:581
 msgid "Sample text"
 msgstr "예제 글"
 
-#: general.cpp:590
+#: general.cpp:589
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
