@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -205,10 +205,6 @@ msgstr "&Novi prozor pomoæi"
 msgid "&Open File..."
 msgstr "&Otvori datoteku..."
 
-#: mainwidget.cpp:137
-msgid "Open UR&L..."
-msgstr "Otvori UR&L..."
-
 #: mainwidget.cpp:142
 msgid "&Search"
 msgstr "&Tra¾i"
@@ -334,7 +330,7 @@ msgstr "Ponovo uèitaj tekuæi dokument"
 msgid "In the Constructor!"
 msgstr "U konstruktor!"
 
-#: mainwidget.cpp:605
+#: mainwidget.cpp:612
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -342,11 +338,11 @@ msgstr ""
 "KDE sustav pomoæi\n"
 "Inaèica "
 
-#: mainwidget.cpp:607
+#: mainwidget.cpp:614
 msgid "About KDE Help"
 msgstr "O KDE pomoæi"
 
-#: mainwidget.cpp:640
+#: mainwidget.cpp:647
 msgid "&Add Bookmark"
 msgstr "&Dodaj bookmark"
 
@@ -361,3 +357,6 @@ msgstr "&Razlikuj velika/mala slova"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Pronaði"
+
+#~ msgid "Open UR&L..."
+#~ msgstr "Otvori UR&L..."

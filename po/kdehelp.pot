@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -207,10 +207,6 @@ msgstr ""
 msgid "&Open File..."
 msgstr ""
 
-#: mainwidget.cpp:137
-msgid "Open UR&L..."
-msgstr ""
-
 #: mainwidget.cpp:142
 msgid "&Search"
 msgstr ""
@@ -330,17 +326,17 @@ msgstr ""
 msgid "In the Constructor!"
 msgstr ""
 
-#: mainwidget.cpp:605
+#: mainwidget.cpp:612
 msgid ""
 "KDE Help System\n"
 "Version "
 msgstr ""
 
-#: mainwidget.cpp:607
+#: mainwidget.cpp:614
 msgid "About KDE Help"
 msgstr ""
 
-#: mainwidget.cpp:640
+#: mainwidget.cpp:647
 msgid "&Add Bookmark"
 msgstr ""
 

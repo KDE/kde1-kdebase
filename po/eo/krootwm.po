@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmrootwm 1.0pre2\n"
-"POT-Creation-Date: 1998-11-25 01:11+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -14,83 +14,83 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-3\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: krootwm.C:135 krootwm.C:706
+#: krootwm.C:221 krootwm.C:268
+msgid "Execute command"
+msgstr "Lanæu komandon"
+
+#: krootwm.C:223 krootwm.C:276
+msgid "Lock screen"
+msgstr "Þlosu l' ekranon"
+
+#: krootwm.C:224 krootwm.C:277
+msgid "Logout"
+msgstr "Adiaýu"
+
+#: krootwm.C:232 krootwm.C:270
+msgid "Refresh desktop"
+msgstr "Refreþigu labortabulon"
+
+#: krootwm.C:233 krootwm.C:272
+msgid "Unclutter windows"
+msgstr "Ordigu fenestrojn"
+
+#: krootwm.C:234 krootwm.C:273
+msgid "Cascade windows"
+msgstr "Kaskadu fenestrojn"
+
+#: krootwm.C:235 krootwm.C:274
+msgid "Arrange icons"
+msgstr "Aranøu piktogramojn"
+
+#: krootwm.C:236 krootwm.C:269
+msgid "Display properties"
+msgstr "Konfigura¼o"
+
+#: krootwm.C:244 krootwm.C:267
+msgid "Help on desktop"
+msgstr "Helpo pri labortabulo"
+
+#: krootwm.C:245
+msgid "About KDE..."
+msgstr "Pri KDE..."
+
+#: krootwm.C:263 krootwm.C:286 krootwm.C:761 krootwm.C:769
+msgid "New"
+msgstr "Nova"
+
+#: krootwm.C:264 krootwm.C:287
+msgid "Bookmarks"
+msgstr "Legosignoj"
+
+#: krootwm.C:288
+msgid "Desk"
+msgstr "Labortabulo"
+
+#: krootwm.C:289
+msgid "Windows"
+msgstr "Fenestroj"
+
+#: krootwm.C:344
+msgid "Edit Bookmarks"
+msgstr "Redaktu legosignojn"
+
+#: krootwm.C:358 krootwm.C:771
 msgid "Folder"
 msgstr "Dosierujo"
 
-#: krootwm.C:165
+#: krootwm.C:362
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ERARO: Ne ekzistas Þablono '%'"
 
-#: krootwm.C:225 krootwm.C:269
-msgid "Execute command"
-msgstr "Lanæu komandon"
-
-#: krootwm.C:227 krootwm.C:277
-msgid "Lock screen"
-msgstr "Þlosu l' ekranon"
-
-#: krootwm.C:228 krootwm.C:278
-msgid "Logout"
-msgstr "Adiaýu"
-
-#: krootwm.C:236 krootwm.C:271
-msgid "Refresh desktop"
-msgstr "Refreþigu labortabulon"
-
-#: krootwm.C:237 krootwm.C:273
-msgid "Unclutter windows"
-msgstr "Ordigu fenestrojn"
-
-#: krootwm.C:238 krootwm.C:274
-msgid "Cascade windows"
-msgstr "Kaskadu fenestrojn"
-
-#: krootwm.C:239 krootwm.C:275
-msgid "Arrange icons"
-msgstr "Aranøu piktogramojn"
-
-#: krootwm.C:240 krootwm.C:270
-msgid "Display properties"
-msgstr "Konfigura¼o"
-
-#: krootwm.C:248 krootwm.C:268
-msgid "Help on desktop"
-msgstr "Helpo pri labortabulo"
-
-#: krootwm.C:249
-msgid "About KDE..."
-msgstr "Pri KDE..."
-
-#: krootwm.C:264 krootwm.C:291 krootwm.C:696 krootwm.C:704
-msgid "New"
-msgstr "Nova"
-
-#: krootwm.C:265 krootwm.C:292
-msgid "Bookmarks"
-msgstr "Legosignoj"
-
-#: krootwm.C:293
-msgid "Desk"
-msgstr "Labortabulo"
-
-#: krootwm.C:294
-msgid "Windows"
-msgstr "Fenestroj"
-
-#: krootwm.C:323
-msgid "Edit Bookmarks"
-msgstr "Redaktu legosignojn"
-
-#: krootwm.C:726
+#: krootwm.C:792
 msgid "Could not create folder"
 msgstr "Ne eblis krei dosierujon"
 
-#: krootwm.C:791
+#: krootwm.C:860
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Kopirajto (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:795
+#: krootwm.C:864
 msgid "Usage:"
 msgstr "Uzo:"

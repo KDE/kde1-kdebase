@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-10-30 14:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -14,18 +14,219 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-3\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: main.cpp:34
+#: main.cpp:61
 msgid "&Font"
 msgstr "&Tiparo"
 
-#: main.cpp:36
+#: main.cpp:63
 msgid "&Color"
 msgstr "&Koloro"
 
-#: main.cpp:63
-msgid "usage: kcmkfm [-init | {font,color}]\n"
-msgstr "uzo: kcmkfm [-init | {font,color}]\n"
+#: main.cpp:65
+msgid "&Other"
+msgstr ""
 
-#: main.cpp:104
+#: main.cpp:68
+msgid "&Proxy"
+msgstr ""
+
+#: main.cpp:70
+msgid "&HTTP"
+msgstr ""
+
+#: main.cpp:73
+msgid "User &Agent"
+msgstr ""
+
+#: main.cpp:76
+msgid "Coo&kies"
+msgstr ""
+
+#: main.cpp:80
+msgid "&Desktop Icons"
+msgstr ""
+
+#: main.cpp:89
+#, c-format
+msgid ""
+"usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+msgstr ""
+
+#: main.cpp:178
 msgid "KFM Configuration"
 msgstr "KFM-agordilo"
+
+#: htmlopts.cpp:64
+msgid "Small"
+msgstr ""
+
+#: htmlopts.cpp:69
+msgid "Medium"
+msgstr ""
+
+#: htmlopts.cpp:74
+msgid "Large"
+msgstr ""
+
+#: htmlopts.cpp:83
+msgid "Standard Font"
+msgstr ""
+
+#: htmlopts.cpp:97
+msgid "Fixed Font"
+msgstr ""
+
+#: htmlopts.cpp:114
+msgid "Default Charset"
+msgstr ""
+
+#: htmlopts.cpp:122 htmlopts.cpp:276
+msgid "Use language charset"
+msgstr ""
+
+#: htmlopts.cpp:329
+msgid "Background Color:"
+msgstr ""
+
+#: htmlopts.cpp:341
+msgid "Normal Text Color:"
+msgstr ""
+
+#: htmlopts.cpp:353
+msgid "URL Link Color:"
+msgstr ""
+
+#: htmlopts.cpp:365
+msgid "Followed Link Color:"
+msgstr ""
+
+#: htmlopts.cpp:377
+msgid "Change cursor over link."
+msgstr ""
+
+#: htmlopts.cpp:383
+msgid "Underline links"
+msgstr ""
+
+#: miscopts.cpp:25
+msgid "&Allow per-URL settings"
+msgstr ""
+
+#: miscopts.cpp:33
+msgid "Tree &view follows navigation"
+msgstr ""
+
+#: miscopts.cpp:43
+msgid "Terminal"
+msgstr ""
+
+#: kproxydlg.cpp:50
+msgid "Don't forget to save your settings!"
+msgstr ""
+
+#: kproxydlg.cpp:58
+msgid "Use proxy"
+msgstr ""
+
+#: kproxydlg.cpp:67
+msgid "HTTP Proxy:"
+msgstr ""
+
+#: kproxydlg.cpp:82 kproxydlg.cpp:113
+msgid "Port:"
+msgstr ""
+
+#: kproxydlg.cpp:98
+msgid "FTP Proxy:"
+msgstr ""
+
+#: kproxydlg.cpp:128
+msgid "No Proxy for:"
+msgstr ""
+
+#: khttpoptdlg.cpp:38
+msgid "Accept languages:"
+msgstr ""
+
+#: khttpoptdlg.cpp:52
+msgid "Accept character sets:"
+msgstr ""
+
+#: khttpoptdlg.cpp:65
+msgid "Assume HTML"
+msgstr ""
+
+#: useragentdlg.cpp:45
+msgid "On server:"
+msgstr ""
+
+#: useragentdlg.cpp:67
+msgid "login as:"
+msgstr ""
+
+#: useragentdlg.cpp:87
+msgid "&Add"
+msgstr ""
+
+#: useragentdlg.cpp:107
+msgid "Known bindings:"
+msgstr ""
+
+#: kcookiesdlg.cpp:49
+msgid "&Enable Cookies"
+msgstr ""
+
+#: kcookiesdlg.cpp:56
+msgid "Default accept policy"
+msgstr ""
+
+#: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
+msgid "Accept"
+msgstr ""
+
+#: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
+msgid "Ask"
+msgstr ""
+
+#: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
+msgid "Reject"
+msgstr ""
+
+#: kcookiesdlg.cpp:90
+msgid "Domain specific settings:"
+msgstr ""
+
+#: kcookiesdlg.cpp:97
+msgid "Change domain accept policy"
+msgstr ""
+
+#: kcookiesdlg.cpp:239
+msgid "You must enter a domain first !"
+msgstr ""
+
+#: rootopts.cpp:73
+msgid "Horizontal Root Grid Spacing:"
+msgstr ""
+
+#: rootopts.cpp:84
+msgid "Vertical Root Grid Spacing:"
+msgstr ""
+
+#: rootopts.cpp:95
+msgid "&Transparent Text for Desktop Icons."
+msgstr ""
+
+#: rootopts.cpp:106
+msgid "Icon foreground color:"
+msgstr ""
+
+#: rootopts.cpp:118
+msgid "Icon background color:"
+msgstr ""
+
+#: rootopts.cpp:131
+msgid "Show &Hidden Files on Desktop"
+msgstr ""
+
+#~ msgid "usage: kcmkfm [-init | {font,color}]\n"
+#~ msgstr "uzo: kcmkfm [-init | {font,color}]\n"

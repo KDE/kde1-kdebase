@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm 1.0pre2\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1998-12-02 19:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -44,127 +44,135 @@ msgstr ""
 msgid "Window manager style"
 msgstr "Stilo de la fenestroregilo"
 
-#: titlebar.cpp:119
+#: titlebar.cpp:125
 msgid "Minimize"
 msgstr "Minimumigo"
 
-#: titlebar.cpp:123
+#: titlebar.cpp:129
 msgid "Maximize"
 msgstr "Maksimumigo"
 
-#: titlebar.cpp:127
+#: titlebar.cpp:133
 msgid "Sticky"
 msgstr "Fikso"
 
-#: titlebar.cpp:135
+#: titlebar.cpp:141
 msgid "Menu"
 msgstr "Menuo"
 
-#: titlebar.cpp:172 titlebar.cpp:928
+#: titlebar.cpp:178 titlebar.cpp:934
 msgid "Left"
 msgstr "Maldekstre"
 
-#: titlebar.cpp:176 titlebar.cpp:938
+#: titlebar.cpp:182 titlebar.cpp:944
 msgid "Right"
 msgstr "Dekstre"
 
-#: titlebar.cpp:465
+#: titlebar.cpp:471
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "La maldekstra flanko de la titollistelo estas plena...\n"
 "malaktivigas la maksimumigilon.\n"
 
-#: titlebar.cpp:498
+#: titlebar.cpp:504
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "La dekstra flanko de la titollistelo estas plena...\n"
 "malaktivigas la maksimumigilon.\n"
 
-#: titlebar.cpp:538
+#: titlebar.cpp:544
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "La maldekstra flanko de la titollistelo estas plena...\n"
 "malaktivigas la minimumigilon.\n"
 
-#: titlebar.cpp:571
+#: titlebar.cpp:577
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "La dekstra flanko de la titollistelo estas plena...\n"
 "malaktivigas la minimumigilon.\n"
 
-#: titlebar.cpp:924
+#: titlebar.cpp:930
 msgid "Title Alignment"
 msgstr "Titolaranøo"
 
-#: titlebar.cpp:933
+#: titlebar.cpp:939
 msgid "Middle"
 msgstr "Meze"
 
-#: titlebar.cpp:954
+#: titlebar.cpp:967
 msgid "Shaded Vertically"
 msgstr "Vertikala kolorþanøo"
 
-#: titlebar.cpp:960
+#: titlebar.cpp:973
 msgid "Shaded Horizontally"
 msgstr "Horizontala kolorþanøo"
 
-#: titlebar.cpp:969
+#: titlebar.cpp:982
 msgid "Plain"
 msgstr "Plenkolora"
 
-#: titlebar.cpp:977 titlebar.cpp:989
+#: titlebar.cpp:990 titlebar.cpp:1015
 msgid "Pixmap"
 msgstr "Rastrobildo"
 
-#: titlebar.cpp:1017
+#: titlebar.cpp:1003
+msgid "Active title has shaded frame"
+msgstr ""
+
+#: titlebar.cpp:1044
 msgid "Active pixmap:"
 msgstr "por aktiva titolo:"
 
-#: titlebar.cpp:1022
+#: titlebar.cpp:1049
 msgid "Inactive pixmap:"
 msgstr "por malaktiva titolo:"
 
-#: titlebar.cpp:1032
+#: titlebar.cpp:1055
+msgid "No pixmap under text"
+msgstr ""
+
+#: titlebar.cpp:1066
 msgid "Mouse action"
 msgstr "Musago"
 
-#: titlebar.cpp:1040
+#: titlebar.cpp:1074
 msgid "Left Button double click does:"
 msgstr "Æe maldekstra musdukliko:"
 
-#: titlebar.cpp:1050
+#: titlebar.cpp:1084
 msgid "(Un)Maximize"
 msgstr "(Mal)Maksimumigu"
 
-#: titlebar.cpp:1051
+#: titlebar.cpp:1085
 msgid "(Un)Shade"
 msgstr "(Mal)Suprenvolvu"
 
-#: titlebar.cpp:1052
+#: titlebar.cpp:1086
 msgid "Iconify"
 msgstr "Piktogramigu"
 
-#: titlebar.cpp:1053
+#: titlebar.cpp:1087
 msgid "(Un)Sticky"
 msgstr "(Mal)Fiksu"
 
-#: titlebar.cpp:1073
+#: titlebar.cpp:1107
 msgid "Title animation"
 msgstr "Titolanima¼o"
 
-#: titlebar.cpp:1089
+#: titlebar.cpp:1123
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:1304
+#: titlebar.cpp:1366
 msgid "Window manager setup - ERROR"
 msgstr "Konfigura¼o fenestroregilo - ERARO"
 
-#: titlebar.cpp:1305
+#: titlebar.cpp:1367
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
@@ -172,59 +180,59 @@ msgstr ""
 "Okazis eraro dum sekurigo de la\n"
 "titollistelaj bildoj! Kontrolu la dosierpermesojn."
 
-#: windows.cpp:67
+#: windows.cpp:68
 msgid "Windows"
 msgstr "Fenestroj"
 
-#: windows.cpp:81
+#: windows.cpp:82
 msgid "Vertical maximization only by default"
 msgstr "Vertikala maksimumigo nur implicite"
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Display content in moving windows"
 msgstr "Dum fenestroþovado montru la enhavon"
 
-#: windows.cpp:91
+#: windows.cpp:92
 msgid "Display content in resizing windows"
 msgstr "Dum grandecþanøo montru la enhavon"
 
-#: windows.cpp:97
+#: windows.cpp:98
 msgid "Resize animation:"
 msgstr "Anima¼o por grandecþanøo:"
 
-#: windows.cpp:110
+#: windows.cpp:111
 msgid "None"
 msgstr "Neniu"
 
-#: windows.cpp:116
+#: windows.cpp:117
 msgid "Fast"
 msgstr "Rapida"
 
-#: windows.cpp:127
+#: windows.cpp:128
 msgid "Placement policy"
 msgstr "Lokadostrategio"
 
-#: windows.cpp:133
+#: windows.cpp:134
 msgid "Smart"
 msgstr "Inteligenta"
 
-#: windows.cpp:135
+#: windows.cpp:136
 msgid "Cascade"
 msgstr "Kaskada"
 
-#: windows.cpp:137
+#: windows.cpp:138
 msgid "Interactive"
 msgstr "Interaga"
 
-#: windows.cpp:139
+#: windows.cpp:140
 msgid "Random"
 msgstr "Hazarda"
 
-#: windows.cpp:141
+#: windows.cpp:142
 msgid "Manual"
 msgstr "Permana"
 
-#: windows.cpp:152
+#: windows.cpp:154
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
@@ -233,31 +241,36 @@ msgstr ""
 "  Permesu kovradon:\n"
 "(% de la laborspaco)"
 
-#: windows.cpp:171
+#: windows.cpp:175
 msgid "Focus policy"
 msgstr "Fokusigomaniero"
 
-#: windows.cpp:181
+#: windows.cpp:185
 msgid "Click to focus"
 msgstr "per kliko"
 
-#: windows.cpp:183
+#: windows.cpp:187
 msgid "Focus follows mouse"
 msgstr "sekvante la muson (inteligenta)"
 
-#: windows.cpp:185
+#: windows.cpp:189
 msgid "Classic focus follows mouse"
 msgstr "sekvante la muson (klasika)"
 
-#: windows.cpp:187
+#: windows.cpp:191
 msgid "Classic sloppy focus"
 msgstr "sekvante la muson"
 
-#: windows.cpp:198
+#: windows.cpp:203
 msgid "Auto Raise"
 msgstr "Aýtomalfonigo"
 
-#: windows.cpp:205
+#: windows.cpp:209
+#, fuzzy
+msgid "Click Raise"
+msgstr "Malfonigo"
+
+#: windows.cpp:216
 msgid "Delay (ms)"
 msgstr "Prokrasto (ms)"
 
@@ -274,7 +287,8 @@ msgid "Move pointer towards center after switch"
 msgstr "Movu la montrilon al la centro post limtransiro"
 
 #: desktop.cpp:87
-msgid "Dekstop switch delay:"
+#, fuzzy
+msgid "Desktop switch delay:"
 msgstr "Þalto al alia labortabulo post:"
 
 #: desktop.cpp:117

@@ -60,13 +60,12 @@ msgid "number of screens     : %i"
 msgstr "numero di schermi     : %i"
 
 #: info.cpp:179
-#,          
 msgid ""
 "No Information available\n"
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"Nessuna informazione disponibile\n" 
+"Nessuna informazione disponibile\n"
 " o\n"
 "questo sistema non è ancora supportato :-("
 
@@ -94,7 +93,7 @@ msgstr "Punto di Montaggio"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr "Tipo FS"   
+msgstr "Tipo FS"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
@@ -105,7 +104,6 @@ msgid "unknown CPU type"
 msgstr "tipo di CPU sconosciuto"
 
 #: info_hpux.cpp:62
-#,      
 msgid "unavailable"
 msgstr "non disponibile"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-12-1 18:40+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -14,75 +14,47 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-3\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: main.cpp:64
+#: main.cpp:72
 msgid "&Standard shortcuts"
 msgstr "&Originaj klavkombinoj"
 
-#: main.cpp:69
+#: main.cpp:80
 msgid "&Global shortcuts"
 msgstr "&KDE-vastaj klavkombinoj"
 
-#: main.cpp:76
+#: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
 msgstr "uzo: kcmkeys [-init | [standard,global}]\n"
 
-#: main.cpp:118
+#: main.cpp:132
 msgid "Key binding settings"
 msgstr "Konfigura¼o de klavkombinoj"
 
-#: standard.cpp:53
-msgid "New"
-msgstr "Nova"
-
-#: standard.cpp:57
-msgid "Next"
-msgstr "Sekva"
-
-#: standard.cpp:58
-msgid "Prior"
-msgstr "Antaýa"
-
-#: standard.cpp:63
-msgid "Find"
-msgstr "Trovu"
-
-#: standard.cpp:66
-msgid "Home"
-msgstr "Supren"
-
-#: standard.cpp:67
-msgid "End"
-msgstr "Malsupren"
-
-#: global.cpp:81 standard.cpp:83
+#: keyconfig.cpp:106
 msgid "Current scheme"
 msgstr "Aktuala skemo"
 
-#: global.cpp:83 standard.cpp:84
+#: keyconfig.cpp:108
 msgid "KDE default"
 msgstr "KDE-origina"
 
-#: standard.cpp:85
-msgid "KDE lite"
-msgstr "KDE-eta"
-
-#: global.cpp:90 standard.cpp:90
+#: keyconfig.cpp:115
 msgid "&Key scheme"
 msgstr "&Klavoskemo"
 
-#: global.cpp:101
+#: keyconfig.cpp:126
 msgid "&Add ..."
 msgstr "&Aldonu..."
 
-#: global.cpp:123
+#: keyconfig.cpp:148
 msgid "&Save changes"
 msgstr "&Sekurigu þanøojn"
 
-#: global.cpp:182
+#: keyconfig.cpp:211
 msgid "Error removing scheme"
 msgstr "Eraro dum forigo de skemo"
 
-#: global.cpp:183
+#: keyconfig.cpp:212
 msgid ""
 "This key scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -92,11 +64,11 @@ msgstr ""
 "Verþajne vi ne havas permeson þanøi la dosieraron\n"
 "en kiu la klavoskemo rezidas."
 
-#: global.cpp:314
+#: keyconfig.cpp:343
 msgid "Naming conflict"
 msgstr "Nomkonflikto"
 
-#: global.cpp:315
+#: keyconfig.cpp:344
 msgid ""
 "Please choose a unique name for the new key\n"
 "scheme. The one you entered already appears\n"
@@ -218,3 +190,30 @@ msgstr ""
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr ""
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Nova"
+
+#: stdbindings.cpp:7
+msgid "Next"
+msgstr "Sekva"
+
+#: stdbindings.cpp:8
+msgid "Prior"
+msgstr "Antaýa"
+
+#: stdbindings.cpp:13
+msgid "Find"
+msgstr "Trovu"
+
+#: stdbindings.cpp:16
+msgid "Home"
+msgstr "Supren"
+
+#: stdbindings.cpp:17
+msgid "End"
+msgstr "Malsupren"
+
+#~ msgid "KDE lite"
+#~ msgstr "KDE-eta"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-04-20 22:02+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -207,10 +207,6 @@ msgstr "新求助視窗[&N]"
 msgid "&Open File..."
 msgstr "開啟檔案[&O]..."
 
-#: mainwidget.cpp:137
-msgid "Open UR&L..."
-msgstr "開啟 UR&L..."
-
 #: mainwidget.cpp:142
 msgid "&Search"
 msgstr "搜尋[&S]"
@@ -330,7 +326,7 @@ msgstr "重新載入目前的文件"
 msgid "In the Constructor!"
 msgstr "正在建造中!"
 
-#: mainwidget.cpp:605
+#: mainwidget.cpp:612
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -338,11 +334,11 @@ msgstr ""
 "KDE 求助系統\n"
 "版本 "
 
-#: mainwidget.cpp:607
+#: mainwidget.cpp:614
 msgid "About KDE Help"
 msgstr "有關 KDE 求助"
 
-#: mainwidget.cpp:640
+#: mainwidget.cpp:647
 msgid "&Add Bookmark"
 msgstr "加入書籤[&A]"
 
@@ -357,6 +353,9 @@ msgstr ""
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr ""
+
+#~ msgid "Open UR&L..."
+#~ msgstr "開啟 UR&L..."
 
 #, fuzzy
 #~ msgid "&Contents"

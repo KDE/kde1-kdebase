@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -201,10 +201,6 @@ msgstr "&Nýr hjálpargluggi"
 msgid "&Open File..."
 msgstr "&Opna skrá..."
 
-#: mainwidget.cpp:137
-msgid "Open UR&L..."
-msgstr "Opna &slóð (URL)"
-
 #: mainwidget.cpp:142
 msgid "&Search"
 msgstr "&Leita"
@@ -330,7 +326,7 @@ msgstr "Endurlesa þetta skjal"
 msgid "In the Constructor!"
 msgstr "Í smiðnum!"
 
-#: mainwidget.cpp:605
+#: mainwidget.cpp:612
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -338,11 +334,11 @@ msgstr ""
 "KDE Hjálparkerfi\n"
 "Útgáfa "
 
-#: mainwidget.cpp:607
+#: mainwidget.cpp:614
 msgid "About KDE Help"
 msgstr "Um KDE Hjálparkerfið"
 
-#: mainwidget.cpp:640
+#: mainwidget.cpp:647
 msgid "&Add Bookmark"
 msgstr "&Setja Bókamerki"
 
@@ -357,3 +353,6 @@ msgstr "Háð há-/lágstöfum"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Finna"
+
+#~ msgid "Open UR&L..."
+#~ msgstr "Opna &slóð (URL)"

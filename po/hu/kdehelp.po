@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.4\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-02-26 19:39+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -208,10 +208,6 @@ msgstr "Ú&j segítség ablak"
 msgid "&Open File..."
 msgstr "File &megnyitása"
 
-#: mainwidget.cpp:137
-msgid "Open UR&L..."
-msgstr "&URL megnyitása"
-
 #: mainwidget.cpp:142
 msgid "&Search"
 msgstr "&Keres"
@@ -331,7 +327,7 @@ msgstr "Aktuális dokumentum újraolvasása"
 msgid "In the Constructor!"
 msgstr "A konstruktorban!"
 
-#: mainwidget.cpp:605
+#: mainwidget.cpp:612
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -339,11 +335,11 @@ msgstr ""
 "KDE Segítség rendszer\n"
 "Verzió: "
 
-#: mainwidget.cpp:607
+#: mainwidget.cpp:614
 msgid "About KDE Help"
 msgstr "A KDE Segítség névjegye"
 
-#: mainwidget.cpp:640
+#: mainwidget.cpp:647
 msgid "&Add Bookmark"
 msgstr "&Hozzáadás a kedvencekhez"
 
@@ -358,6 +354,9 @@ msgstr ""
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr ""
+
+#~ msgid "Open UR&L..."
+#~ msgstr "&URL megnyitása"
 
 #, fuzzy
 #~ msgid "&Contents"

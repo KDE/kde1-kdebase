@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-10-23 17:16+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -199,10 +199,6 @@ msgstr "&Nueva ventana de ayuda"
 msgid "&Open File..."
 msgstr "Abrir &archivo"
 
-#: mainwidget.cpp:137
-msgid "Open UR&L..."
-msgstr "Abrir &URL"
-
 #: mainwidget.cpp:142
 msgid "&Search"
 msgstr "&Buscar"
@@ -331,7 +327,7 @@ msgid "In the Constructor!"
 msgstr "¡En el constructor!"
 
 # er... translating debug messages, isn't it too much?
-#: mainwidget.cpp:605
+#: mainwidget.cpp:612
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -339,11 +335,11 @@ msgstr ""
 "Sistema de ayuda del KDE\n"
 "Versión "
 
-#: mainwidget.cpp:607
+#: mainwidget.cpp:614
 msgid "About KDE Help"
 msgstr "Acerca de la ayuda KDE"
 
-#: mainwidget.cpp:640
+#: mainwidget.cpp:647
 msgid "&Add Bookmark"
 msgstr "&Agregar marcador"
 
@@ -358,3 +354,6 @@ msgstr "Distinguir mayúsculas"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Buscar"
+
+#~ msgid "Open UR&L..."
+#~ msgstr "Abrir &URL"

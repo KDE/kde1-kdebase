@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-01-26 14:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -198,10 +198,6 @@ msgstr "&Nova Janela de Ajuda"
 msgid "&Open File..."
 msgstr "Abrir Ficheir&o..."
 
-#: mainwidget.cpp:137
-msgid "Open UR&L..."
-msgstr "Abrir UR&L..."
-
 #: mainwidget.cpp:142
 msgid "&Search"
 msgstr "&Procurar"
@@ -330,7 +326,7 @@ msgstr "Recarregar documento actual"
 msgid "In the Constructor!"
 msgstr "No Construtor!"
 
-#: mainwidget.cpp:605
+#: mainwidget.cpp:612
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -338,11 +334,11 @@ msgstr ""
 "Sistema de Ajuda do KDE\n"
 "Versão "
 
-#: mainwidget.cpp:607
+#: mainwidget.cpp:614
 msgid "About KDE Help"
 msgstr "Acerca da Ajuda do KDE"
 
-#: mainwidget.cpp:640
+#: mainwidget.cpp:647
 msgid "&Add Bookmark"
 msgstr "&Adicionar Favorito"
 
@@ -357,3 +353,6 @@ msgstr "&Maísculas/Minusculas"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Procurar"
+
+#~ msgid "Open UR&L..."
+#~ msgstr "Abrir UR&L..."

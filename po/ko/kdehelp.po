@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -208,10 +208,6 @@ msgstr "새 도움말 윈도우(&N)"
 msgid "&Open File..."
 msgstr "파일 열기(&F)..."
 
-#: mainwidget.cpp:137
-msgid "Open UR&L..."
-msgstr "URL 열기(&L)..."
-
 #: mainwidget.cpp:142
 msgid "&Search"
 msgstr "찾기(&S)"
@@ -338,7 +334,7 @@ msgstr "현재 문서 다시 불러오기"
 msgid "In the Constructor!"
 msgstr "공사중!"
 
-#: mainwidget.cpp:605
+#: mainwidget.cpp:612
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -346,11 +342,11 @@ msgstr ""
 "KDE 도움말 시스템\n"
 "버전 "
 
-#: mainwidget.cpp:607
+#: mainwidget.cpp:614
 msgid "About KDE Help"
 msgstr "KDE 도움말 정보"
 
-#: mainwidget.cpp:640
+#: mainwidget.cpp:647
 msgid "&Add Bookmark"
 msgstr "즐겨찾기 추가(&A)"
 
@@ -365,6 +361,9 @@ msgstr ""
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr ""
+
+#~ msgid "Open UR&L..."
+#~ msgstr "URL 열기(&L)..."
 
 #~ msgid "Could not start or find KFM"
 #~ msgstr "KFM을 시작할 수 없거나 찾을 수 없습니다"

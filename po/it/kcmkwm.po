@@ -40,7 +40,7 @@ msgstr "utilizzo: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
-msgstr "Stile Window manager"  
+msgstr "Stile Window manager"
 
 #: titlebar.cpp:125
 msgid "Minimize"
@@ -160,8 +160,8 @@ msgstr "Riduce a icona"
 msgid "(Un)Sticky"
 msgstr "Appiccica/Stacca"
 
-#: titlebar.cpp:1107
 #            
+#: titlebar.cpp:1107
 msgid "Title animation"
 msgstr "Animazione titolo"
 
@@ -199,8 +199,8 @@ msgstr "Mostra contenuto durante il movimento delle finestre"
 msgid "Display content in resizing windows"
 msgstr "Mostra contenuto durante il ridimensionamento delle finestre"
 
-#: windows.cpp:98
 #          
+#: windows.cpp:98
 msgid "Resize animation:"
 msgstr "Animazione ridimensionamento:"
 
@@ -270,8 +270,8 @@ msgstr "Attivazione classica semplice"
 msgid "Auto Raise"
 msgstr "Primo piano automatico"
 
-#: windows.cpp:209
 #        
+#: windows.cpp:209
 msgid "Click Raise"
 msgstr "Click Alza"
 
@@ -291,8 +291,8 @@ msgstr "Abilita bordi attivi del Desktop"
 msgid "Move pointer towards center after switch"
 msgstr "Metti il cursore al centro dopo il cambio di desktop"
 
-#: desktop.cpp:87
 #        
+#: desktop.cpp:87
 msgid "Desktop switch delay:"
 msgstr "Attesa cambiamento desktop:"
 
@@ -373,8 +373,8 @@ msgstr "Alza"
 msgid "Lower"
 msgstr "Abbassa"
 
-#: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 #        
+#: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 msgid "Operations menu"
 msgstr "Menu operazioni"
 

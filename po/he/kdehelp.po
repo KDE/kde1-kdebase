@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
 "Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -208,10 +208,6 @@ msgstr "שד&ח הרזע ןולח"
 msgid "&Open File..."
 msgstr "ץבוק חת&פ"
 
-#: mainwidget.cpp:137
-msgid "Open UR&L..."
-msgstr "רושי&ק חתפ"
-
 #: mainwidget.cpp:142
 msgid "&Search"
 msgstr "שופי&ח"
@@ -335,17 +331,17 @@ msgstr "יחכונה ךמסמה תא שדחמ ןעט"
 msgid "In the Constructor!"
 msgstr "??הנובה ךותב אצמנ"
 
-#: mainwidget.cpp:605
+#: mainwidget.cpp:612
 msgid ""
 "KDE Help System\n"
 "Version "
 msgstr "KDE לש הרזעה תכרעמהסריג "
 
-#: mainwidget.cpp:607
+#: mainwidget.cpp:614
 msgid "About KDE Help"
 msgstr "הרזעה תכרעמ תודוא"
 
-#: mainwidget.cpp:640
+#: mainwidget.cpp:647
 msgid "&Add Bookmark"
 msgstr "היינמיס ףסוה"
 
@@ -360,6 +356,9 @@ msgstr ""
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr ""
+
+#~ msgid "Open UR&L..."
+#~ msgstr "רושי&ק חתפ"
 
 #~ msgid "Could not start or find KFM"
 #~ msgstr "סקונילה רייס תא אוצמל וא ליחתהל ןתינ אל"

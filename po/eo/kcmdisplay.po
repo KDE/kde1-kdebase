@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 1.0pre2\n"
-"POT-Creation-Date: 1998-11-29 01:12+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -18,214 +18,215 @@ msgstr ""
 msgid "Enter new desktop name"
 msgstr "Tajpu novan nomon por la labortabulo"
 
-#: backgnd.cpp:110 backgnd.cpp:151
+#: backgnd.cpp:110 backgnd.cpp:162
 msgid "Desktop"
 msgstr "Labortabulo"
 
-#: backgnd.cpp:173
+#: backgnd.cpp:184
 msgid "&Rename ..."
 msgstr "&Alinomu ..."
 
-#: backgnd.cpp:184
+#: backgnd.cpp:195
 msgid "&Common Background"
 msgstr "&Komuna Fono"
 
-#: backgnd.cpp:213 colorscm.cpp:82
+#: backgnd.cpp:223 colorscm.cpp:82
 msgid "Colors"
 msgstr "Koloroj"
 
-#: backgnd.cpp:240
+#: backgnd.cpp:250
 msgid "&One Color"
 msgstr "&Unu koloro"
 
-#: backgnd.cpp:257
+#: backgnd.cpp:267
 msgid "&Two Color"
 msgstr "&Du koloroj"
 
-#: backgnd.cpp:276
+#: backgnd.cpp:286
 msgid "Set&up ..."
 msgstr "&Adaptu ..."
 
-#: backgnd.cpp:285
+#: backgnd.cpp:295
 msgid "Wallpaper"
 msgstr "Tapeto"
 
-#: backgnd.cpp:296 backgnd.cpp:531 backgnd.cpp:545 backgnd.cpp:1150
-#: backgnd.cpp:1307 backgnd.cpp:1843
+#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1218
+#: backgnd.cpp:1372 backgnd.cpp:1910
 msgid "No wallpaper"
 msgstr "sen tapeto"
 
-#: backgnd.cpp:325
+#: backgnd.cpp:359
 msgid "&Browse..."
 msgstr "&Elektu..."
 
-#: backgnd.cpp:333
+#: backgnd.cpp:367
+msgid "Arrangement:"
+msgstr ""
+
+#: backgnd.cpp:374
 msgid "Tiled"
 msgstr "Kahele"
 
-#: backgnd.cpp:334
+#: backgnd.cpp:375
 msgid "Mirrored"
 msgstr "Spegulite"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:376
 msgid "Center Tiled"
 msgstr "Kaheloj centraj"
 
-#: backgnd.cpp:336
+#: backgnd.cpp:377
 msgid "Centred"
 msgstr "Centrigite"
 
-#: backgnd.cpp:337
+#: backgnd.cpp:378
 msgid "Centred Brick"
 msgstr "Centre kun brikoj"
 
-#: backgnd.cpp:338
+#: backgnd.cpp:379
 msgid "Centred Warp"
 msgstr "Centre kun radioj"
 
-#: backgnd.cpp:339
+#: backgnd.cpp:380
 msgid "Centred Maxpect"
 msgstr "Centre etendite"
 
-#: backgnd.cpp:340
+#: backgnd.cpp:381
 msgid "Symmetrical Tiled"
 msgstr "Simetrie kahele"
 
-#: backgnd.cpp:341
+#: backgnd.cpp:382
 msgid "Symmetrical Mirrored"
 msgstr "Simetrie spegulite"
 
-#: backgnd.cpp:342
+#: backgnd.cpp:383
 msgid "Scaled"
 msgstr "Etendite"
 
-#: backgnd.cpp:354
+#: backgnd.cpp:398
 msgid "Ra&ndom"
 msgstr "&Hazarde"
 
-#: backgnd.cpp:363
+#: backgnd.cpp:407
 msgid "Setu&p..."
 msgstr "&Adaptu ..."
 
-#: backgnd.cpp:371
+#: backgnd.cpp:417
 msgid "&Dock into the panel"
 msgstr "&Doku en la panelo"
 
-#: backgnd.cpp:380
-msgid "Cache size"
+#: backgnd.cpp:442
+#, fuzzy
+msgid "Cache size (kB):"
 msgstr "Kaþmemoro"
 
-#: backgnd.cpp:398
-msgid "kb"
-msgstr "kb"
-
-#: backgnd.cpp:1274
+#: backgnd.cpp:1339
 msgid "Desktop names"
 msgstr "Nomoj de la labortabuloj"
 
-#: backgnd.cpp:1319
+#: backgnd.cpp:1384
 msgid "File error"
 msgstr "Dosiereraro"
 
-#: backgnd.cpp:1320
+#: backgnd.cpp:1385
 msgid "Can't load image file"
 msgstr "Ne eblis legi la bilddosieron"
 
-#: backgnd.cpp:1343 backgnd.cpp:1813
+#: backgnd.cpp:1408 backgnd.cpp:1880
 msgid "Unsupported URL"
 msgstr "Nesubtenata URL"
 
-#: backgnd.cpp:1344 backgnd.cpp:1814
+#: backgnd.cpp:1409 backgnd.cpp:1881
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 "Pardonu, tiu tipo de URL momente ne nestas subtenata de tiu æi KDE-modulo"
 
-#: backgnd.cpp:1375
+#: backgnd.cpp:1440
 msgid "Two color backgrounds"
 msgstr "Dukoloraj fonoj"
 
-#: backgnd.cpp:1412
+#: backgnd.cpp:1477
 msgid "Blend colors from &top to bottom"
 msgstr "Þanøetu la kolorojn de &supre malsupren"
 
-#: backgnd.cpp:1418
+#: backgnd.cpp:1483
 msgid "Blend colors from &right to left"
 msgstr "Þanøetu la koloroj de &dekstre maldekstren"
 
-#: backgnd.cpp:1424
+#: backgnd.cpp:1489
 msgid "Use &pattern"
 msgstr "Uzu kolor&aranøon"
 
-#: backgnd.cpp:1451
+#: backgnd.cpp:1516
 msgid "Preview"
 msgstr "Antaýrigardo"
 
-#: backgnd.cpp:1462
+#: backgnd.cpp:1527
 msgid "Pattern &name"
 msgstr "&Nomo de koloraranøo"
 
-#: backgnd.cpp:1501
+#: backgnd.cpp:1566
 msgid "Current"
 msgstr "Aktuala"
 
-#: backgnd.cpp:1561
+#: backgnd.cpp:1626
 msgid "Filled"
 msgstr "Unukolora"
 
-#: backgnd.cpp:1564
+#: backgnd.cpp:1629
 msgid "Fish net"
 msgstr "Fiþreto"
 
-#: backgnd.cpp:1567
+#: backgnd.cpp:1632
 msgid "Triangles"
 msgstr "Trianguloj"
 
-#: backgnd.cpp:1570
+#: backgnd.cpp:1635
 msgid "Flowers"
 msgstr "Floretoj"
 
-#: backgnd.cpp:1573
+#: backgnd.cpp:1638
 msgid "Rattan"
 msgstr "Plekta¼o"
 
-#: backgnd.cpp:1576
+#: backgnd.cpp:1641
 msgid "Cobbled Pavement"
 msgstr "Pavimo"
 
-#: backgnd.cpp:1642
+#: backgnd.cpp:1707
 msgid "Random mode setup"
 msgstr "Hazardo-agordo"
 
-#: backgnd.cpp:1648
+#: backgnd.cpp:1713
 msgid "Pick files from &directory"
 msgstr "PRenu dosierojn de &dosierujo"
 
-#: backgnd.cpp:1662
+#: backgnd.cpp:1727
 msgid "&Browse ..."
 msgstr "&Elektu..."
 
-#: backgnd.cpp:1683
+#: backgnd.cpp:1748
 msgid "Timer Delay in seconds :"
 msgstr "Prokrasto en sekundoj:"
 
-#: backgnd.cpp:1695
+#: backgnd.cpp:1760
 msgid "In &order"
 msgstr "Laý &ordo"
 
-#: backgnd.cpp:1712
+#: backgnd.cpp:1777
 msgid "Desktops :"
 msgstr "Labortabuloj:"
 
-#: backgnd.cpp:1750
+#: backgnd.cpp:1816
 msgid "&Add"
 msgstr "&Aldonu"
 
-#: backgnd.cpp:1920
+#: backgnd.cpp:1987
 msgid "Directory error"
 msgstr "Dosierujo-eraro"
 
-#: backgnd.cpp:1921
+#: backgnd.cpp:1988
 msgid "Selected directory doesn't exists"
 msgstr "La elektita dosierujo ne ekzistas"
 
@@ -423,47 +424,51 @@ msgstr "&Alta"
 msgid "Low"
 msgstr "Malalta"
 
-#: general.cpp:220
+#: general.cpp:222
 msgid "Fonts etc."
 msgstr "Tiparoj ktp."
 
-#: general.cpp:228
+#: general.cpp:230
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "&Pentru fenestra¼ojn laý Vin95-stilo"
 
-#: general.cpp:242
+#: general.cpp:244
 msgid "&Apply style to non-KDE apps"
 msgstr "&Apliku stilon al ne-KDE-aj aplika¼oj"
 
-#: general.cpp:255
+#: general.cpp:258
+msgid "&Menubar on top of the screen in the style of MacOS"
+msgstr ""
+
+#: general.cpp:273
 msgid "Desktop fonts"
 msgstr "Labortabulaj tiparoj"
 
-#: general.cpp:267
+#: general.cpp:285
 msgid "General font"
 msgstr "Normala tiparo"
 
-#: general.cpp:272
+#: general.cpp:290
 msgid "Fixed font"
 msgstr "Egallarøa tiparo"
 
-#: general.cpp:278
+#: general.cpp:296
 msgid "Window title font"
 msgstr "Tiparo por fenestrotitolo"
 
-#: general.cpp:283
+#: general.cpp:301
 msgid "Panel button font"
 msgstr "Tiparo por la panelbutonoj"
 
-#: general.cpp:288
+#: general.cpp:306
 msgid "Panel clock font"
 msgstr "Tiparo por la panelhorloøo"
 
-#: general.cpp:318
+#: general.cpp:336
 msgid "Sample text"
 msgstr "Ekzemploteksto"
 
-#: general.cpp:326
+#: general.cpp:344
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
@@ -540,3 +545,6 @@ msgstr "implicita"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "iu"
+
+#~ msgid "kb"
+#~ msgstr "kb"

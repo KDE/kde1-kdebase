@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -208,10 +208,6 @@ msgstr "Fereastrã &nouã de informaþii"
 msgid "&Open File..."
 msgstr "&Deschide Fiºier"
 
-#: mainwidget.cpp:137
-msgid "Open UR&L..."
-msgstr "Deschide UR&L..."
-
 #: mainwidget.cpp:142
 msgid "&Search"
 msgstr "&Cautã"
@@ -337,7 +333,7 @@ msgstr "Reîncarcã documentul curent"
 msgid "In the Constructor!"
 msgstr "În Constructor!"
 
-#: mainwidget.cpp:605
+#: mainwidget.cpp:612
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -345,11 +341,11 @@ msgstr ""
 "Sistemul de Informaþii KDE\n"
 "Versiunea "
 
-#: mainwidget.cpp:607
+#: mainwidget.cpp:614
 msgid "About KDE Help"
 msgstr "Despre Informaþii KDE"
 
-#: mainwidget.cpp:640
+#: mainwidget.cpp:647
 msgid "&Add Bookmark"
 msgstr "&Adaugã semn de carte"
 
@@ -364,6 +360,9 @@ msgstr ""
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr ""
+
+#~ msgid "Open UR&L..."
+#~ msgstr "Deschide UR&L..."
 
 #, fuzzy
 #~ msgid "&Contents"

@@ -119,7 +119,7 @@ msgstr "Grande"
 
 #: options.cpp:110
 msgid "Visuals"
-msgstr "Visuali"  
+msgstr "Visuali"
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
@@ -136,7 +136,7 @@ msgstr "Velocità:"
 
 #: options.cpp:191 options.cpp:293 options.cpp:356
 msgid "Slow"
-msgstr "Lenta:" 
+msgstr "Lenta:"
 
 #: options.cpp:198 options.cpp:300 options.cpp:363
 msgid "Fast"
@@ -155,13 +155,12 @@ msgid "Others"
 msgstr "Altri"
 
 #: options.cpp:408
-#,       
 msgid "Personal Menu Entries &First"
 msgstr "P&rima Voci del Menu Personale"
 
 #
-#: options.cpp:416
 #         
+#: options.cpp:416
 msgid "Menu F&olders First"
 msgstr "Prima le &Cartelle menu"
 
@@ -169,10 +168,10 @@ msgstr "Prima le &Cartelle menu"
 msgid "&Clock shows time in AM/PM format"
 msgstr "&Ora scritta in formato AM/PM"
 
-#: options.cpp:432
 #         
+#: options.cpp:432
 msgid "Clock shows time in &Internet beats"
-msgstr ""                               
+msgstr ""
 
 #: disknav.cpp:38
 msgid "History"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-12-15 22:38+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -206,10 +206,6 @@ msgstr "&Nova finestra d'ajut"
 msgid "&Open File..."
 msgstr "&Obre fitxer..."
 
-#: mainwidget.cpp:137
-msgid "Open UR&L..."
-msgstr "Obre &URL..."
-
 #: mainwidget.cpp:142
 msgid "&Search"
 msgstr "&Cerca"
@@ -336,7 +332,7 @@ msgstr "Actualitza el document actual"
 msgid "In the Constructor!"
 msgstr "En el constructor!"
 
-#: mainwidget.cpp:605
+#: mainwidget.cpp:612
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -344,11 +340,11 @@ msgstr ""
 "Sistema d'ajut KDE\n"
 "Versió "
 
-#: mainwidget.cpp:607
+#: mainwidget.cpp:614
 msgid "About KDE Help"
 msgstr "Quant a l'ajut KDE"
 
-#: mainwidget.cpp:640
+#: mainwidget.cpp:647
 msgid "&Add Bookmark"
 msgstr "&Afegeix punt"
 
@@ -363,3 +359,6 @@ msgstr "&Sensible a caixa"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Busca"
+
+#~ msgid "Open UR&L..."
+#~ msgstr "Obre &URL..."

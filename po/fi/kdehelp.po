@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -212,10 +212,6 @@ msgstr "&Uusi ohjeikkuna"
 msgid "&Open File..."
 msgstr "&Avaa tiedosto..."
 
-#: mainwidget.cpp:137
-msgid "Open UR&L..."
-msgstr "Avaa UR&L..."
-
 #: mainwidget.cpp:142
 msgid "&Search"
 msgstr "&Etsi"
@@ -335,7 +331,7 @@ msgstr "P‰ivit‰ dokumentti"
 msgid "In the Constructor!"
 msgstr "Muodostimessa !"
 
-#: mainwidget.cpp:605
+#: mainwidget.cpp:612
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -343,11 +339,11 @@ msgstr ""
 "KDE:n Ohje\n"
 "Versio "
 
-#: mainwidget.cpp:607
+#: mainwidget.cpp:614
 msgid "About KDE Help"
 msgstr "Tietoja KDE:n ohjeesta"
 
-#: mainwidget.cpp:640
+#: mainwidget.cpp:647
 msgid "&Add Bookmark"
 msgstr "&Lis‰‰ osoitekirjaan"
 
@@ -362,3 +358,6 @@ msgstr "Eroittele isot ja pienet"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Etsi"
+
+#~ msgid "Open UR&L..."
+#~ msgstr "Avaa UR&L..."

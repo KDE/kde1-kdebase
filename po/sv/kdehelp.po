@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-12-12 18:27+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -206,10 +206,6 @@ msgstr "&Nytt hjälpfönster"
 msgid "&Open File..."
 msgstr "Öppna &fil..."
 
-#: mainwidget.cpp:137
-msgid "Open UR&L..."
-msgstr "Öppna &URL..."
-
 #: mainwidget.cpp:142
 msgid "&Search"
 msgstr "&Sök"
@@ -336,7 +332,7 @@ msgstr "Uppdatera det här dokument"
 msgid "In the Constructor!"
 msgstr "I konstruktören!"
 
-#: mainwidget.cpp:605
+#: mainwidget.cpp:612
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -344,11 +340,11 @@ msgstr ""
 "KDE Hjälpsystem\n"
 "Version "
 
-#: mainwidget.cpp:607
+#: mainwidget.cpp:614
 msgid "About KDE Help"
 msgstr "Om KDE Hjälp"
 
-#: mainwidget.cpp:640
+#: mainwidget.cpp:647
 msgid "&Add Bookmark"
 msgstr "&Lägg till som bokmärke"
 
@@ -363,3 +359,6 @@ msgstr "&Känslig för stora/små bokstäver"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Hitta"
+
+#~ msgid "Open UR&L..."
+#~ msgstr "Öppna &URL..."

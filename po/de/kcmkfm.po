@@ -1,45 +1,50 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmfm \n"
-"POT-Creation-Date: 1998-12-20 05:05+0600\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-12-10 22:45+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
 
-#: main.cpp:58
+#: main.cpp:61
 msgid "&Font"
 msgstr "&Zeichensatz"
 
-#: main.cpp:60
+#: main.cpp:63
 msgid "&Color"
 msgstr "&Farbe"
 
-#: main.cpp:62
+#: main.cpp:65
 msgid "&Other"
 msgstr "An&dere"
 
-#: main.cpp:65
+#: main.cpp:68
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: main.cpp:67
+#: main.cpp:70
 msgid "&HTTP"
 msgstr "&HTTP"
 
-#: main.cpp:70
+#: main.cpp:73
 msgid "User &Agent"
 msgstr "User-&Agent"
 
-#: main.cpp:74
+#: main.cpp:76
+msgid "Coo&kies"
+msgstr ""
+
+#: main.cpp:80
 msgid "&Desktop Icons"
 msgstr "&Desktop Icons"
 
-#: main.cpp:83
+#: main.cpp:89
 #, fuzzy, c-format
-msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+msgid ""
+"usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr "Benutzung: %s [-init | {font,color,misc,proxy,http,useragent,root}]\n"
 
-#: main.cpp:166
+#: main.cpp:178
 msgid "KFM Configuration"
 msgstr "KFM Konfiguration"
 
@@ -132,46 +137,17 @@ msgstr "&Proxy"
 msgid "No Proxy for:"
 msgstr "Keinen Proxy für:"
 
-#: khttpoptdlg.cpp:51
+#: khttpoptdlg.cpp:38
 msgid "Accept languages:"
 msgstr "Akzeptiere Sprachen:"
 
-#: khttpoptdlg.cpp:65
+#: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
 msgstr "Akzeptiere Zeichensätze:"
 
-#: khttpoptdlg.cpp:78
+#: khttpoptdlg.cpp:65
 msgid "Assume HTML"
 msgstr "Nehme HTML an"
-
-#: khttpoptdlg.cpp:84
-msgid "Disable Cookies"
-msgstr ""
-
-#: khttpoptdlg.cpp:91
-#, fuzzy
-msgid "Default accept policy"
-msgstr "Default-Zeichensatz"
-
-#: khttpoptdlg.cpp:100 khttpoptdlg.cpp:148
-msgid "Accept"
-msgstr ""
-
-#: khttpoptdlg.cpp:105 khttpoptdlg.cpp:153
-msgid "Ask"
-msgstr ""
-
-#: khttpoptdlg.cpp:110 khttpoptdlg.cpp:158
-msgid "Reject"
-msgstr ""
-
-#: khttpoptdlg.cpp:123
-msgid "Domain specific settings:"
-msgstr ""
-
-#: khttpoptdlg.cpp:130
-msgid "Change domain accept policy"
-msgstr ""
 
 #: useragentdlg.cpp:45
 msgid "On server:"
@@ -189,23 +165,60 @@ msgstr "&Hinzufügen"
 msgid "Known bindings:"
 msgstr "Bekannte Zuordnungen:"
 
-#: rootopts.cpp:70
+#: kcookiesdlg.cpp:49
+msgid "&Enable Cookies"
+msgstr ""
+
+#: kcookiesdlg.cpp:56
+#, fuzzy
+msgid "Default accept policy"
+msgstr "Default-Zeichensatz"
+
+#: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
+msgid "Accept"
+msgstr ""
+
+#: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
+msgid "Ask"
+msgstr ""
+
+#: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
+msgid "Reject"
+msgstr ""
+
+#: kcookiesdlg.cpp:90
+msgid "Domain specific settings:"
+msgstr ""
+
+#: kcookiesdlg.cpp:97
+msgid "Change domain accept policy"
+msgstr ""
+
+#: kcookiesdlg.cpp:239
+msgid "You must enter a domain first !"
+msgstr ""
+
+#: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
 msgstr "Horizontaler Gitter-Abstand auf dem Desktop:"
 
-#: rootopts.cpp:81
+#: rootopts.cpp:84
 msgid "Vertical Root Grid Spacing:"
 msgstr "Vertikaler Gitter-Abstand auf dem Desktop:"
 
-#: rootopts.cpp:92
+#: rootopts.cpp:95
 #, fuzzy
 msgid "&Transparent Text for Desktop Icons."
 msgstr "Text für Desktop-Icons &transparent unterlegen"
 
-#: rootopts.cpp:103
+#: rootopts.cpp:106
 msgid "Icon foreground color:"
 msgstr "Vordergrundfarbe der Icons:"
 
-#: rootopts.cpp:115
+#: rootopts.cpp:118
 msgid "Icon background color:"
 msgstr "Hintergrundfarbe der Icons:"
+
+#: rootopts.cpp:131
+msgid "Show &Hidden Files on Desktop"
+msgstr ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
-"POT-Creation-Date: 1998-12-20 05:05+0600\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -13,44 +13,50 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:58
+#: main.cpp:61
 msgid "&Font"
 msgstr "&Skrifttype"
 
-#: main.cpp:60
+#: main.cpp:63
 msgid "&Color"
 msgstr "F&arger"
 
-#: main.cpp:62
+#: main.cpp:65
 msgid "&Other"
 msgstr "&Andre"
 
 # kkfmoptdlg.cpp:19
-#: main.cpp:65
+#: main.cpp:68
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: main.cpp:67
+#: main.cpp:70
 msgid "&HTTP"
 msgstr "&HTTP"
 
 # kkfmoptdlg.cpp:21
-#: main.cpp:70
+#: main.cpp:73
 msgid "User &Agent"
 msgstr "Bruker&agent"
 
+#: main.cpp:76
+#, fuzzy
+msgid "Coo&kies"
+msgstr "Slå av cookier"
+
 # kfmtree.cpp:398
-#: main.cpp:74
+#: main.cpp:80
 msgid "&Desktop Icons"
 msgstr "&Skrivebordikoner"
 
-#: main.cpp:83
-#, c-format
-msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+#: main.cpp:89
+#, fuzzy, c-format
+msgid ""
+"usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr "bruk: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
 
 # main.cpp:65 main.cpp:199
-#: main.cpp:166
+#: main.cpp:178
 msgid "KFM Configuration"
 msgstr "KFM Konfigurasjon"
 
@@ -153,45 +159,17 @@ msgstr "FTP-proxy:"
 msgid "No Proxy for:"
 msgstr "Ingen proxy for:"
 
-#: khttpoptdlg.cpp:51
+#: khttpoptdlg.cpp:38
 msgid "Accept languages:"
 msgstr "Aksepter språk:"
 
-#: khttpoptdlg.cpp:65
+#: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
 msgstr "Aksepter tegnsett:"
 
-#: khttpoptdlg.cpp:78
+#: khttpoptdlg.cpp:65
 msgid "Assume HTML"
 msgstr "Anta HTML"
-
-#: khttpoptdlg.cpp:84
-msgid "Disable Cookies"
-msgstr "Slå av cookier"
-
-#: khttpoptdlg.cpp:91
-msgid "Default accept policy"
-msgstr "Standard godtagningspolitikk"
-
-#: khttpoptdlg.cpp:100 khttpoptdlg.cpp:148
-msgid "Accept"
-msgstr "Godta"
-
-#: khttpoptdlg.cpp:105 khttpoptdlg.cpp:153
-msgid "Ask"
-msgstr "Spørr"
-
-#: khttpoptdlg.cpp:110 khttpoptdlg.cpp:158
-msgid "Reject"
-msgstr "Forkast"
-
-#: khttpoptdlg.cpp:123
-msgid "Domain specific settings:"
-msgstr "Domene-spesifikke innstillinger:"
-
-#: khttpoptdlg.cpp:130
-msgid "Change domain accept policy"
-msgstr "Endre politikk for godtatte domener"
 
 # useragentdlg.cpp:20
 #: useragentdlg.cpp:45
@@ -212,24 +190,61 @@ msgstr "&Legg til"
 msgid "Known bindings:"
 msgstr "Kjente tilordninger:"
 
+#: kcookiesdlg.cpp:49
+#, fuzzy
+msgid "&Enable Cookies"
+msgstr "Slå av cookier"
+
+#: kcookiesdlg.cpp:56
+msgid "Default accept policy"
+msgstr "Standard godtagningspolitikk"
+
+#: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
+msgid "Accept"
+msgstr "Godta"
+
+#: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
+msgid "Ask"
+msgstr "Spørr"
+
+#: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
+msgid "Reject"
+msgstr "Forkast"
+
+#: kcookiesdlg.cpp:90
+msgid "Domain specific settings:"
+msgstr "Domene-spesifikke innstillinger:"
+
+#: kcookiesdlg.cpp:97
+msgid "Change domain accept policy"
+msgstr "Endre politikk for godtatte domener"
+
+#: kcookiesdlg.cpp:239
+msgid "You must enter a domain first !"
+msgstr ""
+
 # htmlopts.cpp:321
-#: rootopts.cpp:70
+#: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
 msgstr "Avstand mellom horisontale bunngitter:"
 
 # htmlopts.cpp:335
-#: rootopts.cpp:81
+#: rootopts.cpp:84
 msgid "Vertical Root Grid Spacing:"
 msgstr "Avstand mellom vertikale bunngitter:"
 
-#: rootopts.cpp:92
+#: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
 msgstr "&Gjennomsiktig tekst for skrivebordikoner."
 
-#: rootopts.cpp:103
+#: rootopts.cpp:106
 msgid "Icon foreground color:"
 msgstr "Forgrunnsfarge for ikon:"
 
-#: rootopts.cpp:115
+#: rootopts.cpp:118
 msgid "Icon background color:"
 msgstr "Bakgrunnsfarge for ikon:"
+
+#: rootopts.cpp:131
+msgid "Show &Hidden Files on Desktop"
+msgstr ""
