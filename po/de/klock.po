@@ -488,7 +488,7 @@ msgid ""
 msgstr ""
 "\n"
 "Bitte verwenden Sie nicht -test und -lock\n"
-"zusammen. Benutzen Sie klock anstatt.\n"
+"zusammen. Benutzen Sie stattdessen klock.\n"
 "\n"
 
 #: main.cpp:580
