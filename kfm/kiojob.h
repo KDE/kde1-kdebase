@@ -11,6 +11,7 @@ class KIODirectoryEntry;
 #include <qlabel.h>
 #include <qwidget.h>
 #include <qdict.h>
+#include <qlayout.h>
 
 #include <kprogress.h>
 #include <kurl.h>
@@ -319,6 +320,10 @@ protected:
      * May be 0L.
      */
     QLabel *line3;
+    /**
+     * May be 0L.
+     */
+    QVBoxLayout *layout;
     
     /**
      * The modus when moving files.

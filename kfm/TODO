@@ -20,3 +20,4 @@ TODO List
 - kioslave crashes on dangling links if compiled with -O2 ( not tested )
 - Kopieren von FTP server ?
 - Links on FTP Servers do not seem to work
+- Implement 'Delete' on ftp.

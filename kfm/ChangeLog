@@ -1,5 +1,8 @@
 Fri Mar 27 13:46:56 1998    <weis@snoopy.rz.uni-frankfurt.de>
 
+	* kiojob.cpp (start): Added layout management
+	  for progress dialogs.
+
 	* kioslave/http.cpp (ProcessHeader): Fixed bug that
 	  appeard with the following line:
 	  "Content-Type: text/html; charset=..."

@@ -40,6 +40,7 @@ KIOJob::KIOJob( int _id )
     line1 = 0L;
     line2 = 0L;
     line3 = 0L;
+    layout = 0L;
     globalNotify = true;
     id = _id;
     overwriteExistingFiles = false;
@@ -1424,40 +1425,25 @@ void KIOJob::start( int _pid )
 
     if ( bDisplay )
     {
+	dlg = 0L;
+
 	switch( action )
 	{
 	case KIOJob::JOB_GET:
 	    {
 		dlg = new QDialog( 0L );
-		dlg->resize( 300, 180 );
 		progressBar = new KProgress( 0, 100, 0, KProgress::Horizontal, dlg );
-		progressBar->setGeometry( 10, 100, 280, 20 );
-		QPushButton *pb = new QPushButton( i18n("Cancel"), dlg );
-		pb->setGeometry( 110, 140, 80, 30 );
-		connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
 		line1 = new QLabel( dlg );
-		line1->setGeometry( 10, 10, 280, 20 );
-		dlg->show();
 	    }
 	    break;
 	case KIOJob::JOB_COPY:
 	case KIOJob::JOB_MOVE:
 	    {
 		dlg = new QDialog( 0L );
-		dlg->resize( 300, 180 );
 		progressBar = new KProgress( 0, 100, 0, KProgress::Horizontal, dlg );
-		progressBar->setGeometry( 10, 100, 280, 20 );
-		QPushButton *pb = 
-		  new QPushButton( i18n("Cancel"), dlg );
-		pb->setGeometry( 110, 140, 80, 30 );
-		connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
 		line1 = new QLabel( dlg );
-		line1->setGeometry( 10, 10, 280, 20 );
 		line2 = new QLabel( dlg );
-		line2->setGeometry( 10, 30, 280, 20 );
 		line3 = new QLabel( dlg );
-		line3->setGeometry( 10, 50, 280, 20 );
-		dlg->show();
 	    }
 	    break;
 	case KIOJob::JOB_DELETE:
@@ -1469,18 +1455,9 @@ void KIOJob::start( int _pid )
 		if ( showDlg )
 		{
 		    dlg = new QDialog( 0L );
-		    dlg->resize( 300, 180 );
 		    progressBar = new KProgress( 0, 100, 0, KProgress::Horizontal, dlg );
-		    progressBar->setGeometry( 10, 100, 280, 20 );
-		    QPushButton *pb =
-		      new QPushButton( i18n("Cancel"), dlg );
-		    pb->setGeometry( 110, 140, 80, 30 );
-		    connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
 		    line1 = new QLabel( dlg );
-		    line1->setGeometry( 10, 10, 280, 20 );
 		    line2 = new QLabel( dlg );
-		    line2->setGeometry( 10, 30, 280, 20 );
-		    dlg->show();
 		}
 	    }
 	    break;
@@ -1488,15 +1465,7 @@ void KIOJob::start( int _pid )
 	case KIOJob::JOB_UNMOUNT:
 	    {
 		dlg = new QDialog( 0L );
-		dlg->resize( 300, 100 );
-		QPushButton *pb = 
-		  new QPushButton( i18n("Cancel"), dlg );
-		pb->setGeometry( 110, 60, 80, 30 );
-		connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
 		line1 = new QLabel( dlg );
-		line1->setGeometry( 10, 10, 280, 20 );
-		line1->show();
-		dlg->show();
 	    }
 	    break;
 	case KIOJob::JOB_LIST:
@@ -1505,17 +1474,8 @@ void KIOJob::start( int _pid )
 		if ( strcmp( u.protocol(), "ftp" ) == 0 )
 		{
 		    dlg = new QDialog( 0L );
-		    dlg->resize( 300, 100 );
-		    QPushButton *pb = 
-		      new QPushButton( i18n("Cancel"), dlg );
-		    pb->setGeometry( 110, 60, 80, 30 );
-		    connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
 		    line1 = new QLabel( dlg );
-		    line1->setGeometry( 10, 10, 280, 20 );
-		    dlg->show();
 		}
-		else
-		    dlg = 0L;
 	    }
 	    break;
 	case KIOJob::JOB_MKDIR:
@@ -1524,23 +1484,50 @@ void KIOJob::start( int _pid )
 		if ( strcmp( u.protocol(), "ftp" ) == 0 )
 		{
 		    dlg = new QDialog( 0L );
-		    dlg->resize( 300, 100 );
-		    QPushButton *pb = 
-		      new QPushButton( i18n("Cancel"), dlg );
-		    pb->setGeometry( 110, 60, 80, 30 );
-		    connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
 		    line1 = new QLabel( i18n("Making directory"), dlg );
-		    line1->setGeometry( 10, 10, 200, 20 );
 		    line2 = new QLabel( mkdirURL.data() );
-		    line2->setGeometry( 10, 10, 200, 20 );
-		    dlg->show();
 		}
-		else
-		    dlg = 0L;
 	    }
 	    break;	
 	 default:
 	     warning("Case not handled here");
+	}
+
+	if ( dlg != 0L )
+	{
+	    layout = new QVBoxLayout( dlg, 10, 0 );
+	    layout->addStrut( 200 );	// makes dlg at least that wide
+	    if ( line1 != 0L )
+	    {
+		line1->setFixedHeight( 20 );
+		layout->addWidget( line1 );
+	    }
+	    if ( line2 != 0L )
+	    {
+		line2->setFixedHeight( 20 );
+		layout->addWidget( line2 );
+	    }
+	    if ( line3 != 0L )
+	    {
+		line3->setFixedHeight( 20 );
+		layout->addWidget( line3 );
+	    }
+	    if ( progressBar != 0L )
+	    {
+		progressBar->setFixedHeight( 20 );
+		layout->addSpacing( 10 );
+		layout->addWidget( progressBar );
+	    }
+	    QPushButton *pb = new QPushButton( i18n("Cancel"), dlg );
+	    pb->setFixedSize( pb->sizeHint() );
+	    connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
+	    layout->addSpacing( 10 );
+	    layout->addWidget( pb );
+
+	    layout->addStretch( 10 );
+	    layout->activate();
+	    dlg->resize( dlg->sizeHint() );
+	    dlg->show();
 	}
     }
     
@@ -1885,14 +1872,19 @@ void KIOJob::done()
     
     if ( dlg != 0L )
     {
-	if ( line1 != 0L )
-	    delete line1;
-	if ( line2 != 0L )
-	    delete line2;
-	if ( line3 != 0L )
-	    delete line3;
+        if ( layout )
+	  delete layout;
+	if ( line1 )
+	  delete line1;
+	if ( line2 )
+	  delete line2;
+	if ( line3 )
+	  delete line3;
 	
 	delete dlg;
+	layout = 0L;
+	line1 = line2 = line3 = 0L;
+	dlg = 0L;
     }
 
     char *s;
@@ -1910,7 +1902,6 @@ void KIOJob::done()
 
     emit finished( id );
     
-    dlg = 0L;
     slave = 0L;
     
     if ( bAutoDelete )
