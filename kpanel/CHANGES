@@ -3,6 +3,7 @@ In kpanel-0.19:
     Patchlevel 8:
                 - second hide button (Kalle)
                 - geometry for second hide button fixed ;-) (Matthias)
+                - new option: autoHideSpeed, default is 4
 
     Patchlevel 7:
                 - disk navigator ( Pietro Iglio )

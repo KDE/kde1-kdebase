@@ -83,7 +83,7 @@ void kPanel::showTaskbar(){
       return;
   doGeometry(TRUE);
   animateMove(taskbar_frame, taskbar_frame_geometry.x(), taskbar_frame_geometry.y(),
-	      taskbar_position == bottom?-2:2);
+	      taskbar_position == bottom?-autoHideSpeed*2:autoHideSpeed*2);
   doGeometry();
 }
 
@@ -93,7 +93,7 @@ void kPanel::hideTaskbar(){
   raise();
   doGeometry(TRUE);
   animateMove(taskbar_frame, taskbar_frame_geometry.x(), taskbar_frame_geometry.y(),
-	      taskbar_position == bottom?1:-1);
+	      taskbar_position == bottom?autoHideSpeed:-autoHideSpeed);
   doGeometry();
   KWM::sendKWMCommand("moduleRaised");
 }
@@ -585,7 +585,7 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 	  check_button_bounds(entries[i].button);
 	}
       }
-      if (moving_button != panel_button_frame_standalone && 
+      if (moving_button != panel_button_frame_standalone &&
 	  moving_button != panel_button_frame_standalone2){
 	moving_button = 0;
 	reposition();
@@ -681,15 +681,15 @@ void kPanel::enterEvent( QEvent * ){
   raise();
   if (orientation == horizontal){
     if (position == top_left)
-      animateMove (this, 0,0,4);
+      animateMove (this, 0,0,4*autoHideSpeed);
     else
-      animateMove(this, 0, QApplication::desktop()->height()-height(), -4);
+      animateMove(this, 0, QApplication::desktop()->height()-height(), -4*autoHideSpeed);
   }
   else {
     if (position == top_left)
-      animateMove (this, 0,0, 4);
+      animateMove (this, 0,0, 4*autoHideSpeed);
     else
-      animateMove (this, QApplication::desktop()->width()-width(),0, -4);
+      animateMove (this, QApplication::desktop()->width()-width(),0, -4*autoHideSpeed);
 
   }
   if (taskbar_frame->isVisible()){
@@ -737,15 +737,15 @@ void kPanel::hideTimerDone(){
   else {
     if (orientation == horizontal){
 	if (position == top_left)
-	    animateMove (this, x(), y()-height()+4, -1);
+	    animateMove (this, x(), y()-height()+4, -autoHideSpeed);
 	else
-	    animateMove (this, x(), y()+height()-4, 1);
+	    animateMove (this, x(), y()+height()-4, autoHideSpeed);
     }
     else {
 	if (position == top_left)
-	    animateMove (this, x()-width()+4, y(), -1);
+	    animateMove (this, x()-width()+4, y(), -autoHideSpeed);
 	else
-	    animateMove (this, x()+width()-4, y(), 1);
+	    animateMove (this, x()+width()-4, y(), autoHideSpeed);
 	
     }
     doGeometry();

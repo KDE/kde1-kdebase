@@ -343,6 +343,7 @@ private:
   bool autoHide;
   bool autoHidden;
   bool autoHideTaskbar;
+  bool autoHideSpeed;
   bool clockAmPm;
 
   int hide_show_animation;

@@ -190,6 +190,12 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     else
       config->writeEntry("AutoHideTaskbar", "off");
 
+    autoHideSpeed = 4;
+    if (config->hasKey("AutoHideSpeed"))
+      autoHideTaskbar = config->readNumEntry("AutoHideSpeed");
+    else
+      config->writeEntry("AutoHideSpeed", 4);
+
     clockAmPm = false;
     if (config->hasKey("ClockAmPm"))
       clockAmPm = (config->readEntry("ClockAmPm") == "on");
@@ -1585,8 +1591,8 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
        mw = 2*taskbar_height+1; // miniPanelFrame
        mh = taskbar_height+1; // miniPanelFrame
      }
-     
-     sx = sw; 
+
+     sx = sw;
      if (!panelCurrentlyLeft) {
 	 //right panel button, grrrrr it is becoming hacky......
 	 if (orientation == horizontal) {
@@ -1629,7 +1635,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
      else {
 	 // some corrections....
 	 if (orientation == vertical) {
-	     if (taskbar_position == bottom) 
+	     if (taskbar_position == bottom)
 		 { sx = 0; sw = 0; }
 	 }
      }
