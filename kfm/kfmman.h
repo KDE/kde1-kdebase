@@ -21,7 +21,7 @@ public:
     /**
      * @return the current URL, managed by this object
      */
-    QString& getURL() { return url; }
+    QString& getURL() { return url.isEmpty() ? tryURL : url; }
 
     /**
      * Open a new URL.

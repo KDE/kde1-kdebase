@@ -169,6 +169,7 @@ public:
      * values (sven).
      */
     void setHasLocal (bool aintGotNoProps);
+    bool hasLocalProps() { return hasLocal; }
 
     /**
      * Returns true if menu bar hidden. Used by KFMManager to add Show Menubar

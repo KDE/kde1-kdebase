@@ -113,6 +113,7 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     menubarPos = KMenuBar::Top;
 
     showStatusbar = true;
+    hasLocal = false;
 
     
     KConfig *config = kapp->getConfig();
@@ -1873,8 +1874,7 @@ void KfmGui::readProperties( KConfig* config )
         if  (  bViewHTML != bViewHTMLLocal
             || visualSchnauzer != visualSchnauzerLocal
             || showDot != showDotLocal )
-            // see slotViewHTML()
-            view->openURL( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );        
+            view->slotReload();
         
         mview->setItemChecked( mview->idAt( 5 ), false);
         mview->setItemChecked( mview->idAt( 6 ), false);
