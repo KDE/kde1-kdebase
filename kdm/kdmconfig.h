@@ -29,7 +29,7 @@
 
 class KDMConfig {
 public:
-     KDMConfig( const char*);
+     KDMConfig( );
      ~KDMConfig();
      
      QFont*          normalFont()      { return _normalFont;}
@@ -48,7 +48,6 @@ public:
 private:
      void           getConfig();
      KVItemList*    getUsers( QString s = NULL, bool = false);
-     QString        kdedir;
      KConfig*       kc;
 
      QFont*         _normalFont;

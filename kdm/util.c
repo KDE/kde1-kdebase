@@ -145,6 +145,32 @@ setEnv (e, name, value)
 	return new;
 }
 
+char **
+putEnv(string, env)
+      const char *string;
+      char ** env;
+{
+      char *v, *b, *n;
+      int nl;
+      
+      if ((b = strchr(string, '=')) == NULL) return NULL;
+      v = b + 1;
+      
+      nl = b - string;
+      if ((n = malloc(nl + 1)) == NULL)
+        {
+          LogOutOfMem ("putAllEnv");
+          return NULL;
+        }
+      
+      strncpy(n, string,nl + 1);
+      n[nl] = 0;
+      
+      env = setEnv(env,n,v);
+      free(n);
+      return env;
+}
+
 void freeEnv (env)
     char    **env;
 {

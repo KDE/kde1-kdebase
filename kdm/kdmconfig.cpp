@@ -33,16 +33,15 @@ static void semsplit( const QString& str, QStrList& result)
      //return result;
 }
 
-KDMConfig::KDMConfig( const char* rc)
+KDMConfig::KDMConfig( )
 {
-     kdedir = rc;
      getConfig();
 }
 
 KVItemList*
 KDMConfig::getUsers( QString s, bool sorted)
 {
-     QString user_pix_dir( kdedir+"/share/apps/kdm/pics/users/");
+     QString user_pix_dir( KApplication::kde_datadir() +"/kdm/pics/users/");
      KVItemList* result = new KVItemList;
      QPixmap default_pix( user_pix_dir + "default.xpm");
      if( default_pix.isNull())
@@ -96,7 +95,7 @@ p));
 void
 KDMConfig::getConfig()
 {
-  QString aFileName = QString( kdedir ) + KDMRC; // kalle
+  QString aFileName = KApplication::kde_configdir() + "/kdmrc"; 
   kc = new KConfig( aFileName ); // kalle
      kc->setGroup( "KDM");
 
@@ -137,7 +136,7 @@ KDMConfig::getConfig()
 
      // Logo
      if( logo_string.isNull()) // isEmpty() ?
-          _logo = new QString( kdedir+KDMLOGO);
+          _logo = new QString( KApplication::kde_datadir() + "/kdm/pics/kdelogo.xpm" );
      else
           _logo = new QString( logo_string);
 

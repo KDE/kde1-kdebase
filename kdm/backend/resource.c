@@ -59,7 +59,6 @@ char	**exportList;
 char	*randomFile;
 char	*greeterLib;
 int	choiceTimeout;	/* chooser choice timeout */
-char    *optionKdedir = NULL;  /* path to kdedir given on commandline */
 
 # define DM_STRING	0
 # define DM_INT		1
@@ -221,9 +220,7 @@ struct dmResources {
 {"greeterLib",	"GreeterLib",	DM_STRING,	&greeterLib,
 				DEF_GREETER_LIB},
 {"choiceTimeout","ChoiceTimeout",DM_INT,	(char **) &choiceTimeout,
-				"15"},
-{"kdedir",	"Kdedir",	DM_STRING,	&optionKdedir,
-				""},
+				"15"}
 };
 
 # define NUM_DM_RESOURCES	(sizeof DmResources / sizeof DmResources[0])
@@ -411,8 +408,7 @@ XrmOptionDescRec optionTable [] = {
 {"-debug",	"*debugLevel",		XrmoptionSepArg,	(caddr_t) NULL },
 {"-xrm",	NULL,			XrmoptionResArg,	(caddr_t) NULL },
 {"-daemon",	".daemonMode",		XrmoptionNoArg,		"true"         },
-{"-nodaemon",	".daemonMode",		XrmoptionNoArg,		"false"        },
-{"-kdedir",     ".kdedir",              XrmoptionSepArg,        (caddr_t) NULL }
+{"-nodaemon",	".daemonMode",		XrmoptionNoArg,		"false"        }
 };
 
 static int	originalArgc;

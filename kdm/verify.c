@@ -50,7 +50,7 @@ from the X Consortium.
 #ifdef USESHADOW
 # include	<shadow.h>
 #endif
-#endif USE_PAM
+#endif /* USE_PAM */
 
 # include	"greet.h"
 
@@ -204,7 +204,7 @@ static struct pam_conv PAM_conversation = {
 
 /* for pam session (see session.c)*/
 pam_handle_t *pamh;
-#endif
+#endif /* USE_PAM */
 
 extern void printEnv( char **e );
 
@@ -248,7 +248,7 @@ struct verify_info	*verify;
 	  sp->sp_pwdp = tmp;
 	}
 	endspent();
-#endif
+#endif /* USESHADOW */
 	if (strcmp (crypt (greet->password, p->pw_passwd), p->pw_passwd))
 	{
 		Debug ("password verify failed\n");

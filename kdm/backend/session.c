@@ -94,6 +94,7 @@ extern	void	DeleteXloginResources();
 extern	int	source();
 extern	char	**defaultEnv();
 extern	char	**setEnv();
+extern	char	**putEnv();
 extern	char	**parseArgs();
 extern	int	printEnv();
 extern	char	**systemEnv();
@@ -111,8 +112,19 @@ extern	char	*crypt();
 char *crypt(char *key, char *salt);
 #endif
 
-#ifdef CSRG_BASED
+/* #ifdef CSRG_BASED */
 #include <sys/param.h>
+#if defined(__FreeBSD__) && __FreeBSD__ >= 2
+#include <osreldate.h>
+#if __FreeBSD_version >= 222000
+#define HAVE_SETUSERCONTEXT
+#endif
+#endif
+/* #endif */
+
+#ifdef HAVE_SETUSERCONTEXT
+#include <login_cap.h>		/* BSDI-like login classes */
+#include <pwd.h>
 #endif
 /* XmuPrintDefaultErrorMessage is taken from DefErrMsg.c from X11R6 */
 /* /stefh */
@@ -673,6 +685,13 @@ StartClient (verify, d, pidp, name, passwd)
     char	**f, *home, *getEnv ();
     char	*failsafeArgv[2];
     int	pid;
+#ifdef HAVE_SETUSERCONTEXT
+    login_cap_t *lc = NULL;
+    extern char **environ;
+    char ** e;
+    struct passwd *pwd;
+    char *envinit[1];
+#endif
 
     if (verify->argv) {
 	Debug ("StartSession %s: ", verify->argv[0]);
@@ -694,6 +713,41 @@ StartClient (verify, d, pidp, name, passwd)
 
 	/* Do system-dependent login setup here */
 
+#ifdef HAVE_SETUSERCONTEXT
+      /*
+       * Destroy environment unless user has requested its preservation.
+       * We need to do this before setusercontext() because that may
+       * set or reset some environment variables.
+       */
+      environ = envinit;
+
+	/*
+	 * Set the user's credentials: uid, gid, groups,
+	 * environment variables, resource limits, and umask.
+	 */
+	pwd = getpwnam(name);
+	if (pwd)
+	{
+	    lc = login_getpwclass(pwd);
+	    if (setusercontext(lc, pwd, pwd->pw_uid, LOGIN_SETALL) < 0)
+	    {
+		LogError("setusercontext for \"%s\" failed, errno=%d\n", name,
+		    errno);
+		return (0);
+	    }
+	    endpwent();
+	}
+	else
+	{
+	    LogError("getpwnam for \"%s\" failed, errno=%d\n", name, errno);
+	    return (0);
+	}
+	login_close(lc);
+
+	e = environ;
+	while(*e)
+	  verify->userEnviron = putEnv(*e++, verify->userEnviron);
+#else
 #ifdef AIXV3
 	/*
 	 * Set the user's credentials: uid, gid, groups,
@@ -739,6 +793,7 @@ StartClient (verify, d, pidp, name, passwd)
 	    return (0);
 	}
 #endif /* AIXV3 */
+#endif /* HAVE_SETUSERCONTEXT */
 
 	/*
 	 * for user-based authorization schemes,
@@ -892,7 +947,7 @@ runAndWait (args, environ)
     char	**args;
     char	**environ;
 {
-    int	pid;
+    int	pid,r;
     extern int	errno;
     waitType	result;
 
@@ -907,10 +962,10 @@ runAndWait (args, environ)
 	LogError ("can't fork to execute \"%s\" (err %d)\n", args[0], errno);
 	return 1;
     default:
-	while (wait (&result) != pid)
-		/* SUPPRESS 530 */
-		;
-	break;
+	while ((r=wait (&result)) != pid) {
+		if (r < 0)
+			break;
+	}
     }
     return waitVal (result);
 }

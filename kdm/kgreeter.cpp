@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:52 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Sun Dec 28 11:58:39 1997
-// Update Count     : 106
+// Last Modified On : Thu Mar 26 17:26:40 1998
+// Update Count     : 111
 // Status           : Unknown, Use with caution!
 // 
 
@@ -109,7 +109,7 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      QBoxLayout* hbox1 = new QBoxLayout( QBoxLayout::LeftToRight, 10);
      QBoxLayout* hbox2 = new QBoxLayout( QBoxLayout::LeftToRight, 10);
 
-     QGridLayout* grid = new QGridLayout( 3, 2, 5);
+     QGridLayout* grid = new QGridLayout( 4, 2, 5);
 
      QLabel* welcomeLabel = new QLabel( kdmcfg->greetString()->data(), this);
      welcomeLabel->setAlignment(AlignCenter);
@@ -137,11 +137,13 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      loginLabel = new QLabel( klocale->translate("Login:"), this);
      set_min( loginLabel);
      loginEdit = new QLineEdit( this);
+     loginEdit->setFixedHeight( loginEdit->sizeHint().height());
      loginEdit->setFocus();
 
      passwdLabel = new QLabel( klocale->translate("Password:"), this);
      set_min( passwdLabel);
      passwdEdit = new QLineEdit( this);
+     passwdEdit->setFixedHeight( passwdEdit->sizeHint().height());
      passwdEdit->setEchoMode( QLineEdit::NoEcho);
      /* This is a way to get a passwd edit
       * with a moving cursor, but it's
@@ -166,11 +168,11 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      QFrame* sepFrame = new QFrame( this);
      sepFrame->setFrameStyle( QFrame::HLine| QFrame::Sunken);
 
-     grid->addWidget( loginLabel , 0, 0);
-     grid->addWidget( loginEdit  , 0, 1);
-     grid->addWidget( passwdLabel, 1, 0);
-     grid->addWidget( passwdEdit , 1, 1);
-     grid->addMultiCellWidget( sepFrame, 2, 2, 0, 1);
+     grid->addWidget( loginLabel , 1, 0);
+     grid->addWidget( loginEdit  , 1, 1);
+     grid->addWidget( passwdLabel, 2, 0);
+     grid->addWidget( passwdEdit , 2, 1);
+     grid->addMultiCellWidget( sepFrame, 3, 3, 0, 1);
      grid->setColStretch( 1, 4);
 
      failedLabel = new QLabel( klocale->translate("Login failed!"), this);
@@ -365,7 +367,7 @@ int main(int argc, char **argv)
 {
      MyApp app(argc, argv);
      
-     kdmcfg = new KDMConfig( KApplication::kdedir());
+     kdmcfg = new KDMConfig();
 
      app.setStyle( WindowsStyle);
      app.setFont( *kdmcfg->normalFont());
@@ -414,12 +416,7 @@ GreetUser(
      /*printf("LANG=%s, Domain=%s, appName=%s\n", getenv("LANG"), 
 	    klocale->language().data(), kapp->appName().data());*/
      QApplication::setOverrideCursor( waitCursor );
-     // Test new option "-kdedir"
-     extern char* optionKdedir;
-     if( optionKdedir[0])
-	  kdmcfg = new KDMConfig( optionKdedir);
-     else
-	  kdmcfg = new KDMConfig( KApplication::kdedir());
+     kdmcfg = new KDMConfig( );
      
      myapp->setFont( *kdmcfg->normalFont());
      myapp->setStyle( kdmcfg->style());
