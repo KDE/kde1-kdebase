@@ -52,12 +52,13 @@ char *modulaKeywords[] = {
   "RETURN","THEN","TYPE","VAR","WHILE","WITH","|",0L};
 
 char *adaKeywords[] = {
-  "abort","accept","access","array","at","begin","body","constant","declare",
-  "delay","do","else","entry","end","exception","except","export","for",
-  "from","function","generic","if","in","is","limited","loop","mod","new",
-  "of","or","others","out","package","private","procedure","process",
-  "provided","raise","range","record","repeat","return","select","subtype",
-  "task","terminate","then","to","type","use","when","while","with",0L};
+  "abort","abs","accept","access","all","and","array","at","begin","body",
+  "case","constant","declare","delay","delta","digits","do","else","elsif",
+  "end","entry","exception","exit","for", "function","generic","goto","if",
+  "in","is","limited","loop","mod","new", "not","null","of","or","others",
+  "out","package","pragma","private","procedure", "raise","range","rem",
+  "record","renames","return","reverse","select","separate","subtype", "task",
+  "terminate","then","type","use","when","while","with","xor",0L};
 
 char fontSizes[] = {4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,24,26,28,32,48,64,0};
 
@@ -366,22 +367,7 @@ const char *HlCPrep::checkHgl(const char *s) {
   }
   return 0L;
 }
-/*
-HlHtmlChar::HlHtmlChar(int attribute, int context)
-  : HlItem(attribute,context) {
-}
 
-const char *HlHtmlChar::checkHgl(const char *s) {
-  if (*s == '&') {
-    do {
-      s++;
-      if (!*s) return 0L;
-    } while (*s != ';');
-    return s + 1;
-  }
-  return 0L;
-}
-*/
 HlHtmlTag::HlHtmlTag(int attribute, int context)
   : HlItem(attribute,context) {
 }
@@ -413,15 +399,7 @@ const char *HlHtmlValue::checkHgl(const char *s) {
 HlShellComment::HlShellComment(int attribute, int context)
   : HlCharDetect(attribute,context,'#') {
 }
-/*
-const char *HlShellComment::checkHgl(const char *s) {
-  if (*s == '#') {
-    do s++; while (*s);
-    return s;
-  }
-  return 0L;
-}
-*/
+
 HlMHex::HlMHex(int attribute, int context)
   : HlItemWw(attribute,context) {
 }
@@ -436,65 +414,108 @@ const char *HlMHex::checkHgl(const char *s) {
   return 0L;
 }
 
-HlAOct::HlAOct(int attribute, int context)
+HlAdaDec::HlAdaDec(int attribute, int context)
   : HlItemWw(attribute,context) {
 }
 
-const char *HlAOct::checkHgl(const char *s) {
+const char *HlAdaDec::checkHgl(const char *s) {
+  const char *str;
 
-  if (s[0] == '8' && s[1] == '#') {
-    s += 2;
-    while (*s >= '0' && *s <= '7') s++;
-    if (*s == '#') return s + 1;
+  if (*s >= '0' && *s <= '9') {
+    s++;
+    while ((*s >= '0' && *s <= '9') || *s == '_') s++;
+    if (*s != 'e' && *s != 'E') return s;
+    s++;
+    str = s;
+    while ((*s >= '0' && *s <= '9') || *s == '_') s++;
+    if (s > str) return s;
   }
   return 0L;
 }
 
+HlAdaBaseN::HlAdaBaseN(int attribute, int context)
+  : HlItemWw(attribute,context) {
+}
+
+const char *HlAdaBaseN::checkHgl(const char *s) {
+  int base;
+  char c1, c2, c3;
+  const char *str;
+
+  base = 0;
+  while (*s >= '0' && *s <= '9') {
+    base *= 10;
+    base += *s - '0';
+    if (base > 16) return 0L;
+    s++;
+  }
+  if (base >= 2 && *s == '#') {
+    s++;
+    c1 = '0' + ((base <= 10) ? base : 10);
+    c2 = 'A' + base - 10;
+    c3 = 'a' + base - 10;
+    while ((*s >= '0' && *s < c1) || (*s >= 'A' && *s < c2)
+      || (*s >= 'a' && *s < c3)) {
+      s++;
+    }
+    if (*s == '#') {
+      s++;
+      if (*s != 'e' && *s != 'E') return s;
+      s++;
+      str = s;
+      while ((*s >= '0' && *s <= '9') || *s == '_') s++;
+      if (s > str) return s;
+    }
+  }
+  return 0L;
+}
+
+HlAdaFloat::HlAdaFloat(int attribute, int context)
+  : HlItemWw(attribute,context) {
+}
+
+const char *HlAdaFloat::checkHgl(const char *s) {
+  const char *str;
+
+  str = s;
+  while (*s >= '0' && *s <= '9') s++;
+  if (s > str && *s == '.') {
+    s++;
+    str = s;
+    while (*s >= '0' && *s <= '9') s++;
+    if (s > str) {
+      if (*s != 'e' && *s != 'E') return s;
+      s++;
+      if (*s == '-') s++;
+      str = s;
+      while ((*s >= '0' && *s <= '9') || *s == '_') s++;
+      if (s > str) return s;
+    }
+  }
+  return 0L;
+}
+
+HlAdaChar::HlAdaChar(int attribute, int context)
+  : HlItemWw(attribute,context) {
+}
+
+const char *HlAdaChar::checkHgl(const char *s) {
+  if (s[0] == '\'' && s[1] && s[2] == '\'') return s + 3;
+  return 0L;
+}
 
 //--------
 ItemStyle::ItemStyle() : selCol(white), bold(false), italic(false) {
 }
-/*
-ItemStyle::ItemStyle(const ItemStyle &i)
-  : col(i.col), selCol(i.selCol), bold(i.bold), italic(i.italic) {
-}
-*/
+
 ItemStyle::ItemStyle(const QColor &col, const QColor &selCol,
   bool bold, bool italic)
   : col(col), selCol(selCol), bold(bold), italic(italic) {
 }
-/*
-void ItemStyle::setData(const ItemStyle &i) {
-  col = i.col;
-  selCol = i.selCol;
-  bold = i.bold;
-  italic = i.italic;
-}
 
-DefItemStyle::DefItemStyle(const char *name, const QColor &col, const QColor &selCol,
-  bool bold, bool italic)
-  : name(name), ItemStyle(col,selCol,bold,italic) {
-}
-*/
 ItemFont::ItemFont() : family("courier"), size(12), charset("") {
 }
-/*
-ItemFont::ItemFont(const ItemFont &f)
-  : family(f.family), size(f.size), charset(f.charset) {
-  family.detach();
-  charset.detach();
-}
 
-ItemFont::ItemFont(const char *family, int size, const char *charset)
-  : family(family), size(size), charset(charset) {
-}
-
-void ItemFont::setData(const ItemFont &f) {
-  family = f.family;
-  size = f.size;
-  charset = f.charset;
-}
-  */
 ItemData::ItemData(const char *name, int defStyleNum)
   : name(name), defStyleNum(defStyleNum), defStyle(true), defFont(true) {
 }
@@ -534,7 +555,6 @@ void Highlight::getWildcards(QString &w) {
   w = config->readEntry("Wildcards",dw);
 //  iMimetypes = config->readEntry("Mimetypes");
 }
-
 
 
 void Highlight::getMimetypes(QString &w) {
@@ -633,29 +653,7 @@ void Highlight::release() {
   if (refCount == 0) done();
 }
 
-/*
-void Highlight::init() {
-  makeDefAttribs();
-  makeContextList();
-  readConfig();
-}
 
-Attribute **Highlight::attrList() {
-  return attribs;
-}
-
-void Highlight::getItemList(QStrList &list) {
-  int z;
-  Attribute *a;
-
-  for (z = 0; z < nAttribs; z++) {
-    a = attribs[z];
-    if (a) {
-      list.append(i18n(a->name));
-    }
-  }
-}
-*/
 bool Highlight::isInWord(char ch) {
   static char data[] = {0,0,0,0,0,0,255,3,254,255,255,135,254,255,255,7};
   if (ch & 128) return true;
@@ -964,7 +962,7 @@ void ModulaHighlight::makeContextList() {
 
 
 AdaHighlight::AdaHighlight(const char *name) : GenHighlight(name) {
-  dw = "*_s.a;*_b.a";
+  dw = "*.a";
   dm = "text/x-ada-src";
 }
 
@@ -988,14 +986,15 @@ void AdaHighlight::makeContextList() {
 
   contextList[0] = c = new HlContext(0,0);
     c->items.append(keyword = new HlKeyword(1,0));
-    c->items.append(new HlAOct(3,0));
-    c->items.append(new HlInt(2,0));
-    c->items.append(new HlFloat(4,0));
-    c->items.append(new HlCharDetect(5,1,'"'));
-    c->items.append(new Hl2CharDetect(6,2,"--"));
-  contextList[1] = c = new HlContext(5,0);
-    c->items.append(new HlCharDetect(5,0,'"'));
-  contextList[2] = c = new HlContext(6,0);
+    c->items.append(new HlAdaBaseN(3,0));
+    c->items.append(new HlAdaDec(2,0));
+    c->items.append(new HlAdaFloat(4,0));
+    c->items.append(new HlAdaChar(5,0));
+    c->items.append(new HlCharDetect(6,1,'"'));
+    c->items.append(new Hl2CharDetect(7,2,"--"));
+  contextList[1] = c = new HlContext(6,0);
+    c->items.append(new HlCharDetect(6,0,'"'));
+  contextList[2] = c = new HlContext(7,0);
 
   keyword->addList(adaKeywords);
 }
@@ -1007,11 +1006,11 @@ HlManager::HlManager() : QObject(0L) {
   hlList.append(new Highlight("Normal"));
   hlList.append(new CHighlight("C"));
   hlList.append(new CppHighlight("C++"));
+  hlList.append(new JavaHighlight("Java"));
   hlList.append(new HtmlHighlight("HTML"));
   hlList.append(new BashHighlight("Bash"));
   hlList.append(new ModulaHighlight("Modula 2"));
   hlList.append(new AdaHighlight("Ada"));
-  hlList.append(new JavaHighlight("Java"));
 }
 
 HlManager::~HlManager() {
@@ -1727,55 +1726,3 @@ void HighlightDialog::done(int r) {
   QDialog::done(r);
 }
 
-/*
-void HighlightDialog::newHl(Highlight *hl) {
-  QStrList items;
-printf("HighlightDialog::newHl()\n");
-
-  if (highlight) {
-    highlight->writeConfig();
-printf("HighlightDialog::newHl() del\n");
-    delete highlight;
-  }
-  highlight = hl;
-  hl->getItemList(items);
-  itemLB->clear();
-  itemLB->insertStrList(&items);
-}
-
-Highlight *HighlightDialog::getHighlight(QStrList &types,
-  QWidget *parent, const char *newHlSlot) {
-
-  HighlightDialog *dlg;
-  Highlight *highlight;
-
-  dlg = new HighlightDialog(types,parent,newHlSlot);
-  dlg->exec();
-  highlight = dlg->highlight;
-
-  delete dlg;
-  if (highlight) highlight->writeConfig();
-  return highlight;
-}
-
-void HighlightDialog::newItem(int index) {
-  a = highlight->attrList()[index];
-  col->setColor(a->col);
-  selCol->setColor(a->selCol);
-}
-
-void HighlightDialog::newCol(const QColor &c) {
-  a->col = c;
-}
-
-void HighlightDialog::newSelCol(const QColor &c) {
-  a->selCol = c;
-}
-
-void HighlightDialog::newFont() {
-  if (a) {
-    QFont font = a->font;
-    if (KFontDialog::getFont(font)) a->setFont(font);
-  }
-}
-*/

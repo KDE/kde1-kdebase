@@ -175,13 +175,34 @@ class HlMHex : public HlItemWw {
     virtual const char *checkHgl(const char *);
 };
 
-//ada base n
-class HlAOct : public HlItemWw {
+
+//ada decimal
+class HlAdaDec : public HlItemWw {
   public:
-    HlAOct(int attribute, int context);
+    HlAdaDec(int attribute, int context);
     virtual const char *checkHgl(const char *);
 };
 
+//ada base n
+class HlAdaBaseN : public HlItemWw {
+  public:
+    HlAdaBaseN(int attribute, int context);
+    virtual const char *checkHgl(const char *);
+};
+
+//ada float
+class HlAdaFloat : public HlItemWw {
+  public:
+    HlAdaFloat(int attribute, int context);
+    virtual const char *checkHgl(const char *);
+};
+
+//ada char
+class HlAdaChar : public HlItemWw {
+  public:
+    HlAdaChar(int attribute, int context);
+    virtual const char *checkHgl(const char *);
+};
 
 
 //Item Style: color, selected color, bold italic
