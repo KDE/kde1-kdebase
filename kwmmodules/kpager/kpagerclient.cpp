@@ -47,13 +47,13 @@ KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const 
     numberofDesktops=0;
     screenwidth=KWM::geometry( qt_xrootwin()).width();
     screenheight=KWM::geometry( qt_xrootwin()).height();
-
+    
     Desktop::kwmmapp=kwmmapp;
     desktop[0]=new Desktop(0,screenwidth,screenheight,this,"Global Desktop");
     connect(desktop[0],SIGNAL(moveWindow(Window,int,int,int,int)),this,SLOT(moveWindow(Window,int,int,int,int)));
     connect(desktop[0],SIGNAL(updateDesk(int)),this,SLOT(updateDesk(int)));
     connect(desktop[0],SIGNAL(showPopupMenu(Window,QPoint)),parent,SLOT(showPopupMenu(Window,QPoint)));
-
+    
     right=new KTriangleButton(KTriangleButton::Right,this,"Right");
     left=new KTriangleButton(KTriangleButton::Left,this,"Left");
     connect(right,SIGNAL(clickedQuickly()),this,SLOT(moveRight()));
@@ -67,9 +67,9 @@ KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const 
     desktopContainer->setBackgroundColor(QColor(96,129,137));
     setBackgroundMode(NoBackground);
     //    setBackgroundColor(QColor(96,129,137));
-
+    
     initDesktops();
-
+    
 };
 
 KPagerClient::~KPagerClient()
@@ -77,20 +77,8 @@ KPagerClient::~KPagerClient()
 #ifdef KPAGERCLIENTDEBUG
     printf("KPagerClient:: destructor\n");
 #endif
-    /*
-    for (int i=0;i<MAXDESKTOPS;i++)
-        if (desktop[i]!=0L)
-        {
-            delete desktop[i];
-            desktop[i]=0L;
-        }
-*/
-#ifdef KPAGERCLIENTDEBUG
-    printf("KPagerClient:: destructor(end)\n");
-#endif
     
-    
-};
+}
 
 void KPagerClient::desktopChanged(int i)
 {
@@ -102,7 +90,7 @@ void KPagerClient::desktopChanged(int i)
     activedesktop=i;
     
     desktop[activedesktop]->setDesktopActived(true);
-
+    
 }
 
 int KPagerClient::desktopContaining(Window w)
@@ -161,30 +149,30 @@ void KPagerClient::windowChanged(Window w)
 #ifdef KPAGERCLIENTDEBUG
     printf("window changed\n");
 #endif
-
-//    int dsk=desktopContaining(w);
+    
+    //    int dsk=desktopContaining(w);
     int dsk=KWM::desktop(w);
-   
+    
     if (dsk>numberofDesktops) return; 
     if (KWM::isSticky(w))
     {
 #ifdef KPAGERCLIENTDEBUG
-    printf("issticky\n");
+        printf("issticky\n");
 #endif
         if (!desktop[0]->contains(w))
         {
             for (int i=0;i<MAXDESKTOPS;i++)
             {
-//                if ((desktop[i]!=0L)&&(dsk!=i)) desktop[i]->addWindow(w);
+                //                if ((desktop[i]!=0L)&&(dsk!=i)) desktop[i]->addWindow(w);
                 if ((desktop[i]!=0L)&&(!desktop[i]->contains(w))) desktop[i]->addWindow(w);
             }
             desktop[dsk]->changeWindow(w);
         }
         else
-        for (int i=0;i<MAXDESKTOPS;i++)
-        {
-            if (desktop[i]!=0L) desktop[i]->changeWindow(w);
-        }
+            for (int i=0;i<MAXDESKTOPS;i++)
+            {
+                if (desktop[i]!=0L) desktop[i]->changeWindow(w);
+            }
     } else
     {
         if ((move_window_dsk!=-1)&&(move_window_w=w)) // This is done
@@ -193,7 +181,7 @@ void KPagerClient::windowChanged(Window w)
             KWM::moveToDesktop(move_window_w,move_window_dsk);
             move_window_dsk=-1;
         };
-
+        
         if (desktop[0]->contains(w))
         {
             for (int i=0;i<MAXDESKTOPS;i++)
@@ -208,20 +196,20 @@ void KPagerClient::windowChanged(Window w)
             if (d!=dsk)  // This window has been moved across desktops
             {
                 desktop[d]->removeWindow(w);
-/*                int i=0;
-                QList <Window> *windowlist=new QList<Window>(kwmmapp->windows_sorted);
-                Window *win=windowlist->first();
-                while ((win!=0L)&&(*win!=w))
-                {
-                    if (KWM::desktop(*win)==dsk) i++;
-                    win=windowlist->next();
-                }
-                delete windowlist;
+                /*                int i=0;
+                 QList <Window> *windowlist=new QList<Window>(kwmmapp->windows_sorted);
+                 Window *win=windowlist->first();
+                 while ((win!=0L)&&(*win!=w))
+                 {
+                 if (KWM::desktop(*win)==dsk) i++;
+                 win=windowlist->next();
+                 }
+                 delete windowlist;
+                 
+                 desktop[dsk]->addWindow(w,i);
+                 */
+                desktop[dsk]->addWindow(w);              
                 
-                desktop[dsk]->addWindow(w,i);
-  */
-		desktop[dsk]->addWindow(w);              
-
             }
             else
                 desktop[dsk]->changeWindow(w);
@@ -287,7 +275,7 @@ void KPagerClient::desktopNameChanged(int dsk,QString s)
     if (dsk>numberofDesktops) return; 
     desktop[dsk]->setName(s.data());
     desktop[dsk]->update(0,0,desktop[dsk]->width(),desktop[dsk]->getHeaderHeight());
-
+    
 }
 
 void KPagerClient::desktopNumberChanged(int numdsks)
@@ -295,15 +283,15 @@ void KPagerClient::desktopNumberChanged(int numdsks)
 #ifdef KPAGERCLIENTDEBUG
     printf("desktop number changed\n");
 #endif
-
+    
     if (numdsks<numberofDesktops)
     {
         for (int i=numdsks+1;i<=numberofDesktops;i++)
-	{
+        {
             delete desktop[i];
-	    desktop[i]=0L;
-	}
-	numberofDesktops=numdsks;
+            desktop[i]=0L;
+        }
+        numberofDesktops=numdsks;
     }
     else
     {
@@ -325,7 +313,7 @@ void KPagerClient::initDesktops(void)
         w=((h/2)-Desktop::getHeaderHeight())*screenwidth/screenheight;
     else
         w=(h-Desktop::getHeaderHeight())*screenwidth/screenheight;
-
+    
     for (int i=1;i<=numberofDesktops;i++)
     {
         desktop[i]=new Desktop(i,screenwidth,screenheight,desktopContainer,KWM::getDesktopName(i).data());
@@ -334,13 +322,13 @@ void KPagerClient::initDesktops(void)
         connect(desktop[i],SIGNAL(updateDesk(int)),this,SLOT(updateDesk(int)));
         connect(desktop[i],SIGNAL(showPopupMenu(Window,QPoint)),parent(),SLOT(showPopupMenu(Window,QPoint)));
         desktop[i]->setGeometry(x,y,w,h);
-	desktop[i]->show();
+        desktop[i]->show();
         x+=w+5;
     };
-
+    
     activedesktop=KWM::currentDesktop();
     desktop[activedesktop]->setDesktopActived(true);
-
+    
     QList <Window> *windowlist=new QList<Window>(kwmmapp->windows_sorted);
     Window *win=windowlist->first();
     while (win!=0L)
@@ -349,8 +337,8 @@ void KPagerClient::initDesktops(void)
         win=windowlist->next();
     }
     delete windowlist;
-
-
+    
+    
 }
 void KPagerClient::moveRight()
 {
@@ -363,7 +351,7 @@ void KPagerClient::moveRight()
         updateRects(true);
     }
     else
-    desktopContainer->scroll(-(int)velocity,0);
+        desktopContainer->scroll(-(int)velocity,0);
     //    updateRects(true);
 }
 void KPagerClient::moveLeft()
@@ -377,7 +365,7 @@ void KPagerClient::moveLeft()
         updateRects(true);
     }
     else
-    desktopContainer->scroll((int)velocity,0);
+        desktopContainer->scroll((int)velocity,0);
     //    updateRects(true);
 }
 
@@ -390,14 +378,14 @@ void KPagerClient::singleClickR()
 {
     int i=1;
     int desktoseefirst=0;
-
+    
     while ((desktoseefirst==0)&&(i<numberofDesktops))
     {
         if (desktop[i]->x()>2) desktoseefirst=i;
         i++;
     };
     // Lets align the desktoptoseefirst to the left
-//    printf("deltax : %d\n",deltax);
+    //    printf("deltax : %d\n",deltax);
     deltax+=desktop[desktoseefirst]->x()-2;
     if (deltax>=maxdeltax)
     {
@@ -405,23 +393,23 @@ void KPagerClient::singleClickR()
         updateRects(true);
     }
     else
-    desktopContainer->scroll(-desktop[desktoseefirst]->x()+2,0);
-//    printf("deltax*: %d\n",deltax);
-
+        desktopContainer->scroll(-desktop[desktoseefirst]->x()+2,0);
+    //    printf("deltax*: %d\n",deltax);
+    
 }
 
 void KPagerClient::singleClickL()
 {
     int i=1;
     int desktoseefirst=1;
-
+    
     while ((i<numberofDesktops)&&(desktop[i]->x()<2))
     {
         if (desktop[i]->x()<2) desktoseefirst=i;
         i++;
     };
     // Lets align the desktoptoseefirst to the left
-//    printf("-deltax : %d\n",deltax);
+    //    printf("-deltax : %d\n",deltax);
     deltax+=desktop[desktoseefirst]->x()-2;
     if (deltax<0)
     {
@@ -429,8 +417,8 @@ void KPagerClient::singleClickL()
         updateRects(true);
     }
     else
-    desktopContainer->scroll(-desktop[desktoseefirst]->x()+2,0);
-//    printf("-deltax*: %d\n",deltax);
+        desktopContainer->scroll(-desktop[desktoseefirst]->x()+2,0);
+    //    printf("-deltax*: %d\n",deltax);
 }
 
 void KPagerClient::updateRects(bool onlydesktops)
@@ -445,7 +433,7 @@ void KPagerClient::updateRects(bool onlydesktops)
         w=((h/2)-Desktop::getHeaderHeight())*screenwidth/screenheight;
     else
         w=(h-Desktop::getHeaderHeight())*screenwidth/screenheight;
-
+    
     if (visibleGlobalDesktop)
         desktopContainer->setGeometry(3,5,width()-w-((areArrowsVisible())?(36):(16)),h);
     else
@@ -455,11 +443,11 @@ void KPagerClient::updateRects(bool onlydesktops)
         desktopContainer->hide();
     else if (!desktopContainer->isVisible())
         desktopContainer->show();
-
+    
     int sizeofScroll=0;
     if (desktop[numberofDesktops]->x()+desktop[numberofDesktops]->width()<desktopContainer->width()-2)
         sizeofScroll=desktopContainer->width()-2-(desktop[numberofDesktops]->x()+desktop[numberofDesktops]->width());
-
+    
     if (desktop[1]->x()+sizeofScroll>2) sizeofScroll=2-desktop[1]->x();
     deltax-=sizeofScroll;
     
@@ -482,11 +470,11 @@ void KPagerClient::updateRects(bool onlydesktops)
     }
     maxdeltax=x-5-desktopContainer->width()+2;
     if (maxdeltax<0) maxdeltax=0;
-
+    
 #ifdef KPAGERCLIENTDEBUG
     printf("maxdeltax : %d , x[1] : %d\n",maxdeltax,desktop[1]->x());
 #endif
-
+    
     if (!onlydesktops)
     {
         if (((!areArrowsVisible())&&(maxdeltax==0))||((areArrowsVisible())&&(maxdeltax<20)))
@@ -513,7 +501,7 @@ void KPagerClient::updateRects(bool onlydesktops)
                     desktopContainer->setGeometry(3,5,width()-((areArrowsVisible())?(26):(6)),h);
             }
         }
-
+        
         if (visibleGlobalDesktop)
         {
             if (use2Rows)
@@ -527,10 +515,10 @@ void KPagerClient::updateRects(bool onlydesktops)
         {
             right->setGeometry(width()-20,0,20,height()/2);
             left->setGeometry(width()-20,height()/2,20,height()-height()/2);
-        /* Note that computationally, height()/2 != height()-height()/2 !!! */
+            /* Note that computationally, height()/2 != height()-height()/2 !!! */
         }
     }
-
+    
 }
 
 void KPagerClient::resizeEvent(QResizeEvent *)
@@ -545,10 +533,10 @@ void KPagerClient::moveWindow(Window w,int dsk,int x,int y, int origdesk)
 #endif
     if (dsk==0)
     {
- // Next line moves the window to the active desktop. This is done because
-//  if not, kwm raises the window when it's in a semi changed state
-//  and doesn't work well with kpager.
-//        if (activedesktop!=KWM::desktop(w)) KWM::moveToDesktop(w,activedesktop);
+        // Next line moves the window to the active desktop. This is done because
+        //  if not, kwm raises the window when it's in a semi changed state
+        //  and doesn't work well with kpager.
+        //        if (activedesktop!=KWM::desktop(w)) KWM::moveToDesktop(w,activedesktop);
         KWM::setSticky(w,true);
     }
     else
@@ -561,7 +549,7 @@ void KPagerClient::moveWindow(Window w,int dsk,int x,int y, int origdesk)
         };
         KWM::moveToDesktop(w,dsk);
     }
-
+    
     QPoint p(x,y);
     KWM::move(w,p);
 }
@@ -579,7 +567,7 @@ void KPagerClient::setVisibleGlobalDesktop(bool status)
     else
         desktop[0]->hide();
     visibleGlobalDesktop=status;
-
+    
     updateRects();
     update();
 }
@@ -590,10 +578,10 @@ void KPagerClient::paintEvent(QPaintEvent *)
     QPainter *painter=new QPainter(this);
     // I suppose painting four small bars is faster than painting a big rect 
     // which is mostly behind another widget
-//    painter->fillRect(0,0,right->x(),height(),QColor(96,129,137));
+    //    painter->fillRect(0,0,right->x(),height(),QColor(96,129,137));
     QColorGroup qcg;
     qcg=colorGroup();
-
+    
     int inix;
     if (visibleGlobalDesktop)
         inix=width()-desktop[0]->width()-10;
@@ -602,25 +590,26 @@ void KPagerClient::paintEvent(QPaintEvent *)
     
     if (visibleGlobalDesktop)
     {
-/*        painter->fillRect(right->x()+right->width(),0,desktop[0]->x(),height(),qcg.background());
-        painter->fillRect(right->x()+right->width(),0,width()-right->x()-right->width(),desktop[0]->y(),qcg.background());
-        painter->fillRect(desktop[0]->x()+desktop[0]->width(),0,width()-desktop[0]->x()-desktop[0]->width(),height(),qcg.background());
-        painter->fillRect(right->x()+right->width(),desktop[0]->y()+desktop[0]->height(),width()-right->x()-right->width(),height()-desktop[0]->y()-desktop[0]->height(),qcg.background());
-*/
+        /*
+         painter->fillRect(right->x()+right->width(),0,desktop[0]->x(),height(),qcg.background());
+         painter->fillRect(right->x()+right->width(),0,width()-right->x()-right->width(),desktop[0]->y(),qcg.background());
+         painter->fillRect(desktop[0]->x()+desktop[0]->width(),0,width()-desktop[0]->x()-desktop[0]->width(),height(),qcg.background());
+         painter->fillRect(right->x()+right->width(),desktop[0]->y()+desktop[0]->height(),width()-right->x()-right->width(),height()-desktop[0]->y()-desktop[0]->height(),qcg.background());
+         */
         painter->fillRect(inix,0,desktop[0]->x(),height(),qcg.background());
         painter->fillRect(inix,0,width()-inix,desktop[0]->y(),qcg.background());
         painter->fillRect(desktop[0]->x()+desktop[0]->width(),0,width()-desktop[0]->x()-desktop[0]->width(),height(),qcg.background());
         painter->fillRect(inix,desktop[0]->y()+desktop[0]->height(),width()-inix,height()-desktop[0]->y()-desktop[0]->height(),qcg.background());
     }
-
+    
     /* C++ is the reusable language , let's reuse inix :) */
-
+    
     if (visibleGlobalDesktop)
         inix=width()-desktop[0]->width()-(areArrowsVisible()?(30):(10));
     else
         inix=width()-(areArrowsVisible()?(20):(0));
-
-
+    
+    
     //    painter->setPen(QColor(236,236,236));
     painter->setPen(qcg.light());
     painter->drawLine(0,height()-1,inix-1,height()-1);
@@ -651,30 +640,30 @@ void KPagerClient::commandReceived(QString s)
 {
     if (strcmp(s.data(),"kbgwm_change")==0)
     {
-//#ifdef KPAGERCLIENTDEBUG
-	printf("KBGWM_CHANGE\n");
-//#endif
+#ifdef KPAGERCLIENTDEBUG
+        printf("KBGWM_CHANGE\n");
+#endif
         for (int i=1;i<=numberofDesktops;i++)
         {
             if (desktop[i]!=0L) desktop[i]->reconfigure();
         }
     }
     else
-    if ((s.length()>13)&&(strncmp(s.data(),"kbgwm_change_",13)==0))
-    {
-	int dsk;
-	sscanf(s.data(),"kbgwm_change_%d",&dsk);
-//#ifdef KPAGERCLIENTDEBUG
-	printf("KBGWM_CHANGE_%d\n",dsk);
-//#endif
-	dsk++;
-	if ((dsk>0)&&(dsk<=numberofDesktops)&&(desktop[dsk]!=0L)) 
-		desktop[dsk]->reconfigure();
-
-    }
+        if ((s.length()>13)&&(strncmp(s.data(),"kbgwm_change_",13)==0))
+        {
+            int dsk;
+            sscanf(s.data(),"kbgwm_change_%d",&dsk);
 #ifdef KPAGERCLIENTDEBUG
-    else
-        printf("KPager: Command (%s) is not for me\n",s.data());
+            printf("KBGWM_CHANGE_%d\n",dsk);
+#endif
+            dsk++;
+            if ((dsk>0)&&(dsk<=numberofDesktops)&&(desktop[dsk]!=0L)) 
+                desktop[dsk]->reconfigure();
+            
+        }
+#ifdef KPAGERCLIENTDEBUG
+        else
+            printf("KPager: Command (%s) is not for me\n",s.data());
 #endif
 }
 
@@ -704,13 +693,13 @@ void KPagerClient::toggle1ClickMode()
 void KPagerClient::updateDesk(int i)
 {
     if (i==0) 
-	for (int i=0;i<=numberofDesktops;i++)
+        for (int i=0;i<=numberofDesktops;i++)
         {
             if (desktop[i]!=0L) desktop[i]->update();
         }
     else
         if (desktop[i]!=0L) desktop[i]->update();    
-
+    
 }
 
 const char *KPagerClient::getDesktopName(int i)

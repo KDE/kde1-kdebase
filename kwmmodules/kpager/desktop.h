@@ -90,7 +90,6 @@ private:
     static QPixmap *commonbigBackgroundPixmap;
     static int commonbackPixmapWidth;
     static int commonbackPixmapHeight;
-//    static QPixmap *commonbackgroundPixmap;
     bool useCommonDesktop;
 
     QColor color1;
@@ -125,7 +124,6 @@ private:
     void grabDesktop(void);
     void grabWindowContents(WindowProperties *wp);
 
-//    QPixmap *getBgPixmap(void);
     QPixmap *getBigBgPixmap(void);
 
 protected:
@@ -165,7 +163,6 @@ public:
 
 #if QT_VERSION >= 141
     virtual void dragEnterEvent(QDragEnterEvent *e);
-    virtual void dragMoveEvent   (QDragMoveEvent *e);
     virtual void dropEvent       (QDropEvent *e);
 #endif
 

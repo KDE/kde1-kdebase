@@ -1,3 +1,10 @@
+* Fri Dic  4 7:20:00 CEST 1998
+
+Finally implemented support for all the kbgndwm background modes
+Some code beautified.
+Raised version number to 0.9
+
+
 * Wed Dic  2 7:23:00 CEST 1998
 
 Many speed improvements, including reducing initialization
