@@ -6,7 +6,7 @@ SUBDIRS = kfm mimetypes kdehelp kfontmanager kfind kvt \
 	kmenuedit kaudio kcontrol kappfinder pics applnk doc po  \
 	config kstartondesk
 
-# AUTOMAKE_OPTIONS = no-dependencies
+AUTOMAKE_OPTIONS = foreign
 
 install-data-local:
 	@echo ""
