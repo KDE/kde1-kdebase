@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-06-07 13:33+0200\n"
 "PO-Revision-Date: 1998-03-01 11:27+0100\n"
 "Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgstr "Gå ut av kdm"
 
 #: kgreeter.cpp:139
 msgid "Login:"
-msgstr "Logg inn:"
+msgstr "Logginnavn:"
 
 #: kgreeter.cpp:151
 msgid "Password:"
@@ -44,7 +44,7 @@ msgstr "Feil ved innlogging!"
 
 #: kgreeter.cpp:197
 msgid "Session Type:"
-msgstr "Sesjons type:"
+msgstr "Sesjonstype:"
 
 #: kgreeter.cpp:213
 msgid "Go!"

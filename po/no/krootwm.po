@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-06-07 13:33+0200\n"
 "PO-Revision-Date: 1998-02-26 21:10+0100\n"
 "Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgstr ""
 
 #: krootwm.C:190
 msgid "Cascade windows"
-msgstr ""
+msgstr "Overlappende vinduer"
 
 #: krootwm.C:191
 msgid "Arrange icons"
