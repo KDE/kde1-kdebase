@@ -1,3 +1,8 @@
+1999-08-14  Jochen Küpper  <Jochen.Kuepper@fernuni-hagen.de>
+
+	* main.cpp (main): Don't allocate the unused character array ch. The
+	malloc assignment wasn't ANSI C++ conform, actually !
+
 1999-01-23  Stefan Taferner  <taferner@kde.org> (V0.8)
 
 	* Removed kvt color entries.

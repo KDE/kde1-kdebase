@@ -162,7 +162,6 @@ void cleanup(void)
 //-----------------------------------------------------------------------------
 int main(int argc, char **argv)
 {
-  char *ch = malloc(100);
   kimgioRegister();
 
   KThemesApplication app(argc, argv, "kthememgr");
