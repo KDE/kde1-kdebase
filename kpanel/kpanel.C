@@ -1189,13 +1189,13 @@ void kPanel::hidePanel(){
     QRect geom = geometry();
     in_animation = true;
     if (orientation == vertical) {
-	for (int i = 0; i<geom.height();i+=10){
+	for (int i = 0; i<geom.height();i+=hide_show_animation){
 	    move(geom.x(), geom.y()-i);
 	    qApp->syncX();
 	    qApp->processEvents();
 	}
     } else {
-	for (int i = 0; i<geom.width();i+=10){
+	for (int i = 0; i<geom.width();i+=hide_show_animation){
 	    move(geom.x()-i, geom.y());
 	    qApp->syncX();
 	    qApp->processEvents();
@@ -1241,13 +1241,13 @@ void kPanel::showPanel(){
     move(-10000, -10000);
     QFrame::show();
     if (orientation == vertical) {
-	for (int i = geom.height(); i>0;i-=10){
+	for (int i = geom.height(); i>0;i-=hide_show_animation){
 	    move(geom.x(), geom.y()-i);
 	    qApp->syncX();
 	    qApp->processEvents();
 	}
     } else {
-	for (int i = geom.width(); i>0;i-=10){
+	for (int i = geom.width(); i>0;i-=hide_show_animation){
 	    move(geom.x()-i, geom.y());
 	    qApp->syncX();
 	    qApp->processEvents();
