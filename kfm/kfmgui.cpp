@@ -1718,33 +1718,11 @@ void KfmGui::readProperties( KConfig* config )
 
     if (GUI_ready) //if these are local changes...
     {
-      // Tricky - if we browse we want GLOBAL values, and not those from
-      // previous dir. But this also avoids more updateViews we don't have
-      // to updateView since we read new URL. (sven)
-
-      hasLocal = false;
+      hasLocal = true;
       
-      if (bViewHTML != bViewHTMLLocal)
-      {
-        hasLocal = true;
         mview->setItemChecked( mview->idAt( 3 ), bViewHTMLLocal);
-      }
-      
-      if (visualSchnauzer != visualSchnauzerLocal)
-      {
-        hasLocal = true;
         mview->setItemChecked( mview->idAt( 2 ), visualSchnauzerLocal );
-      }
-
-      if (showDot != showDotLocal)
-      {
-        hasLocal = true;
         mview->setItemChecked( mview->idAt( 0 ), showDotLocal );
-      }
-
-      if (viewMode != viewModeLocal)
-      {
-        hasLocal = true;
         
         mview->setItemChecked( mview->idAt( 5 ), false);
         mview->setItemChecked( mview->idAt( 6 ), false);
@@ -1768,8 +1746,7 @@ void KfmGui::readProperties( KConfig* config )
           case TEXT_VIEW:
             mview->setItemChecked( mview->idAt( 6 ), true );
             break;
-        }
-      }
+	}
     }
     else // else if constructor reads globals
     {
@@ -1887,6 +1864,7 @@ void KfmGui::saveProperties( KConfig* config )
   config->writeEntry("kfmgui_width",this->width());
   config->writeEntry("kfmgui_height",this->height());
 
+  
   if ( bTreeView == false)
     entry = "Off";
   else
@@ -1894,7 +1872,7 @@ void KfmGui::saveProperties( KConfig* config )
   
   config->writeEntry("TreeView", entry);
   
-  switch (viewMode)
+  switch (getViewMode())
     {
     case ICON_VIEW:
       entry = "IconView";
@@ -1912,21 +1890,21 @@ void KfmGui::saveProperties( KConfig* config )
 
   config->writeEntry("ViewMode", entry);
 
-  if (showDot == true)
+  if (isShowDot() == true)
     entry = "yes";
   else
     entry = "no";
   
   config->writeEntry("ShowDotFiles", entry);
 
-  if (visualSchnauzer == false)
+  if (isVisualSchnauzer() == false)
     entry = "Off";
   else
     entry = "On";
   
   config->writeEntry("VisualSchnauzer", entry);
 
-  if (bViewHTML == true)
+  if (isViewHTML() == true)
     entry = "yes";
   else
     entry = "no";
@@ -1989,7 +1967,57 @@ void KfmGui::writeProperties(KConfig *cfg)
 void KfmGui::loadProperties(KConfig *cfg)
 {
   cfg->setGroup("URL properties");
-  readProperties(cfg);
+  if (cfg->hasKey("ViewMode"))     //do we really have our props there?
+    readProperties(cfg);           // Yeah, read them.
+  else
+    setHasLocal (false);           // No, we don't
+}
+
+void KfmGui::setHasLocal (bool aintGotNoProps)
+{
+  hasLocal = aintGotNoProps;
+
+  // This works only for dirs without .directory, and for urls
+  // that are neither bookmarked nor have kdelnk to them on desktop
+
+  if (!hasLocal) // reset checkboxes to global state
+  {
+    if (bViewHTML != bViewHTMLLocal)
+      mview->setItemChecked( mview->idAt( 3 ), bViewHTML);
+
+    if (visualSchnauzer != visualSchnauzerLocal)
+      mview->setItemChecked( mview->idAt( 2 ), visualSchnauzer);
+
+    if (showDot != showDotLocal)
+      mview->setItemChecked( mview->idAt( 0 ), showDot);
+
+    if (viewMode != viewModeLocal)
+    {
+      mview->setItemChecked( mview->idAt( 5 ), false);
+      mview->setItemChecked( mview->idAt( 6 ), false);
+      mview->setItemChecked( mview->idAt( 7 ), false);
+      mview->setItemChecked( mview->idAt( 8 ), false);
+
+      switch (viewMode)
+      {
+	case ICON_VIEW:
+	  mview->setItemChecked( mview->idAt( 5 ), true );
+	  break;
+
+	case LONG_VIEW:
+	  mview->setItemChecked( mview->idAt( 7 ), true );
+	  break;
+
+	case SHORT_VIEW:
+	  mview->setItemChecked( mview->idAt( 8 ), true );
+	  break;
+
+	case TEXT_VIEW:
+	  mview->setItemChecked( mview->idAt( 6 ), true );
+	  break;
+      }
+    }
+  }
 }
 
 KfmGui::~KfmGui()

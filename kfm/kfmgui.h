@@ -163,10 +163,11 @@ public:
     KBookmarkManager *getBookmarkManager() {return bookmarkManager;}
 
     /**
-     * Sets flag hasLocal - used by KfmView to tell GUI that no props
-     * were found (sven)
+     * Sets flag hasLocal - used only by KfmView to tell GUI that no props
+     * were found; in that case KFMGui will sync checkboxes to global
+     * values (sven).
      */
-    inline void setHasLocal (bool aintGotNoProps) {hasLocal = aintGotNoProps;}
+    void setHasLocal (bool aintGotNoProps);
 
     /**
      * Returns true if menu bar hidden. Used by KFMManager to add Show Menubar
