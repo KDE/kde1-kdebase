@@ -32,6 +32,19 @@ else
   kde_minidir=@kde_minidir@
 fi
 
+
+# call the redhat wmconfig program, if present
+#
+# Note: wmconfig always installs under ~/.kde/share..., so just
+# call it if executed by the user!
+# 
+if [ $# -ne 1]; then
+  if [ -x /usr/X11R6/bin/wmconfig ] ; then
+    /usr/X11R6/bin/wmconfig --output=kde >/dev/null 2>&1
+  fi
+fi
+
+
 OLDDIR=`pwd`
 cd @kde_datadir@/kappfinder
 
