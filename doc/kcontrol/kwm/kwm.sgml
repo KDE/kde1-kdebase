@@ -1,0 +1,91 @@
+<!doctype linuxdoc system>
+
+<article>
+
+<!-- Title information -->
+
+<title>KDE Control Center - KWM
+<author>Matthias Hoelzer, Pat Dowler
+<date>v1.0, 17. January 1998
+
+<!-- Table of contents -->
+<toc>
+
+<!-- Begin the document -->
+
+<sect>Configuring the kwm titlebar
+
+<p>
+This dialog configures some settings of <em>kwm</em>, the KDE
+window manager. The currently available options are:
+
+<itemize>
+<item>place titlebar buttons on the left or right side of the titlebar
+<item>disable and hide titlebar buttons
+<item>select shaded vs. plain appearance
+<item>titlebar animation?
+</itemize>
+
+<p>
+The placement of buttons on each side of the titlebar follows a simple
+rule: buttons which are higher up in the list appear <em>inside</em>
+or near the middle of the window relative to buttons that are farther
+down on the list. This allows for most sensible button arrangements.
+
+<p>
+Since a maximum of three (3) buttons are allowed on each side of the
+titlebar, trying to place a fourth button on either side will cause the
+innermost one to be switched off.
+
+<p>
+The shading scheme that is used by kwm for the shaded titlebar
+option does not show up in the titlebar preview, so you have to
+select Apply to see it. Sorry :-)
+
+<p>
+Enabling "titlebar animation" tells kwm to cause long window titles (too
+long to fit in the colored area of the titlebar) to slide back and forth
+in order to be visible. 
+
+<sect>Configuring window properties
+<p>
+The window manager supports the following window-manipulation
+features:
+
+<itemize>window moving: transparent or opaque
+<item>window resizing: animated or instant
+<item>window maximizing: expand to full screen or just expand vertically
+<item>focus policy: click or follow mouse
+<item>auto raise: window will be raised automatically
+</itemize>
+
+<p>
+Transparent window movement mode supplies a wireframe of the window
+which the user can place, while opaque movement mode means the contents
+of the window remain visible while it is being moved.
+
+<p>
+The resizing animation looks really cool. Try it.
+
+<p>
+The window that is "in focus" receives keyboard input and has the
+active titlebar appearance (usually colored instead of gray). The
+focus can be switched to another window with the keyboard (Alt-TAB)
+or the mouse. If "click to focus" is selected, the user must click
+in the new window to give it the focus. If "focus follows mouse"
+is selected, the focus switches to a widnow as soon as the pointer
+enters it. This makes focus switching without raising a window easier,
+but at the expense that the position of the pointer is important even
+when the pointer isn't being used. Note that kwm uses what is called
+"sloppy focus" in the latter mode: a window stay in focus after the
+pointer leaves if the pointer has not entered another window and given
+it the focus (i.e. the deskop or root window and kpanel do not get
+the focus).
+
+<p>
+Auto raise serves to bring a window to the front (top) when it gets the
+focus. This mode applies to "focus follows mouse" policy only. Auto raise
+can be disabled by setting the delay to zero (0).
+
+
+</article>

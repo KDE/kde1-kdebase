@@ -1,0 +1,35 @@
+<!doctype linuxdoc system>
+
+<article>
+
+<!-- Title information -->
+
+<title>KDE Control Center - Sound
+<author>Matthias H&ouml;lzer, Pat Dowler
+<date>v1.0, 17. January 1998
+
+<!-- Begin the document -->
+
+<sect>Configuring the bell
+<p>
+The system bell or <em>beep</em> is a feature of the X server,
+which attempts to make good use of the available hardware. However,
+it isn't always possible for the X server to actually make a beep
+sound with exactly the parameters selected due to hardware
+limitations. For example, on most PCs, volume control is not very
+good so the X server seems to <em>fake</em> low volume with a
+reduced duration of the sound. Thus, if the settings don't seem 
+to do anything, this is because the X server and/or the hardware
+don't support anything better.
+
+<p>
+User's are able to set the following parameters for the bell:
+
+<itemize>
+<item>volume (percentage of "maximum" volume)
+<item>pitch (in Hz)
+<item>duration (in milliseconds)
+</itemize>
+
+
+</article>

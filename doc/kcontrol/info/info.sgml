@@ -1,0 +1,41 @@
+<!doctype linuxdoc system>
+
+<article>
+
+<!-- Title information -->
+
+<title>KDE Control Center - Information
+<author>Matthias H&ouml;lzer
+<date>v1.0, 17. January 1998
+
+<!-- Table of contents -->
+<toc>
+
+<!-- Begin the document -->
+
+<sect>Memory information
+<p>
+
+This page displays information about the current memory usage. It is updated 
+regularly. 
+
+<p>
+The exact information displayed is system dependent. On some systems,
+memory information can not yet be displayed.
+
+<p>
+User can not modify settings on this page.
+
+<sect> Information about the processor
+<p>
+This page displays information about the systems processor.
+
+<p>
+The exact information displayed is system dependent. On some systems,
+processor information can not yet be displayed.
+
+<p>
+User can not modify settings on this page.
+ 
+
+</article>

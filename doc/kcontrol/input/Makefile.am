@@ -1,5 +1,5 @@
 
-data_DATA = keyboard.html mouse.html
+data_DATA = input.html input-1.html input-2.html logotp3.gif
 
-datadir = $(kde_htmldir)/en/kcontrol/input
+datadir = $(kde_htmldir)/en/kcontrol/kcminput
 

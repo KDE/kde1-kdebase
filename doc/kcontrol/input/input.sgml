@@ -1,0 +1,56 @@
+<!doctype linuxdoc system>
+
+<article>
+
+<!-- Title information -->
+
+<title>KDE Control Center - Input Settings
+<author>Matthias H&ouml;lzer, Pat Dowler
+<date>v1.0, 17. January 1998
+
+<!-- Table of contents -->
+<toc>
+
+<!-- Begin the document -->
+
+<sect>Configuring the keyboard
+<p>
+The keyboard settings are features of the X server,
+which attempts to make good use of the available hardware. However,
+it isn't always possible for the X server to actually supply all
+the functions. For example, on some systems the key click is enabled
+or disabled in the CMOS setup and the X server does not supply an
+alternative. Thus, if a setting doesn't seem to do anything, this 
+is because the X server and/or the hardware don't support anything 
+better.
+
+<p>
+User's are able to set the following parameters for the keyboard:
+
+<itemize>
+<item>enable/disable autorepeat
+<item>key click volume
+</itemize>
+
+<sect>Configuring the mouse
+
+<p>
+User's are able to set the following parameters for the bell:
+
+<itemize>
+<item>accelerated movement rate
+<item>threshold for accelerated movement
+</itemize>
+
+<p>
+For threshold gives the distance the pointer must move (in a small
+amount of time) before accelerated movement occurs. In this mode,
+the pointer moves some factor faster than normal, relative to the
+amount the user actually moves the pointing device. The factor
+is the accelerated movement rate. These settings allow for slow, 
+precise pointer motion over small distances and rapid motion across 
+the screen with a short but quick motion. Large acceleration
+values and small threshold values may make the pointer too jumpy
+to be useful, as it will always move very quickly.
+
+</article>
