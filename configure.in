@@ -48,13 +48,17 @@ AC_ARG_ENABLE(setuid,[  --enable-setuid         enable setuid for kscreensavers 
 ac_enable_setuid="no"
 )
 
-if test "$ac_enable_setuid" = "no"; then
+if test "$SETUIDFLAGS" = ""; then 
+ if test "$ac_enable_setuid" = "no"; then
   if test "$ac_have_shadow" = "yes"; then
     AC_WARN("You have shadow password! You should use --enable-setuid!")
   fi
   SETUIDFLAGS=""
-else
+ else
   SETUIDFLAGS="-m 4755"
+ fi
+else
+ SETUIDFLAGS="-m $SETUIDFLAGS"
 fi
 AC_SUBST(SETUIDFLAGS)
 

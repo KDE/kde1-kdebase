@@ -8,7 +8,7 @@ LDADD = @all_libraries@ -L. -lkdeui -lkdecore -lqt -lXext -lX11 @LIBCRYPT@
 CLEANFILES = $(BUILTSOURCES)
 
 # for shadow passwords override the value
-INSTALL = @INSTALL@ @SETUIDFLAGS@
+INSTALL = @INSTALL@ $(SETUIDFLAGS)
 
 # automake doesn't accept \ within bin_PROGRAMS, don't ask me, why
 bin_PROGRAMS = kpolygon.kss kswarm.kss klissie.kss kbanner.kss klines.kss kblankscrn.kss krock.kss kflame.kss klaser.kss kpyro.kss khop.kss kbat.kss kslip.kss kforest.kss klock
