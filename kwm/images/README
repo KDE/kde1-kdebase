@@ -5,14 +5,6 @@ example ~/.kde/share/apps/kwm/pics/).
 Then add this to your kwmrc, group [General]
 
 ShapeMode=on
-ShapePixmapTopRight=top_right.xpm
-ShapePixmapRight=kwm_right.xpm
-ShapePixmapBottom=kwm_bottom.xpm
-ShapePixmapLeft=kwm_left.xpm
-ShapePixmapTopLeft=top_left.xpm
-ShapePixmapBottomRight=bottom_right.xpm
-ShapePixmapBottomLeft=bottom_left.xpm
-ShapePixmapTop=kwm_top.xpm
 
 Now restart kwm and please do not get a shock ;-)
 
