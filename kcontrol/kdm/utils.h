@@ -52,8 +52,6 @@
 #include <jpeg.h>
 #endif
 
-#define NO_WALLPAPER	klocale->translate("(none)")
-
 #define CONFIGFILE kapp->kde_configdir() + "/kdmrc"
 
 #define PIXDIR kapp->kde_datadir()+"/kdm/pics/"

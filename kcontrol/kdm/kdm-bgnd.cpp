@@ -59,10 +59,7 @@ KDMBackgroundWidget::KDMBackgroundWidget(QWidget *parent, const char *name, bool
 
 void KDMBackgroundWidget::setupPage(QWidget *)
 {
-      changed = FALSE;
-
       QLabel *label;
-      QPushButton *button;
       QGroupBox *tGroup, *lGroup, *rGroup;
       QRadioButton *rb;
 
@@ -139,8 +136,6 @@ void KDMBackgroundWidget::setupPage(QWidget *)
         list.append( wallpaper.data() );
 
       wpCombo = new QComboBox( false, rGroup );
-      wpCombo->insertItem( NO_WALLPAPER, 0 );
-      wpCombo->setCurrentItem( 0 );
 
       for ( uint i = 0; i < list.count(); i++ )
       {
@@ -149,7 +144,7 @@ void KDMBackgroundWidget::setupPage(QWidget *)
 		wpCombo->setCurrentItem( i );
       }
 
-      if ( wallpaper != NO_WALLPAPER && wpCombo->currentItem() == 0 )
+      if ( wallpaper.length() > 0 && wpCombo->currentItem() == 0 )
       {
 	wpCombo->insertItem( wallpaper );
 	wpCombo->setCurrentItem( wpCombo->count()-1 );
@@ -336,7 +331,7 @@ void KDMBackgroundWidget::setMonitor()
 {
   QApplication::setOverrideCursor( waitCursor );
 
-  if ( !wallpaper.isEmpty() && wallpaper != NO_WALLPAPER )
+  if ( !wallpaper.isEmpty() )
   {
     //debug("slotSelectColor - setting wallpaper");
     float sx = (float)monitor->width() / QApplication::desktop()->width();
@@ -355,11 +350,7 @@ void KDMBackgroundWidget::slotWallpaper( const char *filename )
   if ( filename )
   {
     if ( loadWallpaper( filename ) == TRUE )
-    {
-	//wallpaper = filename;
 	setMonitor();
-    }
-    changed = TRUE;
   }
 }
 
@@ -367,19 +358,32 @@ void KDMBackgroundWidget::slotWallpaperMode( int m )
 {
   wpMode = m;
 
-  if ( loadWallpaper( wallpaper ) == TRUE )
+  if(wpMode == NoPic)
   {
-    setMonitor();
-    changed = TRUE;
+    wpCombo->setEnabled(false);
+    button->setEnabled(false);
   }
+  else
+  {
+    wpCombo->setEnabled(true);
+    button->setEnabled(true);
+  }
+
+  if ( loadWallpaper( wallpaper ) == TRUE )
+    setMonitor();
 }
 
 void KDMBackgroundWidget::slotColorMode( int m )
 {
   colorMode = m;
 
-  slotWallpaperMode(wpMode);
-  setMonitor();
+  if(colorMode == Plain)
+    colButton2->setEnabled(false);
+  else
+    colButton2->setEnabled(true);
+
+  if ( loadWallpaper( wallpaper ) == TRUE )
+    setMonitor();
 }
 
 // Attempts to load the specified wallpaper and creates a centred/scaled
@@ -392,7 +396,7 @@ int KDMBackgroundWidget::loadWallpaper( const char *name, bool useContext )
   static int context = 0;
   QString filename;
   int rv = FALSE;
-  QPixmap tmp;
+  KPixmap tmp;
 
   if ( useContext )
   {
@@ -410,41 +414,33 @@ int KDMBackgroundWidget::loadWallpaper( const char *name, bool useContext )
   else
     filename = name;
 
-  if ( tmp.load( filename.data() ) == TRUE )
+  if ( wpMode == NoPic || tmp.load( filename.data() ) == TRUE )
   {
     wallpaper = filename;
     int w = QApplication::desktop()->width();
     int h = QApplication::desktop()->height();
 
-    switch(colorMode)
+    wpPixmap.resize( w, h );
+
+    if(wpMode != Scale && wpMode != Tile)
     {
-      default:
-      case Plain:
-        wpPixmap.resize( w, h );
-        wpPixmap.fill( color1 );
-        break;
-      case Horizontal:
+      switch(colorMode)
       {
-        KPixmap kp;
-        kp.resize(w, h);
-        kp.gradientFill(color1, color2, false);
-        wpPixmap = kp;
-        break;
-      }
-      case Vertical:
-      {
-        KPixmap kp;
-        kp.resize(w, h);
-        kp.gradientFill(color1, color2, true);
-        wpPixmap = kp;
-        break;
-      }
-    }
+        default:
+        case Plain:
+          wpPixmap.fill( color1 );
+          break;
+        case Horizontal:
+          wpPixmap.gradientFill(color1, color2, false);
+          break;
+        case Vertical:
+          wpPixmap.gradientFill(color1, color2, true);
+          break;
+      } // switch..
+    } // if..
 
     switch ( wpMode )
     {
-	case NoPic:
-	  break;
 	case Tile:
 	  wpPixmap = tmp;
 	  break;
@@ -459,7 +455,7 @@ int KDMBackgroundWidget::loadWallpaper( const char *name, bool useContext )
 	  float sy = (float)h / tmp.height();
 	  QWMatrix matrix;
 	  matrix.scale( sx, sy );
-	  wpPixmap = tmp.xForm( matrix );
+	  wpPixmap = (const KPixmap&)tmp.xForm( matrix );
 	}
 	break;
 
@@ -482,17 +478,9 @@ int KDMBackgroundWidget::loadWallpaper( const char *name, bool useContext )
 		&tmp, 0, 0, tmp.width(), tmp.height() );
 	  break;
 
+	case NoPic:
 	case Fancy:
-	{
-	  QFont font;
-          font.setPointSize(18);
-	  QPainter p;
-	  p.begin(&wpPixmap);
-	  p.setFont(font);
-	  p.drawText( 0, 0, w, h, AlignCenter, "No preview", 10);
-	  p.end();
 	  break;
-	}
 	default:
         {
 	  wpPixmap = tmp;
@@ -515,8 +503,16 @@ int KDMBackgroundWidget::loadWallpaper( const char *name, bool useContext )
 
 void KDMBackgroundWidget::showSettings()
 { 
+  wpGroup->setButton(wpMode);
+  cGroup->setButton(colorMode);
+
   colButton1->setColor( color1 );
   colButton2->setColor( color2 );
+
+  if(colorMode == Plain)
+    colButton2->setEnabled(false);
+  else
+    colButton2->setEnabled(true);
 
   wpCombo->setCurrentItem( 0 );
   for ( int i = 1; i < wpCombo->count(); i++ )
@@ -528,13 +524,24 @@ void KDMBackgroundWidget::showSettings()
     }
   }
 
-  if ( wallpaper != NO_WALLPAPER ) // && wpCombo->currentItem() == 0 )
+  if ( wpMode == NoPic || !wallpaper.isEmpty() ) // && wpCombo->currentItem() == 0 )
   {
     loadWallpaper(wallpaper.data());
     wpCombo->insertItem( wallpaper );
     wpCombo->setCurrentItem( wpCombo->count()-1 );
   }
 
+  if(wpMode == NoPic)
+  {
+    wpCombo->setEnabled(false);
+    button->setEnabled(false);
+  }
+  else
+  {
+    wpCombo->setEnabled(true);
+    button->setEnabled(true);
+  }
+/*
   ((QRadioButton *)wpGroup->find( NoPic ))->setChecked( wpMode == NoPic );
   ((QRadioButton *)wpGroup->find( Tile ))->setChecked( wpMode == Tile );
   ((QRadioButton *)wpGroup->find( Center ))->setChecked( wpMode == Center );
@@ -548,7 +555,7 @@ void KDMBackgroundWidget::showSettings()
   ((QRadioButton *)cGroup->find( Plain ))->setChecked( colorMode == Plain );
   ((QRadioButton *)cGroup->find( Horizontal ))->setChecked( colorMode == Horizontal );
   ((QRadioButton *)cGroup->find( Vertical ))->setChecked( colorMode == Vertical );
-
+*/
   setMonitor();
 }
 
@@ -579,49 +586,48 @@ void KDMBackgroundWidget::applySettings()
   }
 
   // write wallpaper
-  c->writeEntry("BackGroundPicture", "");
-  if(wallpaper != NO_WALLPAPER)
+
+  if(!wallpaper.isEmpty())
   {
     QFileInfo fi(wallpaper.data());
     if(fi.exists())
-    {
       c->writeEntry( "BackGroundPicture", wallpaper );
-      switch ( wpMode )
-      {
-        case NoPic:
-  	  c->writeEntry( "BackGroundPictureMode", "None" );
-  	  break;
-        case Tile:
-  	  c->writeEntry( "BackGroundPictureMode", "Tile" );
-          break;
-        case Center:
-  	  c->writeEntry( "BackGroundPictureMode", "Center" );
-	  break;
-        case Scale:
-  	  c->writeEntry( "BackGroundPictureMode", "Scale" );
-	  break;
-        case TopLeft:
-  	  c->writeEntry( "BackGroundPictureMode", "TopLeft" );
-	  break;
-        case TopRight:
-  	  c->writeEntry( "BackGroundPictureMode", "TopRight" );
-	  break;
-        case BottomLeft:
-  	  c->writeEntry( "BackGroundPictureMode", "BottomLeft" );
-	  break;
-        case BottomRight:
-  	  c->writeEntry( "BackGroundPictureMode", "BottomRight" );
-	  break;
-        case Fancy:
-  	  c->writeEntry( "BackGroundPictureMode", "Fancy" );
-	  break;
-      } // switch
-    } // if(fi...
-  } // if(wall...
-  else
-  {
-    c->deleteEntry( "BackGroundPicture", false );
+    else
+      c->deleteEntry( "BackGroundPicture", false);
   }
+  else
+    c->deleteEntry( "BackGroundPicture", false );
+
+  switch ( wpMode )
+  {
+    case NoPic:
+      c->writeEntry( "BackGroundPictureMode", "None" );
+      break;
+    case Tile:
+      c->writeEntry( "BackGroundPictureMode", "Tile" );
+      break;
+    case Center:
+      c->writeEntry( "BackGroundPictureMode", "Center" );
+      break;
+    case Scale:
+      c->writeEntry( "BackGroundPictureMode", "Scale" );
+      break;
+    case TopLeft:
+      c->writeEntry( "BackGroundPictureMode", "TopLeft" );
+      break;
+    case TopRight:
+      c->writeEntry( "BackGroundPictureMode", "TopRight" );
+      break;
+    case BottomLeft:
+      c->writeEntry( "BackGroundPictureMode", "BottomLeft" );
+      break;
+    case BottomRight:
+      c->writeEntry( "BackGroundPictureMode", "BottomRight" );
+      break;
+    case Fancy:
+      c->writeEntry( "BackGroundPictureMode", "Fancy" );
+    break;
+  } // switch
 
   delete c;
 }
@@ -647,9 +653,9 @@ void KDMBackgroundWidget::loadSettings()
       iconloader->insertDirectory(0, fi.dirPath(true));
       wallpaper = str;
     }
-    else wallpaper = NO_WALLPAPER;
+    else wallpaper = "";
   }
-  else wallpaper = NO_WALLPAPER;
+  else wallpaper = "";
 
   QString strmode = c->readEntry( "BackGroundColorMode", "Plain");
   if(strmode == "Plain")
@@ -662,33 +668,28 @@ void KDMBackgroundWidget::loadSettings()
     colorMode = Plain;
 
 
-  if( wallpaper != NO_WALLPAPER)
-  {
-    strmode = c->readEntry( "BackGroundPictureMode", "Scale");
-    if(strmode == "None")
-    {
-      wpMode = NoPic;
-      wallpaper = NO_WALLPAPER;
-    }
-    else if(strmode == "Tile")
-      wpMode = Tile;
-    else if(strmode == "Center")
-      wpMode = Center;
-    else if(strmode == "Scale")
-      wpMode = Scale;
-    else if(strmode == "TopLeft")
-      wpMode = TopLeft;
-    else if(strmode == "TopRight")
-      wpMode = TopRight;
-    else if(strmode == "BottomLeft")
-      wpMode = BottomLeft;
-    else if(strmode == "BottomRight")
-      wpMode = BottomRight;
-    else if(strmode == "Fancy")
-      wpMode = Fancy;
-    else
-      wpMode = Tile;
-  }
+  strmode = c->readEntry( "BackGroundPictureMode", "Scale");
+  if(strmode == "None")
+    wpMode = NoPic;
+  else if(strmode == "Tile")
+    wpMode = Tile;
+  else if(strmode == "Center")
+    wpMode = Center;
+  else if(strmode == "Scale")
+    wpMode = Scale;
+  else if(strmode == "TopLeft")
+    wpMode = TopLeft;
+  else if(strmode == "TopRight")
+    wpMode = TopRight;
+  else if(strmode == "BottomLeft")
+    wpMode = BottomLeft;
+  else if(strmode == "BottomRight")
+    wpMode = BottomRight;
+  else if(strmode == "Fancy")
+    wpMode = Fancy;
+  else
+    wpMode = Tile;
+
   delete c;
 }
 

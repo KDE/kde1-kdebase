@@ -26,6 +26,7 @@
 #include <qbttngrp.h>
 #include <kcolordlg.h>
 #include <kcolorbtn.h>
+#include <kpixmap.h>
 
 class KBGMonitor : public QWidget
 {
@@ -50,7 +51,6 @@ public:
 
 	enum { NoPic, Tile, Center, Scale, TopLeft, TopRight,
                                   BottomLeft, BottomRight, Fancy, Plain, Vertical, Horizontal };
-	//enum { NoPic = 0, Tiled = 1, Centred = 2, Scaled = 3 };
         void loadSettings();
         void applySettings();
 	void setupPage(QWidget*);
@@ -73,15 +73,15 @@ protected:
 
         KIconLoader *iconloader;
 	KBGMonitor  *monitor;
-	QPixmap      wpPixmap;
+	KPixmap      wpPixmap;
 	QString      wallpaper;
 	KColorButton *colButton1, *colButton2;
 	QButtonGroup *wpGroup, *cGroup;
-        //QCheckBox    *cbusrshw, *cbusrsrt;
 	QComboBox    *wpCombo;
 	QColor       color1, color2;
 	int          wpMode, colorMode;
-        bool         changed, fancy, gui;
+        bool         gui;
+        QPushButton *button;
 };
 
 
