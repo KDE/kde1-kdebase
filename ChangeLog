@@ -1,3 +1,8 @@
+Sun Feb 15 18:25:50 1998  Stephan Kulow  <coolo@kde.org>
+
+	* configure.in: added bugfix by Bob Miller <kbob@engr.sgi.com>
+	(correct reset of IFS)
+	
 Wed Feb 11 00:53:11 1998  Stephan Kulow  <coolo@kde.org>
 
 	* configure.in: made shadow under Linux default, since the

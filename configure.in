@@ -33,9 +33,9 @@ if test -n "$CXXFLAGS"; then
     fi
     NOOPT_CXXFLAGS="$NOOPT_CXXFLAGS $i"
   done
+  IFS=$safe_IFS
 fi
 AC_SUBST(NOOPT_CXXFLAGS)
-IFS=$safe_IFS
 KDE_PROG_LIBTOOL
 
 dnl WITH_NLS is for the po files
