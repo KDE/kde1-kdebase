@@ -35,6 +35,9 @@
 QList<KIOJob> *KIOJob::jobList;
 QDict<QString> *KIOJob::passwordDict;
 
+//#define done() \
+// {  debug("-------------------- %s, %d : calling done()",__FUNCTION__,__LINE__); this->done(); }
+
 KIOJob::KIOJob( int _id )
 {
     bAutoDelete = TRUE;
@@ -1485,11 +1488,15 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
 	  if (retVal == 0)
 	    slaveIsReady();
 	  else if (retVal == 1)
+          {
 	    done();
+	    return;
+          }
 	} else {
+	  done(); // do it before, to avoid any signal called while msgbox is shown
 	  QMessageBox::warning(0L, i18n("KFM Error"),
 			       msg.data(), i18n("Cancel"));
-	  done();
+	  return;
 	}
     }
 
@@ -1968,16 +1975,18 @@ void KIOJob::cancel()
     done();
 }
 
+//#undef done
 void KIOJob::done()
 {
   // printf("Done\n");
 
     server->removeJob( this );
     
+    disconnect( server, 0, this, 0 );
+
     if ( slave != 0L )
     {
       // printf("Handing slave back\n");
-	disconnect( server, 0, this, 0 );
 	disconnect( slave, 0, this, 0 );
 	server->freeSlave( slave );
     }
