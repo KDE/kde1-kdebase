@@ -39,6 +39,7 @@
 #include <kslider.h>
 
 #include <kcontrol.h>
+#include <kiconloader.h>
 
 #include <kwm.h>
 
@@ -117,7 +118,6 @@ private:
 
  // current button->func mapping
  int selectedFunc[NUM_BUTTONS];
-
 };
 
 
@@ -164,6 +164,8 @@ private:
  QPixmap *pixmapActive, *pixmapInactive;
 
  QString sPixmapActive, sPixmapInactive; 
+
+ KIconLoader *iconLoader;
 };
 
 

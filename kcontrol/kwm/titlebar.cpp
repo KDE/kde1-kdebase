@@ -957,6 +957,16 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   lPixmapInactive = new QLabel(pbPixmapInactive, klocale->translate("&Inactive pixmap"), pixmapBox);
   lPixmapInactive->adjustSize();
 
+  iconLoader = new KIconLoader();
+  for (int i=5; i>=0; i--)
+    iconLoader->getDirList()->remove(i);
+  iconLoader->insertDirectory(0, kapp->kdedir()+"/share/apps/kwm/toolbar");
+  iconLoader->insertDirectory(1, kapp->kdedir()+"/share/toolbar");
+  iconLoader->insertDirectory(2, kapp->kdedir()+"/share/apps/kwm/pics");
+  iconLoader->insertDirectory(3, kapp->localkdedir()+"/share/apps/kwm/toolbar");
+  iconLoader->insertDirectory(4, kapp->localkdedir()+"/share/toolbar");
+  iconLoader->insertDirectory(5, kapp->localkdedir()+"/share/apps/kwm/pics");
+
   GetSettings();
 }
 
@@ -1079,7 +1089,6 @@ void KTitlebarAppearance::SaveSettings( void )
 
 void KTitlebarAppearance::GetSettings( void )
 {
-  KIconLoader iconLoader;
   QString key;
 
   config->setGroup( "General" );
@@ -1095,9 +1104,9 @@ void KTitlebarAppearance::GetSettings( void )
   sPixmapActive = config->readEntry("TitlebarPixmapActive");
   sPixmapInactive = config->readEntry("TitlebarPixmapInactive");
   if (!sPixmapActive.isEmpty())
-    pbPixmapActive->setPixmap(iconLoader.loadIcon(sPixmapActive));
+    pbPixmapActive->setPixmap(iconLoader->loadIcon(sPixmapActive));
   if (!sPixmapInactive.isEmpty())
-    pbPixmapInactive->setPixmap(iconLoader.loadIcon(sPixmapInactive));
+    pbPixmapInactive->setPixmap(iconLoader->loadIcon(sPixmapInactive));
 
 
   int k = config->readNumEntry(KWM_TITLEANIMATION,0);
@@ -1123,7 +1132,7 @@ void KTitlebarAppearance::titlebarChanged()
 
 void KTitlebarAppearance::activePressed()
 {
-  KIconLoaderDialog dlg(this);
+  KIconLoaderDialog dlg(iconLoader, this);
   QString name = sPixmapActive;
   QPixmap map;
 
@@ -1138,7 +1147,7 @@ void KTitlebarAppearance::activePressed()
 
 void KTitlebarAppearance::inactivePressed()
 {
-  KIconLoaderDialog dlg(this);
+  KIconLoaderDialog dlg(iconLoader, this);
   QString name = sPixmapInactive;
   QPixmap map;
 
