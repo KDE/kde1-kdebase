@@ -97,7 +97,9 @@ void TopLevel::init() {
 void TopLevel::closeEvent(QCloseEvent *e) {
   if (queryExit())
   {
-    if (memberList->count() > 1) 
+//e->accept();
+//delete this;
+    if (memberList->count() > 1)
     {
       e->accept();
       delete this;
@@ -110,7 +112,6 @@ void TopLevel::closeEvent(QCloseEvent *e) {
     }
   }
 }
-
 
 bool TopLevel::queryExit() {
   int query;
@@ -163,14 +164,14 @@ void TopLevel::setupEditWidget(KWriteDoc *doc) {
 
 void TopLevel::setupMenuBar() {
   KMenuBar *menubar;
-  QPopupMenu *file, *help;
-  KWBookPopup *bookmarks;
+  QPopupMenu *file, *help, *bookmarks;
+//  KWBookPopup *bookmarks;
   int z;
 //  KStdAccel keys(kapp->getConfig());
 
   file =        new QPopupMenu();
   edit =        new QPopupMenu();
-  bookmarks =   new KWBookPopup();
+  bookmarks =   new QPopupMenu();// KWBookPopup();
   options =     new QPopupMenu();
   help =        new QPopupMenu();
   recentPopup = new QPopupMenu();
@@ -543,6 +544,16 @@ void TopLevel::dropAction(KDNDDropZone *dropZone) {
   }
 }
 
+
+void TopLevel::showHighlight()
+{
+  int hl=kWrite->doc()->getHighlight();
+
+  for (int index = 0; index < (int) hlPopup->count(); index++)
+    hlPopup->setItemChecked(index, hl == index);
+}
+
+
 //config
 void TopLevel::readConfig() {
   KConfig *config;
@@ -632,15 +643,6 @@ void TopLevel::saveProperties(KConfig *config) {
   config->writeEntry("DocumentNumber",docList.find(kWrite->doc()) + 1);
   kWrite->writeSessionConfig(config);
   setUnsavedData(kWrite->isModified());
-}
-
-
-void TopLevel::showHighlight()
-{
-  int hl=kWrite->doc()->getHighlight();
-
-  for (uint index=0; index<hlPopup->count(); index++)
-    hlPopup->setItemChecked(index, hl == index);
 }
 
 

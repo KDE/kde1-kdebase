@@ -26,6 +26,7 @@ SearchDialog::SearchDialog(const char *searchFor, const char *replaceWith,
 
   search = new QLineEdit(this);
   search->setText(searchFor);
+  search->selectAll();
   label = new QLabel(search,i18n("&Text To Find:"),this);
 
   r.setRect(10,0,300,25);
@@ -212,6 +213,7 @@ GotoLineDialog::GotoLineDialog(int line, QWidget *parent, const char *name)
   e1 = new QLineEdit(this);
   sprintf(buf,"%d",line);
   e1->setText(buf);
+  e1->selectAll();
   label = new QLabel(e1,i18n("&Goto Line:"),this);
 
   r.setRect(10,0,150,25);

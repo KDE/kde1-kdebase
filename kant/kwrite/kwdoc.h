@@ -12,7 +12,7 @@
 
 class TextLine {
   public:
-    TextLine(int attribute = 0);
+    TextLine(int attribute = 0, int context = 0);
     ~TextLine();
     void insert(int pos, const char *, int l);
     void overwrite(int pos, const char *, int l);
@@ -166,7 +166,7 @@ class KWriteDoc : QObject {
 //    void setHighlight(Highlight *);
     void setTabWidth(int);
 //    void update(VConfig &);
-    void updateLines(int startLine, int endLine, int flags = 0);
+    void updateLines(int startLine = 0, int endLine = 0xffffff, int flags = 0);
     void updateMaxLength(TextLine *);
 //    void updateCursors(PointStruc &start, PointStruc &end, bool insert = true);
     void updateViews(KWriteView *exclude = 0L);
@@ -243,6 +243,7 @@ class KWriteDoc : QObject {
 //    Attribute **attribs;//[nAttribs];
     HlManager *hlManager;
     Highlight *highlight;
+    int hlNumber;
     Attribute attribs[nAttribs];
 
     int tabChars;
@@ -274,10 +275,6 @@ class KWriteDoc : QObject {
     int tagEnd;
 
     QWidget *pseudoModal;
-    
-private:
-
-  int hlNumber;
 };
 
 #endif //KWDOC_H

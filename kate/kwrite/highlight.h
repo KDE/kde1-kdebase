@@ -378,6 +378,15 @@ class AdaHighlight : public GenHighlight {
     virtual void makeContextList();
 };
 
+class PythonHighlight : public GenHighlight {
+  public:
+    PythonHighlight(const char *name);
+    virtual ~PythonHighlight();
+  protected:
+    virtual void createItemData(ItemDataList &);
+    virtual void makeContextList();
+};
+
 
 class KWriteDoc;
 
@@ -464,11 +473,10 @@ class DefaultsDialog : public QDialog {
 class HighlightDialog : public QDialog {
     Q_OBJECT
   public:
-    HighlightDialog(HlManager *, HlDataList *, QWidget *parent);
+    HighlightDialog(HlManager *, HlDataList *, int hlNumber, QWidget *parent);
 
-  public slots:
-    void hlChanged(int);
   protected slots:
+    void hlChanged(int);
     void itemChanged(int);
     void changed();
   protected:

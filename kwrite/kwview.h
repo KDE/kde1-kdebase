@@ -168,21 +168,13 @@ class KWBookmark {
     QString Name;
 };
 
-class KWBookPopup : public QPopupMenu {
-    Q_OBJECT
-  public:
-    KWBookPopup();
-    virtual void show();
-  signals:
-    void exposed();
-};
 
 class KWrite : public QWidget {
     Q_OBJECT
     friend KWriteView;
     friend KWriteDoc;
   public:
-    KWrite(KWriteDoc *, QWidget *parent=0);
+    KWrite(KWriteDoc *, QWidget *parent = 0L);
     ~KWrite();
 
 //status functions
@@ -288,7 +280,7 @@ class KWrite : public QWidget {
 
 //bookmarks
   public:
-    void installBMPopup(KWBookPopup *);
+    void installBMPopup(QPopupMenu *);//KWBookPopup *);
     void setBookmark(int n);
   public slots:
     void setBookmark();
@@ -300,7 +292,6 @@ class KWrite : public QWidget {
   protected:
     QList<KWBookmark> bookmarks;
     int bmEntries;
-//    KWBookPopup *bookPopup;
 
 //config file / session management functions
   public:

@@ -60,6 +60,11 @@ char *adaKeywords[] = {
   "record","renames","return","reverse","select","separate","subtype", "task",
   "terminate","then","type","use","when","while","with","xor",0L};
 
+char *pythonKeywords[] = {
+  "and","assert","break","class","continue","def","del","elif","else",
+  "except","exec"," finally","for","from","global","if","import","in","is",
+  "lambda","not","or","pass","print","raise","return","try","while",0L};
+
 char fontSizes[] = {4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,24,26,28,32,48,64,0};
 
 bool testWw(char c) {
@@ -793,14 +798,8 @@ void CHighlight::makeContextList() {
     c->items.append(new HlLineContinue(10,7));
     c->items.append(new HlRangeDetect(11,4,"\"\""));
     c->items.append(new HlRangeDetect(11,4,"<>"));
-//    c->items.append(new HlCharDetect(11,5,'"'));
-//    c->items.append(new HlCharDetect(11,6,'<'));
     c->items.append(new Hl2CharDetect(9,2,"//"));
     c->items.append(new Hl2CharDetect(9,5,"/*"));
-//  contextList[5] = c = new HlContext(11,0);
-//    c->items.append(new HlCharDetect(11,4,'"'));
-//  contextList[6] = c = new HlContext(11,0);
-//    c->items.append(new HlCharDetect(11,4,'>'));
   contextList[5] = c = new HlContext(9,5);
     c->items.append(new Hl2CharDetect(9,4,"*/"));
   contextList[6] = new HlContext(0,1);
@@ -1001,6 +1000,64 @@ void AdaHighlight::makeContextList() {
 }
 
 
+PythonHighlight::PythonHighlight(const char *name) : GenHighlight(name) {
+  //dw = "*.python"; ??
+}
+
+PythonHighlight::~PythonHighlight() {
+}
+
+void PythonHighlight::createItemData(ItemDataList &list) {
+
+  list.append(new ItemData("Normal Text",0));
+  list.append(new ItemData("Keyword",1));
+  list.append(new ItemData("Decimal",2));
+  list.append(new ItemData("Octal",3));
+  list.append(new ItemData("Hex",3));
+  list.append(new ItemData("Float",4));
+  list.append(new ItemData("Char",5));
+  list.append(new ItemData("String",6));
+  list.append(new ItemData("String Char",5));
+  list.append(new ItemData("Comment",7));
+}
+
+void PythonHighlight::makeContextList() {
+  HlContext *c;
+  HlKeyword *keyword;
+
+  //note that a C octal has to be detected before an int and """ before "
+  contextList[0] = c = new HlContext(0,0);
+    c->items.append(keyword = new HlKeyword(1,0));
+    c->items.append(new HlCOct(3,0));
+    c->items.append(new HlInt(2,0));
+    c->items.append(new HlCHex(4,0));
+    c->items.append(new HlFloat(5,0));
+    c->items.append(new HlCChar(6,0));
+    c->items.append(new HlStringDetect(7,3,"\"\"\""));
+    c->items.append(new HlStringDetect(7,4,"\'\'\'"));
+    c->items.append(new HlCharDetect(7,1,'"'));
+    c->items.append(new HlCharDetect(7,2,'\''));
+    c->items.append(new HlCharDetect(9,5,'#'));
+  contextList[1] = c = new HlContext(7,0);
+    c->items.append(new HlLineContinue(7,6));
+    c->items.append(new HlCStringChar(8,1));
+    c->items.append(new HlCharDetect(7,0,'"'));
+  contextList[2] = c = new HlContext(7,0);
+    c->items.append(new HlLineContinue(7,7));
+    c->items.append(new HlCStringChar(8,2));
+    c->items.append(new HlCharDetect(7,0,'\''));
+  contextList[3] = c = new HlContext(7,3);
+    c->items.append(new HlStringDetect(7,0,"\"\"\""));
+  contextList[4] = c = new HlContext(7,4);
+    c->items.append(new HlStringDetect(7,0,"\'\'\'"));
+  contextList[5] = new HlContext(9,0);
+  contextList[6] = new HlContext(0,1);
+  contextList[7] = new HlContext(0,2);
+
+  keyword->addList(pythonKeywords);
+}
+
+
 HlManager::HlManager() : QObject(0L) {
 
   hlList.setAutoDelete(true);
@@ -1012,6 +1069,7 @@ HlManager::HlManager() : QObject(0L) {
   hlList.append(new BashHighlight("Bash"));
   hlList.append(new ModulaHighlight("Modula 2"));
   hlList.append(new AdaHighlight("Ada"));
+  hlList.append(new PythonHighlight("Python"));
 }
 
 HlManager::~HlManager() {
@@ -1592,7 +1650,7 @@ void DefaultsDialog::changed(int z) {
 
 
 HighlightDialog::HighlightDialog(HlManager *hlManager,
-  HlDataList *highlightDataList, QWidget *parent)
+  HlDataList *highlightDataList, int hlNumber, QWidget *parent)
   : QDialog(parent,0L,true), hlData(0L) {
 
   QPushButton *button;
@@ -1614,9 +1672,7 @@ HighlightDialog::HighlightDialog(HlManager *hlManager,
   for (z = 0; z < hlManager->highlights(); z++) {
     hlCombo->insertItem(hlManager->hlName(z));
   }
-//  for (highlight = hlList->first(); highlight != 0L; highlight = hlList->next()) {
-//    hlCombo->insertItem(highlight->name());
-//  }
+  hlCombo->setCurrentItem(hlNumber);
 
   itemCombo = new QComboBox(false,group);
   label = new QLabel(itemCombo,i18n("Item:"),group);
@@ -1663,7 +1719,7 @@ HighlightDialog::HighlightDialog(HlManager *hlManager,
 
 
   hlDataList = highlightDataList;
-  hlChanged(0);
+  hlChanged(hlNumber);
 
   button = new QPushButton(i18n("&OK"),this);
   button->setDefault(true);
@@ -1695,8 +1751,8 @@ void HighlightDialog::hlChanged(int z) {
 
   itemChanged(0);
 
-  if (hlCombo->currentItem() != z)
-    hlCombo->setCurrentItem(z);
+//  if (hlCombo->currentItem() != z)
+//    hlCombo->setCurrentItem(z);
 }
 
 void HighlightDialog::itemChanged(int z) {

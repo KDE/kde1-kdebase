@@ -937,15 +937,6 @@ KWBookmark::KWBookmark() {
   cursor.y = -1;
 }
 
-
-KWBookPopup::KWBookPopup() {
-}
-
-void KWBookPopup::show() {
-  emit exposed();
-  QPopupMenu::show();
-}
-
 KWrite::KWrite(KWriteDoc *doc, QWidget *parent) : QWidget(parent) {
   kWriteDoc = doc;
   kWriteView = new KWriteView(this,doc);
@@ -1193,7 +1184,7 @@ void KWrite::loadURL(const char *url, int flags) {
         name.prepend(i18n("Inserted"));
       } else {
         if (!(flags & lfNoAutoHl)) kWriteDoc->setFileName(name);
-          else kWriteDoc->updateLines(0,0xffffff);
+          else kWriteDoc->updateLines();
         name.prepend(": ");
         name.prepend(i18n("Read"));
       }
@@ -1316,7 +1307,7 @@ void KWrite::kfmFinished() {
         if (!(kfmFlags & lfNoAutoHl)) {
           kWriteDoc->setFileName(kfmURL);
         } else {
-          kWriteDoc->updateLines(0,0xffffff);
+          kWriteDoc->updateLines();
           kWriteDoc->updateViews();
         }
         kfmURL.prepend(": ");
@@ -1869,10 +1860,10 @@ void KWrite::installRBPopup(QPopupMenu *p) {
   popup = p;
 }
 
-void KWrite::installBMPopup(KWBookPopup *p) {
+void KWrite::installBMPopup(QPopupMenu *p/*KWBookPopup *p*/) {
 //  bookPopup = p;
-  connect(p,SIGNAL(exposed()),this,SLOT(updateBMPopup()));
-  connect(p,SIGNAL(activated(int)),this,SLOT(gotoBookmark(int)));
+  connect(p,SIGNAL(aboutToShow()),SLOT(updateBMPopup()));
+  connect(p,SIGNAL(activated(int)),SLOT(gotoBookmark(int)));
   bmEntries = p->count();
 }
 
@@ -1936,12 +1927,12 @@ void KWrite::clearBookmarks() {
 }
 
 void KWrite::updateBMPopup() {
-  KWBookPopup *p;
+  QPopupMenu *p;
   KWBookmark *b;
   char buf[64];
   int z;
 
-  p = (KWBookPopup *) sender();
+  p = (QPopupMenu *) sender();
 
   while ((int) p->count() > bmEntries) {
     p->removeItemAt(p->count() - 1);
@@ -2148,8 +2139,8 @@ void KWrite::hlDlg() {
   hlManager = kWriteDoc->hlManager;
   hlDataList.setAutoDelete(true);
   hlManager->getHlDataList(hlDataList);
-  dlg = new HighlightDialog(hlManager,&hlDataList,this);
-  dlg->hlChanged(kWriteDoc->getHighlight());
+  dlg = new HighlightDialog(hlManager,&hlDataList,kWriteDoc->getHighlight(),this);
+//  dlg->hlChanged(kWriteDoc->getHighlight());
   if (dlg->exec() == QDialog::Accepted) {
     hlManager->setHlDataList(hlDataList);
   }
