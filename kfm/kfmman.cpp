@@ -232,6 +232,40 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 	return false;
     }
     
+    /*
+     * Check if we want to jump to a reference or (x,y)-pos within the 
+     * current page and jump directly to it without reloading / reparsing
+     * 
+     * Don't do this if a reload request was made
+     */
+
+    if ( !_reload && 
+    	 ( (strlen(u.reference()) != 0) || 
+    	   (nextXOffset != 0) || 
+    	   (nextYOffset != 0)
+    	 )
+       )
+    {
+    	KURL newUrlWithoutRef( _url );	
+    	KURL oldUrlWithoutRef( url );
+    	newUrlWithoutRef.setReference( "" );	
+    	oldUrlWithoutRef.setReference( "" );	
+    	if (newUrlWithoutRef.url() == oldUrlWithoutRef.url())
+    	{
+	    // Add old URL to history stacks
+	    view->setUpURL( newUrlWithoutRef.url() );
+	    view->pushURLToHistory();
+	    if ((nextXOffset != 0) || (nextYOffset != 0))
+	    {
+	    	return (view->gotoXY(nextXOffset, nextYOffset));    	     
+            }
+	    else
+	    { 
+                return (view->gotoAnchor(u.reference()));
+            }
+    	}
+    }
+
     // Is page cached ?
     const char *file;
     if ( ( file = view->getHTMLCache()->isCached( _url ) ) != 0L && 

@@ -1351,9 +1351,6 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
     }
 
     debug( "Removed waiting: %ld, %d", (unsigned long)_w, waitingWidgetList.count() );
-
-   KURL u( view->getURL());
-   _w->gotoAnchor(u.reference());
 }
 
 void KfmGui::slotTextSelected( KHTMLView *v, bool s )
