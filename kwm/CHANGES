@@ -9,6 +9,11 @@ and some code went in from David Hogan's 9wm, a smart and small
 windowmanager written in plain C. There are of course also strong
 influences from my experiences with the former kwm.
 
+In 0.12:
+--------
+patchlevel 0:
+        - first attempts of configurable keybindings
+
 In 0.11:
 --------
 patchlevel 14: 

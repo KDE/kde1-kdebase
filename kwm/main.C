@@ -1526,15 +1526,16 @@ void  MyApp::timerEvent( QTimerEvent * ){
   keys = new KGlobalAccel();
   #include "kwmbindings.cpp"
   keys->connectItem( "Task manager", this, SLOT( slotTaskManager() ) );
-  keys->connectItem( "Window kill mode", this, SLOT( slotWindowKillMode() ) );
+  keys->connectItem( "Kill window mode", this, SLOT( slotWindowKillMode() ) );
   keys->connectItem( "Execute command", this, SLOT( slotExecuteCommand() ) );
   keys->connectItem( "Pop-up window operations menu", this, SLOT( slotWindowOperations() ) );
-  keys->connectItem( "Raise window", this, SLOT( slotRaise() ) );
-  keys->connectItem( "Close window", this, SLOT( slotCloseWindow() ) );
-  keys->connectItem( "Iconify window", this, SLOT( slotIconifyWindow() ) );
-  keys->connectItem( "Resize window", this, SLOT( slotResizeWindow() ));
-  keys->connectItem( "Move window", this, SLOT( slotMoveWindow() ) );
-  keys->connectItem( "Toggle window sticky", this, SLOT( slotToggleWindowSticky() ) );
+  keys->connectItem( "Window raise", this, SLOT( slotWindowRaise() ) );
+  keys->connectItem( "Window lower", this, SLOT( slotWindowLower() ) );
+  keys->connectItem( "Window close", this, SLOT( slotWindowClose() ) );
+  keys->connectItem( "Window iconify", this, SLOT( slotWindowIconify() ) );
+  keys->connectItem( "Window resize", this, SLOT( slotWindowResize() ));
+  keys->connectItem( "Window move", this, SLOT( slotWindowMove() ) );
+  keys->connectItem( "Window toggle sticky", this, SLOT( slotWindowToggleSticky() ) );
   keys->connectItem( "Pop-up system menu", this, SLOT( slotKMenu() ) );
 
 
@@ -1543,19 +1544,15 @@ void  MyApp::timerEvent( QTimerEvent * ){
   keys->connectItem( "Switch one desktop up", this, SLOT( slotSwitchOneDesktopUp() ) );
   keys->connectItem( "Switch one desktop down", this, SLOT( slotSwitchOneDesktopDown() ) );
 
-  keys->connectItem( "Switch one desktop to the right", this, SLOT( slotSwitchOneDesktopRight() ) );
-  keys->connectItem( "Switch one desktop to the left", this, SLOT( slotSwitchOneDesktopRight() ) );
-  keys->connectItem( "Switch one desktop up", this, SLOT( slotSwitchOneDesktopUp() ) );
-  keys->connectItem( "Switch one desktop down", this, SLOT( slotSwitchOneDesktopDown() ) );
   
-  keys->connectItem( "Switch to first desktop", this, SLOT( slotSwitchDesktop1() ));
-  keys->connectItem( "Switch to second desktop", this, SLOT( slotSwitchDesktop2() ));
-  keys->connectItem( "Switch to third desktop", this, SLOT( slotSwitchDesktop3() ));
-  keys->connectItem( "Switch to fourth desktop", this, SLOT( slotSwitchDesktop4() ));
-  keys->connectItem( "Switch to fifth desktop", this, SLOT( slotSwitchDesktop5() ));
-  keys->connectItem( "Switch to sixth desktop", this, SLOT( slotSwitchDesktop6() ));
-  keys->connectItem( "Switch to seventh desktop", this, SLOT( slotSwitchDesktop7() ));
-  keys->connectItem( "Switch to eight desktop", this, SLOT( slotSwitchDesktop8() ));
+  keys->connectItem( "Switch to desktop 1", this, SLOT( slotSwitchDesktop1() ));
+  keys->connectItem( "Switch to desktop 2", this, SLOT( slotSwitchDesktop2() ));
+  keys->connectItem( "Switch to desktop 3", this, SLOT( slotSwitchDesktop3() ));
+  keys->connectItem( "Switch to desktop 4", this, SLOT( slotSwitchDesktop4() ));
+  keys->connectItem( "Switch to desktop 5", this, SLOT( slotSwitchDesktop5() ));
+  keys->connectItem( "Switch to desktop 6", this, SLOT( slotSwitchDesktop6() ));
+  keys->connectItem( "Switch to desktop 7", this, SLOT( slotSwitchDesktop7() ));
+  keys->connectItem( "Switch to desktop 8", this, SLOT( slotSwitchDesktop8() ));
 
   keys->readSettings();
 }
@@ -1565,7 +1562,7 @@ void  MyApp::timerEvent( QTimerEvent * ){
 void MyApp::slotTaskManager(){
   showTask();
 }
-void MyApp::slotWindowKillMode(){
+void MyApp::slotKillWindowMode(){
   static Cursor kill_cursor = 0;
   if (!kill_cursor)
        kill_cursor = XCreateFontCursor(qt_xdisplay(), XC_pirate);
@@ -1592,11 +1589,15 @@ void MyApp::slotWindowOperations(){
   if (manager->current())
     manager->current()->showOperations();
 }
-void MyApp::slotRaise(){
+void MyApp::slotWindowRaise(){
   if (manager->current())
-    switchActivateClient(manager->current());
+    manager->raiseClient(manager->current());
 }
-void MyApp::slotCloseWindow(){
+void MyApp::slotWindowLower(){
+  if (manager->current())
+    manager->lowerClient(manager->current());
+}
+void MyApp::slotWindowClose(){
   if (minicli && minicli->isVisible()){
     minicli->cleanup(); 
     return;
@@ -1611,16 +1612,16 @@ void MyApp::slotCloseWindow(){
   }
   doOperation(OP_CLOSE);
 }
-void MyApp::slotIconifyWindow(){
+void MyApp::slotWindowIconify(){
   doOperation(OP_ICONIFY);
 }
-void MyApp::slotResizeWindow(){
+void MyApp::slotWindowResize(){
   doOperation(OP_RESIZE);
 }
-void MyApp::slotMoveWindow(){
+void MyApp::slotWindowMove(){
   doOperation(OP_MOVE);
 }
-void MyApp::slotToggleWindowSticky(){
+void MyApp::slotWindowToggleSticky(){
   doOperation(OP_STICKY);
 }
 

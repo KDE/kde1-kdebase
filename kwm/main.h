@@ -63,15 +63,16 @@ public:
   public slots:
 
   void slotTaskManager();
-  void slotWindowKillMode();
+  void slotKillWindowMode();
   void slotExecuteCommand();
   void slotWindowOperations();
-  void slotRaise();
-  void slotCloseWindow();
-  void slotIconifyWindow();
-  void slotResizeWindow();
-  void slotMoveWindow();
-  void slotToggleWindowSticky();
+  void slotWindowRaise();
+  void slotWindowLower();
+  void slotWindowClose();
+  void slotWindowIconify();
+  void slotWindowResize();
+  void slotWindowMove();
+  void slotWindowToggleSticky();
   void slotKMenu();
 
   void slotSwitchOneDesktopLeft();
