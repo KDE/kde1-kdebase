@@ -207,6 +207,7 @@ bool Theme::load(const QString aPath, QString aName)
     if (i >= 0) str = workDir() + aPath.mid(i, 1024);
     else str = workDir();
 
+    cmd.resize(80+aPath.length()+str.length());
     cmd.sprintf("cp -r \"%s\" \"%s\"", (const char*)aPath,
 		(const char*)str);
     debug(cmd);
@@ -221,6 +222,7 @@ bool Theme::load(const QString aPath, QString aName)
   else
   {
     // The theme given is a tar package. Unpack theme package.
+    cmd.resize(80+workDir().length()+aPath.length());
     cmd.sprintf("cd \"%s\"; gzip -c -d \"%s\" | tar xf -", 
 		(const char*)workDir(), (const char*)aPath);
     debug(cmd);
@@ -282,11 +284,13 @@ bool Theme::save(const QString aPath)
   if (stricmp(aPath.right(4), ".tgz") == 0 ||
       stricmp(aPath.right(7), ".tar.gz") == 0)
   {
+    cmd.resize(80+workDir().length()+aPath.length());
     cmd.sprintf("cd \"%s\";tar cf - *|gzip -c >\"%s\"",
 		(const char*)workDir(), (const char*)aPath);
   }
   else
   {
+    cmd.resize(80+workDir().length()+aPath.length()+aPath.length());
     cmd.sprintf("cd \"%s\"; rm -rf \"%s\"; cp -r * \"%s\"",
 		(const char*)workDir(), (const char*)aPath,
 		(const char*)aPath);
@@ -294,8 +298,12 @@ bool Theme::save(const QString aPath)
 
   debug(cmd);
   rc = system(cmd);
-  if (rc) debug(i18n("Failed to save theme to\n%s\nwith command\n%s"),
-		(const char*)aPath, (const char*)cmd);
+  if (rc) {
+      debug("Failed to save theme to:");
+      debug(aPath);
+      debug("with command");
+      debug(cmd);
+  }
 
   return (rc==0);
 }
@@ -336,7 +344,7 @@ bool Theme::installFile(const QString& aSrc, const QString& aDest)
   finfo.setFile(src);
   if (!finfo.exists())
   {
-    debug("File %s is not in theme package.", (const char*)aSrc);
+//    debug("File %s is not in theme package.", (const char*)aSrc);
     return false;
   }
 
@@ -387,8 +395,8 @@ bool Theme::installFile(const QString& aSrc, const QString& aDest)
   destFile.close();
 
   addInstFile(dest);
-  debug("Installed %s to %s %s", (const char*)src, (const char*)dest,
-	backupMade ? "(backup of existing file)" : "");
+//  debug("Installed %s to %s %s", (const char*)src, (const char*)dest,
+//	backupMade ? "(backup of existing file)" : "");
 
   return true;
 }
@@ -407,7 +415,7 @@ int Theme::installGroup(const char* aGroupName)
   int len, i, installed = 0;
   const char* missing = 0;
 
-  debug("*** beginning with %s", aGroupName);
+//  debug("*** beginning with %s", aGroupName);
   group = aGroupName;
   mConfig->setGroup(group);
   
@@ -417,7 +425,7 @@ int Theme::installGroup(const char* aGroupName)
   while (!group.isEmpty())
   {
     mMappings->setGroup(group);
-    debug("Mappings group [%s]", (const char*)group);
+//    debug("Mappings group [%s]", (const char*)group);
 
     // Read config settings
     value = mMappings->readEntry("ConfigFile");
@@ -468,18 +476,18 @@ int Theme::installGroup(const char* aGroupName)
     {
       if (cfg)
       {
-	debug("closing config file");
+//	debug("closing config file");
 	cfg->sync();
 	delete cfg;
       }
-      debug("opening config file %s", (const char*)cfgFile);
+//      debug("opening config file %s", (const char*)cfgFile);
       cfg = new KSimpleConfig(cfgFile);
       oldCfgFile = cfgFile;
     }
 
     // Set group in config file
     cfg->setGroup(cfgGroup);
-    debug("%s: [%s]", (const char*)cfgFile, (const char*)cfgGroup);
+//    debug("%s: [%s]", (const char*)cfgFile, (const char*)cfgGroup);
 
     // Execute pre-install command (if given)
     if (!preInstCmd.isEmpty()) preInstallCmd(cfg, preInstCmd);
@@ -540,11 +548,7 @@ int Theme::installGroup(const char* aGroupName)
       else if (doInstall && absPath) cfgValue = appDir + cfgValue;
  
       // Set config entry
-      debug("%s=%s", (const char*)cfgKey, (const char*)cfgValue);
-#if 0
-      if (cfgKey == "-") cfg->deleteEntry(key, false);
-      else cfg->writeEntry(cfgKey, cfgValue);
-#else
+//      debug("%s=%s", (const char*)cfgKey, (const char*)cfgValue);
       if (cfgKey != "-") {
           if (cfgValue.isEmpty()) {
               cfg->deleteEntry(cfgKey, false);
@@ -552,7 +556,6 @@ int Theme::installGroup(const char* aGroupName)
               cfg->writeEntry(cfgKey, cfgValue);
           }
       }
-#endif
       
 
     }
@@ -563,13 +566,13 @@ int Theme::installGroup(const char* aGroupName)
 
   if (cfg)
   {
-    debug("closing config file");
+//    debug("closing config file");
     cfg->sync();
     delete cfg;
   }
 
   writeInstFileList(aGroupName);
-  debug("*** done with %s", aGroupName);
+//  debug("*** done with %s", aGroupName);
   return installed;
 }
 
@@ -685,7 +688,8 @@ void Theme::doCmdList(void)
 
   for (cmd=mCmdList.first(); !cmd.isNull(); cmd=mCmdList.next())
   {
-    debug("do command: %s", (const char*)cmd);
+    debug("do command:");
+    debug((const char*)cmd);
     if (cmd.left(6) == "kwmcom")
     {
       cmd = cmd.mid(6,256).stripWhiteSpace();
@@ -759,7 +763,7 @@ int Theme::installIcons(void)
   const char* groupNameExtra = "Extra Icons";
   bool wantRestart = false;
 
-  debug("*** beginning with %s", groupName);
+//  debug("*** beginning with %s", groupName);
 
   if (!instOverwrite)
   {
@@ -838,10 +842,10 @@ int Theme::installIcons(void)
       i = destName.find(':');
       if (i >= 0)
       {
-	debug("mapping %s to...", (const char*)destName);
+//	debug("mapping %s to...", (const char*)destName);
 	destNameMini = destName.mid(i+1, 1024);
 	destName = destName.left(i);
-	debug("   %s  %s", (const char*)destName, (const char*)destNameMini);
+//	debug("   %s  %s", (const char*)destName, (const char*)destNameMini);
       }
     }
 
@@ -916,7 +920,7 @@ int Theme::installIcons(void)
   }
 
   writeInstFileList(groupName);
-  debug("*** done with %s (%d icons installed)", groupName, installed);
+//  debug("*** done with %s (%d icons installed)", groupName, installed);
 
   mInstIcons += installed;
   return installed;
@@ -963,33 +967,24 @@ void Theme::uninstallFiles(const char* aGroupName)
   int processed = 0;
   QStrList fileList;
 
-  debug("*** beginning uninstall of %s", aGroupName);
+//  debug("*** beginning uninstall of %s", aGroupName);
 
   readInstFileList(aGroupName);
   for (fname=mInstFiles.first(); !fname.isEmpty(); fname=mInstFiles.next())
   {
     reverted = false;
     if (unlink(fname)==0) reverted = true;
-    finfo.setFile(fname+'~');
-    if (finfo.exists())
-    {
-      if (rename(fname+'~', fname))
-	warning(i18n("Failed to rename %s to %s~:\n%s"),
-		(const char*)fname, (const char*)fname,
-		strerror(errno));
-      else reverted = true;
-    }
 
     if (reverted) 
     {
-      debug("uninstalled %s", (const char*)fname);
+//      debug("uninstalled %s", (const char*)fname);
       processed++;
     }
   }
   mInstFiles.clear();
   writeInstFileList(aGroupName);
 
-  debug("*** done uninstall of %s", aGroupName);
+//  debug("*** done uninstall of %s", aGroupName);
 }
 
 void Theme::resync()
@@ -1318,9 +1313,6 @@ void Theme::stretchPixmap(const QString aFname, bool aStretchVert)
 
   dest = src;
   dest.resize(w2, h2);
-
-  debug("stretching %s from %dx%d to %dx%d", (const char*)aFname,
-	w, h, w2, h2);
 
   p.begin(&dest);
   p.drawTiledPixmap(0, 0, w2, h2, src);
