@@ -6,8 +6,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:52 1997
 // Last Modified By : Hans Petter Bieker
-// Last Modified On : Thu Aug 20 17:28:08 CEST 1998
-// Update Count     : 153
+// Last Modified On : Wed Sep  2 20:41:59 CEST 1998
+// Update Count     : 154
 // Status           : Unknown, Use with caution!
 // 
 
@@ -430,11 +430,6 @@ KGreeter::restrict_nologin()
 #endif /* !USE_PAM */
 
 #ifdef BSD
-/* don't know if other systems than BSD support this.. I know the
-   shadow system on Linux does support something simular, but they don't use
-   the same api
- */
-
 bool
 KGreeter::restrict_expired(){
 #define DEFAULT_WARN  (2L * 7L * 86400L)  /* Two weeks */
@@ -491,13 +486,14 @@ KGreeter::restrict_expired(){
      swd= getspnam(greet->name);
      if (!pwd || !swd) return false;
      endpwent();
+     endspent();
 
      // don't deny root to log in
      if (!pwd->pw_uid) return false;
 
      warntime = DEFAULT_WARN;
 
-     if (swd->sp_expire)
+     if (swd->sp_expire > 0)
 	 if (swd->sp_expire*ONEDAY <= time(NULL)) {
 	     QMessageBox::critical(NULL, i18n("Expired"),
 				   i18n("Sorry -- your account has expired."),
@@ -510,7 +506,7 @@ KGreeter::restrict_expired(){
 	     QMessageBox::critical(NULL, i18n("Expired"), str, i18n("&Ok"));
 	 }
 
-    return false;
+     return false;
 }
 #else */!USESHADOW*/
 bool
