@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ionescu Paul <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -26,91 +26,95 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: eroare în timpul iniþializãrii; pa \n"
 
-#: main.C:448
+#: main.C:449
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:455
+#: main.C:456
 msgid "Usage: "
 msgstr "Folosire: "
 
-#: main.C:466
+#: main.C:467
 msgid "&Maximize"
 msgstr "Ma&ximizare"
 
-#: main.C:467
+#: main.C:468
 msgid "&Restore"
 msgstr "&Refacere"
 
-#: main.C:468
+#: main.C:469
 msgid "&Iconify"
 msgstr "Mi&nimizare"
 
-#: main.C:469
+#: main.C:470
 msgid "&DeIconify"
 msgstr "&DezMinimizare"
 
-#: main.C:470
+#: main.C:471
 msgid "&Sticky"
 msgstr "&Lipicioasã"
 
-#: main.C:471
+#: main.C:472
 msgid "&UnSticky"
 msgstr "Nelipicioasã"
 
-#: main.C:472
+#: main.C:473
 msgid "Mo&ve"
 msgstr "&Mutã"
 
-#: main.C:473
+#: main.C:474
 msgid "Resi&ze"
 msgstr "Schim&bã dimensiunea"
 
-#: main.C:475
+#: main.C:476
 msgid "&To desktop"
 msgstr "În &ecranul"
 
-#: main.C:477
+#: main.C:478
 msgid "&Onto current desktop"
 msgstr "&În ecranul curent"
 
-#: main.C:530
+#: main.C:531
 msgid "One"
 msgstr "Unu"
 
-#: main.C:533
+#: main.C:534
 msgid "Two"
 msgstr "Doi"
 
-#: main.C:536
+#: main.C:537
 msgid "Three"
 msgstr "Trei"
 
-#: main.C:539
+#: main.C:540
 msgid "Four"
 msgstr "Patru"
 
-#: main.C:542
+#: main.C:543
 msgid "Five"
 msgstr "Cinci"
 
-#: main.C:545
+#: main.C:546
 msgid "Six"
 msgstr "ªase"
 
-#: main.C:548
+#: main.C:549
 msgid "Seven"
 msgstr "ªapte"
 
-#: main.C:551
+#: main.C:552
 msgid "Eight"
 msgstr "Opt"
 
-#: main.C:855
+#: main.C:566
+msgid "Unnamed Desktop"
+msgstr ""
+
+#: main.C:875
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niºte pixmap-uri sunt defecte: ShapeMode nu este activat\n"
 
-#: main.C:1164
+#: main.C:1193
 msgid "*** No Tasks ***"
 msgstr "*** Nici un Program ***"
 

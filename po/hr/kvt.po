@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:58+0200\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-08-26 14:27:08+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
@@ -23,7 +23,7 @@ msgstr "Backspace tipka poslati æe"
 msgid "&New Terminal"
 msgstr "&Novi terminal"
 
-#: main.C:406 main.C:812
+#: main.C:406 main.C:754
 msgid "&Hide"
 msgstr "&Sakrij"
 
@@ -83,15 +83,15 @@ msgstr "Linu&x konzola"
 msgid "&Custom Colors"
 msgstr "&Posebne Boje"
 
-#: main.C:450 main.C:758
+#: main.C:450 main.C:700
 msgid "Hide &Menubar"
 msgstr "Sakrij &Izbornik"
 
-#: main.C:452 main.C:622 main.C:750
+#: main.C:452 main.C:622 main.C:692
 msgid "Show &Menubar"
 msgstr "Poka¾i &Izbornik"
 
-#: main.C:453 main.C:768
+#: main.C:453 main.C:710
 msgid "Secure &keyboard"
 msgstr "Osiguraj &tipkovnicu"
 
@@ -137,23 +137,23 @@ msgstr ""
 "Emulacija terminala za KDE\n"
 "raðena po rxvt-2.08 Roberta Nationa."
 
-#: main.C:631 main.C:805
+#: main.C:631 main.C:747
 msgid "&Show"
 msgstr "Pri&ka¾i"
 
-#: main.C:764
+#: main.C:706
 msgid "Unsecure &keyboard"
 msgstr "Iskljuè&i osiguranje"
 
-#: main.C:775
+#: main.C:717
 msgid "Terminal Options"
 msgstr "Pode¹avanja terminala"
 
-#: main.C:917
+#: main.C:859
 msgid "Hint"
 msgstr "Trik"
 
-#: main.C:918
+#: main.C:860
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -161,7 +161,7 @@ msgstr ""
 "Novi izbor boja bit æe prikazan\n"
 "kada se iskljuèi osiguranje tipkovnice."
 
-#: main.C:1151
+#: main.C:1139
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -174,58 +174,58 @@ msgstr ""
 "Emulacija terminala za KDE\n"
 "raðena po rxvt-2.08 Roberta Nationa.\n"
 
-#: main.C:1155
+#: main.C:1143
 msgid "Permitted arguments are:\n"
 msgstr "Dozvoljeni argumenti su:\n"
 
-#: main.C:1156
+#: main.C:1144
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <command> <arg> ...    izvedi naredbu uz ars - mora biti posljednji "
 "argument\n"
 
-#: main.C:1157
+#: main.C:1145
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <ime>\t\t  navedi ime prikaza (poslu¾itelja)\n"
 
-#: main.C:1158
+#: main.C:1146
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <spec>\t  poèetna geometrija vt prozora\n"
 
-#: main.C:1159
+#: main.C:1147
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr "-print-pipe <ime>\t  navedi pipe za vt100 pisaè\n"
 
-#: main.C:1160
+#: main.C:1148
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <boja>\t\t  boja pozadine\n"
 
-#: main.C:1161
+#: main.C:1149
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <boja>\t\t  boja prvog plana\n"
 
-#: main.C:1162
+#: main.C:1150
 msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <ime pisma>\t  normalno pismo\n"
 
-#: main.C:1163
+#: main.C:1151
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <velièina>\t  minijaturno, malo, normalno, veliko, ogromno\n"
 
-#: main.C:1164
+#: main.C:1152
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr "-linux\t\t\t  postavi kvt da imitira linux-konzolu\n"
 
-#: main.C:1165
+#: main.C:1153
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar\t\t  sakrij traku izbornika\n"
 
-#: main.C:1166
+#: main.C:1154
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar \t\t  sakrij traku za odmatanje\n"
 
-#: main.C:1167
+#: main.C:1155
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -233,19 +233,19 @@ msgstr ""
 "-T <tekst>                 tekst na naslovnoj traci prozora \n"
 "                          (Vi¹e se ne koristi. Koristi -caption)\n"
 
-#: main.C:1169
+#: main.C:1157
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <TERM>\t\t  Tip terminala. Podrazumijevani je xterm.\n"
 
-#: main.C:1170
+#: main.C:1158
 msgid "-C                        Capture system console message\n"
 msgstr "-C \t\t\t  Uhvati poruke na sistemskoj konzoli\n"
 
-#: main.C:1171
+#: main.C:1159
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <tekst>\t\t  ime u ikoni ili prozoru ikone\n"
 
-#: main.C:1172
+#: main.C:1160
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -253,7 +253,7 @@ msgstr ""
 "-7                        radi u 7 bitnom naèinu\n"
 "-8                        radi u 8 bitnom naèinu\n"
 
-#: main.C:1174
+#: main.C:1162
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
@@ -264,7 +264,7 @@ msgstr ""
 "ljusku\n"
 "(podrazumijevano)\n"
 
-#: main.C:1176
+#: main.C:1164
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
@@ -272,11 +272,11 @@ msgstr ""
 "-meta <arg>               omoguæi Meta sa ESCAPE prefiskom, 8THBITom, ili "
 "ignore\n"
 
-#: main.C:1177
+#: main.C:1165
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr "-sl <broj>\t\t  spremi broj zadnji linija u meðumemoriju\n"
 
-#: main.C:1178
+#: main.C:1166
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -284,7 +284,7 @@ msgid ""
 "buffer\n"
 msgstr ""
 
-#: main.C:1182
+#: main.C:1170
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

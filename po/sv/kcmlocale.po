@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: 1998-01-20 15:40 +0100\n"
 "Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
 "Language-Team: Swedish <LL@li.org>\n"
@@ -26,31 +26,31 @@ msgstr "användning: kcmlocale [-init | language]\n"
 msgid "Locale settings"
 msgstr "Platsinställningar"
 
-#: locale.cpp:40
+#: locale.cpp:45
 msgid "Language"
 msgstr "Språk"
 
-#: locale.cpp:45
+#: locale.cpp:55
 msgid "First"
 msgstr "Första"
 
-#: locale.cpp:52
+#: locale.cpp:65
 msgid "Second"
 msgstr "Andra"
 
-#: locale.cpp:59
+#: locale.cpp:75
 msgid "Third"
 msgstr "Tredje"
 
-#: locale.cpp:94
+#: locale.cpp:115
 msgid "without name!"
 msgstr "utan namn!"
 
-#: locale.cpp:160
+#: locale.cpp:181
 msgid "Applying language settings"
 msgstr "Aktivera språkinställningar"
 
-#: locale.cpp:161
+#: locale.cpp:182
 msgid ""
 "Changed language settings apply only to newly started applications.\n"
 "To change the language of all programs, you will have to logout first."

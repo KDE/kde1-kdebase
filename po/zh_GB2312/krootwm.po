@@ -1,64 +1,64 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:58+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
-#: krootwm.C:115 krootwm.C:449
+#: krootwm.C:120 krootwm.C:568
 msgid "Folder"
 msgstr "文件夹"
 
-#: krootwm.C:142
+#: krootwm.C:147
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "错误: 模板不存在 '%s'"
 
-#: krootwm.C:168
+#: krootwm.C:184
 msgid "Help on desktop"
 msgstr "桌面的帮助"
 
-#: krootwm.C:169
+#: krootwm.C:185
 msgid "Execute command"
 msgstr "执行命令"
 
-#: krootwm.C:170
+#: krootwm.C:186
 msgid "Display properties"
 msgstr "显示特性"
 
-#: krootwm.C:171
+#: krootwm.C:187
 msgid "Refresh desktop"
 msgstr "重绘桌面"
 
-#: krootwm.C:173
+#: krootwm.C:189
 msgid "Unclutter windows"
 msgstr ""
 
-#: krootwm.C:174
+#: krootwm.C:190
 msgid "Cascade windows"
 msgstr ""
 
-#: krootwm.C:175
+#: krootwm.C:191
 msgid "Arrange icons"
 msgstr "布置图标"
 
-#: krootwm.C:177
+#: krootwm.C:193
 msgid "Lock screen"
 msgstr "锁住屏幕"
 
-#: krootwm.C:178
+#: krootwm.C:194
 msgid "Logout"
 msgstr "离线"
 
-#: krootwm.C:469
+#: krootwm.C:588
 msgid "Could not create folder"
 msgstr "无法建立文件夹"
 
-#: krootwm.C:502
+#: krootwm.C:647
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: krootwm.C:506
+#: krootwm.C:651
 msgid "Usage:"
 msgstr "用法:"

@@ -6,134 +6,134 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: 1998-04-20 22:09+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:57
+#: backgnd.cpp:58
 msgid "Enter new desktop name"
 msgstr "輸入新的桌面名稱"
 
-#: backgnd.cpp:113 backgnd.cpp:148
+#: backgnd.cpp:114 backgnd.cpp:149
 msgid "Desktop"
 msgstr "桌面"
 
-#: backgnd.cpp:165
+#: backgnd.cpp:166
 #, fuzzy
 msgid "&Rename ..."
 msgstr "重新命名[&R] ..."
 
-#: backgnd.cpp:191 colorscm.cpp:93
+#: backgnd.cpp:192 colorscm.cpp:93
 #, fuzzy
 msgid "Colors"
 msgstr "顏色"
 
-#: backgnd.cpp:218
+#: backgnd.cpp:219
 #, fuzzy
 msgid "&One Color"
 msgstr "第一種顏色[&O]"
 
-#: backgnd.cpp:235
+#: backgnd.cpp:236
 #, fuzzy
 msgid "&Two Color"
 msgstr "第二種顏色[&T]"
 
-#: backgnd.cpp:254
+#: backgnd.cpp:255
 #, fuzzy
 msgid "Set&up ..."
 msgstr "設定[&U]..."
 
-#: backgnd.cpp:263
+#: backgnd.cpp:264
 msgid "Wallpaper"
 msgstr "桌布"
 
-#: backgnd.cpp:273
+#: backgnd.cpp:274
 #, fuzzy
 msgid "Ti&led"
 msgstr "鋪排[&L]"
 
-#: backgnd.cpp:281
+#: backgnd.cpp:282
 #, fuzzy
 msgid "&Centred"
 msgstr "置於中央[&C]"
 
-#: backgnd.cpp:289
+#: backgnd.cpp:290
 #, fuzzy
 msgid "&Scaled"
 msgstr "放大至全螢幕[&S]"
 
-#: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
+#: backgnd.cpp:306 backgnd.cpp:426 backgnd.cpp:439 backgnd.cpp:787
 #, fuzzy
 msgid "No wallpaper"
 msgstr "沒有桌布"
 
-#: backgnd.cpp:333
+#: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "瀏覽[&B]..."
 
-#: backgnd.cpp:530
+#: backgnd.cpp:536
 msgid "Default"
 msgstr "預設"
 
-#: backgnd.cpp:861
+#: backgnd.cpp:863
 #, fuzzy
 msgid "Desktop names"
 msgstr "桌面名稱"
 
-#: backgnd.cpp:907
+#: backgnd.cpp:909
 #, fuzzy
 msgid "Two color backgrounds"
 msgstr "雙色背景"
 
-#: backgnd.cpp:944
+#: backgnd.cpp:946
 msgid "Blend colors from &top to bottom"
 msgstr "由上到下混合兩種顏色[&T]"
 
-#: backgnd.cpp:950
+#: backgnd.cpp:952
 msgid "Blend colors from &right to left"
 msgstr "由右至左調和兩種顏色[&R]"
 
-#: backgnd.cpp:956
+#: backgnd.cpp:958
 msgid "Use &pattern"
 msgstr "使用花樣[&P]"
 
-#: backgnd.cpp:983
+#: backgnd.cpp:985
 msgid "Preview"
 msgstr "預覽"
 
-#: backgnd.cpp:994
+#: backgnd.cpp:996
 msgid "Pattern &name"
 msgstr "花樣名稱[&N]"
 
-#: backgnd.cpp:1033
+#: backgnd.cpp:1035
 msgid "Current"
 msgstr "目前"
 
-#: backgnd.cpp:1093
+#: backgnd.cpp:1095
 #, fuzzy
 msgid "Filled"
 msgstr "填滿"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1098
 msgid "Fish net"
 msgstr "魚網"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1101
 msgid "Triangles"
 msgstr "三角"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1104
 msgid "Flowers"
 msgstr "花"
 
-#: backgnd.cpp:1105
+#: backgnd.cpp:1107
 msgid "Rattan"
 msgstr "藤蔓"
 
-#: backgnd.cpp:1108
+#: backgnd.cpp:1110
 msgid "Cobbled Pavement"
 msgstr "鵝卵石人行道"
 
@@ -291,7 +291,7 @@ msgstr "鎖住螢幕"
 msgid "Screen Saver"
 msgstr "螢幕保護程式"
 
-#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
+#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:553 scrnsave.cpp:662
 #, fuzzy
 msgid "No screensaver"
 msgstr "螢幕保護程式[&S]"
@@ -338,64 +338,59 @@ msgstr "高[&H]"
 msgid "Low"
 msgstr "低"
 
-#: general.cpp:147
+#: general.cpp:216
 #, fuzzy
 msgid "Fonts etc."
 msgstr "字型"
 
-#: general.cpp:153
+#: general.cpp:222
 msgid "&Draw widgets in the style of Windows 95"
 msgstr ""
 
-#: general.cpp:167
+#: general.cpp:236
 #, fuzzy
 msgid "Desktop fonts"
 msgstr "桌面字型"
 
-#: general.cpp:179
+#: general.cpp:248
 msgid "General font"
 msgstr "一般字型"
 
-#: general.cpp:184
+#: general.cpp:253
 msgid "Fixed font"
 msgstr "固定字型"
 
-#: general.cpp:189
-#, fuzzy
-msgid "Window title font"
-msgstr "視窗標題列字型"
-
-#: general.cpp:194
+#: general.cpp:263
 #, fuzzy
 msgid "Panel button font"
 msgstr "Panel 按鈕字型"
 
-#: general.cpp:199
+#: general.cpp:268
 msgid "Panel clock font"
 msgstr "Panel 小時鐘字型"
 
-#: main.cpp:61
+#: main.cpp:62
 #, fuzzy
 msgid "&Fonts etc."
 msgstr "相關字型[&F]"
 
-#: main.cpp:64
+#: main.cpp:65
 msgid "&Background"
 msgstr "背景[&B]"
 
-#: main.cpp:67
+#: main.cpp:68
 msgid "&Screensaver"
 msgstr "螢幕保護程式[&S]"
 
-#: main.cpp:71
+#: main.cpp:72
 msgid "&Colors"
 msgstr "顏色[&C]"
 
-#: main.cpp:77
+#: main.cpp:78
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr "用法: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:117
+#: main.cpp:130
 msgid "Display settings"
 msgstr "顯示器設定"
 
@@ -427,3 +422,7 @@ msgstr "預設"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "任何"
+
+#, fuzzy
+#~ msgid "Window title font"
+#~ msgstr "視窗標題列字型"

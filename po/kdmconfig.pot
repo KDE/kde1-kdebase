@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,48 +89,48 @@ msgstr ""
 msgid "Language:"
 msgstr ""
 
-#: kdm-appear.cpp:168 kdm-appear.cpp:252 kdm-users.cpp:275
+#: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
 "There was an error loading the image:\n"
 ">"
 msgstr ""
 
-#: kdm-appear.cpp:170 kdm-appear.cpp:189 kdm-users.cpp:195
+#: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
 msgid "<"
 msgstr ""
 
-#: kdm-appear.cpp:171 kdm-appear.cpp:190 kdm-appear.cpp:255 kdm-users.cpp:196
-#: kdm-users.cpp:278
+#: kdm-appear.cpp:170 kdm-appear.cpp:189 kdm-appear.cpp:254 kdm-users.cpp:197
+#: kdm-users.cpp:279
 msgid "ERROR"
 msgstr ""
 
-#: kdm-appear.cpp:187 kdm-users.cpp:193
+#: kdm-appear.cpp:186 kdm-users.cpp:194
 msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
 
-#: kdm-appear.cpp:220 kdm-users.cpp:226
+#: kdm-appear.cpp:219 kdm-users.cpp:227
 msgid "Sorry, but \n"
 msgstr ""
 
-#: kdm-appear.cpp:222 kdm-users.cpp:228
+#: kdm-appear.cpp:221 kdm-users.cpp:229
 msgid ""
 "\n"
 "does not seem to be an image file"
 msgstr ""
 
-#: kdm-appear.cpp:223 kdm-users.cpp:229
+#: kdm-appear.cpp:222 kdm-users.cpp:230
 msgid ""
 "\n"
 "Please use files with these extensions\n"
 msgstr ""
 
-#: kdm-appear.cpp:225 kdm-users.cpp:231
+#: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"
 msgstr ""
 
-#: kdm-appear.cpp:254 kdm-users.cpp:277
+#: kdm-appear.cpp:253 kdm-users.cpp:278
 msgid ""
 "<\n"
 "It will not be saved..."
@@ -140,23 +140,23 @@ msgstr ""
 msgid "Select fonts"
 msgstr ""
 
-#: kdm-font.cpp:51
+#: kdm-font.cpp:50
 msgid "Change font"
 msgstr ""
 
-#: kdm-font.cpp:59
+#: kdm-font.cpp:55
 msgid "Greeting"
 msgstr ""
 
-#: kdm-font.cpp:60
+#: kdm-font.cpp:56
 msgid "Fail"
 msgstr ""
 
-#: kdm-font.cpp:61
+#: kdm-font.cpp:57
 msgid "Standard"
 msgstr ""
 
-#: kdm-font.cpp:62
+#: kdm-font.cpp:59
 msgid "Example:"
 msgstr ""
 
@@ -212,55 +212,51 @@ msgstr ""
 msgid "Sort users"
 msgstr ""
 
-#: kdm-users.cpp:181 kdm-users.cpp:250
+#: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "No user selected"
 msgstr ""
 
-#: kdm-users.cpp:182 kdm-users.cpp:251
+#: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
 msgstr ""
 
-#: kdm-sess.cpp:50
-msgid "Allow to shutdown:"
-msgstr ""
-
-#: kdm-sess.cpp:56
+#: kdm-sess.cpp:54
 msgid "None"
 msgstr ""
 
-#: kdm-sess.cpp:57
+#: kdm-sess.cpp:55
 msgid "All"
 msgstr ""
 
-#: kdm-sess.cpp:58
+#: kdm-sess.cpp:56
 msgid "Root Only"
 msgstr ""
 
-#: kdm-sess.cpp:59
+#: kdm-sess.cpp:57
 msgid "Console Only"
 msgstr ""
 
-#: kdm-sess.cpp:63
+#: kdm-sess.cpp:61
 msgid "Commands"
 msgstr ""
 
-#: kdm-sess.cpp:65
+#: kdm-sess.cpp:62
 msgid "Shutdown"
 msgstr ""
 
-#: kdm-sess.cpp:73
+#: kdm-sess.cpp:67
 msgid "Restart"
 msgstr ""
 
-#: kdm-sess.cpp:85
+#: kdm-sess.cpp:73
 msgid "Session types"
 msgstr ""
 
-#: kdm-sess.cpp:88
+#: kdm-sess.cpp:75
 msgid "New type"
 msgstr ""
 
-#: kdm-sess.cpp:98
+#: kdm-sess.cpp:83
 msgid "Available types"
 msgstr ""
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmlocale\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: 1998-04-20 21:47+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -25,31 +25,31 @@ msgstr "用法: kcmlocale [-init | language]\n"
 msgid "Locale settings"
 msgstr "地區設定"
 
-#: locale.cpp:40
+#: locale.cpp:45
 msgid "Language"
 msgstr "語系"
 
-#: locale.cpp:45
+#: locale.cpp:55
 msgid "First"
 msgstr "第一選擇"
 
-#: locale.cpp:52
+#: locale.cpp:65
 msgid "Second"
 msgstr "第二選擇"
 
-#: locale.cpp:59
+#: locale.cpp:75
 msgid "Third"
 msgstr "第三選擇"
 
-#: locale.cpp:94
+#: locale.cpp:115
 msgid "without name!"
 msgstr "沒有名稱!"
 
-#: locale.cpp:160
+#: locale.cpp:181
 msgid "Applying language settings"
 msgstr "套用語系設定"
 
-#: locale.cpp:161
+#: locale.cpp:182
 msgid ""
 "Changed language settings apply only to newly started applications.\n"
 "To change the language of all programs, you will have to logout first."

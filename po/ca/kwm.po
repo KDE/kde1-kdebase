@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:58+0200\n"
 "PO-Revision-Date: 1998-03-24 23:35+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -26,91 +26,95 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: error al inicialitzar; cancel·lant el procés\n"
 
-#: main.C:448
+#: main.C:449
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:455
+#: main.C:456
 msgid "Usage: "
 msgstr "Us: "
 
-#: main.C:466
+#: main.C:467
 msgid "&Maximize"
 msgstr "&Maximitzar"
 
-#: main.C:467
+#: main.C:468
 msgid "&Restore"
 msgstr "&Restaurar"
 
-#: main.C:468
+#: main.C:469
 msgid "&Iconify"
 msgstr "&Iconitzar"
 
-#: main.C:469
+#: main.C:470
 msgid "&DeIconify"
 msgstr "&DeIconitzar"
 
-#: main.C:470
+#: main.C:471
 msgid "&Sticky"
 msgstr "&Apegalós"
 
-#: main.C:471
+#: main.C:472
 msgid "&UnSticky"
 msgstr "&No apegalós"
 
-#: main.C:472
+#: main.C:473
 msgid "Mo&ve"
 msgstr "M&oure"
 
-#: main.C:473
+#: main.C:474
 msgid "Resi&ze"
 msgstr "Dimen&sionar"
 
-#: main.C:475
+#: main.C:476
 msgid "&To desktop"
 msgstr "A l'&escriptori"
 
-#: main.C:477
+#: main.C:478
 msgid "&Onto current desktop"
 msgstr "Sobre l'escriptori &actual"
 
-#: main.C:530
+#: main.C:531
 msgid "One"
 msgstr "Un"
 
-#: main.C:533
+#: main.C:534
 msgid "Two"
 msgstr "Dos"
 
-#: main.C:536
+#: main.C:537
 msgid "Three"
 msgstr "Tres"
 
-#: main.C:539
+#: main.C:540
 msgid "Four"
 msgstr "Quatre"
 
-#: main.C:542
+#: main.C:543
 msgid "Five"
 msgstr "Cinc"
 
-#: main.C:545
+#: main.C:546
 msgid "Six"
 msgstr "Sis"
 
-#: main.C:548
+#: main.C:549
 msgid "Seven"
 msgstr "Set"
 
-#: main.C:551
+#: main.C:552
 msgid "Eight"
 msgstr "Vuit"
 
-#: main.C:855
+#: main.C:566
+msgid "Unnamed Desktop"
+msgstr ""
+
+#: main.C:875
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Alguns pixmaps no són vàlids: desactivat el mode ombrejat\n"
 
-#: main.C:1164
+#: main.C:1193
 msgid "*** No Tasks ***"
 msgstr "*** Sense Tasques ***"
 

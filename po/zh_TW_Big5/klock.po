@@ -6,40 +6,41 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:58+0200\n"
 "PO-Revision-Date: 1998-04-20 22:56+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: banner.cpp:56
+#: banner.cpp:62
 msgid "Banner"
 msgstr "標題(Banner)"
 
-#: banner.cpp:78
+#: banner.cpp:84
 msgid "Setup kbanner"
 msgstr "設定 kbanner"
 
-#: banner.cpp:116 blankscrn.cpp:65
+#: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
 msgstr "顏色:"
 
-#: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
-#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
-#: rock.cpp:550 slip.cpp:366 space.cpp:587 swarm.cpp:330
+#: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
+#: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
+#: polygon.cpp:122 rock.cpp:561 science.cpp:427 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
 msgid "Speed:"
 msgstr "速度"
 
-#: banner.cpp:146
+#: banner.cpp:188
 msgid "Message:"
 msgstr "訊息:"
 
-#: banner.cpp:315
+#: banner.cpp:357
 msgid "About Banner"
 msgstr "有關 Banner(標題)"
 
-#: banner.cpp:316
+#: banner.cpp:358
 msgid ""
 "Banner Version 0.1\n"
 "\n"
@@ -47,27 +48,27 @@ msgid ""
 "mjones@kde.org"
 msgstr ""
 
-#: banner.cpp:419
+#: banner.cpp:461
 msgid "KDE is great"
 msgstr "KDE is great"
 
-#: bat.cpp:457
+#: bat.cpp:462
 msgid "Bat"
 msgstr "蝙蝠(Bat)"
 
-#: bat.cpp:532
+#: bat.cpp:537
 msgid "Setup KBat"
 msgstr "設定 KBat"
 
-#: bat.cpp:548
+#: bat.cpp:564
 msgid "Number of bats:"
 msgstr "蝙蝠數目:"
 
-#: bat.cpp:636
+#: bat.cpp:661
 msgid "About Bat"
 msgstr "有關 Bat(蝙蝠)"
 
-#: bat.cpp:637
+#: bat.cpp:662
 msgid ""
 "Bat\n"
 "\n"
@@ -76,55 +77,55 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: blankscrn.cpp:49
+#: blankscrn.cpp:53
 msgid "Blank Screen"
 msgstr "空白螢幕(Blank Screen)"
 
-#: blankscrn.cpp:63
+#: blankscrn.cpp:67
 msgid "Setup kblankscrn"
 msgstr "設定 kblankscrn"
 
-#: blob.cpp:53
+#: blob.cpp:57
 msgid "Random Linear"
 msgstr "亂數線條"
 
-#: blob.cpp:54
+#: blob.cpp:58
 msgid "Horizonal Sine"
 msgstr "水平 Sine"
 
-#: blob.cpp:55
+#: blob.cpp:59
 msgid "Circular Bounce"
 msgstr "圓形往返"
 
-#: blob.cpp:56
+#: blob.cpp:60
 msgid "Polar Coordinates"
 msgstr "極座標"
 
-#: blob.cpp:57
+#: blob.cpp:61
 msgid "Random"
 msgstr "隨機"
 
-#: blob.cpp:73
+#: blob.cpp:77
 msgid "Sorry. This screensaver needs a color display"
 msgstr "抱歉. 這個螢幕保護程式需要彩色顯示"
 
-#: blob.cpp:452
+#: blob.cpp:458
 msgid "Setup Blob Saver"
 msgstr "設定 Blob 保護程式"
 
-#: blob.cpp:455
+#: blob.cpp:468
 msgid "Frame Show sec."
 msgstr ""
 
-#: blob.cpp:463
+#: blob.cpp:480
 msgid "Algorithm"
 msgstr "演算法"
 
-#: blob.cpp:543
+#: blob.cpp:570
 msgid "About Blob"
 msgstr "有關 Blob"
 
-#: blob.cpp:544
+#: blob.cpp:571
 msgid ""
 "Blobsaver Version 0.1\n"
 "\n"
@@ -132,31 +133,72 @@ msgid ""
 "tiaan@netsys.co.za"
 msgstr ""
 
-#: blob.cpp:579
+#: blob.cpp:606
 msgid "Blobs"
 msgstr ""
 
-#: flame.cpp:303
+#: bouboule.cpp:863
+msgid "Bouboule"
+msgstr ""
+
+#: bouboule.cpp:1005
+#, fuzzy
+msgid "Setup KBouboule"
+msgstr "設定 KFlame"
+
+#: bouboule.cpp:1032
+#, fuzzy
+msgid "Number of points:"
+msgstr "蝙蝠數目:"
+
+#: bouboule.cpp:1046
+#, fuzzy
+msgid "Point size:"
+msgstr "點數:"
+
+#: bouboule.cpp:1060
+msgid "Color-change frequency:"
+msgstr ""
+
+#: bouboule.cpp:1077
+msgid "3D mode"
+msgstr ""
+
+#: bouboule.cpp:1223
+#, fuzzy
+msgid "About Bouboule"
+msgstr "有關 Blob"
+
+#: bouboule.cpp:1224
+msgid ""
+"Bouboule v0.1 -- a glob of spheres twisting and changing size\n"
+"\n"
+"Copyright (c) 1996 by Jeremie PETIT\n"
+"\n"
+"Ported to kscreensave by Cedric Tefft"
+msgstr ""
+
+#: flame.cpp:310
 msgid "Flame"
 msgstr ""
 
-#: flame.cpp:390
+#: flame.cpp:397
 msgid "Setup KFlame"
 msgstr "設定 KFlame"
 
-#: flame.cpp:406
+#: flame.cpp:423
 msgid "Max Levels:"
 msgstr "最高層次:"
 
-#: flame.cpp:416
+#: flame.cpp:438
 msgid "Num Points:"
 msgstr "點數:"
 
-#: flame.cpp:521
+#: flame.cpp:551
 msgid "About Flame"
 msgstr "有關 Flame"
 
-#: flame.cpp:522
+#: flame.cpp:552
 msgid ""
 "Flame Version 3.3\n"
 "\n"
@@ -165,23 +207,23 @@ msgid ""
 "Ported to kscreensave by Martin Jones."
 msgstr ""
 
-#: forest.cpp:200
+#: forest.cpp:206
 msgid "Forest"
 msgstr "森林(Forest)"
 
-#: forest.cpp:272
+#: forest.cpp:278
 msgid "Setup KForest"
 msgstr "設定 KForest"
 
-#: forest.cpp:288
+#: forest.cpp:304
 msgid "Num of Trees:"
 msgstr "樹的數目:"
 
-#: forest.cpp:375
+#: forest.cpp:399
 msgid "About Forest"
 msgstr "有關 Forest(森林)"
 
-#: forest.cpp:376
+#: forest.cpp:400
 msgid ""
 "Forest\n"
 "\n"
@@ -190,27 +232,27 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: hop.cpp:221
+#: hop.cpp:226
 msgid "Hop"
 msgstr ""
 
-#: hop.cpp:306
+#: hop.cpp:311
 msgid "Setup KHop"
 msgstr "設定 KHop"
 
-#: hop.cpp:322
+#: hop.cpp:337
 msgid "Samecolor Pixels:"
 msgstr "同顏色的點:"
 
-#: hop.cpp:332 lissie.cpp:346
+#: hop.cpp:351 lissie.cpp:367
 msgid "Cycles:"
 msgstr "循環數:"
 
-#: hop.cpp:437
+#: hop.cpp:464
 msgid "About Hop"
 msgstr "有關 Hop"
 
-#: hop.cpp:438
+#: hop.cpp:465
 msgid ""
 "Hop Version 3.3\n"
 "\n"
@@ -219,19 +261,19 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: laser.cpp:327
+#: laser.cpp:333
 msgid "Laser"
 msgstr "雷射(Laser)"
 
-#: laser.cpp:387
+#: laser.cpp:393
 msgid "Setup KLaser"
 msgstr "設定 KLaser"
 
-#: laser.cpp:462
+#: laser.cpp:482
 msgid "About Laser"
 msgstr "有關 Laser(雷射)"
 
-#: laser.cpp:463
+#: laser.cpp:483
 msgid ""
 "Laser Version 3.3\n"
 "\n"
@@ -240,35 +282,35 @@ msgid ""
 "Ported to kscreensave by Martin Jones."
 msgstr ""
 
-#: lines.cpp:110
+#: lines.cpp:116
 msgid "Lines"
 msgstr "線條(Lines)"
 
-#: lines.cpp:128
+#: lines.cpp:134
 msgid "Setup klines"
 msgstr "設定 klines"
 
-#: lines.cpp:130 polygon.cpp:81
+#: lines.cpp:142 polygon.cpp:93
 msgid "Length:"
 msgstr "長度:"
 
-#: lines.cpp:150
+#: lines.cpp:168
 msgid "Beginning:"
 msgstr "開始:"
 
-#: lines.cpp:159
+#: lines.cpp:182
 msgid "Middle:"
 msgstr "中間:"
 
-#: lines.cpp:168
+#: lines.cpp:195
 msgid "End:"
 msgstr "結束"
 
-#: lines.cpp:259
+#: lines.cpp:294
 msgid "About Lines"
 msgstr "有關 Lines(線段)"
 
-#: lines.cpp:260
+#: lines.cpp:295
 msgid ""
 "Lines Version 0.1.1\n"
 "\n"
@@ -276,23 +318,23 @@ msgid ""
 "dirk.stanerker@student.uni-tuebingen.de"
 msgstr ""
 
-#: lissie.cpp:234
+#: lissie.cpp:241
 msgid "Lissie"
 msgstr ""
 
-#: lissie.cpp:320
+#: lissie.cpp:327
 msgid "Setup KLissie"
 msgstr "設定 KLissie"
 
-#: lissie.cpp:336
+#: lissie.cpp:353
 msgid "Num of Lissies:"
 msgstr "Lissies 數目:"
 
-#: lissie.cpp:451
+#: lissie.cpp:480
 msgid "About Lissie"
 msgstr "有關 Lissie"
 
-#: lissie.cpp:452
+#: lissie.cpp:481
 msgid ""
 "Lissie\n"
 "\n"
@@ -301,12 +343,12 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: main.cpp:279
+#: main.cpp:280
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr ""
 
-#: main.cpp:306
+#: main.cpp:307
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator.\n"
@@ -318,11 +360,11 @@ msgstr ""
 "\n"
 "告訴他, 您需要將這螢幕保護程式 suid!"
 
-#: main.cpp:311
+#: main.cpp:312
 msgid "Shadow Passwords"
 msgstr ""
 
-#: main.cpp:469
+#: main.cpp:470
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -331,7 +373,7 @@ msgstr ""
 "用法: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:472
+#: main.cpp:473
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -380,23 +422,23 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: polygon.cpp:58
+#: polygon.cpp:64
 msgid "Polygons"
 msgstr "多邊形(Polygons)"
 
-#: polygon.cpp:79
+#: polygon.cpp:85
 msgid "Setup kpolygon"
 msgstr "設定 kpolygon"
 
-#: polygon.cpp:91
+#: polygon.cpp:107
 msgid "Vertices:"
 msgstr "端點數:"
 
-#: polygon.cpp:209
+#: polygon.cpp:238
 msgid "About Polygon"
 msgstr "有關 Polygon(多邊形)"
 
-#: polygon.cpp:210
+#: polygon.cpp:239
 msgid ""
 "Polygon Version 0.1\n"
 "\n"
@@ -404,27 +446,27 @@ msgid ""
 "mjones@kde.org"
 msgstr ""
 
-#: pyro.cpp:433
+#: pyro.cpp:439
 msgid "Pyro"
 msgstr "煙火(Pyro)"
 
-#: pyro.cpp:511
+#: pyro.cpp:517
 msgid "Setup KPyro"
 msgstr "設定 KPyro"
 
-#: pyro.cpp:517 rock.cpp:560
+#: pyro.cpp:529 rock.cpp:575
 msgid "Number:"
 msgstr "數目:"
 
-#: pyro.cpp:527
+#: pyro.cpp:543
 msgid "Cloud"
 msgstr "燦爛的煙火效果"
 
-#: pyro.cpp:608
+#: pyro.cpp:629
 msgid "About Pyro"
 msgstr "About Pyro(煙火)"
 
-#: pyro.cpp:609
+#: pyro.cpp:630
 msgid ""
 "Pyro Version 3.4\n"
 "\n"
@@ -433,27 +475,27 @@ msgid ""
 "Ported to kscreensave by Martin Jones."
 msgstr ""
 
-#: rock.cpp:436
+#: rock.cpp:441
 msgid "Rock"
 msgstr "星際(Rock)"
 
-#: rock.cpp:544
+#: rock.cpp:549
 msgid "Setup krock"
 msgstr "設定 krock"
 
-#: rock.cpp:570
+#: rock.cpp:589
 msgid "Move"
 msgstr "移動"
 
-#: rock.cpp:575
+#: rock.cpp:595
 msgid "Rotate"
 msgstr "轉動"
 
-#: rock.cpp:693
+#: rock.cpp:719
 msgid "About Rock"
 msgstr "有關 Rock(星際)"
 
-#: rock.cpp:694
+#: rock.cpp:720
 msgid ""
 "Rock Version 3.3\n"
 "\n"
@@ -470,23 +512,49 @@ msgstr "輸入密碼"
 msgid "Failed"
 msgstr "失敗"
 
-#: slip.cpp:287
+#: science.cpp:60
+msgid "Science"
+msgstr ""
+
+#: science.cpp:386
+#, fuzzy
+msgid "Setup Science"
+msgstr "設定 klines"
+
+#: science.cpp:413
+msgid "Intensity:"
+msgstr ""
+
+#: science.cpp:544
+#, fuzzy
+msgid "About Science"
+msgstr "有關 Lines(線段)"
+
+#: science.cpp:545
+msgid ""
+"Science Version 0.2beta\n"
+"\n"
+"written by Rene Beutler 1998\n"
+"rbeutler@g26.ethz.ch"
+msgstr ""
+
+#: slip.cpp:293
 msgid "Slip"
 msgstr "滑動(Slip)"
 
-#: slip.cpp:360
+#: slip.cpp:366
 msgid "Setup KSlip"
 msgstr "設定 KSlip"
 
-#: slip.cpp:376
+#: slip.cpp:392
 msgid "Batchcount:"
 msgstr "每次滑動次數:"
 
-#: slip.cpp:464
+#: slip.cpp:488
 msgid "About Slip"
 msgstr "有關 Slip(滑動)"
 
-#: slip.cpp:465
+#: slip.cpp:489
 msgid ""
 "Slip\n"
 "\n"
@@ -520,23 +588,23 @@ msgid ""
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
 
-#: swarm.cpp:252
+#: swarm.cpp:257
 msgid "Swarm"
 msgstr "蜂群(Swarm)"
 
-#: swarm.cpp:324
+#: swarm.cpp:329
 msgid "Setup KSwarm"
 msgstr "設定 KSwarm"
 
-#: swarm.cpp:340
+#: swarm.cpp:355
 msgid "Number of Bees:"
 msgstr "蜜蜂數目:"
 
-#: swarm.cpp:427
+#: swarm.cpp:450
 msgid "About Swarm"
 msgstr "有關 Swarm(蜂群)"
 
-#: swarm.cpp:428
+#: swarm.cpp:451
 msgid ""
 "Swarm\n"
 "\n"

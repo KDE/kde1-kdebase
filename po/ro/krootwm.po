@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ionescu Paul <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -14,59 +14,59 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: krootwm.C:115 krootwm.C:449
+#: krootwm.C:120 krootwm.C:568
 msgid "Folder"
 msgstr "Director"
 
-#: krootwm.C:142
+#: krootwm.C:147
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "Eroare: Nu existã fiºierul de model '%s'"
 
-#: krootwm.C:168
+#: krootwm.C:184
 msgid "Help on desktop"
 msgstr "Informaþii"
 
-#: krootwm.C:169
+#: krootwm.C:185
 msgid "Execute command"
 msgstr "Executã comandã"
 
-#: krootwm.C:170
+#: krootwm.C:186
 msgid "Display properties"
 msgstr "Afiºeazã proprietaþile"
 
-#: krootwm.C:171
+#: krootwm.C:187
 msgid "Refresh desktop"
 msgstr "Reafiºeazã ecranul"
 
-#: krootwm.C:173
+#: krootwm.C:189
 msgid "Unclutter windows"
 msgstr ""
 
-#: krootwm.C:174
+#: krootwm.C:190
 msgid "Cascade windows"
 msgstr ""
 
-#: krootwm.C:175
+#: krootwm.C:191
 msgid "Arrange icons"
 msgstr "Aranjeazã icoanele"
 
-#: krootwm.C:177
+#: krootwm.C:193
 msgid "Lock screen"
 msgstr "Blocheazã ecranul"
 
-#: krootwm.C:178
+#: krootwm.C:194
 msgid "Logout"
 msgstr "Ieºire"
 
-#: krootwm.C:469
+#: krootwm.C:588
 msgid "Could not create folder"
 msgstr "Nu se poate crea directorul"
 
-#: krootwm.C:502
+#: krootwm.C:647
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: krootwm.C:506
+#: krootwm.C:651
 msgid "Usage:"
 msgstr "Folosire:"

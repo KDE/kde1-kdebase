@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:58+0200\n"
 "PO-Revision-Date: 1998-04-18 00:27+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
@@ -17,7 +17,7 @@ msgstr "Propiedades"
 msgid "Go!"
 msgstr "Inicio"
 
-#: kpanel.C:256 tools.C:795
+#: kpanel.C:256 tools.C:800
 msgid "Where do you want to go tomorrow?"
 msgstr "A dónde quiere ir mañana?"
 
@@ -41,11 +41,11 @@ msgstr "Esconder el pánel"
 msgid "Show the panel"
 msgstr "Mostrar el pánel"
 
-#: kpanel.C:1093 tools.C:611
+#: kpanel.C:1104 tools.C:616
 msgid "No comment available"
 msgstr "No hay comentario disponible"
 
-#: kpanel.C:1102 tools.C:804
+#: kpanel.C:1113 tools.C:809
 msgid "Windowlist"
 msgstr "Lista de ventanas"
 
@@ -65,7 +65,7 @@ msgstr "Añadir lista de ventanas"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Añadir una lista de ventanas al pánel"
 
-#: events.C:705 props.C:142
+#: events.C:714 props.C:142
 msgid "Configure"
 msgstr "Configurar"
 
@@ -81,7 +81,7 @@ msgstr "Editar Menús"
 msgid "Add or remove applications in the menu structure "
 msgstr "Añadir o suprimir aplicaciones en la estructura del menú "
 
-#: events.C:707 props.C:148
+#: events.C:716 props.C:148
 msgid "Restart"
 msgstr "Reiniciar"
 
@@ -97,14 +97,14 @@ msgstr "Pánel"
 msgid "Lock Screen"
 msgstr "Bloquear pantalla"
 
-#: props.C:307
+#: props.C:309
 msgid "The menu editor is not installed."
 msgstr "El editor de menús no está instalado."
 
-#: events.C:743 props.C:308
+#: events.C:752 props.C:310
 msgid "Oops!"
 msgstr "Ups!"
 
-#: events.C:742
+#: events.C:751
 msgid "Cannot put this as button onto the panel!"
 msgstr "Imposible poner este botón en el pánel."

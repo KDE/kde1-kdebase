@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,128 +14,128 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:57
+#: backgnd.cpp:58
 msgid "Enter new desktop name"
 msgstr ""
 
-#: backgnd.cpp:113 backgnd.cpp:148
+#: backgnd.cpp:114 backgnd.cpp:149
 msgid "Desktop"
 msgstr "Skrivbord"
 
-#: backgnd.cpp:165
+#: backgnd.cpp:166
 #, fuzzy
 msgid "&Rename ..."
 msgstr "Byt namn..."
 
-#: backgnd.cpp:191 colorscm.cpp:93
+#: backgnd.cpp:192 colorscm.cpp:93
 #, fuzzy
 msgid "Colors"
 msgstr "&Färg"
 
-#: backgnd.cpp:218
+#: backgnd.cpp:219
 #, fuzzy
 msgid "&One Color"
 msgstr "&Färg"
 
-#: backgnd.cpp:235
+#: backgnd.cpp:236
 #, fuzzy
 msgid "&Two Color"
 msgstr "&Färg"
 
-#: backgnd.cpp:254
+#: backgnd.cpp:255
 #, fuzzy
 msgid "Set&up ..."
 msgstr "Anpassa..."
 
-#: backgnd.cpp:263
+#: backgnd.cpp:264
 msgid "Wallpaper"
 msgstr "Bakgrundsbild"
 
-#: backgnd.cpp:273
+#: backgnd.cpp:274
 #, fuzzy
 msgid "Ti&led"
 msgstr "Sida vid sida"
 
-#: backgnd.cpp:281
+#: backgnd.cpp:282
 #, fuzzy
 msgid "&Centred"
 msgstr "Centrerad"
 
-#: backgnd.cpp:289
+#: backgnd.cpp:290
 #, fuzzy
 msgid "&Scaled"
 msgstr "Förstorad"
 
-#: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
+#: backgnd.cpp:306 backgnd.cpp:426 backgnd.cpp:439 backgnd.cpp:787
 #, fuzzy
 msgid "No wallpaper"
 msgstr "Bakgrundsbild"
 
-#: backgnd.cpp:333
+#: backgnd.cpp:334
 #, fuzzy
 msgid "&Browse..."
 msgstr "Bläddra..."
 
-#: backgnd.cpp:530
+#: backgnd.cpp:536
 msgid "Default"
 msgstr "Standard"
 
-#: backgnd.cpp:861
+#: backgnd.cpp:863
 #, fuzzy
 msgid "Desktop names"
 msgstr "Skrivbord"
 
-#: backgnd.cpp:907
+#: backgnd.cpp:909
 #, fuzzy
 msgid "Two color backgrounds"
 msgstr "Vald bakgrund"
 
-#: backgnd.cpp:944
+#: backgnd.cpp:946
 msgid "Blend colors from &top to bottom"
 msgstr ""
 
-#: backgnd.cpp:950
+#: backgnd.cpp:952
 msgid "Blend colors from &right to left"
 msgstr ""
 
-#: backgnd.cpp:956
+#: backgnd.cpp:958
 msgid "Use &pattern"
 msgstr ""
 
-#: backgnd.cpp:983
+#: backgnd.cpp:985
 msgid "Preview"
 msgstr ""
 
-#: backgnd.cpp:994
+#: backgnd.cpp:996
 msgid "Pattern &name"
 msgstr ""
 
-#: backgnd.cpp:1033
+#: backgnd.cpp:1035
 msgid "Current"
 msgstr ""
 
-#: backgnd.cpp:1093
+#: backgnd.cpp:1095
 #, fuzzy
 msgid "Filled"
 msgstr "Arkiv"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1098
 msgid "Fish net"
 msgstr ""
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1101
 msgid "Triangles"
 msgstr ""
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1104
 msgid "Flowers"
 msgstr ""
 
-#: backgnd.cpp:1105
+#: backgnd.cpp:1107
 msgid "Rattan"
 msgstr ""
 
-#: backgnd.cpp:1108
+#: backgnd.cpp:1110
 msgid "Cobbled Pavement"
 msgstr ""
 
@@ -285,7 +285,7 @@ msgstr ""
 msgid "Screen Saver"
 msgstr "Skärmsläckare"
 
-#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
+#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:553 scrnsave.cpp:662
 #, fuzzy
 msgid "No screensaver"
 msgstr "&Skärmsläckare"
@@ -332,64 +332,59 @@ msgstr "Hög"
 msgid "Low"
 msgstr "Låg"
 
-#: general.cpp:147
+#: general.cpp:216
 #, fuzzy
 msgid "Fonts etc."
 msgstr "Tysnitt"
 
-#: general.cpp:153
+#: general.cpp:222
 msgid "&Draw widgets in the style of Windows 95"
 msgstr ""
 
-#: general.cpp:167
+#: general.cpp:236
 #, fuzzy
 msgid "Desktop fonts"
 msgstr "Skrivbord"
 
-#: general.cpp:179
+#: general.cpp:248
 msgid "General font"
 msgstr "Standardtypsnitt"
 
-#: general.cpp:184
+#: general.cpp:253
 msgid "Fixed font"
 msgstr ""
 
-#: general.cpp:189
-#, fuzzy
-msgid "Window title font"
-msgstr "Fönstertext"
-
-#: general.cpp:194
+#: general.cpp:263
 #, fuzzy
 msgid "Panel button font"
 msgstr "Standardtypsnitt"
 
-#: general.cpp:199
+#: general.cpp:268
 msgid "Panel clock font"
 msgstr ""
 
-#: main.cpp:61
+#: main.cpp:62
 #, fuzzy
 msgid "&Fonts etc."
 msgstr "Tysnitt"
 
-#: main.cpp:64
+#: main.cpp:65
 msgid "&Background"
 msgstr "&Bakgrund"
 
-#: main.cpp:67
+#: main.cpp:68
 msgid "&Screensaver"
 msgstr "&Skärmsläckare"
 
-#: main.cpp:71
+#: main.cpp:72
 msgid "&Colors"
 msgstr "&Färg"
 
-#: main.cpp:77
+#: main.cpp:78
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr ""
 
-#: main.cpp:117
+#: main.cpp:130
 msgid "Display settings"
 msgstr "Omgivningsinställningar"
 
@@ -424,6 +419,10 @@ msgstr "Standard"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Window title font"
+#~ msgstr "Fönstertext"
 
 #, fuzzy
 #~ msgid "Blen&d"

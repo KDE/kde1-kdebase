@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:58+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -13,33 +13,34 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: banner.cpp:56
+#: banner.cpp:62
 msgid "Banner"
 msgstr "Be¾iaci text"
 
-#: banner.cpp:78
+#: banner.cpp:84
 msgid "Setup kbanner"
 msgstr "Nastavenie kbanneru"
 
-#: banner.cpp:116 blankscrn.cpp:65
+#: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
 msgstr "Farba:"
 
-#: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
-#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
-#: rock.cpp:550 slip.cpp:366 space.cpp:587 swarm.cpp:330
+#: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
+#: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
+#: polygon.cpp:122 rock.cpp:561 science.cpp:427 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
 msgid "Speed:"
 msgstr "Rýchlos»:"
 
-#: banner.cpp:146
+#: banner.cpp:188
 msgid "Message:"
 msgstr "Správa:"
 
-#: banner.cpp:315
+#: banner.cpp:357
 msgid "About Banner"
 msgstr "O Be¾iacom texte"
 
-#: banner.cpp:316
+#: banner.cpp:358
 msgid ""
 "Banner Version 0.1\n"
 "\n"
@@ -51,27 +52,27 @@ msgstr ""
 "napísal Martin R.Jones 1996\n"
 "mjones@kde.org"
 
-#: banner.cpp:419
+#: banner.cpp:461
 msgid "KDE is great"
 msgstr "KDE je skvelé"
 
-#: bat.cpp:457
+#: bat.cpp:462
 msgid "Bat"
 msgstr "Netopieri"
 
-#: bat.cpp:532
+#: bat.cpp:537
 msgid "Setup KBat"
 msgstr "Nastavenie KBatu"
 
-#: bat.cpp:548
+#: bat.cpp:564
 msgid "Number of bats:"
 msgstr "Netopierov:"
 
-#: bat.cpp:636
+#: bat.cpp:661
 msgid "About Bat"
 msgstr "Informácie o Netopieroch"
 
-#: bat.cpp:637
+#: bat.cpp:662
 msgid ""
 "Bat\n"
 "\n"
@@ -85,55 +86,55 @@ msgstr ""
 "\n"
 "Prevedené pre kscreensaver Emanuelom Pirkerom."
 
-#: blankscrn.cpp:49
+#: blankscrn.cpp:53
 msgid "Blank Screen"
 msgstr "Prázdna obrazovka"
 
-#: blankscrn.cpp:63
+#: blankscrn.cpp:67
 msgid "Setup kblankscrn"
 msgstr "Nastavenie prázdnej obrazovky"
 
-#: blob.cpp:53
+#: blob.cpp:57
 msgid "Random Linear"
 msgstr "Náhodné èiary"
 
-#: blob.cpp:54
+#: blob.cpp:58
 msgid "Horizonal Sine"
 msgstr "Vodorovná sínusovka"
 
-#: blob.cpp:55
+#: blob.cpp:59
 msgid "Circular Bounce"
 msgstr "Kruhovité odskoky"
 
-#: blob.cpp:56
+#: blob.cpp:60
 msgid "Polar Coordinates"
 msgstr "Polárne súradnice"
 
-#: blob.cpp:57
+#: blob.cpp:61
 msgid "Random"
 msgstr "Náhodné"
 
-#: blob.cpp:73
+#: blob.cpp:77
 msgid "Sorry. This screensaver needs a color display"
 msgstr "Je mi µúto. Tento ¹etriè potrebuje farebnú obrazovku"
 
-#: blob.cpp:452
+#: blob.cpp:458
 msgid "Setup Blob Saver"
 msgstr "Nastavenie ¹etrièa Blob"
 
-#: blob.cpp:455
+#: blob.cpp:468
 msgid "Frame Show sec."
 msgstr "Zobrazuj po dobu [sec]"
 
-#: blob.cpp:463
+#: blob.cpp:480
 msgid "Algorithm"
 msgstr "Algoritmus"
 
-#: blob.cpp:543
+#: blob.cpp:570
 msgid "About Blob"
 msgstr "Informácie o Blobe"
 
-#: blob.cpp:544
+#: blob.cpp:571
 msgid ""
 "Blobsaver Version 0.1\n"
 "\n"
@@ -145,31 +146,72 @@ msgstr ""
 "napísal Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 
-#: blob.cpp:579
+#: blob.cpp:606
 msgid "Blobs"
 msgstr "Blobs"
 
-#: flame.cpp:303
+#: bouboule.cpp:863
+msgid "Bouboule"
+msgstr ""
+
+#: bouboule.cpp:1005
+#, fuzzy
+msgid "Setup KBouboule"
+msgstr "Nastavenie plameòov"
+
+#: bouboule.cpp:1032
+#, fuzzy
+msgid "Number of points:"
+msgstr "Netopierov:"
+
+#: bouboule.cpp:1046
+#, fuzzy
+msgid "Point size:"
+msgstr "Poèet bodov:"
+
+#: bouboule.cpp:1060
+msgid "Color-change frequency:"
+msgstr ""
+
+#: bouboule.cpp:1077
+msgid "3D mode"
+msgstr ""
+
+#: bouboule.cpp:1223
+#, fuzzy
+msgid "About Bouboule"
+msgstr "Informácie o Blobe"
+
+#: bouboule.cpp:1224
+msgid ""
+"Bouboule v0.1 -- a glob of spheres twisting and changing size\n"
+"\n"
+"Copyright (c) 1996 by Jeremie PETIT\n"
+"\n"
+"Ported to kscreensave by Cedric Tefft"
+msgstr ""
+
+#: flame.cpp:310
 msgid "Flame"
 msgstr "Plameò"
 
-#: flame.cpp:390
+#: flame.cpp:397
 msgid "Setup KFlame"
 msgstr "Nastavenie plameòov"
 
-#: flame.cpp:406
+#: flame.cpp:423
 msgid "Max Levels:"
 msgstr "Maximum urovní:"
 
-#: flame.cpp:416
+#: flame.cpp:438
 msgid "Num Points:"
 msgstr "Poèet bodov:"
 
-#: flame.cpp:521
+#: flame.cpp:551
 msgid "About Flame"
 msgstr "Informácie o plameòoch"
 
-#: flame.cpp:522
+#: flame.cpp:552
 msgid ""
 "Flame Version 3.3\n"
 "\n"
@@ -183,23 +225,23 @@ msgstr ""
 "\n"
 "Prevedené pre kscreensaver Martinom Jonesom"
 
-#: forest.cpp:200
+#: forest.cpp:206
 msgid "Forest"
 msgstr "Les"
 
-#: forest.cpp:272
+#: forest.cpp:278
 msgid "Setup KForest"
 msgstr "Nastavenie Lesa"
 
-#: forest.cpp:288
+#: forest.cpp:304
 msgid "Num of Trees:"
 msgstr "Poèet stromov;"
 
-#: forest.cpp:375
+#: forest.cpp:399
 msgid "About Forest"
 msgstr "Informácie o Lese"
 
-#: forest.cpp:376
+#: forest.cpp:400
 msgid ""
 "Forest\n"
 "\n"
@@ -213,27 +255,27 @@ msgstr ""
 "\n"
 "Previedol pre kscreensaver Emanuel Pirker"
 
-#: hop.cpp:221
+#: hop.cpp:226
 msgid "Hop"
 msgstr "Hop"
 
-#: hop.cpp:306
+#: hop.cpp:311
 msgid "Setup KHop"
 msgstr "Nastavenie KHopu"
 
-#: hop.cpp:322
+#: hop.cpp:337
 msgid "Samecolor Pixels:"
 msgstr "Rovnaká farba:"
 
-#: hop.cpp:332 lissie.cpp:346
+#: hop.cpp:351 lissie.cpp:367
 msgid "Cycles:"
 msgstr "Poèet cyklov:"
 
-#: hop.cpp:437
+#: hop.cpp:464
 msgid "About Hop"
 msgstr "Informácie o Hope"
 
-#: hop.cpp:438
+#: hop.cpp:465
 msgid ""
 "Hop Version 3.3\n"
 "\n"
@@ -247,19 +289,19 @@ msgstr ""
 "\n"
 "Previedol pre kscreensaver Emanuel Pirker"
 
-#: laser.cpp:327
+#: laser.cpp:333
 msgid "Laser"
 msgstr "Laser"
 
-#: laser.cpp:387
+#: laser.cpp:393
 msgid "Setup KLaser"
 msgstr "Nastavenie KLaseru"
 
-#: laser.cpp:462
+#: laser.cpp:482
 msgid "About Laser"
 msgstr "Informácie o Laseri"
 
-#: laser.cpp:463
+#: laser.cpp:483
 msgid ""
 "Laser Version 3.3\n"
 "\n"
@@ -273,35 +315,35 @@ msgstr ""
 "\n"
 "Previedol pre kscreensaver Martin Jones"
 
-#: lines.cpp:110
+#: lines.cpp:116
 msgid "Lines"
 msgstr "Èiary"
 
-#: lines.cpp:128
+#: lines.cpp:134
 msgid "Setup klines"
 msgstr "Nastavenie èiar"
 
-#: lines.cpp:130 polygon.cpp:81
+#: lines.cpp:142 polygon.cpp:93
 msgid "Length:"
 msgstr "Då¾ka:"
 
-#: lines.cpp:150
+#: lines.cpp:168
 msgid "Beginning:"
 msgstr "Zaèiatoèná:"
 
-#: lines.cpp:159
+#: lines.cpp:182
 msgid "Middle:"
 msgstr "Stredná:"
 
-#: lines.cpp:168
+#: lines.cpp:195
 msgid "End:"
 msgstr "Koncová:"
 
-#: lines.cpp:259
+#: lines.cpp:294
 msgid "About Lines"
 msgstr "Informácie o èiarach"
 
-#: lines.cpp:260
+#: lines.cpp:295
 msgid ""
 "Lines Version 0.1.1\n"
 "\n"
@@ -313,23 +355,23 @@ msgstr ""
 "napísal Dirk Staneker 1997\n"
 "dirk.stanerker@student.uni-tuebingen.de"
 
-#: lissie.cpp:234
+#: lissie.cpp:241
 msgid "Lissie"
 msgstr "Lissie"
 
-#: lissie.cpp:320
+#: lissie.cpp:327
 msgid "Setup KLissie"
 msgstr "Nastavenie KLissie"
 
-#: lissie.cpp:336
+#: lissie.cpp:353
 msgid "Num of Lissies:"
 msgstr "Poèet lissií:"
 
-#: lissie.cpp:451
+#: lissie.cpp:480
 msgid "About Lissie"
 msgstr "Informácie o Lissie"
 
-#: lissie.cpp:452
+#: lissie.cpp:481
 msgid ""
 "Lissie\n"
 "\n"
@@ -343,12 +385,12 @@ msgstr ""
 "\n"
 "Previedol pre kscreensaver Emanuel Pirker"
 
-#: main.cpp:279
+#: main.cpp:280
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Voµba %s nie je podporovaná na tejto platforme!"
 
-#: main.cpp:306
+#: main.cpp:307
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator.\n"
@@ -360,11 +402,11 @@ msgstr ""
 "\n"
 "Povedzte mu, ¾e potrebujete SUID pre ¹etrièe obrazovky!"
 
-#: main.cpp:311
+#: main.cpp:312
 msgid "Shadow Passwords"
 msgstr "Tieòové heslá"
 
-#: main.cpp:469
+#: main.cpp:470
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -373,7 +415,7 @@ msgstr ""
 "Pou¾itie: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "         [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:472
+#: main.cpp:473
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -444,23 +486,23 @@ msgstr ""
 "\n"
 "Prevedené pre kscreensaver Emanuelom Pirkerom"
 
-#: polygon.cpp:58
+#: polygon.cpp:64
 msgid "Polygons"
 msgstr "Polygóny"
 
-#: polygon.cpp:79
+#: polygon.cpp:85
 msgid "Setup kpolygon"
 msgstr "Nastavenie Polygónov"
 
-#: polygon.cpp:91
+#: polygon.cpp:107
 msgid "Vertices:"
 msgstr "Vrcholy:"
 
-#: polygon.cpp:209
+#: polygon.cpp:238
 msgid "About Polygon"
 msgstr "Informácie o Polygónoch"
 
-#: polygon.cpp:210
+#: polygon.cpp:239
 msgid ""
 "Polygon Version 0.1\n"
 "\n"
@@ -472,27 +514,27 @@ msgstr ""
 "napísal Martin R. Jones 1996\n"
 "mjones@kde.org"
 
-#: pyro.cpp:433
+#: pyro.cpp:439
 msgid "Pyro"
 msgstr "Pyro"
 
-#: pyro.cpp:511
+#: pyro.cpp:517
 msgid "Setup KPyro"
 msgstr "Nastavenie KPyra"
 
-#: pyro.cpp:517 rock.cpp:560
+#: pyro.cpp:529 rock.cpp:575
 msgid "Number:"
 msgstr "Poèet:"
 
-#: pyro.cpp:527
+#: pyro.cpp:543
 msgid "Cloud"
 msgstr "Zatrie»"
 
-#: pyro.cpp:608
+#: pyro.cpp:629
 msgid "About Pyro"
 msgstr "Informácie o Pyre"
 
-#: pyro.cpp:609
+#: pyro.cpp:630
 msgid ""
 "Pyro Version 3.4\n"
 "\n"
@@ -506,27 +548,27 @@ msgstr ""
 "\n"
 "Previedol pre kscreensaver Martin Jones"
 
-#: rock.cpp:436
+#: rock.cpp:441
 msgid "Rock"
 msgstr "Skala"
 
-#: rock.cpp:544
+#: rock.cpp:549
 msgid "Setup krock"
 msgstr "Nastavenie Skaly"
 
-#: rock.cpp:570
+#: rock.cpp:589
 msgid "Move"
 msgstr "Hýba»"
 
-#: rock.cpp:575
+#: rock.cpp:595
 msgid "Rotate"
 msgstr "Rotova»"
 
-#: rock.cpp:693
+#: rock.cpp:719
 msgid "About Rock"
 msgstr "Informácie o Skale"
 
-#: rock.cpp:694
+#: rock.cpp:720
 msgid ""
 "Rock Version 3.3\n"
 "\n"
@@ -548,23 +590,49 @@ msgstr "Zadajte heslo"
 msgid "Failed"
 msgstr "Neúspe¹né"
 
-#: slip.cpp:287
+#: science.cpp:60
+msgid "Science"
+msgstr ""
+
+#: science.cpp:386
+#, fuzzy
+msgid "Setup Science"
+msgstr "Nastavenie èiar"
+
+#: science.cpp:413
+msgid "Intensity:"
+msgstr ""
+
+#: science.cpp:544
+#, fuzzy
+msgid "About Science"
+msgstr "Informácie o èiarach"
+
+#: science.cpp:545
+msgid ""
+"Science Version 0.2beta\n"
+"\n"
+"written by Rene Beutler 1998\n"
+"rbeutler@g26.ethz.ch"
+msgstr ""
+
+#: slip.cpp:293
 msgid "Slip"
 msgstr "Slip"
 
-#: slip.cpp:360
+#: slip.cpp:366
 msgid "Setup KSlip"
 msgstr "Nastavenie KSlipu"
 
-#: slip.cpp:376
+#: slip.cpp:392
 msgid "Batchcount:"
 msgstr "Poèet:"
 
-#: slip.cpp:464
+#: slip.cpp:488
 msgid "About Slip"
 msgstr "Informácie o Slipu"
 
-#: slip.cpp:465
+#: slip.cpp:489
 msgid ""
 "Slip\n"
 "\n"
@@ -604,23 +672,23 @@ msgstr ""
 "Napísal (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 
-#: swarm.cpp:252
+#: swarm.cpp:257
 msgid "Swarm"
 msgstr "Roj"
 
-#: swarm.cpp:324
+#: swarm.cpp:329
 msgid "Setup KSwarm"
 msgstr "Nastavenie Roja"
 
-#: swarm.cpp:340
+#: swarm.cpp:355
 msgid "Number of Bees:"
 msgstr "Poèet vèelièiek:"
 
-#: swarm.cpp:427
+#: swarm.cpp:450
 msgid "About Swarm"
 msgstr "Informácie o Roji"
 
-#: swarm.cpp:428
+#: swarm.cpp:451
 msgid ""
 "Swarm\n"
 "\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -13,115 +13,115 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: iso-8859-2\n"
 
-#: backgnd.cpp:57
+#: backgnd.cpp:58
 msgid "Enter new desktop name"
 msgstr "Unesi ime radne povr¹ine"
 
-#: backgnd.cpp:113 backgnd.cpp:148
+#: backgnd.cpp:114 backgnd.cpp:149
 msgid "Desktop"
 msgstr "Radna povr¹ina"
 
-#: backgnd.cpp:165
+#: backgnd.cpp:166
 msgid "&Rename ..."
 msgstr "&Preimenuj ..."
 
-#: backgnd.cpp:191 colorscm.cpp:93
+#: backgnd.cpp:192 colorscm.cpp:93
 msgid "Colors"
 msgstr "Boje"
 
-#: backgnd.cpp:218
+#: backgnd.cpp:219
 msgid "&One Color"
 msgstr "&Jedna Boja"
 
-#: backgnd.cpp:235
+#: backgnd.cpp:236
 msgid "&Two Color"
 msgstr "&Dvije Boje"
 
-#: backgnd.cpp:254
+#: backgnd.cpp:255
 msgid "Set&up ..."
 msgstr "&Podesi..."
 
-#: backgnd.cpp:263
+#: backgnd.cpp:264
 msgid "Wallpaper"
 msgstr "Pozadinska slika"
 
-#: backgnd.cpp:273
+#: backgnd.cpp:274
 msgid "Ti&led"
 msgstr "Pop&loèano"
 
-#: backgnd.cpp:281
+#: backgnd.cpp:282
 msgid "&Centred"
 msgstr "&Centrirano"
 
-#: backgnd.cpp:289
+#: backgnd.cpp:290
 msgid "&Scaled"
 msgstr "&Razvuèeno"
 
-#: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
+#: backgnd.cpp:306 backgnd.cpp:426 backgnd.cpp:439 backgnd.cpp:787
 msgid "No wallpaper"
 msgstr "Nema pozadinske slike"
 
-#: backgnd.cpp:333
+#: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "Po&tra¾i..."
 
-#: backgnd.cpp:530
+#: backgnd.cpp:536
 msgid "Default"
 msgstr "Podrazumjevano"
 
-#: backgnd.cpp:861
+#: backgnd.cpp:863
 msgid "Desktop names"
 msgstr "Imena radnih povr¹ina"
 
-#: backgnd.cpp:907
+#: backgnd.cpp:909
 msgid "Two color backgrounds"
 msgstr "Pozadina sa dvije boje"
 
-#: backgnd.cpp:944
+#: backgnd.cpp:946
 msgid "Blend colors from &top to bottom"
 msgstr "Mje¹aj boje s &vrha prema dnu"
 
-#: backgnd.cpp:950
+#: backgnd.cpp:952
 msgid "Blend colors from &right to left"
 msgstr "Mje¹aj boje s &desna na lijevo"
 
-#: backgnd.cpp:956
+#: backgnd.cpp:958
 msgid "Use &pattern"
 msgstr "Koristi &Uzorak"
 
-#: backgnd.cpp:983
+#: backgnd.cpp:985
 msgid "Preview"
 msgstr "Pregled"
 
-#: backgnd.cpp:994
+#: backgnd.cpp:996
 msgid "Pattern &name"
 msgstr "&Ime uzorka"
 
-#: backgnd.cpp:1033
+#: backgnd.cpp:1035
 msgid "Current"
 msgstr "Tekuæi"
 
-#: backgnd.cpp:1093
+#: backgnd.cpp:1095
 msgid "Filled"
 msgstr "Popunjeno"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1098
 msgid "Fish net"
 msgstr "Ribarska mre¾a"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1101
 msgid "Triangles"
 msgstr "Trokuti"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1104
 msgid "Flowers"
 msgstr "Cvijeæe"
 
-#: backgnd.cpp:1105
+#: backgnd.cpp:1107
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1108
+#: backgnd.cpp:1110
 msgid "Cobbled Pavement"
 msgstr "Ploènik"
 
@@ -275,7 +275,7 @@ msgstr ""
 msgid "Screen Saver"
 msgstr "Za¹tita zaslona"
 
-#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
+#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:553 scrnsave.cpp:662
 msgid "No screensaver"
 msgstr "Nema za¹tite zaslona (screensaver)"
 
@@ -315,59 +315,55 @@ msgstr "&Visok"
 msgid "Low"
 msgstr "Nizak"
 
-#: general.cpp:147
+#: general.cpp:216
 msgid "Fonts etc."
 msgstr "Pisma itd."
 
-#: general.cpp:153
+#: general.cpp:222
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "&Crtaj widgete u Windows 95 stilu"
 
-#: general.cpp:167
+#: general.cpp:236
 msgid "Desktop fonts"
 msgstr "Pisma radne povr¹ine"
 
-#: general.cpp:179
+#: general.cpp:248
 msgid "General font"
 msgstr "Opæenito pismo"
 
-#: general.cpp:184
+#: general.cpp:253
 msgid "Fixed font"
 msgstr "Jednoliko pismo"
 
-#: general.cpp:189
-msgid "Window title font"
-msgstr "Pismo imena prozora"
-
-#: general.cpp:194
+#: general.cpp:263
 msgid "Panel button font"
 msgstr "Pismo gumbi na ploèi"
 
-#: general.cpp:199
+#: general.cpp:268
 msgid "Panel clock font"
 msgstr "Pismo sata na ploèi"
 
-#: main.cpp:61
+#: main.cpp:62
 msgid "&Fonts etc."
 msgstr "P&isma itd."
 
-#: main.cpp:64
+#: main.cpp:65
 msgid "&Background"
 msgstr "&Pozadina"
 
-#: main.cpp:67
+#: main.cpp:68
 msgid "&Screensaver"
 msgstr "&Za¹tita zaslona"
 
-#: main.cpp:71
+#: main.cpp:72
 msgid "&Colors"
 msgstr "&Boja"
 
-#: main.cpp:77
+#: main.cpp:78
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr "uporaba: kcmdisplay [-init | {pozadina,za¹tita zaslona,boje,stil}]\n"
 
-#: main.cpp:117
+#: main.cpp:130
 msgid "Display settings"
 msgstr "Pode¹avanje prikaza"
 
@@ -398,3 +394,6 @@ msgstr "podrazumjevano"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "bilo koji"
+
+#~ msgid "Window title font"
+#~ msgstr "Pismo imena prozora"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:58+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -16,91 +16,95 @@ msgstr "kwm: 已经有一个窗口管理器在运行. kwm 没有启动\n"
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: 初始化发生错误; 中止\n"
 
-#: main.C:448
+#: main.C:449
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:455
+#: main.C:456
 msgid "Usage: "
 msgstr "用法: "
 
-#: main.C:466
+#: main.C:467
 msgid "&Maximize"
 msgstr "最大化[&M]"
 
-#: main.C:467
+#: main.C:468
 msgid "&Restore"
 msgstr "还原[&R]"
 
-#: main.C:468
+#: main.C:469
 msgid "&Iconify"
 msgstr "图标化[&I]"
 
-#: main.C:469
+#: main.C:470
 msgid "&DeIconify"
 msgstr "还原[&D]"
 
-#: main.C:470
+#: main.C:471
 msgid "&Sticky"
 msgstr "粘附[&S]"
 
-#: main.C:471
+#: main.C:472
 msgid "&UnSticky"
 msgstr "取消粘附[&U]"
 
-#: main.C:472
+#: main.C:473
 msgid "Mo&ve"
 msgstr "移动[&V]"
 
-#: main.C:473
+#: main.C:474
 msgid "Resi&ze"
 msgstr "改变窗口大小[&Z]"
 
-#: main.C:475
+#: main.C:476
 msgid "&To desktop"
 msgstr "移至桌面[&T]"
 
-#: main.C:477
+#: main.C:478
 msgid "&Onto current desktop"
 msgstr "移至当前桌面[&O]"
 
-#: main.C:530
+#: main.C:531
 msgid "One"
 msgstr "一"
 
-#: main.C:533
+#: main.C:534
 msgid "Two"
 msgstr "二"
 
-#: main.C:536
+#: main.C:537
 msgid "Three"
 msgstr "三"
 
-#: main.C:539
+#: main.C:540
 msgid "Four"
 msgstr "四"
 
-#: main.C:542
+#: main.C:543
 msgid "Five"
 msgstr "五"
 
-#: main.C:545
+#: main.C:546
 msgid "Six"
 msgstr "六"
 
-#: main.C:548
+#: main.C:549
 msgid "Seven"
 msgstr "七"
 
-#: main.C:551
+#: main.C:552
 msgid "Eight"
 msgstr "八"
 
-#: main.C:855
+#: main.C:566
+msgid "Unnamed Desktop"
+msgstr ""
+
+#: main.C:875
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr ""
 
-#: main.C:1164
+#: main.C:1193
 msgid "*** No Tasks ***"
 msgstr "*** 没有任何任务 ***"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:58+0200\n"
 "PO-Revision-Date: 1998-04-18 01:05+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
@@ -17,91 +17,95 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: error durante la inicialización; abortando\n"
 
-#: main.C:448
+#: main.C:449
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:455
+#: main.C:456
 msgid "Usage: "
 msgstr "Modo de uso: "
 
-#: main.C:466
+#: main.C:467
 msgid "&Maximize"
 msgstr "&Maximizar"
 
-#: main.C:467
+#: main.C:468
 msgid "&Restore"
 msgstr "&Recuperar"
 
-#: main.C:468
+#: main.C:469
 msgid "&Iconify"
 msgstr "&Iconizar"
 
-#: main.C:469
+#: main.C:470
 msgid "&DeIconify"
 msgstr "&Deiconizar"
 
-#: main.C:470
+#: main.C:471
 msgid "&Sticky"
 msgstr "&Pegar"
 
-#: main.C:471
+#: main.C:472
 msgid "&UnSticky"
 msgstr "D&espegar"
 
-#: main.C:472
+#: main.C:473
 msgid "Mo&ve"
 msgstr "&Mover"
 
-#: main.C:473
+#: main.C:474
 msgid "Resi&ze"
 msgstr "Cambiar tamaño"
 
-#: main.C:475
+#: main.C:476
 msgid "&To desktop"
 msgstr "Al escritorio"
 
-#: main.C:477
+#: main.C:478
 msgid "&Onto current desktop"
 msgstr "Al escritorio actual"
 
-#: main.C:530
+#: main.C:531
 msgid "One"
 msgstr "Uno"
 
-#: main.C:533
+#: main.C:534
 msgid "Two"
 msgstr "Dos"
 
-#: main.C:536
+#: main.C:537
 msgid "Three"
 msgstr "Tres"
 
-#: main.C:539
+#: main.C:540
 msgid "Four"
 msgstr "Cuatro"
 
-#: main.C:542
+#: main.C:543
 msgid "Five"
 msgstr "Cinco"
 
-#: main.C:545
+#: main.C:546
 msgid "Six"
 msgstr "Seis"
 
-#: main.C:548
+#: main.C:549
 msgid "Seven"
 msgstr "Siete"
 
-#: main.C:551
+#: main.C:552
 msgid "Eight"
 msgstr "Ocho"
 
-#: main.C:855
+#: main.C:566
+msgid "Unnamed Desktop"
+msgstr ""
+
+#: main.C:875
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Algunos pixmaps no son válidos: desactivando modo\n"
 
-#: main.C:1164
+#: main.C:1193
 msgid "*** No Tasks ***"
 msgstr "*** Sin tareas ***"
 

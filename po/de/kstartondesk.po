@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kstartondesk\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: 1998-05-02 10:25+0100\n"
 "Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
 "Language-Team: German <de@li.org>\n"
@@ -13,26 +13,26 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: ISO-8859-1\n"
 
-#: kstartondesk.C:70
+#: kstartondesk.C:72
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: kstartondesk.C:74
+#: kstartondesk.C:76
 msgid "Usage:"
 msgstr "Anwendung: "
 
-#: kstartondesk.C:76
+#: kstartondesk.C:78
 msgid "command "
 msgstr "Befehl "
 
-#: kstartondesk.C:77
+#: kstartondesk.C:79
 msgid "title "
 msgstr "Titel "
 
-#: kstartondesk.C:78
+#: kstartondesk.C:80
 msgid "desktop"
 msgstr "Desktop"
 
-#: kstartondesk.C:80
+#: kstartondesk.C:82
 msgid "Example"
 msgstr "Beispiel"

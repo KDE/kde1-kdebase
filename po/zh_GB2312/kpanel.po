@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:58+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -18,7 +18,7 @@ msgstr "特性"
 msgid "Go!"
 msgstr "Go!"
 
-#: kpanel.C:256 tools.C:795
+#: kpanel.C:256 tools.C:800
 msgid "Where do you want to go tomorrow?"
 msgstr "主菜单"
 
@@ -42,11 +42,11 @@ msgstr "隐藏面板"
 msgid "Show the panel"
 msgstr "显示面板"
 
-#: kpanel.C:1093 tools.C:611
+#: kpanel.C:1104 tools.C:616
 msgid "No comment available"
 msgstr "没有说明"
 
-#: kpanel.C:1102 tools.C:804
+#: kpanel.C:1113 tools.C:809
 msgid "Windowlist"
 msgstr "窗口列表"
 
@@ -66,7 +66,7 @@ msgstr "加在窗口列表中"
 msgid "Add a windowlist menu onto the panel"
 msgstr "在窗口面板上新增窗口列表菜单"
 
-#: events.C:705 props.C:142
+#: events.C:714 props.C:142
 msgid "Configure"
 msgstr "配置"
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Add or remove applications in the menu structure "
 msgstr ""
 
-#: events.C:707 props.C:148
+#: events.C:716 props.C:148
 msgid "Restart"
 msgstr "重新开始"
 
@@ -98,14 +98,14 @@ msgstr "面板"
 msgid "Lock Screen"
 msgstr "锁住屏幕"
 
-#: props.C:307
+#: props.C:309
 msgid "The menu editor is not installed."
 msgstr ""
 
-#: events.C:743 props.C:308
+#: events.C:752 props.C:310
 msgid "Oops!"
 msgstr "糟糕"
 
-#: events.C:742
+#: events.C:751
 msgid "Cannot put this as button onto the panel!"
 msgstr ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmlocale\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -25,31 +25,31 @@ msgstr "Pou¾itie: kcmlocale [-init | language]\n"
 msgid "Locale settings"
 msgstr "Nastavenie lokalizácie"
 
-#: locale.cpp:40
+#: locale.cpp:45
 msgid "Language"
 msgstr "Jazyk"
 
-#: locale.cpp:45
+#: locale.cpp:55
 msgid "First"
 msgstr "Prvý"
 
-#: locale.cpp:52
+#: locale.cpp:65
 msgid "Second"
 msgstr "Druhý"
 
-#: locale.cpp:59
+#: locale.cpp:75
 msgid "Third"
 msgstr "Tretí"
 
-#: locale.cpp:94
+#: locale.cpp:115
 msgid "without name!"
 msgstr "bez mena!"
 
-#: locale.cpp:160
+#: locale.cpp:181
 msgid "Applying language settings"
 msgstr "Aplikujem nastavenie jazyka"
 
-#: locale.cpp:161
+#: locale.cpp:182
 msgid ""
 "Changed language settings apply only to newly started applications.\n"
 "To change the language of all programs, you will have to logout first."

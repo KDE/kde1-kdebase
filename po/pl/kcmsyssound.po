@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmsyssound \n"
-"POT-Creation-Date: 1998-04-18 00:01+0200\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: 1998-03-25 21:04+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -14,143 +14,143 @@ msgstr "&D¼wiêk"
 msgid "System Sounds"
 msgstr "D¼wiêki systemowe"
 
-#: syssound.cpp:144
+#: syssound.cpp:147
 msgid "Change to Desktop 1"
 msgstr "Zmieñ na desktop 1"
 
-#: syssound.cpp:145
+#: syssound.cpp:148
 msgid "Change to Desktop 2"
 msgstr "Zmieñ na desktop 2"
 
-#: syssound.cpp:146
+#: syssound.cpp:149
 msgid "Change to Desktop 3"
 msgstr "Zmieñ na desktop 3"
 
-#: syssound.cpp:147
+#: syssound.cpp:150
 msgid "Change to Desktop 4"
 msgstr "Zmieñ na desktop 4"
 
-#: syssound.cpp:148
+#: syssound.cpp:151
 msgid "Change to Desktop 5"
 msgstr "Zmieñ na desktop 5"
 
-#: syssound.cpp:149
+#: syssound.cpp:152
 msgid "Change to Desktop 6"
 msgstr "Zmieñ na desktop 6"
 
-#: syssound.cpp:150
+#: syssound.cpp:153
 msgid "Change to Desktop 7"
 msgstr "Zmieñ na desktop 7"
 
-#: syssound.cpp:151
+#: syssound.cpp:154
 msgid "Change to Desktop 8"
 msgstr "Zmieñ na desktop 8"
 
-#: syssound.cpp:153
+#: syssound.cpp:156
 msgid "Activate Window"
 msgstr "Uaktywnij okno"
 
-#: syssound.cpp:154
+#: syssound.cpp:157
 msgid "Open new window"
 msgstr "Otwórz nowe okno"
 
-#: syssound.cpp:155
+#: syssound.cpp:158
 msgid "Close Window"
 msgstr "Zamknij okno"
 
-#: syssound.cpp:156
+#: syssound.cpp:159
 msgid "Startup"
 msgstr "Start systemu"
 
-#: syssound.cpp:158
+#: syssound.cpp:161
 msgid "Window Shade Up"
 msgstr "Zwiñ okno"
 
-#: syssound.cpp:159
+#: syssound.cpp:162
 msgid "Window Shade Down"
 msgstr "Odwiñ okno"
 
-#: syssound.cpp:160
+#: syssound.cpp:163
 msgid "Window Iconify"
 msgstr "Ikonizuj okno"
 
-#: syssound.cpp:161
+#: syssound.cpp:164
 msgid "Window DeIconify"
 msgstr "Odikonizuj okno"
 
-#: syssound.cpp:162
+#: syssound.cpp:165
 msgid "Window Maximize"
 msgstr "Zmaksymalizuj okno"
 
-#: syssound.cpp:163
+#: syssound.cpp:166
 msgid "Window UnMaximize"
 msgstr "Odmaksymalizuj okno"
 
-#: syssound.cpp:164
+#: syssound.cpp:167
 msgid "Window Sticky"
 msgstr "Przypnij okno"
 
-#: syssound.cpp:165
+#: syssound.cpp:168
 msgid "Window UnSticky"
 msgstr "Odepnij okno"
 
-#: syssound.cpp:166
+#: syssound.cpp:169
 msgid "Window Trans New"
 msgstr ""
 
-#: syssound.cpp:167
+#: syssound.cpp:170
 msgid "Window Trans Delete"
 msgstr ""
 
-#: syssound.cpp:168
+#: syssound.cpp:171
 msgid "Logout"
 msgstr "Wyloguj"
 
-#: syssound.cpp:169
+#: syssound.cpp:172
 msgid "Logout Message"
 msgstr "Komunikat wylogowania"
 
-#: syssound.cpp:170
+#: syssound.cpp:173
 msgid "Window Move Start"
 msgstr "Rozpocznij przemieszczaæ okno"
 
-#: syssound.cpp:171
+#: syssound.cpp:174
 msgid "Window Move End"
 msgstr "Zakoñcz przemieszczaæ okno"
 
-#: syssound.cpp:172
+#: syssound.cpp:175
 msgid "Window Resize Start"
 msgstr "Rozpocznij zmieniaæ rozmiar okna"
 
-#: syssound.cpp:173
+#: syssound.cpp:176
 msgid "Window Resize End"
 msgstr "Zakoñcz zmieniaæ rozmiar okna"
 
-#: syssound.cpp:195
+#: syssound.cpp:198
 msgid "e&nable system sounds"
 msgstr "&W³±cz d¼wiêki systemowe"
 
-#: syssound.cpp:200
+#: syssound.cpp:203
 msgid "&Test"
 msgstr "&Test"
 
-#: syssound.cpp:204
+#: syssound.cpp:207
 msgid "&Events:"
 msgstr "&Zdarzenia:"
 
-#: syssound.cpp:208
+#: syssound.cpp:211
 msgid "&Sounds:"
 msgstr "&D¼wiêki:"
 
-#: syssound.cpp:213
+#: syssound.cpp:216
 msgid "Additional WAV files can be dropped onto the sound list."
 msgstr "Dodatkowe pliki WAV mo¿na upu¶ciæ na listê d¼wiêków."
 
-#: syssound.cpp:453
+#: syssound.cpp:456
 msgid "Unsupported URL"
 msgstr "Nieobs³ugiwany URL"
 
-#: syssound.cpp:455
+#: syssound.cpp:458
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
@@ -158,7 +158,7 @@ msgstr ""
 "Niestety, ten typ URL jest obecnie nieobs³ugiwany przez modu³ d¼wiêków "
 "systemowych"
 
-#: syssound.cpp:465
+#: syssound.cpp:468
 #, fuzzy, c-format
 msgid ""
 "Sorry, but \n"
@@ -169,11 +169,11 @@ msgstr ""
 "%s\n"
 "nie wygl±da na plik WAV."
 
-#: syssound.cpp:468
+#: syssound.cpp:471
 msgid "Improper File Extension"
 msgstr ""
 
-#: syssound.cpp:479
+#: syssound.cpp:482
 #, c-format
 msgid ""
 "The file\n"
@@ -184,6 +184,6 @@ msgstr ""
 "%s\n"
 "jest ju¿ na li¶cie"
 
-#: syssound.cpp:483
+#: syssound.cpp:486
 msgid "File Already in List"
 msgstr "Plik jest ju¿ na li¶cie"

@@ -1,31 +1,31 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kstartondesk \n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: 1998-03-25 21:04+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
-#: kstartondesk.C:70
+#: kstartondesk.C:72
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: kstartondesk.C:74
+#: kstartondesk.C:76
 msgid "Usage:"
 msgstr "U¿ycie:"
 
-#: kstartondesk.C:76
+#: kstartondesk.C:78
 msgid "command "
 msgstr "polecenie "
 
-#: kstartondesk.C:77
+#: kstartondesk.C:79
 msgid "title "
 msgstr "tytu³ "
 
-#: kstartondesk.C:78
+#: kstartondesk.C:80
 msgid "desktop"
 msgstr "desktop"
 
-#: kstartondesk.C:80
+#: kstartondesk.C:82
 msgid "Example"
 msgstr "Przyk³ad"

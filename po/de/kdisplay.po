@@ -1,119 +1,119 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: 1998-03-30 14:57+01\n"
 "Last-Translator: Oliver Hensel <oliver.hensel@gmx.de>\n"
 
-#: backgnd.cpp:57
+#: backgnd.cpp:58
 msgid "Enter new desktop name"
 msgstr "Geben Sie einen neuen Desktop-Namen ein"
 
-#: backgnd.cpp:113 backgnd.cpp:148
+#: backgnd.cpp:114 backgnd.cpp:149
 msgid "Desktop"
 msgstr "Desktop"
 
-#: backgnd.cpp:165
+#: backgnd.cpp:166
 msgid "&Rename ..."
 msgstr "&Umbenennen..."
 
-#: backgnd.cpp:191 colorscm.cpp:93
+#: backgnd.cpp:192 colorscm.cpp:93
 msgid "Colors"
 msgstr "Farben"
 
-#: backgnd.cpp:218
+#: backgnd.cpp:219
 msgid "&One Color"
 msgstr "&Eine Farbe"
 
-#: backgnd.cpp:235
+#: backgnd.cpp:236
 msgid "&Two Color"
 msgstr "&Zwei Farben"
 
-#: backgnd.cpp:254
+#: backgnd.cpp:255
 msgid "Set&up ..."
 msgstr "&Einstellungen..."
 
-#: backgnd.cpp:263
+#: backgnd.cpp:264
 msgid "Wallpaper"
 msgstr "Hintergrundgrafik"
 
-#: backgnd.cpp:273
+#: backgnd.cpp:274
 msgid "Ti&led"
 msgstr "F&liesen"
 
-#: backgnd.cpp:281
+#: backgnd.cpp:282
 msgid "&Centred"
 msgstr "&Zentriert"
 
-#: backgnd.cpp:289
+#: backgnd.cpp:290
 msgid "&Scaled"
 msgstr "Ver&größert"
 
-#: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
+#: backgnd.cpp:306 backgnd.cpp:426 backgnd.cpp:439 backgnd.cpp:787
 msgid "No wallpaper"
 msgstr "Keine Hintergrundgrafik"
 
-#: backgnd.cpp:333
+#: backgnd.cpp:334
 msgid "&Browse..."
 msgstr "&Auswählen..."
 
-#: backgnd.cpp:530
+#: backgnd.cpp:536
 msgid "Default"
 msgstr "Standard"
 
-#: backgnd.cpp:861
+#: backgnd.cpp:863
 msgid "Desktop names"
 msgstr "Desktop-Namen"
 
-#: backgnd.cpp:907
+#: backgnd.cpp:909
 msgid "Two color backgrounds"
 msgstr "Zweifarbige Hintergründe"
 
-#: backgnd.cpp:944
+#: backgnd.cpp:946
 msgid "Blend colors from &top to bottom"
 msgstr "Farbverlauf von &oben nach unten"
 
-#: backgnd.cpp:950
+#: backgnd.cpp:952
 msgid "Blend colors from &right to left"
 msgstr "Farbverlauf von &links nach rechts"
 
-#: backgnd.cpp:956
+#: backgnd.cpp:958
 msgid "Use &pattern"
 msgstr "&Muster benutzen"
 
-#: backgnd.cpp:983
+#: backgnd.cpp:985
 msgid "Preview"
 msgstr "Vorschau"
 
-#: backgnd.cpp:994
+#: backgnd.cpp:996
 msgid "Pattern &name"
 msgstr "Muster&name"
 
-#: backgnd.cpp:1033
+#: backgnd.cpp:1035
 msgid "Current"
 msgstr "Derzeitig"
 
-#: backgnd.cpp:1093
+#: backgnd.cpp:1095
 msgid "Filled"
 msgstr "Gefüllt"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1098
 msgid "Fish net"
 msgstr "Fischnetz"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1101
 msgid "Triangles"
 msgstr "Dreiecke"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1104
 msgid "Flowers"
 msgstr "Blumen"
 
-#: backgnd.cpp:1105
+#: backgnd.cpp:1107
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1108
+#: backgnd.cpp:1110
 msgid "Cobbled Pavement"
 msgstr "Kopfsteinpflaster"
 
@@ -267,7 +267,7 @@ msgstr "Sperre Bildschirm"
 msgid "Screen Saver"
 msgstr "Bildschirmschoner"
 
-#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
+#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:553 scrnsave.cpp:662
 msgid "No screensaver"
 msgstr "Kein Bildschirmschoner"
 
@@ -307,60 +307,56 @@ msgstr "&Hoch"
 msgid "Low"
 msgstr "Niedrig"
 
-#: general.cpp:147
+#: general.cpp:216
 msgid "Fonts etc."
 msgstr "&Schriften usw."
 
-#: general.cpp:153
+#: general.cpp:222
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "&Windows 95-Stil"
 
-#: general.cpp:167
+#: general.cpp:236
 msgid "Desktop fonts"
 msgstr "Desktop-Schriften"
 
-#: general.cpp:179
+#: general.cpp:248
 msgid "General font"
 msgstr "Standardschrift"
 
-#: general.cpp:184
+#: general.cpp:253
 msgid "Fixed font"
 msgstr "Schrift fester Breite"
 
-#: general.cpp:189
-msgid "Window title font"
-msgstr "Fenstertitel-Schrift"
-
-#: general.cpp:194
+#: general.cpp:263
 msgid "Panel button font"
 msgstr "Panelbutton-Schrift"
 
-#: general.cpp:199
+#: general.cpp:268
 msgid "Panel clock font"
 msgstr "Paneluhr-Schrift"
 
-#: main.cpp:61
+#: main.cpp:62
 msgid "&Fonts etc."
 msgstr "&Schriften usw."
 
-#: main.cpp:64
+#: main.cpp:65
 msgid "&Background"
 msgstr "&Hintergrund"
 
-#: main.cpp:67
+#: main.cpp:68
 msgid "&Screensaver"
 msgstr "&Bildschirmschoner"
 
-#: main.cpp:71
+#: main.cpp:72
 msgid "&Colors"
 msgstr "&Farben"
 
-#: main.cpp:77
+#: main.cpp:78
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr ""
 "Benutzung: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:117
+#: main.cpp:130
 msgid "Display settings"
 msgstr "Eigenschaften der Umgebung"
 
@@ -391,6 +387,9 @@ msgstr "Standard"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "irgendein"
+
+#~ msgid "Window title font"
+#~ msgstr "Fenstertitel-Schrift"
 
 #~ msgid "kwmcom: communication with kwm failed\n"
 #~ msgstr "kwmcom: Die Kommunikation mit kwm schlug fehl\n"

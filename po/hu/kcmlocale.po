@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmlocale VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: 1998-02-26 19:06+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: LANGUAGE <hu@li.org>\n"
@@ -25,31 +25,31 @@ msgstr "használat: kcmlocale [-init | nyelv]\n"
 msgid "Locale settings"
 msgstr "Helyi beállítások"
 
-#: locale.cpp:40
+#: locale.cpp:45
 msgid "Language"
 msgstr "Nyelv"
 
-#: locale.cpp:45
+#: locale.cpp:55
 msgid "First"
 msgstr "Elsõ"
 
-#: locale.cpp:52
+#: locale.cpp:65
 msgid "Second"
 msgstr "Második"
 
-#: locale.cpp:59
+#: locale.cpp:75
 msgid "Third"
 msgstr "Harmadik"
 
-#: locale.cpp:94
+#: locale.cpp:115
 msgid "without name!"
 msgstr "név nélkül!"
 
-#: locale.cpp:160
+#: locale.cpp:181
 msgid "Applying language settings"
 msgstr "A nyelvi beállítások használata"
 
-#: locale.cpp:161
+#: locale.cpp:182
 msgid ""
 "Changed language settings apply only to newly started applications.\n"
 "To change the language of all programs, you will have to logout first."

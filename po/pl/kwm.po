@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm \n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:58+0200\n"
 "PO-Revision-Date: 1998-03-25 21:53+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -18,91 +18,95 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: b³±d podczas inicjacji; przerwanie\n"
 
-#: main.C:448
+#: main.C:449
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:455
+#: main.C:456
 msgid "Usage: "
 msgstr "U¿ycie: "
 
-#: main.C:466
+#: main.C:467
 msgid "&Maximize"
 msgstr "&Maksymalizuj"
 
-#: main.C:467
+#: main.C:468
 msgid "&Restore"
 msgstr "Przy&wróæ"
 
-#: main.C:468
+#: main.C:469
 msgid "&Iconify"
 msgstr "Mi&nimalizuj"
 
-#: main.C:469
+#: main.C:470
 msgid "&DeIconify"
 msgstr "Przy&wróæ"
 
-#: main.C:470
+#: main.C:471
 msgid "&Sticky"
 msgstr "Przyk&lej"
 
-#: main.C:471
+#: main.C:472
 msgid "&UnSticky"
 msgstr "Odk&lej"
 
-#: main.C:472
+#: main.C:473
 msgid "Mo&ve"
 msgstr "Prz&enie¶"
 
-#: main.C:473
+#: main.C:474
 msgid "Resi&ze"
 msgstr "&Rozmiar"
 
-#: main.C:475
+#: main.C:476
 msgid "&To desktop"
 msgstr "Wy¶lij na &desktop"
 
-#: main.C:477
+#: main.C:478
 msgid "&Onto current desktop"
 msgstr "Wy¶lij na ten &desktop"
 
-#: main.C:530
+#: main.C:531
 msgid "One"
 msgstr "Jeden"
 
-#: main.C:533
+#: main.C:534
 msgid "Two"
 msgstr "Dwa"
 
-#: main.C:536
+#: main.C:537
 msgid "Three"
 msgstr "Trzy"
 
-#: main.C:539
+#: main.C:540
 msgid "Four"
 msgstr "Cztery"
 
-#: main.C:542
+#: main.C:543
 msgid "Five"
 msgstr "Piêæ"
 
-#: main.C:545
+#: main.C:546
 msgid "Six"
 msgstr "Sze¶æ"
 
-#: main.C:548
+#: main.C:549
 msgid "Seven"
 msgstr "Siedem"
 
-#: main.C:551
+#: main.C:552
 msgid "Eight"
 msgstr "Osiem"
 
-#: main.C:855
+#: main.C:566
+msgid "Unnamed Desktop"
+msgstr ""
+
+#: main.C:875
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niektóre pixmapy s± b³êdne: ShapeMode jest wy³±czony\n"
 
-#: main.C:1164
+#: main.C:1193
 msgid "*** No Tasks ***"
 msgstr "*** Brak zadañ ***"
 

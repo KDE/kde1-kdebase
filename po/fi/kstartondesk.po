@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,26 +14,26 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kstartondesk.C:70
+#: kstartondesk.C:72
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: kstartondesk.C:74
+#: kstartondesk.C:76
 msgid "Usage:"
 msgstr "Käyttö:"
 
-#: kstartondesk.C:76
+#: kstartondesk.C:78
 msgid "command "
 msgstr "komento "
 
-#: kstartondesk.C:77
+#: kstartondesk.C:79
 msgid "title "
 msgstr "otsikko "
 
-#: kstartondesk.C:78
+#: kstartondesk.C:80
 msgid "desktop"
 msgstr "työpöytä"
 
-#: kstartondesk.C:80
+#: kstartondesk.C:82
 msgid "Example"
 msgstr "Esimerkki"

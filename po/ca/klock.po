@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:58+0200\n"
 "PO-Revision-Date: 1998-03-26 23:10+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -14,33 +14,34 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: banner.cpp:56
+#: banner.cpp:62
 msgid "Banner"
 msgstr "Pancarta"
 
-#: banner.cpp:78
+#: banner.cpp:84
 msgid "Setup kbanner"
 msgstr "Valors kbanner"
 
-#: banner.cpp:116 blankscrn.cpp:65
+#: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
 msgstr "Color:"
 
-#: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
-#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
-#: rock.cpp:550 slip.cpp:366 space.cpp:587 swarm.cpp:330
+#: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
+#: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
+#: polygon.cpp:122 rock.cpp:561 science.cpp:427 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
 msgid "Speed:"
 msgstr "Velocitat:"
 
-#: banner.cpp:146
+#: banner.cpp:188
 msgid "Message:"
 msgstr "Missatge:"
 
-#: banner.cpp:315
+#: banner.cpp:357
 msgid "About Banner"
 msgstr "Quant a Pancarta"
 
-#: banner.cpp:316
+#: banner.cpp:358
 msgid ""
 "Banner Version 0.1\n"
 "\n"
@@ -52,27 +53,27 @@ msgstr ""
 "Escrit per Martin R. Jones 1996\n"
 "mjones@kde.org"
 
-#: banner.cpp:419
+#: banner.cpp:461
 msgid "KDE is great"
 msgstr "KDE és colossal"
 
-#: bat.cpp:457
+#: bat.cpp:462
 msgid "Bat"
 msgstr "Rat Penat"
 
-#: bat.cpp:532
+#: bat.cpp:537
 msgid "Setup KBat"
 msgstr "Valors KBat"
 
-#: bat.cpp:548
+#: bat.cpp:564
 msgid "Number of bats:"
 msgstr "Número de rats penats:"
 
-#: bat.cpp:636
+#: bat.cpp:661
 msgid "About Bat"
 msgstr "Quant a Rat Penat"
 
-#: bat.cpp:637
+#: bat.cpp:662
 msgid ""
 "Bat\n"
 "\n"
@@ -86,55 +87,55 @@ msgstr ""
 "\n"
 "Portat a kscreensave per Emanuel Pirker."
 
-#: blankscrn.cpp:49
+#: blankscrn.cpp:53
 msgid "Blank Screen"
 msgstr "Pantalla en blanc"
 
-#: blankscrn.cpp:63
+#: blankscrn.cpp:67
 msgid "Setup kblankscrn"
 msgstr "Valors kblankscrn"
 
-#: blob.cpp:53
+#: blob.cpp:57
 msgid "Random Linear"
 msgstr "Lineal Aleatòri"
 
-#: blob.cpp:54
+#: blob.cpp:58
 msgid "Horizonal Sine"
 msgstr "Sinus Horitzontal"
 
-#: blob.cpp:55
+#: blob.cpp:59
 msgid "Circular Bounce"
 msgstr "Rebot Circular"
 
-#: blob.cpp:56
+#: blob.cpp:60
 msgid "Polar Coordinates"
 msgstr "Coordinades Polars"
 
-#: blob.cpp:57
+#: blob.cpp:61
 msgid "Random"
 msgstr "Aleatòri"
 
-#: blob.cpp:73
+#: blob.cpp:77
 msgid "Sorry. This screensaver needs a color display"
 msgstr "Ho sento. Al salvapantalles li cal una pantalla de color"
 
-#: blob.cpp:452
+#: blob.cpp:458
 msgid "Setup Blob Saver"
 msgstr "Valors Taca"
 
-#: blob.cpp:455
+#: blob.cpp:468
 msgid "Frame Show sec."
 msgstr "Segons Trama"
 
-#: blob.cpp:463
+#: blob.cpp:480
 msgid "Algorithm"
 msgstr "Algorisme"
 
-#: blob.cpp:543
+#: blob.cpp:570
 msgid "About Blob"
 msgstr "Quant a Taca"
 
-#: blob.cpp:544
+#: blob.cpp:571
 msgid ""
 "Blobsaver Version 0.1\n"
 "\n"
@@ -146,31 +147,72 @@ msgstr ""
 "Escrit per Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 
-#: blob.cpp:579
+#: blob.cpp:606
 msgid "Blobs"
 msgstr "Taca"
 
-#: flame.cpp:303
+#: bouboule.cpp:863
+msgid "Bouboule"
+msgstr ""
+
+#: bouboule.cpp:1005
+#, fuzzy
+msgid "Setup KBouboule"
+msgstr "Valors KFlame"
+
+#: bouboule.cpp:1032
+#, fuzzy
+msgid "Number of points:"
+msgstr "Número de rats penats:"
+
+#: bouboule.cpp:1046
+#, fuzzy
+msgid "Point size:"
+msgstr "Número Punts:"
+
+#: bouboule.cpp:1060
+msgid "Color-change frequency:"
+msgstr ""
+
+#: bouboule.cpp:1077
+msgid "3D mode"
+msgstr ""
+
+#: bouboule.cpp:1223
+#, fuzzy
+msgid "About Bouboule"
+msgstr "Quant a Taca"
+
+#: bouboule.cpp:1224
+msgid ""
+"Bouboule v0.1 -- a glob of spheres twisting and changing size\n"
+"\n"
+"Copyright (c) 1996 by Jeremie PETIT\n"
+"\n"
+"Ported to kscreensave by Cedric Tefft"
+msgstr ""
+
+#: flame.cpp:310
 msgid "Flame"
 msgstr "Flama"
 
-#: flame.cpp:390
+#: flame.cpp:397
 msgid "Setup KFlame"
 msgstr "Valors KFlame"
 
-#: flame.cpp:406
+#: flame.cpp:423
 msgid "Max Levels:"
 msgstr "Màxim Nivells:"
 
-#: flame.cpp:416
+#: flame.cpp:438
 msgid "Num Points:"
 msgstr "Número Punts:"
 
-#: flame.cpp:521
+#: flame.cpp:551
 msgid "About Flame"
 msgstr "Quant a Flama"
 
-#: flame.cpp:522
+#: flame.cpp:552
 msgid ""
 "Flame Version 3.3\n"
 "\n"
@@ -184,23 +226,23 @@ msgstr ""
 "\n"
 "Portat a kscreensave per Martin Jones."
 
-#: forest.cpp:200
+#: forest.cpp:206
 msgid "Forest"
 msgstr "Bosc"
 
-#: forest.cpp:272
+#: forest.cpp:278
 msgid "Setup KForest"
 msgstr "Valors KForest"
 
-#: forest.cpp:288
+#: forest.cpp:304
 msgid "Num of Trees:"
 msgstr "Número d'arbres:"
 
-#: forest.cpp:375
+#: forest.cpp:399
 msgid "About Forest"
 msgstr "Quant a Bosc"
 
-#: forest.cpp:376
+#: forest.cpp:400
 msgid ""
 "Forest\n"
 "\n"
@@ -214,27 +256,27 @@ msgstr ""
 "\n"
 "Portat a kscreensave per Emanuel Pirker."
 
-#: hop.cpp:221
+#: hop.cpp:226
 msgid "Hop"
 msgstr "Bot"
 
-#: hop.cpp:306
+#: hop.cpp:311
 msgid "Setup KHop"
 msgstr "Valors KHop"
 
-#: hop.cpp:322
+#: hop.cpp:337
 msgid "Samecolor Pixels:"
 msgstr "Píxels mateix color:"
 
-#: hop.cpp:332 lissie.cpp:346
+#: hop.cpp:351 lissie.cpp:367
 msgid "Cycles:"
 msgstr "Cicles:"
 
-#: hop.cpp:437
+#: hop.cpp:464
 msgid "About Hop"
 msgstr "Quant a Bot"
 
-#: hop.cpp:438
+#: hop.cpp:465
 msgid ""
 "Hop Version 3.3\n"
 "\n"
@@ -248,19 +290,19 @@ msgstr ""
 "\n"
 "Portat a kscreensave per Emanuel Pirker."
 
-#: laser.cpp:327
+#: laser.cpp:333
 msgid "Laser"
 msgstr "Laser"
 
-#: laser.cpp:387
+#: laser.cpp:393
 msgid "Setup KLaser"
 msgstr "Valors KLaser"
 
-#: laser.cpp:462
+#: laser.cpp:482
 msgid "About Laser"
 msgstr "Quant a Laser"
 
-#: laser.cpp:463
+#: laser.cpp:483
 msgid ""
 "Laser Version 3.3\n"
 "\n"
@@ -274,35 +316,35 @@ msgstr ""
 "\n"
 "Portat a kscreensave per Martin Jones."
 
-#: lines.cpp:110
+#: lines.cpp:116
 msgid "Lines"
 msgstr "Línies"
 
-#: lines.cpp:128
+#: lines.cpp:134
 msgid "Setup klines"
 msgstr "Valors klines"
 
-#: lines.cpp:130 polygon.cpp:81
+#: lines.cpp:142 polygon.cpp:93
 msgid "Length:"
 msgstr "Llarg:"
 
-#: lines.cpp:150
+#: lines.cpp:168
 msgid "Beginning:"
 msgstr "Inici:"
 
-#: lines.cpp:159
+#: lines.cpp:182
 msgid "Middle:"
 msgstr "Meitat:"
 
-#: lines.cpp:168
+#: lines.cpp:195
 msgid "End:"
 msgstr "Final:"
 
-#: lines.cpp:259
+#: lines.cpp:294
 msgid "About Lines"
 msgstr "Quant a Línies"
 
-#: lines.cpp:260
+#: lines.cpp:295
 msgid ""
 "Lines Version 0.1.1\n"
 "\n"
@@ -314,23 +356,23 @@ msgstr ""
 "Escrit per Dirk Staneker 1997\n"
 "dirk.stanerker@student.uni-tuebingen.de"
 
-#: lissie.cpp:234
+#: lissie.cpp:241
 msgid "Lissie"
 msgstr "Lissie"
 
-#: lissie.cpp:320
+#: lissie.cpp:327
 msgid "Setup KLissie"
 msgstr "Valors KLissie"
 
-#: lissie.cpp:336
+#: lissie.cpp:353
 msgid "Num of Lissies:"
 msgstr "Número de Lissies:"
 
-#: lissie.cpp:451
+#: lissie.cpp:480
 msgid "About Lissie"
 msgstr "Quant a Lissie"
 
-#: lissie.cpp:452
+#: lissie.cpp:481
 msgid ""
 "Lissie\n"
 "\n"
@@ -344,12 +386,12 @@ msgstr ""
 "\n"
 "Portat a kscreensave per Emanuel Pirker."
 
-#: main.cpp:279
+#: main.cpp:280
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr ""
 
-#: main.cpp:306
+#: main.cpp:307
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator.\n"
@@ -361,11 +403,11 @@ msgstr ""
 "\n"
 "Digueu-li que us cal suid pels salvapantalles!"
 
-#: main.cpp:311
+#: main.cpp:312
 msgid "Shadow Passwords"
 msgstr "Paraules de pas ombra"
 
-#: main.cpp:469
+#: main.cpp:470
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -374,7 +416,7 @@ msgstr ""
 "Us: %s -install|-setup|-test|-desc|-preview mid|-inroot\n"
 "    [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:472
+#: main.cpp:473
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -444,23 +486,23 @@ msgstr ""
 "\n"
 "Portat a kscreensave per Emanuel Pirker."
 
-#: polygon.cpp:58
+#: polygon.cpp:64
 msgid "Polygons"
 msgstr "Polígons"
 
-#: polygon.cpp:79
+#: polygon.cpp:85
 msgid "Setup kpolygon"
 msgstr "Valors kpolygon"
 
-#: polygon.cpp:91
+#: polygon.cpp:107
 msgid "Vertices:"
 msgstr "Vèrtex"
 
-#: polygon.cpp:209
+#: polygon.cpp:238
 msgid "About Polygon"
 msgstr "Quant a Polígon"
 
-#: polygon.cpp:210
+#: polygon.cpp:239
 msgid ""
 "Polygon Version 0.1\n"
 "\n"
@@ -472,27 +514,27 @@ msgstr ""
 "Escrit per Martin R. Jones 1996\n"
 "mjones@kde.org"
 
-#: pyro.cpp:433
+#: pyro.cpp:439
 msgid "Pyro"
 msgstr "Pyro"
 
-#: pyro.cpp:511
+#: pyro.cpp:517
 msgid "Setup KPyro"
 msgstr "Valors KPyro"
 
-#: pyro.cpp:517 rock.cpp:560
+#: pyro.cpp:529 rock.cpp:575
 msgid "Number:"
 msgstr "Número:"
 
-#: pyro.cpp:527
+#: pyro.cpp:543
 msgid "Cloud"
 msgstr "Núvol"
 
-#: pyro.cpp:608
+#: pyro.cpp:629
 msgid "About Pyro"
 msgstr "Quant a Pyro"
 
-#: pyro.cpp:609
+#: pyro.cpp:630
 msgid ""
 "Pyro Version 3.4\n"
 "\n"
@@ -506,27 +548,27 @@ msgstr ""
 "\n"
 "Portat a  kscreensave per Martin Jones."
 
-#: rock.cpp:436
+#: rock.cpp:441
 msgid "Rock"
 msgstr "Roca"
 
-#: rock.cpp:544
+#: rock.cpp:549
 msgid "Setup krock"
 msgstr "Valors krock"
 
-#: rock.cpp:570
+#: rock.cpp:589
 msgid "Move"
 msgstr "Moviment"
 
-#: rock.cpp:575
+#: rock.cpp:595
 msgid "Rotate"
 msgstr "Rotació"
 
-#: rock.cpp:693
+#: rock.cpp:719
 msgid "About Rock"
 msgstr "Quant a Roca"
 
-#: rock.cpp:694
+#: rock.cpp:720
 msgid ""
 "Rock Version 3.3\n"
 "\n"
@@ -548,23 +590,49 @@ msgstr "Paraula de pas"
 msgid "Failed"
 msgstr "Fallat"
 
-#: slip.cpp:287
+#: science.cpp:60
+msgid "Science"
+msgstr ""
+
+#: science.cpp:386
+#, fuzzy
+msgid "Setup Science"
+msgstr "Valors klines"
+
+#: science.cpp:413
+msgid "Intensity:"
+msgstr ""
+
+#: science.cpp:544
+#, fuzzy
+msgid "About Science"
+msgstr "Quant a Línies"
+
+#: science.cpp:545
+msgid ""
+"Science Version 0.2beta\n"
+"\n"
+"written by Rene Beutler 1998\n"
+"rbeutler@g26.ethz.ch"
+msgstr ""
+
+#: slip.cpp:293
 msgid "Slip"
 msgstr "Slip"
 
-#: slip.cpp:360
+#: slip.cpp:366
 msgid "Setup KSlip"
 msgstr "Valors KSlip"
 
-#: slip.cpp:376
+#: slip.cpp:392
 msgid "Batchcount:"
 msgstr "Pilons:"
 
-#: slip.cpp:464
+#: slip.cpp:488
 msgid "About Slip"
 msgstr "Quant a Slip"
 
-#: slip.cpp:465
+#: slip.cpp:489
 msgid ""
 "Slip\n"
 "\n"
@@ -603,23 +671,23 @@ msgid ""
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
 
-#: swarm.cpp:252
+#: swarm.cpp:257
 msgid "Swarm"
 msgstr "Eixam"
 
-#: swarm.cpp:324
+#: swarm.cpp:329
 msgid "Setup KSwarm"
 msgstr "Valors KSwarm"
 
-#: swarm.cpp:340
+#: swarm.cpp:355
 msgid "Number of Bees:"
 msgstr "Número d'abelles"
 
-#: swarm.cpp:427
+#: swarm.cpp:450
 msgid "About Swarm"
 msgstr "Quant a Eixam"
 
-#: swarm.cpp:428
+#: swarm.cpp:451
 msgid ""
 "Swarm\n"
 "\n"

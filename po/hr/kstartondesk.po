@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -13,26 +13,26 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: iso-8859-2\n"
 
-#: kstartondesk.C:70
+#: kstartondesk.C:72
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: kstartondesk.C:74
+#: kstartondesk.C:76
 msgid "Usage:"
 msgstr "Uporaba: "
 
-#: kstartondesk.C:76
+#: kstartondesk.C:78
 msgid "command "
 msgstr "naredba "
 
-#: kstartondesk.C:77
+#: kstartondesk.C:79
 msgid "title "
 msgstr "naziv "
 
-#: kstartondesk.C:78
+#: kstartondesk.C:80
 msgid "desktop"
 msgstr "radna povr¹ina"
 
-#: kstartondesk.C:80
+#: kstartondesk.C:82
 msgid "Example"
 msgstr "Primjer"
