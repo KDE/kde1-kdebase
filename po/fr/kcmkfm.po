@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-20 05:05+0600\n"
 "PO-Revision-Date: 1998-01-25 18:31 CET\n"
 "Last-Translator: David Faure <David.Faure@insa-lyon.fr>\n"
 "Language-Team: Français\n"
@@ -180,19 +180,19 @@ msgstr ""
 msgid "Change domain accept policy"
 msgstr ""
 
-#: useragentdlg.cpp:43
+#: useragentdlg.cpp:45
 msgid "On server:"
 msgstr "Sur le serveur :"
 
-#: useragentdlg.cpp:65
+#: useragentdlg.cpp:67
 msgid "login as:"
 msgstr "Connexion en tant que :"
 
-#: useragentdlg.cpp:85
+#: useragentdlg.cpp:87
 msgid "&Add"
 msgstr "&Ajouter"
 
-#: useragentdlg.cpp:105
+#: useragentdlg.cpp:107
 msgid "Known bindings:"
 msgstr "Liaisons connues :"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-20 05:05+0600\n"
 "PO-Revision-Date: 1998-12-21 00:00+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -173,25 +173,27 @@ msgstr "Запрещать"
 
 #: khttpoptdlg.cpp:123
 msgid "Domain specific settings:"
-msgstr "Настройки, специфичные для домена:"
+msgstr ""
+"Настройки, специфичные\n"
+"для домена:"
 
 #: khttpoptdlg.cpp:130
 msgid "Change domain accept policy"
 msgstr "Изменить политику разрешения для домена"
 
-#: useragentdlg.cpp:43
+#: useragentdlg.cpp:45
 msgid "On server:"
 msgstr "На сервер:"
 
-#: useragentdlg.cpp:65
+#: useragentdlg.cpp:67
 msgid "login as:"
 msgstr "заходить как:"
 
-#: useragentdlg.cpp:85
+#: useragentdlg.cpp:87
 msgid "&Add"
 msgstr "Добавить"
 
-#: useragentdlg.cpp:105
+#: useragentdlg.cpp:107
 msgid "Known bindings:"
 msgstr "Известные привязки:"
 

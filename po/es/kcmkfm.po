@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-20 05:05+0600\n"
 "PO-Revision-Date: 1998-11-27 22:55+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -172,19 +172,19 @@ msgstr ""
 msgid "Change domain accept policy"
 msgstr ""
 
-#: useragentdlg.cpp:43
+#: useragentdlg.cpp:45
 msgid "On server:"
 msgstr ""
 
-#: useragentdlg.cpp:65
+#: useragentdlg.cpp:67
 msgid "login as:"
 msgstr ""
 
-#: useragentdlg.cpp:85
+#: useragentdlg.cpp:87
 msgid "&Add"
 msgstr ""
 
-#: useragentdlg.cpp:105
+#: useragentdlg.cpp:107
 msgid "Known bindings:"
 msgstr ""
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-20 05:05+0600\n"
 "PO-Revision-Date: 1998-12-18 09:59+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
@@ -179,19 +179,19 @@ msgstr ""
 msgid "Change domain accept policy"
 msgstr ""
 
-#: useragentdlg.cpp:43
+#: useragentdlg.cpp:45
 msgid "On server:"
 msgstr "Na serveru:"
 
-#: useragentdlg.cpp:65
+#: useragentdlg.cpp:67
 msgid "login as:"
 msgstr "Pøihlásit jako:"
 
-#: useragentdlg.cpp:85
+#: useragentdlg.cpp:87
 msgid "&Add"
 msgstr "Pøid&at"
 
-#: useragentdlg.cpp:105
+#: useragentdlg.cpp:107
 msgid "Known bindings:"
 msgstr "Známé vazby:"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-20 05:05+0600\n"
 "PO-Revision-Date: 1998-12-19 17:05+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -181,19 +181,19 @@ msgstr ""
 msgid "Change domain accept policy"
 msgstr ""
 
-#: useragentdlg.cpp:43
+#: useragentdlg.cpp:45
 msgid "On server:"
 msgstr "På server:"
 
-#: useragentdlg.cpp:65
+#: useragentdlg.cpp:67
 msgid "login as:"
 msgstr "logga in som:"
 
-#: useragentdlg.cpp:85
+#: useragentdlg.cpp:87
 msgid "&Add"
 msgstr "&Lägg till"
 
-#: useragentdlg.cpp:105
+#: useragentdlg.cpp:107
 msgid "Known bindings:"
 msgstr "Kända bindningar:"
 

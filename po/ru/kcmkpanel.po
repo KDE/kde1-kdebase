@@ -237,4 +237,3 @@ msgstr "Показывать элемент опции"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Терминальное приложение:"
-

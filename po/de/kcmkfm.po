@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmfm \n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-20 05:05+0600\n"
 "PO-Revision-Date: 1998-12-10 22:45+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -173,19 +173,19 @@ msgstr ""
 msgid "Change domain accept policy"
 msgstr ""
 
-#: useragentdlg.cpp:43
+#: useragentdlg.cpp:45
 msgid "On server:"
 msgstr "Auf Server:"
 
-#: useragentdlg.cpp:65
+#: useragentdlg.cpp:67
 msgid "login as:"
 msgstr "Einloggen als:"
 
-#: useragentdlg.cpp:85
+#: useragentdlg.cpp:87
 msgid "&Add"
 msgstr "&Hinzufügen"
 
-#: useragentdlg.cpp:105
+#: useragentdlg.cpp:107
 msgid "Known bindings:"
 msgstr "Bekannte Zuordnungen:"
 
