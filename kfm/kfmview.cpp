@@ -535,11 +535,24 @@ void KfmView::copySelection()
 		{
 			clipboard->append ( getURL() );
 			KApplication::clipboard()->setText( getURL() );
-    }
+        }
 		else
-			// Always copy the last selected URL into system clipboard ...
-			KApplication::clipboard()->setText( clipboard->last() );
-	}
+        {
+            if ( clipboard->count() == 1 )
+    			KApplication::clipboard()->setText( clipboard->first() );
+            else if ( clipboard->count() > 1  )
+            {
+                QString url = "";
+                for ( const char *s = clipboard->first(); s != 0L; s = clipboard->next() )
+                {
+                    url += s;
+                    url += "\n"; // add a line feed for separating multiple selections
+                }
+                if ( !url.isEmpty() )
+                    KApplication::clipboard()->setText( url.data() );
+            }
+        }
+    }
 }
 
 void KfmView::slotCopy()
