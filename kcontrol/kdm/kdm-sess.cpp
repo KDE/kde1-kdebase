@@ -63,12 +63,14 @@ void KDMSessionsWidget::setupPage(QWidget *)
       shutdown_label->setFixedSize(shutdown_label->sizeHint());
       shutdown_lined = new QLineEdit(group1);
       shutdown_lined->setFixedHeight(shutdown_lined->sizeHint().height());
+      shutdown_lined->setText(shutdownstr);
 
       QLabel *restart_label = new QLabel(klocale->translate("Restart"), group1);
       restart_label->setFixedSize(restart_label->sizeHint());
 
       restart_lined = new QLineEdit(group1);
       restart_lined->setFixedHeight(shutdown_lined->height());
+      restart_lined->setText(restartstr);
 
       QGroupBox *group2 = new QGroupBox( klocale->translate("Session types"), this );
       

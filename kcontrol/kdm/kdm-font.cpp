@@ -44,44 +44,47 @@ KDMFontWidget::KDMFontWidget(QWidget *parent, const char *name, bool init)
 
 void KDMFontWidget::setupPage(QWidget *)
 {
-      QGroupBox *group0 = new QGroupBox( 
+      QGroupBox *tGroup = new QGroupBox( 
             klocale->translate("Select fonts"), this );
+      QGroupBox *bGroup = new QGroupBox( 
+            klocale->translate("Example"), this );
       QPushButton *fontbtn = 
-             new QPushButton(klocale->translate("Change font"), group0);
+             new QPushButton(klocale->translate("Change font..."), tGroup);
       connect(fontbtn, SIGNAL(clicked()), SLOT(slotGetFont()));
       fontbtn->setFixedSize(fontbtn->sizeHint());
-      fontcombo = new QComboBox( FALSE, group0 );
+      fontcombo = new QComboBox( FALSE, tGroup );
       connect(fontcombo, SIGNAL(highlighted(int)), SLOT(slotSetFont(int)));
       fontcombo->insertItem(klocale->translate("Greeting"), 0);
       fontcombo->insertItem(klocale->translate("Fail"), 1);
       fontcombo->insertItem(klocale->translate("Standard"), 2);
       fontcombo->setFixedSize(fontcombo->sizeHint());
-      QLabel *label = new QLabel(klocale->translate("Example:"), group0);
-      label->setFixedSize(label->sizeHint());
-      fontlabel = new QLabel( group0 );
-      fontlabel->setAutoResize(true);
+      fontlabel = new QLabel( bGroup );
+      //fontlabel->setAutoResize(true);
       fontlabel->setFrameStyle(QFrame::WinPanel|QFrame::Sunken);
-      fontlabel->adjustSize();
+      //fontlabel->adjustSize();
 
-      QBoxLayout *main = new QVBoxLayout(this, 10);
-      QBoxLayout *lgroup0 = new QVBoxLayout(group0, 10);
-      QBoxLayout *box0 = new QHBoxLayout();
-      QBoxLayout *box1 = new QHBoxLayout();
-      main->addWidget(group0);
+      QBoxLayout *ml = new QVBoxLayout(this, 10);
 
-      lgroup0->addSpacing(10);
-      lgroup0->addLayout(box0);
-      lgroup0->addLayout(box1);
-      lgroup0->addStretch(1);
-      box0->addWidget(fontbtn);
-      box0->addWidget(fontcombo);
-      box0->addStretch(1);
-      box1->addWidget(label);
-      box1->addWidget(fontlabel);
-      box1->addStretch(1);
+      QBoxLayout *tLayout = new QVBoxLayout(tGroup, 10);
+      QBoxLayout *bLayout = new QVBoxLayout(bGroup, 10);
+      tLayout->addSpacing(tGroup->fontMetrics().height());
+      bLayout->addSpacing(bGroup->fontMetrics().height());
 
-      lgroup0->activate();
-      main->activate();
+      QBoxLayout *tLayout2 = new QHBoxLayout();
+      tLayout->addLayout(tLayout2, 1);
+      tLayout2->addWidget(fontbtn);
+      tLayout2->addWidget(fontcombo);
+      tLayout2->addStretch();
+
+      bLayout->addWidget(fontlabel);
+
+      ml->addWidget(tGroup);
+      ml->addWidget(bGroup, 3);
+      ml->addStretch(2);
+
+      tLayout->activate();
+      bLayout->activate();
+      ml->activate();
 
       slotSetFont(0);
 }
@@ -140,7 +143,7 @@ void KDMFontWidget::slotGetFont()
       break;
   }
   fontlabel->setFont(tmpfont);
-  fontlabel->setFixedSize(fontlabel->sizeHint());
+  //fontlabel->setFixedSize(fontlabel->sizeHint());
   delete fontdlg;
 }
 
@@ -163,7 +166,7 @@ void KDMFontWidget::slotSetFont(int id)
       break;
   }
   fontlabel->setFont(tmpfont);
-  fontlabel->adjustSize();
+  //fontlabel->adjustSize();
   QApplication::restoreOverrideCursor( );
 }
 

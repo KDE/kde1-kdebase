@@ -445,8 +445,10 @@ void KDMBackgroundWidget::applySettings()
 	  c->writeEntry( "BackGroundPictureCenter", 1 );
 	  break;
         default:
-  	  c->deleteEntry( "BackGroundPictureTile", false );
-	  c->deleteEntry( "BackGroundPictureCenter", false );
+	  c->writeEntry( "BackGroundPictureCenter", 0 );
+  	  c->writeEntry( "BackGroundPictureTile", 0 );
+  	  //c->deleteEntry( "BackGroundPictureTile", false );
+	  //c->deleteEntry( "BackGroundPictureCenter", false );
 	break;
       } // switch
     } // if(fi...
