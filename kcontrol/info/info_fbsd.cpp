@@ -168,6 +168,7 @@ bool GetInfo_SCSI (KTabListBox *lbox)
 	}
 
 	if ((pipe = popen("/sbin/camcontrol devlist", "r")) == NULL) {
+		delete camcontrol;
 	     return false;
 	}
 
@@ -177,8 +178,12 @@ bool GetInfo_SCSI (KTabListBox *lbox)
 	while ((s=t->readLine())!="")
 		lbox->insertItem(s);
 
-	delete t;
-	pclose(pipe);
+	delete t; delete camcontrol; pclose(pipe);
+
+	if (!lbox->count())
+		return false;
+
+	return true;
 }
 
 bool GetInfo_Partitions (KTabListBox *lbox)
