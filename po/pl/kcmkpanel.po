@@ -1,0 +1,71 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmpanel \n"
+"POT-Creation-Date: 1997-12-31 15:27+0100\n"
+"PO-Revision-Date: 1997-01-03 14:23+0100\n"
+"Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+
+#: main.cpp:57
+msgid "&Panel"
+msgstr "&Panel"
+
+#: main.cpp:60
+msgid "&Desktops"
+msgstr "&Desktopy"
+
+#: main.cpp:84
+msgid "KPanel Configuration"
+msgstr "Konfiguracja KPanel"
+
+#: panel.cpp:57
+msgid "Location"
+msgstr "Lokacja"
+
+#: panel.cpp:64
+msgid "Taskbar"
+msgstr "Pasek zadañ"
+
+#: panel.cpp:65
+msgid "Hidden"
+msgstr "Ukryty"
+
+#: panel.cpp:68
+msgid "Top/Left"
+msgstr "Góra/Lewo"
+
+#: panel.cpp:88
+msgid "Tiny Style"
+msgstr "Ma³y"
+
+#: panel.cpp:89
+msgid "Normal Style"
+msgstr "¦redni"
+
+#: panel.cpp:90
+msgid "Large Style"
+msgstr "Du¿y"
+
+#: panel.cpp:98
+msgid "Menu Tooltips"
+msgstr "Podpowiedzi menu"
+
+#: panel.cpp:100
+msgid "Personal First"
+msgstr "Wpierw prywatne"
+
+#: panel.cpp:102
+msgid "Auto Hide Panel"
+msgstr "Ukrywaj panel"
+
+#: panel.cpp:104
+msgid "Auto Hide Taskbar"
+msgstr "Ukrywaj pasek zadañ"
+
+#: desktops.cpp:67
+msgid "Visible"
+msgstr "Widoczne"
+
+#: desktops.cpp:75
+msgid "Width"
+msgstr "Szeroko¶æ"
