@@ -411,7 +411,7 @@ msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
 msgstr ""
-"Si puo' lavorare con file *.kdelnk solo\n"
+"Si può lavorare con file *.kdelnk solo\n"
 "su Hard Disk locale "
 
 #: kbind.cpp:1616

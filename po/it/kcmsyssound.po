@@ -177,4 +177,4 @@ msgstr ""
 
 #: syssound.cpp:481
 msgid "File Already in List"
-msgstr "File gia' presente nella lista"
+msgstr "File già presente nella lista"

@@ -98,9 +98,4 @@ msgstr "&24H"
 msgid "&12h AM/PM"
 msgstr "&12H AM/PM"
 
-#~ msgid "Tiny Style"
-msgstr "Stile Piccolo"
-
-#~ msgid "Large Style"
-msgstr "Stile Largo"
 

@@ -39,11 +39,4 @@ msgstr ""
 "Ringraziamenti a:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
-#~ msgid "&About KControl..."
-#~ msgstr "&Info su KControl..."
-
-#~ msgid "&Using KControl"
-#~ msgstr "&Utilizzo di KControl"
-
-#~ msgid "About KControl"
-#~ msgstr "Info su KControl"
+ 
