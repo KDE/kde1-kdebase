@@ -113,7 +113,7 @@ msgstr "Fenster&größe"
 
 #: main.C:443
 msgid "Terminal..."
-msgstr "Te&rminal..."
+msgstr "Termi&nal..."
 
 #: main.C:445
 msgid "Save &Options"

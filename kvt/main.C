@@ -234,11 +234,11 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
 {
   setCaption(name);
   QLabel *label_color, *label_class, *label_backspace;
-  label_class = new QLabel(klocale->translate("Add characters to word class"), this);
-  chars = new QLineEdit(this);
-
   label_color = new QLabel(klocale->translate("choose type of color-mode"), this);
   colormode = new QComboBox(this);
+
+  label_class = new QLabel(klocale->translate("Add characters to word class"), this);
+  chars = new QLineEdit(this);
 
   label_backspace = new QLabel(klocale->translate("The backspace key will send a"), this);
   backspace = new QComboBox(this);

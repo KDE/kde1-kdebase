@@ -1,6 +1,7 @@
 since kvt-0.18.1
   - save command line parameters into kvtrc (Jens Jahny)
   - restore process with all command line parameters (Jens Jahny)
+  - fixed tab order in terminal dialog (Mario Weilguni)
 
 since kvt-0.18:
   - Custom Colors (Bernd Wuebben)	

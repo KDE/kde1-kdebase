@@ -1853,6 +1853,8 @@ void process_robs_sequence(void)
   long args[1000];
   unsigned char text[1000];
 
+  (void)key;
+
   nargs = 0;
   done = 0;
   args[nargs] = 0;
