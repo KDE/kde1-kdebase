@@ -100,7 +100,7 @@ private:
     QCheckBox *personal_first;
     QCheckBox *folders_first;
     QCheckBox *clock;
-
+    QCheckBox *clockBeats;
 
 
 };
