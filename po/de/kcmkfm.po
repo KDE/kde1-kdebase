@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmfm \n"
 "POT-Creation-Date: 1999-03-04 18:41+0100\n"
-"PO-Revision-Date: 1999-03-13 22:50+MET\n"
+"PO-Revision-Date: 1999-03-28 15:50+MET\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Stephan Kulow <coolo@kde.org>\n"
 
 #: main.cpp:61
 msgid "&Font"
@@ -40,7 +40,7 @@ msgstr "Coo&kies"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
-msgstr "&Desktop Icons"
+msgstr "&Arbeitsflächen-Symbole"
 
 #: main.cpp:89
 #, c-format
@@ -220,16 +220,16 @@ msgstr "Vertikaler Gitterabstand:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
-msgstr "&Transparenter Text für Desktop-Icons"
+msgstr "&Transparenter Text für Arbeitsflächen-Symbole"
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
-msgstr "Vordergrundfarbe für Icons:"
+msgstr "Vordergrundfarbe für Symbole:"
 
 #: rootopts.cpp:118
 msgid "Icon background color:"
-msgstr "Hintergrundfarbe für Icons:"
+msgstr "Hintergrundfarbe für Symbole:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr "&Versteckte Dateien auf Desktop anzeigen"
+msgstr "&Versteckte Dateien auf Arbeitfläche anzeigen"

@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1999-01-28 01:15+0100\n"
-"PO-Revision-Date: 1999-02-03 16:05+MET\n"
+"PO-Revision-Date: 1999-03-28 16:05+MET\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Stephan Kulow <coolo@kde.org>\n"
 
 #: main.cpp:64
 msgid "&Panel"
@@ -120,7 +120,7 @@ msgstr "Automatisches Verstecken"
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
-msgstr "Kontroll-Leist &autom. verstecken"
+msgstr "Kontroll-Leiste &autom. ausblenden"
 
 #: options.cpp:153 options.cpp:255
 msgid "Delay:"
@@ -140,11 +140,11 @@ msgstr "Schnell"
 
 #: options.cpp:246
 msgid "Auto Hide &Taskbar"
-msgstr "Tas&kleiste autom. verstecken"
+msgstr "Tas&kleiste autom. ausblenden"
 
 #: options.cpp:341
 msgid "Animate Show/Hide"
-msgstr "Animiertes Anzeigen/Verstecken"
+msgstr "Animiertes Anzeigen/Ausblenden"
 
 #: options.cpp:395
 msgid "Others"
@@ -180,7 +180,7 @@ msgstr "&Persönliche bearbeiten..."
 
 #: disknav.cpp:74
 msgid "Edit &Shared..."
-msgstr "&Aufgeteilte bearbeiten..."
+msgstr "&Mit andern geteilte Ordner bearbeiten..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -204,7 +204,7 @@ msgstr "Groß-/Kleinschreibung bei Anordnung ignorieren"
 
 #: disknav.cpp:173
 msgid "Show Shared section"
-msgstr "Aufgeteilte Abschnitte anzeigen"
+msgstr "Mit andern geteilte Abschnitte anzeigen"
 
 #: disknav.cpp:180
 msgid "Show Personal section"

@@ -1,12 +1,13 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-03-04 18:41+0100\n"
-"PO-Revision-Date: 1999-03-13 22:40+MET\n"
+"PO-Revision-Date: 1999-03-29 21:40+MET\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
+
 "Date: 1997-08-23 15:45:33+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
 "Xgettext-Options: --keyword=translate\n"
@@ -14,7 +15,7 @@ msgstr ""
 
 #: main.C:426
 msgid "choose type of color-mode"
-msgstr "Farbdarstellung wählen"
+msgstr "Farbmodus wählen"
 
 #: main.C:432
 msgid "Add characters to word class"
@@ -22,11 +23,11 @@ msgstr "Zeichen zur Wortklasse hinzufügen"
 
 #: main.C:438
 msgid "The backspace key will send a"
-msgstr "Die Backspace-Taste wirkt wie ein "
+msgstr "Die Rücktaste wirkt wie ein "
 
 #: main.C:444
 msgid "Cursor key set"
-msgstr "Art der Cursortasten-Steuerung"
+msgstr "Steuerung der Pfeiltasten"
 
 #: main.C:613
 msgid "&New Terminal"
@@ -86,7 +87,7 @@ msgstr "schwarz/hell&gelb"
 
 #: main.C:648
 msgid "Linu&x Console"
-msgstr "Linu&x-Konsole"
+msgstr "Linu&xkonsole"
 
 #: main.C:657
 msgid "&Custom Colors"
@@ -98,7 +99,7 @@ msgstr "&Menüleiste unsichtbar"
 
 #: main.C:667 main.C:888 main.C:960
 msgid "Show &Menubar"
-msgstr "&Menüleiste sichtbar"
+msgstr "&Menüleiste anzeigen"
 
 #: main.C:668 main.C:979
 msgid "Secure &keyboard"
@@ -205,7 +206,7 @@ msgstr "Zulässige Parameter:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <Kommando> <Arg> ...   Kommando mit Argumenten ausführen - muß letzter "
+"-e <Befehl> <Arg> ...   Befehl mit Argumenten ausführen - muß letzter "
 "Parameter sein\n"
 
 #: main.C:1480
@@ -248,11 +249,11 @@ msgstr "-linux                    Kvt wie Linux-Konsole einstellen\n"
 
 #: main.C:1489
 msgid "-no_menubar               hide the menubar\n"
-msgstr "-no_menubar               Menüleiste verstecken\n"
+msgstr "-no_menubar               Menüleiste ausblenden\n"
 
 #: main.C:1490
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr "-no_scrollbar             Rollbalken verstecken\n"
+msgstr "-no_scrollbar             Rollbalken ausblenden\n"
 
 #: main.C:1491
 msgid ""

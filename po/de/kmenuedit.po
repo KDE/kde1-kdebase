@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1999-01-14 01:18+0100\n"
-"PO-Revision-Date: 1999-02-03 18:30+MET\n"
+"PO-Revision-Date: 1999-03-27 21:30+MET\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Stephan Kulow <coolo@kde.org>\n"
 
 #: kmenuedit.cpp:69
 msgid "Change &Menuname"
@@ -116,7 +116,7 @@ msgstr "Ändern des Typs für diesen Button wird alle Untermenüs löschen"
 
 #: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
-msgstr "kein Kommando"
+msgstr "kein Befehl"
 
 #: button.cpp:210
 msgid ""
@@ -128,7 +128,7 @@ msgstr ""
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
-msgstr "Pfad zu den KDE Desktop Einträgen ist nicht gesetzt."
+msgstr "Pfad zu den KDE Einträgen für Arbeitsflächen ist nicht gesetzt."
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
@@ -177,11 +177,11 @@ msgstr "Name:"
 
 #: entrydialog.cpp:109
 msgid "Icon:"
-msgstr "Icon"
+msgstr "Symbol:"
 
 #: entrydialog.cpp:141
 msgid "Mini Icon:"
-msgstr "Mini-Icon"
+msgstr "Mini-Symbol"
 
 #: entrydialog.cpp:149
 msgid "Comment:"
@@ -197,7 +197,7 @@ msgstr "Ausführen:"
 
 #: entrydialog.cpp:228
 msgid "Working Directory:"
-msgstr "Arbeits-Verzeichnis:"
+msgstr "Arbeitsverzeichnis:"
 
 #: entrydialog.cpp:241
 msgid "Run in terminal"
@@ -209,7 +209,7 @@ msgstr "Terminal-Einstellungen"
 
 #: entrydialog.cpp:310
 msgid "Binary Pattern:"
-msgstr "Binär-Muster:"
+msgstr "Binärmuster:"
 
 #: entrydialog.cpp:325
 msgid "Application to swallow:"
@@ -245,7 +245,7 @@ msgstr "DS Typ:"
 
 #: entrydialog.cpp:435
 msgid "Unmount Icon:"
-msgstr "Unmount-Icon:"
+msgstr "Unmount-Symbol:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
@@ -253,7 +253,7 @@ msgstr "Menünamen ändern"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Ändern des Menü-Names wie in kpanel angezeigt"
+msgstr "Ändern des Menünamens wie in kpanel angezeigt"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"

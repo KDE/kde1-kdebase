@@ -6,13 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys VERSION\n"
 "POT-Creation-Date: 1999-01-08 01:16+0100\n"
-"PO-Revision-Date: 1999-02-03 14:50+MET\n"
+"PO-Revision-Date: 1999-03-28 14:50+MET\n"
+"Translator: Gregor Zumstein <zumstein@ssd.ethz.ch>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Gregor Zumstein <zumstein@ssd.ethz.ch>\n"
 
 #: main.cpp:72
 msgid "&Standard shortcuts"
@@ -146,51 +146,51 @@ msgstr "Haft-Modus einschalten"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr "Auf Desktop 1 wechseln"
+msgstr "Auf Arbeitsfläche 1 wechseln"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr "Auf Desktop 2 wechseln"
+msgstr "Auf Arbeitsfläche 2 wechseln"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr "Auf Desktop 3 wechseln"
+msgstr "Auf Arbeitsfläche 3 wechseln"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr "Auf Desktop 4 wechseln"
+msgstr "Auf Arbeitsfläche 4 wechseln"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr "Auf Desktop 5 wechseln"
+msgstr "Auf Arbeitsfläche 5 wechseln"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr "Auf Desktop 6 wechseln"
+msgstr "Auf Arbeitsfläche 6 wechseln"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr "Auf Desktop 7 wechseln"
+msgstr "Auf Arbeitsfläche 7 wechseln"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr "Auf Desktop 8 wechseln"
+msgstr "Auf Arbeitsfläche 8 wechseln"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr "Einen Desktop nach rechts"
+msgstr "Eine Arbeitsfläche nach rechts"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr "Einen Desktop nach links"
+msgstr "Eine Arbeitsfläche nach links"
 
 #: ../../kwm/kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr "Einen Desktop nach oben"
+msgstr "Eine Arbeitsfläche nach oben"
 
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr "Einen Desktop nach unten"
+msgstr "Eine Arbeitsfläche nach unten"
 
 #: stdbindings.cpp:3
 msgid "New"

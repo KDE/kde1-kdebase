@@ -2,8 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmlocale\n"
 "POT-Creation-Date: 1998-05-13 12:05+0200\n"
-"PO-Revision-Date: 1998-01-16 21:08+0100\n"
-"Last-Translator: Stephan Kulow <coolo@kde.org>\n"
+"PO-Revision-Date: 1999-03-27 21:08+MET\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
+"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 
 #: main.cpp:52
 msgid "&Locale"
@@ -39,7 +40,7 @@ msgstr "ohne Namen!"
 
 #: locale.cpp:181
 msgid "Applying language settings"
-msgstr "Anwendung der Sprachen-Einstellung"
+msgstr "Anwendung der Spracheinstellungen"
 
 #: locale.cpp:182
 msgid ""

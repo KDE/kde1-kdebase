@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
-"PO-Revision-Date: 1997-12-28 14:57+01\n"
-"Last-Translator: Stephan Kulow <coolo@kde.org>\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"PO-Revision-Date: 1999-03-27 21:30+MET\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
+"Last-Translator:Thomas Diehl <th_diehl@csi.com>\n"
+"Language-Team: de (de@li.org)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
 
 #: main.C:68
 msgid ""
@@ -38,11 +44,11 @@ msgstr "&Wiederherstellen"
 
 #: main.C:571
 msgid "&Iconify"
-msgstr "Mi&nimieren"
+msgstr "Als &Symbol"
 
 #: main.C:572
 msgid "&DeIconify"
-msgstr "(&De)Iconisieren"
+msgstr "&Nicht als Symbol"
 
 #: main.C:573
 msgid "&Sticky"
@@ -62,11 +68,11 @@ msgstr "G&röße ändern"
 
 #: main.C:578
 msgid "&To desktop"
-msgstr "A&uf Arbeitsplatz"
+msgstr "A&uf Arbeitsfläche"
 
 #: main.C:580
 msgid "&Onto current desktop"
-msgstr "Auf aktuellen Arbeitsplatz"
+msgstr "Auf &aktuelle Arbeitsfläche"
 
 #: main.C:620
 msgid "One"
@@ -102,23 +108,23 @@ msgstr "Acht"
 
 #: main.C:655
 msgid "Unnamed Desktop"
-msgstr "Unbenannter Desktop"
+msgstr "Unbenannte Arbeitsfläche"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Ein paar Pixmaps sind ungültig: Shape-Modus ausgeschaltet\n"
+msgstr "Einige Pixmaps sind ungültig: Shape-Modus ausgeschaltet\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Ein paar Pixmaps sind ungültig: Gimmick-Modus ausgeschaltet\n"
+msgstr "Einige Pixmaps sind ungültig: Gimmick-Modus ausgeschaltet\n"
 
 #: main.C:1524
 msgid "*** No Tasks ***"
-msgstr "*** Keine Programme ***"
+msgstr "*** Keine laufenden Programme ***"
 
-#: minicli.C:201
+#: minicli.C:124
 msgid "Command:"
-msgstr "Kommando:"
+msgstr "Befehl:"
 
 #: warning.C:36
 msgid "Ooops!"

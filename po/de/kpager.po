@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-12-15 07:34+0100\n"
-"PO-Revision-Date: 1999-02-03 21:25+MET\n"
+"PO-Revision-Date: 1999-03-27 21:25+MET\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +11,7 @@ msgstr ""
 
 #: kpager.cpp:72
 msgid "Toggle Global Desktop"
-msgstr "Globalen Desktop ein/aus"
+msgstr "Allgemeine Arbeitsfläche ein/aus"
 
 #: kpager.cpp:74
 msgid "Toggle Menubar"
@@ -27,11 +27,11 @@ msgstr "Nach links verschieben"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
-msgstr "Globalen Desktop &nicht anzeigen"
+msgstr "Allgemeine Arbeitsfläche &nicht anzeigen"
 
 #: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
 msgid "Show &Global Desktop"
-msgstr "Globalen Desktop &anzeigen"
+msgstr "Allgemeine Arbeitsfläche &anzeigen"
 
 #: kpager.cpp:97 kpager.cpp:380
 msgid "Hide &Menubar"
@@ -43,15 +43,15 @@ msgstr "&2zeilig"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
-msgstr "Desktop mit &einem Klick ändern"
+msgstr "Arbeitsfläche mit &einem Klick ändern"
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
 msgid "Hide Desktop &Names"
-msgstr "Desktop-Namen ni&cht anzeigen"
+msgstr "Namen der Arbeitsflächen ni&cht anzeigen"
 
 #: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
 msgid "Show Desktop &Names"
-msgstr "Desktop-Namen an&zeigen"
+msgstr "Namen der Arbeitsflächen an&zeigen"
 
 #: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
@@ -67,7 +67,7 @@ msgstr "Pixmap"
 
 #: kpager.cpp:125 kpager.cpp:412
 msgid "Draw Mode"
-msgstr "Zeichen-Modus"
+msgstr "Zeichenmodus"
 
 #: kpager.cpp:129
 #, c-format
@@ -104,7 +104,7 @@ msgstr "&Menüleiste anzeigen"
 
 #: kpager.cpp:389
 msgid "One Click change Desktop"
-msgstr "Desktop mit einem Klick ändern"
+msgstr "Arbeitsfläche mit einem Klick ändern"
 
 #: kpager.cpp:446
 msgid "&Maximize"
@@ -112,7 +112,7 @@ msgstr "Ma&ximieren"
 
 #: kpager.cpp:447
 msgid "&Iconify"
-msgstr "&Iconifizieren"
+msgstr "&Als Symbol"
 
 #: kpager.cpp:449
 msgid "&UnSticky"
@@ -124,4 +124,4 @@ msgstr "&Haftend"
 
 #: kpager.cpp:453
 msgid "&To Desktop"
-msgstr "&Auf Desktop"
+msgstr "A&uf Arbeitsfläche"

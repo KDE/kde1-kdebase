@@ -2,13 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1999-02-03 16:20+MET\n"
+"PO-Revision-Date: 1999-02-28 16:20+MET\n"
+"Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
+
 "Date: 1998-05-09 00:15+0100\n"
 "From: Christian Czezatke <ceci@klapauzius>\n"
 "Xgettext-Options: -C -ktranslate\n"
@@ -28,35 +29,35 @@ msgstr "(nichts)"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"
-msgstr "Wechsel zu Arbeitsplatz 1"
+msgstr "Wechsel zu Arbeitsfläche 1"
 
 #: syssound.cpp:148
 msgid "Change to Desktop 2"
-msgstr "Wechsel zu Arbeitsplatz 2"
+msgstr "Wechsel zu Arbeitsfläche 2"
 
 #: syssound.cpp:149
 msgid "Change to Desktop 3"
-msgstr "Wechsel zu Arbeitsplatz 3"
+msgstr "Wechsel zu Arbeitsfläche 3"
 
 #: syssound.cpp:150
 msgid "Change to Desktop 4"
-msgstr "Wechsel zu Arbeitsplatz 4"
+msgstr "Wechsel zu Arbeitsfläche 4"
 
 #: syssound.cpp:151
 msgid "Change to Desktop 5"
-msgstr "Wechsel zu Arbeitsplatz 5"
+msgstr "Wechsel zu Arbeitsfläche 5"
 
 #: syssound.cpp:152
 msgid "Change to Desktop 6"
-msgstr "Wechsel zu Arbeitsplatz 6"
+msgstr "Wechsel zu Arbeitsfläche 6"
 
 #: syssound.cpp:153
 msgid "Change to Desktop 7"
-msgstr "Wechsel zu Arbeitsplatz 7"
+msgstr "Wechsel zu Arbeitsfläche 7"
 
 #: syssound.cpp:154
 msgid "Change to Desktop 8"
-msgstr "Wechsel zu Arbeitsplatz 8"
+msgstr "Wechsel zu Arbeitsfläche 8"
 
 #: syssound.cpp:156
 msgid "Activate Window"
@@ -84,11 +85,11 @@ msgstr "Fenster herunterrollen"
 
 #: syssound.cpp:163
 msgid "Window Iconify"
-msgstr "Fenster minimieren"
+msgstr "Fenster als Symbol"
 
 #: syssound.cpp:164
 msgid "Window DeIconify"
-msgstr "Minimiertes Fenster wiederherstellen"
+msgstr "Symbolisches Fenster wiederherstellen"
 
 #: syssound.cpp:165
 msgid "Window Maximize"

@@ -1,22 +1,22 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay \n"
-"POT-Creation-Date: 1999-03-21 01:19+0100\n"
-"PO-Revision-Date: 1999-02-05 14:10+MET\n"
+"POT-Creation-Date: 1999-02-06 01:16+0100\n"
+"PO-Revision-Date: 1999-03-28 9:10+MET\n"
+"Translator: Carsten Pfeiffer <pfeiffer@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Carsten Pfeiffer <pfeiffer@kde.org>\n"
 
 #: backgnd.cpp:54
 msgid "Enter new desktop name"
-msgstr "Geben Sie einen neuen Desktop-Namen ein"
+msgstr "Geben Sie einen neuen Namen für die Arbeitsfläche ein"
 
 #: backgnd.cpp:110 backgnd.cpp:163
 msgid "Desktop"
-msgstr "Desktop"
+msgstr "Arbeitsfläche"
 
 #: backgnd.cpp:185
 msgid "&Rename ..."
@@ -112,11 +112,11 @@ msgstr "In Kontroll-Leiste einbinden"
 
 #: backgnd.cpp:443
 msgid "Cache size (kB):"
-msgstr "Cache-Größe (KB)"
+msgstr "Größe des Zwischenspeichers (KB)"
 
 #: backgnd.cpp:1339
 msgid "Desktop names"
-msgstr "Desktop-Namen"
+msgstr "Namen der Arbeitsflächen"
 
 #: backgnd.cpp:1384
 msgid "File error"
@@ -210,7 +210,7 @@ msgstr "In der &Reihenfolge"
 
 #: backgnd.cpp:1778
 msgid "Desktops :"
-msgstr "Desktops:"
+msgstr "Arbeitsflächen:"
 
 #: backgnd.cpp:1817
 msgid "&Add"
@@ -282,11 +282,11 @@ msgstr "Text"
 
 #: colorscm.cpp:176
 msgid "Select background"
-msgstr "Hintergrund-Auswahl"
+msgstr "Hintergrundauswahl"
 
 #: colorscm.cpp:177
 msgid "Select text"
-msgstr "Text-Auswahl"
+msgstr "Textauswahl"
 
 #: colorscm.cpp:178
 msgid "Window background"
@@ -324,7 +324,7 @@ msgstr ""
 
 #: colorscm.cpp:362
 msgid "Naming error"
-msgstr "Benennungs-Fehler"
+msgstr "Benennungsfehler"
 
 #: colorscm.cpp:363
 msgid ""
@@ -434,31 +434,31 @@ msgstr "&Menüleiste am oberen Bildschirmrand wie MacOS"
 msgid "&Apply fonts and colors to non-KDE apps"
 msgstr "&Farben und Fonts auch für Nicht-KDE-Anwendungen verwenden"
 
-#: general.cpp:529
+#: general.cpp:530
 msgid "General font"
 msgstr "Standardschrift"
 
-#: general.cpp:534
+#: general.cpp:535
 msgid "Fixed font"
 msgstr "Schrift fester Breite"
 
-#: general.cpp:540
+#: general.cpp:541
 msgid "Window title font"
 msgstr "Schriftart für Fenstertext"
 
-#: general.cpp:545
+#: general.cpp:546
 msgid "Panel button font"
 msgstr "Schrift auf Kontroll-Leiste"
 
-#: general.cpp:550
+#: general.cpp:551
 msgid "Panel clock font"
 msgstr "Schrift für Uhr auf Kontroll-Leiste"
 
-#: general.cpp:580
+#: general.cpp:581
 msgid "Sample text"
 msgstr "Beispiel-Text"
 
-#: general.cpp:588
+#: general.cpp:589
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
