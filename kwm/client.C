@@ -1898,6 +1898,10 @@ void Client::maximize(int mode, bool animate){
 
   QRect maxRect = KWM::getWindowRegion(desktop);
 
+  if (myapp->systemMenuBar) {
+      maxRect.setTop(myapp->systemMenuBar->geometry().bottom());
+  }
+  else
   {
       // check for some floating windows (maybe a menubar?)
       Client* c = manager->clientAtPosition(maxRect.x(),maxRect.y());

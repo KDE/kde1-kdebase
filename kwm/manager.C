@@ -1224,12 +1224,8 @@ void Manager::randomPlacement(Client* c){
   int tx,ty;
 
   QRect maxRect = KWM::getWindowRegion(currentDesktop());
-  // check for some floating windows (maybe a menubar?)
-  {
-      Client* cc = clientAtPosition(maxRect.x(),maxRect.y());
-      if (cc && cc->trans == c->window && c->isMenuBar()) {
-	  maxRect.setTop(cc->geometry.bottom());
-      }
+  if (myapp->systemMenuBar) {
+      maxRect.setTop(myapp->systemMenuBar->geometry().bottom());
   }
 
   if (px < maxRect.x())
@@ -1361,13 +1357,11 @@ void Manager::smartPlacement(Client* c) {
 
   // get the maximum allowed windows space
   QRect maxRect = KWM::getWindowRegion(currentDesktop());
-  // check for some floating windows (maybe a menubar?)
-  {
-      Client* cc = clientAtPosition(maxRect.x(),maxRect.y());
-      if (cc && cc->trans == c->window && c->isMenuBar()) {
-	  maxRect.setTop(cc->geometry.bottom());
-      }
+
+  if (myapp->systemMenuBar) {
+      maxRect.setTop(myapp->systemMenuBar->geometry().bottom());
   }
+  
   x = maxRect.left(); y = maxRect.top();
 
   //initialize and do a loop over possible positions
