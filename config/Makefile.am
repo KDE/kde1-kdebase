@@ -1,3 +1,3 @@
 data_DATA = kpanelrc
 
-datadir = $(kde_confdir)     
+datadir = $(kde_confdir)
