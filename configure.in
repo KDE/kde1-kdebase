@@ -240,14 +240,17 @@ AC_OUTPUT(Makefile \
 	kcontrol/display/kcs/Makefile \
 	kcontrol/display/pics/Makefile \
 	kcontrol/display/pics/mini/Makefile \
+	kcontrol/display/pics/large/Makefile \
 	kcontrol/info/Makefile \
 	kcontrol/info/pics/Makefile \
 	kcontrol/input/Makefile \
 	kcontrol/input/pics/Makefile \
 	kcontrol/input/pics/mini/Makefile \
+	kcontrol/input/pics/large/Makefile \
 	kcontrol/kcontrol/Makefile \
 	kcontrol/kcontrol/pics/Makefile \
 	kcontrol/kcontrol/pics/mini/Makefile \
+	kcontrol/kcontrol/pics/large/Makefile \
 	kcontrol/kdm/Makefile \
 	kcontrol/kdm/doc/Makefile \
 	kcontrol/kdm/pics/Makefile \
@@ -257,6 +260,7 @@ AC_OUTPUT(Makefile \
 	kcontrol/kwm/Makefile \
 	kcontrol/kwm/pics/Makefile \
 	kcontrol/kwm/pics/mini/Makefile \
+	kcontrol/kwm/pics/large/Makefile \
 	kcontrol/locale/Makefile \
 	kcontrol/locale/pics/Makefile \
 	kcontrol/samba/Makefile \
