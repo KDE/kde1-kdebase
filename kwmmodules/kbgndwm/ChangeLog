@@ -1,0 +1,4 @@
+1998-11-15  Alex Zepeda  <garbanzo@hooked.net>
+
+	* bg.cpp (readSettings): Add a proper cast, so egcs doesn't barf.
+

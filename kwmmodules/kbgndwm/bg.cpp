@@ -108,7 +108,7 @@ void KBackground::readSettings( int num, bool one, int onedesk )
       QString tmpd = config.readEntry( "Directory", KApplication::kde_wallpaperdir());
       QDir d( tmpd, "*", QDir::Name, QDir::Readable | QDir::Files );
 
-      const QStrList *list = d.entryList();
+      QStrList *list = (QStrList *)d.entryList();
 
       count = list->count();
       if ( inorder ) {
