@@ -34,9 +34,8 @@ msgid "Continue search from the top of the page?"
 msgstr "Continuar busca do topo da página ?"
 
 #: helpwin.cpp:1309
-#, fuzzy
 msgid "Forward"
-msgstr "&Avançar"
+msgstr "Adiante"
 
 #: helpwin.cpp:1330
 msgid "Open this Link"
@@ -160,7 +159,7 @@ msgstr "Administração do Sistema"
 
 #: man.cpp:478
 msgid "New"
-msgstr ""
+msgstr "Novo"
 
 #: man.cpp:592
 msgid "Reading Dir: "

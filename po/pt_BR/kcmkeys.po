@@ -22,9 +22,8 @@ msgid "&Global shortcuts"
 msgstr "Atalhos &Globais"
 
 #: main.cpp:76
-#, fuzzy
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
-msgstr "uso: kcmdisplay [-init | {standard,global}]\n"
+msgstr "uso: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:118
 msgid "Key binding settings"
@@ -32,19 +31,19 @@ msgstr "Configurações de atalhos de teclado"
 
 #: standard.cpp:53
 msgid "New"
-msgstr ""
+msgstr "Novo"
 
 #: standard.cpp:57
 msgid "Next"
-msgstr ""
+msgstr "Próximo"
 
 #: standard.cpp:58
 msgid "Prior"
-msgstr ""
+msgstr "Anterior"
 
 #: standard.cpp:63
 msgid "Find"
-msgstr ""
+msgstr "Procurar"
 
 #: standard.cpp:66
 msgid "Home"

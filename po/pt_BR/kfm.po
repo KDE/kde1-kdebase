@@ -19,9 +19,8 @@ msgid "ERROR: Template does not exist '%s'"
 msgstr "ERRO: Não existe o modelo '%s'"
 
 #: kfmgui.cpp:304
-#, fuzzy
 msgid "&New"
-msgstr "Novo"
+msgstr "&Novo"
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -205,7 +204,7 @@ msgstr "Acima"
 
 #: kfmgui.cpp:533 kfmman.cpp:1079
 msgid "Forward"
-msgstr ""
+msgstr "Adiante"
 
 #: kfmgui.cpp:538
 msgid "Home"
@@ -499,7 +498,7 @@ msgstr "Abrir com"
 
 #: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
 msgid "Move"
-msgstr ""
+msgstr "Mover"
 
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
@@ -515,15 +514,15 @@ msgstr "Adicionar aos Favoritos"
 
 #: htmlopts.cpp:39
 msgid "Small"
-msgstr ""
+msgstr "Pequeno"
 
 #: htmlopts.cpp:43
 msgid "Medium"
-msgstr ""
+msgstr "Médio"
 
 #: htmlopts.cpp:47
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"

@@ -602,9 +602,8 @@ msgid "Setup krock"
 msgstr "Configurar Rocha"
 
 #: rock.cpp:589
-#, fuzzy
 msgid "Move"
-msgstr "Modo:"
+msgstr "Mover"
 
 #: rock.cpp:595
 msgid "Rotate"

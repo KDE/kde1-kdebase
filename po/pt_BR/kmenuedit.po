@@ -79,7 +79,7 @@ msgstr "! Botão PROTEGIDO !"
 
 #: confmenu.cpp:115
 msgid "New"
-msgstr ""
+msgstr "Novo"
 
 #: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"

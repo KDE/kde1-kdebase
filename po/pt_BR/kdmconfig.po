@@ -137,14 +137,12 @@ msgid "Select fonts"
 msgstr "Selecionar fontes"
 
 #: kdm-font.cpp:50
-#, fuzzy
 msgid "Example"
-msgstr "Exemplo:"
+msgstr "Exemplo"
 
 #: kdm-font.cpp:52
-#, fuzzy
 msgid "Change font..."
-msgstr "Mudar fonte"
+msgstr "Mudar fonte..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -160,24 +158,23 @@ msgstr "Padrão"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Prever"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Cor"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "Cor"
+msgstr "Cor Sólida"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Mistura Horizontal"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Mistura Vertical"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -188,39 +185,36 @@ msgid "None"
 msgstr "Nenhum"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
 msgid "Tile"
 msgstr "Mosaico"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
 msgid "Center"
 msgstr "Centrado"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
 msgid "Scale"
 msgstr "Escalado"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "Topo/Esquerda"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "Topo/Direita"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "Fundo/Esquerda"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "Fundo/Direita"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "Bonito"
 
 #: kdm-users.cpp:48
 msgid "All users"

@@ -388,7 +388,7 @@ msgstr "Texto seleccionado"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
+msgstr "Novo"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"

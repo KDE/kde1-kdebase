@@ -140,7 +140,7 @@ msgstr "(Des)Maximizar"
 
 #: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
 msgid "Move"
-msgstr ""
+msgstr "Mover"
 
 #: titlebar.cpp:991
 msgid "(Un)Shade"
@@ -184,7 +184,7 @@ msgstr "Animação:"
 
 #: windows.cpp:91
 msgid "None"
-msgstr ""
+msgstr "Nenhum"
 
 #: windows.cpp:92
 msgid "Fast"
