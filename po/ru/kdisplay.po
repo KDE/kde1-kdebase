@@ -15,39 +15,39 @@ msgstr ""
 
 #: backgnd.cpp:59
 msgid "Enter new desktop name"
-msgstr ""
+msgstr "Введите название нового рабочего стола"
 
 #: backgnd.cpp:115 backgnd.cpp:150
 msgid "Desktop"
 msgstr "Рабочий стол"
 
 #: backgnd.cpp:167
-#, fuzzy
+#
 msgid "&Rename ..."
-msgstr "Переименовать..."
+msgstr "&Переименовать..."
 
 #
 #: backgnd.cpp:193 colorscm.cpp:93
-#, fuzzy
+#
 msgid "Colors"
-msgstr "Цвет"
+msgstr "Цвета"
 
 #
 #: backgnd.cpp:220
-#, fuzzy
+#
 msgid "&One Color"
-msgstr "Цвет"
+msgstr "&Один Цвет"
 
 #
 #: backgnd.cpp:237
-#, fuzzy
+#
 msgid "&Two Color"
-msgstr "Цвет"
+msgstr "&Два Цвета"
 
 #: backgnd.cpp:256
-#, fuzzy
+#
 msgid "Set&up ..."
-msgstr "Настроить..."
+msgstr "&Настроить..."
 
 #: backgnd.cpp:265
 msgid "Wallpaper"
@@ -69,9 +69,9 @@ msgid "&Scaled"
 msgstr "Изменять размер"
 
 #: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
-#, fuzzy
+#
 msgid "No wallpaper"
-msgstr "Обои"
+msgstr "Без обоев"
 
 #
 #: backgnd.cpp:335
@@ -79,86 +79,86 @@ msgid "&Browse..."
 msgstr "&Просмотреть..."
 
 #: backgnd.cpp:864
-#, fuzzy
+#
 msgid "Desktop names"
-msgstr "Рабочий стол"
+msgstr "Названия рабочих столов"
 
 #: backgnd.cpp:910
-#, fuzzy
+#
 msgid "Two color backgrounds"
-msgstr "Выбранный фон"
+msgstr "Двухцветный фон"
 
 #: backgnd.cpp:947
 msgid "Blend colors from &top to bottom"
-msgstr ""
+msgstr "Изменять цвет с&верху вниз"
 
 #: backgnd.cpp:953
 msgid "Blend colors from &right to left"
-msgstr ""
+msgstr "Изменять цвет с&права налево"
 
 #: backgnd.cpp:959
 msgid "Use &pattern"
-msgstr ""
+msgstr "Использовать &шаблон"
 
 #: backgnd.cpp:986
 msgid "Preview"
-msgstr ""
+msgstr "Предпросмотр"
 
 #: backgnd.cpp:997
 msgid "Pattern &name"
-msgstr ""
+msgstr "&Имя шаблона"
 
 #: backgnd.cpp:1036
 msgid "Current"
-msgstr ""
+msgstr "Текущий"
 
 #
 #: backgnd.cpp:1096
-#, fuzzy
+#
 msgid "Filled"
-msgstr "Черепицей"
+msgstr "Закрашенный"
 
 #: backgnd.cpp:1099
 msgid "Fish net"
-msgstr ""
+msgstr "Рыбацкая сеть"
 
 #: backgnd.cpp:1102
 msgid "Triangles"
-msgstr ""
+msgstr "Треугольники"
 
 #: backgnd.cpp:1105
 msgid "Flowers"
-msgstr ""
+msgstr "Цветы"
 
 #: backgnd.cpp:1108
 msgid "Rattan"
-msgstr ""
+msgstr "Плетение"
 
 #: backgnd.cpp:1111
 msgid "Cobbled Pavement"
-msgstr ""
+msgstr "Мостовая"
 
 #: colorscm.cpp:119
 msgid "Color Scheme"
 msgstr "Цветовая схема"
 
 #: colorscm.cpp:130
-#, fuzzy
+#
 msgid "Current scheme"
-msgstr "Цветовая схема"
+msgstr "Текущая схема"
 
 #: colorscm.cpp:132
-#, fuzzy
+#
 msgid "KDE default"
 msgstr "KDE по умолчанию"
 
 #: colorscm.cpp:145
 msgid "&Add ..."
-msgstr ""
+msgstr "&Добавить..."
 
 #: colorscm.cpp:162
 msgid "&Save changes"
-msgstr ""
+msgstr "&Записать изменения..."
 
 #: colorscm.cpp:176
 msgid "Widget color"
@@ -166,29 +166,29 @@ msgstr "Цвет управляющего элемента"
 
 #: colorscm.cpp:183
 msgid "Inactive title bar"
-msgstr "Неактивный заголовок (фон)"
+msgstr "Неактивный заголовок"
 
 #: colorscm.cpp:184
 msgid "Inactive title text"
-msgstr "Неактивный заголовок"
+msgstr "Текст неактивного заголовка"
 
 #: colorscm.cpp:185
-#, fuzzy
+#
 msgid "Inactive title blend"
-msgstr "Неактивный заголовок (фон)"
+msgstr "Цвет перелива неактивного заголовка"
 
 #: colorscm.cpp:186
 msgid "Active title bar"
-msgstr "Активный заголовок (фон)"
+msgstr "Активный заголовок"
 
 #: colorscm.cpp:187
 msgid "Active title text"
-msgstr "Активный заголовок"
+msgstr "Текст активного заголовка"
 
 #: colorscm.cpp:188
-#, fuzzy
+#
 msgid "Active title blend"
-msgstr "Активный заголовок (фон)"
+msgstr "Цвет перелива активного заголовка"
 
 #: colorscm.cpp:189
 msgid "Background"
@@ -219,9 +219,9 @@ msgid "Contrast"
 msgstr "Котраст"
 
 #: colorscm.cpp:238
-#, fuzzy
+#
 msgid "&Low"
-msgstr "Низкий"
+msgstr "&Низкий"
 
 #: colorscm.cpp:246
 msgid "High"
@@ -229,7 +229,7 @@ msgstr "Высокий"
 
 #: colorscm.cpp:317
 msgid "Error removing"
-msgstr ""
+msgstr "Ошибка удаления"
 
 #: colorscm.cpp:318
 msgid ""
@@ -237,10 +237,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
+"Эта цветовая схема не может быть удалена.\n"
+"Возможно у вас нет прав на изменение системного\n"
+"файла, где хранятся цветовые схемы."
 
 #: colorscm.cpp:375
 msgid "Naming error"
-msgstr ""
+msgstr "Ошибка перименования"
 
 #: colorscm.cpp:376
 msgid ""
@@ -248,11 +251,14 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
+"Пожайлуста выберите уникальное имя для новой цветовой\n"
+"схемы. Которое вы ввели уже существует\n"
+"в списке цветовых схем."
 
 #: savescm.cpp:18
-#, fuzzy
+#
 msgid "Add a color scheme"
-msgstr "Цветовая схема"
+msgstr "Добавить цветовую схему"
 
 #: savescm.cpp:32
 msgid ""
@@ -262,6 +268,11 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
+"Введите имя цветовой схемы,\n"
+"которая будет добавлена в личный список.\n"
+"\n"
+"Цвета используемые в предпросмотре будут\n"
+"скопированы в эту схему."
 
 #: scrnsave.cpp:48
 msgid "Ignore"
@@ -269,11 +280,11 @@ msgstr "Игнорировать"
 
 #: scrnsave.cpp:49
 msgid "Save Screen"
-msgstr ""
+msgstr "Сохранять экран"
 
 #: scrnsave.cpp:50
 msgid "Lock Screen"
-msgstr ""
+msgstr "Закрывать экран"
 
 #: scrnsave.cpp:113 scrnsave.cpp:182
 msgid "Screen Saver"
@@ -281,19 +292,19 @@ msgstr "Хранитель экрана"
 
 #
 #: scrnsave.cpp:189 scrnsave.cpp:360 scrnsave.cpp:571 scrnsave.cpp:686
-#, fuzzy
+#
 msgid "No screensaver"
-msgstr "Хранитель экрана"
+msgstr "Нет хранителя экрана"
 
 #: scrnsave.cpp:210
-#, fuzzy
+#
 msgid "&Setup ..."
-msgstr "Настроить..."
+msgstr "&Настроить..."
 
 #: scrnsave.cpp:218
-#, fuzzy
+#
 msgid "&Test"
-msgstr "Тест"
+msgstr "&Тест"
 
 #: scrnsave.cpp:231
 msgid "Settings"
@@ -301,71 +312,71 @@ msgstr "Установки"
 
 #: scrnsave.cpp:251
 msgid "&Wait for"
-msgstr ""
+msgstr "&Ждать"
 
 #: scrnsave.cpp:261
-#, fuzzy
+#
 msgid "min."
-msgstr "min"
+msgstr "мин."
 
 #: scrnsave.cpp:267
-#, fuzzy
+#
 msgid "&Require password"
-msgstr "Требуется пароль"
+msgstr "&Требуется пароль"
 
 #: scrnsave.cpp:273
 msgid "Show &password as stars"
-msgstr ""
+msgstr "Показывать звездочки вместо пароля"
 
 #: scrnsave.cpp:281
-#, fuzzy
+#
 msgid "Priority"
-msgstr "Приоритет:"
+msgstr "Приоритет"
 
 #: scrnsave.cpp:294
-#, fuzzy
+#
 msgid "&High"
-msgstr "Высокий"
+msgstr "&Высокий"
 
 #: scrnsave.cpp:303
 msgid "Low"
 msgstr "Низкий"
 
 #: general.cpp:216
-#, fuzzy
+#
 msgid "Fonts etc."
-msgstr "Шрифты"
+msgstr "Шрифты и т.п."
 
 #: general.cpp:222
 msgid "&Draw widgets in the style of Windows 95"
-msgstr ""
+msgstr "Рисовать элементы в стиле &Windows 95"
 
 #: general.cpp:236
-#, fuzzy
+#
 msgid "Desktop fonts"
-msgstr "Рабочий стол"
+msgstr "Шрифты рабочего стола"
 
 #: general.cpp:248
 msgid "General font"
-msgstr "Главные шрифты"
+msgstr "Общий шрифт"
 
 #: general.cpp:253
 msgid "Fixed font"
-msgstr ""
+msgstr "Фиксированный шрифт"
 
 #: general.cpp:263
-#, fuzzy
+#
 msgid "Panel button font"
-msgstr "Главные шрифты"
+msgstr "Шрифт кнопок панели"
 
 #: general.cpp:268
 msgid "Panel clock font"
-msgstr ""
+msgstr "Шрифт часов панели"
 
 #: general.cpp:298
-#, fuzzy
+#
 msgid "Sample text"
-msgstr "Выбранный текст"
+msgstr "Текст примера"
 
 #: general.cpp:306
 msgid ""
@@ -373,26 +384,29 @@ msgid ""
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" ё $ % ^ & * ( )"
 msgstr ""
+"English test Русский тест\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" ё $ % ^ & * ( )"
 
 #: main.cpp:62
-#, fuzzy
+#
 msgid "&Fonts etc."
-msgstr "Шрифты"
+msgstr "&Шрифты и т.д."
 
 #
 #: main.cpp:65
 msgid "&Background"
-msgstr "Фон"
+msgstr "&Фон"
 
 #
 #: main.cpp:68
 msgid "&Screensaver"
-msgstr "Хранитель экрана"
+msgstr "&Хранитель экрана"
 
 #
 #: main.cpp:72
 msgid "&Colors"
-msgstr "Цвет"
+msgstr "&Цвета"
 
 #: main.cpp:78
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
@@ -413,29 +427,29 @@ msgid "Active window"
 msgstr "Активное окно"
 
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
-#, fuzzy
+#
 msgid "Selected text"
 msgstr "Выбранный текст"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
-msgstr ""
+msgstr "&Гарнитура"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
-msgstr ""
+msgstr "&Жирный"
 
 #: fontchooser.cpp:96
 msgid "&Italic"
-msgstr ""
+msgstr "&Наклонный"
 
 #: fontchooser.cpp:125
 msgid "&Size"
-msgstr ""
+msgstr "&Размер"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr ""
+msgstr "&Кодировка"
 
 #
 #

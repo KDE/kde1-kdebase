@@ -31,7 +31,7 @@ msgid "&Desktop"
 msgstr "Рабочий Стол"
 
 #: main.cpp:74
-#, fuzzy
+#
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 msgstr "использование: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
@@ -84,13 +84,13 @@ msgid "Titlebar appearance"
 msgstr "Вид заголовка"
 
 #: titlebar.cpp:928
-#, fuzzy
+#
 msgid "Shaded Vertically"
-msgstr "Вертикально"
+msgstr "Вертикальный переход"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
-msgstr ""
+msgstr "Горизонтальный переход"
 
 #: titlebar.cpp:934
 msgid "Plain"
@@ -118,13 +118,15 @@ msgstr "&Неактивная пиктограмма"
 
 #: titlebar.cpp:987
 msgid "Mouse action"
-msgstr ""
+msgstr "Действие мышью"
 
 #: titlebar.cpp:989
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
+"Двойной щелчок левой кнопкой мыши\n"
+"    на заголовке:"
 
 #
 #: titlebar.cpp:993
@@ -171,13 +173,13 @@ msgid "Window resize"
 msgstr "Изменить размер окна"
 
 #: windows.cpp:90
-#, fuzzy
+#
 msgid "Animation:"
-msgstr "Анимация заголовка"
+msgstr "Анимация:"
 
 #: windows.cpp:92
 msgid "Fast"
-msgstr ""
+msgstr "Быстро"
 
 #: windows.cpp:98
 msgid "Placement policy"
@@ -193,7 +195,7 @@ msgstr "Каскадом"
 
 #: windows.cpp:104
 msgid "Interactive"
-msgstr ""
+msgstr "Диалоговый"
 
 #: windows.cpp:106
 msgid "Random"
@@ -226,7 +228,7 @@ msgstr "Вид фокуса"
 
 #: windows.cpp:129
 msgid "Click to focus"
-msgstr "Щелчоком"
+msgstr "Щелчком"
 
 #: windows.cpp:131
 msgid "Focus follows mouse"
@@ -264,7 +266,7 @@ msgstr "Включить активные границы рабочего стола"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr ""
+msgstr "Перемещать курсор к центру после переключения"
 
 #: desktop.cpp:87
 msgid "Dekstop switch delay:"
@@ -279,12 +281,16 @@ msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Зона захвата по границе:\n"
+"       (пикселов)"
 
 #: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Зона захвата по окну:\n"
+"       (пикселов)"
 
 #
 #~ msgid "With animation"

@@ -58,12 +58,12 @@ msgstr "Максимизировать"
 #
 #: main.C:511
 msgid "&Sticky"
-msgstr "Прищемить"
+msgstr "Приколоть"
 
 #
 #: main.C:512
 msgid "&UnSticky"
-msgstr "Отщемить"
+msgstr "Отколоть"
 
 #
 #: main.C:513

@@ -61,9 +61,9 @@ msgstr "%10ld байт  = %8.2f Мб"
 
 #: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
 #: memory.cpp:101
-#, fuzzy
+#
 msgid "Not available"
-msgstr "не известно"
+msgstr "Не известно"
 
 #: processor.cpp:29
 msgid "This system is not yet supported :-("
