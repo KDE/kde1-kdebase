@@ -1,3 +1,4 @@
+#include <kmisc.h>
 #include "cgi.h"
 
 KProtocolCGI::KProtocolCGI()
