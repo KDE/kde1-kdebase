@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-12-01 23:59+0100\n"
+"PO-Revision-Date: 1998-12-21 23:58+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr "Llindar"
 
 #: mouse.cpp:72
 msgid "pixels"
-msgstr ""
+msgstr "píxels"
 
 #: mouse.cpp:81
 msgid "Button mapping"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmbell\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-12-01 23:55+0100\n"
+"PO-Revision-Date: 1998-12-21 23:41+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -43,11 +43,8 @@ msgstr "Durada"
 
 #: bell.cpp:72
 msgid "milliseconds"
-msgstr ""
+msgstr "milisegons"
 
 #: bell.cpp:87
 msgid "Test"
 msgstr "Prova"
-
-#~ msgid "ms"
-#~ msgstr "ms"

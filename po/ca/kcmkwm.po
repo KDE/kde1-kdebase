@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-12-19 01:20+0100\n"
-"PO-Revision-Date: 1998-12-15 22:31+0100\n"
+"PO-Revision-Date: 1998-12-22 00:28+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -261,9 +261,8 @@ msgid "Auto Raise"
 msgstr "Autoelevació"
 
 #: windows.cpp:209
-#, fuzzy
 msgid "Click Raise"
-msgstr "Eleva"
+msgstr "Clic eleva"
 
 #: windows.cpp:216
 msgid "Delay (ms)"
@@ -282,7 +281,6 @@ msgid "Move pointer towards center after switch"
 msgstr "Mou el punter cap al centre després de canviar"
 
 #: desktop.cpp:87
-#, fuzzy
 msgid "Desktop switch delay:"
 msgstr "Retard en canviar d'escriptori:"
 
@@ -440,7 +438,6 @@ msgid "Windows will:"
 msgstr "Les finestres:"
 
 #: advanced.cpp:104
-#, fuzzy
 msgid "have tiny decorations"
 msgstr "tindran decoracions minúscules"
 

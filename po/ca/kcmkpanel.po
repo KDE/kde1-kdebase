@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-12-20 03:02+0600\n"
-"PO-Revision-Date: 1998-12-15 22:29+0100\n"
+"PO-Revision-Date: 1998-12-22 00:22+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,6 @@ msgstr "&Escriptoris"
 msgid "Disk &Navigator"
 msgstr "&Navegador de disc"
 
-# main.cpp:79
 #: main.cpp:79
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "us: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
@@ -155,25 +154,20 @@ msgid "Others"
 msgstr "Altres"
 
 #: options.cpp:408
-#, fuzzy
 msgid "Personal Menu Entries &First"
-msgstr "Primer &Personal"
+msgstr "Primer entrades de menú &personal"
 
 #: options.cpp:416
-#, fuzzy
 msgid "Menu F&olders First"
-msgstr "Primer C&arpetes"
+msgstr "Primer c&arpetes de menú"
 
-# options.cpp:122
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
 msgstr "&Rellotge mostra l'hora en format AM/PM"
 
-# options.cpp:122
 #: options.cpp:432
-#, fuzzy
 msgid "Clock shows time in &Internet beats"
-msgstr "&Rellotge mostra l'hora en format AM/PM"
+msgstr "Rellotge mostra l'hora batecs &Internet"
 
 #: disknav.cpp:38
 msgid "History"
@@ -230,6 +224,3 @@ msgstr "Mostra la entrada d'opció"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Aplicació de terminal:"
-
-#~ msgid "Speed"
-#~ msgstr "Velocitat"

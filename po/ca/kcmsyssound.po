@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmsyssound\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-12-15 22:35+0100\n"
+"PO-Revision-Date: 1998-12-22 00:31+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -110,7 +110,6 @@ msgid "Window Trans New"
 msgstr "Apareix finestra temporal"
 
 #: syssound.cpp:170
-#, fuzzy
 msgid "Window Trans Delete"
 msgstr "Desapareix finestra temporal"
 
