@@ -22,6 +22,7 @@ Name[sk]=Správca znakovıch sád
 Name[sv]=Typsnittshanterare
 Name[zh_CN.GB2312]=×ÖÌå¹ÜÀíÆ÷
 Icon=kfontmanager.xpm
+MiniIcon=kfontmanager.xpm
 Exec=kfontmanager -caption "%c" %i %m
 DocPath=kfontmanager/index.html
 Comment=KDE's Fontmanager.

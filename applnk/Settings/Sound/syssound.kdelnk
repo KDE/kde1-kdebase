@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Exec=kcmsyssound
 Icon=kcmsyssound.xpm
+MiniIcon=kcmsyssound.xpm
 Type=Application
 DocPath=kcontrol/kcmsyssound/syssound-1.html
 Comment=System Sound Configuration

@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Exec=kcminfo devices
 Icon=kcmdevices.xpm
+MiniIcon=kcmdevices.xpm
 Type=Application
 DocPath=kcontrol/kcminfo/info-8.html
 Comment=Attached devices information

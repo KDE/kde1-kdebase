@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Exec=kcminfo pci
 Icon=kcmpci.xpm
+MiniIcon=kcmpci.xpm
 Type=Application
 DocPath=kcontrol/kcminfo/info-5.html
 Comment=PCI information

@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Exec=kcminfo sound
 Icon=kcmsound.xpm
+MiniIcon=kcmsound.xpm
 #### sound_settings.xpm
 Type=Application
 DocPath=kcontrol/kcminfo/info-6.html

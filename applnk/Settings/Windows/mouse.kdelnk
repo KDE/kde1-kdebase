@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Exec=kcmkwm mouse
 Icon=mouse.xpm
+MiniIcon=mouse.xpm
 Type=Application
 DocPath=kcontrol/kcmkwm/kwm-1.html
 Comment=Configure mouse bindings

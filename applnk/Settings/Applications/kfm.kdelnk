@@ -23,5 +23,6 @@ Comment[pt_BR]=VocЙ pode configurar aqui o funcionamento do gerenciador de arqui
 Comment[ru]=Вы можете сконфигурировать как будет выглядеть менеджер файлов
 Comment[sk]=MТ╬ete tu nastavi╩ vzh╣ad mana╬Иru sЗborov
 Icon=kfm.xpm
+MiniIcon=kfm.xpm
 Exec=kcmkfm font color misc
 

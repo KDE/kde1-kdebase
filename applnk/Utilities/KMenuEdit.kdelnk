@@ -22,6 +22,7 @@ Name[zh_CN.GB2312]=²Ëµ¥±à¼­Æ÷
 Type=Application
 Exec=kmenuedit -caption "%c" %i %m
 Icon=kmenuedit.xpm
+MiniIcon=kmenuedit.xpm
 TerminalOptions=
 Path=
 DocPath=kmenuedit/index.html

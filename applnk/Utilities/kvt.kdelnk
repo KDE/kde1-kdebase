@@ -3,6 +3,7 @@
 Type=Application
 Exec=kvt -caption "%c" %i %m 
 Icon=kvt.xpm
+MiniIcon=kvt.xpm
 DocPath=kvt/index.html
 Comment=Terminal Emulation (kvt)
 Comment[cs]=Emulátor terminálu (kvt)

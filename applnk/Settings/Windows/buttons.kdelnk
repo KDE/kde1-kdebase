@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Exec=kcmkwm buttons
 Icon=buttons.xpm
+MiniIcon=buttons.xpm
 Type=Application
 DocPath=kcontrol/kcmkwm/kwm-1.html
 Comment=Arrangement of window buttons

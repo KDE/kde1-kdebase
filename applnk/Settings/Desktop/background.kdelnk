@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Exec=kcmdisplay background
 Icon=background.xpm
+MiniIcon=background.xpm
 Type=Application
 DocPath=kcontrol/kdisplay/kdisplay-3.html
 Comment=Background settings

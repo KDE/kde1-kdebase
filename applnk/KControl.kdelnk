@@ -2,8 +2,8 @@
 [KDE Desktop Entry]
 Exec=kcontrol -caption "%c" %i %m
 Icon=kcontrol.xpm
-Type=Application
 MiniIcon=kcontrol.xpm
+Type=Application
 DocPath=kcontrol/index.html
 Comment=KDE Control Center
 Comment[ca]=Centre de Control KDE

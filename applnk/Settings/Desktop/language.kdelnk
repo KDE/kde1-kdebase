@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Exec=kcmlocale language
 Icon=locale.xpm
+MiniIcon=locale.xpm
 Type=Application
 DocPath=kcontrol/kcmlocale/locale-1.html
 Comment=Language settings

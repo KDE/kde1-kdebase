@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Exec=kcmkwm borders
 Icon=desktop_settings.xpm
+MiniIcon=desktop_settings.xpm
 Type=Application
 Comment=Desktop Border Options
 Comment[ca]=Opcions de les vores de l'escriptori

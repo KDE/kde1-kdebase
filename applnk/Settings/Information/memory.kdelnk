@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Exec=kcminfo memory
 Icon=kcmmemory.xpm
+MiniIcon=kcmmemory.xpm
 Type=Application
 DocPath=kcontrol/kcminfo/info-1.html
 Comment=Memory information

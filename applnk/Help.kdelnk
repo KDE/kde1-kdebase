@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Type=Application
 Icon=kdehelp.xpm
+MiniIcon=kdehelp.xpm
 Exec=kdehelp -caption "%c" %i %m %u 
 DocPath=kdehelp/index.html
 Comment=KDE Help is the KDE on-line help browser

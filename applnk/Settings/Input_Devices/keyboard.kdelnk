@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Exec=kcminput keyboard
 Icon=keyboard.xpm
+MiniIcon=keyboard.xpm
 Type=Application
 DocPath=kcontrol/kcminput/input-1.html
 Comment=Keyboard settings

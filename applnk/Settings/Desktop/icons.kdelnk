@@ -14,4 +14,5 @@ Comment[no]=Her kan du selv definere ikonene på skrivebordet
 Comment[pt_BR]=Você pode personalizar aqui os ícones do Ambiente
 # Needs another icon !
 Icon=kfm.xpm
+MiniIcon=kfm.xpm
 Exec=kcmkfm icons

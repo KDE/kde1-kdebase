@@ -2,8 +2,8 @@
 [KDE Desktop Entry]
 Type=Application
 Exec=konsole %i %mi -caption "%c"
-#MiniIcon=konsole-mini.xpm
-#Icon=konsole.xpm
+MiniIcon=konsole.xpm
+Icon=konsole.xpm
 DocPath=konsole/konsole.html
 Comment=Konsole
 Comment[no]=Konsoll

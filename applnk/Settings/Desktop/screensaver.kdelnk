@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Exec=kcmdisplay screensaver
 Icon=kscreensaver.xpm
+MiniIcon=kscreensaver.xpm
 Type=Application
 DocPath=kcontrol/kdisplay/kdisplay-4.html
 Comment=Screensaver settings

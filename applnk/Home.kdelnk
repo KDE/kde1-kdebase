@@ -3,6 +3,7 @@
 Type=Application
 Exec=kfmclient folder %u file:$HOME
 Icon=kfm_home.xpm
+MiniIcon=kfm_home.xpm
 TerminalOptions=
 Path=
 Terminal=0

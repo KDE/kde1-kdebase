@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Exec=kcmkonsole
 Icon=konsole.xpm
+MiniIcon=konsole.xpm
 Type=Application
 DocPath=kcontrol/kdmconfig/index.html
 Comment=All Konsole Settings
