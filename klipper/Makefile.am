@@ -25,8 +25,6 @@ klipper_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
 klipper_LDADD   =        $(LIB_KFM) $(LIB_KDEUI)
 
-DISTCLEANFILES = $()
-
 messages:
 	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(klipper_SOURCES) && mv messages.po ../po/klipper.pot
 
