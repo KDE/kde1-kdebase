@@ -82,7 +82,7 @@ apps:
 srchapps: 
 	./searchapps
 	
-install: srchapps
+install: 
 	$(mkinstalldirs) $(incdir)
 	@INSTALL_DATA@ config.h $(incdir)
 	@for subdir in $(SUBDIRS); do \
@@ -90,6 +90,7 @@ install: srchapps
 	(cd $$subdir && $(MAKE) install) \
 	|| case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \
 	done && test -z "$$fail"
+	$(MAKE) srchapps
 		@echo ""
 	@echo ""
 	@echo ""
