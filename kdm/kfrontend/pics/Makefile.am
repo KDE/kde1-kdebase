@@ -1,9 +1,7 @@
 
-PIXDIR	= $(kde_datadir)/kdm/pics
+picsdir = $(kde_datadir)/kdm/pics
+pics_DATA = kdelogo.xpm
 
-install-data-local:
-	$(mkinstalldirs) $(PIXDIR)
-	$(mkinstalldirs) $(PIXDIR)/users
-	$(INSTALL_DATA) kdelogo.xpm $(PIXDIR)
-	$(INSTALL_DATA) default.xpm root.xpm $(PIXDIR)/users
+usersdir = $(picsdir)/users
+users_DATA = default.xpm root.xpm
 
