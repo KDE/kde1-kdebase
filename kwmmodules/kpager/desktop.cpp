@@ -42,9 +42,13 @@ Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
     resizing=false;
     resizingWin=0;
     
-    QPainter *qp=new QPainter(this);
-    headerHeight=qp->fontMetrics().height()+5;
-    delete qp;
+    if (Desktop::showName)
+    {
+        QPainter *qp=new QPainter(this);
+        headerHeight=qp->fontMetrics().height()+5;
+        delete qp;
+    } else
+	headerHeight=0;
     tmpScreen=new QPixmap;
     
     backgroundPixmap=0L;

@@ -28,7 +28,7 @@
 #include <qpainter.h>
 #include <unistd.h>
 
-//#define KPAGERCLIENTDEBUG
+#define KPAGERCLIENTDEBUG
 
 
 KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const char *name)
@@ -295,6 +295,7 @@ void KPagerClient::desktopNumberChanged(int numdsks)
     }
     else
     {
+//	bool showname=Desktop::showName;
         for (int i=1;i<=numberofDesktops;i++)
             delete desktop[i];
         initDesktops();
