@@ -332,8 +332,8 @@ void KScreenSaver::resizeEvent( QResizeEvent * )
 
 KScreenSaver::~KScreenSaver()
 {
-    int pid = ssPreview->getPid();
-    if(ssPreview->isRunning()) {
+    if(ssPreview && ssPreview->isRunning()) {
+       int pid = ssPreview->getPid();  
        ssPreview->kill( );
        waitpid(pid, (int *) 0,0);
     }
