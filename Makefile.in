@@ -51,7 +51,7 @@ x_libraries = @x_libraries@
 all_includes = @all_includes@
 all_libraries = @all_libraries@
 
-SUBDIRS =  kacli kfm kdehelp kdisplay kedit kfind kghostview kmines kpanel kpat ktetris kvt kview kwm kwmclient kpaint kcalc khexdit @KSCREEN@ pics 
+SUBDIRS =  kacli kfm kdehelp kdisplay kedit kfind kghostview kmines kpanel kpat ktetris kvt kview kwm kwmclient kpaint kcalc khexdit kdvi @KSCREEN@ pics 
 
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 CONFIG_HEADER_IN = config.h.in
