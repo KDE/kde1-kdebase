@@ -83,7 +83,6 @@ void KFMDirTree::slotshowDirectory(const char *_url )
     KFMDirTreeItem *selectedSubTree = 0L;
 
     QString tmp (u.url());
-    KURL::decodeURL(tmp);
     if ( tmp.right(1) == "/" )
         tmp.truncate(tmp.length() - 1);
     loops=0;
@@ -576,7 +575,6 @@ KFMDirTreeItem::KFMDirTreeItem( KFMDirTree *_finder, const char *_url, bool _isf
 	tmp.truncate( tmp.length() - 1 );
     KURL u( tmp );
     url = u.url(); // returns a URL with file: and encoded
-    KURL::decodeURL(url); // but we want it decoded now ! :) David.
    
     QString home( QDir::homeDirPath() );
     if ( home.right(1) == "/" )
@@ -649,8 +647,10 @@ void KFMDirTreeItem::paintCell( QPainter *_painter, int _col )
 
 	_painter->setPen( dirTree->getTextColor() );
 
+	QString text = name;
+	decodeFileName(text); // for directories with endoded '/' in their name
 	_painter->drawText( x + 6 + PIXMAP_WIDTH + 6,
-	    ( CELL_HEIGHT - fm.ascent() - fm.descent() ) / 2 + fm.ascent(), name );
+	    ( CELL_HEIGHT - fm.ascent() - fm.descent() ) / 2 + fm.ascent(), text );
     }
 }
 
@@ -736,18 +736,21 @@ void KFMDirTreeItem::setOpen( bool _open )
     const char *s;
     for ( s = sort_list.first(); s != 0L; s = sort_list.next() )
     {
-	KURL u2( u, s );
-	    
-	stat( u2.path(), &buff );
+	QString fname ( u.path() );
+	fname += "/";
+	fname += s;
+	 
+	if (stat( fname, &buff )) { warning("Could not stat %s",fname.data()); }
 
 	// For symlinks, follow them to stat the real file or directory
-	if ( S_ISLNK( buff.st_mode ) ) { lstat( u2.path(), &buff ); }
+	if ( S_ISLNK( buff.st_mode ) ) { lstat( fname, &buff ); }
 
 	if ( S_ISDIR( buff.st_mode ) )
 	{
-	    KFMDirTreeItem *item = new KFMDirTreeItem( dirTree, u2.path(), FALSE );
-            item->setLevel( getLevel() + 1 );
-            finderNode->append( item );
+	    // create item, using encoded path
+	    KFMDirTreeItem *item = new KFMDirTreeItem( dirTree, fname, FALSE );
+	    item->setLevel( getLevel() + 1 );
+	    finderNode->append( item );
 	}
     }
     
