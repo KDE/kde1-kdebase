@@ -114,18 +114,15 @@ msgid ""
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
 "As seguintes aplicações não poderão ser restauradas na sua proxima sessão,\n"
-"apenas reinicializadas. Certifique-se de que não conteem dados importantes por 
-gravar"
+"apenas reinicializadas. Certifique-se de que não conteem dados importantes por gravar"
 
 #: logout.C:67
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"As seguintes aplicações não reconhecem o X11 e por isso não podem ser restauras
-\n"
-"na sua proxima sessão. Certifique-se de que não conteem dados importantes porgr
-avar."
+"As seguintes aplicações não reconhecem o X11 e por isso não podem ser restauras\n"
+"na sua proxima sessão. Certifique-se de que não conteem dados importantes porgravar."
 
 #: task.C:34
 msgid "Switch to"
@@ -145,7 +142,7 @@ msgid ""
 msgstr ""
 "wm: versão 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
 "     baseado na versão 0.2 -0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-"     baseado na versão 0.1 Copyright (c) 1996 Matthias Ettrich \n
+"     baseado na versão 0.1 Copyright (c) 1996 Matthias Ettrich \n"
 "     Em parte derivado do 9wm 1.1 Copyright (c) 1994 David Hogan\n"
 "     Nenhuma garantoa. Por favor veja os ficheiros README\n"
 

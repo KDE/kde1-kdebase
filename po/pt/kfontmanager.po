@@ -67,7 +67,7 @@ msgid ""
 "Can not create:\n"
 " ~/.kde/config/kdefonts\n"
 msgstr ""
-"Não foi possivel criar:\m"
+"Não foi possivel criar:\n"
 " ~/.kde/config/kdefonts\n"
 
 #: kfontmanager.cpp:288

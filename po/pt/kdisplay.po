@@ -8,7 +8,7 @@ msgid ""
 "Usage: %s -init|-setup\n"
 "\n"
 msgstr ""
-"Utilização: %s -init|-setup\m"
+"Utilização: %s -init|-setup\n"
 "\n"
 
 #: main.cpp:131

@@ -145,7 +145,7 @@ msgstr "Chama"
 
 #: flame.cpp:390
 msgid "Setup KFlame"
-msgstr ""Configurar KFlame
+msgstr "Configurar KFlame"
 
 #: flame.cpp:406
 msgid "Max Levels:"
@@ -376,8 +376,7 @@ msgstr ""
 "                     x = i  nenhuma acção (ignorar)\n"
 "                     x = s  proteger ecran\n"
 "                     x = l  trancar ecran\n"
-"                    ordem: topo-esquerdo, topo-direito, fundo-esquerdo, fundo-d
-ireito"\n
+"                    ordem: topo-esquerdo, topo-direito, fundo-esquerdo, fundo-direito\n"
 "  -delay num        Quantidade de tempo parado antes de começar a\n"
 "                     protecção do ecran  (default 10min)\n"
 "  -desc             Imprime a descrição para o stdout\n"

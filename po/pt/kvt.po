@@ -213,8 +213,7 @@ msgid ""
 "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
 msgstr ""
 "Argumentos permitidos são:\n"
-"-e <comando> <arg> ...\texecutar comando com agrs - precisa de ser o ultimo arg
-umento\n"
+"-e <comando> <arg> ...\texecutar comando com agrs - precisa de ser o ultimo argumento\n"
 "-display <nome>\tspecificar o nome do ecran (servidor)\n"
 "-vt_geometry <spec>\ta geometria de janela vt inicial\n"
 "-print-pipe <nome>\tespecificar cano para a impressora vt100\n"
@@ -235,10 +234,8 @@ umento\n"
 "-ls-\t\t\tiniciar a shell do kvt como uma shell normal (default)\n"
 "-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
 "-sl <number>\t\tgravar numero de linhas no buffer de scroll-back\n"
-"-pageup <keysym>\tutilizar a combinação de teclas alt-keysym para recuar no buf
-fer\n"
-"-pagedown <keysym>\tutilizar a combinação de teclas alt-keysym para avançar no 
-buffer\n"
+"-pageup <keysym>\tutilizar a combinação de teclas alt-keysym para recuar no buffer\n"
+"-pagedown <keysym>\tutilizar a combinação de teclas alt-keysym para avançar no buffer\n"
 #: main.C:954
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
