@@ -106,7 +106,7 @@ QString fontString( QFont rFont, FontStyle style )
 	return aValue;
 }
 
-main( int argc, char ** argv )
+int main( int argc, char ** argv )
 {
 	KApplication a( argc, argv );
 	
@@ -284,7 +284,7 @@ main( int argc, char ** argv )
 	::time( &timestamp );
 
 	QString tmpFile;
-	tmpFile.sprintf("/tmp/krdb.%d", timestamp);
+	tmpFile.sprintf("/tmp/krdb.%ld", timestamp);
 	
 	QFile tmp( tmpFile );
 	if ( tmp.open( IO_WriteOnly ) ) {
