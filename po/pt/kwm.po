@@ -1,19 +1,3 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
-msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-10-09 22:06-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
-
 #: main.C:64
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
@@ -24,91 +8,104 @@ msgstr "kwm: ao que parece já está a correr. kwm não arrancou\n"
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: ocorreu uma falha durante a initialização; a desistir\n"
 
-#: main.C:363
+#: main.C:369
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:367
+#: main.C:376
 msgid "Usage: "
 msgstr "Utilização"
 
-#: main.C:378
-msgid "Maximize"
+#: main.C:387
+#, fuzzy
+msgid "&Maximize"
 msgstr "Maximizar"
 
-#: main.C:379
-msgid "Restore"
+#: main.C:388
+#, fuzzy
+msgid "&Restore"
 msgstr "Restaurar"
 
-#: main.C:380
-msgid "Iconify"
-msgstr "Iconificar"
+#: main.C:389
+msgid "&Iconify"
+msgstr "&Iconificar"
 
-#: main.C:381
-msgid "DeIconify"
+#: main.C:390
+#, fuzzy
+msgid "&DeIconify"
 msgstr "DesIconificar"
 
-#: main.C:382
-msgid "Sticky"
+#: main.C:391
+#, fuzzy
+msgid "&Sticky"
 msgstr "Pregar"
 
-#: main.C:383
-msgid "UnSticky"
+#: main.C:392
+#, fuzzy
+msgid "&UnSticky"
 msgstr "DesPregar"
 
-#: main.C:384
-msgid "Move"
+#: main.C:393
+#, fuzzy
+msgid "Mo&ve"
 msgstr "Mover"
 
-#: main.C:385
-msgid "Resize"
+#: main.C:394
+#, fuzzy
+msgid "Resi&ze"
 msgstr "Alterar Tamanho"
 
-#: main.C:387
-msgid "To desktop"
+#: main.C:395
+msgid "&Close"
+msgstr "&Fechar"
+
+#: main.C:396
+#, fuzzy
+msgid "&To desktop"
 msgstr "Para o desktop"
 
-#: main.C:389
-msgid "Onto current desktop"
+#: main.C:398
+#, fuzzy
+msgid "&Onto current desktop"
 msgstr "Para o desktop corrente"
 
-#: main.C:437
+#: main.C:446
 msgid "One"
 msgstr "Um"
 
-#: main.C:440
+#: main.C:449
 msgid "Two"
 msgstr "Dois"
 
-#: main.C:443
+#: main.C:452
 msgid "Three"
 msgstr "Tres"
 
-#: main.C:446
+#: main.C:455
 msgid "Four"
 msgstr "Quatro"
 
-#: main.C:449
+#: main.C:458
 msgid "Five"
 msgstr "Cinco"
 
-#: main.C:452
+#: main.C:461
 msgid "Six"
 msgstr "Seis"
 
-#: main.C:455
+#: main.C:464
 msgid "Seven"
 msgstr "Sete"
 
-#: main.C:458
+#: main.C:467
 msgid "Eight"
 msgstr "Oito"
 
-#: main.C:841
+#: main.C:852
 msgid "*** No Tasks ***"
 msgstr "*** Nenhuma Tarefa ***"
 
-#: minicli.C:66
+#: minicli.C:56
 msgid "Command:"
 msgstr "Comando:"
 
@@ -154,6 +151,25 @@ msgstr "Mudar para"
 #: task.C:49
 msgid "Current session"
 msgstr "Sessão actual"
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+#~ msgid ""
+#~ msgstr ""
+#~ "Project-Id-Version: PACKAGE VERSION\n"
+#~ "POT-Creation-Date: 1997-10-09 22:06-0500\n"
+#~ "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+#~ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+#~ "Language-Team: LANGUAGE <LL@li.org>\n"
+#~ "MIME-Version: 1.0\n"
+#~ "Content-Type: text/plain; charset=CHARSET\n"
+#~ "Content-Transfer-Encoding: ENCODING\n"
+
+#~ msgid "Iconify"
+#~ msgstr "Iconificar"
 
 #~ msgid ""
 #~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
@@ -201,9 +217,6 @@ msgstr "Sessão actual"
 #~ msgid "(Un) Ma&ximize"
 #~ msgstr "(Des) Ma&ximizar"
 
-#~ msgid "&Iconify"
-#~ msgstr "&Iconificar"
-
 #~ msgid "&Move"
 #~ msgstr "&Mover"
 
@@ -215,9 +228,6 @@ msgstr "Sessão actual"
 
 #~ msgid "&To Desktop"
 #~ msgstr "&Para o Desktop"
-
-#~ msgid "&Close"
-#~ msgstr "&Fechar"
 
 #~ msgid "&Destroy"
 #~ msgstr "&Destruir"

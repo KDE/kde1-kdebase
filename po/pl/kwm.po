@@ -1,10 +1,3 @@
-# Polish translation of KDE kwm
-# Version 0.2.0
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
-
-msgid "Close"
-msgstr "Zam&knij"
-
 #: main.C:64
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
@@ -17,91 +10,109 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: b³±d podczas inicjacji; przerwanie\n"
 
-#: main.C:363
+#: main.C:369
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:367
+#: main.C:376
 msgid "Usage: "
 msgstr "U¿ycie: "
 
-#: main.C:378
-msgid "Maximize"
+#: main.C:387
+#, fuzzy
+msgid "&Maximize"
 msgstr "&Maksymalizuj"
 
-#: main.C:379
-msgid "Restore"
+#: main.C:388
+#, fuzzy
+msgid "&Restore"
 msgstr "Przy&wróæ"
-
-#: main.C:380
-msgid "Iconify"
-msgstr "Mi&nimalizuj"
-
-#: main.C:381
-msgid "DeIconify"
-msgstr "Przy&wróæ"
-
-#: main.C:382
-msgid "Sticky"
-msgstr "Przyk&lej"
-
-#: main.C:383
-msgid "UnSticky"
-msgstr "Odk&lej"
-
-#: main.C:384
-msgid "Move"
-msgstr "Prz&enie¶"
-
-#: main.C:385
-msgid "Resize"
-msgstr "&Rozmiar"
-
-#: main.C:387
-msgid "To desktop"
-msgstr "Wy¶lij na &desktop"
 
 #: main.C:389
-msgid "Onto current desktop"
+#, fuzzy
+msgid "&Iconify"
+msgstr "Mi&nimalizuj"
+
+#: main.C:390
+#, fuzzy
+msgid "&DeIconify"
+msgstr "Przy&wróæ"
+
+#: main.C:391
+#, fuzzy
+msgid "&Sticky"
+msgstr "Przyk&lej"
+
+#: main.C:392
+#, fuzzy
+msgid "&UnSticky"
+msgstr "Odk&lej"
+
+#: main.C:393
+#, fuzzy
+msgid "Mo&ve"
+msgstr "Prz&enie¶"
+
+#: main.C:394
+#, fuzzy
+msgid "Resi&ze"
+msgstr "&Rozmiar"
+
+# Polish translation of KDE kwm
+# Version 0.2.0
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+#: main.C:395
+#, fuzzy
+msgid "&Close"
+msgstr "Zam&knij"
+
+#: main.C:396
+#, fuzzy
+msgid "&To desktop"
+msgstr "Wy¶lij na &desktop"
+
+#: main.C:398
+#, fuzzy
+msgid "&Onto current desktop"
 msgstr "Wy¶lij na ten &desktop"
 
-#: main.C:437
+#: main.C:446
 msgid "One"
 msgstr "Jeden"
 
-#: main.C:440
+#: main.C:449
 msgid "Two"
 msgstr "Dwa"
 
-#: main.C:443
+#: main.C:452
 msgid "Three"
 msgstr "Trzy"
 
-#: main.C:446
+#: main.C:455
 msgid "Four"
 msgstr "Cztery"
 
-#: main.C:449
+#: main.C:458
 msgid "Five"
 msgstr "Piêæ"
 
-#: main.C:452
+#: main.C:461
 msgid "Six"
 msgstr "Sze¶æ"
 
-#: main.C:455
+#: main.C:464
 msgid "Seven"
 msgstr "Siedem"
 
-#: main.C:458
+#: main.C:467
 msgid "Eight"
 msgstr "Osiem"
 
-#: main.C:841
+#: main.C:852
 msgid "*** No Tasks ***"
 msgstr "*** Brak zadañ ***"
 
-#: minicli.C:66
+#: minicli.C:56
 msgid "Command:"
 msgstr "Polecenie:"
 
@@ -135,7 +146,8 @@ msgid ""
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
 "Nastêpuj±ce aplikacje nie s± aplikacjami X11 i nie bêd± przywrócone przy\n"
-"nastêpnej sesji, a jedynie ponownie uruchomione. Upewnij siê, ¿e zachowa³e¶ wszystkie dane."
+"nastêpnej sesji, a jedynie ponownie uruchomione. Upewnij siê, ¿e zachowa³e¶ "
+"wszystkie dane."
 
 #: task.C:35
 msgid "Switch to"
@@ -144,4 +156,3 @@ msgstr "&Prze³±cz na"
 #: task.C:49
 msgid "Current session"
 msgstr "Bierz±ca sesja"
-

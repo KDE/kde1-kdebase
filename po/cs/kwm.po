@@ -1,18 +1,3 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-10-09 22:06-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
-
 #: main.C:64
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
@@ -25,91 +10,105 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: selhání bìhem inicializace; ukonèuji\n"
 
-#: main.C:363
+#: main.C:369
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:367
+#: main.C:376
 msgid "Usage: "
 msgstr "Pou¾ití:"
 
-#: main.C:378
-msgid "Maximize"
+#: main.C:387
+#, fuzzy
+msgid "&Maximize"
 msgstr "Maximalizovat"
 
-#: main.C:379
-msgid "Restore"
+#: main.C:388
+#, fuzzy
+msgid "&Restore"
 msgstr "Obnovit"
 
-#: main.C:380
-msgid "Iconify"
+#: main.C:389
+#, fuzzy
+msgid "&Iconify"
 msgstr "Ikonifikovat"
 
-#: main.C:381
-msgid "DeIconify"
+#: main.C:390
+#, fuzzy
+msgid "&DeIconify"
 msgstr "Odikonifikovat"
 
-#: main.C:382
-msgid "Sticky"
+#: main.C:391
+#, fuzzy
+msgid "&Sticky"
 msgstr "Pøilepit"
 
-#: main.C:383
-msgid "UnSticky"
+#: main.C:392
+#, fuzzy
+msgid "&UnSticky"
 msgstr "Odlepit"
 
-#: main.C:384
-msgid "Move"
+#: main.C:393
+#, fuzzy
+msgid "Mo&ve"
 msgstr "Pøesunout"
 
-#: main.C:385
-msgid "Resize"
+#: main.C:394
+#, fuzzy
+msgid "Resi&ze"
 msgstr "Zmìnit velikost"
 
-#: main.C:387
-msgid "To desktop"
+#: main.C:395
+msgid "&Close"
+msgstr ""
+
+#: main.C:396
+#, fuzzy
+msgid "&To desktop"
 msgstr "Na pracovní plochu"
 
-#: main.C:389
-msgid "Onto current desktop"
+#: main.C:398
+#, fuzzy
+msgid "&Onto current desktop"
 msgstr "Na souèasnou pracovní plochu"
 
-#: main.C:437
+#: main.C:446
 msgid "One"
 msgstr "První"
 
-#: main.C:440
+#: main.C:449
 msgid "Two"
 msgstr "Druhá"
 
-#: main.C:443
+#: main.C:452
 msgid "Three"
 msgstr "Tøetí"
 
-#: main.C:446
+#: main.C:455
 msgid "Four"
 msgstr "Ètvrtá"
 
-#: main.C:449
+#: main.C:458
 msgid "Five"
 msgstr "Pátá"
 
-#: main.C:452
+#: main.C:461
 msgid "Six"
 msgstr "©está"
 
-#: main.C:455
+#: main.C:464
 msgid "Seven"
 msgstr "Sedmá"
 
-#: main.C:458
+#: main.C:467
 msgid "Eight"
 msgstr "Osmá"
 
-#: main.C:841
+#: main.C:852
 msgid "*** No Tasks ***"
 msgstr "*** ®ádné úlohy ***"
 
-#: minicli.C:66
+#: minicli.C:56
 msgid "Command:"
 msgstr "Pøíkaz:"
 
@@ -152,3 +151,18 @@ msgstr "Pøepni do"
 #: task.C:49
 msgid "Current session"
 msgstr "Souèasné sezení"
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#~ msgid ""
+#~ msgstr ""
+#~ "Project-Id-Version: PACKAGE VERSION\n"
+#~ "POT-Creation-Date: 1997-10-09 22:06-0500\n"
+#~ "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+#~ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+#~ "Language-Team: LANGUAGE <LL@li.org>\n"
+#~ "MIME-Version: 1.0\n"
+#~ "Content-Type: text/plain; charset=CHARSET\n"
+#~ "Content-Transfer-Encoding: ENCODING\n"

@@ -1,19 +1,3 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
-msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-10-09 22:06-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
-
 #: main.C:64
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
@@ -25,92 +9,97 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: Probleme beim Initialisieren; gebe auf \n"
 
-#: main.C:363
+#: main.C:369
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:367
+#: main.C:376
 msgid "Usage: "
 msgstr "Verwendung: "
 
-#: main.C:378
-msgid "Maximize"
-msgstr "Maximieren"
-
-#: main.C:379
-msgid "Restore"
-msgstr "Wiederherstellen"
-
-#: main.C:380
-msgid "Iconify"
-msgstr "Minimieren"
-
-#: main.C:381
-msgid "DeIconify"
-msgstr "Wiederherstellen"
-
-#: main.C:382
-msgid "Sticky"
-msgstr "Anheften an"
-
-#: main.C:383
-#, fuzzy
-msgid "UnSticky"
-msgstr "Anheften aus"
-
-#: main.C:384
-msgid "Move"
-msgstr "Verschieben"
-
-#: main.C:385
-msgid "Resize"
-msgstr "Größe ändern"
-
 #: main.C:387
-msgid "To desktop"
-msgstr "Auf Arbeitsplatz"
+msgid "&Maximize"
+msgstr "&Maximieren"
+
+#: main.C:388
+msgid "&Restore"
+msgstr "&Wiederherstellen"
 
 #: main.C:389
-msgid "Onto current desktop"
+msgid "&Iconify"
+msgstr "Mi&nimieren"
+
+#: main.C:390
+msgid "&DeIconify"
+msgstr "Wieder&herstellen"
+
+#: main.C:391
+msgid "&Sticky"
+msgstr "&Anheften an"
+
+#: main.C:392
+msgid "&UnSticky"
+msgstr "Anhe&ften aus"
+
+#: main.C:393
+msgid "Mo&ve"
+msgstr "&Verschieben"
+
+#: main.C:394
+#, fuzzy
+msgid "Resi&ze"
+msgstr "G&röße ändern"
+
+#: main.C:395
+msgid "&Close"
+msgstr "&Schließen"
+
+#: main.C:396
+#, fuzzy
+msgid "&To desktop"
+msgstr "A&uf Arbeitsplatz"
+
+#: main.C:398
+msgid "&Onto current desktop"
 msgstr ""
 
-#: main.C:437
+#: main.C:446
 msgid "One"
 msgstr "Eins"
 
-#: main.C:440
+#: main.C:449
 msgid "Two"
 msgstr "Zwei"
 
-#: main.C:443
+#: main.C:452
 msgid "Three"
 msgstr "Drei"
 
-#: main.C:446
+#: main.C:455
 msgid "Four"
 msgstr "Vier"
 
-#: main.C:449
+#: main.C:458
 msgid "Five"
 msgstr "Fünf"
 
-#: main.C:452
+#: main.C:461
 msgid "Six"
 msgstr "Sechs"
 
-#: main.C:455
+#: main.C:464
 msgid "Seven"
 msgstr "Sieben"
 
-#: main.C:458
+#: main.C:467
 msgid "Eight"
 msgstr "Acht"
 
-#: main.C:841
+#: main.C:852
 msgid "*** No Tasks ***"
 msgstr "*** Keine Programme ***"
 
-#: minicli.C:66
+#: minicli.C:56
 msgid "Command:"
 msgstr "Ausführen"
 
@@ -155,72 +144,4 @@ msgstr "Wechseln zu"
 msgid "Current session"
 msgstr "Aktuelle Sitzung"
 
-#~ msgid ""
-#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     No warranty. Please see the README's\n"
-#~ msgstr ""
-#~ "Version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     basierend auf 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     basierend auf 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Teile von 9wm 1.1 Copyright (c) 1994 David Hogan übernommen.\n"
-#~ "     Jegliche Gewährleistung ausgeschlossen\n"
 
-#~ msgid "patch level %d"
-#~ msgstr "Unterversion %d"
-
-#~ msgid "usage: kwm [-version] [-exec prog] \n"
-#~ msgstr "Gebrauch: kwm [-version] [-exec prog]\n"
-
-#~ msgid "Desktop"
-#~ msgstr "Arbeitsplatz"
-
-#~ msgid "kwm: exiting on signal\n"
-#~ msgstr "kwm: Abbruch durch Signal\n"
-
-#~ msgid "&Help on desktop"
-#~ msgstr "&Hilfe zum Desktop"
-
-#~ msgid "&Execute command"
-#~ msgstr "Befehl &ausführen"
-
-#~ msgid "&Display properties"
-#~ msgstr "&Bildschirmeigenschaften"
-
-#~ msgid "&Refresh desktop"
-#~ msgstr "Bildschirm &neu aufbauen"
-
-#~ msgid "&Arrange icons"
-#~ msgstr "&Icons neu anordnen"
-
-#~ msgid "&Lock screen"
-#~ msgstr "Bildschirm &sperren"
-
-#~ msgid "Lo&gout"
-#~ msgstr "KDE be&enden"
-
-#~ msgid "(Un) Ma&ximize"
-#~ msgstr "Ma&ximieren/Minimieren"
-
-#~ msgid "&Iconify"
-#~ msgstr "Mi&nimieren"
-
-#~ msgid "&Move"
-#~ msgstr "&Verschieben"
-
-#~ msgid "&Resize"
-#~ msgstr "&Größe ändern"
-
-#~ msgid "(Un) &Sticky"
-#~ msgstr "An&heften an/aus"
-
-#~ msgid "&To Desktop"
-#~ msgstr "Auf &Arbeitsplatz"
-
-#~ msgid "&Close"
-#~ msgstr "&Schließen"
-
-#~ msgid "&Destroy"
-#~ msgstr "&Vernichten"
