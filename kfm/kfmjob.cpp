@@ -264,7 +264,8 @@ void KFMJob::slotFinished( int )
     } 
 
     disconnect( job, 0, this, 0 );
-    job->setAutoDelete( TRUE );
+    if (job)
+      job->setAutoDelete( TRUE );
     job = 0L;
 
     emit finished();
