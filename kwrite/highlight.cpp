@@ -1,21 +1,35 @@
 #include <string.h>
 
+//#include <qcombo.h>
+#include <qgrpbox.h>
+#include <qtstream.h>
+#include <qregexp.h>
+
 #include <kapp.h>
 #include <kfontdialog.h>
+#include <kcharsets.h>
+
+#include <X11/Xlib.h>
 
 #include "highlight.h"
+#include "kwdoc.h"
+#include "kmimemagic.h"
 
 char *cTypes[] = {
   "char","double","float","int","long","short","signed","unsigned","void",0L};
+
 char *cKeywords[] = {
   "break","case","continue","default","do","else","enum","extern","for",
   "goto","if","interrupt","register","return","static","struct","switch",
   "typedef","union","volatile","while",0L};
+
 char *cppTypes[] = {
   "bool",0L};
+
 char *cppKeywords[] = {
   "class","const","delete","friend","inline","new","operator","private",
   "protected","public","this","virtual",0L};
+
 char *bashKeywords[] = {
   "break","case","done","do","elif","else","esac","exit","export","fi","for",
   "function","if","in","return","select","then","until","while",".",0L};
@@ -25,6 +39,15 @@ char *modulaKeywords[] = {
   "IF","IMPLEMENTATION","IMPORT","MODULE","MOD","PROCEDURE","RECORD","REPEAT",
   "RETURN","THEN","TYPE","VAR","WHILE","WITH","|",0L};
 
+char *adaKeywords[] = {
+  "abort","accept","access","array","at","begin","body","constant","declare",
+  "delay","do","else","entry","end","exception","except","export","for",
+  "from","function","generic","if","in","is","limited","loop","mod","new",
+  "of","or","others","out","package","private","procedure","process",
+  "provided","raise","range","record","repeat","return","select","subtype",
+  "task","terminate","then","to","type","use","when","while","with",0L};
+
+char fontSizes[] = {4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,24,26,28,32,48,64,0};
 
 bool testWw(char c) {
   static char data[] = {0,0,0,0,0,64,255,3,254,255,255,135,254,255,255,7};
@@ -276,10 +299,10 @@ const char *checkCStringChar(const char *str) {
       do {
         s++;
         n *= 16;
-        if (*s >= '0' && *s <= '9') n += *s - '0'; else
-        if (*s >= 'A' && *s <= 'F') n += *s - 'A' + 10; else
-        if (*s >= 'a' && *s <= 'f') n += *s - 'a' + 10; else
-        break;
+        if (*s >= '0' && *s <= '9') n += *s - '0';
+        else if (*s >= 'A' && *s <= 'F') n += *s - 'A' + 10;
+        else if (*s >= 'a' && *s <= 'f') n += *s - 'a' + 10;
+        else break;
         if (n >= 256) return 0L;
       } while (true);
       if (s - str == 2) return 0L;
@@ -290,7 +313,7 @@ const char *checkCStringChar(const char *str) {
         s++;
         n *= 8;
         if (*s >= '0' && *s <= '7') n += *s - '0'; else break;
-        if (n >= 256) return 0L;
+        if (n >= 256) return s;
       } while (s - str < 4);
     }
     return s;
@@ -401,6 +424,250 @@ const char *HlMHex::checkHgl(const char *s) {
   return 0L;
 }
 
+HlAOct::HlAOct(int attribute, int context)
+  : HlItemWw(attribute,context) {
+}
+
+const char *HlAOct::checkHgl(const char *s) {
+
+  if (s[0] == '8' && s[1] == '#') {
+    s += 2;
+    while (*s >= '0' && *s <= '7') s++;
+    if (*s == '#') return s + 1;
+  }
+  return 0L;
+}
+
+
+//--------
+ItemStyle::ItemStyle() : selCol(white), bold(false), italic(false) {
+}
+/*
+ItemStyle::ItemStyle(const ItemStyle &i)
+  : col(i.col), selCol(i.selCol), bold(i.bold), italic(i.italic) {
+}
+*/
+ItemStyle::ItemStyle(const QColor &col, const QColor &selCol,
+  bool bold, bool italic)
+  : col(col), selCol(selCol), bold(bold), italic(italic) {
+}
+/*
+void ItemStyle::setData(const ItemStyle &i) {
+  col = i.col;
+  selCol = i.selCol;
+  bold = i.bold;
+  italic = i.italic;
+}
+
+DefItemStyle::DefItemStyle(const char *name, const QColor &col, const QColor &selCol,
+  bool bold, bool italic)
+  : name(name), ItemStyle(col,selCol,bold,italic) {
+}
+*/
+ItemFont::ItemFont() : family("courier"), size(12), charset("") {
+}
+/*
+ItemFont::ItemFont(const ItemFont &f)
+  : family(f.family), size(f.size), charset(f.charset) {
+  family.detach();
+  charset.detach();
+}
+
+ItemFont::ItemFont(const char *family, int size, const char *charset)
+  : family(family), size(size), charset(charset) {
+}
+
+void ItemFont::setData(const ItemFont &f) {
+  family = f.family;
+  size = f.size;
+  charset = f.charset;
+}
+  */
+ItemData::ItemData(const char *name, int defStyleNum)
+  : name(name), defStyleNum(defStyleNum), defStyle(true), defFont(true) {
+}
+
+ItemData::ItemData(const char *name, int defStyleNum,
+  const QColor &col, const QColor &selCol, bool bold, bool italic)
+  : name(name), defStyleNum(defStyleNum), ItemStyle(col,selCol,bold,italic),
+  defStyle(false), defFont(true) {
+}
+
+HlData::HlData(const char *wildcards, const char *mimetypes)
+  : wildcards(wildcards), mimetypes(mimetypes) {
+
+  itemDataList.setAutoDelete(true);
+}
+
+Highlight::Highlight(const char *name) : iName(name), refCount(0) {
+}
+
+Highlight::~Highlight() {
+}
+
+KConfig *Highlight::getKConfig() {
+  KConfig *config;
+
+  config = kapp->getConfig();
+  config->setGroup((QString) iName + " Highlight");
+  return config;
+}
+
+void Highlight::getWildcards(QString &w) {
+  KConfig *config;
+
+  config = getKConfig();
+
+//  iWildcards
+  w = config->readEntry("Wildcards",dw);
+//  iMimetypes = config->readEntry("Mimetypes");
+}
+
+
+
+void Highlight::getMimetypes(QString &w) {
+  KConfig *config;
+
+  config = getKConfig();
+
+  w = config->readEntry("Mimetypes",dm);
+}
+
+
+HlData *Highlight::getData() {
+  KConfig *config;
+  HlData *hlData;
+
+  config = getKConfig();
+
+//  iWildcards = config->readEntry("Wildcards");
+//  iMimetypes = config->readEntry("Mimetypes");
+//  hlData = new HlData(iWildcards,iMimetypes);
+  hlData = new HlData(
+    config->readEntry("Wildcards",dw),config->readEntry("Mimetypes",dm));
+  getItemDataList(hlData->itemDataList,config);
+  return hlData;
+}
+
+void Highlight::setData(HlData *hlData) {
+  KConfig *config;
+
+  config = getKConfig();
+
+//  iWildcards = hlData->wildcards;
+//  iMimetypes = hlData->mimetypes;
+
+  config->writeEntry("Wildcards",hlData->wildcards);
+  config->writeEntry("Mimetypes",hlData->mimetypes);
+
+  setItemDataList(hlData->itemDataList,config);
+}
+
+void Highlight::getItemDataList(ItemDataList &list) {
+  KConfig *config;
+
+  config = getKConfig();
+  getItemDataList(list,config);
+}
+
+void Highlight::getItemDataList(ItemDataList &list, KConfig *config) {
+  ItemData *p;
+  QString s;
+  QRgb col, selCol;
+  char family[96];
+  char charset[48];
+
+  list.clear();
+  list.setAutoDelete(true);
+  createItemData(list);
+
+  for (p = list.first(); p != 0L; p = list.next()) {
+    s = config->readEntry(p->name);
+    if (!s.isEmpty()) {
+      sscanf(s,"%d,%X,%X,%d,%d,%d,%95[^,],%d,%47[^,]",
+        &p->defStyle,&col,&selCol,&p->bold,&p->italic,
+        &p->defFont,family,&p->size,charset);
+      p->col.setRgb(col);
+      p->selCol.setRgb(selCol);
+      p->family = family;
+      p->charset = charset;
+    }
+  }
+}
+
+void Highlight::setItemDataList(ItemDataList &list, KConfig *config) {
+  ItemData *p;
+  char s[200];
+
+  for (p = list.first(); p != 0L; p = list.next()) {
+    sprintf(s,"%d,%X,%X,%d,%d,%d,%1.95s,%d,%1.47s",
+      p->defStyle,p->col.rgb(),p->selCol.rgb(),p->bold,p->italic,
+      p->defFont,p->family.data(),p->size,p->charset.data());
+    config->writeEntry(p->name,s);
+  }
+}
+
+const char *Highlight::name() {
+  return iName;
+}
+
+void Highlight::use() {
+  if (refCount == 0) init();
+  refCount++;
+}
+
+void Highlight::release() {
+  refCount--;
+  if (refCount == 0) done();
+}
+
+/*
+void Highlight::init() {
+  makeDefAttribs();
+  makeContextList();
+  readConfig();
+}
+
+Attribute **Highlight::attrList() {
+  return attribs;
+}
+
+void Highlight::getItemList(QStrList &list) {
+  int z;
+  Attribute *a;
+
+  for (z = 0; z < nAttribs; z++) {
+    a = attribs[z];
+    if (a) {
+      list.append(i18n(a->name));
+    }
+  }
+}
+*/
+bool Highlight::isInWord(char ch) {
+  static char data[] = {0,0,0,0,0,0,255,3,254,255,255,135,254,255,255,7};
+  if (ch & 128) return true;
+  return data[ch >> 3] & (1 << (ch & 7));
+}
+
+void Highlight::doHighlight(int, TextLine *textLine) {
+
+  textLine->setAttribs(0,0,textLine->length());
+  textLine->setAttr(0);
+}
+
+void Highlight::createItemData(ItemDataList &list) {
+
+  list.append(new ItemData("Normal Text",0));
+}
+
+
+void Highlight::init() {
+}
+
+void Highlight::done() {
+}
+
 
 HlContext::HlContext(int attribute, int lineEndContext)
   : attr(attribute), ctx(lineEndContext) {
@@ -408,58 +675,11 @@ HlContext::HlContext(int attribute, int lineEndContext)
 }
 
 
-QList<Attribute> Highlight::attList;
-QList<HlContext> Highlight::ctxList;
-
-
-Highlight::Highlight(const char *hName) : name(hName) {
-  int z;
-
-  for (z = 0; z < nAttribs; z++) {
-    contextList[z] = 0;
-  }
-}
-
-Highlight::~Highlight() {
-  int z;
-
-  for (z = 0; z < nAttribs; z++) {
-    delete contextList[z];
-  }
-}
-
-Attribute **Highlight::attrList()
-{
-printf("attrList()\n");
-  uint i;
-
-  for (i=0; i<nAttribs; i++)
-    attribs[i] = 0;
-  for (i=0; i<attList.count(); i++)
-    attribs[i] = attList.at(i);
-
-  return attribs;
+GenHighlight::GenHighlight(const char *name) : Highlight(name) {
 }
 
 
-void Highlight::init() {
-  makeContextList();
-  readConfig();
-}
-
-void Highlight::getItemList(QStrList &list) 
-{
-  for (Attribute *att = attList.first(); att != 0; att = attList.next())
-    list.append(i18n(att->getName()));
-}
-
-bool Highlight::isInWord(char ch) {
-  static char data[] = {0,0,0,0,0,0,255,3,254,255,255,135,254,255,255,7};
-  if (ch & 128) return true;
-  return data[ch >> 3] & (1 << (ch & 7));
-}
-
-void Highlight::doHighlight(int ctxNum, TextLine *textLine) {
+void GenHighlight::doHighlight(int ctxNum, TextLine *textLine) {
   HlContext *context;
   const char *str, *s1, *s2;
   char lastChar;
@@ -499,118 +719,42 @@ void Highlight::doHighlight(int ctxNum, TextLine *textLine) {
 }
 
 
-void Highlight::readConfig() 
-{
-  QColor defaultSel, defaultFore, fore, back;
-  QFont defaultFont, courierFont("courier",12), font;
-  QString name, nrs;
-  OverrideFlags flags;
-  uint nr;
+void GenHighlight::init() {
+  int z;
 
-  KConfig *config = kapp->getConfig();
-
-  // Clear the list, in case we are called more than once.
-  attList.clear();
-
-  // Read in the attributes. Note that the attributes are global to all
-  // highlightings.
-
-  // First the default font is read in.  
-  config->setGroup("Attributes");
-  defaultFont = config->readFontEntry("DefaultFont",&courierFont);
-  defaultSel = config->readColorEntry("DefaultBackground",&white);
-  defaultFore = config->readColorEntry("DefaultColor",&black);
-  attList.append(new Attribute("Normal Text",defaultFore,defaultSel,defaultFont));
- 
-  // update the default attribute
-  Attribute::DefaultFont = defaultFont;
-  Attribute::DefaultColor = defaultFore;
-  Attribute::DefaultSelColor = defaultSel;
-
-  // create the default attribute set
-  attList.append(new Attribute("Keyword",blue,white,courierFont,Color));
-  attList.append(new Attribute("Number",darkGreen,white,courierFont,Color));
-  attList.append(new Attribute("Char",red,white,courierFont,Color));
-  attList.append(new Attribute("String",red,white,courierFont,Color));
-  attList.append(new Attribute("String character",red,white,courierFont,Color));
-  attList.append(new Attribute("Comment",gray,white,QFont("courier",12,QFont::Normal,true),(OverrideFlags)(FontStyle|Color)));
-  attList.append(new Attribute("Preprocessor",darkYellow,white,courierFont,Color));
-  attList.append(new Attribute("Preprocessor Library",darkYellow,white,courierFont,Color));
-  attList.append(new Attribute("Tag text",blue,white,courierFont,Color));
-  attList.append(new Attribute("Tag",blue,white,courierFont,Color));
-  attList.append(new Attribute("Tag value",blue,white,courierFont,Color));
-  attList.append(new Attribute("Substitution",blue,white,courierFont,Color));
-
-  // Read in the attributes, if available.
-  nr = config->readNumEntry("Number",1);
-  for (uint index=1; index<nr; index++)
-  {
-    nrs.sprintf("Font_%d", index);
-    font = config->readFontEntry(nrs.data(), &defaultFont);
-    nrs.sprintf("Selection_%d", index);    
-    back = config->readColorEntry(nrs.data(), &defaultSel);
-    nrs.sprintf("Color_%d", index);    
-    fore = config->readColorEntry(nrs.data(), &defaultFore);
-    nrs.sprintf("Name_%d", index);    
-    name = config->readEntry(nrs.data(), "unnamed");    
-    nrs.sprintf("Override_%d", index);
-    flags = (OverrideFlags) config->readNumEntry(nrs.data(), All);
-    if (index < attList.count())
-      attList.remove(index);
-    attList.insert(index, new Attribute(name,fore,back,font,flags));
-  }
+  for (z = 0; z < nAttribs; z++) contextList[z] = 0L;
+  makeContextList();
 }
 
-void Highlight::writeConfig() 
-{
-  QString nrs;
-  KConfig *config = kapp->getConfig();
+void GenHighlight::done() {
+  int z;
 
-  // First the default font is written.
-  config->setGroup("Attributes");
-  config->writeEntry("DefaultFont", Attribute::DefaultFont);
-  config->writeEntry("DefaultColor", Attribute::DefaultColor);
-  config->writeEntry("DefaultSelection", Attribute::DefaultSelColor);
-
-  // Write out the rest of the attributes.
-  int nr = attList.count();
-  config->writeEntry("Number", nr);
-  for (int index=1; index<nr; index++)
-  {
-    nrs.sprintf("Font_%d", index);
-    config->writeEntry(nrs.data(), attList.at(index)->getFont());
-    nrs.sprintf("Selection_%d", index);    
-    config->writeEntry(nrs.data(), attList.at(index)->getSelColor());
-    nrs.sprintf("Color_%d", index);    
-    config->writeEntry(nrs.data(), attList.at(index)->getColor());
-    nrs.sprintf("Name_%d", index);    
-    config->writeEntry(nrs.data(), attList.at(index)->getName());
-    nrs.sprintf("Override_%d", index);
-    config->writeEntry(nrs.data(), (int)attList.at(index)->getOverrideFlags());
-  }
+  for (z = 0; z < nAttribs; z++) delete contextList[z];
 }
 
 
-NoHighlight::NoHighlight(const char *hName) : Highlight(hName) {
-}
-
-NoHighlight::~NoHighlight() {
-}
-
-void NoHighlight::doHighlight(int, TextLine *textLine) {
-
-    textLine->setAttribs(0,0,textLine->length());
-    textLine->setAttr(0);
-}
-
-void NoHighlight::makeContextList() {
-}
-
-
-CHighlight::CHighlight(const char *hName) : Highlight(hName) {
+CHighlight::CHighlight(const char *name) : GenHighlight(name) {
+  dw = "*.c";
+  dm = "text/x-c-src";
 }
 
 CHighlight::~CHighlight() {
+}
+
+void CHighlight::createItemData(ItemDataList &list) {
+
+  list.append(new ItemData("Normal Text",0));
+  list.append(new ItemData("Keyword",1));
+  list.append(new ItemData("Decimal",2));
+  list.append(new ItemData("Octal",3));
+  list.append(new ItemData("Hex",3));
+  list.append(new ItemData("Float",4));
+  list.append(new ItemData("Char",5));
+  list.append(new ItemData("String",6));
+  list.append(new ItemData("String Char",5));
+  list.append(new ItemData("Comment",7));
+  list.append(new ItemData("Preprocessor",8,darkGreen,green,false,false));
+  list.append(new ItemData("Prep. Lib",8,darkYellow,yellow,false,false));
 }
 
 void CHighlight::makeContextList() {
@@ -620,35 +764,35 @@ void CHighlight::makeContextList() {
   contextList[0] = c = new HlContext(0,0);
     c->items.append(keyword = new HlKeyword(1,0));
     c->items.append(new HlCInt(2,0));
-    c->items.append(new HlCOct(2,0));
-    c->items.append(new HlCHex(2,0));
-    c->items.append(new HlCFloat(2,0));
-    c->items.append(new HlCChar(3,0));
-    c->items.append(new HlCharDetect(4,1,'"'));
-    c->items.append(new Hl2CharDetect(6,2,"//"));
-    c->items.append(new Hl2CharDetect(6,3,"/*"));
-    c->items.append(new HlCPrep(7,4));
-  contextList[1] = c = new HlContext(4,0);
-    c->items.append(new HlLineContinue(4,6));
-    c->items.append(new HlCStringChar(5,1));
-    c->items.append(new HlCharDetect(4,0,'"'));
-  contextList[2] = new HlContext(6,0);
-  contextList[3] = c = new HlContext(6,3);
-    c->items.append(new Hl2CharDetect(6,0,"*/"));
-  contextList[4] = c = new HlContext(7,0);
-    c->items.append(new HlLineContinue(7,7));
-    c->items.append(new HlRangeDetect(8,4,"\"\""));
-    c->items.append(new HlRangeDetect(8,4,"<>"));
-//    c->items.append(new HlCharDetect(8,5,'"'));
-//    c->items.append(new HlCharDetect(8,6,'<'));
-    c->items.append(new Hl2CharDetect(6,2,"//"));
-    c->items.append(new Hl2CharDetect(6,5,"/*"));
-//  contextList[5] = c = new HlContext(8,0);
-//    c->items.append(new HlCharDetect(8,4,'"'));
-//  contextList[6] = c = new HlContext(8,0);
-//    c->items.append(new HlCharDetect(8,4,'>'));
-  contextList[5] = c = new HlContext(6,5);
-    c->items.append(new Hl2CharDetect(6,4,"*/"));
+    c->items.append(new HlCOct(3,0));
+    c->items.append(new HlCHex(4,0));
+    c->items.append(new HlCFloat(5,0));
+    c->items.append(new HlCChar(6,0));
+    c->items.append(new HlCharDetect(7,1,'"'));
+    c->items.append(new Hl2CharDetect(9,2,"//"));
+    c->items.append(new Hl2CharDetect(9,3,"/*"));
+    c->items.append(new HlCPrep(10,4));
+  contextList[1] = c = new HlContext(7,0);
+    c->items.append(new HlLineContinue(7,6));
+    c->items.append(new HlCStringChar(8,1));
+    c->items.append(new HlCharDetect(7,0,'"'));
+  contextList[2] = new HlContext(9,0);
+  contextList[3] = c = new HlContext(9,3);
+    c->items.append(new Hl2CharDetect(9,0,"*/"));
+  contextList[4] = c = new HlContext(10,0);
+    c->items.append(new HlLineContinue(10,7));
+    c->items.append(new HlRangeDetect(11,4,"\"\""));
+    c->items.append(new HlRangeDetect(11,4,"<>"));
+//    c->items.append(new HlCharDetect(11,5,'"'));
+//    c->items.append(new HlCharDetect(11,6,'<'));
+    c->items.append(new Hl2CharDetect(9,2,"//"));
+    c->items.append(new Hl2CharDetect(9,5,"/*"));
+//  contextList[5] = c = new HlContext(11,0);
+//    c->items.append(new HlCharDetect(11,4,'"'));
+//  contextList[6] = c = new HlContext(11,0);
+//    c->items.append(new HlCharDetect(11,4,'>'));
+  contextList[5] = c = new HlContext(9,5);
+    c->items.append(new Hl2CharDetect(9,4,"*/"));
   contextList[6] = new HlContext(0,1);
   contextList[7] = new HlContext(0,4);
 
@@ -661,7 +805,10 @@ void CHighlight::setKeywords(HlKeyword *keyword) {
   keyword->addList(cKeywords);
 }
 
-CppHighlight::CppHighlight(const char *hName) : CHighlight(hName) {
+
+CppHighlight::CppHighlight(const char *name) : CHighlight(name) {
+  dw = "*.cpp;*.h;*.C";
+  dm = "text/x-c++-src;text/x-c++-hdr;text/x-c-hdr";
 }
 
 CppHighlight::~CppHighlight() {
@@ -675,34 +822,60 @@ void CppHighlight::setKeywords(HlKeyword *keyword) {
   keyword->addList(cppKeywords);
 }
 
-HtmlHighlight::HtmlHighlight(const char *hName) : Highlight(hName) {
+
+HtmlHighlight::HtmlHighlight(const char *name) : GenHighlight(name) {
+  dw = "*.html;*.htm";
+  dm = "text/html";
 }
 
 HtmlHighlight::~HtmlHighlight() {
+}
+
+void HtmlHighlight::createItemData(ItemDataList &list) {
+
+  list.append(new ItemData("Normal Text",0));
+  list.append(new ItemData("Char",5,darkGreen,green,false,false));
+  list.append(new ItemData("Comment",7));
+  list.append(new ItemData("Tag Text",8,black,white,true,false));
+  list.append(new ItemData("Tag",1,darkMagenta,magenta,true,false));
+  list.append(new ItemData("Tag Value",2,darkCyan,cyan,false,false));
 }
 
 void HtmlHighlight::makeContextList() {
   HlContext *c;
 
   contextList[0] = c = new HlContext(0,0);
-    c->items.append(new HlRangeDetect(3,0,"&;"));
-    c->items.append(new HlStringDetect(6,1,"<!--"));
-    c->items.append(new HlStringDetect(6,2,"<COMMENT>"));
-    c->items.append(new HlCharDetect(9,3,'<'));
-  contextList[1] = c = new HlContext(6,1);
-    c->items.append(new HlStringDetect(6,0,"-->"));
-  contextList[2] = c = new HlContext(6,2);
-    c->items.append(new HlStringDetect(6,0,"</COMMENT>"));
-  contextList[3] = c = new HlContext(9,3);
-    c->items.append(new HlHtmlTag(10,3));
-    c->items.append(new HlHtmlValue(11,3));
-    c->items.append(new HlCharDetect(9,0,'>'));
+    c->items.append(new HlRangeDetect(1,0,"&;"));
+    c->items.append(new HlStringDetect(2,1,"<!--"));
+    c->items.append(new HlStringDetect(2,2,"<COMMENT>"));
+    c->items.append(new HlCharDetect(3,3,'<'));
+  contextList[1] = c = new HlContext(2,1);
+    c->items.append(new HlStringDetect(2,0,"-->"));
+  contextList[2] = c = new HlContext(2,2);
+    c->items.append(new HlStringDetect(2,0,"</COMMENT>"));
+  contextList[3] = c = new HlContext(3,3);
+    c->items.append(new HlHtmlTag(4,3));
+    c->items.append(new HlHtmlValue(5,3));
+    c->items.append(new HlCharDetect(3,0,'>'));
 }
 
-BashHighlight::BashHighlight(const char *hName) : Highlight(hName) {
+
+BashHighlight::BashHighlight(const char *name) : GenHighlight(name) {
+  dm = "text/x-shellscript";
 }
+
 
 BashHighlight::~BashHighlight() {
+}
+
+void BashHighlight::createItemData(ItemDataList &list) {
+
+  list.append(new ItemData("Normal Text",0));
+  list.append(new ItemData("Keyword",1));
+  list.append(new ItemData("Integer",2));
+  list.append(new ItemData("String",6));
+  list.append(new ItemData("Substitution",8));//darkCyan,cyan,false,false);
+  list.append(new ItemData("Comment",7));
 }
 
 void BashHighlight::makeContextList() {
@@ -712,22 +885,36 @@ void BashHighlight::makeContextList() {
   contextList[0] = c = new HlContext(0,0);
     c->items.append(keyword = new HlKeyword(1,0));
     c->items.append(new HlInt(2,0));
-    c->items.append(new HlCharDetect(4,1,'"'));
-    c->items.append(new HlCharDetect(12,2,'`'));
-    c->items.append(new HlShellComment(6,3));
-  contextList[1] = c = new HlContext(4,0);
-    c->items.append(new HlCharDetect(4,0,'"'));
-  contextList[2] = c = new HlContext(12,0);
-    c->items.append(new HlCharDetect(12,0,'`'));
-  contextList[3] = new HlContext(6,0);
+    c->items.append(new HlCharDetect(3,1,'"'));
+    c->items.append(new HlCharDetect(4,2,'`'));
+    c->items.append(new HlShellComment(5,3));
+  contextList[1] = c = new HlContext(3,0);
+    c->items.append(new HlCharDetect(3,0,'"'));
+  contextList[2] = c = new HlContext(4,0);
+    c->items.append(new HlCharDetect(4,0,'`'));
+  contextList[3] = new HlContext(5,0);
 
   keyword->addList(bashKeywords);
 }
 
-ModulaHighlight::ModulaHighlight(const char *hName) : Highlight(hName) {
+
+ModulaHighlight::ModulaHighlight(const char *name) : GenHighlight(name) {
+  dw = "*.md;*.mi";
+  dm = "text/x-modula-2-src";
 }
 
 ModulaHighlight::~ModulaHighlight() {
+}
+
+void ModulaHighlight::createItemData(ItemDataList &list) {
+
+  list.append(new ItemData("Normal Text",0));
+  list.append(new ItemData("Keyword",1));
+  list.append(new ItemData("Decimal",2));
+  list.append(new ItemData("Hex",3));
+  list.append(new ItemData("Float",4));
+  list.append(new ItemData("String",6));
+  list.append(new ItemData("Comment",7));
 }
 
 void ModulaHighlight::makeContextList() {
@@ -737,14 +924,829 @@ void ModulaHighlight::makeContextList() {
   contextList[0] = c = new HlContext(0,0);
     c->items.append(keyword = new HlKeyword(1,0));
     c->items.append(new HlInt(2,0));
-    c->items.append(new HlMHex(2,0));
-    c->items.append(new HlFloat(2,0));
-    c->items.append(new HlCharDetect(4,1,'"'));
+    c->items.append(new HlMHex(3,0));
+    c->items.append(new HlFloat(4,0));
+    c->items.append(new HlCharDetect(5,1,'"'));
     c->items.append(new Hl2CharDetect(6,2,"(*"));
-  contextList[1] = c = new HlContext(4,0);
-    c->items.append(new HlCharDetect(4,0,'"'));
+  contextList[1] = c = new HlContext(5,0);
+    c->items.append(new HlCharDetect(5,0,'"'));
   contextList[2] = c = new HlContext(6,2);
     c->items.append(new Hl2CharDetect(6,0,"*)"));
 
   keyword->addList(modulaKeywords);
 }
+
+
+AdaHighlight::AdaHighlight(const char *name) : GenHighlight(name) {
+  dw = "*_s.a;*_b.a";
+  dm = "text/x-ada-src";
+}
+
+AdaHighlight::~AdaHighlight() {
+}
+
+void AdaHighlight::createItemData(ItemDataList &list) {
+
+  list.append(new ItemData("Normal Text",0));
+  list.append(new ItemData("Keyword",1));
+  list.append(new ItemData("Decimal",2));
+  list.append(new ItemData("Octal",3));
+  list.append(new ItemData("Float",4));
+  list.append(new ItemData("String",6));
+  list.append(new ItemData("Comment",7));
+}
+
+void AdaHighlight::makeContextList() {
+  HlContext *c;
+  HlKeyword *keyword;
+
+  contextList[0] = c = new HlContext(0,0);
+    c->items.append(keyword = new HlKeyword(1,0));
+    c->items.append(new HlAOct(3,0));
+    c->items.append(new HlInt(2,0));
+    c->items.append(new HlFloat(4,0));
+    c->items.append(new HlCharDetect(5,1,'"'));
+    c->items.append(new Hl2CharDetect(6,2,"--"));
+  contextList[1] = c = new HlContext(5,0);
+    c->items.append(new HlCharDetect(5,0,'"'));
+  contextList[2] = c = new HlContext(6,0);
+
+  keyword->addList(adaKeywords);
+}
+
+
+HlManager::HlManager() : QObject(0L) {
+
+  hlList.setAutoDelete(true);
+  hlList.append(new Highlight("Normal"));
+  hlList.append(new CHighlight("C"));
+  hlList.append(new CppHighlight("C++"));
+  hlList.append(new HtmlHighlight("HTML"));
+  hlList.append(new BashHighlight("Bash"));
+  hlList.append(new ModulaHighlight("Modula 2"));
+  hlList.append(new AdaHighlight("Ada"));
+}
+
+HlManager::~HlManager() {
+}
+
+Highlight *HlManager::getHl(int n) {
+  if (n < 0 || n >= (int) hlList.count()) n = 0;
+  return hlList.at(n);
+}
+
+int HlManager::defaultHl() {
+  KConfig *config;
+
+  config = kapp->getConfig();
+  config->setGroup("General Options");
+  return nameFind(config->readEntry("Highlight"));
+}
+
+
+int HlManager::highlightFind(KWriteDoc *doc)
+{
+  int hl = -1;
+
+  if (doc->hasFileName())
+    hl = wildcardFind(doc->fileName());
+
+  if (hl == -1)
+    hl = mimeFind(doc);
+
+  return hl;
+}
+
+
+int HlManager::nameFind(const char *name) {
+  int z;
+
+  for (z = hlList.count() - 1; z > 0; z--) {
+    if (hlList.at(z)->iName == name) break;
+  }
+  return z;
+}
+
+int HlManager::wildcardFind(const char *fileName) {
+  Highlight *highlight;
+  int p1, p2;
+  QString w;
+printf("file name %s\n",fileName);
+  for (highlight = hlList.first(); highlight != 0L; highlight = hlList.next()) {
+printf("highlight %s\n",highlight->name());
+    p1 = 0;
+//    w = highlight->iWildcards;
+    highlight->getWildcards(w);
+    while (p1 < (int) w.length()) {
+      p2 = w.find(';',p1);
+      if (p2 == -1) p2 = w.length();
+      if (p1 < p2) {
+printf("wildcard %s\n",w.mid(p1,p2 - p1).data());
+        QRegExp regExp(w.mid(p1,p2 - p1),true,true);
+        if (regExp.match(fileName) == 0) return hlList.at();
+      }
+      p1 = p2 + 1;
+    }
+  }
+  return -1;
+}
+
+int HlManager::mimeFind(KWriteDoc *doc) 
+{
+  // Magic file detection init (from kfm/kbind.cpp)    
+  QString mimefile = kapp->kde_mimedir().copy();    
+  mimefile += "/magic";    
+  KMimeMagic magic(mimefile);    
+  magic.setFollowLinks(true);      
+
+  // fill the detection buffer with the contents of the text  
+  const uint HOWMANY = 1024;
+  char buffer[HOWMANY];
+  int number=0, len;
+  
+  for (int index=0; index<doc->lastLine(); index++)
+  {
+    len = doc->textLength(index);
+
+    if (number+len > HOWMANY)
+      break;
+
+    memcpy(&buffer[number], doc->textLine(index)->getText(), len);
+    number += len;
+  }
+
+  // detect the mime type
+  KMimeMagicResult *result;
+  if (doc->hasFileName())
+    result = magic.findBufferFileType(buffer,number,doc->fileName());
+  else
+    result = magic.findBufferType(buffer,number);
+
+printf("MIMETYPE: %s\n", result->getContent().data());
+
+  Highlight *highlight;
+  int p1, p2;
+  QString w;
+
+  for (highlight = hlList.first(); highlight != 0L; highlight = hlList.next()) 
+  {
+    highlight->getMimetypes(w);
+
+    p1 = 0;
+    while (p1 < (int) w.length()) {
+      p2 = w.find(';',p1);
+      if (p2 == -1) p2 = w.length();
+      if (p1 < p2) {
+        QRegExp regExp(w.mid(p1,p2 - p1),true,true);
+        if (regExp.match(result->getContent()) == 0) return hlList.at();
+      }
+      p1 = p2 + 1;
+    }
+  }
+
+  return -1;
+}
+
+void HlManager::makeAttribs(Highlight *highlight, Attribute *a, int n) {
+  ItemStyleList defaultStyleList;
+  ItemStyle *defaultStyle;
+  ItemFont defaultFont;
+  ItemDataList itemDataList;
+  ItemData *itemData;
+  int z;
+  QFont font;
+
+  defaultStyleList.setAutoDelete(true);
+  getDefaults(defaultStyleList,defaultFont);
+
+  itemDataList.setAutoDelete(true);
+  highlight->getItemDataList(itemDataList);
+  for (z = 0; z < (int) itemDataList.count(); z++) {
+    itemData = itemDataList.at(z);
+    if (itemData->defStyle) {
+      defaultStyle = defaultStyleList.at(itemData->defStyleNum);
+      a[z].col = defaultStyle->col;
+      a[z].selCol = defaultStyle->selCol;
+      font.setBold(defaultStyle->bold);
+      font.setItalic(defaultStyle->italic);
+    } else {
+      a[z].col = itemData->col;
+      a[z].selCol = itemData->selCol;
+      font.setBold(itemData->bold);
+      font.setItalic(itemData->italic);
+    }
+    if (itemData->defFont) {
+      font.setFamily(defaultFont.family);
+      font.setPointSize(defaultFont.size);
+      KCharset(defaultFont.charset).setQFont(font);
+    } else {
+      font.setFamily(itemData->family);
+      font.setPointSize(itemData->size);
+      KCharset(itemData->charset).setQFont(font);
+    }
+    a[z].setFont(font);
+  }
+  for (; z < n; z++) {
+    a[z].col = black;
+    a[z].selCol = black;
+    a[z].setFont(font);
+  }
+}
+
+int HlManager::defaultStyles() {
+  return 9;
+}
+
+const char *HlManager::defaultStyleName(int n) {
+  static const char *names[] = {
+    "Normal","Keyword","Decimal/Value","Base-N Integer","Floating Point",
+    "Character","String","Comment","Others"};
+
+  return names[n];
+}
+
+void HlManager::getDefaults(ItemStyleList &list, ItemFont &font) {
+  KConfig *config;
+  int z;
+  ItemStyle *i;
+  QString s;
+  QRgb col, selCol;
+
+  list.setAutoDelete(true);
+  list.append(new ItemStyle(black,white,false,false));
+  list.append(new ItemStyle(black,white,true,false));
+  list.append(new ItemStyle(blue,cyan,false,false));
+  list.append(new ItemStyle(darkCyan,cyan,false,false));
+  list.append(new ItemStyle(darkMagenta,cyan,false,false));
+  list.append(new ItemStyle(magenta,magenta,false,false));
+  list.append(new ItemStyle(red,red,false,false));
+  list.append(new ItemStyle(darkGray,gray,false,true));
+  list.append(new ItemStyle(darkBlue,blue,false,false));
+
+  config = kapp->getConfig();
+  config->setGroup("Default Item Styles");
+  for (z = 0; z < defaultStyles(); z++) {
+    i = list.at(z);
+    s = config->readEntry(defaultStyleName(z));
+    if (!s.isEmpty()) {
+      sscanf(s,"%X,%X,%d,%d",&col,&selCol,&i->bold,&i->italic);
+      i->col.setRgb(col);
+      i->selCol.setRgb(selCol);
+    }
+  }
+
+  config->setGroup("Default Font");
+  font.family = config->readEntry("Family","courier");
+  font.size = config->readNumEntry("Size",12);
+  font.charset = config->readEntry("Charset","ISO-8859-1");
+}
+
+void HlManager::setDefaults(ItemStyleList &list, ItemFont &font) {
+  KConfig *config;
+  int z;
+  ItemStyle *i;
+  char s[64];
+
+  config = kapp->getConfig();
+  config->setGroup("Default Item Styles");
+  for (z = 0; z < defaultStyles(); z++) {
+    i = list.at(z);
+    sprintf(s,"%X,%X,%d,%d",i->col.rgb(),i->selCol.rgb(),i->bold, i->italic);
+    config->writeEntry(defaultStyleName(z),s);
+  }
+
+  config->setGroup("Default Font");
+  config->writeEntry("Family",font.family);
+  config->writeEntry("Size",font.size);
+  config->writeEntry("Charset",font.charset);
+
+  emit changed();
+}
+
+
+int HlManager::highlights() {
+  return (int) hlList.count();
+}
+
+const char *HlManager::hlName(int n) {
+  return hlList.at(n)->iName;
+}
+
+void HlManager::getHlDataList(HlDataList &list) {
+  int z;
+
+  for (z = 0; z < (int) hlList.count(); z++) {
+    list.append(hlList.at(z)->getData());
+  }
+}
+
+void HlManager::setHlDataList(HlDataList &list) {
+  int z;
+
+  for (z = 0; z < (int) hlList.count(); z++) {
+    hlList.at(z)->setData(list.at(z));
+  }
+
+  emit changed();
+}
+
+
+//-----
+
+//"ripped" from kfontdialog
+bool getKDEFontList(QStrList &fontList) {
+  QString s;
+
+  //TODO replace by QDir::homePath();
+  s = KApplication::localkdedir() + "/share/config/kdefonts";
+  QFile fontfile(s);
+//  if (!fontfile.exists()) return false;
+  if(!fontfile.open(IO_ReadOnly)) return false;
+//  if (!fontfile.isReadable()) return false;
+
+  QTextStream t(&fontfile);
+  while (!t.eof()) {
+    s = t.readLine();
+    s = s.stripWhiteSpace();
+    if (!s.isEmpty()) fontList.append(s);
+  }
+  fontfile.close();
+  return true;
+}
+
+void getXFontList(QStrList &fontList) {
+  Display *kde_display;
+  int numFonts;
+  char** fontNames;
+  char* fontName;
+  QString qfontname;
+  int i, dash, dash_two;
+
+  kde_display = XOpenDisplay( 0L );
+  fontNames = XListFonts(kde_display, "*", 32767, &numFonts);
+
+  for(i = 0; i < numFonts; i++) {
+    fontName = fontNames[i];
+    if (*fontName != '-') {
+      // The font name doesn't start with a dash -- an alias
+      // so we ignore it. It is debatable whether this is the right
+      // behaviour so I leave the following snippet of code around.
+      // Just uncomment it if you want those aliases to be inserted as well.
+
+      /*
+      qfontname = fontName;
+      if(fontlist.find(qfontname) == -1)
+          fontlist.inSort(qfontname);
+      */
+      continue;
+    }
+
+    qfontname = fontName;
+    dash = qfontname.find ('-', 1); // find next dash
+    if (dash == -1) continue; // No dash such next dash -- this shouldn't happen.
+                              // but what do I care -- lets skip it.
+
+    // the font name is between the second and third dash so:
+    // let's find the third dash:
+    dash_two = qfontname.find ('-', dash + 1);
+    if (dash == -1) continue; // No such next dash -- this shouldn't happen.
+                              // but what do I care -- lets skip it.
+
+    // fish the name of the font info string
+    qfontname = qfontname.mid(dash +1, dash_two - dash -1);
+    if (!qfontname.contains("open look", TRUE)) {
+      if (qfontname != "nil") {
+        if (fontList.find(qfontname) == -1) fontList.inSort(qfontname);
+      }
+    }
+  }
+
+  XFreeFontNames(fontNames);
+  XCloseDisplay(kde_display);
+}
+
+void getFontList(QStrList &fontList) {
+
+  //try to get KDE fonts
+  if (getKDEFontList(fontList)) return;
+  //not successful: get X fonts
+  getXFontList(fontList);
+}
+
+
+StyleChanger::StyleChanger(QWidget *parent, int x, int y) : QObject(parent) {
+  QLabel *label;
+  QRect r;
+
+  col = new KColorButton(parent);
+  label = new QLabel(col,i18n("Normal:"),parent);
+  connect(col,SIGNAL(changed(const QColor &)),this,SLOT(changed()));
+
+  r.setRect(x,y,80,25);
+  label->setGeometry(r);
+  r.moveBy(0,25);
+  col->setGeometry(r);
+//  label = new QLabel(col,i18n("Color:"),parent);
+
+  selCol = new KColorButton(parent);
+  label = new QLabel(selCol,i18n("Selected:"),parent);
+  connect(selCol,SIGNAL(changed(const QColor &)),SLOT(changed()));
+  r.moveBy(0,25);
+  label->setGeometry(r);
+  r.moveBy(0,25);
+  selCol->setGeometry(r);
+
+  bold = new QCheckBox(i18n("Bold"),parent);
+  connect(bold,SIGNAL(clicked()),SLOT(changed()));
+  r.setRect(r.right() + 20,y + 25,70,25);
+  bold->setGeometry(r);
+
+  italic = new QCheckBox(i18n("Italic"),parent);
+  connect(italic,SIGNAL(clicked()),SLOT(changed()));
+  r.moveBy(0,25);
+  italic->setGeometry(r);
+}
+
+void StyleChanger::setRef(ItemStyle *s) {
+
+  style = s;
+  col->setColor(style->col);
+  selCol->setColor(style->selCol);
+  bold->setChecked(style->bold);
+  italic->setChecked(style->italic);
+
+}
+
+void StyleChanger::setEnabled(bool enable) {
+
+  col->setEnabled(enable);
+  selCol->setEnabled(enable);
+  bold->setEnabled(enable);
+  italic->setEnabled(enable);
+}
+
+void StyleChanger::changed() {
+
+  if (style) {
+    style->col = col->color();
+    style->selCol = selCol->color();
+    style->bold = bold->isChecked();
+    style->italic = italic->isChecked();
+  }
+}
+
+FontChanger::FontChanger(QWidget *parent, int x, int y)
+  : QObject(parent) {
+
+  QStrList fontList(true);
+  QRect r;
+  QLabel *label;
+  int z;
+  char s[4];
+
+  getFontList(fontList);
+
+  familyCombo = new QComboBox(true,parent);
+  label = new QLabel(familyCombo,i18n("Family:"),parent);
+  connect(familyCombo,SIGNAL(activated(const char *)),SLOT(familyChanged(const char *)));
+  familyCombo->insertStrList(&fontList);
+
+  r.setRect(x,y,160,25);
+  label->setGeometry(r);
+  r.moveBy(0,25);
+  familyCombo->setGeometry(r);
+
+  sizeCombo = new QComboBox(true,parent);
+  label = new QLabel(sizeCombo,i18n("Size:"),parent);
+  connect(sizeCombo,SIGNAL(activated(int)),SLOT(sizeChanged(int)));
+  z = 0;
+  while (fontSizes[z]) {
+    sprintf(s,"%d",fontSizes[z]);
+    sizeCombo->insertItem(s);
+    z++;
+  }
+
+  r.moveBy(0,25);
+  label->setGeometry(r);
+  r.moveBy(0,25);
+  sizeCombo->setGeometry(r);
+
+  charsetCombo = new QComboBox(true,parent);
+  label = new QLabel(charsetCombo,i18n("Charset:"),parent);
+  connect(charsetCombo,SIGNAL(activated(const char *)),SLOT(charsetChanged(const char *)));
+
+//  KCharsets *charsets=KApplication::getKApplication()->getCharsets();
+//  QStrList lst = charsets->displayable(selFont.family());
+
+  r.moveBy(0,25);
+  label->setGeometry(r);
+  r.moveBy(0,25);
+  charsetCombo->setGeometry(r);
+
+}
+
+void FontChanger::setRef(ItemFont *f) {
+  int z;
+
+  font = f;
+  for (z = 0; z < (int) familyCombo->count(); z++) {
+    if (font->family == familyCombo->text(z)) {
+      familyCombo->setCurrentItem(z);
+      goto found;
+    }
+  }
+  font->family = familyCombo->text(0);
+found:
+
+  for (z = 0; fontSizes[z] > 0; z++) {
+    if (font->size == fontSizes[z]) {
+      sizeCombo->setCurrentItem(z);
+      break;
+    }
+  }
+  displayCharsets();
+}
+
+void FontChanger::familyChanged(const char *family) {
+
+  font->family = family;
+  displayCharsets();
+}
+
+void FontChanger::sizeChanged(int n) {
+
+  font->size = fontSizes[n];;
+}
+
+void FontChanger::charsetChanged(const char *charset) {
+
+  font->charset = charset;
+  //KCharset(chset).setQFont(font);
+}
+
+void FontChanger::displayCharsets() {
+  int z;
+  const char *charset;
+  KCharsets *charsets;
+
+  charsets = kapp->getCharsets();
+  QStrList lst = charsets->displayable(font->family);
+  charsetCombo->clear();
+  for(z = 0; z < (int) lst.count(); z++) {
+    charset = lst.at(z);
+    charsetCombo->insertItem(charset);
+    if ((QString) font->charset == charset) charsetCombo->setCurrentItem(z);
+  }
+  charset = "any";
+  charsetCombo->insertItem(charset);
+  if ((QString) font->charset == charset) charsetCombo->setCurrentItem(z);
+}
+
+//---------
+
+DefaultsDialog::DefaultsDialog(HlManager *hlManager, ItemStyleList *styleList,
+  ItemFont *font, QWidget *parent) : QDialog(parent,0L,true) {
+
+  QGroupBox *group;
+  QComboBox *styleCombo;
+  QLabel *label;
+  FontChanger *fontChanger;
+  QPushButton *button;
+  QRect r, gr;
+  int z;
+
+  group = new QGroupBox(i18n("Default Item Styles"),this);
+  gr.setRect(10,10,200,180);
+  group->setGeometry(gr);
+  styleCombo = new QComboBox(false,group);
+  label = new QLabel(styleCombo,i18n("Item:"),group);
+  connect(styleCombo,SIGNAL(activated(int)),this,SLOT(changed(int)));
+  r.setRect(10,15,160,25);
+  label->setGeometry(r);
+  r.moveBy(0,25);
+  styleCombo->setGeometry(r);
+  styleChanger = new StyleChanger(group,r.x(),r.y() + 25);
+  connect(styleCombo,SIGNAL(activated(int)),this,SLOT(changed(int)));
+
+  for (z = 0; z < hlManager->defaultStyles(); z++) {
+    styleCombo->insertItem(hlManager->defaultStyleName(z));
+  }
+//  for (defStyle = defStyleList->first(); defStyle != 0L;
+//    defStyle = defStyleList->next()) {
+
+//    styleCombo->insertItem(defStyle->name);
+//  }
+
+  group = new QGroupBox(i18n("Default Font"),this);
+  gr.moveBy(gr.width() + 10,0);
+  group->setGeometry(gr);
+  fontChanger = new FontChanger(group,10,15);
+  fontChanger->setRef(font);
+
+  itemStyleList = styleList;
+  changed(0);
+
+  button = new QPushButton(i18n("&OK"),this);
+  button->setDefault(true);
+  r.setRect(10,210,70,25);
+  button->setGeometry(r);
+  connect(button,SIGNAL(clicked()),this,SLOT(accept()));
+
+  button = new QPushButton(i18n("&Cancel"),this);
+  r.moveBy(gr.right() - r.width() -5,0);
+  button->setGeometry(r);
+  connect(button,SIGNAL(clicked()),this,SLOT(reject()));
+}
+
+void DefaultsDialog::changed(int z) {
+
+  styleChanger->setRef(itemStyleList->at(z));
+}
+
+
+HighlightDialog::HighlightDialog(HlManager *hlManager,
+  HlDataList *highlightDataList, QWidget *parent)
+  : QDialog(parent,0L,true), hlData(0L) {
+
+  QPushButton *button;
+  QGroupBox *group;
+  QComboBox *hlCombo;
+  QLabel *label;
+  QRect r, gr;
+  int z;
+
+  group = new QGroupBox(i18n("Config Select"),this);
+  gr.setRect(10,10,200,130);
+  group->setGeometry(gr);
+  hlCombo = new QComboBox(false,group);
+  label = new QLabel(hlCombo,i18n("Highlight:"),group);
+  connect(hlCombo,SIGNAL(activated(int)),SLOT(hlChanged(int)));
+  r.setRect(10,15,180,25);
+  label->setGeometry(r);
+  r.moveBy(0,25);
+  hlCombo->setGeometry(r);
+  for (z = 0; z < hlManager->highlights(); z++) {
+    hlCombo->insertItem(hlManager->hlName(z));
+  }
+//  for (highlight = hlList->first(); highlight != 0L; highlight = hlList->next()) {
+//    hlCombo->insertItem(highlight->name());
+//  }
+
+  itemCombo = new QComboBox(false,group);
+  label = new QLabel(itemCombo,i18n("Item:"),group);
+  connect(itemCombo,SIGNAL(activated(int)),SLOT(itemChanged(int)));
+  r.moveBy(0,25);
+  label->setGeometry(r);
+  r.moveBy(0,25);
+  itemCombo->setGeometry(r);
+
+  group = new QGroupBox(i18n("Highlight Auto Select"),this);
+  gr.moveBy(gr.width() + 10,0);
+  group->setGeometry(gr);
+  wildcards = new QLineEdit(group);
+  label = new QLabel(wildcards,i18n("File Extensions:"),group);
+  r.setRect(10,15,180,25);
+  label->setGeometry(r);
+  r.moveBy(0,25);
+  wildcards->setGeometry(r);
+
+  mimetypes = new QLineEdit(group);
+  label = new QLabel(mimetypes,i18n("Mime Types:"),group);
+  r.moveBy(0,25);
+  label->setGeometry(r);
+  r.moveBy(0,25);
+  mimetypes->setGeometry(r);
+
+
+  group = new QGroupBox(i18n("Item Style"),this);
+  gr.setRect(10,gr.bottom()+1 + 15,200,205);
+  group->setGeometry(gr);
+  styleDefault = new QCheckBox(i18n("Default"),group);
+  connect(styleDefault,SIGNAL(clicked()),SLOT(changed()));
+  r.setRect(10,15,160,25);
+  styleDefault->setGeometry(r);
+  styleChanger = new StyleChanger(group,r.x(),r.y() + 25);
+
+  group = new QGroupBox(i18n("Item Font"),this);
+  gr.moveBy(gr.width() + 10,0);
+  group->setGeometry(gr);
+  fontDefault = new QCheckBox(i18n("Default"),group);
+  connect(fontDefault,SIGNAL(clicked()),SLOT(changed()));
+  fontDefault->setGeometry(r);
+  fontChanger = new FontChanger(group,r.x(),r.y() + 25);
+
+
+  hlDataList = highlightDataList;
+  hlChanged(0);
+
+  button = new QPushButton(i18n("&OK"),this);
+  button->setDefault(true);
+  r.setRect(10,370,70,25);
+  button->setGeometry(r);
+  connect(button,SIGNAL(clicked()),this,SLOT(accept()));
+
+  button = new QPushButton(i18n("&Cancel"),this);
+  r.moveBy(gr.right() - r.width() -5,0);
+  button->setGeometry(r);
+  connect(button,SIGNAL(clicked()),this,SLOT(reject()));
+}
+
+void HighlightDialog::hlChanged(int z) {
+  ItemData *itemData;
+
+  writeback();
+
+  hlData = hlDataList->at(z);
+
+  wildcards->setText(hlData->wildcards);
+  mimetypes->setText(hlData->mimetypes);
+
+  itemCombo->clear();
+  for (itemData = hlData->itemDataList.first(); itemData != 0L;
+    itemData = hlData->itemDataList.next()) {
+    itemCombo->insertItem(itemData->name);
+  }
+
+  itemChanged(0);
+}
+
+void HighlightDialog::itemChanged(int z) {
+
+  itemData = hlData->itemDataList.at(z);
+
+  styleDefault->setChecked(itemData->defStyle);
+  styleChanger->setRef(itemData);
+
+  fontDefault->setChecked(itemData->defFont);
+  fontChanger->setRef(itemData);
+}
+
+void HighlightDialog::changed() {
+  itemData->defStyle = styleDefault->isChecked();
+  itemData->defFont = fontDefault->isChecked();
+}
+
+void HighlightDialog::writeback() {
+  if (hlData) {
+    hlData->wildcards = wildcards->text();
+    hlData->mimetypes = mimetypes->text();
+  }
+}
+
+void HighlightDialog::done(int r) {
+  writeback();
+  QDialog::done(r);
+}
+
+/*
+void HighlightDialog::newHl(Highlight *hl) {
+  QStrList items;
+printf("HighlightDialog::newHl()\n");
+
+  if (highlight) {
+    highlight->writeConfig();
+printf("HighlightDialog::newHl() del\n");
+    delete highlight;
+  }
+  highlight = hl;
+  hl->getItemList(items);
+  itemLB->clear();
+  itemLB->insertStrList(&items);
+}
+
+Highlight *HighlightDialog::getHighlight(QStrList &types,
+  QWidget *parent, const char *newHlSlot) {
+
+  HighlightDialog *dlg;
+  Highlight *highlight;
+
+  dlg = new HighlightDialog(types,parent,newHlSlot);
+  dlg->exec();
+  highlight = dlg->highlight;
+
+  delete dlg;
+  if (highlight) highlight->writeConfig();
+  return highlight;
+}
+
+void HighlightDialog::newItem(int index) {
+  a = highlight->attrList()[index];
+  col->setColor(a->col);
+  selCol->setColor(a->selCol);
+}
+
+void HighlightDialog::newCol(const QColor &c) {
+  a->col = c;
+}
+
+void HighlightDialog::newSelCol(const QColor &c) {
+  a->selCol = c;
+}
+
+void HighlightDialog::newFont() {
+  if (a) {
+    QFont font = a->font;
+    if (KFontDialog::getFont(font)) a->setFont(font);
+  }
+}
+*/

@@ -50,7 +50,7 @@ class TopLevel : public KTMainWindow {
     int menuVertical, menuShowTB, menuShowSB;
 //    int statusID, toolID, verticalID, indentID;
 //    QPopupMenu *file, *edit, *options, *help;
-    QPopupMenu *edit, *options, *recentPopup;
+    QPopupMenu *edit, *options, *recentPopup;//, hlPopup;
     QStrList recentFiles;
 
     bool hideToolBar;
@@ -65,8 +65,8 @@ class TopLevel : public KTMainWindow {
     void closeWindow();
     void quitEditor();
 
-    void hlDlg();
-    void newHl(int index);
+//    void hlDlg();
+//    void newHl(int index);
 
     void toggleStatusBar();
     void toggleToolBar();
@@ -82,6 +82,7 @@ class TopLevel : public KTMainWindow {
 
     void dropAction(KDNDDropZone *);
 
+    void showHighlight();
 
     //config file functions
   public:
@@ -94,6 +95,9 @@ class TopLevel : public KTMainWindow {
     void readProperties(KConfig*);
     void restore(KConfig *,int);
     void saveProperties(KConfig*);
+private:
+
+  QPopupMenu *popup, *hlPopup;
 };
 
 #endif

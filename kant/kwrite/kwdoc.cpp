@@ -4,15 +4,17 @@
 #include <qclipbrd.h>
 #include <qfont.h>
 #include <qpainter.h>
+
+#include <kcharsets.h>
+
 #include "kwview.h"
 #include "kwdoc.h"
-#include "highlight.h"
 
-
+//text attribute constants
 const int taSelected = 0x40;
 const int taFound = 0x80;
 const int taSelectMask = taSelected | taFound;
-const int taAttrMask = ~taSelectMask;
+const int taAttrMask = ~taSelectMask & 0xFF;
 const int taShift = 6;
 
 TextLine::TextLine(int attribute) : attr(attribute) {
@@ -223,7 +225,7 @@ int TextLine::getAttr() {
 
 int TextLine::getRawAttr(int pos) {
   if (pos < len) return attribs[pos];
-  return attr;
+  return (attr & taSelectMask) ? attr : attr | 256;
 }
 
 int TextLine::getRawAttr() {
@@ -416,63 +418,19 @@ if (!newtext || !newattribs) {
 }
 
 
-// initialize static members
-
-QFont  Attribute::DefaultFont("courier",12);
-QColor Attribute::DefaultColor(black);
-QColor Attribute::DefaultSelColor(white);
-
-
-Attribute::Attribute() : font(), retFont(font), fm(font) {
+Attribute::Attribute() : font(), fm(font) {
 }
 
-
+/*
 Attribute::Attribute(const char *aName, const QColor &aCol,
-  const QColor &aSelCol, const QFont &aFont, OverrideFlags f)
-  : name(aName), col(aCol), selCol(aSelCol), font(aFont), retFont(font), fm(font), flags(f) {
+  const QColor &aSelCol, const QFont &aFont)
+  : name(aName), col(aCol), selCol(aSelCol), font(aFont), fm(font) {
 }
-
-
-QColor &Attribute::getColor()
-{
-  if (flags & Color)
-    return col;
-  else
-    return DefaultColor;
-}
-
-
-QColor &Attribute::getSelColor()
-{
-  if (flags & SelColor)
-    return selCol;
-  else
-    return DefaultSelColor;
-}
-
-
-QFont &Attribute::getFont()
-{
-  // FIXME: perhaps the font should be cached to improve speed
-
-  retFont = DefaultFont;
-
-  if (flags & FontFamily)
-    retFont.setFamily(font.family());
-  if (flags & FontSize)
-    retFont.setPointSize(font.pointSize());
-  if (flags & FontWeight)
-    retFont.setWeight(font.weight());
-  if (flags & FontStyle)
-    retFont.setItalic(font.italic());
-
-  return retFont;
-}
-
+*/
 
 void Attribute::setFont(const QFont &f) {
   font = f;
-  fm = QFontMetrics(getFont());
+  fm = QFontMetrics(f);
 }
 
 
@@ -517,24 +475,21 @@ void KWActionGroup::insertAction(KWAction *a) {
 }
 
 
-KWriteDoc::KWriteDoc() : QObject(0L) {
+KWriteDoc::KWriteDoc(HlManager *hlManager)
+  : QObject(0L), hlManager(hlManager) {
 
   contents.setAutoDelete(true);
 
-  selCols[0] = white;
-  selCols[1] = darkBlue;
-  selCols[2] = black;
-  selCols[3] = black;
+  colors[0] = white;
+  colors[1] = darkBlue;
+  colors[2] = black;
+  colors[3] = black;
+  colors[4] = white;
 
-  highlight = new CppHighlight("C++ Highlight");
-//  highlight = new ModulaHighlight("Modula Highlight");
-  highlight->init();
-  attribs = highlight->attrList();
+  highlight = 0L;
   tabChars = 8;
-  updateFontData();
 
   newDocGeometry = false;
-
   modified = false;
 
   undoList.setAutoDelete(true);
@@ -543,9 +498,13 @@ KWriteDoc::KWriteDoc() : QObject(0L) {
 
   pseudoModal = 0L;
   clear();
+
+  setHighlight(0); //calls updateFontData()
+  connect(hlManager,SIGNAL(changed()),SLOT(hlChanged()));
 }
 
 KWriteDoc::~KWriteDoc() {
+  highlight->release();
 }
 
 int KWriteDoc::lastLine() const {
@@ -584,14 +543,41 @@ void KWriteDoc::tagAll() {
   }
 }
 
+void KWriteDoc::readConfig(KConfig *config) {
+  int z;
+  char s[16];
+
+  setTabWidth(config->readNumEntry("TabWidth",8));
+  setUndoSteps(config->readNumEntry("UndoSteps",50));
+  for (z = 0; z < 5; z++) {
+    sprintf(s,"Color%d",z);
+    colors[z] = config->readColorEntry(s,&colors[z]);
+  }
+}
+
+void KWriteDoc::writeConfig(KConfig *config) {
+  int z;
+  char s[16];
+
+  config->writeEntry("TabWidth",tabChars);
+  config->writeEntry("UndoSteps",undoSteps);
+  config->writeEntry("Highlight",highlight->name());
+  for (z = 0; z < 5; z++) {
+    sprintf(s,"Color%d",z);
+    config->writeEntry(s,colors[z]);
+  }
+}
 
 void KWriteDoc::readSessionConfig(KConfig *config) {
-   setTabWidth(config->readNumEntry("TabWidth",8));
-   fName = config->readEntry("URL");
+
+  readConfig(config);
+  fName = config->readEntry("URL");
+  setHighlight(hlManager->nameFind(config->readEntry("Highlight")));
 }
 
 void KWriteDoc::writeSessionConfig(KConfig *config) {
-  config->writeEntry("TabWidth",tabChars);
+
+  writeConfig(config);
   config->writeEntry("URL",fName);
 }
 
@@ -731,8 +717,7 @@ void KWriteDoc::loadFile(QIODevice &dev) {
     }
   } while (s != buf);
 
-  updateLines(0,0,lastLine());
-//  setModified(false);
+//  updateLines(0,0xffffff);
 }
 
 void KWriteDoc::writeFile(QIODevice &dev) {
@@ -923,7 +908,7 @@ void KWriteDoc::del(KWriteView *view, VConfig &c) {
   }
 }
 
-void KWriteDoc::clipboardChanged() {
+void KWriteDoc::clipboardChanged() { //slot
 #if defined(_WS_X11_)
   disconnect(QApplication::clipboard(),SIGNAL(dataChanged()),
     this,SLOT(clipboardChanged()));
@@ -932,37 +917,111 @@ void KWriteDoc::clipboardChanged() {
 #endif
 }
 
+void KWriteDoc::hlChanged() { //slot
+  makeAttribs();
+  updateViews();
+}
+
+void KWriteDoc::setHighlight(int n) {
+  Highlight *h;
+
+  hlNumber = n;
+
+  h = hlManager->getHl(n);
+  if (h == highlight) {
+    updateLines(0,0xffffff);
+  } else {
+    if (highlight) highlight->release();
+    h->use();
+    highlight = h;
+    makeAttribs();
+  }
+}
+
+void KWriteDoc::makeAttribs() {
+
+  hlManager->makeAttribs(highlight,attribs,nAttribs);
+  updateFontData();
+  updateLines(0,0xffffff);
+}
+/*
+void KWriteDoc::makeAttribs() {
+  ItemDataList list;
+  ItemData *itemData;
+  DefItemStyle *defItemStyle;
+  int z;
+  QFont font;
+
+  list.setAutoDelete(true);
+  highlight->getItemDataList(list);
+  for (z = 0; z < (int) list.count(); z++) {
+    itemData = list.at(z);
+    if (itemData->defStyle) {
+      defItemStyle = defItemStyleList->at(itemData->defStyleNum);
+      attribs[z].col = defItemStyle->col;
+      attribs[z].selCol = defItemStyle->selCol;
+      font.setBold(defItemStyle->bold);
+      font.setItalic(defItemStyle->italic);
+    } else {
+      attribs[z].col = itemData->col;
+      attribs[z].selCol = itemData->selCol;
+      font.setBold(itemData->bold);
+      font.setItalic(itemData->italic);
+    }
+    if (itemData->defFont) {
+      font.setFamily(defFont->family);
+      font.setPointSize(defFont->size);
+      KCharset(defFont->charset).setQFont(font);
+    } else {
+      font.setFamily(itemData->family);
+      font.setPointSize(itemData->size);
+      KCharset(itemData->charset).setQFont(font);
+    }
+    attribs[z].setFont(font);
+  }
+  for (; z < nAttribs; z++) {
+    attribs[z].col = black;
+    attribs[z].selCol = black;
+    attribs[z].setFont(font);
+  }
+
+  updateFontData();
+  updateLines(0,0xffffff);
+}
+*/
 void KWriteDoc::updateFontData() {
   int maxAscent, maxDescent;
-  int i, midTabWidth;
-  int z;
-  Attribute *a;
+  int minTabWidth, maxTabWidth;
+  int i, z;
+  KWriteView *view;
 
   maxAscent = 0;
   maxDescent = 0;
-  midTabWidth = 0;
+  minTabWidth = 0xffffff;
+  maxTabWidth = 0;
 
-  i = 0;
   for (z = 0; z < nAttribs; z++) {
-    a = attribs[z];
-    if (a) {
-      if (a->getFontMetrics().ascent() > maxAscent) maxAscent = a->getFontMetrics().ascent();
-      if (a->getFontMetrics().descent() > maxDescent) maxDescent = a->getFontMetrics().descent();
-      midTabWidth += a->getFontMetrics().width('x');
-      i++;
-    }
+    i = attribs[z].fm.ascent();
+    if (i > maxAscent) maxAscent = i;
+    i = attribs[z].fm.descent();
+    if (i > maxDescent) maxDescent = i;
+    i = attribs[z].fm.width('x');
+    if (i < minTabWidth) minTabWidth = i;
+    if (i > maxTabWidth) maxTabWidth = i;
   }
 
   fontHeight = maxAscent + maxDescent + 1;
   fontAscent = maxAscent;
-  tabWidth = tabChars*midTabWidth/i;
+  tabWidth = tabChars*(maxTabWidth + minTabWidth)/2;
 
-  for (z = 0; z < (int) views.count(); z++) {
-    KWriteView *view = views.at(z);
+  for (view = views.first(); view != 0L; view = views.next()) {
     resizeBuffer(view,view->width(),fontHeight);
+    view->tagAll();
+    view->updateCursor();
   }
 }
 
+/*
 void KWriteDoc::setHighlight(Highlight *hl) {
 
   delete highlight;
@@ -970,8 +1029,8 @@ void KWriteDoc::setHighlight(Highlight *hl) {
   attribs = hl->attrList();
   updateFontData();
 //  hl->doHighlight(*this,0,(int) contents.count() -1);
-  updateLines(0,0,(int) contents.count() -1);
-}
+  updateLines(0,0x0ffffff);
+} */
 
 void KWriteDoc::setTabWidth(int chars) {
   TextLine *textLine;
@@ -991,7 +1050,7 @@ void KWriteDoc::setTabWidth(int chars) {
       longestLine = textLine;
     }
   }
-  tagAll();
+//  tagAll();
 }
 
 /*
@@ -1016,7 +1075,7 @@ void KWriteDoc::update(VConfig &c) {
 }
 */
 
-void KWriteDoc::updateLines(int flags, int startLine, int endLine) {
+void KWriteDoc::updateLines(int startLine, int endLine, int flags) {
   TextLine *textLine;
   int line, lastLine;
   int ctxNum, endCtx;
@@ -1041,7 +1100,6 @@ void KWriteDoc::updateLines(int flags, int startLine, int endLine) {
     updateMaxLength(textLine);
     if (flags & cfRemoveSpaces) textLine->removeSpaces();
   }
-
 }
 
 
@@ -1100,8 +1158,8 @@ int KWriteDoc::textWidth(TextLine *textLine, int cursorX) {
   x = 0;
   for (z = 0; z < cursorX; z++) {
     ch = textLine->getChar(z);
-    a = attribs[textLine->getAttr(z)];
-    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->getFontMetrics().width(&ch,1);
+    a = &attribs[textLine->getAttr(z)];
+    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->fm.width(&ch,1);
   }
   return x;
 }
@@ -1130,8 +1188,8 @@ int KWriteDoc::textWidth(bool wrapCursor, PointStruc &cursor, int xPos) {
   while (x < xPos && (!wrapCursor || z < len)) {
     oldX = x;
     ch = textLine->getChar(z);
-    a = attribs[textLine->getAttr(z)];
-    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->getFontMetrics().width(&ch,1);
+    a = &attribs[textLine->getAttr(z)];
+    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->fm.width(&ch,1);
     z++;
   }
   if (xPos - oldX < x - xPos && z > 0) {
@@ -1155,8 +1213,8 @@ int KWriteDoc::textPos(TextLine *textLine, int xPos) {
   while (x < xPos) { // && z < len) {
     oldX = x;
     ch = textLine->getChar(z);
-    a = attribs[textLine->getAttr(z)];
-    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->getFontMetrics().width(&ch,1);
+    a = &attribs[textLine->getAttr(z)];
+    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->fm.width(&ch,1);
     z++;
   }
   if (xPos - oldX < x - xPos && z > 0) z--;
@@ -1532,8 +1590,8 @@ QColor &KWriteDoc::cursorCol(int x, int y) {
 //  if (x > 0) x--;
   textLine = contents.at(y);
   attr = textLine->getRawAttr(x);
-  a = attribs[attr & taAttrMask];
-  if (attr & taSelectMask) return a->getSelColor(); else return a->getColor();
+  a = &attribs[attr & taAttrMask];
+  if (attr & taSelectMask) return a->selCol; else return a->col;
 }
 
 /*
@@ -1550,7 +1608,7 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
 
   y = line*fontHeight - yPos;
   if (line >= (int) contents.count()) {
-    paint.fillRect(xStart - xPos,y,xEnd - xStart,fontHeight,selCols[0]);
+    paint.fillRect(xStart - xPos,y,xEnd - xStart,fontHeight,colors[4]);
     return;
   }
 //printf("xStart = %d, xEnd = %d, line = %d\n",xStart,xEnd,line);
@@ -1577,7 +1635,7 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
   while (x < xEnd) {
     nextAttr = textLine->getRawAttr(z);
     if ((nextAttr ^ attr) & taSelectMask) {
-      paint.fillRect(xs - xPos,y,x - xs,fontHeight,selCols[attr >> taShift]);
+      paint.fillRect(xs - xPos,y,x - xs,fontHeight,colors[attr >> taShift]);
       xs = x;
       attr = nextAttr;
     }
@@ -1590,7 +1648,7 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
     }
     z++;
   }
-  paint.fillRect(xs - xPos,y,xEnd - xs,fontHeight,selCols[attr >> taShift]);
+  paint.fillRect(xs - xPos,y,xEnd - xs,fontHeight,colors[attr >> taShift]);
 //int len = textLine->length();
   y += fontAscent -1;
   attr = -1;
@@ -1630,7 +1688,7 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
 
   y = 0;//line*fontHeight - yPos;
   if (line >= (int) contents.count()) {
-    paint.fillRect(0,y,xEnd - xStart,fontHeight,selCols[0]);
+    paint.fillRect(0,y,xEnd - xStart,fontHeight,colors[4]);
     return;
   }
 //printf("xStart = %d, xEnd = %d, line = %d\n",xStart,xEnd,line);
@@ -1645,8 +1703,8 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
     if (ch == '\t') {
       x += tabWidth - (x % tabWidth);
     } else {
-      a = attribs[textLine->getAttr(z)];
-      x += a->getFontMetrics().width(&ch,1);
+      a = &attribs[textLine->getAttr(z)];
+      x += a->fm.width(&ch,1);
     }
     z++;
   } while (x <= xStart);
@@ -1656,20 +1714,21 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
   attr = textLine->getRawAttr(zc);
   while (x < xEnd) {
     nextAttr = textLine->getRawAttr(z);
-    if ((nextAttr ^ attr) & taSelectMask) {
-      paint.fillRect(xs - xStart,y,x - xs,fontHeight,selCols[attr >> taShift]);       xs = x;
+    if ((nextAttr ^ attr) & (taSelectMask | 256)) {
+      paint.fillRect(xs - xStart,y,x - xs,fontHeight,colors[attr >> taShift]);
+      xs = x;
       attr = nextAttr;
     }
     ch = textLine->getChar(z);
     if (ch == '\t') {
       x += tabWidth - (x % tabWidth);
     } else {
-      a = attribs[attr & taAttrMask];
-      x += a->getFontMetrics().width(&ch,1);
+      a = &attribs[attr & taAttrMask];
+      x += a->fm.width(&ch,1);
     }
     z++;
   }
-  paint.fillRect(xs - xStart,y,xEnd - xs,fontHeight,selCols[attr >> taShift]);
+  paint.fillRect(xs - xStart,y,xEnd - xs,fontHeight,colors[attr >> taShift]);
 //int len = textLine->length();
   y += fontAscent -1;
   attr = -1;
@@ -1681,12 +1740,12 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
       nextAttr = textLine->getRawAttr(zc);
       if (nextAttr != attr) {
         attr = nextAttr;
-        a = attribs[attr & taAttrMask];
-        if (attr & taSelectMask) paint.setPen(a->getSelColor()); else paint.setPen(a->getColor());
-        paint.setFont(a->getFont());
+        a = &attribs[attr & taAttrMask];
+        if (attr & taSelectMask) paint.setPen(a->selCol); else paint.setPen(a->col);
+        paint.setFont(a->font);
       }
       paint.drawText(xc - xStart,y,&ch,1);
-      xc += a->getFontMetrics().width(&ch,1);
+      xc += a->fm.width(&ch,1);
 //if (zc < len) printf("%c",ch);
     }
     zc++;
@@ -1721,6 +1780,12 @@ void KWriteDoc::setFileName(const char *s) {
   for (z = 0; z < (int) views.count(); z++) {
     emit views.at(z)->kWrite->newCaption();
   }
+
+  //highlight detection
+  if (fName.isEmpty()) return;
+  int pos = fName.findRev('/') + 1;
+  setHighlight(hlManager->highlightFind(this));
+  updateViews();
 }
 
 bool KWriteDoc::hasFileName() {
@@ -2156,7 +2221,7 @@ void KWriteDoc::recordEnd(KWriteView *view, PointStruc &cursor, int flags) {
   view->updateCursor(cursor);
 
   optimizeSelection();
-  if (tagStart <= tagEnd) updateLines(flags,tagStart,tagEnd);
+  if (tagStart <= tagEnd) updateLines(tagStart,tagEnd,flags);
   setModified(true);
   newUndo();
 }
@@ -2193,7 +2258,7 @@ void KWriteDoc::doActionGroup(KWActionGroup *g, int flags) {
     a = next;
   }
   optimizeSelection();
-  if (tagStart <= tagEnd) updateLines(flags,tagStart,tagEnd);
+  if (tagStart <= tagEnd) updateLines(tagStart,tagEnd,flags);
   setModified(true);
   newUndo();
 }

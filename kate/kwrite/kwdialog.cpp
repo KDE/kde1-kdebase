@@ -26,7 +26,7 @@ SearchDialog::SearchDialog(const char *searchFor, const char *replaceWith,
 
   search = new QLineEdit(this);
   search->setText(searchFor);
-  label = new QLabel(search,i18n("&Text to find:"),this);
+  label = new QLabel(search,i18n("&Text To Find:"),this);
 
   r.setRect(10,0,300,25);
   label->setGeometry(r);
@@ -36,7 +36,7 @@ SearchDialog::SearchDialog(const char *searchFor, const char *replaceWith,
   if (flags & sfReplace) {
     replace = new QLineEdit(this);
     replace->setText(replaceWith);
-    label = new QLabel(replace,i18n("&Replace with:"),this);
+    label = new QLabel(replace,i18n("&Replace With:"),this);
 
     r.moveBy(0,25);
     label->setGeometry(r);
@@ -76,7 +76,7 @@ SearchDialog::SearchDialog(const char *searchFor, const char *replaceWith,
   opt5->setGeometry(br);
 
   if (replace) {
-    opt6 = new QCheckBox(i18n("&Prompt on replace"),group);
+    opt6 = new QCheckBox(i18n("&Prompt On Replace"),group);
     opt6->setChecked(flags & sfPrompt);
     br.moveBy(0,25);
     opt6->setGeometry(br);
@@ -160,7 +160,7 @@ ReplacePrompt::ReplacePrompt(QWidget *parent, const char *name)
   button->setGeometry(r);
   connect(button,SIGNAL(clicked()),this,SLOT(all()));
 
-  button = new QPushButton(i18n("&Cancel"),this);
+  button = new QPushButton(i18n("&Close"),this);
   r.moveBy(60,0);
   button->setGeometry(r);
   connect(button,SIGNAL(clicked()),this,SLOT(reject()));
@@ -388,4 +388,65 @@ int SettingsDialog::getTabWidth() {
 
 int SettingsDialog::getUndoSteps() {
   return atoi(e3->text());
+}
+
+ColorDialog::ColorDialog(QColor *colors, QWidget *parent, const char *name)
+  : QDialog(parent,name,true) {
+  QLabel *label;
+  QPushButton *button;
+  QRect r, r2;
+
+  back = new KColorButton(colors[4],this);
+  label = new QLabel(back,i18n("Background:"),this);
+  r.setRect(10,10,140,25);
+  label->setGeometry(r);
+  r2.setRect(10,r.y() + 25,80,25);
+  back->setGeometry(r2);
+
+  textBack = new KColorButton(colors[0],this);
+  label = new QLabel(textBack,i18n("Text Background:"),this);
+  r.moveBy(0,50);
+  label->setGeometry(r);
+  r2.moveBy(0,50);
+  textBack->setGeometry(r2);
+
+  selected = new KColorButton(colors[1],this);
+  label = new QLabel(selected,i18n("Selected:"),this);
+  r.moveBy(0,50);
+  label->setGeometry(r);
+  r2.moveBy(0,50);
+  selected->setGeometry(r2);
+
+  found = new KColorButton(colors[2],this);
+  label = new QLabel(found,i18n("Found:"),this);
+  r.moveBy(0,50);
+  label->setGeometry(r);
+  r2.moveBy(0,50);
+  found->setGeometry(r2);
+
+  selFound = new KColorButton(colors[3],this);
+  label = new QLabel(selFound,i18n("Selected + Found:"),this);
+  r.moveBy(0,50);
+  label->setGeometry(r);
+  r2.moveBy(0,50);
+  selFound->setGeometry(r2);
+
+  r.setRect(r.x(),r2.bottom() + 10,60,25);
+  button = new QPushButton(i18n("&OK"),this);
+  button->setDefault(true);
+  button->setGeometry(r);
+  connect(button,SIGNAL(clicked()),this,SLOT(accept()));
+
+  button = new QPushButton(i18n("Cancel"),this);
+  r.moveBy(100,0);
+  button->setGeometry(r);
+  connect(button,SIGNAL(clicked()),this,SLOT(reject()));
+}
+
+void ColorDialog::getColors(QColor *colors) {
+  colors[4] = back->color();
+  colors[0] = textBack->color();
+  colors[1] = selected->color();
+  colors[2] = found->color();
+  colors[3] = selFound->color();
 }

@@ -1,5 +1,5 @@
-#ifndef KWVIEW_H
-#define KWVIEW_H
+#ifndef _KWVIEV_H_
+#define _KWVIEV_H_
 
 #include <qscrbar.h>
 #include <qiodev.h>
@@ -56,6 +56,7 @@ const int ufPos             = 4;
 //load flags
 const int lfInsert          = 1;
 const int lfNewFile         = 2;
+const int lfNoAutoHl        = 4;
 
 void resizeBuffer(void *user, int w, int h);
 
@@ -107,6 +108,7 @@ class KWriteView : public QWidget {
 //    void updateCursor(PointStruc &start, PointStruc &end, bool insert);
     void insLine(int line);
     void delLine(int line);
+    void updateCursor();
     void updateCursor(PointStruc &newCursor);
     void updateView(int flags, int newXPos = 0, int newYPos = 0);
 //  void scroll2(int, int);
@@ -196,12 +198,13 @@ class KWrite : public QWidget {
     int undoState();
     void copySettings(KWrite *);
   public slots:
-    void optDlg();
+    void optDlg(); //options dialog
+    void colDlg(); //color dialog
     void toggleVertical();
     void toggleOverwrite();
   signals:
-    void newCurPos(); //line, col
-    void newStatus(); //modified, config flags
+    void newCurPos(); //line, column changed
+    void newStatus(); //modified, config flags changed
     void statusMsg(const char *);
     void newCaption();
     void newUndo();
@@ -217,7 +220,7 @@ class KWrite : public QWidget {
     bool loadFile(const char *name, int flags = 0);
     bool writeFile(const char *name);
     void loadURL(const char *url, int flags = 0);
-    void writeURL(const char *url);
+    void writeURL(const char *url, int flags = 0);
   protected slots:
     void kfmFinished();
     void kfmError(int, const char *);
@@ -235,7 +238,7 @@ class KWrite : public QWidget {
     QString kfmURL;
     QString kfmFile;
     action kfmAction;
-    int kfmLoadFlags;
+    int kfmFlags;
 
 //edit functions
   public:
@@ -252,7 +255,7 @@ class KWrite : public QWidget {
     void deselectAll();
     void invertSelection();
 
-//search functions
+//search/replace functions
   public slots:
     void search();
     void replace();
@@ -276,6 +279,7 @@ class KWrite : public QWidget {
     int replaces;
     SConfig s;
     QDialog *replacePrompt;
+
 //right mouse button popup menu
   public:
     void installRBPopup(QPopupMenu *);
@@ -304,11 +308,18 @@ class KWrite : public QWidget {
     void writeConfig(KConfig *);
     void readSessionConfig(KConfig *);
     void writeSessionConfig(KConfig *);
-    void setHighlight(Highlight *);
+
+//syntax highlight
+  public:
+//    void setHighlight(Highlight *);
+  public slots:
+    void hlDef(); //highlight defaults dialog
+    void hlDlg(); //highlight setup dialog
+    void setHl(int n); //set highlight (number n)
 
 //internal
   protected:
-    virtual void keyPressEvent(QKeyEvent *e);
+    virtual void keyPressEvent(QKeyEvent *);
     virtual void paintEvent(QPaintEvent *);
     virtual void resizeEvent(QResizeEvent *);
 

@@ -356,6 +356,9 @@ void KWriteView::delLine(int line) {
   }
 }
 
+void KWriteView::updateCursor() {
+  cOldXPos = cXPos = kWriteDoc->textWidth(cursor);
+}
 
 void KWriteView::updateCursor(PointStruc &newCursor) {
 
@@ -911,7 +914,7 @@ void KWriteView::paintEvent(QPaintEvent *e) {
 }
 
 void KWriteView::resizeEvent(QResizeEvent *) {
-  printf("KWriteView::resize\n");
+//  printf("KWriteView::resize\n");
   resizeBuffer(this,width(),kWriteDoc->fontHeight);
   QWidget::update();
 }
@@ -1028,6 +1031,18 @@ void KWrite::optDlg() {
   delete dlg;
 }
 
+void KWrite::colDlg() {
+  ColorDialog *dlg;
+
+  dlg = new ColorDialog(kWriteDoc->colors,this);
+  if (dlg->exec() == QDialog::Accepted) {
+    dlg->getColors(kWriteDoc->colors);
+    kWriteDoc->tagAll();
+    kWriteDoc->updateViews();
+  }
+  delete dlg;
+}
+
 void KWrite::toggleVertical() {
   setConfig(configFlags ^ cfVerticalSelect);
   emit statusMsg(i18n(configFlags & cfVerticalSelect ? "Vertical Selections On" : "Vertical Selections Off"));
@@ -1046,8 +1061,9 @@ void KWrite::loadFile(QIODevice &dev, bool insert) {
   } else {
     kWriteView->getVConfig(c);
     kWriteDoc->insertFile(kWriteView,c,dev);
+kWriteDoc->updateViews();
   }
-  kWriteDoc->updateViews();
+//  kWriteDoc->updateViews();
 }
 
 void KWrite::writeFile(QIODevice &dev) {
@@ -1176,7 +1192,8 @@ void KWrite::loadURL(const char *url, int flags) {
         name.prepend(": ");
         name.prepend(i18n("Inserted"));
       } else {
-        kWriteDoc->setFileName(name);
+        if (!(flags & lfNoAutoHl)) kWriteDoc->setFileName(name);
+          else kWriteDoc->updateLines(0,0xffffff);
         name.prepend(": ");
         name.prepend(i18n("Read"));
       }
@@ -1214,7 +1231,7 @@ void KWrite::loadURL(const char *url, int flags) {
     kfmURL = u.url();
     kfmFile.sprintf(_PATH_TMP"kwrite%i",time(0L));
     kfmAction = KWrite::GET;
-    kfmLoadFlags = flags;
+    kfmFlags = flags;
 
     connect(kfm,SIGNAL(finished()),this,SLOT(kfmFinished()));
     connect(kfm,SIGNAL(error(int, const char *)),this,SLOT(kfmError(int, const char *)));
@@ -1223,7 +1240,7 @@ void KWrite::loadURL(const char *url, int flags) {
 }
 
 
-void KWrite::writeURL(const char *url) {
+void KWrite::writeURL(const char *url, int flags) {
   KURL u(url);
 
   if (u.isLocalFile()) {
@@ -1233,7 +1250,7 @@ void KWrite::writeURL(const char *url) {
     QString name(u.path());
     KURL::decodeURL(name);
     if (writeFile(name)) {
-      kWriteDoc->setFileName(url);
+      if (!(flags & lfNoAutoHl)) kWriteDoc->setFileName(url);
       name = url;
       name.prepend(": ");
       name.prepend(i18n("Wrote"));
@@ -1258,6 +1275,7 @@ void KWrite::writeURL(const char *url) {
     kfmURL = url;
     kfmFile.sprintf(_PATH_TMP"kwrite%i",time(0L));
     kfmAction = KWrite::PUT;
+    kfmFlags = flags;
     if (!writeFile(kfmFile)) return;
 
     kfm = new KFM;
@@ -1290,12 +1308,17 @@ void KWrite::kfmFinished() {
 //    KURL u(kfmFile);
   //  if (!kfm->isOK()) printf("kfm not ok!!!\n");
 
-    if (loadFile(kfmFile,kfmLoadFlags)) {
-      if (kfmLoadFlags & lfInsert) {
+    if (loadFile(kfmFile,kfmFlags)) {
+      if (kfmFlags & lfInsert) {
         kfmURL.prepend(": ");
         kfmURL.prepend(i18n("Inserted"));
       } else {
-        kWriteDoc->setFileName(kfmURL);
+        if (!(kfmFlags & lfNoAutoHl)) {
+          kWriteDoc->setFileName(kfmURL);
+        } else {
+          kWriteDoc->updateLines(0,0xffffff);
+          kWriteDoc->updateViews();
+        }
         kfmURL.prepend(": ");
         kfmURL.prepend(i18n("Read"));
       }
@@ -1305,7 +1328,7 @@ void KWrite::kfmFinished() {
     unlink(kfmFile);
   }
   if (kfmAction == PUT) {
-    kWriteDoc->setFileName(kfmURL);
+    if (!(kfmFlags & lfNoAutoHl)) kWriteDoc->setFileName(kfmURL);
     kfmURL.prepend(": ");
     kfmURL.prepend(i18n("Wrote"));
     emit statusMsg(kfmURL);
@@ -1389,7 +1412,7 @@ void KWrite::insertFile() {
 void KWrite::save() {
   if (isModified()) {
     if (kWriteDoc->hasFileName()) {
-      writeURL(kWriteDoc->fileName());
+      writeURL(kWriteDoc->fileName(),lfNoAutoHl);
     } else saveAs();
   } else emit statusMsg(i18n("No changes need to be saved"));
 }
@@ -1938,6 +1961,12 @@ void KWrite::updateBMPopup() {
 
 
 void KWrite::readConfig(KConfig *config) {
+
+  searchFlags = config->readNumEntry("SearchFlags",sfPrompt);
+  configFlags = config->readNumEntry("ConfigFlags",
+    cfPersistent | cfRemoveSpaces) & ~cfMark;
+  wrapAt = config->readNumEntry("WrapAt",78);
+/*
   int flags;
 
   config->setGroup("Search Options");
@@ -1969,9 +1998,16 @@ void KWrite::readConfig(KConfig *config) {
   wrapAt = config->readNumEntry("WrapAt",78);
   kWriteDoc->setTabWidth(config->readNumEntry("TabWidth",8));
   kWriteDoc->setUndoSteps(config->readNumEntry("UndoSteps",50));
+*/
 }
 
 void KWrite::writeConfig(KConfig *config) {
+
+  config->writeEntry("SearchFlags",searchFlags);
+  config->writeEntry("ConfigFlags",configFlags);
+  config->writeEntry("WrapAt",wrapAt);
+
+/*
   int flags;
 
   config->setGroup("Search Options");
@@ -2001,6 +2037,7 @@ void KWrite::writeConfig(KConfig *config) {
   config->writeEntry("WrapAt",wrapAt);
   config->writeEntry("TabWidth",kWriteDoc->tabChars);
   config->writeEntry("UndoSteps",kWriteDoc->undoSteps);
+*/
 }
 
 void KWrite::readSessionConfig(KConfig *config) {
@@ -2010,11 +2047,13 @@ void KWrite::readSessionConfig(KConfig *config) {
   QString s2;
   KWBookmark *b;
 
+/*
   searchFlags = config->readNumEntry("SearchFlags",sfPrompt);
-//  setConfig(config->readNumEntry("ConfigFlags"));
   configFlags = config->readNumEntry("ConfigFlags");
   wrapAt = config->readNumEntry("WrapAt",78);
-  
+*/
+  readConfig(config);
+
   kWriteView->xPos = config->readNumEntry("XPos");
   kWriteView->yPos = config->readNumEntry("YPos");
   cursor.x = config->readNumEntry("CursorX");
@@ -2039,10 +2078,13 @@ void KWrite::writeSessionConfig(KConfig *config) {
   char s2[64];
   KWBookmark *b;
 
+/*
   config->writeEntry("SearchFlags",searchFlags);
   config->writeEntry("ConfigFlags",configFlags);
   config->writeEntry("WrapAt",wrapAt);
-  
+*/
+  writeConfig(config);
+
   config->writeEntry("XPos",kWriteView->xPos);
   config->writeEntry("YPos",kWriteView->yPos);
   config->writeEntry("CursorX",kWriteView->cursor.x);
@@ -2059,14 +2101,64 @@ void KWrite::writeSessionConfig(KConfig *config) {
   }
 }
 
-
+/*
 void KWrite::setHighlight(Highlight *hl) {
   if (hl) {
     kWriteDoc->setHighlight(hl);
     kWriteDoc->updateViews();
   }
 }
+*/
 
+void KWrite::hlDef() {
+  DefaultsDialog *dlg;
+  HlManager *hlManager;
+  ItemStyleList defaultStyleList;
+  ItemFont defaultFont;
+//  int count, z;
+
+  hlManager = kWriteDoc->hlManager;
+  defaultStyleList.setAutoDelete(true);
+
+  hlManager->getDefaults(defaultStyleList,defaultFont);
+/*
+  defItemStyleList = kWriteDoc->defItemStyleList;
+  count = defItemStyleList->count();
+  for (z = 0; z < count ; z++) {
+    itemStyleList.append(new ItemStyle(*defItemStyleList->at(z)));
+  }
+  */
+  dlg = new DefaultsDialog(hlManager,&defaultStyleList,&defaultFont,this);
+  if (dlg->exec() == QDialog::Accepted) {
+    hlManager->setDefaults(defaultStyleList,defaultFont);
+/*    for (z = 0; z < count; z++) {
+      defItemStyleList->at(z)->setData(*itemStyleList.at(z));
+    }
+    kWriteDoc->defFont->setData(defFont);*/
+  }
+  delete dlg;
+}
+
+void KWrite::hlDlg() {
+  HighlightDialog *dlg;
+  HlManager *hlManager;
+  HlDataList hlDataList;
+//  int count, z;
+
+  hlManager = kWriteDoc->hlManager;
+  hlDataList.setAutoDelete(true);
+  hlManager->getHlDataList(hlDataList);
+  dlg = new HighlightDialog(hlManager,&hlDataList,this);
+  if (dlg->exec() == QDialog::Accepted) {
+    hlManager->setHlDataList(hlDataList);
+  }
+  delete dlg;
+}
+
+void KWrite::setHl(int n) {
+  kWriteDoc->setHighlight(n);
+  kWriteDoc->updateViews();
+}
 
 void KWrite::keyPressEvent(QKeyEvent *e) {
   int z;
@@ -2121,9 +2213,9 @@ void KWrite::paintEvent(QPaintEvent *e) {
   paint.end();
 }
 
-void KWrite::resizeEvent(QResizeEvent *e) {
+void KWrite::resizeEvent(QResizeEvent *) {
 
-  printf("Resize %d, %d\n",e->size().width(),e->size().height());
+//  printf("Resize %d, %d\n",e->size().width(),e->size().height());
 
   kWriteView->tagAll();//updateState = 3;
   kWriteView->updateView(0/*ufNoScroll*/);

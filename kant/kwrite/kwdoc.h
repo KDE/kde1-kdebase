@@ -1,5 +1,5 @@
-#ifndef KWDOC_H
-#define KWDOC_H
+#ifndef _KWDOC_H_
+#define _KWDOC_H_
 
 #include <qobject.h>
 #include <qlist.h>
@@ -8,8 +8,7 @@
 #include <qfontmet.h>
 
 #include "kwview.h"
-
-class Highlight;
+#include "highlight.h"
 
 class TextLine {
   public:
@@ -77,44 +76,17 @@ class TextLine {
 
 const int nAttribs = 32;
 
-enum OverrideFlags {NoOverride=0, FontFamily=1, FontSize=2, FontStyle=4, FontWeight=8, Color=16, SelColor=32, BackColor=64, All=255};
-
 class Attribute {
   public:
-    
     Attribute();
-    Attribute(const char *aName, const QColor &, const QColor &, const QFont &, OverrideFlags f=All);
-
-    QString &getName() { return name; };
-    void setName(const QString &n) { name = n; };
-  
-    QColor &getColor();  
-    void setColor(const QColor &c) { col = c; };
-    
-    QColor &getSelColor();  
-    void setSelColor(const QColor &c) { selCol = c; };
- 
-    QFont &getFont();    
+//    Attribute(const char *aName, const QColor &, const QColor &, const QFont &);
+//    QString name;
+    QColor col;
+    QColor selCol;
     void setFont(const QFont &);
-    
-    QFontMetrics &getFontMetrics() { return fm; };
-
-    OverrideFlags getOverrideFlags() { return flags; };
-    void setOverrideFlags(const OverrideFlags &f) { flags = f; };
-
-    static QFont  DefaultFont;
-    static QColor DefaultColor;
-    static QColor DefaultSelColor;
-            
-  private:
- 
-    QString name;
-    QColor col, selCol;  
-    QFont font, retFont;
+    QFont font;
     QFontMetrics fm;
-    OverrideFlags flags;
-    
-};  
+};
 
 class KWAction {
   public:
@@ -147,8 +119,10 @@ class KWriteDoc : QObject {
     Q_OBJECT
     friend KWriteView;
     friend KWrite;
+    friend HlManager;
+    
   public:
-    KWriteDoc();
+    KWriteDoc(HlManager *);
     ~KWriteDoc();
 
     int lastLine() const;
@@ -156,6 +130,8 @@ class KWriteDoc : QObject {
     int textLength(int line);
     void tagLines(int start, int end);
     void tagAll();
+    void readConfig(KConfig *);
+    void writeConfig(KConfig *);
     void readSessionConfig(KConfig *);
     void writeSessionConfig(KConfig *);
   protected:
@@ -174,18 +150,23 @@ class KWriteDoc : QObject {
     void killLine(KWriteView *, VConfig &);
     void backspace(KWriteView *, VConfig &);
     void del(KWriteView *, VConfig &);
-    bool hasMarkedText() { return !(selectEnd < selectStart); }
+    bool hasMarkedText() {return (selectEnd >= selectStart);}
 
 
   protected slots:
     void clipboardChanged();
+    void hlChanged();
 
+  public:
+    int getHighlight() { return hlNumber; }
   protected:
+    void setHighlight(int n);
+    void makeAttribs();
     void updateFontData();
-    void setHighlight(Highlight *);
+//    void setHighlight(Highlight *);
     void setTabWidth(int);
 //    void update(VConfig &);
-    void updateLines(int flags, int startLine, int endLine);
+    void updateLines(int startLine, int endLine, int flags = 0);
     void updateMaxLength(TextLine *);
 //    void updateCursors(PointStruc &start, PointStruc &end, bool insert = true);
     void updateViews(KWriteView *exclude = 0L);
@@ -258,9 +239,12 @@ class KWriteDoc : QObject {
     void unIndent(KWriteView *, VConfig &);
 
     QList<TextLine> contents;
-    QColor selCols[4];
+    QColor colors[5];
+//    Attribute **attribs;//[nAttribs];
+    HlManager *hlManager;
     Highlight *highlight;
-    Attribute **attribs;//[nAttribs];
+    Attribute attribs[nAttribs];
+
     int tabChars;
     int tabWidth;
     int fontHeight;
@@ -290,6 +274,10 @@ class KWriteDoc : QObject {
     int tagEnd;
 
     QWidget *pseudoModal;
+    
+private:
+
+  int hlNumber;
 };
 
 #endif //KWDOC_H

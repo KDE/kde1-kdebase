@@ -1,13 +1,15 @@
 //Dialogs
 
-#ifndef KWDIALOG_H
-#define KWDIALOG_H
+#ifndef _KWDIALOG_H_
+#define _KWDIALOG_H_
 
 #include <qdialog.h>
 #include <qlined.h>
 #include <qchkbox.h>
 #include <qradiobt.h>
 #include <qlistbox.h>
+
+#include <kcolorbtn.h>
 
 #include "kwview.h"
 
@@ -87,5 +89,18 @@ class SettingsDialog : public QDialog {
     QLineEdit *e3;
 };
 
+class ColorDialog : public QDialog {
+    Q_OBJECT
+  public:
+    ColorDialog(QColor *, QWidget *parent, const char *name = 0);
+    void getColors(QColor *);
+  protected:
+    KColorButton *back;
+    KColorButton *textBack;
+    KColorButton *selected;
+    KColorButton *found;
+    KColorButton *selFound;
+};
 
-#endif //KWDIALOG_H
+
+#endif //_KWDIALOG_H_

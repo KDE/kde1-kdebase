@@ -27,7 +27,6 @@
 
 #include "toplevel.h"
 #include "highlight.h"
-#include "hldialog.h"
 
 // StatusBar field IDs
 #define ID_LINE_COLUMN 1
@@ -39,9 +38,10 @@ const int toolUndo = 1;
 const int toolRedo = 2;
 
 DocSaver docSaver;
-QList<KWriteDoc> docList;
+QList<KWriteDoc> docList; //documents
+HlManager hlManager; //highlight manager
 
-TopLevel::TopLevel (KWriteDoc *doc) : KTMainWindow ("KWrite") {
+TopLevel::TopLevel (KWriteDoc *doc) : KTMainWindow("KWrite") {
 
   setMinimumSize(180,120);
 
@@ -50,29 +50,20 @@ TopLevel::TopLevel (KWriteDoc *doc) : KTMainWindow ("KWrite") {
   statusbarTimer = new QTimer(this);
   connect(statusbarTimer,SIGNAL(timeout()),this,SLOT(timeout()));
 
-//  connect(mykapp,SIGNAL(kdisplayPaletteChanged()),this,SLOT(set_colors()));
+//  connect(kapp,SIGNAL(kdisplayPaletteChanged()),this,SLOT(set_colors()));
 
-/*
-  if (!doc) {
-    doc = new KWriteDoc();
-    docList.append(doc);
-  }
-  kWriteDoc = doc;
-*/
   setupEditWidget(doc);
   setupMenuBar();
   setupToolBar();
   setupStatusBar();
 
-  readConfig();
-
+//  readConfig();
+/*
   recentPopup->clear();
   for (int z = 0 ; z < (int) recentFiles.count(); z++){
     recentPopup->insertItem(recentFiles.at(z));
   }
-
-//  set_colors();
-
+*/
   KDNDDropZone *dropZone = new KDNDDropZone(this,DndURL);
   connect(dropZone,SIGNAL(dropAction(KDNDDropZone *)),
     this,SLOT(dropAction(KDNDDropZone *)));
@@ -107,8 +98,6 @@ void TopLevel::closeEvent(QCloseEvent *e) {
   if (queryExit()) {
     e->accept();
     delete this;
-//    if (memberList->isEmpty())
-      kapp->quit();
   }
 }
 
@@ -145,7 +134,7 @@ void TopLevel::loadURL(const char *url, int flags) {
 void TopLevel::setupEditWidget(KWriteDoc *doc) {
 
   if (!doc) {
-    doc = new KWriteDoc();
+    doc = new KWriteDoc(&hlManager);
     docList.append(doc);
   }
 
@@ -165,7 +154,7 @@ void TopLevel::setupMenuBar() {
   KMenuBar *menubar;
   QPopupMenu *file, *help;
   KWBookPopup *bookmarks;
-
+  int z;
 //  KStdAccel keys(kapp->getConfig());
 
   file =        new QPopupMenu();
@@ -228,19 +217,27 @@ void TopLevel::setupMenuBar() {
   bookmarks->insertItem(i18n("&Clear Bookmarks"),kWrite,SLOT(clearBookmarks()),ALT+Key_C);
   kWrite->installBMPopup(bookmarks);
 
+  //highlight selector
+  hlPopup = new QPopupMenu();
+  hlPopup->setCheckable(true);
+  for (z = 0; z < hlManager.highlights(); z++) {
+    hlPopup->insertItem(i18n(hlManager.hlName(z)),z);
+  }
+  connect(hlPopup,SIGNAL(activated(int)),kWrite,SLOT(setHl(int)));
 
   options->setCheckable(TRUE);
-//  options->insertitem(i18n("&Font..."),this,SLOT(font()));
-//  options->insertItem(i18n("Colors"),colors);
-//  options->insertSeparator();
-  options->insertItem(i18n("&Options..."),kWrite,SLOT(optDlg()));
-  options->insertItem(i18n("&Highlight..."),this,SLOT(hlDlg()));
+  options->insertItem(i18n("Set Highlight"),hlPopup);
+  connect(hlPopup,SIGNAL(aboutToShow()),this,SLOT(showHighlight()));
+  options->insertItem(i18n("&Defaults..."),kWrite,SLOT(hlDef()));
+  options->insertItem(i18n("&Highlight..."),kWrite,SLOT(hlDlg()));
 //  indentID = options->insertItem(i18n("Auto &Indent"),this,SLOT(toggle_indent_mode()));
+  options->insertSeparator();
+  options->insertItem(i18n("&Options..."),kWrite,SLOT(optDlg()));
+  options->insertItem(i18n("&Colors..."),kWrite,SLOT(colDlg()));
   options->insertSeparator();
   menuVertical = options->insertItem(i18n("&Vertical Selections"),kWrite,SLOT(toggleVertical()),Key_F5);
   menuShowTB = options->insertItem(i18n("Show &Toolbar"),this,SLOT(toggleToolBar()));
   menuShowSB = options->insertItem(i18n("Show &Statusbar"),this,SLOT(toggleStatusBar()));
-  options->insertSeparator();
   options->insertItem(i18n("Save Config"),this,SLOT(writeConfig()));
 //  options->insertSeparator();
 //  options->insertItem(i18n("Save Options"),this,SLOT(save_options()));
@@ -264,7 +261,6 @@ void TopLevel::setupMenuBar() {
 //  setMenu(menubar);
 
   //right mouse button popup
-  QPopupMenu *popup;
   popup = new QPopupMenu();
   popup->insertItem(i18n("&Open..."),kWrite,SLOT(open()),CTRL+Key_O);
   popup->insertItem(i18n("&Save"),kWrite,SLOT(save()),CTRL+Key_S);
@@ -373,16 +369,16 @@ void TopLevel::setupStatusBar(){
 void TopLevel::newWindow() {
 
   TopLevel *t = new TopLevel();
+  t->readConfig();
   t->init();
-//  t->show();
 }
 
 void TopLevel::newView() {
 
   TopLevel *t = new TopLevel(kWrite->doc());
+  t->readConfig();
   t->kWrite->copySettings(kWrite);
   t->init();
-//  t->show();
 }
 
 
@@ -396,7 +392,7 @@ void TopLevel::quitEditor() {
 //  writeConfig();
   kapp->quit();
 }
-
+/*
 void TopLevel::hlDlg() {
   QStrList types;
 
@@ -406,22 +402,9 @@ void TopLevel::hlDlg() {
   types.append("HTML");
   types.append("Bash");
   types.append("Modula 2");
+  types.append("Ada");
 
-  Highlight hl("");
-
-  QList<Attribute> attributes;
-
-  for (Attribute *att=Highlight::attList.first(); att != 0; att = Highlight::attList.next())
-    attributes.append(new Attribute(att->getName(),att->getColor(),att->getSelColor(),att->getFont(),att->getOverrideFlags()));
-
-  HlDialog dialog(attributes,types,2,this,0L,true);
-
-  if (dialog.exec() == QDialog::Accepted)
-  {
-    Highlight::attList = attributes;
-    hl.writeConfig();
-    newHl(dialog.getLanguage());
-  }
+  kWrite->setHighlight(HighlightDialog::getHighlight(types,this,SLOT(newHl(int))));
 }
 
 void TopLevel::newHl(int index) {
@@ -443,14 +426,18 @@ void TopLevel::newHl(int index) {
     case 5:
       highlight = new ModulaHighlight("Modula Highlight");
       break;
+    case 6:
+      highlight = new AdaHighlight("Ada Highlight");
+      break;
     default:
       highlight = new NoHighlight("No Highlight");
+      index=0;
   }
   highlight->init();
-
-  kWrite->setHighlight(highlight);
+printf("TopLevel::newHl()\n");
+  ((HighlightDialog *) sender())->newHl(highlight);
 }
-
+*/
 void TopLevel::toggleToolBar() {
 
   options->setItemChecked(menuShowTB,hideToolBar);
@@ -487,8 +474,8 @@ void TopLevel::helpSelected() {
 void TopLevel::newCurPos() {
   char s[64];
 
-  sprintf(s,"%s: %d %s: %d",i18n("Line"),kWrite->currentLine() +1,
-                            i18n("Col"),kWrite->currentColumn() +1);
+  sprintf(s,"%1.20s: %d %1.20s: %d",i18n("Line"),kWrite->currentLine() +1,
+    i18n("Col"),kWrite->currentColumn() +1);
   statusBar()->changeItem(s,ID_LINE_COLUMN);
 }
 
@@ -537,14 +524,10 @@ void TopLevel::dropAction(KDNDDropZone *dropZone) {
     if (s == list.getFirst() && !kWrite->isModified()) {
        loadURL(s);
     } else {
-//      setGeneralStatusField(klocale->translate("New Window"));
       TopLevel *t = new TopLevel();
-//       setGeneralStatusField(klocale->translate("New Window Created"));
-//       QString n = s;
+      t->readConfig();
       t->loadURL(s);
-//      setGeneralStatusField(klocale->translate("Load Command Done"));
       t->init();
-//      t->show();
     }
   }
 }
@@ -565,6 +548,7 @@ void TopLevel::readConfig() {
   hideStatusBar = config->readNumEntry("HideStatusBar");
 
   kWrite->readConfig(config);
+  kWrite->doc()->readConfig(config);
 }
 
 void TopLevel::writeConfig() {
@@ -579,6 +563,7 @@ void TopLevel::writeConfig() {
   config->writeEntry("HideStatusBar",hideStatusBar);
 
   kWrite->writeConfig(config);
+  kWrite->doc()->writeConfig(config);
 }
 
 // session restore
@@ -590,9 +575,9 @@ void TopLevel::readProperties(KConfig *config) {
 void TopLevel::restore(KConfig *config, int n) {
   const char *url;
 
-  if (kWrite->isLastView()) {
+  if (kWrite->isLastView()) { //in this case first view
     url = kWrite->fileName();
-    if (url && *url) loadURL(url);
+    if (url && *url) loadURL(url,lfNoAutoHl);
   }
   readPropertiesInternal(config,n);
   init();
@@ -610,15 +595,15 @@ void restore() {
   if (!config) return;
 
   config->setGroup("Number");
-  docs = config->readNumEntry("NumberOfDocuments",0);
-  windows = config->readNumEntry("NumberOfWindows",0);
+  docs = config->readNumEntry("NumberOfDocuments");
+  windows = config->readNumEntry("NumberOfWindows");
 
   for (z = 1; z <= docs; z++) {
      sprintf(buf,"Document%d",z);
      config->setGroup(buf);
-     doc = new KWriteDoc();
-     docList.append(doc);
+     doc = new KWriteDoc(&hlManager);
      doc->readSessionConfig(config);
+     docList.append(doc);
   }
 
   for (z = 1; z <= windows; z++) {
@@ -637,6 +622,16 @@ void TopLevel::saveProperties(KConfig *config) {
   kWrite->writeSessionConfig(config);
   setUnsavedData(kWrite->isModified());
 }
+
+
+void TopLevel::showHighlight()
+{
+  int hl=kWrite->doc()->getHighlight();
+
+  for (uint index=0; index<hlPopup->count(); index++)
+    hlPopup->setItemChecked(index, hl == index);
+}
+
 
 //DocSaver::DocSaver() : QObject() {}
 
@@ -657,7 +652,53 @@ void DocSaver::saveYourself() {
      doc->writeSessionConfig(config);
   }
 }
+/*
+void initHighlight() { //setup highlight and default classes
+  KConfig *config;
+  DefItemStyle *p;
+  QString s;
+  QRgb col, selCol;
+  char family[96];
+  char charset[48];
 
+  defItemStyleList.setAutoDelete(true);
+  defItemStyleList.append(new DefItemStyle("Normal",black,white,false,false));
+  defItemStyleList.append(new DefItemStyle("Keyword",black,white,true,false));
+  defItemStyleList.append(new DefItemStyle("Decimal/Value",blue,cyan,false,false));
+  defItemStyleList.append(new DefItemStyle("Base-N Integer",darkCyan,cyan,false,false));
+  defItemStyleList.append(new DefItemStyle("Floating Point",darkMagenta,cyan,false,false));
+  defItemStyleList.append(new DefItemStyle("Character",magenta,magenta,false,false));
+  defItemStyleList.append(new DefItemStyle("String",red,red,false,false));
+  defItemStyleList.append(new DefItemStyle("Comment",darkGray,gray,false,true));
+  defItemStyleList.append(new DefItemStyle("Others",darkBlue,blue,false,false));
+
+  config = kapp->getConfig();
+  config->setGroup("Highlight Defaults");
+  for (p = defItemStyleList.first(); p != 0L; p = defItemStyleList.next()) {
+    s = config->readEntry(p->name);
+    if (!s.isEmpty()) {
+      sscanf(s,"%X,%X,%d,%d",&col,&selCol,&p->bold,&p->italic);
+      p->col.setRgb(col);
+      p->selCol.setRgb(selCol);
+    }
+  }
+  s = config->readEntry("Font");
+  if (!s.isEmpty()) {
+    sscanf(s,"%95[^,],%d,%47[^,]",family,&itemFont.size,charset);
+    itemFont.family = family;
+    itemFont.charset = charset;
+  }
+
+  hlList.setAutoDelete(true);
+  hlList.append(new Highlight("Normal"));
+  hlList.append(new CHighlight());
+  hlList.append(new CppHighlight());
+  hlList.append(new HtmlHighlight());
+  hlList.append(new BashHighlight());
+  hlList.append(new ModulaHighlight());
+  hlList.append(new AdaHighlight());
+}
+*/
 
 int main(int argc, char** argv) {
   KApplication a(argc,argv);
@@ -667,12 +708,11 @@ int main(int argc, char** argv) {
 
   if (kapp->isRestored()) {
     restore();
-//    RESTORE(TopLevel);
   } else {
     TopLevel *t = new TopLevel();
+    t->readConfig();
     if (argc > 1) t->loadURL(argv[1],lfNewFile);
     t->init();
-//    t->show();
   }
   return a.exec();
 }

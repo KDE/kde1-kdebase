@@ -4,10 +4,10 @@ LDFLAGS = -lkfile -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 $(all_libraries) $(K
 bin_PROGRAMS = kwrite
 
 kwrite_SOURCES = highlight.cpp kwdoc.cpp kwview.cpp \
-	hldialog.cpp kwdialog.cpp toplevel.cpp listedit.cpp editlinedlg.cpp
+	kwdialog.cpp toplevel.cpp kmimemagic.cpp
 
-noinst_HEADERS = highlight.h kwdialog.h kwview.h toplevel.h hldialog.h \
-	kwdoc.h	listedit.h 
+noinst_HEADERS = highlight.h kwdialog.h kwview.h toplevel.h \
+	kwdoc.h	kmimemagic.h
 
 kwrite_METASOURCES = USE_AUTOMOC
 
