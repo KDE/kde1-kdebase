@@ -300,7 +300,6 @@ void KRootWm::draw_selection_rectangle(int x, int y, int dx, int dy){
 
 
 bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
-  static int grab_count = 0;
   int cx, cy, rx, ry;
   int ox, oy;
   XEvent ev;
@@ -310,14 +309,7 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
 			    PointerMotionMask |
 			    EnterWindowMask | LeaveWindowMask,
 			    arrowCursor.handle(), 0);
-  if (grab_count < 0) // this shouldn't happen (deffensive programming)
-    grab_count = 0; 
-  // This had been missing from the patch I supplyed last time.
-  // It's to prevent doublegrabs! (Marcin Dalecki)
-  if (!grab_count) {
-    ++grab_count;
-    XGrabServer(qt_xdisplay());
-  }
+  XGrabServer(qt_xdisplay());
   
   draw_selection_rectangle(x, y, dx, dy);
   
@@ -368,10 +360,7 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
   draw_selection_rectangle(x, y, dx, dy);
   XFlush(qt_xdisplay());
   
-  if (grab_count) {
-    XUngrabServer(qt_xdisplay());
-    --grab_count;
-  }
+  XUngrabServer(qt_xdisplay());
   
   return True;
 }
