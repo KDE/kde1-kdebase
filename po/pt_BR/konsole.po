@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-11-13 01:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO8859-1\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.C:201
+msgid "&Normal"
+msgstr "&Normal"
+
+#: main.C:204
+msgid "&Small"
+msgstr "&Pequeno"
+
+#: main.C:205
+msgid "&Medium"
+msgstr "&Médio"
+
+#: main.C:206
+msgid "&Large"
+msgstr "&Grande"
+
+#: main.C:207
+msgid "&Huge"
+msgstr "&Enorme"
+
+#: main.C:209
+msgid "&Linux"
+msgstr "&Linux"
+
+#: main.C:210
+msgid "Linux (small)"
+msgstr "Linux (pequeno)"
+
+#: main.C:213
+msgid "&More ..."
+msgstr "&Mais ..."
+
+#: main.C:219
+msgid "&Hide"
+msgstr "Esconde&r"
+
+#: main.C:220
+msgid "&Left"
+msgstr "E&squerdo"
+
+#: main.C:221
+msgid "&Right"
+msgstr "&Direito"
+
+#: main.C:227
+msgid "40x15 (&small)"
+msgstr "40x15 (&pequeno)"
+
+#: main.C:228
+msgid "80x24 (&vt100)"
+msgstr "80x24 (&vt100)"
+
+#: main.C:229
+msgid "80x25 (&ibmpc)"
+msgstr "80x25 (&ibmpc)"
+
+#: main.C:230
+msgid "80x40 (&xterm)"
+msgstr "80x40 (&xterm)"
+
+#: main.C:231
+msgid "80x52 (ibmv&ga)"
+msgstr "80x52 (ib&mvga)"
+
+#: main.C:240
+msgid "&Menubar"
+msgstr "&Barra de menu"
+
+#: main.C:242
+msgid "&Frame"
+msgstr "&Moldura"
+
+#: main.C:244
+msgid "Scroll&bar"
+msgstr "Barra de Ro&lagem"
+
+#: main.C:246
+msgid "BS sends &DEL"
+msgstr "B&S manda DEL"
+
+#: main.C:249
+msgid "&Font"
+msgstr "&Letra"
+
+#: main.C:250
+msgid "&Size"
+msgstr "&Tamanho"
+
+#: main.C:251
+msgid "&Schema"
+msgstr "Es&quema"
+
+#: main.C:253
+msgid "&Save options"
+msgstr "&Salvar opções"
+
+#: main.C:257
+msgid "&About ..."
+msgstr "&Sobre ..."
+
+#: main.C:258
+msgid "&User's Manual ..."
+msgstr "Manual do &Usuário ..."
+
+#: main.C:259
+msgid "&Technical Reference ..."
+msgstr "Re&ferência Técnica ..."
+
+#: main.C:270
+msgid "New"
+msgstr "Novo"
+
+#: main.C:271
+msgid "Sessions"
+msgstr "Sessões"
+
+#: main.C:497
+#, c-format
+msgid "About %s"
+msgstr "Sobre %s"
+
+#: main.C:499
+#, c-format
+msgid ""
+"%s version %s - an X terminal\n"
+"\n"
+"Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"This program is free software under the\n"
+"terms of the Artistic License and comes\n"
+"WITHOUT ANY WARRANTY.\n"
+"See `LICENSE.readme´ for details."
+msgstr ""
+"%s versão %s - um terminal X\n"
+"\n"
+"Copyright (c) 1998 Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"Este programa é software gratuito sob os\n"
+"termos da Licença Artística e vem\n"
+"SEM QUALQUER GARANTIA.\n"
+"Veja `LICENSE.readme´ para maiores detalhes."
+
+#: main.C:797
+msgid "Welcome to the console"
+msgstr "Bem-vindo ao console"
