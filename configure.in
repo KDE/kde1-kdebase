@@ -191,6 +191,7 @@ AC_OUTPUT(Makefile \
  	applnk/Settings/Sound/Makefile \
 	applnk/Settings/Network/Makefile \
 	applnk/Settings/Information/Makefile \
+	applnk/Settings/Panel/Makefile \
 	po/Makefile \
 	po/cs/Makefile \
 	po/da/Makefile \
