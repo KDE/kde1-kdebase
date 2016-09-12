@@ -1,0 +1,9 @@
+.libs
+config.log
+config.status
+stamp-h
+Makefile
+autom4te.cache
+config.cache
+libtool
+build
