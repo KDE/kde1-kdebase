@@ -1,6 +1,6 @@
 /* $XConsortium: dm.h,v 1.63.1.1 95/01/26 19:31:18 kaleb Exp $ */
 /* $XFree86: xc/programs/xdm/dm.h,v 3.7 1995/01/28 16:16:51 dawes Exp $ */
-/* $Id$ */
+/* $Id: dm.h,v 1.3 1998/09/30 21:19:55 bieker Exp $ */
 /*
 
 Copyright (c) 1988  X Consortium

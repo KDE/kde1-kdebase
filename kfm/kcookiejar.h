@@ -21,7 +21,7 @@
 //----------------------------------------------------------------------------
 //
 // KDE File Manager -- HTTP Cookies
-// $Id$
+// $Id: kcookiejar.h,v 1.6 1998/12/16 21:02:54 waba Exp $
 
 #ifndef KCOOKIEJAR_H
 #define KCOOKIEJAR_H

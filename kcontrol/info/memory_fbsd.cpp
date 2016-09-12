@@ -1,4 +1,4 @@
-// $Id$
+// $Id: memory_fbsd.cpp,v 1.7 1998/10/11 05:33:32 garbanzo Exp $
 
 #include <sys/types.h>
 #include <sys/sysctl.h>

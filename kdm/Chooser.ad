@@ -1,4 +1,4 @@
-! $Id$
+! $Id: Chooser.ad,v 1.2 1998/09/30 21:19:44 bieker Exp $
 *ShapeStyle:		Oval
 *cursor:		left_ptr
 *allowShellResize:	true

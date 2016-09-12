@@ -1,6 +1,0 @@
-XTerm*background: WINDOW_BACKGROUND
-XTerm*foreground: WINDOW_FOREGROUND
-XTerm*Font: FIXED_FONT
-XTerm.SimpleMenu*background: BACKGROUND
-XTerm.SimpleMenu*foreground: FOREGROUND
-XTerm.SimpleMenu*font: FONT

@@ -1,7 +1,7 @@
     /*
 
     Shutdown dialog
-    $Id$
+    $Id: kdmshutdown.cpp,v 1.14.2.1 1999/03/13 04:42:57 steffen Exp $
 
     Copyright (C) 1997, 1998 Steffen Hansen
                              stefh@mip.ou.dk

@@ -1,6 +1,6 @@
     /*
 
-    $Id$
+    $Id: kdm-config.h,v 1.11.4.1 1999/03/09 16:49:34 steffen Exp $
 
     Copyright (C) 1997, 1998 Steffen Hansen
                              stefh@mip.ou.dk

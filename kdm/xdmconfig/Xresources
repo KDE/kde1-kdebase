@@ -1,5 +1,5 @@
 ! $XConsortium: Xresources,v 1.7 93/09/28 14:30:29 gildea Exp $
-! $Id$
+! $Id: Xresources,v 1.2 1998/09/30 21:20:27 bieker Exp $
 xlogin*login.translations: #override\
 	Ctrl<Key>R: abort-display()\n\
 	<Key>F1: set-session-argument(failsafe) finish-field()\n\

@@ -1,6 +1,6 @@
 /* $XConsortium: netaddr.c,v 1.8 94/04/17 20:03:41 rws Exp $ */
 /* $XFree86: xc/programs/xdm/netaddr.c,v 3.1 1994/08/31 04:50:51 dawes Exp $ */
-/* $Id$ */
+/* $Id: netaddr.c,v 1.4 1998/09/30 21:20:05 bieker Exp $ */
 /*
 
 Copyright (c) 1991  X Consortium

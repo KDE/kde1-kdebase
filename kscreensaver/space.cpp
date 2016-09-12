@@ -2,7 +2,7 @@
  *
  *            kStart OpenGL screensave for KDE
  *
- * $Id$
+ * $Id: space.cpp,v 1.4.4.3 1999/08/07 01:09:28 bero Exp $
  * 
  *            Copyright (C) 1998 Bernd Johannes Wuebben 
  *                   wuebben@math.cornell.edu

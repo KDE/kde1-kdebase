@@ -1,7 +1,7 @@
 // File: ftp_proxy.cpp by Martin Zumkley (uc2n@rzstud1.rz.uni-karlsruhe.de)
 
 #ifndef _ftp_proxy_h
-#define _ftp_proxy_h "$Id$"
+#define _ftp_proxy_h "$Id: ftp_proxy.h,v 1.4 1999/01/09 22:58:20 garbanzo Exp $"
 
 #include "http.h"
 

@@ -21,7 +21,7 @@
 //----------------------------------------------------------------------------
 //
 // KDE File Manager -- HTTP Cookies
-// $Id$
+// $Id: kcookiejar.cpp,v 1.13 1998/12/20 22:46:20 waba Exp $
 
 //
 // The cookie protocol is a mess. RFC2109 is a joke since nobody seems to 

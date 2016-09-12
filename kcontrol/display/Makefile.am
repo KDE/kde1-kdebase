@@ -1,4 +1,4 @@
-# $Id$
+# $Id: Makefile.am,v 1.27 1999/01/19 13:43:49 kulow Exp $
 # kdebase/kcontrol/display
 
 INCLUDES = $(all_includes) 

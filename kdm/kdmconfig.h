@@ -1,7 +1,7 @@
     /*
 
     Configuration for kdm. Class KDMConfig
-    $Id$
+    $Id: kdmconfig.h,v 1.8 1999/01/28 14:10:01 kulow Exp $
 
     Copyright (C) 1997, 1998 Steffen Hansen
                              stefh@mip.ou.dk

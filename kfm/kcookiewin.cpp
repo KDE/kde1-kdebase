@@ -21,7 +21,7 @@
 //----------------------------------------------------------------------------
 //
 // KDE File Manager -- HTTP Cookie Dialogs
-// $Id$
+// $Id: kcookiewin.cpp,v 1.2 1998/12/21 17:36:36 bieker Exp $
 
 #include "kcookiewin.h"
 #include "kcookiejar.h"

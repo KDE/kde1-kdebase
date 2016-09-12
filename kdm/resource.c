@@ -1,6 +1,6 @@
 /* $XConsortium: resource.c,v 1.47 94/04/17 20:03:43 gildea Exp $ */
 /* $XFree86: xc/programs/xdm/resource.c,v 3.1 1994/12/29 10:22:27 dawes Exp $ */
-/* $Id$ */
+/* $Id: resource.c,v 1.7 1999/01/28 14:10:02 kulow Exp $ */
 /*
 
 Copyright (c) 1988  X Consortium

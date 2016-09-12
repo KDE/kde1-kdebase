@@ -1,7 +1,7 @@
     /*
 
     Dialog class to handle input focus -- see headerfile
-    $Id$
+    $Id: kfdialog.cpp,v 1.4 1998/09/04 15:33:10 bieker Exp $
 
     Copyright (C) 1997, 1998 Steffen Hansen
                              stefh@mip.ou.dk

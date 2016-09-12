@@ -1,6 +1,6 @@
     /*
 
-    $Id$
+    $Id: kfontmanager.cpp,v 1.14 1998/12/13 03:54:29 pbrown Exp $
 
     Requires the Qt widget libraries, available at no cost at 
     http://www.troll.no

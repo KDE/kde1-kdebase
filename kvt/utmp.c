@@ -1,4 +1,4 @@
-/* $Id$
+/* $Id: utmp.c,v 1.7.4.6 1999/08/30 20:09:46 duncan Exp $
  *
  * Revision 1.5 08/09/1993 stempien
  * Something was wrong with the Linux support!
@@ -7,7 +7,14 @@
  * in the BSD defines to reduce the memory needed to run.
  * I didn't touch the Sun part of the code so it should still work.
  *
- * $Log$
+ * $Log: utmp.c,v $
+ * Revision 1.7.4.6  1999/08/30 20:09:46  duncan
+ * OOPS:
+ * reverted part of a patch that I applied on 199/08/03 that
+ * inadvertentently removed porten's earlier patch (HP-UX fixes).
+ * thanks to Harri Porten for spotting this.
+ * duncan@kde.org
+ *
  * Revision 1.7.4.5  1999/08/03 11:32:55  duncan
  * applied patch from Franz Sirl to fix kvt on glibc-2.1 systems.   Now
  * it gets a pty again!  Nice work Franz!.

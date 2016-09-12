@@ -1,4 +1,4 @@
-# $Id$
+# $Id: Makefile.am,v 1.2.4.1 1999/09/05 17:49:00 mosfet Exp $
 # kdebase/kcontrol/display/pics
 
 SUBDIRS = mini large

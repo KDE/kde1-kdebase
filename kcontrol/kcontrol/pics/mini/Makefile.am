@@ -1,4 +1,4 @@
-# $Id$
+# $Id: Makefile.am,v 1.6 1998/11/30 04:58:54 garbanzo Exp $
 # kdebase/kcontrol/kcontrol/pics/mini
 
 data_DATA = application_settings.xpm desktop_settings.xpm \

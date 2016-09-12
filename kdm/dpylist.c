@@ -1,5 +1,5 @@
 /* $XConsortium: dpylist.c,v 1.29 94/04/17 20:03:37 gildea Exp $ */
-/* $Id$ */
+/* $Id: dpylist.c,v 1.3 1998/09/30 21:19:56 bieker Exp $ */
 /*
 
 Copyright (c) 1988  X Consortium

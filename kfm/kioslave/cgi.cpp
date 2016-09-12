@@ -1,4 +1,4 @@
-// $Id$
+// $Id: cgi.cpp,v 1.7 1999/01/09 23:03:40 garbanzo Exp $
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>

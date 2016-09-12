@@ -1,4 +1,4 @@
-# $Id$
+# $Id: Makefile.am,v 1.31.4.1 1999/02/14 16:34:28 kulow Exp $
 
 SUBDIRS	= config pics $(xdmconfigsubdir)
 

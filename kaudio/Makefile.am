@@ -1,5 +1,5 @@
 # Makefile.am for kdebase/kaudio
-# $Id$
+# $Id: Makefile.am,v 1.28 1999/01/22 17:36:56 kulow Exp $
 
 INCLUDES = $(all_includes)
 LDFLAGS = $(all_libraries) $(KDE_RPATH)

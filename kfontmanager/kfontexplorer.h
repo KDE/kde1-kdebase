@@ -1,5 +1,5 @@
 /*
-    $Id$
+    $Id: kfontexplorer.h,v 1.5 1998/06/27 09:20:15 kalle Exp $
 
     Requires the Qt widget libraries, available at no cost at 
     http://www.troll.no
@@ -21,7 +21,12 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
   
-    $Log$
+    $Log: kfontexplorer.h,v $
+    Revision 1.5  1998/06/27 09:20:15  kalle
+    Fixing four hundred Makefiles for KDE 1.0, vol. 3
+    Bumped package version number to 1.0pre
+    Improved RPM spec file
+
     Revision 1.4  1997/11/09 22:31:42  wuebben
     Bernd: colorscheme related fixes
 

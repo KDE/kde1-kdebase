@@ -1,4 +1,4 @@
-static char rcsid[] = "$Header$";
+static char rcsid[] = "$Header: /home/kde/kdebase/kdehelp/rman/Attic/rman.c,v 1.2.4.1 1999/04/09 10:32:12 jones Exp $";
 
 /*
    PolyglotMan by Thomas A. Phelps (phelps@ACM.org)
@@ -5245,7 +5245,7 @@ main(int argc, char *argv[]) {
 			exit(0);
 
 		   case 'v': /*case '?':*/
-			printf("PolyglotMan v" POLYGLOTMANVERSION " of $Date$\n");
+			printf("PolyglotMan v" POLYGLOTMANVERSION " of $Date: 1999/04/09 10:32:12 $\n");
 			exit(0);
 
 		   default:

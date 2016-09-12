@@ -1,6 +1,6 @@
     /*
 
-    $Id$
+    $Id: kdmusers.h,v 1.2 1998/09/04 15:33:01 bieker Exp $
 
     Copyright (C) 1997, 1998 Steffen Hansen
                              stefh@mip.ou.dk

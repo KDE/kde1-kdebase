@@ -1,6 +1,6 @@
 /* 
 
-    $Id$
+    $Id: syssound.h,v 1.2 1998/03/08 08:01:33 wuebben Exp $
 
     Copyright (C) 1997 Christian Czezatke (e9025461@student.tuwien.ac.at)
                   1998 Bernd Wuebben <wuebben@kde.org>
@@ -20,7 +20,10 @@
     the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
     Boston, MA 02111-1307, USA.
 
-    $Log$
+    $Log: syssound.h,v $
+    Revision 1.2  1998/03/08 08:01:33  wuebben
+    Bernd: implemented support for all sound events
+
 
 */  
 

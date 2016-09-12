@@ -2,7 +2,7 @@
     /*
 
     User view for kdm. Classes KDMViewItem, KDMViewItemList and KDMView
-    $Id$
+    $Id: kdmview.h,v 1.6 1998/09/04 15:33:02 bieker Exp $
 
     Copyright (C) 1997, 1998 Steffen Hansen
                              stefh@mip.ou.dk

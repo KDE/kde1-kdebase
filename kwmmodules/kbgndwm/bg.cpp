@@ -4,7 +4,7 @@
  * Copyright (C) 1997 Martin Jones
  *               1998 Matej Koss
  *
- * $Id$
+ * $Id: bg.cpp,v 1.33.2.9 1999/09/04 15:04:00 dmuell Exp $
  *
  *
  */

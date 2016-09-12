@@ -1,5 +1,5 @@
 XCOMM $XConsortium: Xserv.ws.cpp,v 1.3 93/09/28 14:30:30 gildea Exp $
-XCOMM $Id$
+XCOMM $Id: Xserv.ws.cpp,v 1.2 1998/09/30 21:20:28 bieker Exp $
 XCOMM
 XCOMM Xservers file, workstation prototype
 XCOMM

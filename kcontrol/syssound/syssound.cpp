@@ -1,6 +1,6 @@
 /*
 
-    $Id$
+    $Id: syssound.cpp,v 1.6 1998/04/17 22:08:08 kulow Exp $
 
     Copyright (C) 1997 Christian Czezatke (e9025461@student.tuwien.ac.at)
                   1998 Bernd Wuebben <wuebben@kde.org>
@@ -20,7 +20,10 @@
     the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
     Boston, MA 02111-1307, USA.
 
-    $Log$
+    $Log: syssound.cpp,v $
+    Revision 1.6  1998/04/17 22:08:08  kulow
+    fixed typo
+
     Revision 1.5  1998/03/08 08:01:32  wuebben
     Bernd: implemented support for all sound events
 

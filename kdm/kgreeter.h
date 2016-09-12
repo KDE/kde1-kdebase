@@ -1,7 +1,7 @@
     /*
 
     Greeter module for xdm
-    $Id$
+    $Id: kgreeter.h,v 1.12.4.1 1999/06/29 22:13:36 steffen Exp $
 
     Copyright (C) 1997, 1998 Steffen Hansen
                              stefh@mip.ou.dk

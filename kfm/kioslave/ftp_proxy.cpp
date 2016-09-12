@@ -1,7 +1,7 @@
 // File: ftp_proxy.cpp by Martin Zumkley (uc2n@rzstud1.rz.uni-karlsruhe.de)
 // additions to work with KFM Proxy Manager by Lars Hoss ( Lars.Hoss@munich.netsurf.de )
 //
-// $Id$
+// $Id: ftp_proxy.cpp,v 1.10.4.1 1999/04/06 21:14:37 dfaure Exp $
 
 #include <stdio.h>
 #include <stdlib.h>

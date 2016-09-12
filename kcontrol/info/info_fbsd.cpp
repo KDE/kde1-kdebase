@@ -1,5 +1,5 @@
 /*
- * $Id$
+ * $Id: info_fbsd.cpp,v 1.10 1998/11/09 09:14:30 garbanzo Exp $
  *
  * info_fbsd.cpp is part of the KDE program kcminfo.  This displays
  * various information about the system (hopefully a FreeBSD system)

@@ -1,9 +1,0 @@
-XCalc*background: BACKGROUND
-XCalc*foreground: FOREGROUND
-XCalc*Font: FONT
-!XCalc*bevel.screen.LCD.Font: FIXED_FONT
-!XCalc*bevel.Background: LOWLIGHT
-!XCalc*bevel.screen*background: WINDOW_BACKGROUND
-!XCalc*bevel.screen*foreground: WINDOW_FOREGROUND
-XCalc*bevel.screen.LCD.background: WINDOW_BACKGROUND
-XCalc*bevel.screen.LCD.foreground: WINDOW_FOREGROUND

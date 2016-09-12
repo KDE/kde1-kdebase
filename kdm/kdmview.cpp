@@ -1,7 +1,7 @@
     /*
 
     User view for kdm. Inspired by QListBox
-    $Id$
+    $Id: kdmview.cpp,v 1.7 1998/09/04 15:33:09 bieker Exp $
 
     Copyright (C) 1997, 1998 Steffen Hansen
                              stefh@mip.ou.dk

@@ -1,5 +1,5 @@
 /* $XConsortium: error.c,v 1.16 94/04/17 20:03:38 gildea Exp $ */
-/* $Id$ */
+/* $Id: error.c,v 1.9 1999/01/07 03:58:44 steffen Exp $ */
 /*
 
 Copyright (c) 1988  X Consortium

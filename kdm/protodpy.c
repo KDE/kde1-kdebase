@@ -1,6 +1,6 @@
 /*
  * $XConsortium: protodpy.c,v 1.14 94/04/17 20:03:42 rws Exp $
- * $Id$
+ * $Id: protodpy.c,v 1.3 1998/09/30 21:20:07 bieker Exp $
  *
 Copyright (c) 1989  X Consortium
 

@@ -1,7 +1,7 @@
 /* 
    This file is part of the KDE system sound package
 
-   $Id$
+   $Id: kwmsound.h,v 1.3 1998/03/08 08:06:51 wuebben Exp $
 
    Copyright (C) 1997 Christian Czezatke (e9025461@student.tuwien.ac.at)
                  1998 Bernd Johannes Wuebben <wuebben@kde.org>
@@ -22,7 +22,10 @@
    Boston, MA 02111-1307, USA.
 
  
-  $Log$
+  $Log: kwmsound.h,v $
+  Revision 1.3  1998/03/08 08:06:51  wuebben
+  *** empty log message ***
+
   
 */
 

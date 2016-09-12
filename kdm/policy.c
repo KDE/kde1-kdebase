@@ -1,6 +1,6 @@
 /* $XConsortium: policy.c,v 1.12 94/04/17 20:03:41 hersh Exp $ */
 /* $XFree86: xc/programs/xdm/policy.c,v 3.0 1994/06/28 12:32:38 dawes Exp $ */
-/* $Id$ */
+/* $Id: policy.c,v 1.3 1998/09/30 21:20:06 bieker Exp $ */
 /*
 
 Copyright (c) 1988  X Consortium

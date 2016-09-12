@@ -1,6 +1,6 @@
     /*
 
-    $Id$
+    $Id: main.cpp,v 1.15 1998/02/24 18:01:39 kulow Exp $
 
     Requires the Qt widget libraries, available at no cost at 
     http://www.troll.no

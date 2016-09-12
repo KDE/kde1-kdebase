@@ -1,4 +1,4 @@
-# $Id$
+# $Id: Makefile.am,v 1.46.4.3 1999/09/06 11:47:17 hoelzer Exp $
 # Makefile.am for kscreensave.   
 #
 

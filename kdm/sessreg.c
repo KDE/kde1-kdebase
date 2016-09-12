@@ -1,7 +1,7 @@
 /*
  * $XConsortium: sessreg.c,v 1.17 95/01/29 12:07:22 kaleb Exp $
  * $XFree86: xc/programs/xdm/sessreg.c,v 3.6 1995/07/15 15:12:39 dawes Exp $
- * $Id$
+ * $Id: sessreg.c,v 1.2 1998/09/30 21:20:13 bieker Exp $
  *
  * Copyright (c) 1990  X Consortium
  * 

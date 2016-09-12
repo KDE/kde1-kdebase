@@ -1,5 +1,5 @@
 /*
-    $Id$
+    $Id: kfontexplorer.cpp,v 1.10 1998/09/14 20:42:55 kulow Exp $
 
     Requires the Qt widget libraries, available at no cost at 
     http://www.troll.no
@@ -21,7 +21,10 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
   
-    $Log$
+    $Log: kfontexplorer.cpp,v $
+    Revision 1.10  1998/09/14 20:42:55  kulow
+    I know, Ok is ok too, but OK is more OK some GUI guides say :)
+
     Revision 1.9  1997/11/09 22:31:41  wuebben
     Bernd: colorscheme related fixes
 

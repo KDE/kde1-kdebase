@@ -1,7 +1,7 @@
 #!/bin/sh
 # Assign ownership of the console to the invoking user
 # $XConsortium: GiveConsole,v 1.2 93/09/28 14:29:20 gildea Exp $
-# $Id$
+# $Id: GiveConsole,v 1.3 1998/09/30 21:20:24 bieker Exp $
 #
 # By convention, both xconsole and xterm -C check that the
 # console is owned by the invoking user and is readable before attaching

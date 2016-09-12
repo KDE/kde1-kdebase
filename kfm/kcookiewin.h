@@ -21,7 +21,7 @@
 //----------------------------------------------------------------------------
 //
 // KDE File Manager -- HTTP Cookie Dialogs
-// $Id$
+// $Id: kcookiewin.h,v 1.1 1998/12/13 21:29:01 waba Exp $
 
 #ifndef _KCOOKIEWIN_H_
 #define _KCOOKIEWIN_H_

@@ -1,6 +1,6 @@
 /*
  *
- * $Id$
+ * $Id: checkpass_osfc2passwd.c,v 1.1.2.1 1999/07/08 03:02:19 garbanzo Exp $
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public

@@ -1,7 +1,7 @@
 /*
  * $XConsortium: access.c,v 1.15 94/04/17 20:03:32 hersh Exp $
  * $XFree86: xc/programs/xdm/access.c,v 3.0 1994/06/28 12:32:25 dawes Exp $
- * $Id$
+ * $Id: access.c,v 1.3.4.1 1999/06/29 22:13:35 steffen Exp $
  *
 Copyright (c) 1990  X Consortium
 

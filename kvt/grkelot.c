@@ -37,7 +37,7 @@
  * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
  * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  *
- * $Header$
+ * $Header: /home/kde/kdebase/kvt/grkelot.c,v 1.3 1997/08/02 12:33:04 kulow Exp $
  */
 
 #include <stdlib.h>

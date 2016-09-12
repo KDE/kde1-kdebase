@@ -1,5 +1,5 @@
 /*
- * $Id$
+ * $Id: desktop.cpp,v 1.9 1999/02/06 01:59:01 ettrich Exp $
  *
  * Copyright (c) 1997 Bernd Johannes Wuebben wuebben@math.cornell.edu
  *

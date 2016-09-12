@@ -1,5 +1,5 @@
 /* $XConsortium: xdmshell.c,v 1.16 95/01/05 20:57:57 kaleb Exp $ */
-/* $Id$ */
+/* $Id: xdmshell.c,v 1.2 1998/09/30 21:20:21 bieker Exp $ */
 /*
  * xdmshell - simple program for running xdm from login
  *

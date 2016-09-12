@@ -1,0 +1,105 @@
+
+cvs: 
+	@echo "*** Concatenating configure tests into acinclude.m4"
+	@$(MAKE) -f Makefile.am top_srcdir=. acinclude.m4
+	@if test -r configure.in.in; then \
+	  echo "*** Creating list of subdirectories in subdirs" ;\
+	  $(MAKE) -f Makefile.am top_srcdir=. subdirs ;\
+	  echo "*** Searching for subdirectories..." ;\
+	  $(MAKE) -f Makefile.am top_srcdir=. configure.in ;\
+	fi
+	@echo "*** Retrieving configure tests needed by configure.in"
+	@aclocal
+	@echo "*** Scanning for include statements"
+	@autoheader
+	@echo "*** Building Makefile templates (step one)"
+	@automake
+	@echo "*** Scanning for moc files"
+	@perl admin/automoc
+	@echo "*** Building Makefile templates (step two)"
+	@autoconf
+	@if grep "ac_kw foo" configure &>/dev/null; then perl -p -i -e "s/ac_kw foo/ac_kw int foo/" configure; fi
+	@echo "*** Creating date/time stamp"
+	@touch stamp-h.in
+	@echo "*** Finished"
+	@echo "    Don't forget to run ./configure"
+	@echo "    If you haven't done so in a while, run ./configure --help"
+
+dist:
+	@$(MAKE) -f Makefile.am top_srcdir=. acinclude.m4 ;\
+	if test -r configure.in.in; then \
+	  $(MAKE) -f Makefile.am top_srcdir=. subdirs configure.in; \
+	fi ;\
+	aclocal; \
+	autoheader; \
+	automake --foreign --include-deps; \
+	perl admin/automoc; \
+	autoconf; \
+	if grep "ac_kw foo" configure &>/dev/null; then perl -p -i -e "s/ac_kw foo/ac_kw int foo/" configure; fi ;\
+	touch stamp-h.in; \
+	if test -d po; then \
+	 LIST=`find ./po -name "*.po"`; \
+	 for i in $$LIST; do \
+	  file2=`echo $$i | sed -e "s#\.po#\.gmo#"`; \
+	  msgfmt -o $$file2 $$i || touch $$file2; \
+	 done ;\
+	fi
+
+cvs-clean:
+	@pwd=`pwd` ;\
+	dirs=`find . -type d | grep -v CVS | sed -e "s#^./##"` ;\
+	for i in $$dirs; do \
+	  if test ! -d $$pwd/$$i/CVS; then \
+	    echo "D $$i" ;\
+	    rm -rf $$pwd/$$i; \
+	    continue; \
+	  fi ;\
+	  cd $$pwd/$$i ;\
+	  for f in * .*; do \
+	    if test -f $$f; then \
+	      if ! grep -q "^/$$f/" CVS/Entries; then \
+	        echo "F $$i/$$f"; \
+		rm -f $$pwd/$$i/$$f; \
+	      fi; \
+	    fi ; \
+	  done; \
+	done
+
+
+# I consider the following a bad hack. But I couldn't come up with a 
+# solution without case. If someone has, let me know
+# The Makefiles have to be sorted for slashes, since configure creates
+# only one directory per Makefile not the whole hierarchy
+configure.in: configure.in.in subdirs
+	@mfs=`find . -name Makefile.am -print | sed -e "s#\.am##" | sed -e "s#\./##" | sort -r`; \
+	maxslashes=1; \
+	for i in $$mfs; do \
+	  slashes=`echo $$i | sed -e "s#[^/]##g" | wc -c | sed "s#[^0123456789]##g"`; \
+	  case "$$slashes" in \
+	  1) list_1="$$list_1 $$i";;\
+	  2) list_2="$$list_2 $$i";;\
+	  3) list_3="$$list_3 $$i";;\
+	  4) list_4="$$list_4 $$i";;\
+	  5) list_5="$$list_5 $$i";;\
+	  6) list_6="$$list_6 $$i";;\
+	  *) list_big="$$list_big $$i";;\
+	 esac ;\
+	done ;\
+	cp -f configure.in.in configure.in ;\
+	for i in $$list_big $$list_6 $$list_5 $$list_4 $$list_3 \
+		$$list_2 $$list_1; do \
+	sed -e "s#AC_OUTPUT(#AC_OUTPUT($$i #" configure.in > configure.in.new \
+	 && mv configure.in.new configure.in ;\
+	done
+
+subdirs:
+	@files=`ls -1 | sort`; \
+	dirs=`for i in $$files; do if test -d $$i; then echo $$i; fi; done`; \
+	rm -f SUBDIRS ;\
+	for i in $$dirs; do \
+	echo $$i >> ./SUBDIRS; \
+	done
+	@if test -r subdirs && diff subdirs SUBDIRS > /dev/null; then \
+	  rm -f SUBDIRS.new; \
+	fi
+	@test -r SUBDIRS && mv SUBDIRS subdirs

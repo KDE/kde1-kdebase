@@ -1,7 +1,7 @@
-// $Id$
+// $Id: bsod.h,v 1.1 1998/10/24 03:15:10 garbanzo Exp $
 
 #ifndef _BSOD_H
-#define _BSOD_H "$Id$"
+#define _BSOD_H "$Id: bsod.h,v 1.1 1998/10/24 03:15:10 garbanzo Exp $"
 
 #include <qobject.h>
 #include <qtimer.h>

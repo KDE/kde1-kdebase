@@ -1,5 +1,5 @@
 /* $XConsortium: mitauth.c,v 1.12 94/04/17 20:03:40 gildea Exp $ */
-/* $Id$ */
+/* $Id: mitauth.c,v 1.3 1998/09/30 21:20:03 bieker Exp $ */
 /*
 
 Copyright (c) 1988  X Consortium

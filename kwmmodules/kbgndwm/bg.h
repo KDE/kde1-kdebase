@@ -4,7 +4,7 @@
  * Copyright (C) 1997 Martin Jones
  *               1998 Matej Koss
  *
- * $Id$
+ * $Id: bg.h,v 1.9.4.1 1999/07/06 09:43:41 garbanzo Exp $
  *
  */
 

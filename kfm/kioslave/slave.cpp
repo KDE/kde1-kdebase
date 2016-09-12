@@ -1,4 +1,4 @@
-// $Id$
+// $Id: slave.cpp,v 1.7 1999/01/23 19:21:16 garbanzo Exp $
 
 /*
  * If this file is compiled with -DHAVE_ASYNC_PIPES,

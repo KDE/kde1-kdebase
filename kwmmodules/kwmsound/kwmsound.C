@@ -1,6 +1,6 @@
 /* 
 
-   $Id$
+   $Id: kwmsound.C,v 1.6 1999/01/28 14:10:16 kulow Exp $
 
    This file is part of the KDE system sound package
    Copyright (C) 1997 Christian Czezatke (e9025461@student.tuwien.ac.at)
@@ -21,7 +21,10 @@
    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
    Boston, MA 02111-1307, USA.
 
-   $Log$
+   $Log: kwmsound.C,v $
+   Revision 1.6  1999/01/28 14:10:16  kulow
+   some fixes for a cleaner compilation with non-GNU compilers
+
    Revision 1.5  1998/06/22 20:39:29  esken
    Fixing kwmsound: Waits for server process and exits cleanly after n retries.
 

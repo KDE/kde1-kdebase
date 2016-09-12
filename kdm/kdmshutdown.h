@@ -1,7 +1,7 @@
     /*
 
     Shutdown dialog. Class KDMShutdown
-    $Id$
+    $Id: kdmshutdown.h,v 1.3 1998/09/04 15:33:00 bieker Exp $
 
     Copyright (C) 1997, 1998 Steffen Hansen
                              stefh@mip.ou.dk

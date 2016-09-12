@@ -1,5 +1,5 @@
 /* $XConsortium: krb5auth.c,v 1.4 94/04/17 20:03:40 gildea Exp $ */
-/* $Id$ */
+/* $Id: krb5auth.c,v 1.2 1998/09/30 21:20:02 bieker Exp $ */
 /*
 
 Copyright (c) 1994  X Consortium

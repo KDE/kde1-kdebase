@@ -1,6 +1,6 @@
     /*
 
-    $Id$
+    $Id: kfontlist.cpp,v 1.8 1998/09/14 20:42:56 kulow Exp $
 
     Requires the Qt widget libraries, available at no cost at 
     http://www.troll.no

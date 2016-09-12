@@ -1,7 +1,7 @@
 /*
  * $XConsortium: chooser.c,v 1.22 95/06/08 23:20:39 gildea Exp $
  * $XFree86: xc/programs/xdm/chooser.c,v 3.7 1995/06/14 07:54:24 dawes Exp $
- * $Id$
+ * $Id: chooser.cpp,v 1.3 1998/09/30 21:35:43 bieker Exp $
  *
 Copyright (c) 1990  X Consortium
 

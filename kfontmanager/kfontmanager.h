@@ -1,6 +1,6 @@
     /*
 
-    $Id$
+    $Id: kfontmanager.h,v 1.4 1997/11/09 22:31:48 wuebben Exp $
 
     Requires the Qt widget libraries, available at no cost at 
     http://www.troll.no

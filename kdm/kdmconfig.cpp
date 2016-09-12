@@ -1,7 +1,7 @@
     /*
 
     Config for kdm
-    $Id$
+    $Id: kdmconfig.cpp,v 1.15.4.1 1999/04/23 13:12:54 porten Exp $
 
     Copyright (C) 1997, 1998 Steffen Hansen
                              stefh@mip.ou.dk

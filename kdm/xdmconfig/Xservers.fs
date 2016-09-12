@@ -1,5 +1,5 @@
 # $XConsortium: Xservers.fs,v 1.3 93/09/28 14:30:31 gildea Exp $
-# $Id$
+# $Id: Xservers.fs,v 1.2 1998/09/30 21:20:29 bieker Exp $
 #
 # Xservers file, fileserver prototype (any machine without a display)
 #

@@ -1,5 +1,5 @@
 ! $XConsortium: xdm-conf.cpp,v 1.2 93/09/28 14:30:32 gildea Exp $
-! $Id$
+! $Id: xdm-conf.cpp,v 1.3 1998/09/30 21:20:31 bieker Exp $
 !DisplayManager.errorLogFile:	XDMDIR/xdm-errors
 !DisplayManager.pidFile:	XDMDIR/xdm-pid
 !DisplayManager.keyFile:	XDMDIR/xdm-keys

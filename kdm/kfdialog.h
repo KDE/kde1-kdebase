@@ -1,7 +1,7 @@
     /*
 
     Dialog class that handles input focus in absence of a wm
-    $Id$
+    $Id: kfdialog.h,v 1.3 1998/09/04 15:33:03 bieker Exp $
 
     Copyright (C) 1997, 1998 Steffen Hansen
                              stefh@mip.ou.dk

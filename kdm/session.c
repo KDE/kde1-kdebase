@@ -1,6 +1,6 @@
 /* $XConsortium: session.c,v 1.72.1.1 95/06/19 20:29:12 gildea Exp $ */
 /* $XFree86: xc/programs/xdm/session.c,v 3.7 1995/07/08 10:32:08 dawes Exp $ */
-/* $Id$ */
+/* $Id: session.c,v 1.13.4.5 1999/08/20 18:35:10 rkrusty Exp $ */
 /*
 
 Copyright (c) 1988  X Consortium

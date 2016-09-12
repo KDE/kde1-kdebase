@@ -1,6 +1,6 @@
 #!/bin/sh
 # $XConsortium: Xsession /main/10 1995/12/18 18:21:28 gildea $
-# $Id$
+# $Id: Xsession,v 1.6 1998/09/29 16:49:02 bieker Exp $
 
 # redirect errors to a file in user's home directory if we can
 for errfile in "$HOME/.xsession-errors" "${TMPDIR-/tmp}/xses-$USER" "/tmp/xses-$USER"

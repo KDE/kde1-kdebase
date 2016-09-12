@@ -1,5 +1,5 @@
 /* $XConsortium: reset.c,v 1.11 94/04/17 20:03:42 keith Exp $ */
-/* $Id$ */
+/* $Id: reset.c,v 1.5 1998/09/30 21:20:08 bieker Exp $ */
 /*
 
 Copyright (c) 1988  X Consortium

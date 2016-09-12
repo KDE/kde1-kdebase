@@ -1,4 +1,4 @@
-// $Id$
+// $Id: slave.h,v 1.6 1999/01/09 23:03:43 garbanzo Exp $
 
 #ifndef _kslave_h
 #define _kslave_h

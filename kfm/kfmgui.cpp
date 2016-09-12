@@ -51,7 +51,7 @@ char* kfm_getrev();
 
 char* kfm_getrev()
 {
-    static char *revision = "$Revision$";
+    static char *revision = "$Revision: 1.167.2.21 $";
     static char *rev;
     static char *p;
 

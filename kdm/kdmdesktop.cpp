@@ -1,7 +1,7 @@
     /*
 
     Small util to draw a nice background in Xsetup_*
-    $Id$
+    $Id: kdmdesktop.cpp,v 1.11 1998/10/24 20:17:30 bieker Exp $
 
     Copyright (C) 1997, 1998 Steffen Hansen
                              stefh@mip.ou.dk

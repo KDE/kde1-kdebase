@@ -1,4 +1,4 @@
-# $Id$
+# $Id: Makefile.am,v 1.19 1999/01/18 12:46:26 kulow Exp $
 # kdebase/kcontrol/kwm
 
 SUBDIRS = pics

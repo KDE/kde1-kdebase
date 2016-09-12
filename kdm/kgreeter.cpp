@@ -1,7 +1,7 @@
     /*
 
     Greeter module for xdm
-    $Id$
+    $Id: kgreeter.cpp,v 1.56.4.5 1999/08/16 11:36:34 knoll Exp $
 
     Copyright (C) 1997, 1998 Steffen Hansen
                              stefh@mip.ou.dk
