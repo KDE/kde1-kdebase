@@ -1,0 +1,299 @@
+/* config.h.  Generated automatically by configure.  */
+/* config.h.in.  Generated automatically from configure.in by autoheader.  */
+
+/* Define to the type of elements in the array set by `getgroups'.
+   Usually this is either `int' or `gid_t'.  */
+#define GETGROUPS_T gid_t
+
+/* Define to `int' if <sys/types.h> doesn't define.  */
+/* #undef gid_t */
+
+/* Define if the `long double' type works.  */
+#define HAVE_LONG_DOUBLE 1
+
+/* Define if you have the ANSI C header files.  */
+#define STDC_HEADERS 1
+
+/* Define if you can safely include both <sys/time.h> and <time.h>.  */
+#define TIME_WITH_SYS_TIME 1
+
+/* Define to `int' if <sys/types.h> doesn't define.  */
+/* #undef uid_t */
+
+/* Define if the C++ compiler supports BOOL */
+#define HAVE_BOOL 1
+
+/* defines if having libgif (always 1) */
+#define HAVE_LIBGIF 1
+
+/* defines if having libjpeg (always 1) */
+#define HAVE_LIBJPEG 1
+
+/* defines if having libtiff */
+#define HAVE_LIBTIFF 1
+
+/* defines if having libpng */
+#define HAVE_LIBPNG 1
+
+/* defines which to take for ksize_t */
+#define ksize_t socklen_t
+
+/* define if you have setenv */
+#define HAVE_FUNC_SETENV 1
+
+/* define if shadow under linux */
+#define HAVE_SHADOW 1
+
+/* define if you have XPM support */
+#define HAVE_XPM 1
+
+/* define if you have GL (Mesa, OpenGL, ...)*/
+/* #undef HAVE_GL */
+
+/* define if you have PAM (Pluggable Authentication Modules); Redhat-Users! */
+/* #undef HAVE_PAM */
+
+/* define this if you  compile --with-pam for SOLARIS (but not for Linux) */
+/* #undef PAM_MESSAGE_NONCONST */
+
+/* if defined, changes the default name of the PAM service used by KDE */
+/* #undef KDE_PAM_SERVICE */
+
+/* Define to 1 if NLS is requested.  */
+#define ENABLE_NLS 1
+
+/* define if you have the PAM lib. Now, we have two different users, this will change */
+/* #undef HAVE_PAM_LIB */
+
+/* define if you have a PAM implementation with the pam_misc library */
+/* #undef HAVE_PAM_MISC */
+
+/* define if you have shadow library */
+/* #undef HAVE_SHADOW_LIB */
+
+/* define, where to find the X server */
+#define XBINDIR /usr/bin
+
+/* define, where to find the XDM configurations */
+#define XDMDIR "/opt/kde1//config/kdm"
+
+/* Define if you have getdomainname */
+#define HAVE_GETDOMAINNAME 1  
+
+/* Define if you have gethostname */
+#define HAVE_GETHOSTNAME 1  
+
+/* Define if you have usleep */
+#define HAVE_USLEEP 1
+
+/* Define if you have random */
+#define HAVE_RANDOM 1
+
+/* Define if you have S_ISSOCK */
+#define HAVE_S_ISSOCK 1
+
+/* Define the file for utmp entries */
+#define UTMP "/var/run/utmp"
+
+/* Define, if you want to use utmp entries */
+#define UTMP_SUPPORT 1
+
+/* Define, if you have setupterm in -l(n)curses */
+#define HAVE_SETUPTERM 1
+
+/* Define, to enable volume management (Solaris 2.x), if you have -lvolmgt */
+/* #undef HAVE_VOLMGT */
+
+#define KDEMAXPATHLEN 255
+
+#ifndef HAVE_BOOL
+#define HAVE_BOOL
+typedef int bool;
+#ifdef __cplusplus
+const bool false = 0;
+const bool true = 1;
+#else
+#define false (bool)0;
+#define true (bool)1;
+#endif
+#endif
+
+/* this is needed for Solaris and others */
+#ifndef HAVE_USLEEP
+#ifdef __cplusplus
+extern "C"
+#endif
+void usleep(unsigned int usec);
+#endif  
+
+#ifndef HAVE_GETDOMAINNAME
+#define HAVE_GETDOMAINNAME
+#ifdef __cplusplus  
+extern "C" 
+#endif
+int getdomainname (char *Name, int Namelen);
+#endif  
+
+#ifndef HAVE_GETHOSTNAME
+#define HAVE_GETHOSTNAME
+#ifdef __cplusplus  
+extern "C" 
+#endif
+int gethostname (char *Name, int Namelen);
+#endif  
+
+#ifndef HAVE_FUNC_SETENV
+#define HAVE_FUNC_SETENV
+int setenv(const char *name, const char *value, int overwrite);
+int unsetenv(const char *name);
+#endif
+
+/*
+ * jpeg.h needs HAVE_BOOLEAN, when the system uses boolean in system
+ * headers and I'm too lazy to write a configure test as long as only
+ * unixware is related
+ */
+#ifdef _UNIXWARE
+#define HAVE_BOOLEAN
+#endif
+
+#ifndef HAVE_RANDOM
+#define HAVE_RANDOM
+long int random(void); // defined in fakes.cpp
+void srandom(unsigned int seed);
+#endif
+
+#ifndef HAVE_S_ISSOCK
+#define HAVE_S_ISSOCK
+#define S_ISSOCK(mode) (1==0)
+#endif
+
+/* Define if you have the getdtablesize function.  */
+#define HAVE_GETDTABLESIZE 1
+
+/* Define if you have the getgroups function.  */
+#define HAVE_GETGROUPS 1
+
+/* Define if you have the getsecretkey function.  */
+#define HAVE_GETSECRETKEY 1
+
+/* Define if you have the initgroups function.  */
+#define HAVE_INITGROUPS 1
+
+/* Define if you have the nice function.  */
+#define HAVE_NICE 1
+
+/* Define if you have the powl function.  */
+/* #undef HAVE_POWL */
+
+/* Define if you have the seteuid function.  */
+#define HAVE_SETEUID 1
+
+/* Define if you have the setgroups function.  */
+#define HAVE_SETGROUPS 1
+
+/* Define if you have the setpgid function.  */
+#define HAVE_SETPGID 1
+
+/* Define if you have the snprintf function.  */
+#define HAVE_SNPRINTF 1
+
+/* Define if you have the socket function.  */
+#define HAVE_SOCKET 1
+
+/* Define if you have the sqrtl function.  */
+/* #undef HAVE_SQRTL */
+
+/* Define if you have the strdup function.  */
+#define HAVE_STRDUP 1
+
+/* Define if you have the vsnprintf function.  */
+#define HAVE_VSNPRINTF 1
+
+/* Define if you have the vsyslog function.  */
+#define HAVE_VSYSLOG 1
+
+/* Define if you have the <X11/Xdmcp.h> header file.  */
+#define HAVE_X11_XDMCP_H 1
+
+/* Define if you have the <crypt.h> header file.  */
+#define HAVE_CRYPT_H 1
+
+/* Define if you have the <dirent.h> header file.  */
+#define HAVE_DIRENT_H 1
+
+/* Define if you have the <fcntl.h> header file.  */
+#define HAVE_FCNTL_H 1
+
+/* Define if you have the <krb5/krb5.h> header file.  */
+#define HAVE_KRB5_KRB5_H 1
+
+/* Define if you have the <lastlog.h> header file.  */
+#define HAVE_LASTLOG_H 1
+
+/* Define if you have the <login_cap.h> header file.  */
+/* #undef HAVE_LOGIN_CAP_H */
+
+/* Define if you have the <malloc.h> header file.  */
+#define HAVE_MALLOC_H 1
+
+/* Define if you have the <ncurses.h> header file.  */
+#define HAVE_NCURSES_H 1
+
+/* Define if you have the <ndir.h> header file.  */
+/* #undef HAVE_NDIR_H */
+
+/* Define if you have the <paths.h> header file.  */
+#define HAVE_PATHS_H 1
+
+/* Define if you have the <rpc/key_prot.h> header file.  */
+#define HAVE_RPC_KEY_PROT_H 1
+
+/* Define if you have the <rpc/rpc.h> header file.  */
+#define HAVE_RPC_RPC_H 1
+
+/* Define if you have the <sys/dir.h> header file.  */
+/* #undef HAVE_SYS_DIR_H */
+
+/* Define if you have the <sys/ioctl.h> header file.  */
+#define HAVE_SYS_IOCTL_H 1
+
+/* Define if you have the <sys/m_wait.h> header file.  */
+/* #undef HAVE_SYS_M_WAIT_H */
+
+/* Define if you have the <sys/ndir.h> header file.  */
+/* #undef HAVE_SYS_NDIR_H */
+
+/* Define if you have the <sys/param.h> header file.  */
+#define HAVE_SYS_PARAM_H 1
+
+/* Define if you have the <sys/select.h> header file.  */
+#define HAVE_SYS_SELECT_H 1
+
+/* Define if you have the <sys/sockio.h> header file.  */
+/* #undef HAVE_SYS_SOCKIO_H */
+
+/* Define if you have the <sys/stropts.h> header file.  */
+/* #undef HAVE_SYS_STROPTS_H */
+
+/* Define if you have the <sys/time.h> header file.  */
+#define HAVE_SYS_TIME_H 1
+
+/* Define if you have the <syslog.h> header file.  */
+#define HAVE_SYSLOG_H 1
+
+/* Define if you have the <termio.h> header file.  */
+#define HAVE_TERMIO_H 1
+
+/* Define if you have the <termios.h> header file.  */
+#define HAVE_TERMIOS_H 1
+
+/* Define if you have the <unistd.h> header file.  */
+#define HAVE_UNISTD_H 1
+
+/* Name of package */
+#define PACKAGE "kdebase"
+
+/* Version number of package */
+#define VERSION "1.1.2"
+

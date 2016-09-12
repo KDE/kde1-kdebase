@@ -14,9 +14,9 @@ set(KDEBASE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 
 set(BOOTSTRAP OFF)
 
-#include_directories(common)
+include_directories(common)
 
-#add_definitions( -DHAVE_CONFIG_H )
+add_definitions( -DHAVE_CONFIG_H )
 
 if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -Wno-write-strings")

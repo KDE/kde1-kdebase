@@ -6,6 +6,8 @@
 
 #include <unistd.h>
 
+#include <cstdlib>
+
 #ifdef HAVE_PATHS_H
 #include <paths.h>
 #endif

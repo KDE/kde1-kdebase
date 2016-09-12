@@ -31,6 +31,8 @@
 #include "kfmexec.h"
 #include "utils.h"
 
+#include "config.h"
+
 QPixmapCache* KMimeType::pixmapCache = 0L;
 
 KMimeMagic* KMimeType::magic = 0L;
