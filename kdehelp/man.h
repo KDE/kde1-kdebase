@@ -11,8 +11,7 @@
 #ifndef __MAN_H__
 #define __MAN_H__
 
-#include <stdlib.h>
-#include <fstream.h>
+#include <cstdlib>
 #include <qstring.h>
 #include "fmtbase.h"
 #include "misc.h"

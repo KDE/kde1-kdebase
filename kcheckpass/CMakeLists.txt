@@ -9,4 +9,4 @@ set(KCHECKPASS_SRCS kcheckpass.c checkpass_etcpasswd.c
 add_executable(kcheckpass ${KCHECKPASS_SRCS})
 target_link_libraries(kcheckpass crypt)
 
-install(TARGETS kcheckpass RUNTIME  DESTINATION bin)
+install(TARGETS kcheckpass RUNTIME  DESTINATION ${KDE1_BINDIR})

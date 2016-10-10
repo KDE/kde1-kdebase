@@ -15,6 +15,7 @@
 #include <sys/types.h>
 #include <dirent.h>
 #include <kconfig.h>
+#include <fstream>
 #include <kapp.h>
 #include "misc.h"
 #include "man.h"
@@ -34,6 +35,8 @@
 #endif
 
 #define MAXSECTIONLEN	4
+
+using namespace std;
 
 // ============================================================================
 // this is an array of sections available

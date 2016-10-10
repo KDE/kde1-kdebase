@@ -14,7 +14,17 @@ set( METASOURCES client.moc manager.moc main.moc minicli.moc
 QT1_WRAP_MOC(MOC_SRCS ${METASOURCES})
 
 add_executable(kwm ${KWM_SRCS} ${MOC_SRCS})
-target_link_libraries(kwm ${QT_LIBRARIES} ${X11_LIBRARIES} ${LIB_KDECORE} ${LIB_KFM} ${LIB_KDEUI})
+target_link_libraries(kwm 
+    ${QT_LIBRARIES} 
+    ${X11_LIBRARIES}
+    ${KDE1_KDECORE}
+    ${KDE1_KHTMLW}
+    ${KDE1_KFILE}
+    ${KDE1_KIMGIO}
+    ${KDE1_KDEUI}
+    ${KDE1_KFM}
+    ${KDE1_JSCRIPT}
+    )
 
-install(TARGETS kwm RUNTIME DESTINATION bin)
+install(TARGETS kwm RUNTIME DESTINATION ${KDE1_BINDIR})
 

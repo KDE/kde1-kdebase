@@ -5,7 +5,7 @@
 // (C) Martin R. Jones 1996
 //
 
-#include <iostream.h>
+#include <iostream>
 #include <qapp.h>
 #include <qaccel.h>
 #include <qlabel.h>

@@ -5,9 +5,11 @@
 // Copyright (C) Martin R. Jones 1995
 //
 
-#include <stdlib.h>
-#include <iostream.h>
+#include <cstdlib>
+#include <iostream>
 #include "error.h"
+
+using namespace std;
 
 cError Error;
 #include <klocale.h>

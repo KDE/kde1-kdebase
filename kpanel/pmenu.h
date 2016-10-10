@@ -14,6 +14,8 @@
 #ifndef PMENU_H
 #define PMENU_H
 
+#include <cstdlib>
+
 #include <qpixmap.h>
 #include <qlist.h>
 #include <qfileinf.h>

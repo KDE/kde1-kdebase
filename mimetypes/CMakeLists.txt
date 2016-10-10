@@ -1,0 +1,6 @@
+add_subdirectory(application)
+add_subdirectory(text)
+add_subdirectory(audio)
+add_subdirectory(video)
+add_subdirectory(image)
+add_subdirectory(inode)

@@ -8,10 +8,12 @@
 #ifndef __INFO_H__
 #define __INFO_H__
 
-#include <stdlib.h>
-#include <fstream.h>
+#include <cstdlib>
+#include <fstream>
 #include "fmtbase.h"
 #include "dbnew.h"
+
+using namespace std;
 
 #define INFO_ENV				"INFOPATH"
 #define INFO_MAXPATHS			25

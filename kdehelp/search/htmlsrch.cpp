@@ -1,6 +1,6 @@
 
 #include <stdlib.h>
-#include <iostream.h>
+#include <iostream>
 #include <qdir.h>
 #include <qfile.h>
 #include <qtstream.h>

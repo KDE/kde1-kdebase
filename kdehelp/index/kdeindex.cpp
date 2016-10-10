@@ -5,7 +5,7 @@
 
 #include <stdlib.h>
 #include <string.h>
-#include <iostream.h>
+#include <iostream>
 #include <qlist.h>
 #include <qdir.h>
 #include <kapp.h>

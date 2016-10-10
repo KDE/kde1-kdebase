@@ -3,7 +3,7 @@
 // Copyright (C) Martin R. Jones 1995, 1996
 //
 
-#include <iostream.h>
+#include <iostream>
 #include <stdlib.h>
 #include <ctype.h>
 #include "misc.h"

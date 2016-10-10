@@ -27,6 +27,16 @@ set(KFM_MOC
 QT1_WRAP_HEADER(MOC_FILES ${KFM_MOC})
 
 add_executable(kfm ${KFM_SRCS} ${MOC_FILES})
-target_link_libraries(kfm ${QT_LIBRARIES} ${X11_LIBRARIES} ${KDE1_KDECORE} ${KDE1_KDEUI} ${KDE1_KHTMLW} ${KDE1_JSCRIPT} ${KDE1_KFM} ${KDE1_KIMGIO})
+target_link_libraries(kfm
+    ${QT_LIBRARIES}
+    ${X11_LIBRARIES}
+    ${KDE1_KDECORE}
+    ${KDE1_KDEUI}
+    ${KDE1_KHTMLW}
+    ${KDE1_JSCRIPT}
+    ${KDE1_KFM}
+    ${KDE1_KIMGIO}
+    ${KDE1_KFILE}
+    )
 
-install(TARGETS kfm RUNTIME DESTINATION bin)
+install(TARGETS kfm RUNTIME DESTINATION ${KDE1_BINDIR})
