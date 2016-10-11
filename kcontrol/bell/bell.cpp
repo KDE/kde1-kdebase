@@ -20,8 +20,8 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
-#include <iostream.h>
-#include <stdio.h> 
+#include <iostream>
+#include <cstdio> 
 #include <sys/stat.h>
 #include <unistd.h>
 #include <sys/types.h>

@@ -1,0 +1,7 @@
+install_icon(background "")
+install_icon(colors "")
+install_icon(logo "")
+install_icon(monitor "")
+install_icon(screensaver "")
+install_icon(style "")
+install_icon(fonts "")
