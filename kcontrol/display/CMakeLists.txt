@@ -30,6 +30,7 @@ target_link_libraries(kcmdisplay
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     ${KDE1_KFILE}
+    ${KDE1_KFM}
     ${KDE1_KIMGIO}
     )
 
