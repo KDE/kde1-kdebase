@@ -56,5 +56,8 @@ install(FILES kfmsu kfmsu2 startkde kde unpack
     PERMISSIONS WORLD_EXECUTE WORLD_READ
     DESTINATION ${KDE1_BINDIR})
 
+install(FILES config/kfmrc config/desktop DESTINATION ${KDE1_CONFDIR})
+install(FILES magic DESTINATION ${KDE1_MIMEDIR})
+
 install_icon(kfm.xpm "")
 install_icon(link.xpm "")
