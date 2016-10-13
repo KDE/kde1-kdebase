@@ -29,4 +29,4 @@ install(TARGETS kthememgr RUNTIME DESTINATION ${KDE1_BINDIR})
 
 install_icon(kthememgr.xpm "")
 install(FILES kthememgr.kdelnk DESTINATION ${KDE1_APPSDIR}/Settings/Desktop)
-
+install(FILES theme.mappings DESTINATION ${KDE1_DATADIR}/kthememgr)

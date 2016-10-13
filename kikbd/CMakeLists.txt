@@ -33,6 +33,8 @@ target_link_libraries(kcmikbd
     ${KDE1_KDEUI}
     )
 
+install(TARGETS kcmikbd RUNTIME DESTINATION ${KDE1_BINDIR})
+
 install_icon(kikbd.xpm.xpm "")
 install(FILES kikbd.kdelnk DESTINATION ${KDE1_APPSDIR}/System)
 install(FILES kcmikbd.kdelnk DESTINATION ${KDE1_APPSDIR}/Settings/Input_Devices)

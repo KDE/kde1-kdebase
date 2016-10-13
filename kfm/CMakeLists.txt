@@ -1,7 +1,16 @@
 include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}
     ${QT_INCLUDE_DIR}
     ${KDE1_INCLUDE_DIR}
     )
+
+add_subdirectory(kfmwarn)
+add_subdirectory(client)
+add_subdirectory(kioslave)
+add_subdirectory(pics)
+add_subdirectory(Desktop)
+add_subdirectory(kfmexec)
+add_subdirectory(config)
 
 set(KFM_SRCS
 	kfmgui.cpp kfmview.cpp kbind.cpp main.cpp
@@ -40,3 +49,12 @@ target_link_libraries(kfm
     )
 
 install(TARGETS kfm RUNTIME DESTINATION ${KDE1_BINDIR})
+
+install(FILES directory.trash directory.autostart directory.templates directory.desktop DESTINATION ${KDE1_DATADIR}/kfm)
+
+install(FILES kfmsu kfmsu2 startkde kde unpack
+    PERMISSIONS WORLD_EXECUTE WORLD_READ
+    DESTINATION ${KDE1_BINDIR})
+
+install_icon(kfm.xpm "")
+install_icon(link.xpm "")
