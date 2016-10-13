@@ -1,2 +1,2 @@
-install_icon(kdmconfig "")
-install_icon(monitor "kdmconfig/pics")
+install_icon(kdmconfig.xpm "")
+install_icon(monitor.xpm "kdmconfig/pics")

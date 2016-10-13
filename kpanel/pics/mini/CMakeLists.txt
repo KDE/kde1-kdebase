@@ -1,8 +1,0 @@
-install_icon(go kpanel/pics)
-install_icon(window_list kpanel/pics)
-install_icon(personal kpanel/pics)
-install_icon(pers_applnk kpanel/pics)
-install_icon(kdisknav kpanel/pics)
-install_icon(mini-key kpanel/pics)
-install_icon(mini-panel kpanel/pics)
-install_icon(mini-exit kpanel/pics)

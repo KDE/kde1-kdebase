@@ -23,4 +23,4 @@ target_link_libraries(kvt
 
 install(TARGETS kvt RUNTIME DESTINATION ${KDE1_BINDIR})
 
-install_icon(kvt "")
+install_icon(kvt.xpm "")

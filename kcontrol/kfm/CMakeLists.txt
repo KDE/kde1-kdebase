@@ -22,4 +22,4 @@ target_link_libraries(kcmbell
 
 install(TARGETS kcmbell RUNTIME DESTINATION ${KDE1_BINDIR})
 
-install_icon(bell "")
+install_icon(bell.xpm "")

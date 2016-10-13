@@ -27,4 +27,4 @@ target_link_libraries(kfind
 
 install(TARGETS kfind RUNTIME DESTINATION ${KDE1_BINDIR})
 
-install_icon(kfind "")
+install_icon(kfind.xpm "")

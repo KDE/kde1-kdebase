@@ -19,4 +19,4 @@ target_link_libraries(kfontmanager
 
 install(TARGETS kfontmanager RUNTIME DESTINATION ${KDE1_BINDIR})
 
-install_icon(kfontmanager "")
+install_icon(kfontmanager.xpm "")

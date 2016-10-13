@@ -22,5 +22,5 @@ target_link_libraries(kcminput
 
 install(TARGETS kcminput RUNTIME DESTINATION ${KDE1_BINDIR})
 
-install_icon(mouse "")
-install_icon(keyboard "")
+install_icon(mouse.xpm "")
+install_icon(keyboard.xpm "")

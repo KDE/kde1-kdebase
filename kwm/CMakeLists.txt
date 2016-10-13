@@ -1,4 +1,4 @@
-#add_subdirectory(pics)
+add_subdirectory(pics)
 
 include_directories(
     ${QT_INCLUDE_DIR}
@@ -27,4 +27,4 @@ target_link_libraries(kwm
     )
 
 install(TARGETS kwm RUNTIME DESTINATION ${KDE1_BINDIR})
-
+install_icon(kwm.xpm "")

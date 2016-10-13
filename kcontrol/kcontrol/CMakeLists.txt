@@ -21,4 +21,4 @@ target_link_libraries(kcontrol
 
 install(TARGETS kcontrol RUNTIME DESTINATION ${KDE1_BINDIR})
 
-install_icon(kcontrol "")
+install_icon(kcontrol.xpm "")
