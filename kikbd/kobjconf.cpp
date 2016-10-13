@@ -19,7 +19,7 @@
    
   */
 #include <stdlib.h>	
-#include <stream.h>
+#include <iostream>
 #include <qfileinf.h>
 #include <qtooltip.h>
 

@@ -20,7 +20,7 @@
   */
 #include <time.h>
 #include <unistd.h>
-#include <stream.h>
+#include <iostream>
 #include <stdlib.h>
 #include <signal.h>
 #include <stdlib.h>
@@ -42,6 +42,8 @@
 
 #include "kikbd.h"
 #include "kikbd.moc"
+
+using namespace std;
 
 KiKbdConfig *kikbdConfig = 0L;
 //=========================================================

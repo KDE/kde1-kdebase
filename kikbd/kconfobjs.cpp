@@ -19,7 +19,7 @@
    
   */
 #include <stdlib.h>	
-#include <stream.h>
+#include <iostream>
 #include <qchkbox.h>
 #include <qcombo.h>
 #include <qbttngrp.h>

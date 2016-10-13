@@ -18,12 +18,14 @@
   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
    
   */
-#include <stream.h>
+#include <iostream>
 #include <stdio.h>
 #include <qkeycode.h>
 #include <qregexp.h>
 #include <X11/keysymdef.h>
 #include "keytrans.h"
+
+using namespace std;
 
 KeySym KeyTranslate::stringOrNumToCode(const char* s)
 {

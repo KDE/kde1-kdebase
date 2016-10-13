@@ -4,22 +4,22 @@ include_directories(
     )
 
 set(KPANEL_SRCS
-    main.cpp bell.cpp kslidercontrol.cpp
+main.cpp panel.cpp desktops.cpp options.cpp disknav.cpp
 )
 
 set(KPANEL_MOC
-    bell.moc kslidercontrol.moc
+panel.moc desktops.moc options.moc disknav.moc
 )
 QT1_WRAP_MOC(MOC_FILES ${KPANEL_MOC})
 
-add_executable(kcmbell ${KPANEL_SRCS} ${MOC_FILES})
-target_link_libraries(kcmbell
+add_executable(kcmkpanel ${KPANEL_SRCS} ${MOC_FILES})
+target_link_libraries(kcmkpanel
     ${QT_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     )
 
-install(TARGETS kcmbell RUNTIME DESTINATION ${KDE1_BINDIR})
+install(TARGETS kcmkpanel RUNTIME DESTINATION ${KDE1_BINDIR})
 
-install_icon(bell.xpm "")
+install_icon(kcmkpanel.xpm "")

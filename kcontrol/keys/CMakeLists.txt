@@ -4,22 +4,20 @@ include_directories(
     )
 
 set(KEYS_SRCS
-    main.cpp bell.cpp kslidercontrol.cpp
+main.cpp keyconfig.cpp savescm.cpp
 )
 
 set(KEYS_MOC
-    bell.moc kslidercontrol.moc
+keyconfig.moc savescm.moc  
 )
 QT1_WRAP_MOC(MOC_FILES ${KEYS_MOC})
 
-add_executable(kcmbell ${KEYS_SRCS} ${MOC_FILES})
-target_link_libraries(kcmbell
+add_executable(kcmkeys ${KEYS_SRCS} ${MOC_FILES})
+target_link_libraries(kcmkeys
     ${QT_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     )
 
-install(TARGETS kcmbell RUNTIME DESTINATION ${KDE1_BINDIR})
-
-install_icon(bell.xpm "")
+install(TARGETS kcmkeys RUNTIME DESTINATION ${KDE1_BINDIR})
