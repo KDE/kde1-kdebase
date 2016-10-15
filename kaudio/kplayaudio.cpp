@@ -8,7 +8,7 @@
  */
 
 #include <stdio.h>
-#include <iostream.h>
+#include <iostream>
 #include <stdlib.h>
 #include <string.h>
 
@@ -22,7 +22,7 @@ extern "C" {
 #include "kplayaudio.h"
 #include "kplayaudio.moc"
 
-
+using namespace std;
 
 char **global_argv;
 KApplication *globalKapp;
