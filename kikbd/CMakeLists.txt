@@ -25,7 +25,7 @@ install(TARGETS kikbd RUNTIME DESTINATION ${KDE1_BINDIR})
 
 set(KCMIKBD_SRCS widgets.cpp kcmikbd.cpp kikbdconf.cpp kobjconf.cpp kconfobjs.cpp)
 
-add_executable(kcmikbd ${KCMIKBD_SRCS})
+add_executable(kcmikbd ${KCMIKBD_SRCS} ${MOC_FILES})
 target_link_libraries(kcmikbd
     ${QT_LIBRARIES}
     ${X11_LIBRARIES}
