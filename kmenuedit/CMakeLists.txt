@@ -1,7 +1,6 @@
 add_subdirectory(icons)
 
 include_directories(
-    ${QT_INCLUDE_DIR}
     ${KDE1_INCLUDE_DIR}
     )
 
@@ -22,12 +21,12 @@ QT1_WRAP_MOC(MOC_FILES ${KMENUEDIT_MOC})
 
 add_executable(kmenuedit ${KMENUEDIT_SRCS} ${MOC_FILES})
 target_link_libraries(kmenuedit
-    ${QT_LIBRARIES}
-    ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     ${KDE1_KFM}
     ${KDE1_KFILE}
+    Qt::Qt1
+    ${X11_LIBRARIES}
     )
 
 install(TARGETS kmenuedit RUNTIME DESTINATION ${KDE1_BINDIR})

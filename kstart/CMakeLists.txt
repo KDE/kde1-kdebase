@@ -1,5 +1,4 @@
 include_directories(
-    ${QT_INCLUDE_DIR}
     ${KDE1_INCLUDE_DIR}
     )
 
@@ -11,10 +10,10 @@ QT1_WRAP_MOC(MOC_FILES ${KSTART_MOC})
 
 add_executable(kstart ${KSTART_SRCS} ${MOC_FILES})
 target_link_libraries(kstart
-    ${QT_LIBRARIES}
-    ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
+    Qt::Qt1
+    ${X11_LIBRARIES}
     )
 
 install(TARGETS kstart RUNTIME DESTINATION ${KDE1_BINDIR})

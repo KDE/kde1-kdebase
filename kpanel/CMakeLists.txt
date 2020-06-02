@@ -1,7 +1,6 @@
 add_subdirectory(pics)
 
 include_directories(
-    ${QT_INCLUDE_DIR}
     ${KDE1_INCLUDE_DIR}
     )
 
@@ -13,11 +12,11 @@ QT1_WRAP_MOC(MOC_FILES ${KPANEL_MOC})
 
 add_executable(kpanel ${KPANEL_SRCS} ${MOC_FILES})
 target_link_libraries(kpanel
-    ${QT_LIBRARIES}
-    ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     ${KDE1_KFM}
+    Qt::Qt1
+    ${X11_LIBRARIES}
     )
 
 install(TARGETS kpanel RUNTIME DESTINATION ${KDE1_BINDIR})

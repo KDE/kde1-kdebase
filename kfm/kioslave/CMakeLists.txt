@@ -1,5 +1,4 @@
 include_directories(
-    ${QT_INCLUDE_DIR}
     ${KDE1_INCLUDE_DIR}
     )
 
@@ -14,11 +13,11 @@ QT1_WRAP_MOC(MOC_FILES ${KIOSLAVE_MOC})
 
 add_executable(kioslave ${KIOSLAVE_SRCS} ${MOC_FILES})
 target_link_libraries(kioslave
-    ${QT_LIBRARIES}
-    ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     ${KDE1_KIMGIO}
+    Qt::Qt1
+    ${X11_LIBRARIES}
     )
 
 install(TARGETS kioslave RUNTIME DESTINATION ${KDE1_BINDIR})

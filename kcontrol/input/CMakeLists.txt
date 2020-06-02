@@ -1,5 +1,5 @@
 include_directories(
-    ${QT_INCLUDE_DIR}
+    Qt::Qt1
     ${KDE1_INCLUDE_DIR}
     )
 
@@ -14,7 +14,7 @@ QT1_WRAP_MOC(MOC_FILES ${INPUT_MOC})
 
 add_executable(kcminput ${INPUT_SRCS} ${MOC_FILES})
 target_link_libraries(kcminput
-    ${QT_LIBRARIES}
+    Qt::Qt1
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

@@ -1,7 +1,6 @@
 add_subdirectory(pics)
 
 include_directories(
-    ${QT_INCLUDE_DIR}
     ${KDE1_INCLUDE_DIR}
     )
 
@@ -15,8 +14,6 @@ QT1_WRAP_MOC(MOC_SRCS ${METASOURCES})
 
 add_executable(kwm ${KWM_SRCS} ${MOC_SRCS})
 target_link_libraries(kwm 
-    ${QT_LIBRARIES} 
-    ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KHTMLW}
     ${KDE1_KFILE}
@@ -24,6 +21,8 @@ target_link_libraries(kwm
     ${KDE1_KDEUI}
     ${KDE1_KFM}
     ${KDE1_JSCRIPT}
+    Qt::Qt1
+    ${X11_LIBRARIES}
     )
 
 install(TARGETS kwm RUNTIME DESTINATION ${KDE1_BINDIR})

@@ -1,5 +1,4 @@
 include_directories(
-    ${QT_INCLUDE_DIR}
     ${KDE1_INCLUDE_DIR}
     )
 
@@ -13,8 +12,6 @@ QT1_WRAP_CPP(MOC_FILES ${KDEHELP_MOC})
 
 add_executable(kdehelp ${KDEHELP_SRCS} ${MOC_FILES})
 target_link_libraries(kdehelp
-    ${QT_LIBRARIES}
-    ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KHTMLW}
     ${KDE1_KFILE}
@@ -22,6 +19,8 @@ target_link_libraries(kdehelp
     ${KDE1_KDEUI}
     ${KDE1_KFM}
     ${KDE1_JSCRIPT}
+    Qt::Qt1
+    ${X11_LIBRARIES}
     )
 
 install(TARGETS kdehelp RUNTIME DESTINATION ${KDE1_BINDIR})

@@ -1,6 +1,5 @@
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
-    ${QT_INCLUDE_DIR}
     ${KDE1_INCLUDE_DIR}
     )
 
@@ -13,7 +12,7 @@ QT1_WRAP_MOC(MOC_FILES ${KCONTROL_MOC})
 
 add_executable(kcontrol ${KCONTROL_SRCS} ${MOC_FILES})
 target_link_libraries(kcontrol
-    ${QT_LIBRARIES}
+    Qt::Qt1
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

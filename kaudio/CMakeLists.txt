@@ -1,5 +1,4 @@
 include_directories(
-    ${QT_INCLUDE_DIR}
     ${KDE1_INCLUDE_DIR}
     )
 
@@ -21,13 +20,13 @@ target_link_libraries(kaudioserver
 
 add_executable(kplayaudio ${KPLAYAUDIO_SRCS} ${MOC_FILES})
 target_link_libraries(kplayaudio
-    ${QT_LIBRARIES}
-    ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     ${KDE1_KFILE}
     ${KDE1_KFM}
     ${KDE1_MEDIATOOL}
+    Qt::Qt1
+    ${X11_LIBRARIES}
     )
 
 install(TARGETS kaudioserver kplayaudio RUNTIME DESTINATION ${KDE1_BINDIR})

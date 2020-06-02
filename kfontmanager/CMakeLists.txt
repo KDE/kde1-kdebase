@@ -1,5 +1,4 @@
 include_directories(
-    ${QT_INCLUDE_DIR}
     ${KDE1_INCLUDE_DIR}
     )
 
@@ -11,10 +10,10 @@ QT1_WRAP_MOC(MOC_FILES ${KFONTMANAGER_MOC})
 
 add_executable(kfontmanager ${KFONTMANAGER_SRCS} ${MOC_FILES})
 target_link_libraries(kfontmanager
-    m
-    ${QT_LIBRARIES}
-    ${X11_LIBRARIES}
     ${KDE1_KDECORE}
+    Qt::Qt1
+    ${X11_LIBRARIES}
+    m
     )
 
 install(TARGETS kfontmanager RUNTIME DESTINATION ${KDE1_BINDIR})
