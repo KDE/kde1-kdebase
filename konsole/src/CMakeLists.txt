@@ -24,7 +24,7 @@ target_link_libraries(libkonsole Qt::Qt1)
 set_target_properties(libkonsole PROPERTIES CMAKE_EXE_LINKER_FLAGS "-version-info 9:1.9")
 #set_target_properties(konsole PROPERTIES VERSION 0.1.9 SOVERSION 9)
 
-add_executable(konsole ${KONSOLE_SRCS})
+add_executable(kde1-konsole ${KONSOLE_SRCS})
 target_link_libraries(konsole libkonsole Qt::Qt1 ${X11_LIBRARIES} ${KDE1_KDECORE} ${KDE1_KIMGIO} ${KDE1_KDEUI})
 install(TARGETS konsole RUNTIME DESTINATION ${KDE1_BINDIR})
 
