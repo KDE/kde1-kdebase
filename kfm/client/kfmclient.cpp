@@ -20,22 +20,22 @@ int main( int argc, char **argv )
     if ( argc == 1 )
     {
         // Should all the following be i18n'ed ?
-	printf("kfmclient is (c) Torben Weis, 1997\nPart of the KDE Project\n\n");
+	printf("kfmclient1 is (c) Torben Weis, 1997\nPart of the KDE Project\n\n");
 	printf("Syntax:\n");
-	printf("  kfmclient openURL\n"
+	printf("  kfmclient1 openURL\n"
 	       "            # Opens a dialog to ask you for the URL\n\n");
-	printf("  kfmclient openURL 'url'\n"
+	printf("  kfmclient1 openURL 'url'\n"
 	       "            # Opens a window showing 'url'. If such a window\n");
 	printf("            #   exists, it is shown. 'url' may be \"trash:/\"\n"
 	       "            #   to open the trash bin.\n\n");
-	printf("  kfmclient refreshDesktop\n"
+	printf("  kfmclient1 refreshDesktop\n"
 	       "            # Refreshes the desktop\n\n");
-	printf("  kfmclient refreshDirectory 'url'\n"
+	printf("  kfmclient1 refreshDirectory 'url'\n"
 	       "            # Tells KFM that an URL has changes. If KFM\n");
 	printf("            #   is displaying that URL, it will be reloaded.\n\n");
-	printf("  kfmclient openProperties 'url'\n"
+	printf("  kfmclient1 openProperties 'url'\n"
 	       "            # Opens a properties menu\n\n");
-	printf("  kfmclient exec 'url' ['binding']\n"
+	printf("  kfmclient1 exec 'url' ['binding']\n"
 	       "            # Tries to execute 'url'. 'url' may be a usual\n"
 	       "            #   URL, this URL will be opened. You may omit\n"
 	       "            #   'binding'. In this case the default binding\n");
@@ -44,32 +44,32 @@ int main( int argc, char **argv )
 	printf("            #   This way you could for example mount a device\n"
 	       "            #   by passing 'Mount default' as binding to \n"
 	       "            #   'cdrom.kdelnk'\n\n");
-	printf("  kfmclient move 'src' 'dest'\n"
+	printf("  kfmclient1 move 'src' 'dest'\n"
 	       "            # Copies the URL 'src' to 'dest'.\n"
 	       "            #   'src' may be a list of URLs.\n");
 	printf("            #   'dest' may be \"trash:/\" to move the files\n"
 	       "            #   in the trash bin.\n\n");
-	printf("  kfmclient folder 'src' 'dest'\n"
+	printf("  kfmclient1 folder 'src' 'dest'\n"
 	       "            # Like move if 'src' is given,\n"
 	       "            #   otherwise like openURL src \n\n");
-	printf("  kfmclient sortDesktop\n"
+	printf("  kfmclient1 sortDesktop\n"
 	       "            # Rearranges all icons on the desktop.\n\n");
-	printf("  kfmclient configure\n"
+	printf("  kfmclient1 configure\n"
 	       "            # Re-read KFM's configuration.\n\n");
 	printf("*** Examples:\n"
-	       "  kfmclient exec file:/usr/local/kde/bin/kdehelp Open\n"
+	       "  kfmclient1 exec file:/usr/local/kde/bin/kdehelp Open\n"
 	       "             // Starts kdehelp\n\n");
-	printf("  kfmclient exec file:/root/Desktop/cdrom.kdelnk \"Mount default\"\n"
+	printf("  kfmclient1 exec file:/root/Desktop/cdrom.kdelnk \"Mount default\"\n"
 	       "             // Mounts the CDROM\n\n");	
-	printf("  kfmclient exec file:/home/weis/data/test.html\n"
+	printf("  kfmclient1 exec file:/home/weis/data/test.html\n"
 	       "             // Opens the file with default binding\n\n");
-	printf("  kfmclient exec file:/home/weis/data/test.html Netscape\n"
+	printf("  kfmclient1 exec file:/home/weis/data/test.html Netscape\n"
 	       "             // Opens the file with netscape\n\n");
-	printf("  kfmclient exec ftp://localhost/ Open\n"
+	printf("  kfmclient1 exec ftp://localhost/ Open\n"
 	       "             // Opens new window with URL\n\n");
-	printf("  kfmclient exec file:/root/Desktop/emacs.kdelnk\n"
+	printf("  kfmclient1 exec file:/root/Desktop/emacs.kdelnk\n"
 	       "             // Starts emacs\n\n");
-	printf("  kfmclient exec file:/root/Desktop/cdrom.kdelnk\n"
+	printf("  kfmclient1 exec file:/root/Desktop/cdrom.kdelnk\n"
 	       "             // Opens the CD-ROM's mount directory\n\n");
 	return 0;
     }

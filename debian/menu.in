@@ -18,7 +18,7 @@ kdehelp x11 Apps/KDE/Viewers
 kdisplay kde Modules
 kdmconfig x11 Apps/KDE/System
 kfind x11 Apps/KDE/Tools
-kfmclient kde Modules
+kfmclient1 kde Modules
 kfmsu x11 Apps/KDE/System
 kfontmanager kde Modules
 kikbd x11 Apps/KDE/Tools

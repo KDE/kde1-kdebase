@@ -247,14 +247,14 @@ KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name )
 void KDiskNavConfig::edit_shared_clicked() 
 {
   KShellProcess proc;
-  proc << "kfmclient folder " + KApplication::kde_datadir() + "/kdisknav";
+  proc << "kfmclient1 folder " + KApplication::kde_datadir() + "/kdisknav";
   proc.start(KShellProcess::DontCare);
 }
 
 void KDiskNavConfig::edit_personal_clicked() 
 {
   KShellProcess proc;
-  proc << "kfmclient folder " + KApplication::localkdedir() + "/share/apps/kdisknav";
+  proc << "kfmclient1 folder " + KApplication::localkdedir() + "/share/apps/kdisknav";
   proc.start(KShellProcess::DontCare);
 }
 

@@ -161,9 +161,9 @@ void KfmApplication::apply()
 
   if ( fork() == 0 )
   { 
-      // execute 'kfmclient configure'
-      execl(kapp->kde_bindir()+"/kfmclient","kfmclient","configure",0);
-      warning("Error launching 'kfmclient configure' !");
+      // execute 'kfmclient1 configure'
+      execl(kapp->kde_bindir()+"/kfmclient1","kfmclient1","configure",0);
+      warning("Error launching 'kfmclient1 configure' !");
       exit(1);
   }
 }

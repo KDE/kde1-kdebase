@@ -868,8 +868,8 @@ void KRootWm::slotNewFile( int _id )
 	}
 	else
 	{
-          QString cmd( "cp \"" ); // using kfmclient copy here causes
-          // problems with kfmclient openProperties coming next
+          QString cmd( "cp \"" ); // using kfmclient1 copy here causes
+          // problems with kfmclient1 openProperties coming next
           // (depending on machine's speed)
 	    cmd += templatePath + p.data();
 	    cmd += "\" \"";
@@ -882,7 +882,7 @@ void KRootWm::slotNewFile( int _id )
 
             sleep( 1 );
             
-            cmd = "kfmclient openProperties \"" ;
+            cmd = "kfmclient1 openProperties \"" ;
 	    cmd += desktopPath.data();
 	    if ( cmd.right( 1 ) != "/" )
 	        cmd += "/";
@@ -903,7 +903,7 @@ void KRootWm::slotBookmarkSelected( int _id )
   {
     QString bdir( kapp->localkdedir().data() );
     bdir += "/share/apps/kfm/bookmarks";
-    QString cmd( "kfmclient openURL \"" );
+    QString cmd( "kfmclient1 openURL \"" );
     cmd += bdir;
     cmd += "\"";
     execute( cmd );
@@ -917,7 +917,7 @@ void KRootWm::slotBookmarkSelected( int _id )
     return;
   }
 
-  QString cmd( "kfmclient openURL \"" );
+  QString cmd( "kfmclient1 openURL \"" );
   cmd += s->data();
   cmd += "\"";
   execute( cmd );

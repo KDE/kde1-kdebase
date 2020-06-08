@@ -487,7 +487,7 @@ public slots:
     void slotSaveSettings();
 
     /**
-     * Reads and applies configuration. Called by "kfmclient configure".
+     * Reads and applies configuration. Called by "kfmclient1 configure".
      */
     static void slotConfigure();
     

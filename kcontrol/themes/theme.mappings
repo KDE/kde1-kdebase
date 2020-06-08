@@ -65,7 +65,7 @@
 # * ConfigActivateCmd: These commands are executed after the theme is
 #   installed. Case does matter. Known commands are:
 #   - kwmcom <arg>: Calls kwmcom with <arg> as the argument.
-#   - kfmclient <arg>: Calls kfmclient with <arg> as the argument.
+#   - kfmclient1 <arg>: Calls kfmclient1 with <arg> as the argument.
 #   - applyColors: Sends a color-scheme-changed signal to all windows.
 #   - restart <app>: Restart application <app>.
 #
@@ -356,7 +356,7 @@ CommonDesktop=oneDesktopMode!
 [Display-root-icon-style]
 ConfigFile=kfmrc
 ConfigGroup=KFM Root Icons
-ConfigActivateCmd=kfmclient configure
+ConfigActivateCmd=kfmclient1 configure
 RootIconTextStyle=Style!
 RootIconTextForeground=Foreground!
 RootIconTextBackground=Background!
@@ -366,7 +366,7 @@ RootIconTextBackground=Background!
 ConfigFile=kfmrc
 ConfigAppDir=wallpapers
 ConfigGroup=KFM HTML Defaults
-ConfigActivateCmd=kfmclient configure
+ConfigActivateCmd=kfmclient1 configure
 ConfigAbsolutePaths=true
 backgroundImage=BgImage
 htmlBackground=BgColor!

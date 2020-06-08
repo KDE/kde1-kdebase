@@ -101,14 +101,14 @@ void execute ( const char* cmd )
   // WWW Adress ?
   if ( strnicmp( cmd, "www.", 4 ) == 0 )
   {
-      tmp = "kfmclient exec \"http://";
+      tmp = "kfmclient1 exec \"http://";
       tmp += cmd;
       cmd = tmp.append("\"").data();
   }
   // FTP Adress ?
   else if ( strnicmp( cmd, "ftp.", 4 ) == 0 )
   {
-      tmp = "kfmclient exec \"ftp://";
+      tmp = "kfmclient1 exec \"ftp://";
       tmp += cmd;
       cmd = tmp.append("\"").data();
   }
@@ -118,7 +118,7 @@ void execute ( const char* cmd )
       tmp = getenv( "KDEURL" );
 	  if ( tmp.isEmpty() )
 	    tmp = "http://www.kde.org";
-      tmp.prepend ("kfmclient exec \"");
+      tmp.prepend ("kfmclient1 exec \"");
       cmd = tmp.append("\"").data();
   }
   // Looks like a KDEHelp thing ?
@@ -146,7 +146,7 @@ void execute ( const char* cmd )
             strnicmp ( cmd, "gopher://", 9 ) == 0 || strnicmp ( cmd, "news:", 5) == 0 ||
             strnicmp ( cmd, "mailto:", 7) == 0 )
   {
-      tmp = "kfmclient exec \"";
+      tmp = "kfmclient1 exec \"";
       tmp += cmd;
       cmd = tmp.append("\"").data();
   }
@@ -205,10 +205,10 @@ void execute ( const char* cmd )
       // see if it is executable under the user's $PATH variable.
       if ( !isLocalDir && !isLocalFile )
         isLocalExec = isExecutable ( cmd );
-      // Open with kfmclient if "cmd" is a non-executable local resource.
+      // Open with kfmclient1 if "cmd" is a non-executable local resource.
       if ( isLocalDir || ( isLocalFile && !isLocalExec ) )
       {
-        tmp = "kfmclient exec \"";
+        tmp = "kfmclient1 exec \"";
         tmp += cmd;
         cmd = tmp.append ( "\"").data();
       }
@@ -217,7 +217,7 @@ void execute ( const char* cmd )
       // FIXME: Make this option configurable !! (Dawit A.)
       else if ( !isLocalExec && isValidShortURL ( cmd ) )
       {
-        tmp = "kfmclient exec \"http://";
+        tmp = "kfmclient1 exec \"http://";
         tmp += cmd;
         cmd = tmp.append("\"").data();
       }

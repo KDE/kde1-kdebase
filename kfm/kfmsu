@@ -1,7 +1,7 @@
 #!/bin/sh
 if test `id -u` -eq 0 ; then
-	kfmclient openURL $HOME
+	kfmclient1 openURL $HOME
 else
-	konsole  -vt_sz 80x12 -e kfmsu2
+	kde1-konsole  -vt_sz 80x12 -e kfmsu2
 fi
 

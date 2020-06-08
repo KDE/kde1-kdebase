@@ -19,5 +19,5 @@ elsif ( /\.tgz$/ )
 	system "cd @ARGV[1];tar -xzf @ARGV[2]";
 }
 
-system "kfmclient refreshDirectory @ARGV[1]";
+system "kfmclient1 refreshDirectory @ARGV[1]";
 

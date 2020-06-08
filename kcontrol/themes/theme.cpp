@@ -696,7 +696,7 @@ void Theme::doCmdList(void)
       if (stricmp(cmd,"restart") == 0) kwmRestart = true;
       else KWM::sendKWMCommand(cmd);
     }
-    else if (cmd.left(9) == "kfmclient")
+    else if (cmd.left(9) == "kfmclient1")
     {
       system(cmd);
     }

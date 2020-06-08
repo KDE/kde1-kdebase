@@ -736,7 +736,7 @@ void PFileMenu::openFolder()
     execute(QString("cd ") + s + "; " + term);
   }
   else
-    execute(QString("kfmclient folder ") + s);
+    execute(QString("kfmclient1 folder ") + s);
 }
 
 //////////////////////////////////////////////////////////////////////////////

@@ -4,8 +4,8 @@ include_directories(
 
 set(KFMCLINET_SRCS kfmclient.cpp ../debug.cpp)
 
-add_executable(kfmclient ${KFMCLINET_SRCS} ${MOC_FILES})
-target_link_libraries(kfmclient
+add_executable(kfmclient1 ${KFMCLINET_SRCS} ${MOC_FILES})
+target_link_libraries(kfmclient1
     Qt::Qt1
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
@@ -14,4 +14,4 @@ target_link_libraries(kfmclient
     ${KDE1_KFILE}
     )
 
-install(TARGETS kfmclient RUNTIME DESTINATION ${KDE1_BINDIR})
+install(TARGETS kfmclient1 RUNTIME DESTINATION ${KDE1_BINDIR})
