@@ -190,7 +190,7 @@ int KPasswordDlg::tryPassword()
 	KProcess chkpass;
 	QString kcp_binName = "";
 	kcp_binName += KApplication::kde_bindir();
-	kcp_binName += "/kcheckpass";
+	kcp_binName += "/kde1-kcheckpass";
 	chkpass.clearArguments();
 	chkpass << kcp_binName;
 	bool ret = chkpass.start(KProcess::DontCare, KProcess::Stdin);
