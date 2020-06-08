@@ -19,8 +19,8 @@ kmenuedit.moc pmenu.moc cpopmenu.moc confmenu.moc
 
 QT1_WRAP_MOC(MOC_FILES ${KMENUEDIT_MOC})
 
-add_executable(kmenuedit ${KMENUEDIT_SRCS} ${MOC_FILES})
-target_link_libraries(kmenuedit
+add_executable(kde1-kmenuedit ${KMENUEDIT_SRCS} ${MOC_FILES})
+target_link_libraries(kde1-kmenuedit
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     ${KDE1_KFM}
@@ -29,6 +29,6 @@ target_link_libraries(kmenuedit
     ${X11_LIBRARIES}
     )
 
-install(TARGETS kmenuedit RUNTIME DESTINATION ${KDE1_BINDIR})
+install(TARGETS kde1-kmenuedit RUNTIME DESTINATION ${KDE1_BINDIR})
 
 install_icon(kmenuedit.xpm "")
