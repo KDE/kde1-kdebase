@@ -8,15 +8,15 @@
 
 void write_int( int _fd, int _value )
 {
-    char buffer[10];
-    sprintf( buffer, "%i ", _value );
+    char buffer[20];
+    snprintf( buffer, sizeof(buffer), "%i ", _value );
     write( _fd, (const char*)buffer, strlen(buffer) );
 }
 
 void write_double( int _fd, double _value )
 {
-    char buffer[10];
-    sprintf( buffer, "%f ", _value );
+    char buffer[15];
+    snprintf( buffer, sizeof(buffer), "%f ", _value );
     write( _fd, (const char*)buffer, strlen(buffer) );
 }
 
@@ -222,14 +222,14 @@ void free_charList( charList *_list )
 int len_int( int _value )
 {
     char buffer[ 20 ];
-    sprintf( buffer, "%i", _value );
+    snprintf( buffer, sizeof(buffer), "%i", _value );
     return strlen(buffer) + 1;
 }
 
 int len_double( double _value )
 {
     char buffer[ 20 ];
-    sprintf( buffer, "%f", _value );
+    snprintf( buffer, sizeof(buffer), "%f", _value );
     return strlen(buffer) + 1;
 }
 
