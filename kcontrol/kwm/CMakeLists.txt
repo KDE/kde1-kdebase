@@ -2,23 +2,31 @@ include_directories(
     ${KDE1_INCLUDE_DIR}
     )
 
-set(KWM_SRCS
-    main.cpp bell.cpp kslidercontrol.cpp
+set(KCMKWM_SRCS
+    main.cpp
+    titlebar.cpp
+    windows.cpp
+    desktop.cpp
+    mouse.cpp
+    advanced.cpp
 )
 
-set(KWM_MOC
-    bell.moc kslidercontrol.moc
+set(KCMKWM_MOC
+    advanced.moc
+    desktop.moc
+    mouse.moc
+    titlebar.moc
+    windows.moc
 )
-QT1_WRAP_MOC(MOC_FILES ${KWM_MOC})
+QT1_WRAP_MOC(MOC_FILES ${KCMKWM_MOC})
 
-add_executable(kcmbell ${KWM_SRCS} ${MOC_FILES})
-target_link_libraries(kcmbell
+add_executable(kcmkwm ${KCMKWM_SRCS} ${MOC_FILES})
+target_link_libraries(kcmkwm
     Qt::Qt1
-    ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     )
 
-install(TARGETS kcmbell RUNTIME DESTINATION ${KDE1_BINDIR})
+install(TARGETS kcmkwm RUNTIME DESTINATION ${KDE1_BINDIR})
 
 install_icon(kwm "")
