@@ -66,6 +66,7 @@ add_executable(kscience.kss ${kscience_kss_SOURCES})
 add_executable(kattraction.kss ${kattraction_kss_SOURCES})
 add_executable(kslidescreen.kss ${kslidescreen_kss_SOURCES})
 add_executable(kbsod.kss ${kbsod_kss_SOURCES})
+add_executable(klock ${klock_SOURCES})
 
 set(BASE_LIBRARIES
     Qt::Qt1
@@ -96,6 +97,7 @@ target_link_libraries(kscience.kss ${BASE_LIBRARIES})
 target_link_libraries(kattraction.kss ${BASE_LIBRARIES})
 target_link_libraries(kslidescreen.kss ${BASE_LIBRARIES})
 target_link_libraries(kbsod.kss ${BASE_LIBRARIES} X11::Xpm)
+target_link_libraries(klock ${BASE_LIBRARIES})
 
 find_package(OpenGL COMPONENTS OpenGL GLX)
 if (OPENGL_FOUND)
