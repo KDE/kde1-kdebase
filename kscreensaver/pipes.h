@@ -20,7 +20,7 @@
 #define CUBESIZE  4 // cube radius   (> 0)
 #define CELLSIZE  1 // cell radius   (> 0)
 
-#define SPEED    10 // wait SPEED ms between steps
+#define SPEED    16 // wait SPEED ms between steps
 
 // non-parameters
 
