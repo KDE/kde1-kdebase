@@ -41,9 +41,6 @@ set(kflame_kss_SOURCES ${BASE_SRCS} flame.cpp)
 set(kforest_kss_SOURCES ${BASE_SRCS} forest.cpp)
 set(kblob_kss_SOURCES ${BASE_SRCS} blob.cpp)
 set(kbouboule_kss_SOURCES ${BASE_SRCS} bouboule.cpp)
-set(kmorph3d_kss_SOURCES ${BASE_SRCS} morph3d.cpp)
-set(kpipes_kss_SOURCES ${BASE_SRCS} pipes.cpp)
-set(kspace_kss_SOURCES ${BASE_SRCS} space.cpp)
 set(kscience_kss_SOURCES ${BASE_SRCS} science.cpp)
 
 set(klock_SOURCES klock.cpp kscreensave.cpp)
@@ -100,10 +97,13 @@ target_link_libraries(kattraction.kss ${BASE_LIBRARIES})
 target_link_libraries(kslidescreen.kss ${BASE_LIBRARIES})
 target_link_libraries(kbsod.kss ${BASE_LIBRARIES} X11::Xpm)
 
-
 find_package(OpenGL COMPONENTS OpenGL GLX)
 if (OPENGL_FOUND)
     add_definitions(-DHAVE_GL)
+
+    set(kmorph3d_kss_SOURCES ${BASE_SRCS} morph3d.cpp)
+    set(kpipes_kss_SOURCES ${BASE_SRCS} pipes.cpp)
+    set(kspace_kss_SOURCES ${BASE_SRCS} space.cpp)
 
     add_executable(kmorph3d.kss ${kmorph3d_kss_SOURCES})
     add_executable(kpipes.kss ${kpipes_kss_SOURCES})
