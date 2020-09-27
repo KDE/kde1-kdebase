@@ -71,7 +71,7 @@ add_executable(kbsod.kss ${kbsod_kss_SOURCES})
 
 set(BASE_LIBRARIES
     Qt::Qt1
-    ${X11_LIBRARIES}
+    X11::X11
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     crypt
