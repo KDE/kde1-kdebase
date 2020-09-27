@@ -164,6 +164,7 @@ int getVisual(XVisualInfo * wantVis){
         static int  first;
 
 
+        // This doesn't make sense, but glVis is 0-initialized anyways
         if (first) {
                 for (screen = 0; screen < MAXSCREENS; screen++)
                         glVis[screen] = NULL;
@@ -187,9 +188,12 @@ int getVisual(XVisualInfo * wantVis){
         }
 
         /* check if GL can render into root window. */
-
-        if ((!glVis[screen]) || (glVis[screen]->visual != wantVis->visual)) {
+        if ((!glVis[screen])) {
                 return (0);
+        }
+
+        if (glVis[screen]->visual != wantVis->visual) {
+                *wantVis->visual = *glVis[screen]->visual;
         }
 
         return (1);             /* success */
