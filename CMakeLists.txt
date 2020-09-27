@@ -27,7 +27,7 @@ configure_file(common/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 
 if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -Wno-write-strings")
-    set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -fpermissive -std=c++98")
+    set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -fpermissive -std=c++98 -Wno-write-strings")
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined")
 endif()
 
