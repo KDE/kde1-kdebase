@@ -75,7 +75,7 @@
 #define XBINDIR /usr/bin
 
 /* define, where to find the XDM configurations */
-#define XDMDIR "/opt/kde1//config/kdm"
+#define XDMDIR "@KDE1_XDMDIR@"
 
 /* Define if you have getdomainname */
 #define HAVE_GETDOMAINNAME 1  
@@ -93,7 +93,7 @@
 #define HAVE_S_ISSOCK 1
 
 /* Define the file for utmp entries */
-#define UTMP "/var/run/utmp"
+#define UTMP "@KDE1_UTMPPATH@"
 
 /* Define, if you want to use utmp entries */
 #define UTMP_SUPPORT 1

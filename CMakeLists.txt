@@ -18,6 +18,9 @@ set(BOOTSTRAP OFF)
 
 include_directories(common ${CMAKE_CURRENT_BINARY_DIR})
 
+set(KDE1_XDMDIR "${KDE1_CONFDIR}")
+set(KDE1_UTMPPATH "/var/run/utmp") ## todo, don't hardcode
+
 add_definitions( -DHAVE_CONFIG_H )
 configure_file(common/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 
