@@ -7,6 +7,7 @@ set(KVT_SRCS command.c screen.c utmp.c
 	xsetup.c debug.c resources.c main.C
 	grkelot.c)
 
+add_definitions(-DREAL_RESOURCES)
 set(KVT_MOC main.moc)
 
 QT1_WRAP_MOC(MOC_FILES ${KVT_MOC})
