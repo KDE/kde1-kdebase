@@ -99,7 +99,7 @@ target_link_libraries(kslidescreen.kss ${BASE_LIBRARIES})
 target_link_libraries(kbsod.kss ${BASE_LIBRARIES} X11::Xpm)
 
 
-find_package(OpenGL COMPONENTS OpenGL GLX OPTIONAL)
+find_package(OpenGL COMPONENTS OpenGL GLX)
 if (OPENGL_FOUND)
     add_definitions(-DHAVE_GL)
 
