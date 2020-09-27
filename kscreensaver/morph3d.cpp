@@ -899,7 +899,7 @@ release_morph3d()
 
 #define MINSPEED 0
 #define MAXSPEED 100
-#define DEFSPEED 100
+#define DEFSPEED 16
 #define MINBATCH 1
 #define MAXBATCH 5
 #define DEFBATCH 2
