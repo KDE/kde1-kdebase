@@ -64,7 +64,6 @@ extern KLocale *glocale;
 #include <space.h>
 #include <math.h>
 #include <X11/Intrinsic.h>
-#include <GL/xmesa.h>
 #include <GL/gl.h>
 #include <GL/glx.h>
 

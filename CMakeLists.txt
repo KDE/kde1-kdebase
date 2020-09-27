@@ -8,6 +8,7 @@ set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 # additional cmake files
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
+find_package(Qt1 REQUIRED)
 find_package(KDE1 REQUIRED)
 
 include(Qt1Macros)
@@ -32,7 +33,6 @@ endif()
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(CURSES ncurses)
-pkg_check_modules(JPEG jpeg)
 
 add_subdirectory(kcheckpass)
 add_subdirectory(kfm)
@@ -49,7 +49,7 @@ add_subdirectory(kwmcom)
 add_subdirectory(kwmmodules)
 add_subdirectory(krootwm)
 #add_subdirectory(kdm)
-#add_subdirectory(kscreensaver)
+add_subdirectory(kscreensaver)
 add_subdirectory(kmenuedit)
 add_subdirectory(kaudio)
 add_subdirectory(kcontrol)

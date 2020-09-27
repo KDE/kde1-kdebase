@@ -22,6 +22,10 @@
 #include "xlock.h"
 #include <math.h>
 
+#ifndef min
+#define min(a,b) ((a)<(b)?(a):(b))
+#endif
+
 #define MAXSPEED 100
 #define MINSPEED 0
 #define DEFSPEED 50
