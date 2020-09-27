@@ -16,9 +16,10 @@ set(KDEBASE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 
 set(BOOTSTRAP OFF)
 
-include_directories(common)
+include_directories(common ${CMAKE_CURRENT_BINARY_DIR})
 
 add_definitions( -DHAVE_CONFIG_H )
+configure_file(common/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 
 if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -Wno-write-strings")
