@@ -4,6 +4,10 @@
 
 #include "sample.h"
 
+#ifdef ENABLE_PULSE
+struct pa_simple;
+#endif
+
 class AudioDev
 {
 public:
@@ -31,6 +35,10 @@ private:
   char  *silence8;      /* Memory buffer where "silence" is stored */
   char  *silence16;     /* Memory buffer where "silence" is stored */
   bool  ParamsChanged;
+
+#ifdef ENABLE_PULSE
+  pa_simple *pa_conn;
+#endif
 };
 
 

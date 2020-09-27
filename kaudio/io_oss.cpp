@@ -4,6 +4,11 @@
 #include <iostream>
 #include <errno.h>
 
+#ifdef ENABLE_PULSE
+#include <pulse/simple.h>
+
+#else// ENABLE_PULSE
+
 // Linux/OSS includes
 #ifdef linux
 #include <fcntl.h>
@@ -39,6 +44,8 @@
 #include <sys/soundcard.h>
 #define OSS_AUDIO
 #endif
+
+#endif// ENABLE_PULSE
 
 #include "maudio.h"
 #include "sample.h"
@@ -78,6 +85,10 @@ AudioDev::AudioDev(int devnum)
     silence8[i] = 0x80; silence8[i+1] = 0x80;   // 0x80
     silence16[i]= 0x00; silence16[i+1]= 0x00;   // 0x00
   }
+
+#ifdef ENABLE_PULSE
+  pa_conn = NULL;
+#endif
 }
 
 void AudioDev::setBugs(int bugs)
@@ -98,6 +109,47 @@ bool AudioDev::grab(bool probeOnly)
       /* Open audio device non-blocking! */
 #ifdef OSS_AUDIO
       audiodev=open(devname, O_WRONLY, 0 /* O_NONBLOCK */);
+#elif defined(ENABLE_PULSE)
+      if (probeOnly) {
+          return true; // so sue me
+      }
+
+      pa_sample_spec ss;
+      ss.rate = frequency;
+      ss.channels = stereo ? 2 : 1;
+      switch(bit_p_spl) {
+      case 32:
+          ss.format = PA_SAMPLE_S32LE;
+          break;
+      case 24:
+          ss.format = PA_SAMPLE_S24_32LE;
+          break;
+      case 16:
+          ss.format = PA_SAMPLE_S16LE;
+          break;
+      case 8:
+          ss.format = PA_SAMPLE_U8;
+          break;
+      default:
+          std::cerr << "unhandled bpp " << bit_p_spl << std::endl;
+          ss.format = PA_SAMPLE_U8;
+          break;
+      }
+
+      pa_conn = pa_simple_new(
+                  NULL,               // Use the default server.
+                  "MAudio",           // Our application's name.
+                  PA_STREAM_PLAYBACK,
+                  NULL,               // Use the default device.
+                  "Notications",      // Description of our stream.
+                  &ss,                // Our sample format.
+                  NULL,               // Use default channel map
+                  NULL,               // Use default buffering attributes.
+                  NULL                // Ignore error code.
+                  );
+       ParamsChanged=false;
+       opened = true;
+
 #else
       audiodev=-1; // fail!
 #endif 
@@ -167,14 +219,19 @@ bool AudioDev::grab(bool probeOnly)
 
 bool AudioDev::release()
 {
+#ifdef ENABLE_PULSE
+  if (pa_conn) pa_simple_free(pa_conn);
+  pa_conn = NULL;
+#else
   if (opened) {
 //  if ( BugFlags & CLOSELOOSE_BUG)
 //  Loose data on close? Then sync before close
 
     sync(); // Always sync() on close. I am fed up with OSS-Bug compatibility mode :-(
     close(audiodev);
-    opened=false;
   }
+#endif
+  opened=false;
 
   return true;
 }
@@ -190,6 +247,8 @@ bool AudioDev::reset()
 #ifdef OSS_AUDIO
       sync();
       return( ioctl(audiodev, SNDCTL_DSP_RESET, 0) );
+#elif defined(ENABLE_PULSE)
+    return pa_simple_flush(pa_conn, NULL) == 0;
 #else
       return(true);
 #endif
@@ -207,6 +266,8 @@ bool AudioDev::sync()
 #endif
 #ifdef OSS_AUDIO
       return( ioctl(audiodev, SNDCTL_DSP_SYNC, 0) );
+#elif defined(ENABLE_PULSE)
+      return pa_simple_drain(pa_conn, NULL) == 0;
 #else
       return(true);
 #endif
@@ -252,6 +313,8 @@ int AudioDev::Write(char *data, uint32 num)
 {
 #ifdef OSS_AUDIO
   return ( write(audiodev, data, num) );
+#elif defined(ENABLE_PULSE)
+  return ( pa_simple_write(pa_conn, data, num, &errno) );
 #else
   char *dummy = data;  // remove warnings on unsupported systems
   data = dummy;        // remove warnings on unsupported systems

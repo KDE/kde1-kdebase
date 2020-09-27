@@ -375,7 +375,7 @@ void ma_init(char argc, char **argv)
   }
   StatStatPtr = &(StatChunk->status);
 
-#if ! ( defined (__linux__) || defined (__FreeBSD__) || defined (__NetBSD__) || defined (_UNIXWARE) )
+#if ! ( defined (__linux__) || defined (__FreeBSD__) || defined (__NetBSD__) || defined (_UNIXWARE) || defined(ENABLE_PULSE) )
   // Linux, FreeBSD, NetBSD and UnixWare are supported today. Quit now for
   // not wasting resources.
   // kaudioserver will get a SIGCHLD and exit, too, which is good.

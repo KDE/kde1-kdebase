@@ -36,6 +36,8 @@ find_package(OpenSSL REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(CURSES ncurses)
 
+find_package(PulseAudio)
+
 add_subdirectory(kcheckpass)
 add_subdirectory(kfm)
 add_subdirectory(mimetypes)
