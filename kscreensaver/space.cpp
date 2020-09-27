@@ -311,7 +311,7 @@ void Idle(void)
 
 
 void
-drawSpace(Window /*window*/)
+drawSpace(Window window)
 {
 
   /*
@@ -323,6 +323,9 @@ drawSpace(Window /*window*/)
   */
 
   Idle();
+
+    Display    *display = dsp;
+    glXSwapBuffers(display, window);
 
 }
 
