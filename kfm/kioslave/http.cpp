@@ -13,9 +13,17 @@
 #include <klocale.h>
 #include <qregexp.h>
 
+#include <openssl/err.h>
+
 #include "../config-kfm.h"
 
 #define MAX_HTTP_HEADER_SIZE  4096
+
+extern "C" {
+    int verify_callback(int, x509_store_ctx_st*) {
+        return 1;
+    }
+}
 
 /************************** Authorization stuff: copied from wget-source *****/
 
@@ -95,6 +103,19 @@ char *create_www_auth(const char *user, const char *passwd)
 
 KProtocolHTTP::KProtocolHTTP()
 {
+    m_bEOF=false;
+    m_bUseSSL=false;
+    meth=SSLv23_client_method();
+    SSLeay_add_ssl_algorithms();
+    ctx=SSL_CTX_new(meth);
+    if (ctx != NULL) {
+      SSL_CTX_set_verify(ctx, SSL_VERIFY_NONE, verify_callback);
+      hand=SSL_new(ctx);
+    } else {
+      fprintf(stderr, "We've got a problem!\n");
+      fflush(stderr);
+    }
+
     connected = 0;
     use_proxy = 0;
     
@@ -154,7 +175,65 @@ KProtocolHTTP::KProtocolHTTP()
 
 KProtocolHTTP::~KProtocolHTTP()
 {
+    SSL_free(hand);
+    SSL_CTX_free(ctx);
     Close();
+}
+
+int KProtocolHTTP::openStream() {
+  if (m_bUseSSL) {
+    SSL_set_fd(hand, sock);
+    if (SSL_connect(hand)== -1) {
+      fprintf(stderr, "err:%d\n",ERR_get_error());
+      fflush(stderr);
+      return false;
+    }
+
+    return true;
+  }
+
+  fsocket = fdopen( sock, "r+" );
+  if( !fsocket ) {
+    return false;
+  }
+  return true;
+}
+
+char *KProtocolHTTP::_gets (char *s, int size)
+{
+  int len=0;
+  char *buf=s, mybuf[2]={0,0};
+  while (len < size) {
+    _read(mybuf, 1);
+    memcpy(buf, mybuf, 1);
+    if (*buf == '\n')
+      break;
+    len++; buf++;
+  }
+  *buf=0;
+  return s;
+}
+
+ssize_t KProtocolHTTP::_write (const void *buf, size_t nbytes)
+{
+  if (m_bUseSSL)
+    return SSL_write(hand, buf, nbytes);
+
+  return ::write(sock, buf, nbytes);
+}
+
+ssize_t KProtocolHTTP::_read (void *b, size_t nbytes)
+{
+  ssize_t ret;
+  if (m_bUseSSL) {
+    ret=SSL_read(hand, b, nbytes);
+    if (ret==0) m_bEOF=true;
+    return ret;
+  }
+
+  ret=fread(b, 1, nbytes, fsocket);
+  if (!ret) m_bEOF=feof(fsocket);
+  return ret;
 }
 
 // Jacek:
@@ -287,7 +366,7 @@ int KProtocolHTTP::Close()
 
 int KProtocolHTTP::atEOF()
 {
-    return( bytesleft == 0 || feof( fsocket ) );
+    return( bytesleft == 0 || m_bEOF );
 }
 
 long KProtocolHTTP::Read(void *buffer, long len)
@@ -295,7 +374,7 @@ long KProtocolHTTP::Read(void *buffer, long len)
     if( atEOF() )
 	return 0;
 
-    long nbytes = fread(buffer,1,len,fsocket);
+    long nbytes = _read(buffer,len);
     bytesRead += nbytes;
     bytesleft -= nbytes;
 
@@ -325,7 +404,7 @@ long KProtocolHTTP::Read(void *buffer, long len)
 	emit info( infoStr );
     }
     
-    if ( ferror(fsocket))
+    if (m_bEOF && size != 0xFFFFFFF && bytesleft > 0)
     {
         Error( KIO_ERROR_CouldNotRead,"Reading from socket failed", errno);
         return FAIL;
@@ -447,10 +526,15 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 	}
 	else
 	{
+                m_bUseSSL=(strncasecmp(_url->protocol(), "https", 5)==0);
 		struct sockaddr_in server_name;
 		int port = _url->port();
-		if ( port == 0 )
+		if ( port == 0 ) {
+                    if (m_bUseSSL)
+			port = 443;
+                    else
 			port = 80;
+                }
 
 		if(init_sockaddr(&server_name, _url->host(), port) == FAIL)
 		{
@@ -466,8 +550,7 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
  	}
 	connected = 1;
 
-	fsocket = fdopen(sock,"r+");
-	if(!fsocket)
+	if(!openStream())
 	{
 	    Error(KIO_ERROR_CouldNotConnect, "Could not fdopen socket", errno);
 	    return(FAIL);
@@ -593,7 +676,7 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
         }
 
 	// write(0, command.data(), command.length());
-	write(sock, command.data(), command.length());
+	_write(command.data(), command.length());
 
 	return(ProcessHeader());
 }
@@ -612,7 +695,7 @@ int KProtocolHTTP::ProcessHeader()
 	// however at least extensions should be checked
 	if (assumeHTML) mType="text/html";
 	
-	while( len && fgets( buffer, MAX_HTTP_HEADER_SIZE, fsocket ) )
+       while( len && _gets( buffer, MAX_HTTP_HEADER_SIZE ) )
 	{
 	    len = strlen(buffer);
 	    while( len && (buffer[len-1] == '\n' || buffer[len-1] == '\r'))

@@ -31,6 +31,8 @@ if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined")
 endif()
 
+find_package(OpenSSL REQUIRED)
+
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(CURSES ncurses)
 

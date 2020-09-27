@@ -17,6 +17,8 @@
 
 #include <klocale.h>
 
+#include <openssl/ssl.h>
+
 class KProtocolHTTP :public KProtocol
 {
     Q_OBJECT
@@ -81,6 +83,17 @@ public:
     virtual long Read(void *buffer, long len);
     virtual long Size();
     virtual int atEOF();
+
+private:
+    int openStream();
+    ssize_t _write (const void *buf, size_t nbytes);
+    ssize_t _read (void *b, size_t nbytes);
+    char *_gets (char *str, int size);
+    bool m_bEOF;
+    bool m_bUseSSL;
+    const SSL_METHOD *meth;
+    SSL_CTX *ctx;
+    SSL *hand;
 };
 
 extern "C" {

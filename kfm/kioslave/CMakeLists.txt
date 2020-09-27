@@ -18,6 +18,7 @@ target_link_libraries(kioslave
     ${KDE1_KIMGIO}
     Qt::Qt1
     ${X11_LIBRARIES}
+    OpenSSL::SSL
     )
 
 install(TARGETS kioslave RUNTIME DESTINATION ${KDE1_BINDIR})
