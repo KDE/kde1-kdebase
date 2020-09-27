@@ -534,7 +534,11 @@ void kPipesSaver::tick()
   steps = steps+1;
   makeStep();
   paintStep();
-	glFlush();
+  glFlush();
+
+  Window window = d;
+  Display    *display = dsp;
+  glXSwapBuffers(display, window);
 }
 
 // Creation of the basic display elements ////////////////////////////////////
