@@ -10,6 +10,14 @@ set(KPLAYAUDIO_SRCS kplayaudio.cpp)
 QT1_WRAP_MOC(MOC_FILES kplayaudio.moc)
 QT1_WRAP_MOC(DEMO_MOC_FILES democlient.moc)
 
+add_executable(maudio ${MAUDIO_SRCS})
+target_link_libraries(maudio
+    ${QT_LIBRARIES}
+    ${X11_LIBRARIES}
+    ${KDE1_KDECORE}
+    ${KDE1_MEDIATOOL}
+    )
+
 add_executable(kaudioserver ${KAUDIO_SRCS})
 target_link_libraries(kaudioserver
     ${QT_LIBRARIES}

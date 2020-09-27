@@ -1,9 +1,10 @@
 #include <stdio.h>
-#include <iostream.h>
+#include <iostream>
 #include <sys/stat.h>
 #include "sample.h"
 #include "maudio.h"
 #include <string.h>
+#include <stdint.h>
 
 // Wavplay compatibility function
 #ifdef DEBUG
@@ -13,7 +14,7 @@ void err(char *)
 #endif
 {
 #ifdef DEBUG
-  cerr << value << '\n';
+  std::cerr << value << '\n';
 #endif
 }
 
@@ -66,7 +67,7 @@ void AudioSample::setRBuf(int id)
     id=0;
   RBufId = id;
   RBuffer= Buffers[id];
-  //  cerr << "RBuf = " << id << "\n";
+  //  std::cerr << "RBuf = " << id << "\n";
 }
 
 void AudioSample::setWBuf(int id)
@@ -75,7 +76,7 @@ void AudioSample::setWBuf(int id)
     id=0;
   WBufId = id;
   WBuffer= Buffers[id];
-  //  cerr << "WBuf = " << id << "\n";
+  //  std::cerr << "WBuf = " << id << "\n";
 }
 
 void AudioSample::nextWBuf()
@@ -85,7 +86,7 @@ void AudioSample::nextWBuf()
     buffersValid--;
   }
   else
-    cerr << "nextWBuf():  buffersValid==0\n";
+    std::cerr << "nextWBuf():  buffersValid==0\n";
 }
 
 
@@ -109,14 +110,14 @@ int AudioSample::setFilename(char* fname)
 
   audiofile = fopen(fname, "r");
   if (!audiofile) {
-    cerr << "maudio: Cannot open file.\n";
+    std::cerr << "maudio: Cannot open file.\n";
     return 1;
   }
 
   ret = stat(fname, &statBuf);
   if (ret==-1)
     {
-      cerr << "maudio: Cannot stat file.\n";
+      std::cerr << "maudio: Cannot stat file.\n";
       fclose(audiofile);
       return 1;
     }
@@ -133,7 +134,7 @@ int AudioSample::setFilename(char* fname)
   // This is the WAV probe code
   if (bytes_read < sizeof(WAVE_HEADER))
     {
-      cerr << "maudio: Incomplete audio header.\n";
+      std::cerr << "maudio: Incomplete audio header.\n";
       fclose(audiofile);
       return 1;
     }
@@ -204,17 +205,17 @@ int AudioSample::setFilename(char* fname)
   bytes_per_s = (frequency * bit_p_spl)/8;
   if (stereo)
     bytes_per_s *= 2;
-  headerLen     = ((uint32) (ptr + 4)) - ((uint32) (&(buffer[0]))) ;
+  headerLen     = ((intptr_t) (ptr + 4)) - ((intptr_t) (&(buffer[0]))) ;
 
 #ifdef DEBUG
-  cerr << fname << " is a ";
+  std::cerr << fname << " is a ";
   if (stereo)
-    cerr << "stereo";
+    std::cerr << "stereo";
   else
-  cerr << "mono";
-  cerr << " sample with " << bytes \
+  std::cerr << "mono";
+  std::cerr << " sample with " << bytes \
        << " byte(s)/sample at " << frequency << " Hz.\n";
-  cerr << "Bit(s)/sample is " << bit_p_spl << "\n";
+  std::cerr << "Bit(s)/sample is " << bit_p_spl << "\n";
 #endif
 
   if (waveformat.dwSamplesPerSec != waveformat.dwAvgBytesPerSec / waveformat.wBlockAlign) {
@@ -289,7 +290,7 @@ int AudioSample::readData()
 {
   if ( buffersValid >= NUM_BUF) {
     // We definitely read enough. Return a key to indicate this
-    cerr << "maudio: Read too many buffers (OUCH!) \n";
+    std::cerr << "maudio: Read too many buffers (OUCH!) \n";
     return 0;
   }
   int num = readDataI();
@@ -319,7 +320,7 @@ int AudioSample::readDataI()
     len_toRead = BUFFSIZE;			// A full buffer can be read without harm
 
 #ifdef DEBUG
-  //  cerr << "Trying to read " << len_toRead << " bytes from " << cur_read_pos << ". Read: ";
+  //  std::cerr << "Trying to read " << len_toRead << " bytes from " << cur_read_pos << ". Read: ";
 #endif
 
   if (len_toRead == 0) // -<- This ends the media
@@ -341,7 +342,7 @@ int AudioSample::readDataI()
   }
 
 #ifdef DEBUG
-  //  cerr << len << '\n';
+  //  std::cerr << len << '\n';
 #endif
 
   return(BUFFSIZE);

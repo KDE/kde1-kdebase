@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/stat.h>
-#include <iostream.h>
+#include <iostream>
 #include <errno.h>
 
 // Linux/OSS includes
@@ -106,7 +106,7 @@ bool AudioDev::grab(bool probeOnly)
 	 // Tell the user something has gone wrong.
 	 // But don't tell him the device is busy, he already
 	 // should know this.
-         cerr << "maudio: Cannot open audio device.\n";
+           std::cerr << "maudio: Cannot open audio device.\n";
          return false;
        }
        else {

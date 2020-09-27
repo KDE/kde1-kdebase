@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <errno.h>
-#include <iostream.h>
+#include <iostream>
 #include <string.h>
 #include <fcntl.h>
 #include <config.h>
@@ -49,7 +49,7 @@ void MYexit(int retcode)
 }
 
 
-int main(char argc, char **argv)
+int main(int argc, char **argv)
 {
   char	filename[LEN_FNAME+1];
   int	bytes_read, ret;
@@ -139,7 +139,7 @@ int main(char argc, char **argv)
 	  ReleaseDelay--;
 	  if (ReleaseDelay==0) {
 #ifdef DEBUG
-	    cerr << "maudio: Releasing audio device\n";
+	    std::cerr << "maudio: Releasing audio device\n";
 #endif
 	    ADev->release();
 	  }
@@ -214,7 +214,7 @@ int main(char argc, char **argv)
 	if (retgrab != true) {
 	  PlayerStatus = STOP_MEDIA;
 #ifdef DEBUG
-	  cerr << "maudio: Failed to grab sound device\n";
+	  std::cerr << "maudio: Failed to grab sound device\n";
 #endif
 	}
 	else {
@@ -258,7 +258,7 @@ int main(char argc, char **argv)
 
 
       if (WBold == ASample->WBuffer)
-	cerr << "maudio: warning (please ignore)\n";
+	std::cerr << "maudio: warning (please ignore)\n";
 
       ret = ADev->Write(ASample->WBuffer,BUFFSIZE);
       WBold = ASample->WBuffer;
@@ -269,7 +269,7 @@ int main(char argc, char **argv)
 	  usleep(USLEEP_DELAY);
 	}
 	else {
-	  cerr << "maudio OSS Error: " << errno << "\n";
+	  std::cerr << "maudio OSS Error: " << errno << "\n";
 	}
       } // EAGAIN
       else {
@@ -294,7 +294,7 @@ int main(char argc, char **argv)
 
       // ---------------------------------------------------------------------
     default:
-      cerr << "maudio: Undefined state, resetting";
+      std::cerr << "maudio: Undefined state, resetting";
       PlayerStatus = STOP_MEDIA;
       break;
     }
@@ -350,27 +350,27 @@ void ma_init(char argc, char **argv)
     else  if (strcmp (argv[i],"-version") == 0) {
       char vers[50];
       sprintf (vers,"%.2f", APP_VERSION);
-      cout << argv[0] << " V" << vers << ".\n(C)1997-1998 by Christian Esken (esken@kde.org).\n";
-      cout << "This program can be distributed under the terms of GPL\n";
+      std::cout << argv[0] << " V" << vers << ".\n(C)1997-1998 by Christian Esken (esken@kde.org).\n";
+      std::cout << "This program can be distributed under the terms of GPL\n";
       exit(0);
     }
   }
 
   if (!IsSlave) {
-    cerr << "maudio: -media option missing.\n";
+    std::cerr << "maudio: -media option missing.\n";
     MYexit(1);
   }
 
 
   MdConnect(atoi(identification), &mcon);
   if ( mcon.shm_adr == 0 ) {
-    cerr << "Could not find media master.\n";
+    std::cerr << "Could not find media master.\n";
     MYexit(1);
   }
 
   StatChunk = (MdCh_STAT*)FindChunkData(mcon.shm_adr, "STAT");
   if ( StatChunk == NULL ) {
-    cerr << "Could not find STAT chunk.\n";
+    std::cerr << "Could not find STAT chunk.\n";
     MYexit(1);
   }
   StatStatPtr = &(StatChunk->status);
@@ -385,7 +385,7 @@ void ma_init(char argc, char **argv)
 
   KeysChunk = (MdCh_KEYS*)FindChunkData(mcon.shm_adr, "KEYS");
   if ( KeysChunk == NULL ) {
-    cerr << "Could not find KEYS chunk.\n";
+    std::cerr << "Could not find KEYS chunk.\n";
     *StatStatPtr = MD_STAT_EXITED;
     /* Master will not lock up, because I can tell him, the player
      * exits right now.
@@ -395,7 +395,7 @@ void ma_init(char argc, char **argv)
 
   FnamChunk = (MdCh_FNAM*)FindChunkData(mcon.shm_adr, "FNAM");
   if ( FnamChunk == NULL ) {
-    cerr << "Could not find FNAM chunk.\n";
+    std::cerr << "Could not find FNAM chunk.\n";
     *StatStatPtr = MD_STAT_EXITED;
     /* Master will not lock up, because I can tell him, the player
      * exits right now.
