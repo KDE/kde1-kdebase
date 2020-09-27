@@ -354,7 +354,7 @@ bool KIOServer::supports( const char *_url, int _mode )
     if ( u.isMalformed() )
 	return false;
     
-    if ( strcmp( u.protocol(), "http" ) == 0 )
+    if ( strncmp( u.protocol(), "http", 4 ) == 0  )
     {
 	if ( _mode == KIO_Read )
 	    return true;
@@ -720,7 +720,7 @@ int KIOServer::isDir( const char *_url )
 	return 1;
     // With HTTP we can be shure that everything that does not end with '/'
     // is NOT a directory
-    else if ( strcmp( u.protocol(), "http" ) == 0 )
+    else if ( strncmp( u.protocol(), "http", 4 ) == 0 )
 	return 0;
     // Local filesystem without subprotocol
     else if ( u.isLocalFile() )

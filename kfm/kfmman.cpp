@@ -1376,7 +1376,7 @@ void KFMManager::slotFinished()
 	}
 	view->end();
 	// Checkin this page in the cache
-	if ( !u.hasSubProtocol() && ( strcmp( u.protocol(), "http" ) == 0 ||
+	if ( !u.hasSubProtocol() && ( strncmp( u.protocol(), "http", 4 ) == 0 ||
 				      strcmp( u.protocol(), "cgi" ) == 0 ) )
 	     view->getHTMLCache()->slotCheckinURL( url, pageBuffer );
 	// Our job is done
@@ -1431,7 +1431,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 	    QMessageBox::warning( 0, klocale->translate("KFM Error"), tmp );
 	    return;
 	}
-        if (strcmp(u.protocol(),"http")) bHttp = false; // not HTTP
+        if (strncmp(u.protocol(),"http", 4)) bHttp = false; // not HTTP
     }
     
     popupMenu->clear();

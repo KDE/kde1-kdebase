@@ -521,7 +521,7 @@ bool KCookieJar::extractDomain(const char *_url,
 {
     KURL kurl(_url);    
     
-    if ( strcmp(kurl.protocol(), "http") != 0)
+    if ( strncmp(kurl.protocol(), "http", 4) != 0 )
     	return false; // We only do HTTP cookies :)
     
     _fqdn = kurl.host();

@@ -375,7 +375,7 @@ void KIOJob::link()
 		    config.writeEntry( "Type", "Link" );
 		    if ( strcmp( su.protocol(), "ftp" ) == 0 )
 			config.writeEntry( "Icon", "ftp.xpm" );
-		    else if ( strcmp( su.protocol(), "http" ) == 0 )
+		    else if ( strncmp( su.protocol(), "http", 4 ) == 0 )
 			config.writeEntry( "Icon", "www.xpm" );
 		    else if ( strcmp( su.protocol(), "info" ) == 0 )
 			config.writeEntry( "Icon", "info.xpm" );

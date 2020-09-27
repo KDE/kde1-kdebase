@@ -42,6 +42,7 @@ int HaveProto(const char *url)
 	if( strncmp( url, "tar:", 4 ) == 0) return 1;
 	if( strncmp( url, "file:", 5 ) == 0) return 1;
 	if( strncmp( url, "http:", 5 ) == 0) return 1;
+	if( strncmp( url, "https:", 5 ) == 0) return 1;
 	if( strncmp( url, "cgi:", 4 ) == 0) return 1;
 	if( strncmp( url, "gzip:", 5 ) == 0) return 1;
 	if( strncmp( url, "icon:", 5 ) == 0) return 1;
@@ -86,6 +87,7 @@ KProtocol *CreateProtocol(const char *url)
     if( lasturl[0] == '/' ) return(new KProtocolFILE);
     if( strncmp( lasturl, "file:", 5 ) == 0 ) return( new KProtocolFILE );
     if( strncmp( lasturl, "http:", 5 ) == 0 ) return( new KProtocolHTTP );
+    if( strncmp( lasturl, "https:", 5 ) == 0 ) return( new KProtocolHTTP );
     // if( strncmp( lasturl, "ftp:", 4 ) == 0 ) return( new KProtocolFTP );
     if( strncmp( lasturl, "ftp:", 4 ) == 0 )
     {
