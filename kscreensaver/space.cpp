@@ -453,7 +453,7 @@ initSpace(Window window)
 
 #define MINSPEED 1
 #define MAXSPEED 100
-#define DEFSPEED 50
+#define DEFSPEED 16
 #define MINWARP 1
 #define MAXWARP 30
 #define DEFWARP 2
