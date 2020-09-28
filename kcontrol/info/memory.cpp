@@ -82,7 +82,7 @@ QString format(unsigned long value)
 
 // Include system-specific code
 
-#ifdef linux
+#ifdef __linux__
 #include "memory_linux.cpp"
 #elif sgi
 #include "memory_sgi.cpp"
