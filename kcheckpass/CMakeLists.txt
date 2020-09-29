@@ -8,4 +8,7 @@ set(KCHECKPASS_SRCS kcheckpass.c checkpass_etcpasswd.c
 add_executable(kde1-kcheckpass ${KCHECKPASS_SRCS})
 target_link_libraries(kde1-kcheckpass crypt Qt::Qt1)
 
-install(TARGETS kde1-kcheckpass RUNTIME  DESTINATION ${KDE1_BINDIR})
+install(TARGETS kde1-kcheckpass RUNTIME
+    DESTINATION ${KDE1_BINDIR}
+    PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE SETUID
+    )
