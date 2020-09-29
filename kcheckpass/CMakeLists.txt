@@ -16,6 +16,8 @@ target_link_libraries(kde1-kcheckpass crypt Qt::Qt1)
 
 if (PAM_FOUND)
     target_link_libraries(kde1-kcheckpass ${PAM_LIBRARIES})
+
+    install(TARGETS kde1-kcheckpass RUNTIME DESTINATION ${KDE1_BINDIR})
 else()
     message(WARNING "Did not find PAM, kcheckpass needs to be SUID")
     target_compile_definitions(kde1-kcheckpass PRIVATE HAVE_SHADOW)
