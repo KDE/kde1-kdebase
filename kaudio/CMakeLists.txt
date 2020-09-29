@@ -43,5 +43,5 @@ target_link_libraries(kplayaudio
     ${X11_LIBRARIES}
     )
 
-install(TARGETS kaudioserver kplayaudio RUNTIME DESTINATION ${KDE1_BINDIR})
+install(TARGETS maudio kaudioserver kplayaudio RUNTIME DESTINATION ${KDE1_BINDIR})
 install(FILES  maudio.html DESTINATION ${KDE1_HTMLDIR}/en/kmedia)
