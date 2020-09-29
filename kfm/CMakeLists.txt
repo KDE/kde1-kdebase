@@ -60,3 +60,6 @@ install(FILES magic DESTINATION ${KDE1_MIMEDIR})
 
 install_icon(kfm.xpm "")
 install_icon(link.xpm "")
+
+# A modern session file to be compatible with modern login things
+install(FILES kde1.desktop DESTINATION share/xsessions)

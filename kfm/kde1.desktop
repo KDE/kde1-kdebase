@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=KDE 1
+Comment=K Desktop Environment 1.1
+Exec=startkde
+TryExec=startkde
+Type=Application
+X-LightDM-DesktopName=kde1
+DesktopNames=kde1
+Keywords=desktop
