@@ -1813,6 +1813,7 @@ QString KFMManager::getVisualSchnauzerIconTag( const char *_url )
 	KMimeType *mime = KMimeType::getMagicMimeType( _url );
 	if ( strcmp( mime->getMimeType(), "image/jpeg" ) == 0 ||
 	     strcmp( mime->getMimeType(), "image/gif" ) == 0 ||
+	     strcmp( mime->getMimeType(), "image/png" ) == 0 ||
 	     strcmp( mime->getMimeType(), "image/bmp" ) == 0 ||  
                             // Added bmp, because it seems to work. David.
 	     strcmp( mime->getMimeType(), "image/x-xpm" ) == 0 )
