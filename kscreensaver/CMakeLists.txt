@@ -76,6 +76,10 @@ set(BASE_LIBRARIES
     crypt
     )
 
+if (PAM_FOUND)
+    set(BASE_LIBRARIES ${BASE_LIBRARIES} ${PAM_LIBRARIES})
+endif()
+
 target_link_libraries(kmatrix.kss ${BASE_LIBRARIES} X11::Xpm)
 target_link_libraries(kpolygon.kss ${BASE_LIBRARIES})
 target_link_libraries(kswarm.kss ${BASE_LIBRARIES})

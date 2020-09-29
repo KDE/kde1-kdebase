@@ -22,6 +22,21 @@ include_directories(common ${CMAKE_CURRENT_BINARY_DIR})
 set(KDE1_XDMDIR "${KDE1_CONFDIR}")
 set(KDE1_UTMPPATH "/var/run/utmp") ## todo, don't hardcode
 
+find_package(PAM)
+
+if (PAM_FOUND)
+    add_definitions(-DHAVE_PAM)
+    add_definitions(-DUSE_PAM)
+
+    # Some things default to xdm, which doesn't exist anymore
+    add_definitions(-DKDE_PAM_SERVICE=\"system-auth\")
+else()
+    message(STATUS "Assuming you have shadow support")
+    add_definitions(-DHAVE_SHADOW)
+    add_definitions(-DUSE_SHADOW)
+    add_definitions(-DUSESHADOW)
+endif()
+
 add_definitions( -DHAVE_CONFIG_H )
 configure_file(common/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 
