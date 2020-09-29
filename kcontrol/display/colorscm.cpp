@@ -698,7 +698,7 @@ void KColorScheme::writeSettings()
 		//Matthias: krdb seems to be more advanced then the kresourceman....
 		// so simply use krdb
 		KProcess proc;
-		proc.setExecutable("krdb");
+		proc.setExecutable("krdb1");
 		proc.start( KProcess::Block );
 
 // 		KResourceMan *krdb = new KResourceMan();

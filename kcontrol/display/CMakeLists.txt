@@ -1,4 +1,7 @@
 add_subdirectory(kcs)
+
+find_package(JPEG)
+
 if(JPEG_FOUND)
     add_subdirectory(ad)
 endif()

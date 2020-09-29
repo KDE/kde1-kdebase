@@ -104,7 +104,7 @@ void KDisplayApplication::init()
   KConfigGroupSaver saver(kapp->getConfig(), "X11");
   if (kapp->getConfig()->readBoolEntry( "useResourceManager", false )){
       KProcess proc;
-      proc.setExecutable("krdb");
+      proc.setExecutable("krdb1");
       proc.start( KProcess::Block );
   }
 

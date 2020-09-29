@@ -284,7 +284,7 @@ int main( int argc, char ** argv )
 	::time( &timestamp );
 
 	QString tmpFile;
-	tmpFile.sprintf("/tmp/krdb.%ld", timestamp);
+	tmpFile.sprintf("/tmp/krdb1.%ld", timestamp);
 	
 	QFile tmp( tmpFile );
 	if ( tmp.open( IO_WriteOnly ) ) {

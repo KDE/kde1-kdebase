@@ -539,7 +539,7 @@ void KGeneral::writeSettings()
 
 		// the krdb run is for colors and other parameters (Matthias)
 		KProcess proc;
-		proc.setExecutable("krdb");
+		proc.setExecutable("krdb1");
 		proc.start( KProcess::Block );
 
 		// still some KResourceMan stuff stuff. We need to
