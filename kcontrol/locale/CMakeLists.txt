@@ -23,4 +23,6 @@ target_link_libraries(kcmlocale
 
 install(TARGETS kcmlocale RUNTIME DESTINATION ${KDE1_BINDIR})
 
-install_icon(locale.xpm "")
+install(FILES kcmlocale.kdelnk DESTINATION ${KDE1_CONFDIR} RENAME kcmlocalerc)
+
+install_icon(locale.xpm ${KDE1_ICONDIR})
