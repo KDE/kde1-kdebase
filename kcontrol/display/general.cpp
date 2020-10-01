@@ -291,8 +291,8 @@ void KIconStyle::readSettings()
         QString s = config.readEntry( QString(appName[i])+"IconStyle", "Normal" );
         m_dictCBNormal[ appName[i] ] -> setChecked( s == "Normal");
         m_dictCBLarge[ appName[i] ] -> setChecked( s == "Large" );
-        char * setting = new char [s.length()];
-        strcpy( setting, s );
+        char * setting = (char*)::operator new(s.length() + 1); // QDict uses just delete, so we can't use malloc or 'new char[]'
+        strcpy( setting, s.data() );
         m_dictSettings.insert( appName[i], setting ); // store initial value
     }    
 }
