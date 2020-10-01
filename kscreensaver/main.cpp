@@ -353,12 +353,15 @@ static bool canReadPasswdDatabase()
 int main( int argc, char *argv[] )
 {
 	srand( getpid() );  /* seed the random generator */
+
+#ifndef HAVE_PAM // If we have PAM we don't need suid
 	// drop root privileges temporarily
 #ifdef HAVE_SETEUID
 	seteuid(getuid());
 #else
         setreuid(-1, getuid());
 #endif // HAVE_SETEUID
+#endif // HAVE_PAM
 
 	Window saveWin = 0;
 	int timeout = 600;
@@ -465,15 +468,21 @@ int main( int argc, char *argv[] )
 	    i++;
 	}
 
+#ifndef HAVE_PAM
 	// regain root privileges
 #ifdef HAVE_SETEUID
 	seteuid(0);
 #else
         setreuid(-1, 0);
 #endif // HAVE_SETEUID
+#endif // HAVE_PAM
+
 	initPasswd();
+
+#ifndef HAVE_PAM
 	// ... and drop them again before doing anything important
 	setuid(getuid());
+#endif // HAVE_PAM
 
 	// now check, if I can verify passwords (might be a problem
 	// only with shadow passwords, due to missing SUID on
