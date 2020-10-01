@@ -369,7 +369,6 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 
   for( item = list.first(); item != 0; item = list.next() )
     {
-      QString converted = converter->convert(item->text_name);
       et = item->entry_type;
       switch ( et ) {
       case separator:
@@ -380,7 +379,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	if( add_button )
 	  {
 	    item->cmenu->setFont(menu->font());
-	    item->cmenu->insertItem(item->pixmap, converted, item->getId());
+	    item->cmenu->insertItem(item->pixmap, converter->convert(item->text_name), item->getId());
 	    item->cmenu->connectItem(item->getId(), item, SLOT(execAddButton()) );
 	    connect( item, SIGNAL(addButton(PMenuItem*)),
 	    	     (QObject *) panel, SLOT(addButton(PMenuItem*)) );
@@ -388,7 +387,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	    item->cmenu->insertSeparator();
 	    // create submenu
 	    item->sub_menu->createMenu( item->cmenu, panel, true );
-	    menu->insertItem(item->pixmap, converted, item->cmenu, item->getId());
+	    menu->insertItem(item->pixmap, converter->convert(item->text_name), item->cmenu, item->getId());
 	    connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		     SLOT(showToolTip(QString)) );
 	  }
@@ -396,7 +395,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	  {
 	    item->cmenu->setFont(menu->font());
 	    item->sub_menu->createMenu( item->cmenu, panel );
-	    menu->insertItem(item->pixmap, converted, item->cmenu, item->getId());
+	    menu->insertItem(item->pixmap, converter->convert(item->text_name), item->cmenu, item->getId());
 	    connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		     SLOT(showToolTip(QString)) );
 	  }
@@ -405,7 +404,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
       case dirbrowser:
         item->cmenu->setFont(menu->font());
         item->sub_menu->createMenu( item->cmenu, panel );
-        menu->insertItem(item->pixmap, converted, item->cmenu, item->getId());
+        menu->insertItem(item->pixmap, converter->convert(item->text_name), item->cmenu, item->getId());
         ((PFileMenu*)(item->sub_menu))->id = item->getId();
 
         item->cmenu->id = item->getId();
@@ -418,7 +417,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	continue;
 
       case url:
-	menu->insertItem(item->pixmap, converted, item->getId());
+	menu->insertItem(item->pixmap, converter->convert(item->text_name), item->getId());
 	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		 SLOT(showToolTip(QString)) );
 
@@ -431,12 +430,12 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	continue;
 
       case label:
-	menu->insertItem(item->pixmap, converted, item->getId());
+	menu->insertItem(item->pixmap, converter->convert(item->text_name), item->getId());
 	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		 SLOT(showToolTip(QString)) );
 	continue;
       case unix_com:
-	menu->insertItem(item->pixmap, converted, item->getId());
+	menu->insertItem(item->pixmap, converter->convert(item->text_name), item->getId());
 	if( add_button )
 	  {
 	    menu->connectItem( item->getId(), item, SLOT(execAddButton()) );
@@ -452,7 +451,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 		 SLOT(showToolTip(QString)) );
 	continue;
       case prog_com:
-	menu->insertItem(item->pixmap, converted, item->getId());
+	menu->insertItem(item->pixmap, converter->convert(item->text_name), item->getId());
 	if( add_button )
 	  {
 	    menu->connectItem( item->getId(), item, SLOT(execAddButton()) );
@@ -468,7 +467,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	item->cmenu->setFont(menu->font());
 	// create submenu
 	item->sub_menu->createMenu( item->cmenu, panel, true );
-	menu->insertItem(item->pixmap, converted, item->cmenu, item->getId());
+	menu->insertItem(item->pixmap, converter->convert(item->text_name), item->cmenu, item->getId());
 	item->cmenu->installEventFilter((QObject *) panel);
 	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		 SLOT(showToolTip(QString)) );
