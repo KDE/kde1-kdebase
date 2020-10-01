@@ -10,3 +10,8 @@ install_icon(konsole.xpm "")
 install_icon(colourness.xpm "")
 install_icon(brightness.xpm "")
 install_icon(contrast.xpm "")
+
+install(FILES
+    linux8x16.pcf.gz  linux8x8.pcf.gz  vga.pcf.gz
+    DESTINATION share/fonts/misc
+)
