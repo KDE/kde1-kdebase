@@ -662,6 +662,14 @@ void KFMDirTreeItem::paintCell( QPainter *_painter, int _col )
     
     x += ( PIXMAP_WIDTH + 6 ) * level;
 
+    // To avoid killing performance, assume that the supported charset of the
+    // font doesn't change (usually holds true).
+    static KApplication *app = KApplication::getKApplication();
+    static KCharsetConverter *converter = new KCharsetConverter(
+            app->getCharsets()->defaultCh(),
+            app->getCharsets()->charset(_painter->font())
+            );
+
     if ( _col == 0 )
       {
 	if ( !bIsFile )
@@ -686,7 +694,7 @@ void KFMDirTreeItem::paintCell( QPainter *_painter, int _col )
 	QString text = name;
 	decodeFileName(text); // for directories with endoded '/' in their name
 	_painter->drawText( x + 6 + PIXMAP_WIDTH + 6,
-	    ( CELL_HEIGHT - fm.ascent() - fm.descent() ) / 2 + fm.ascent(), text );
+	    ( CELL_HEIGHT - fm.ascent() - fm.descent() ) / 2 + fm.ascent(), converter->convert(text) );
     }
 }
 

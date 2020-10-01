@@ -1511,8 +1511,16 @@ void KRootIcon::init()
     if ( bIsLink )
       p2.setFont( myfont );
 
+    // To avoid killing performance, assume that the supported charset of the
+    // font doesn't change (usually holds true).
+    static KApplication *app = KApplication::getKApplication();
+    static KCharsetConverter *converter = new KCharsetConverter(
+            app->getCharsets()->defaultCh(),
+            app->getCharsets()->charset(p2.font())
+            );
+
     if ( root->iconStyle() == 1 && !bSelected )
-	p2.drawText( textXOffset, textYOffset, file );
+	p2.drawText( textXOffset, textYOffset, converter->convert(file) );
     else
       p2.fillRect( textXOffset-1, textYOffset-ascent-1, width+2, ascent+descent+2, color1 );
 
@@ -1585,9 +1593,18 @@ void KRootIcon::paintEvent( QPaintEvent * )
     QPainter p;
     p.begin( this );
 
+    // To avoid killing performance, assume that the supported charset of the
+    // font doesn't change (usually holds true).
+    static KApplication *app = KApplication::getKApplication();
+    static KCharsetConverter *converter = new KCharsetConverter(
+            app->getCharsets()->defaultCh(),
+            app->getCharsets()->charset(p.font())
+            );
+    QString converted = converter->convert(file);
+
     int ascent = p.fontMetrics().ascent();
     int descent = p.fontMetrics().descent();
-    int width = p.fontMetrics().width( file.data() );
+    int width = p.fontMetrics().width( converted.data() );
 
     QColor fillColor;
 
@@ -1610,7 +1627,7 @@ void KRootIcon::paintEvent( QPaintEvent * )
       myfont.setItalic( TRUE );
       p.setFont( myfont );
     }
-    p.drawText( textXOffset, textYOffset, file );
+    p.drawText( textXOffset, textYOffset, converted );
 
     if ( bSelected )
     {
