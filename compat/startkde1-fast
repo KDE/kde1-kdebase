@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+#  DEFAULT KDE STARTUP SCRIPT ( KDE-1.1 )
+#  - Modified to remove the sleeps
+
+# initialize the configuration first.
+
+kcontrol -init
+
+# Start the common desktop tools in the background.
+# The sleeps reduce disk usage during startup.
+# kaudioserver will put itself in the background automagically
+
+kaudioserver
+exec kwmsound &
+
+# Add -ncols 96 after kfm if using a 8-bit display
+exec kfm &
+
+exec krootwm &
+exec kpanel &
+exec kbgndwm &
+
+# Automatically invokes the screensaver on suspend
+exec kde1-suspendlocker &
+
+# finally, give the session control to the window manager
+
+exec kwm
+
