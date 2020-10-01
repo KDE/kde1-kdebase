@@ -10,6 +10,8 @@
 #include "kpanel.h"
 #include "kfm.h"
 
+#include <kcharsets.h>
+
 #include <qapp.h>
 #include <qmsgbox.h>
 #include <qdrawutl.h>
@@ -314,7 +316,15 @@ void myTaskButton::drawButtonLabel( QPainter *painter ){
   }
   painter->setPen(colorGroup().text());
   if (!s.isNull()){
-    QString s2 = s;
+    // To avoid killing performance, assume that the supported charset of the
+    // font doesn't change (usually holds true).
+    static KApplication *app = KApplication::getKApplication();
+    static KCharsetConverter *converter = new KCharsetConverter(
+            app->getCharsets()->defaultCh(),
+            app->getCharsets()->charset(painter->font())
+            );
+
+    QString s2 = converter->convert(s);
     if (fontMetrics().width(s2) > width()-32){
       s2.detach();
       while (s2.length()>0 &&
@@ -483,8 +493,16 @@ int kPanel::show_popup(QPopupMenu* popup, QWidget* button, bool isTaskButton){
 }
 
 void kPanel::set_button_text(QButton* button, const char* s){
+  // To avoid killing performance, assume that the supported charset of the
+  // font doesn't change (usually holds true).
+  static KApplication *app = KApplication::getKApplication();
+  static KCharsetConverter *converter = new KCharsetConverter(
+          app->getCharsets()->defaultCh(),
+          app->getCharsets()->charset(button->font())
+          );
+  const QString converted = converter->convert(s);
 
-  QToolTip::add(button, s);
+  QToolTip::add(button, converted);
   QPixmap pm(button->width(), button->height());
   pm.fill(button->backgroundColor());
 
@@ -498,13 +516,13 @@ void kPanel::set_button_text(QButton* button, const char* s){
   p.begin( &pm );
   p.setFont(button->font());
   p.setPen(colorGroup().text());
-  p.drawText(a,b,s);
+  p.drawText(a,b,converted);
   p.end();
   QBitmap bm(pm.width(), pm.height());
   bm.fill( color0 );
   p.begin(&bm);
   p.setFont(button->font());
-  p.drawText(a,b,s);
+  p.drawText(a,b,converted);
   p.end();
   pm.setMask(bm);
   button->setPixmap(pm);

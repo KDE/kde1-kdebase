@@ -24,6 +24,7 @@
 #include <kiconloader.h>
 #include <kfm.h>
 #include <kmsgbox.h>
+#include <kcharsets.h>
 
 #include <ksimpleconfig.h>
 
@@ -358,8 +359,17 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
   else
     connect( menu, SIGNAL(aboutToShow()), this, SLOT(aboutToShow()) );
 
+  // To avoid killing performance, assume that the supported charset of the
+  // font doesn't change (usually holds true).
+  static KApplication *app = KApplication::getKApplication();
+  static KCharsetConverter *converter = new KCharsetConverter(
+          app->getCharsets()->defaultCh(),
+          app->getCharsets()->charset(menu->font())
+          );
+
   for( item = list.first(); item != 0; item = list.next() )
     {
+      QString converted = converter->convert(item->text_name);
       et = item->entry_type;
       switch ( et ) {
       case separator:
@@ -370,7 +380,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	if( add_button )
 	  {
 	    item->cmenu->setFont(menu->font());
-	    item->cmenu->insertItem(item->pixmap, item->text_name, item->getId());
+	    item->cmenu->insertItem(item->pixmap, converted, item->getId());
 	    item->cmenu->connectItem(item->getId(), item, SLOT(execAddButton()) );
 	    connect( item, SIGNAL(addButton(PMenuItem*)),
 	    	     (QObject *) panel, SLOT(addButton(PMenuItem*)) );
@@ -378,7 +388,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	    item->cmenu->insertSeparator();
 	    // create submenu
 	    item->sub_menu->createMenu( item->cmenu, panel, true );
-	    menu->insertItem(item->pixmap, item->text_name, item->cmenu, item->getId());
+	    menu->insertItem(item->pixmap, converted, item->cmenu, item->getId());
 	    connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		     SLOT(showToolTip(QString)) );
 	  }
@@ -386,7 +396,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	  {
 	    item->cmenu->setFont(menu->font());
 	    item->sub_menu->createMenu( item->cmenu, panel );
-	    menu->insertItem(item->pixmap, item->text_name, item->cmenu, item->getId());
+	    menu->insertItem(item->pixmap, converted, item->cmenu, item->getId());
 	    connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		     SLOT(showToolTip(QString)) );
 	  }
@@ -395,7 +405,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
       case dirbrowser:
         item->cmenu->setFont(menu->font());
         item->sub_menu->createMenu( item->cmenu, panel );
-        menu->insertItem(item->pixmap, item->text_name, item->cmenu, item->getId());
+        menu->insertItem(item->pixmap, converted, item->cmenu, item->getId());
         ((PFileMenu*)(item->sub_menu))->id = item->getId();
 
         item->cmenu->id = item->getId();
@@ -408,7 +418,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	continue;
 
       case url:
-	menu->insertItem(item->pixmap, item->text_name, item->getId());
+	menu->insertItem(item->pixmap, converted, item->getId());
 	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		 SLOT(showToolTip(QString)) );
 
@@ -421,12 +431,12 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	continue;
 
       case label:
-	menu->insertItem(item->pixmap, item->text_name, item->getId());
+	menu->insertItem(item->pixmap, converted, item->getId());
 	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		 SLOT(showToolTip(QString)) );
 	continue;
       case unix_com:
-	menu->insertItem(item->pixmap, item->text_name, item->getId());
+	menu->insertItem(item->pixmap, converted, item->getId());
 	if( add_button )
 	  {
 	    menu->connectItem( item->getId(), item, SLOT(execAddButton()) );
@@ -442,7 +452,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 		 SLOT(showToolTip(QString)) );
 	continue;
       case prog_com:
-	menu->insertItem(item->pixmap, item->text_name, item->getId());
+	menu->insertItem(item->pixmap, converted, item->getId());
 	if( add_button )
 	  {
 	    menu->connectItem( item->getId(), item, SLOT(execAddButton()) );
@@ -458,7 +468,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	item->cmenu->setFont(menu->font());
 	// create submenu
 	item->sub_menu->createMenu( item->cmenu, panel, true );
-	menu->insertItem(item->pixmap, item->text_name, item->cmenu, item->getId());
+	menu->insertItem(item->pixmap, converted, item->cmenu, item->getId());
 	item->cmenu->installEventFilter((QObject *) panel);
 	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		 SLOT(showToolTip(QString)) );
@@ -655,7 +665,16 @@ void PMenu::create_pixmap( QPixmap &buf, PMenuItem *item, QPopupMenu *menu)
   QPainter p;
   QFontMetrics fm = menu->fontMetrics();   // size of font set for this widget
 
-  w  = 2 + item->pixmap.width() + 4 + fm.width( item->text_name ) + 2;
+  // To avoid killing performance, assume that the supported charset of the
+  // font doesn't change (usually holds true).
+  static KApplication *app = KApplication::getKApplication();
+  static KCharsetConverter *converter = new KCharsetConverter(
+          app->getCharsets()->defaultCh(),
+          app->getCharsets()->charset(menu->font())
+          );
+  QString converted = converter->convert(item->text_name);
+
+  w  = 2 + item->pixmap.width() + 4 + fm.width( converted ) + 2;
   h = ( item->pixmap.height() > fm.height() ? item->pixmap.height() : fm.height() ) + 4;
 
   buf.resize( w, h );                    // resize pixmap
@@ -667,12 +686,12 @@ void PMenu::create_pixmap( QPixmap &buf, PMenuItem *item, QPopupMenu *menu)
   /*
   p.drawText( 2 + item->pixmap.width() + 4,        // center text in item
 	      (h + fm.height()) / 2 - fm.descent(),
-	      item->text_name );
+	      converted );
 	      */
   p.drawText( 2 + item->pixmap.width() + 4,        // center text in item
 	      0, w, h,
 	      AlignVCenter | ShowPrefix | DontClip | SingleLine,
-	      item->text_name );
+	      converted );
   p.end();
 }
 
