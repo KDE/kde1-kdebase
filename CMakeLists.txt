@@ -61,6 +61,7 @@ pkg_check_modules(CURSES ncurses)
 
 find_package(PulseAudio)
 
+add_subdirectory(compat)
 add_subdirectory(kcheckpass)
 add_subdirectory(kfm)
 add_subdirectory(mimetypes)
