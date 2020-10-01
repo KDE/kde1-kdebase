@@ -1685,11 +1685,20 @@ void Client::paintState(bool only_label, bool colors_have_changed, bool animate)
   p.setFont(myapp->tFont);
   //CT
 
-  titlestring_too_large = (p.fontMetrics().width(QString(" ")+label+" ")>r.width());
+  // To avoid killing performance, assume that the supported charset of the
+  // font doesn't change (usually holds true).
+  static KApplication *app = KApplication::getKApplication();
+  static KCharsetConverter *converter = new KCharsetConverter(
+          app->getCharsets()->defaultCh(),
+          app->getCharsets()->charset(p.font())
+          );
+  QString converted = converter->convert(label);
+
+  titlestring_too_large = (p.fontMetrics().width(QString(" ")+converted+" ")>r.width());
   if (titlestring_offset_delta > 0){
     if (!titlestring_delay){
       if (titlestring_offset > 0
-      && titlestring_offset > r.width() - p.fontMetrics().width(QString(" ")+label+" ")){
+      && titlestring_offset > r.width() - p.fontMetrics().width(QString(" ")+converted+" ")){
         // delay animation before reversing direction
         titlestring_delay = TITLE_ANIMATION_DELAY;
         titlestring_offset_delta *= -1;
@@ -1699,7 +1708,7 @@ void Client::paintState(bool only_label, bool colors_have_changed, bool animate)
   else {
     if(!titlestring_delay){
       if (titlestring_offset < 0
-      && titlestring_offset + p.fontMetrics().width(QString(" ")+label+" ") < r.width()){
+      && titlestring_offset + p.fontMetrics().width(QString(" ")+converted+" ") < r.width()){
         if(titlestring_offset_delta != 0)
           // delay animation before reversing direction
           titlestring_delay = TITLE_ANIMATION_DELAY;
@@ -1713,7 +1722,7 @@ void Client::paintState(bool only_label, bool colors_have_changed, bool animate)
 
   //CT 04Nov1998 - align the title in the bar
   int aln = 0;
-  int need = p.fontMetrics().width(QString(" ")+label+" ");
+  int need = p.fontMetrics().width(QString(" ")+converted+" ");
   if (options.alignTitle == AT_LEFT || r.width() < need) aln = 0;
   else if (options.alignTitle == AT_MIDDLE )
     aln = r.width()/2 - need/2;
@@ -1748,7 +1757,7 @@ void Client::paintState(bool only_label, bool colors_have_changed, bool animate)
 	     (r.height()-p.fontMetrics().height())/2+
 	     p.fontMetrics().ascent(),
 
-	     QString(" ")+label+" ");
+	     QString(" ")+converted+" ");
 
   p.setClipping(False);
   p.end();
