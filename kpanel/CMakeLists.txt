@@ -1,4 +1,5 @@
 add_subdirectory(pics)
+add_subdirectory(sample_kdelnk_files)
 
 include_directories(
     ${KDE1_INCLUDE_DIR}
