@@ -2,7 +2,7 @@
 [KDE Desktop Entry]
 BinaryPattern=kfind;
 Protocols=file;
-Exec=kfind -caption "%c" %i %m %f
+Exec=kfind1 -caption "%c" %i %m %f
 Icon=kfind.xpm
 MiniIcon=kfind.xpm
 DocPath=kfind/index.html

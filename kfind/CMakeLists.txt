@@ -14,8 +14,8 @@ set(KFIND_MOC kfdird.moc kfwin.moc kfindtop.moc
 
 QT1_WRAP_MOC(MOC_FILES ${KFIND_MOC})
 
-add_executable(kfind ${KFIND_SRCS} ${MOC_FILES})
-target_link_libraries(kfind
+add_executable(kfind1 ${KFIND_SRCS} ${MOC_FILES})
+target_link_libraries(kfind1
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     ${KDE1_KFM}
@@ -24,6 +24,6 @@ target_link_libraries(kfind
     ${X11_LIBRARIES}
     )
 
-install(TARGETS kfind RUNTIME DESTINATION ${KDE1_BINDIR})
+install(TARGETS kfind1 RUNTIME DESTINATION ${KDE1_BINDIR})
 
 install_icon(kfind.xpm "")
