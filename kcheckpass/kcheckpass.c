@@ -109,7 +109,7 @@ message(const char *fmt, ...)
 static void
 usage(int exitval)
 {
-  message("usage: kde1-kcheckpass %s\n"
+  message("usage: kcheckpass1 %s\n"
 	  "    Obtains the password from standard input and checks it\n"
 	  "    against that of the invoking user.\n"
 	  "    Exit codes:\n"
@@ -138,7 +138,7 @@ main(int argc, char **argv)
   uid_t		uid;
   int		passlen;
 
-  openlog("kde1-kcheckpass", LOG_PID, LOG_AUTH);
+  openlog("kcheckpass1", LOG_PID, LOG_AUTH);
 
 #ifdef HAVE_OSF_C2_PASSWD
   initialize_osf_security(argc, argv);

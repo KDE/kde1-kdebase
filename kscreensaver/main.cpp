@@ -318,14 +318,14 @@ static void setLock(QString type)
 	}
 }
 
-/* Verify, if kde1-kcheckpass is able to verify passwords.
+/* Verify, if kcheckpass1 is able to verify passwords.
  * I cannot use KProcess here, as it needs ProcessEvents */
 static bool canReadPasswdDatabase()
 {
 	KProcess chkpass;
 	QString kcp_binName = "";
 	kcp_binName += KApplication::kde_bindir();
-	kcp_binName += "/kde1-kcheckpass";
+	kcp_binName += "/kcheckpass1";
 	chkpass.clearArguments();
 	chkpass << kcp_binName;
 	bool ret = chkpass.start(KProcess::DontCare, KProcess::Stdin);
@@ -486,7 +486,7 @@ int main( int argc, char *argv[] )
 
 	// now check, if I can verify passwords (might be a problem
 	// only with shadow passwords, due to missing SUID on
-	// kde1-kcheckpass program.
+	// kcheckpass1 program.
 #ifdef HAVE_SHADOW
         canGetPasswd = canReadPasswdDatabase();
 #else
@@ -514,7 +514,7 @@ int main( int argc, char *argv[] )
 			              "Warning: You won't be able to lock the screen!\n\n"
 			              "Your system uses shadow passwords.\n"
 			              "Please contact your system administrator.\n"
-			              "Tell him that you need suid for the kde1-kcheckpass program!");
+			              "Tell him that you need suid for the kcheckpass1 program!");
 			KMsgBox::message(NULL, 
 				 glocale->translate("Shadow Passwords"), 
 				 tmp, KMsgBox::EXCLAMATION);
