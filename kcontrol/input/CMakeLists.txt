@@ -1,3 +1,4 @@
+add_subdirectory(pics)
 include_directories(
     Qt::Qt1
     ${KDE1_INCLUDE_DIR}
