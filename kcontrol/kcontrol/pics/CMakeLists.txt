@@ -13,7 +13,7 @@ INSTALL(FILES
 
 INSTALL(FILES
     kdekcc.xpm
-    DESTINATION ${KDE1_ICONDIR}/kcontrol/pics/
+    DESTINATION ${KDE1_DATADIR}/kcontrol/pics/
 )
 
 # Have to install mini/large manually because they're in separate dirs
