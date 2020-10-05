@@ -3,6 +3,7 @@ include_directories(
     ${KDE1_INCLUDE_DIR}
     )
 
+add_subdirectory(pics)
 set(KCONTROL_SRCS
 configlist.cpp main.cpp toplevel.cpp kdelnk.cpp mainwidget.cpp kswallow.cpp
 )
