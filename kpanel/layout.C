@@ -78,6 +78,11 @@ void kPanel::layoutTaskbar(){
        }
      }
    }
+   if (taskbar_buttons.isEmpty()) {
+       taskbar->hide();
+   } else {
+       taskbar->show();
+   }
 }
 
 
