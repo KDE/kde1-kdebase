@@ -713,9 +713,8 @@ void KBackground::timerEvent( QTimerEvent * )
   if ( !bgPixmap )
     return;
 
-  QPixmap pmDesktop;
   qApp->desktop()->setBackgroundPixmap( *bgPixmap );
-  setPixmapProperty( &pmDesktop );
+  setPixmapProperty( bgPixmap );
   delete bgPixmap;
   bgPixmap = 0;
   applied = true;
