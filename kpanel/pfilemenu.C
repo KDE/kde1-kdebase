@@ -308,7 +308,7 @@ PFileMenu::newLinkItem(const QFileInfo* fi, bool useCurrentPath)
 
   struct stat urlstat;
 
-  if (stat(url, &urlstat) != 0 || !S_ISDIR(urlstat.st_mode))
+  if (url.isEmpty() || stat(url.data(), &urlstat) != 0 || !S_ISDIR(urlstat.st_mode))
     return newFileItem(fi, useCurrentPath);   // <<---------
 
   QString pixmap_name = kconfig.readEntry("MiniIcon", DEFAULT_FOLDER_ICON);
