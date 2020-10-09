@@ -115,6 +115,7 @@ signals:
 
 protected:
   void enterEvent( QEvent * );
+  void drawContents( QPainter *p );
 
  private slots:
  void hideTimerDone();

@@ -55,6 +55,12 @@ void myFrame::enterEvent(QEvent *){
   emit showMe();
 }
 
+void myFrame::drawContents( QPainter *p )
+{
+  p->fillRect(contentsRect(), colorGroup().background());
+  QFrame::drawContents(p);
+}
+
 void myFrame::hideTimerDone(){
   if (!autoHide)
     return;
