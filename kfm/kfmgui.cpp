@@ -2173,7 +2173,6 @@ KfmGui::~KfmGui()
     delete completion;
     windowList->remove( this );
     delete menuNew;
-    delete mfile;
 
     // Last window and in window-only-mode ?
     if ( windowList->count() == 0 && !rooticons )
