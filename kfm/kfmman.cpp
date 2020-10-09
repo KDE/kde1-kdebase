@@ -40,6 +40,7 @@ QString *KFMManager::ro_overlay = 0;
 
 KFMManager::KFMManager( KfmView *_v )
 {
+    bFinished = true;
     //-------- Sven's overlayed mime/app dirs start ---
     bindingDir = false;
     pass2 = false;
