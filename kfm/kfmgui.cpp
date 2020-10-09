@@ -1293,7 +1293,7 @@ void KfmGui::slotBookmarkSelected( int _id )
 void KfmGui::slotToolFind( )
 {
   KShellProcess proc;
-  proc << "kfind";
+  proc << "kfind1";
   
   QString strURL( getURL() );
   KURL::decodeURL( strURL );
