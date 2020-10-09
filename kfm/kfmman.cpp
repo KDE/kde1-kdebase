@@ -93,6 +93,8 @@ KFMManager::~KFMManager()
 {
     if (labelFontMetrics) delete labelFontMetrics;
     delete menuNew;
+
+    delete job; // Not a KIO job, so we need to delete manually
 }
 
 bool KFMManager::isBindingHardcoded( const char *_txt )

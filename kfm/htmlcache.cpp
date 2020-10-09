@@ -370,6 +370,7 @@ void HTMLCache::load()
   if (finfo.isSymLink() || !finfo.isDir()) {
       QMessageBox::warning( 0L, i18n("KFM Error"), KFMPaths::CachePath()+i18n(
           " is not a directory ! Security Alert !\nPlease check it.\n"));
+      closedir(dp);
       return;
   }
   
@@ -395,6 +396,7 @@ void HTMLCache::load()
       }
     }
   }
+  closedir(dp);
 }
 
 void HTMLCache::clear()
