@@ -316,19 +316,19 @@ void myTaskButton::drawButtonLabel( QPainter *painter ){
   }
   painter->setPen(colorGroup().text());
   if (!s.isNull()){
+    const QFont origFont = painter->font();
+
     // To avoid killing performance, assume that the supported charset of the
     // font doesn't change (usually holds true).
-    static KApplication *app = KApplication::getKApplication();
-    static KCharsetConverter *converter = new KCharsetConverter(
-            app->getCharsets()->defaultCh(),
-            app->getCharsets()->charset(painter->font())
-            );
+    static KCharsetConverter *converter = new KCharsetConverter(klocale->charset());
+    const KCharsetConversionResult conversion = converter->convert(s);
+    QString s2 = (const char*)conversion;
+    painter->setFont(conversion.font(origFont));
 
-    QString s2 = converter->convert(s);
-    if (fontMetrics().width(s2) > width()-32){
+    if (painter->fontMetrics().width(s2) > width()-32){
       s2.detach();
       while (s2.length()>0 &&
-	     fontMetrics().width(s2) > width()-32-fontMetrics().width("...")){
+	     painter->fontMetrics().width(s2) > width()-32-painter->fontMetrics().width("...")){
 	s2.resize(s2.length()-1);
       }
       s2.append("...");
@@ -337,6 +337,8 @@ void myTaskButton::drawButtonLabel( QPainter *painter ){
       painter->drawText( 33, 1, width()-31, height()+1, AlignLeft|AlignVCenter, s2);
     else
       painter->drawText( 32, 0, width()-32, height(), AlignLeft|AlignVCenter, s2);
+
+    painter->setFont(origFont);
   }
 }
 
@@ -495,12 +497,10 @@ int kPanel::show_popup(QPopupMenu* popup, QWidget* button, bool isTaskButton){
 void kPanel::set_button_text(QButton* button, const char* s){
   // To avoid killing performance, assume that the supported charset of the
   // font doesn't change (usually holds true).
-  static KApplication *app = KApplication::getKApplication();
-  static KCharsetConverter *converter = new KCharsetConverter(
-          app->getCharsets()->defaultCh(),
-          app->getCharsets()->charset(button->font())
-          );
-  const QString converted = converter->convert(s);
+  static KCharsetConverter *converter = new KCharsetConverter(klocale->charset());
+  const KCharsetConversionResult conversion = converter->convert(s);
+  const QString converted = (const char*)conversion;
+  button->setFont(conversion.font(button->font()));
 
   QToolTip::add(button, converted);
   QPixmap pm(button->width(), button->height());

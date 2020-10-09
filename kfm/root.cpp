@@ -1480,9 +1480,16 @@ void KRootIcon::init()
       }
     }
 
+    // To avoid killing performance, assume that the supported charset of the
+    // font doesn't change (usually holds true).
+    static KCharsetConverter *converter = new KCharsetConverter(klocale->charset());
+    const KCharsetConversionResult conversion = converter->convert(file);
+    myfont = conversion.font(myfont);
+    p.setFont(myfont);
+
     int ascent = p.fontMetrics().ascent();
     int descent = p.fontMetrics().descent();
-    int width = p.fontMetrics().width( file.data() );
+    int width = p.fontMetrics().width( conversion );
 
     int w = width;
     if ( pixmap->width() > w )
@@ -1508,19 +1515,10 @@ void KRootIcon::init()
     QPainter p2;
     p2.begin( &mask );
 
-    if ( bIsLink )
-      p2.setFont( myfont );
-
-    // To avoid killing performance, assume that the supported charset of the
-    // font doesn't change (usually holds true).
-    static KApplication *app = KApplication::getKApplication();
-    static KCharsetConverter *converter = new KCharsetConverter(
-            app->getCharsets()->defaultCh(),
-            app->getCharsets()->charset(p2.font())
-            );
+    p2.setFont( myfont );
 
     if ( root->iconStyle() == 1 && !bSelected )
-	p2.drawText( textXOffset, textYOffset, converter->convert(file) );
+	p2.drawText( textXOffset, textYOffset, conversion );
     else
       p2.fillRect( textXOffset-1, textYOffset-ascent-1, width+2, ascent+descent+2, color1 );
 
@@ -1595,12 +1593,10 @@ void KRootIcon::paintEvent( QPaintEvent * )
 
     // To avoid killing performance, assume that the supported charset of the
     // font doesn't change (usually holds true).
-    static KApplication *app = KApplication::getKApplication();
-    static KCharsetConverter *converter = new KCharsetConverter(
-            app->getCharsets()->defaultCh(),
-            app->getCharsets()->charset(p.font())
-            );
-    QString converted = converter->convert(file);
+    static KCharsetConverter *converter = new KCharsetConverter(klocale->charset());
+    const KCharsetConversionResult conversion = converter->convert(file);
+    const QString converted = (const char*)conversion;
+    p.setFont(conversion.font(p.font()));
 
     int ascent = p.fontMetrics().ascent();
     int descent = p.fontMetrics().descent();
@@ -1621,7 +1617,7 @@ void KRootIcon::paintEvent( QPaintEvent * )
     else
 	p.setPen( root->labelForeground() );
 
-    QFont myfont( font() );
+    QFont myfont( p.font() );
     if ( bIsLink )
     {
       myfont.setItalic( TRUE );

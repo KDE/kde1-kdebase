@@ -1687,12 +1687,10 @@ void Client::paintState(bool only_label, bool colors_have_changed, bool animate)
 
   // To avoid killing performance, assume that the supported charset of the
   // font doesn't change (usually holds true).
-  static KApplication *app = KApplication::getKApplication();
-  static KCharsetConverter *converter = new KCharsetConverter(
-          app->getCharsets()->defaultCh(),
-          app->getCharsets()->charset(p.font())
-          );
-  QString converted = converter->convert(label);
+  static KCharsetConverter *converter = new KCharsetConverter(klocale->charset());
+  const KCharsetConversionResult conversion = converter->convert(label);
+  const QString converted = conversion;
+  p.setFont(conversion.font(p.font()));
 
   titlestring_too_large = (p.fontMetrics().width(QString(" ")+converted+" ")>r.width());
   if (titlestring_offset_delta > 0){
