@@ -92,6 +92,7 @@ enum {
 #define MAXPOS 10000
 #define MAXWARP1 10
 #define MAXANGLES 6000
+#define MAXSPEED 100
 
 
 typedef struct _starRec {
@@ -106,8 +107,9 @@ GLint windW, windH;
 
 GLenum flag = (GLenum) NORMAL;
 GLint starCount = MAXSTARS / 2;
-float speed = 1.0;
-float warpinterval = 30000.0;
+float speed_mult = 1.0;
+int speed = 86.0;
+float warpinterval = 30.0;
 GLint nitro = 0;
 starRec stars[MAXSTARS];
 float sinTable[MAXANGLES];
@@ -163,7 +165,7 @@ void MoveStars(void)
     float offset;
     GLint n;
 
-    offset = speed * 60.0;
+    offset = ((MAXSPEED - speed) + 1.) * speed_mult;
 
     for (n = 0; n < starCount; n++) {
 	stars[n].x[1] = stars[n].x[0];
@@ -199,7 +201,7 @@ GLenum StarPoint(GLint n)
 	    y1 += windH / 2.0;
 
 	    glLineWidth(MAXPOS/100.0/stars[n].z[0]+1.0);
-	    glColor3f(1.0, (MAXWARP1-speed)/MAXWARP1, (MAXWARP1-speed)/MAXWARP1);
+	    glColor3f(1.0, (MAXWARP1-speed_mult)/MAXWARP1, (MAXWARP1-speed_mult)/MAXWARP1);
 	    if (fabs(x0-x1) < 1.0 && fabs(y0-y1) < 1.0) {
 		glBegin(GL_POINTS);
 		    glVertex2f(x0, y0);
@@ -234,7 +236,7 @@ void ShowStars(void)
     glClear(GL_COLOR_BUFFER_BIT);
 
     for (n = 0; n < starCount; n++) {
-	if (stars[n].z[0] > speed || (stars[n].z[0] > 0.0 && speed < MAXWARP1)) {
+	if (stars[n].z[0] > speed_mult || (stars[n].z[0] > 0.0 && speed_mult < MAXWARP1)) {
 	    if (StarPoint(n) == GL_FALSE) {
 		NewStar(n, MAXPOS);
 	    }
@@ -287,18 +289,18 @@ void Idle(void)
     MoveStars();
     ShowStars();
     if (nitro > 0) {
-	speed = (float)(nitro / 10) + 1.0;
-	if (speed > MAXWARP1) {
-	    speed = MAXWARP1;
+	speed_mult = (float)(nitro / 10) + 1.0;
+	if (speed_mult > MAXWARP1) {
+	    speed_mult = MAXWARP1;
 	}
 	if (++nitro > MAXWARP1*10) {
 	    nitro = -nitro;
 	}
     } else if (nitro < 0) {
 	nitro++;
-	speed = (float)(-nitro / 10) + 1.0;
-	if (speed > MAXWARP1) {
-	    speed = MAXWARP1;
+	speed_mult = (float)(-nitro / 10) + 1.0;
+	if (speed_mult > MAXWARP1) {
+	    speed_mult = MAXWARP1;
 	}
     }
 
@@ -452,7 +454,6 @@ initSpace(Window window)
 #endif
 
 #define MINSPEED 1
-#define MAXSPEED 100
 #define DEFSPEED 16
 #define MINWARP 1
 #define MAXWARP 30
@@ -517,7 +518,7 @@ kSpaceSaver::kSpaceSaver( Drawable drawable ) : kScreenSaver( drawable )
 	initXLock( gc );
 	initSpace( d );
 	
-	timer.start( speed );
+	timer.start( 16 );
 	connect( &timer, SIGNAL( timeout() ), SLOT( slotTimeout() ) );
 }
 
@@ -535,13 +536,13 @@ void kSpaceSaver::setSpeed( int spd )
 	speed = MAXSPEED - spd ;
 	//	printf("speed %d\n",speed);
 	timer.stop();
-	timer.start( speed  );
+	timer.start( 16  );
 }
 
 void kSpaceSaver::setWarp( int  w )
 {
         warpinterval = w;
-	counter = (int)warpinterval;
+	counter = warpinterval *WARPFACTOR;
 	initSpace( d );
 }
 
@@ -557,6 +558,10 @@ void kSpaceSaver::readSettings()
 		speed = MAXSPEED - atoi( str );
 	else
 		speed = DEFSPEED;
+	if ( speed > MAXSPEED )
+		speed = MAXSPEED;
+	else if ( speed < MINSPEED )
+		speed = MINSPEED;
 
 	str = config->readEntry( "WarpInterval" );
 	// CC: fixed MaxLevels <-> ObjectType inconsistency
@@ -569,14 +574,13 @@ void kSpaceSaver::readSettings()
 
 void kSpaceSaver::slotTimeout()
 {
-  //printf("%d %d \n",(int)warpinterval, MAXWARP);
   if(warpinterval != MAXWARP){
      if(nitro == 0)
-     counter -= speed +1;
+     counter -= WARPFACTOR/60.;
      
      if(counter <= 0){
        nitro = 1;
-       counter = (int) warpinterval *WARPFACTOR;
+       counter =  (int)warpinterval *WARPFACTOR;
      }
   }
   else
@@ -665,6 +669,11 @@ void kSpaceSetup::readSettings()
 void kSpaceSetup::slotSpeed( int num )
 {
 	speed = num ;
+
+	if ( speed > MAXSPEED )
+		speed = MAXSPEED;
+	else if ( speed < MINSPEED )
+		speed = MINSPEED;
 
 	if ( saver )
 		saver->setSpeed( speed );

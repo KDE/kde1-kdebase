@@ -30,7 +30,6 @@ protected:
 	int         colorContext;
 
 	int         counter;
-	int         speed;
 	int			maxLevels;
 	int			numPoints;
 };
@@ -54,7 +53,6 @@ private:
 	QWidget *preview;
 	kSpaceSaver *saver;
 
-	int			speed;
 	int			warpinterval;
 };
 
