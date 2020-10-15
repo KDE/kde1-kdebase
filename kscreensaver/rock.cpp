@@ -521,7 +521,7 @@ void kRockSaver::readSettings()
 	if ( !str.isNull() )
 		speed = 100 - atoi( str );
 	else
-		speed = 50;
+		speed = 16;
 
 	str = config->readEntry( "Number" );
 	if ( !str.isNull() )
@@ -553,7 +553,7 @@ void kRockSaver::slotTimeout()
 kRockSetup::kRockSetup( QWidget *parent, const char *name )
 	: QDialog( parent, name, TRUE )
 {
-	speed = 50;
+	speed = 16;
 	number = 50;
 
 	readSettings();
