@@ -3,16 +3,23 @@ if (PkgConfig_FOUND)
     pkg_check_modules(libsystemd IMPORTED_TARGET libsystemd)
 endif()
 if(TARGET PkgConfig::libsystemd)
+    find_package(Threads)
+    find_package(X11)
+
     message(STATUS "Enabling locking on suspend")
     add_executable(kde1-suspendlocker suspendlocker.cpp ../kscreensaver/kscreensave.cpp)
-    set_property(TARGET kde1-suspendlocker PROPERTY CXX_STANDARD 11)
+
+    # needs std::make_unique from c++14
+    set_property(TARGET kde1-suspendlocker PROPERTY CXX_STANDARD 14)
 
     target_link_libraries(kde1-suspendlocker PRIVATE
         Qt::Qt1
         X11::X11
+        X11::Xss
         ${KDE1_KDECORE}
         ${KDE1_KDEUI}
         PkgConfig::libsystemd
+        Threads::Threads
         )
     target_include_directories(kde1-suspendlocker PRIVATE ../kscreensaver/ ${KDE1_INCLUDE_DIR})
 
