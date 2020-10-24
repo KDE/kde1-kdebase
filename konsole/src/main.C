@@ -735,7 +735,7 @@ void TEDemo::newSession(int i)
 
   QString cmd = co->readEntry("Exec");    // not null
   QString nam = co->readEntry("Name");    // not null
-  QString emu = co->readEntry("Term");
+  QString emu = co->readEntry("Term", "xterm");
   QString sch = co->readEntry("Schema");
   QString txt = co->readEntry("Comment"); // not null
   int     fno = QMIN(co->readUnsignedNumEntry("Font",se->fontNo()),7);
