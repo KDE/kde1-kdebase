@@ -22,7 +22,7 @@ exec kpanel &
 exec kbgndwm &
 
 # Automatically invokes the screensaver on suspend
-exec kde1-suspendlocker &
+exec kde1-screenlockinvoker &
 
 # finally, give the session control to the window manager
 

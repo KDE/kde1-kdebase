@@ -7,12 +7,12 @@ if(TARGET PkgConfig::libsystemd)
     find_package(X11)
 
     message(STATUS "Enabling locking on suspend")
-    add_executable(kde1-suspendlocker suspendlocker.cpp ../kscreensaver/kscreensave.cpp)
+    add_executable(kde1-screenlockinvoker kde1-screenlockinvoker.cpp ../kscreensaver/kscreensave.cpp)
 
     # needs std::make_unique from c++14
-    set_property(TARGET kde1-suspendlocker PROPERTY CXX_STANDARD 14)
+    set_property(TARGET kde1-screenlockinvoker PROPERTY CXX_STANDARD 14)
 
-    target_link_libraries(kde1-suspendlocker PRIVATE
+    target_link_libraries(kde1-screenlockinvoker PRIVATE
         Qt::Qt1
         X11::X11
         X11::Xss
@@ -21,9 +21,9 @@ if(TARGET PkgConfig::libsystemd)
         PkgConfig::libsystemd
         Threads::Threads
         )
-    target_include_directories(kde1-suspendlocker PRIVATE ../kscreensaver/ ${KDE1_INCLUDE_DIR})
+    target_include_directories(kde1-screenlockinvoker PRIVATE ../kscreensaver/ ${KDE1_INCLUDE_DIR})
 
-    install(TARGETS kde1-suspendlocker RUNTIME DESTINATION ${KDE1_BINDIR})
+    install(TARGETS kde1-screenlockinvoker RUNTIME DESTINATION ${KDE1_BINDIR})
 else()
     message(STATUS "systemd not available, won't be able to lock on suspend")
 endif()
