@@ -439,6 +439,9 @@ private:
    Atom qt_sizegrip;
    Atom qt_sizegrip2;
 
+  // COMPAT: same as kwm_active_window, but with another name
+  Atom   ewmh_active_window;
+
   // used to store the current desktop internally
   int current_desktop;
 

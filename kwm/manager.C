@@ -138,6 +138,9 @@ Manager::Manager(): QObject(){
   qt_sizegrip = XInternAtom(qt_xdisplay(), "QT_SIZEGRIP", False);
   qt_sizegrip2 = XInternAtom(qt_xdisplay(), "_QT_SIZEGRIP", False);
 
+  // COMPAT: same as KWM_ACTIVE_WINDOW
+  ewmh_active_window = XInternAtom(qt_xdisplay(),"_NET_ACTIVE_WINDOW",False);
+
   gv.function = GXxor;
   gv.line_width = 0;
   gv.foreground = WhitePixel(qt_xdisplay(), qt_xscreen())^BlackPixel(qt_xdisplay(), qt_xscreen());
@@ -2270,7 +2273,13 @@ void Manager::activateClient(Client* c, bool set_revert){
       XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_active_window,
 		      kwm_active_window, 32,
 		      PropModeReplace, (unsigned char *)&(c->window), 1);
+
       sendToModules(module_win_activate, c);
+
+      // COMPAT: repeat but with another atom name
+      XChangeProperty(qt_xdisplay(), qt_xrootwin(), ewmh_active_window,
+		      ewmh_active_window, 32,
+		      PropModeReplace, (unsigned char *)&(c->window), 1);
   }
   else {
       focusToNull();
@@ -2497,6 +2506,10 @@ void Manager::focusToNull(){
   long tmp = 0;
   XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_active_window,
 		  kwm_active_window, 32,
+		  PropModeReplace, (unsigned char *)&tmp, 1);
+  // COMPAT: repeat but with another atom name
+  XChangeProperty(qt_xdisplay(), qt_xrootwin(), ewmh_active_window,
+		  ewmh_active_window, 32,
 		  PropModeReplace, (unsigned char *)&tmp, 1);
 }
 
