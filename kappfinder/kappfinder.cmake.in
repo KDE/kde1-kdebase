@@ -1,0 +1,155 @@
+#!/bin/sh 
+
+#
+# KAppFinder
+# 
+# This scripts installes the kdelnk files in the hierarchy under 
+#
+# apps
+#
+# if the executable in each kdelnk file is installed on the system.
+# If necessary, the icons in 
+#
+# pics   and   pics/mini
+#
+# are installed, too.
+#
+#
+# written by Matthias Hoelzer (hoelzer@physik.uni-wuerzburg.de)
+#
+
+
+# test the arguments
+if test $# -ne 1 ; then
+  INSTPATH=$HOME/.kde
+  kde_appsdir=$INSTPATH/share/applnk
+  kde_icondir=$INSTPATH/share/icons
+  kde_minidir=$INSTPATH/share/icons/mini
+  kde_largedir=$INSTPATH/share/icons/large
+  if test ! -d $kde_minidir; then
+     mkdir -m 755 -p $kde_minidir
+  fi
+else
+  INSTPATH=$1 # ignored the more or the less
+  kde_icondir=`echo '@KDE1_ICONDIR@' | sed -e 's#\$(prefix)#@KDE1_PREFIX@#'`
+  kde_appsdir=`echo '@KDE1_APPSDIR@' | sed -e 's#\$(prefix)#@KDE1_PREFIX@#'`
+  kde_minidir=`echo '@KDE1_MINIDIR@' | sed -e 's#\$(prefix)#@KDE1_PREFIX@#'`
+  kde_largedir=`echo '@KDE1_ICONDIR@' | sed -e 's#\$(prefix)#@KDE1_PREFIX@#'`
+fi
+
+
+# call the redhat wmconfig program, if present
+#
+# Note: wmconfig always installs under ~/.kde/share..., so just
+# call it if executed by the user!
+# 
+if test $# -ne 1; then
+  if test -x /usr/X11R6/bin/wmconfig  ; then
+    /usr/X11R6/bin/wmconfig --output=kde >/dev/null 2>&1
+  fi
+fi
+
+
+OLDDIR=`pwd`
+cd `echo '@KDE1_DATADIR@' | sed -e 's#\$(prefix)#@KDE1_PREFIX@#'`/kappfinder
+
+echo "Installing to $INSTPATH"
+
+# iterate over all kdelnk files
+for file in `find apps -name "*.kdelnk"` 
+do
+  # extract name of the executable
+  filename=`grep "^Exec=" $file | sed "s/Exec= *//" | sed "s/ .*//"`
+
+  # test if this executable is installed (in path!)
+  # executable=`which $filename`
+  temp=`type $filename`
+  executable=`echo $temp | sed 's/.* //'`
+  if test -x "$executable" ; then
+
+    echo "Looking for $filename: found in $executable"
+
+    # create the directory
+    pathname=`echo $file | sed "s/\/[^\/]*kdelnk$//"`    
+    mkdir -m 755 -p $kde_appsdir/$pathname
+
+    # copy the kdelnk file
+    cp $file $kde_appsdir/$pathname
+
+    # copy the icon file
+    picname=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
+    if test -f "pics/$picname" ; then
+      cp pics/$picname $kde_icondir
+    fi
+
+    # copy the mini icon file
+    minipic=`grep "^MiniIcon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
+    if test ! "$minipic" ; then
+      minipic=$picname
+    fi
+    if test -f "pics/mini/$minipic" ; then
+      cp pics/mini/$minipic $kde_minidir
+    fi
+
+    # copy the large icon file
+    minipic=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
+    if test ! "$minipic" ; then
+      minipic=$picname
+    fi
+    if test -f "pics/large/$minipic" ; then
+      cp pics/large/$minipic $kde_icondir/large
+    fi                                                                                  
+
+
+  else  
+    echo "Looking for $filename: not found"
+  fi
+done
+
+
+# now decorate the directories
+for file in `find apps -name ".directory"` 
+do
+
+  # copy the .directory file
+  cp $file $kde_appsdir/$file 2>/dev/null
+  
+  # continue, if the file was not installed
+  if test ! -f $kde_appsdir/$file ; then
+    continue
+  fi
+
+  # copy the icon
+  picname=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
+  if test -f "pics/$picname" ; then
+    cp pics/$picname $kde_icondir
+  fi
+
+  # copy the mini icon file
+  minipic=`grep "^MiniIcon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
+  if test ! "$minipic" ; then
+    minipic=$picname
+  fi
+  if test -f "pics/mini/$minipic"; then
+    cp pics/mini/$minipic $kde_minidir
+  fi
+
+  # copy the large icon file
+  minipic=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
+  if test ! "$minipic" ; then
+    minipic=$picname
+  fi
+  if test -f "pics/large/$minipic"; then
+    cp pics/large/$minipic $kde_icondir/large
+  fi                                                                                    
+
+done
+
+
+cd $OLDPATH
+
+
+# exit with success
+# NB: if some subdirectory is not installed, copying the .directory file
+#     fails, but this is no error
+exit 0
