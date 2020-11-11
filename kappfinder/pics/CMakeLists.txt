@@ -1,0 +1,132 @@
+install(FILES
+    acroread.xpm
+    applix.xpm
+    applixware.xpm
+    dlgedit.xpm
+    edit.xpm
+    emacs.xpm
+    email.xpm
+    gimp.xpm
+    gv.xpm
+    lyx.xpm
+    mathematica.xpm
+    nedit.xpm
+    netscape.xpm
+    nogo.xpm
+    penguin.xpm
+    pinguin.xpm
+    plan.xpm
+    wabi.xpm
+    wp.xpm
+    x.xpm
+    xcalc.xpm
+    xclipboard.xpm
+    xclock.xpm
+    xconsole.xpm
+    xedit.xpm
+    xemacs.xpm
+    xeyes.xpm
+    xfig.xpm
+    xfmail.xpm
+    xftp.xpm
+    xload.xpm
+    xosview.xpm
+    xpaint.xpm
+    xv.xpm
+    wordperfect.xpm
+    civctp.xpm
+    gnu.xpm
+    gs.xpm
+    mozilla.xpm
+    quake2.xpm
+    quake3.xpm
+    xephem.xpm
+    xpdf.xpm
+
+    DESTINATION ${KDE1_DATADIR}/kappfinder/pics
+)
+
+install(FILES
+    mini/acroread.xpm
+    mini/applixware.xpm
+    mini/dlgedit.xpm
+    mini/emacs.xpm
+    mini/email.xpm
+    mini/gimp.xpm
+    mini/gv.xpm
+    mini/lyx.xpm
+    mini/mathematica.xpm
+    mini/mini-plan.xpm
+    mini/mini-xslight.xpm
+    mini/nedit.xpm
+    mini/netscape.xpm
+    mini/penguin.xpm
+    mini/pinguin.xpm
+    mini/plan.xpm
+    mini/wabi.xpm
+    mini/wp.xpm
+    mini/x.xpm
+    mini/xcalc.xpm
+    mini/xclipboard.xpm
+    mini/xclock.xpm
+    mini/xconsole.xpm
+    mini/xedit.xpm
+    mini/xemacs.xpm
+    mini/xeyes.xpm
+    mini/xfig.xpm
+    mini/xfmail.xpm
+    mini/xload.xpm
+    mini/xosview.xpm
+    mini/xpaint.xpm
+    mini/xv.xpm
+    mini/civctp.xpm
+    mini/edit.xpm
+    mini/gnu.xpm
+    mini/mozilla.xpm
+    mini/quake2.xpm
+    mini/quake3.xpm
+    mini/vmware.xpm
+    mini/wordperfect.xpm
+    mini/xephem.xpm
+    mini/xpdf.xpm
+
+    DESTINATION ${KDE1_DATADIR}/kappfinder/pics/mini
+)
+install(FILES
+    large/acroread.xpm
+    large/gnu.xpm
+    large/nedit.xpm
+    large/wordperfect.xpm
+    large/xedit.xpm
+    large/xosview.xpm
+    large/applixware.xpm
+    large/penguin.xpm
+    large/x.xpm
+    large/xephem.xpm
+    large/xpaint.xpm
+    large/civctp.xpm
+    large/gv.xpm
+    large/plan.xpm
+    large/xcalc.xpm
+    large/xeyes.xpm
+    large/xpdf.xpm
+    large/dlgedit.xpm
+    large/lyx.xpm
+    large/quake2.xpm
+    large/xclipboard.xpm
+    large/xfig.xpm
+    large/xv.xpm
+    large/edit.xpm
+    large/mathematica.xpm
+    large/quake3.xpm
+    large/xclock.xpm
+    large/xfmail.xpm
+    large/gimp.xpm
+    large/mozilla.xpm
+    large/wabi.xpm
+    large/xconsole.xpm
+    large/xload.xpm
+    large/gs.xpm
+
+    DESTINATION ${KDE1_DATADIR}/kappfinder/pics/large
+)
