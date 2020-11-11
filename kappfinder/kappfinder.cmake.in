@@ -22,12 +22,18 @@
 # test the arguments
 if test $# -ne 1 ; then
   INSTPATH=$HOME/.kde
-  kde_appsdir=$INSTPATH/share/applnk
-  kde_icondir=$INSTPATH/share/icons
-  kde_minidir=$INSTPATH/share/icons/mini
-  kde_largedir=$INSTPATH/share/icons/large
+  kde_appsdir=$INSTPATH/share/applnk/
+  kde_icondir=$INSTPATH/share/icons/
+  kde_minidir=$INSTPATH/share/icons/mini/
+  kde_largedir=$INSTPATH/share/icons/large/
   if test ! -d $kde_minidir; then
      mkdir -m 755 -p $kde_minidir
+  fi
+  if test ! -d $kde_largedir; then
+     mkdir -m 755 -p $kde_largedir
+  fi
+  if test ! -d $kde_appsdir; then
+     mkdir -m 755 -p $kde_appsdir
   fi
 else
   INSTPATH=$1 # ignored the more or the less
