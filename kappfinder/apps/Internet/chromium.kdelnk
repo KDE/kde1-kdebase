@@ -1,0 +1,7 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=chromium
+Icon=chromium.xpm
+Type=Application
+Name=Chromium
+Comment=Chromium Web Browser
