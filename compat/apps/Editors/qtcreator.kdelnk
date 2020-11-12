@@ -1,0 +1,7 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=qtcreator
+Icon=qtcreator.xpm
+Type=Application
+Name=Qt Creator
+Comment=Lightweight integrated development environment
