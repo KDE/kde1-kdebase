@@ -4,10 +4,10 @@ install(FILES
     DESTINATION ${KDE1_DATADIR}/kappfinder/apps/Internet
 )
 
-#install(FILES
-#    Editors/foo.kdelnk
-#    DESTINATION ${KDE1_DATADIR}/kappfinder/apps/Editors
-#)
+install(FILES
+    Editors/qtcreator.kdelnk
+    DESTINATION ${KDE1_DATADIR}/kappfinder/apps/Editors
+)
 
 #install(FILES
 #    Toys/foo.kdelnk

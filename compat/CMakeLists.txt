@@ -1,3 +1,6 @@
+add_subdirectory(pics)
+add_subdirectory(apps)
+
 find_package(PkgConfig QUIET)
 if (PkgConfig_FOUND)
     pkg_check_modules(libsystemd IMPORTED_TARGET libsystemd)
