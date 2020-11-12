@@ -43,8 +43,6 @@ install(FILES
     xephem.xpm
     xpdf.xpm
 
-    chromium.xpm
-
     DESTINATION ${KDE1_DATADIR}/kappfinder/pics
 )
 
@@ -92,8 +90,6 @@ install(FILES
     mini/xephem.xpm
     mini/xpdf.xpm
 
-    mini/chromium.xpm
-
     DESTINATION ${KDE1_DATADIR}/kappfinder/pics/mini
 )
 install(FILES
@@ -131,8 +127,6 @@ install(FILES
     large/xconsole.xpm
     large/xload.xpm
     large/gs.xpm
-
-    large/chromium.xpm
 
     DESTINATION ${KDE1_DATADIR}/kappfinder/pics/large
 )

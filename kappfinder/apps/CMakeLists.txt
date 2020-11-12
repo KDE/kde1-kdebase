@@ -19,7 +19,6 @@ install(FILES
     Internet/pine.kdelnk
     Internet/xfmail.kdelnk
     Internet/xbiff.kdelnk
-    Internet/chromium.kdelnk
 
     DESTINATION ${KDE1_DATADIR}/kappfinder/apps/Internet
 )
