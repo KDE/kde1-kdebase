@@ -1,6 +1,6 @@
 # KDE Config File
 [KDMDESKTOP]
-BackGroundPicture=@kde_wallpaperdir@/abnormal_fluid.jpg
+BackGroundPicture=@KDE1_WALLPAPERDIR@/abnormal_fluid.jpg
 BackGroundPictureMode=None
 BackGroundColor1=0,0,128
 BackGroundColor2=0,255,255
