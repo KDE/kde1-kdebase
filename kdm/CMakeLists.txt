@@ -1,5 +1,6 @@
 add_subdirectory(pics)
-#add_subdirectory(config)
+add_subdirectory(config)
+add_subdirectory(xdmconfig)
 
 include_directories(
     ${KDE1_INCLUDE_DIR}
@@ -80,4 +81,3 @@ if (PAM_FOUND)
 endif()
 
 install(TARGETS kdm RUNTIME DESTINATION ${KDE1_BINDIR})
-install_icon(kdm.xpm "")

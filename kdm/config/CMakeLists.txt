@@ -1,0 +1,2 @@
+install(FILES kdmrc DESTINATION ${KDE1_CONFDIR})
+
