@@ -26,7 +26,7 @@ target_link_libraries(kaudioserver
     ${KDE1_MEDIATOOL}
     )
 
-if(PULSEAUDIO_FOUND)
+if(ENABLE_COMPAT AND PULSEAUDIO_FOUND)
     target_compile_definitions(maudio PRIVATE ENABLE_PULSE)
     target_include_directories(maudio PRIVATE ${PULSEAUDIO_INCLUDE_DIR})
     target_link_libraries(maudio pulse-simple ${PULSEAUDIO_LIBRARY})

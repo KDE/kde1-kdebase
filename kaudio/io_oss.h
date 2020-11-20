@@ -4,7 +4,11 @@
 
 #include "sample.h"
 
-#ifdef ENABLE_PULSE
+#ifdef HAVE_COMPAT_H
+#include "config.h"
+#endif
+
+#if defined(ENABLE_COMPAT) && defined(ENABLE_PULSE)
 struct pa_simple;
 #endif
 
@@ -36,7 +40,7 @@ private:
   char  *silence16;     /* Memory buffer where "silence" is stored */
   bool  ParamsChanged;
 
-#ifdef ENABLE_PULSE
+#if defined(ENABLE_COMPAT) && defined(ENABLE_PULSE)
   pa_simple *pa_conn;
 #endif
 };

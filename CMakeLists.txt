@@ -61,9 +61,11 @@ endif()
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(CURSES ncurses)
 
-find_package(PulseAudio)
+if(ENABLE_COMPAT)
+    find_package(PulseAudio)
+    add_subdirectory(compat)
+endif()
 
-add_subdirectory(compat)
 add_subdirectory(kcheckpass)
 add_subdirectory(kfm)
 add_subdirectory(mimetypes)

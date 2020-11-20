@@ -4,10 +4,14 @@
 #include <iostream>
 #include <errno.h>
 
-#ifdef ENABLE_PULSE
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
+#if defined(ENABLE_COMPAT) && defined(ENABLE_PULSE)
 #include <pulse/simple.h>
 
-#else// ENABLE_PULSE
+#else// defined(ENABLE_COMPAT) && defined(ENABLE_PULSE)
 
 // Linux/OSS includes
 #ifdef linux
@@ -45,7 +49,7 @@
 #define OSS_AUDIO
 #endif
 
-#endif// ENABLE_PULSE
+#endif// defined(ENABLE_COMPAT) && defined(ENABLE_PULSE)
 
 #include "maudio.h"
 #include "sample.h"
@@ -86,7 +90,7 @@ AudioDev::AudioDev(int devnum)
     silence16[i]= 0x00; silence16[i+1]= 0x00;   // 0x00
   }
 
-#ifdef ENABLE_PULSE
+#if defined(ENABLE_COMPAT) && defined(ENABLE_PULSE)
   pa_conn = NULL;
 #endif
 }
@@ -109,7 +113,7 @@ bool AudioDev::grab(bool probeOnly)
       /* Open audio device non-blocking! */
 #ifdef OSS_AUDIO
       audiodev=open(devname, O_WRONLY, 0 /* O_NONBLOCK */);
-#elif defined(ENABLE_PULSE)
+#elif defined(ENABLE_COMPAT) && defined(ENABLE_PULSE)
       if (probeOnly) {
           return true; // so sue me
       }
@@ -219,7 +223,7 @@ bool AudioDev::grab(bool probeOnly)
 
 bool AudioDev::release()
 {
-#ifdef ENABLE_PULSE
+#if defined(ENABLE_COMPAT) && defined(ENABLE_PULSE)
   if (pa_conn) pa_simple_free(pa_conn);
   pa_conn = NULL;
 #else
@@ -247,7 +251,7 @@ bool AudioDev::reset()
 #ifdef OSS_AUDIO
       sync();
       return( ioctl(audiodev, SNDCTL_DSP_RESET, 0) );
-#elif defined(ENABLE_PULSE)
+#elif defined(ENABLE_COMPAT) && defined(ENABLE_PULSE)
     return pa_simple_flush(pa_conn, NULL) == 0;
 #else
       return(true);
@@ -266,7 +270,7 @@ bool AudioDev::sync()
 #endif
 #ifdef OSS_AUDIO
       return( ioctl(audiodev, SNDCTL_DSP_SYNC, 0) );
-#elif defined(ENABLE_PULSE)
+#elif defined(ENABLE_COMPAT) && defined(ENABLE_PULSE)
       return pa_simple_drain(pa_conn, NULL) == 0;
 #else
       return(true);
@@ -313,7 +317,7 @@ int AudioDev::Write(char *data, uint32 num)
 {
 #ifdef OSS_AUDIO
   return ( write(audiodev, data, num) );
-#elif defined(ENABLE_PULSE)
+#elif defined(ENABLE_COMPAT) && defined(ENABLE_PULSE)
   return ( pa_simple_write(pa_conn, data, num, &errno) );
 #else
   char *dummy = data;  // remove warnings on unsupported systems
