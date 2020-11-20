@@ -165,6 +165,11 @@ void VT102Emulation::setColumns(int columns)
 #define TY_CSI_PN(A  )  TY_CONSTR(6,A,0)
 #define TY_CSI_PR(A,N)  TY_CONSTR(7,A,N)
 
+#ifdef ENABLE_COMPAT
+#define TY_CSI_PE(A)    TY_CONSTR(10,A,0)
+#define TY_CSI_PG(A)    TY_CONSTR(9,A,0)
+#endif
+
 #define TY_VT52__(A  )  TY_CONSTR(8,A,0)
 
 //FIXME: include recognition of remaining VT100 codes.
@@ -385,6 +390,94 @@ void VT102Emulation::tau( int code, int p, int q )
     case TY_VT52__('<'      ) :          setMode      (MODE_Ansi     ); break; //VT52
     case TY_VT52__('='      ) :          setMode      (MODE_AppKeyPad); break; //VT52
     case TY_VT52__('>'      ) :        resetMode      (MODE_AppKeyPad); break; //VT52
+
+#ifdef ENABLE_COMPAT
+    // Silence warnings about common, but unimplemented, features
+    case TY_CSI_PS('m',  21) : /*scr->resetRendition     (RE_BOLD     )*/; break;
+    case TY_CSI_PS('m',  23) : /*scr->resetRendition     (RE_ITALIC   )*/; break; //VT100
+    case TY_CSI_PS('m',  28) : /*scr->resetRendition     (RE_CONCEAL  )*/; break;
+    case TY_CSI_PS('m',  29) : /*scr->resetRendition     (RE_STRIKEOUT)*/; break;
+    case TY_CSI_PS('m',  55) : /*scr->resetRendition     (RE_OVERLINE )*/; break;
+    case TY_CSI_PS('J',   3) : /*clearHistory();                       */     break;
+    case TY_CSI_PS('s',   0) : /*     saveCursor           (          );*/ break;
+    case TY_CSI_PS('u',   0) : /*     restoreCursor        (          );*/ break;
+    case TY_CSI_PN('E'      ) : /* cursor next p lines */         break; //VT100
+    case TY_CSI_PN('F'      ) : /* cursor preceding p lines */    break; //VT100
+    case TY_CSI_PN('I'      ) : /*scr->tab                  (p         );*/ break;
+    case TY_CSI_PN('S'      ) : /*scr->scrollUp             (p         );*/ break;
+    case TY_CSI_PN('T'      ) : /*scr->scrollDown           (p         );*/ break;
+    case TY_CSI_PN('Z'      ) : /*scr->backtab              (p         );*/ break;
+    case TY_CSI_PN('b'      ) : /*scr->repeatChars          (p         );*/ break;
+    case TY_CSI_PR('s',   8) : /* IGNORED: autorepeat on            */ break; //VT100
+    case TY_CSI_PR('r',   8) : /* IGNORED: autorepeat off           */ break; //VT100
+    case TY_CSI_PR('s',   9) : /* IGNORED: interlace                */ break; //VT100
+    case TY_CSI_PR('r',   9) : /* IGNORED: interlace                */ break; //VT100
+
+    case TY_CSI_PR('h',  12) : /* IGNORED: Cursor blink             */ break; //att610
+    case TY_CSI_PR('l',  12) : /* IGNORED: Cursor blink             */ break; //att610
+    case TY_CSI_PR('s',  12) : /* IGNORED: Cursor blink             */ break; //att610
+    case TY_CSI_PR('r',  12) : /* IGNORED: Cursor blink             */ break; //att610
+    case TY_CSI_PR('s',  25) : /*        saveMode      (MODE_Cursor   );*/ break; //VT100
+    case TY_CSI_PR('r',  25) : /*     restoreMode      (MODE_Cursor   );*/ break; //VT100
+
+    case TY_CSI_PR('h',  40) : /*        setMode(MODE_Allow132Columns );*/ break; // XTERM
+    case TY_CSI_PR('l',  40) : /*      resetMode(MODE_Allow132Columns );*/ break; // XTERM
+
+    case TY_CSI_PR('h',  41) : /* IGNORED: obsolete more(1) fix     */ break; //XTERM
+    case TY_CSI_PR('l',  41) : /* IGNORED: obsolete more(1) fix     */ break; //XTERM
+    case TY_CSI_PR('s',  41) : /* IGNORED: obsolete more(1) fix     */ break; //XTERM
+    case TY_CSI_PR('r',  41) : /* IGNORED: obsolete more(1) fix     */ break; //XTERM
+    case TY_CSI_PR('s',  47) : /*        saveMode      (MODE_AppScreen);*/ break; //XTERM
+    case TY_CSI_PR('r',  47) : /*     restoreMode      (MODE_AppScreen);*/ break; //XTERM
+
+    case TY_CSI_PR('h',  67) : /* IGNORED: DECBKM                   */ break; //XTERM
+    case TY_CSI_PR('l',  67) : /* IGNORED: DECBKM                   */ break; //XTERM
+    case TY_CSI_PR('s',  67) : /* IGNORED: DECBKM                   */ break; //XTERM
+    case TY_CSI_PR('r',  67) : /* IGNORED: DECBKM                   */ break; //XTERM
+
+    case TY_CSI_PR('h', 1002) :/*          setMode      (MODE_Mouse1002);*/ break; //XTERM
+    case TY_CSI_PR('l', 1002) :/*        resetMode      (MODE_Mouse1002);*/ break; //XTERM
+    case TY_CSI_PR('s', 1002) :/*         saveMode      (MODE_Mouse1002);*/ break; //XTERM
+    case TY_CSI_PR('r', 1002) :/*      restoreMode      (MODE_Mouse1002);*/ break; //XTERM
+    case TY_CSI_PR('h', 1003) :/*          setMode      (MODE_Mouse1003);*/ break; //XTERM
+    case TY_CSI_PR('l', 1003) :/*        resetMode      (MODE_Mouse1003);*/ break; //XTERM
+    case TY_CSI_PR('s', 1003) :/*         saveMode      (MODE_Mouse1003);*/ break; //XTERM
+    case TY_CSI_PR('r', 1003) :/*      restoreMode      (MODE_Mouse1003);*/ break; //XTERM
+
+    case TY_CSI_PR('h',  1004) : /*_reportFocusEvents = true;*/ break;
+    case TY_CSI_PR('l',  1004) : /*_reportFocusEvents = false;*/ break;
+
+    case TY_CSI_PR('h', 1005) :/*          setMode      (MODE_Mouse1005);*/ break; //XTERM
+    case TY_CSI_PR('l', 1005) :/*        resetMode      (MODE_Mouse1005);*/ break; //XTERM
+    case TY_CSI_PR('s', 1005) :/*         saveMode      (MODE_Mouse1005);*/ break; //XTERM
+    case TY_CSI_PR('r', 1005) :/*      restoreMode      (MODE_Mouse1005);*/ break; //XTERM
+
+    case TY_CSI_PR('h', 1006) :/*          setMode      (MODE_Mouse1006);*/ break; //XTERM
+    case TY_CSI_PR('l', 1006) :/*        resetMode      (MODE_Mouse1006);*/ break; //XTERM
+    case TY_CSI_PR('s', 1006) :/*         saveMode      (MODE_Mouse1006);*/ break; //XTERM
+    case TY_CSI_PR('r', 1006) :/*      restoreMode      (MODE_Mouse1006);*/ break; //XTERM
+
+    case TY_CSI_PR('h', 1015) :/*          setMode      (MODE_Mouse1015);*/ break; //URXVT
+    case TY_CSI_PR('l', 1015) :/*        resetMode      (MODE_Mouse1015);*/ break; //URXVT
+    case TY_CSI_PR('s', 1015) :/*         saveMode      (MODE_Mouse1015);*/ break; //URXVT
+    case TY_CSI_PR('r', 1015) :/*      restoreMode      (MODE_Mouse1015);*/ break; //URXVT
+
+    case TY_CSI_PR('h', 1034) : /* IGNORED: 8bitinput activation     */ break; //XTERM
+
+    //FIXME: weird DEC reset sequence
+    case TY_CSI_PE('p'      ) : /* IGNORED: reset         (        ) */ break;
+
+    //FIXME: every once new sequences like this pop up in xterm.
+    //       Here's a guess of what they could mean.
+    case TY_CSI_PR('h', 1049) : /*saveCursor(); _screen[1]->clearEntireScreen(); setMode(MODE_AppScreen);*/ break; //XTERM
+    case TY_CSI_PR('l', 1049) : /*resetMode(MODE_AppScreen); restoreCursor(); */ break; //XTERM
+
+    case TY_CSI_PR('h', 2004) : /*         setMode      (MODE_BracketedPaste); */break; //XTERM
+    case TY_CSI_PR('l', 2004) : /*       resetMode      (MODE_BracketedPaste); */break; //XTERM
+    case TY_CSI_PR('s', 2004) : /*        saveMode      (MODE_BracketedPaste); */break; //XTERM
+    case TY_CSI_PR('r', 2004) : /*     restoreMode      (MODE_BracketedPaste); */break; //XTERM
+    case TY_CSI_PG('c'      ) : /* reportSecondaryAttributes(          );*/ break; //VT100
+#endif
 
     default : ReportErrorToken();    break;
   };
