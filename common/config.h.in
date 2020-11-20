@@ -219,7 +219,7 @@ void srandom(unsigned int seed);
 #define HAVE_X11_XDMCP_H 1
 
 /* Define if you have the <crypt.h> header file.  */
-#define HAVE_CRYPT_H 1
+#cmakedefine HAVE_CRYPT_H
 
 /* Define if you have the <dirent.h> header file.  */
 #define HAVE_DIRENT_H 1
@@ -249,10 +249,10 @@ void srandom(unsigned int seed);
 #define HAVE_PATHS_H 1
 
 /* Define if you have the <rpc/key_prot.h> header file.  */
-#define HAVE_RPC_KEY_PROT_H 1
+#cmakedefine HAVE_RPC_KEY_PROT_H
 
 /* Define if you have the <rpc/rpc.h> header file.  */
-#define HAVE_RPC_RPC_H 1
+#cmakedefine HAVE_RPC_RPC_H
 
 /* Define if you have the <sys/dir.h> header file.  */
 /* #undef HAVE_SYS_DIR_H */

@@ -36,8 +36,8 @@
 # define BINDIR XDMBINDIR
 #endif
 
-#define DEF_XDM_CONFIG XDMDIR##"/xdm-config"
-#define DEF_AUTH_DIR XDMDIR##"/authdir"
+#define DEF_XDM_CONFIG XDMDIR "/xdm-config"
+#define DEF_AUTH_DIR XDMDIR "/authdir"
 
 /* If this isn't defined, we crash boxes with S3 cards.
  * See genauth.c 
@@ -88,7 +88,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-int XdmcpAllocARRAY8();
+//int XdmcpAllocARRAY8();
 int Debug( char*, ...);
 int LogError( char*, ...);
 int LogOutOfMem( char*, ...);

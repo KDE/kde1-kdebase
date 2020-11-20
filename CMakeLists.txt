@@ -13,6 +13,8 @@ find_package(KDE1 REQUIRED)
 
 include(Qt1Macros)
 
+include(kde1-configure)
+
 option(ENABLE_COMPAT "Enable changes improving compatibility with modern systems" ON)
 
 set(KDEBASE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -21,7 +23,7 @@ set(BOOTSTRAP OFF)
 
 include_directories(common ${CMAKE_CURRENT_BINARY_DIR})
 
-set(KDE1_XDMDIR "${KDE1_CONFDIR}")
+set(KDE1_XDMDIR "${KDE1_CONFDIR}/kdm")
 set(KDE1_UTMPPATH "/var/run/utmp") ## todo, don't hardcode
 
 find_package(PAM)
@@ -40,7 +42,6 @@ else()
 endif()
 
 add_definitions( -DHAVE_CONFIG_H )
-configure_file(common/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 
 if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -Wno-write-strings")
@@ -61,6 +62,10 @@ endif()
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(CURSES ncurses)
 
+pkg_check_modules(libcrypt IMPORTED_TARGET libcrypt)
+
+create_kde1_config_header()
+
 if(ENABLE_COMPAT)
     find_package(PulseAudio)
     add_subdirectory(compat)
@@ -80,7 +85,7 @@ add_subdirectory(kpanel)
 add_subdirectory(kwmcom)
 add_subdirectory(kwmmodules)
 add_subdirectory(krootwm)
-#add_subdirectory(kdm)
+add_subdirectory(kdm)
 add_subdirectory(kscreensaver)
 add_subdirectory(kmenuedit)
 add_subdirectory(kaudio)

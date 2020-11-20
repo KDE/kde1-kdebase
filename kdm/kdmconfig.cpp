@@ -30,7 +30,7 @@
 #include <kapp.h>
 #include <pwd.h>
 #include <sys/types.h>
-#include <iostream.h>
+#include <iostream>
 
 // Func. for splitting ';' sep. lists.
 static void semsplit( const QString& str, QStrList& result)

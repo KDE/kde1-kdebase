@@ -35,6 +35,7 @@ extern "C" {
 # include <security/pam_appl.h>
 }
 #ifdef KDE_PAM_SERVICE
+#warning "using pam"
 #define KDE_PAM KDE_PAM_SERVICE
 #else  
 #define KDE_PAM "xdm"  /* default PAM service called by kdm */
@@ -79,7 +80,7 @@ static int PAM_conv (int num_msg,
      struct pam_response *reply = NULL;
      int size = sizeof(struct pam_response);
      
-     #define GET_MEM if (reply) realloc(reply, size);\
+     #define GET_MEM if (reply) reply = (struct pam_response *)realloc(reply, size);\
                      else reply = (struct pam_response *)malloc(size); \
 	             if (!reply) return PAM_CONV_ERR; \
 	             size += sizeof(struct pam_response)
