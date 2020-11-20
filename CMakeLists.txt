@@ -13,6 +13,8 @@ find_package(KDE1 REQUIRED)
 
 include(Qt1Macros)
 
+option(ENABLE_COMPAT "Enable changes improving compatibility with modern systems" ON)
+
 set(KDEBASE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 
 set(BOOTSTRAP OFF)

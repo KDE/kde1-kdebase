@@ -5,6 +5,8 @@
    Usually this is either `int' or `gid_t'.  */
 #define GETGROUPS_T gid_t
 
+#cmakedefine ENABLE_COMPAT @ENABLE_COMPAT@
+
 /* Define to `int' if <sys/types.h> doesn't define.  */
 /* #undef gid_t */
 

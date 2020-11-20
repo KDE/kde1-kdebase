@@ -44,6 +44,10 @@
 
 #include "TEmuVt102.moc"
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #define ESC 27
 
 #define HERE printf("%s(%d): here\n",__FILE__,__LINE__)
