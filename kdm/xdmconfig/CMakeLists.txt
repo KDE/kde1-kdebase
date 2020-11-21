@@ -1,4 +1,5 @@
 configure_file(xdm-conf.in xdm-config)
+configure_file(Xserv.in Xservers)
 install(FILES
     Xresources Xservers Xaccess Xsession
     GiveConsole TakeConsole Xsetup_0
