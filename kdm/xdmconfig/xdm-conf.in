@@ -1,0 +1,14 @@
+! $XConsortium: xdm-conf.cpp,v 1.2 93/09/28 14:30:32 gildea Exp $
+! $Id: xdm-conf.cpp,v 1.3 1998/09/30 21:20:31 bieker Exp $
+!DisplayManager.errorLogFile:	@KDE1_XDMDIR@/xdm-errors
+!DisplayManager.pidFile:	@KDE1_XDMDIR@/xdm-pid
+!DisplayManager.keyFile:	@KDE1_XDMDIR@/xdm-keys
+!DisplayManager.servers:	@KDE1_XDMDIR@/Xservers
+!DisplayManager.accessFile:	@KDE1_XDMDIR@/Xaccess
+!DisplayManager._0.authorize:	true
+!DisplayManager._0.setup:	@KDE1_XDMDIR@/Xsetup_0
+!DisplayManager._0.startup:	@KDE1_XDMDIR@/GiveConsole
+!DisplayManager._0.reset:	@KDE1_XDMDIR@/TakeConsole
+!DisplayManager*resources:	@KDE1_XDMDIR@/Xresources
+!DisplayManager*session:	@KDE1_XDMDIR@/Xsession
+!DisplayManager*authComplain:	false
