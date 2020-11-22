@@ -190,7 +190,7 @@ bool Handler::initX()
         return false;
     }
 
-    XSetWindowAttributes wa;
+    XSetWindowAttributes wa{};
     wa.background_pixel = BlackPixel(display, screen);
 
     if (!(XFreePixmap(display, pmap)) || s_xError) {
