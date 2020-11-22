@@ -79,6 +79,10 @@ int Handler::onSleeping(sd_bus_message *message, sd_bus_error *ret_error)
         fprintf(stderr, "Failed to read argument: %s\n", strerror(-ret));
         return 0;
     }
+    if (!goingToSleep) {
+        puts("Woke from sleep");
+        return 0;
+    }
     puts("Going to sleep");
 
     std::lock_guard<std::mutex> lock(lockMutex);
