@@ -183,20 +183,8 @@ bool Handler::initX()
     Window root = RootWindow(display, screen);
     XScreenSaverSelectInput(display, root, ScreenSaverNotifyMask);
 
-
-    Pixmap pmap = XCreateBitmapFromData(display, root, "\0", 1, 1);
-    if (s_xError) {
-        puts("Failed to create pixmap");
-        return false;
-    }
-
     XSetWindowAttributes wa{};
     wa.background_pixel = BlackPixel(display, screen);
-
-    if (!(XFreePixmap(display, pmap)) || s_xError) {
-        puts("Failed to free pixmap");
-        return false;
-    }
 
     XScreenSaverSetAttributes(display, root,
             -1, -1, // x, y
