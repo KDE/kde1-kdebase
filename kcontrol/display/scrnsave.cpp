@@ -505,11 +505,12 @@ void KScreenSaver::getSaverNames()
 		if ( name.isEmpty() )
 		{
 			char buffer[80];
+                        bzero(buffer, sizeof buffer);
 			QString cmd = saverLocation + '/' + it.current() + " -desc";
 			FILE *fp = popen( cmd, "r");
 			if ( fp )
 			{
-				fgets( buffer, 80, fp );
+				fgets( buffer, 79, fp );
 				if ( strchr( buffer, '\n' ) )
 					*strchr( buffer, '\n' ) = '\0';
 				pclose( fp );
@@ -520,7 +521,10 @@ void KScreenSaver::getSaverNames()
 				name = "";
 		}
 
-		saverNames.append( name );
+		if ( name.isEmpty() ) {
+                    name = it.current();
+                }
+                saverNames.append( name );
 	}
 }
 
