@@ -2,8 +2,13 @@
 echo "KFM Super User"
 echo "--------------"
 echo ""
-echo "Allowing ALL (!) local users to use this display"
-xhost +local:
+
+HAS_LOCAL="$(xhost | grep -q LOCAL && echo true)"
+if [[ "$HAS_LOCAL" != "true" ]]; then
+  echo "Allowing ALL (!) local users to use this display"
+  xhost +local:
+fi
+
 echo ""
 echo "Logging in as super user"
 
@@ -15,5 +20,7 @@ else
 fi
 
 su - root -c "DISPLAY=$DISPLAY; export DISPLAY; $kfm -sw >/dev/null"
-xhost -local:
 
+if [[ "$HAS_LOCAL" != "true" ]]; then
+    xhost -local:
+fi
