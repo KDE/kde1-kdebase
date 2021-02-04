@@ -11,8 +11,9 @@ echo "Logging in as super user"
 if test -f $KDEDIR/bin/kfm ; then
  kfm=$KDEDIR/bin/kfm
 else
- kfm=@kde_bindir@/kfm
+ kfm=@KDE1_BINDIR@/kfm
 fi
+
 su - root -c "DISPLAY=$DISPLAY; export DISPLAY; $kfm -sw >/dev/null"
 xhost -local:
 

@@ -47,11 +47,18 @@ target_link_libraries(kfm
     ${X11_LIBRARIES}
     )
 
+configure_package_config_file(kfmsu2.in ${CMAKE_CURRENT_BINARY_DIR}/kfmsu2
+    INSTALL_DESTINATION ${KDE1_BINDIR})
+
+install(FILES  ${CMAKE_CURRENT_BINARY_DIR}/kfmsu2
+    PERMISSIONS WORLD_EXECUTE WORLD_READ
+    DESTINATION ${KDE1_BINDIR})
+
 install(TARGETS kfm RUNTIME DESTINATION ${KDE1_BINDIR})
 
 install(FILES directory.trash directory.autostart directory.templates directory.desktop DESTINATION ${KDE1_DATADIR}/kfm)
 
-install(FILES kfmsu kfmsu2 startkde kde unpack
+install(FILES kfmsu startkde kde unpack
     PERMISSIONS WORLD_EXECUTE WORLD_READ
     DESTINATION ${KDE1_BINDIR})
 
