@@ -487,7 +487,7 @@ void KScreenSaver::findSavers()
 
 	d.setFilter( QDir::Executable | QDir::Files );
 
-	saverList = d.entryList( "*.kss" );
+	saverList = d.entryList( "*.kss1" );
 }
 
 void KScreenSaver::getSaverNames()

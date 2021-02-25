@@ -44,7 +44,7 @@ const char *getScreenSaverName()
 
 All drawing must be done in Xlib.
 use blankscrn.*, polygon.* and banner.* as examples.
-Naming the screensavers *.kss allows kdisplay to locate the available
+Naming the screensavers *.kss1 allows kdisplay to locate the available
 screensavers.
 
 

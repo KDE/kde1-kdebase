@@ -86,9 +86,9 @@ AC_FIND_TIFF
 KDE_CHECK_KIMGIO 
 
 
-AC_HAVE_GL(GL_SAVERS="kmorph3d.kss kspace.kss kpipes.kss",GL_SAVERS="")
+AC_HAVE_GL(GL_SAVERS="kmorph3d.kss1 kspace.kss1 kpipes.kss1",GL_SAVERS="")
 AC_SUBST(GL_SAVERS)
-AC_HAVE_XPM(XPM_SAVERS="kbat.kss kmatrix.kss",XPM_SAVERS="")
+AC_HAVE_XPM(XPM_SAVERS="kbat.kss1 kmatrix.kss1",XPM_SAVERS="")
 AC_SUBST(XPM_SAVERS)
 
 dnl Checks for header files.

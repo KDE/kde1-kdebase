@@ -643,7 +643,7 @@ bool KiKbdApplication::x11EventFilter(XEvent *e)
       /**
 	 work around screen savers' problem
       */
-      if(windowClass(e->xany.window).contains(".kss") == 1)
+      if(windowClass(e->xany.window).contains(".kss1") == 1)
 	setKeyMapTo(0);
       break;
 

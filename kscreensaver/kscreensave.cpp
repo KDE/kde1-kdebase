@@ -57,17 +57,17 @@ void kForceLocker()
 
 		// either no saver is running or an old pidFile was not removed
 		QString buffer = QString(KApplication::kde_bindir().data());
-		buffer.append("/kblankscrn.kss");
+		buffer.append("/kblankscrn.kss1");
 	    
 		if ( fork() == 0 )
 		{
 			execlp( buffer, buffer, "-install", "-delay", "0", "-lock", root, 0 );
 
 			// if we make it here then try again using default path
-			execlp("kblankscrn.kss","kblankscrn.kss", "-install", "-delay", "0", "-lock", root, 0);
+			execlp("kblankscrn.kss1","kblankscrn.kss1", "-install", "-delay", "0", "-lock", root, 0);
 		    
 			// uh oh - failed
-			fprintf( stderr, "Could not invoke kblankscrn.kss in $PATH or"
+			fprintf( stderr, "Could not invoke kblankscrn.kss1 in $PATH or"
 			         " %s/bin\n" , KApplication::kde_bindir().data());
 			exit (1);
 		}
