@@ -1,4 +1,4 @@
-install_icon(background.xpm "")
+install_icon(background.xpm "${KDE1_DATADIR}/kcmdisplay/pics")
 install_icon(colors.xpm "")
 install_icon(logo.xpm "")
 install_icon(monitor.xpm "")
