@@ -60,7 +60,7 @@ void debugC( const char *msg , ...);
 #define KFMGUI_WIDTH 540
 
 // Default terminal for Open Terminal and for 'run in terminal'
-#define DEFAULT_TERMINAL "konsole"
+#define DEFAULT_TERMINAL "konsole1"
 
 // Default editor for "View Document/Frame Source"
 #define DEFAULT_EDITOR "kedit"
