@@ -1,6 +1,6 @@
 # KDE Config File
 [KDE Desktop Entry]
-Exec=kcmkonsole
+Exec=kcmkonsole1
 Icon=konsole.xpm
 MiniIcon=konsole.xpm
 Type=Application

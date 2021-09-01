@@ -28,4 +28,7 @@ add_executable(konsole1 ${KONSOLE_SRCS})
 target_link_libraries(konsole1 libkonsole Qt::Qt1 ${X11_LIBRARIES} ${KDE1_KDECORE} ${KDE1_KIMGIO} ${KDE1_KDEUI})
 install(TARGETS konsole1 RUNTIME DESTINATION ${KDE1_BINDIR})
 
-
+QT1_WRAP_HEADER(KCMKONSOLE_MOC_FILES kcmkonsole.moc)
+add_executable(kcmkonsole1 kcmkonsole.C schema.C ${KCMKONSOLE_MOC_FILES})
+target_link_libraries(kcmkonsole1 Qt::Qt1 ${KDE1_KDECORE} ${KDE1_KIMGIO} ${KDE1_KDEUI})
+install(TARGETS kcmkonsole1 RUNTIME DESTINATION ${KDE1_BINDIR})
