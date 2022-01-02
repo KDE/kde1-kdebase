@@ -74,7 +74,7 @@
 # include	<pwd.h>
 #endif
 
-#ifdef linux
+#ifdef __linux__
 #define SYSV
 #endif
 
